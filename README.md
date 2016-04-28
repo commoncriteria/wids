@@ -1,13 +1,13 @@
-Wireless Intrusion Detection System
+Wireless Intrusion Detection/Prevention Systems
 ===============
 
-Protection Profile for Wireless Intrusion Detection System
+Protection Profile for Wireless Intrusion Detection/Prevention Systems
 
 
 ## Working Draft
 [Essential Security Requirements (ESR)](http://common-criteria.rhcloud.com/project/output/project-esr.html)
 
-[Protection Profile for Wireless Intrusion Detection System ](http://common-criteria.rhcloud.com/wids/output/wids-release.html)
+[Protection Profile for Wireless Intrusion Detection/Prevention Systems ](http://common-criteria.rhcloud.com/wids/output/wids-release.html)
 
 ## Release Version
 Coming Soon
