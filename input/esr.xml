@@ -6,16 +6,19 @@
 	<intro>
 		<esrtitle>Wireless Intrusion Detection/Prevention Systems Essential Security Requirements</esrtitle>
 		<maintainer>NIAP</maintainer>
-		<identifier>42</identifier>
+		<!--<identifier>42</identifier>-->
 		<version>1.0</version>
 		<status>Draft</status>
-		<issuedate>19 March 2015</issuedate>
-		<approver/>
-		<!--<supercedes/>-->
+		<issuedate>28 March 2016</issuedate>
+		<!--<approver></approver>-->
+		<!--<supercedes></supercedes>-->
 	</intro>
 
+	<section title="Status" id="status">
+	
+	</section>
 	<section title="Background and Purpose" id="purpose">
-		This document describes the high-level set of security requirements that a WIDS/WIPS will satisfy when evaluated against the EP written for such technology. 
+		This document describes the high-level set of security requirements that a Wireless Intrusion Detection/Prevention System (WIDS/WIPS) will satisfy when evaluated against the collaborateive Protection Profile for Network Devices Extended package (EP) for WIDS/WIPS. 
 
 		There are well-known attacks targeting IEEE 802.11 networks (referred to as WLAN for the remainder of this document) such as rogue access points, Denial of Service Attacks (DoS), and Man-in-the-Middle Attacks. A WIDS/WIPS should be used as part of a layered security approach in order to detect and mitigate some of the attacks that are unique to WLAN. A WIDS/WIPS helps protect the network by analyzing and collecting IEEE 802.11 traffic to detect WLAN intrusions. A WIDS/WIPS typically consists of multiple sensors that passively scan their surrounding RF environment on the WLAN radio frequency spectrum for IEEE 802.11 traffic and a centralized mechanism such as a Server or Controller that processes the data collected by the sensors and detects, alerts, and logs intrusion attempts. 
 
