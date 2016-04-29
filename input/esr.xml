@@ -13,41 +13,75 @@
 	</intro>
 
 	<section title="Status" id="status">
-		<p>The NSA has been requested to develop an Essential Security Requirements (ESR) document that specifies the essential requirements for Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS).  This is the initial draft for an Extended Package (EP) to the Network Devices collaborative Protection Profile (cPP).</p> 
+		<p>The NSA has been requested to develop an Essential Security Requirements (ESR) document that specifies
+		 the essential requirements for Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS).  This is the 
+		 initial draft for an Extended Package (EP) to the Network Devices collaborative Protection Profile (cPP).</p> 
 	</section>
 	<section title="Background and Purpose" id="purpose">
-		<p>This document describes the high-level set of security requirements that a WIDS/WIPS will satisfy when evaluated against the EP written for such technology. </p> 
+		<p>This document describes the high-level set of security requirements that a WIDS/WIPS will satisfy when 
+		evaluated against the EP written for such technology. </p> 
 
-		<p>There are well-known attacks targeting IEEE 802.11 networks (referred to as WLAN for the remainder of this document) such as rogue access points, Denial of Service Attacks (DoS), and Man-in-the-Middle Attacks. A WIDS/WIPS should be used as part of a layered security approach in order to detect and mitigate some of the attacks that are unique to WLAN. A WIDS/WIPS helps protect the network by analyzing and collecting IEEE 802.11 traffic to detect WLAN intrusions. A WIDS/WIPS typically consists of multiple sensors that passively scan their surrounding RF environment on the WLAN radio frequency spectrum for IEEE 802.11 traffic and a centralized mechanism such as a Server or Controller that processes the data collected by the sensors and detects, alerts, and logs intrusion attempts.</p>
+		<p>There are well-known attacks targeting IEEE 802.11 networks (referred to as WLAN for the remainder of 
+		this document) such as rogue access points, Denial of Service Attacks (DoS), and Man-in-the-Middle Attacks. 
+		A WIDS/WIPS should be used as part of a layered security approach in order to detect and mitigate some of 
+		the attacks that are unique to WLAN. A WIDS/WIPS helps protect the network by analyzing and collecting IEEE 
+		802.11 traffic to detect WLAN intrusions. A WIDS/WIPS typically consists of multiple sensors that passively 
+		scan their surrounding RF environment on the WLAN radio frequency spectrum for IEEE 802.11 traffic and a 
+		centralized mechanism such as a Server or Controller that processes the data collected by the sensors and 
+		detects, alerts, and logs intrusion attempts.</p>
 
-		<p>Traditional wired IDS/IPS and WIDS/WIPS serve similar functions but they focus on different segments of the network. A wired IDS/IPS detects intrusions on the wired network, while a WIDS/WIPS detects intrusions on the wireless network. A wired IDS/IPS is not able to detect WLAN-based attacks. Wired IDS/IPS requirements are not covered in this EP. They are addressed in the collaborative Protection Profile for Network Devices/collaborative Protection Profile for Stateful Traffic Filter Firewalls Extended Package for Intrusion Prevention Systems (IPS).</p>
+		<p>Traditional wired IDS/IPS and WIDS/WIPS serve similar functions but they focus on different segments of 
+		the network. A wired IDS/IPS detects intrusions on the wired network, while a WIDS/WIPS detects intrusions on
+		 the wireless network. A wired IDS/IPS is not able to detect WLAN-based attacks. Wired IDS/IPS requirements are
+		  not covered in this EP. They are addressed in the collaborative Protection Profile for Network 
+		  Devices/collaborative Protection Profile for Stateful Traffic Filter Firewalls Extended Package for 
+		  Intrusion Prevention Systems (IPS).</p>
 
 
 	</section>
 	<section title="Use Cases" id="usecases">
-		 <p>A WIDS/WIPS should be used as part of any network deployment both in spaces where a WLAN is deployed and in spaces where policies do not permit the use of wireless networks. In the first case, a WIDS/WIPS detects attacks against the WLAN and its end user devices, as well as unauthorized WLAN devices or unauthorized connections. In the second case a WIDS/WIPS detects the use of wireless network/devices where wireless networks are not permitted.</p>  
+		 <p>A WIDS/WIPS should be used as part of any network deployment both in spaces where a WLAN is deployed and 
+		 in spaces where policies do not permit the use of wireless networks. In the first case, a WIDS/WIPS detects 
+		 attacks against the WLAN and its end user devices, as well as unauthorized WLAN devices or unauthorized connections.
+		  In the second case a WIDS/WIPS detects the use of wireless network/devices where wireless networks are not permitted.</p>  
 	</section>
 
 	<section title="Resources to be protected" id="resourcesprotected">
-		<p>A WIDS is used to detect attacks that compromise the confidentiality and integrity of user and system data traversing through the WLAN network or accessible through the WLAN network as well as the availability of the WLAN network to legitimate users. There is the potential of the wired network being compromised through vulnerabilities in the wireless network. Therefore, protecting the wireless network also plays a part in protecting the overall network. Below are the security objectives that will be addressed by the WIDS/WIPS:</p>
+		<p>A WIDS is used to detect attacks that compromise the confidentiality and integrity of user and system data traversing
+		 through the WLAN network or accessible through the WLAN network as well as the availability of the WLAN network to 
+		 legitimate users. There is the potential of the wired network being compromised through vulnerabilities in the wireless
+		  network. Therefore, protecting the wireless network also plays a part in protecting the overall network. Below are the 
+		  security objectives that will be addressed by the WIDS/WIPS:</p>
 
 		<p><b>Unauthorized Disclosure of Information</b><br></br>
-		Sensitive information on a protected WLAN might be disclosed resulting from disclosure/transmitted information in violation of policy, such as sending unencrypted sensitive data. The WIDS/WIPS will be capable of collecting and analyzing WLAN data to detect unauthorized disclosure of information.</p> 
+		Sensitive information on a protected WLAN might be disclosed resulting from disclosure/transmitted information in violation 
+		of policy, such as sending unencrypted sensitive data. The WIDS/WIPS will be capable of collecting and analyzing WLAN data 
+		to detect unauthorized disclosure of information.</p> 
 
 		<p><b>Unauthorized Access</b><br></br>
-		An attacker may attempt to gain inappropriate access to one or more networks, endpoints, or services, such as by getting an end user device to connect to an unauthorized AP by impersonating an authorized AP.  If malicious external devices are able to communicate with devices on the protected WLAN, then those devices may be susceptible to the unauthorized disclosure of information.</p>
+		An attacker may attempt to gain inappropriate access to one or more networks, endpoints, or services, such as by getting an 
+		end user device to connect to an unauthorized AP by impersonating an authorized AP.  If malicious external devices are able 
+		to communicate with devices on the protected WLAN, then those devices may be susceptible to the unauthorized disclosure of 
+		information.</p>
 
 		<p><b>Disruption or Denial of Services (DoS)</b><br></br>
-		Attacks against the WLAN infrastructure might lead to denial of services within a protected WLAN. A wireless DoS may occur in two ways: at the physical layer through RF Jamming, or at the data link layer through packet injection. </p>
+		Attacks against the WLAN infrastructure might lead to denial of services within a protected WLAN. A wireless DoS may occur 
+		in two ways: at the physical layer through RF Jamming, or at the data link layer through packet injection. </p>
 
 	</section>
 
 	<section title="Attacker access" id="attackeraccess"> 
-		<p>The fact that WLAN communications happen over the air extends the attack vectors outside of the physically protected spaces.  WIDS/WIPS address a range of WLAN security threats through detection of and reaction to potentially malicious traffic on monitored WLANs. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, or to the network infrastructure.</p> 	
+		<p>The fact that WLAN communications happen over the air extends the attack vectors outside of the physically protected 
+		spaces.  WIDS/WIPS address a range of WLAN security threats through detection of and reaction to potentially malicious 
+		traffic on monitored WLANs. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, 
+		or to the network infrastructure.</p> 	
 	</section>
 	
 	<section title="Target of Evaluation" id="TOE">
-	    <p>A WIDS typically consists of multiple sensors that passively scan their surrounding RF environment on the WLAN radio frequency spectrum for IEEE 802.11 traffic and a centralized mechanism such as a Server or Controller that processes the data collected by the sensors. The WIDS/WIPS could use an Embedded (be part of the WLAN infrastructure) or Overlay (independent from WLAN) architecture depending on vendor implementation. The following are to be part of the evaluation:</p>
+	    <p>A WIDS typically consists of multiple sensors that passively scan their surrounding RF environment on the WLAN radio 
+	    frequency spectrum for IEEE 802.11 traffic and a centralized mechanism such as a Server or Controller that processes the 
+	    data collected by the sensors. The WIDS/WIPS could use an Embedded (be part of the WLAN infrastructure) or Overlay 
+	    (independent from WLAN) architecture depending on vendor implementation. The following are to be part of the evaluation:</p>
 		<ul>
 			<li>Monitoring, detection and reporting capabilities offered by the WIDS/WIPS.</li>
 			<li>Use of secure communication paths between WIDS/WIPS components </li>
@@ -58,72 +92,88 @@
 	</section>
 	
 	<section title="Essential Security Requirements" id="requirements">
-        <p>The following are high level descriptions of the capabilities expected from the WIDS/WIPS.  The categories below include selection based requirements and some optional requirements. Detailed requirements will be provided in the draft EP.</p>
+        <p>The following are high level descriptions of the capabilities expected from the WIDS/WIPS.  The categories below include
+         selection based requirements and some optional requirements. Detailed requirements will be provided in the draft EP.</p>
 
-		<p><b>Monitoring Capabilities</b><br></br>
-		2.4, 4.9/5.0 GHz frequency bands
-		All IEEE 802.11 (a, b g, n, ac) channels, including those outside regulatory domain
-		Transmit power levels
-		Bandwidth usage
-		Number of end user devices connected to the network
-		Client connection status 
-		Times of usage
-		Channel usage
+		<p><b>Monitoring Capabilities</b>
+		<ul>
+			<li>2.4, 4.9/5.0 GHz frequency bands</li>
+			<li>All IEEE 802.11 (a, b g, n, ac) channels, including those outside regulatory domain</li>
+			<li>Transmit power levels</li>
+			<li>Bandwidth usage</li>
+			<li>Number of end user devices connected to the network</li>
+			<li>Client connection status </li>
+			<li>Times of usage</li>
+			<li>Channel usage</li>
+		</ul>
 		</p>
 		
-		<p><b>Detection Capabilities</b><br></br>
-		Unauthorized IEEE 802.11 Devices
-		Unauthorized AP connected to the wired network infrastructure
-		Peer-to-Peer Connections
-		Devices that bridge two network interfaces
-		Soft APs
-		SSID Misuse
-		Misconfigured devices
-		Use of unauthorized authentication methods
-		Use of unauthorized encryption methods
-		Device Impersonation (SSID and/or MAC address)
-		Denial of Service (through packet injection or RF based flooding)
-		Protocol Violations
-		Active Network Probing
-		Illegal State Transitions
-		WIDS/WIPS Components Failures 
+		<p><b>Detection Capabilities</b>
+		<ul>
+			<li>Unauthorized IEEE 802.11 Devices</li>
+			<li>Unauthorized AP connected to the wired network infrastructure</li>
+			<li>Peer-to-Peer Connections</li>
+			<li>Bridges (to include but not limited to devices that bridge two network interfaces, Soft APs, and point to point wireless bridges)</li>
+			<li>SSID Misuse</li>
+			<li>Misconfigured devices</li>
+			<li>Use of unauthorized authentication methods</li>
+			<li>Use of unauthorized encryption methods</li>
+			<li>Device Impersonation (SSID and/or MAC address)</li>
+			<li>Denial of Service (through packet injection or RF based flooding)</li>
+			<li>Protocol Violations</li>
+			<li>Active Network Probing</li>
+			<li>Illegal State Transitions</li>
+			<li>WIDS/WIPS Components Failures </li>
+		</ul>
 		</p>
 		
-		<p><b>Detection Techniques</b><br></br>
-		Signature based detection
-		Customizable Attack Signatures
-		Protocol anomaly analysis
-		Anomaly based detection
+		<p><b>Detection Techniques</b>
+		<ul>
+			<li>Signature based detection</li>
+			<li>Customizable Attack Signatures</li>
+			<li>Protocol anomaly analysis</li>
+			<li>Anomaly based detection</li>
+		</ul>
 		</p>
 		
-		<p><b>Management and Reporting</b><br></br>
-		Customizable alerts.
-		Descriptive alerts.
-		Logs and reports in industry standard formats.
-		Traffic capture file in industry standard formats.
-		Ability to send logs to an external log server.
+		<p><b>Management and Reporting</b>
+		<ul>
+			<li>Customizable alerts</li>
+			<li>Descriptive alerts</li>
+			<li>Logs and reports in industry standard formats</li>
+			<li>Traffic capture file in industry standard formats</li>
+			<li>Ability to send logs to an external log server</li>
+		</ul>
 		</p>
 		
-		<p><b>Secure Communication Paths</b><br></br>
-		Use of secure communication paths for inner WIDS/WIPS communications (between WIDS/WIPS components).
-		Use of secure communication paths for WIDS/WIPS management and event monitoring.
-		Use of secure communication paths with external components such as database and log server.
-		Ability to disable non-secure communication paths.
+		<p><b>Secure Communication Paths</b>
+		<ul>
+			<li>Use of secure communication paths for inner WIDS/WIPS communications (between WIDS/WIPS components).</li>
+			<li>Use of secure communication paths for WIDS/WIPS management and event monitoring.</li>
+			<li>Use of secure communication paths with external components such as database and log server.</li>
+			<li>Ability to disable non-secure communication paths.</li>
+		</ul>
 		</p>
 
-		<p><b>Device Location Tracking</b><br></br>
-		Ability to physically locate WLAN devices. 
+		<p><b>Device Location Tracking</b>
+		<ul>
+			<li>Ability to physically locate WLAN devices. </li>
+		</ul>
 		</p>
 		
-		<p><b>Network Forensics</b><br></br>
-		Packet capture of raw frame that triggered an intrusion alert.
-		Ability to store and securely export packet captures to external server. 
-		Ability to specify the types of alerts that should trigger a packet capture, duration of capture, and how long to keep captures. 
+		<p><b>Network Forensics</b>
+		<ul>
+			<li>Packet capture of raw frame that triggered an intrusion alert.</li>
+			<li>Ability to store and securely export packet captures to external server.</li> 
+			<li>Ability to specify the types of alerts that should trigger a packet capture, duration of capture, and how long to keep captures.</li> 
+		</ul>
 		</p>
 		
-		<p><b>Prevention Mechanisms</b><br></br>
-		Ability to enable wireless containment/isolation of a human-confirmed rogue device.
-		Ability to enable wireside containment of a confirmed rogue device connected to wired infrastructure.
+		<p><b>Prevention Mechanisms</b>
+		<ul>
+			<li>Ability to enable wireless containment/isolation of a human-confirmed rogue device.</li>
+			<li>Ability to enable wireside containment of a confirmed rogue device connected to wired infrastructure.</li>
+		</ul>
 		</p>
 	</section>
 
@@ -132,14 +182,18 @@
 		<p>The following are high level descriptions of the capabilities that are optional and not required from the WIDS/WIPS.
 		</p>
 
-		<p><b>Detection of non 802.11 devices</b><br></br>
-		Unauthorized devices/activity on Cellular Spectrum
-		Unauthorized devices/activity on the 60GHz band
-		Unauthorized devices/activity on the sub GHz band 
+		<p><b>Detection of non 802.11 devices</b>
+		<ul>
+			<li>Unauthorized devices/activity on Cellular Spectrum</li>
+			<li>Unauthorized devices/activity on the 60GHz band</li>
+			<li>Unauthorized devices/activity on the sub GHz band </li>
+		</ul>
 		</p>
 
-		<p><b>RF Spectrum Analysis</b><br></br>
-		Ability to configure dedicated sensor for full-time spectrum analysis
+		<p><b>RF Spectrum Analysis</b>
+		<ul>
+			<li>Ability to configure dedicated sensor for full-time spectrum analysis</li>
+		</ul>
 		</p>
 
 	</section>
