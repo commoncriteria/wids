@@ -7,8 +7,6 @@ collaborative Protection Profile for Network Devices Extended Package (EP) for W
 ## Working Draft
 [Essential Security Requirements (ESR)](http://common-criteria.rhcloud.com/wids/output/wids-esr.html)
 
-[Protection Profile for Wireless Intrusion Detection/Prevention Systems ](http://common-criteria.rhcloud.com/wids/output/wids-release.html)
-
 ## Release Version
 Coming Soon
 
