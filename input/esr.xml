@@ -7,9 +7,10 @@
 		<esrtitle>Wireless Intrusion Detection/Prevention Systems Essential Security Requirements</esrtitle>
 		<maintainer>NIAP</maintainer>
 		<version>1.0</version>
-		<status>Draft</status>
+		<status>Final</status>
 		<issuedate>28 March 2016</issuedate>
-
+        <approver>NIAP</approver>
+        
 	</intro>
 
 	<section title="Status" id="status">
