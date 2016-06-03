@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
-<PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="General Purpose Operating System"
+<PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="WIDS/WIPS EP"
     xmlns:h="http://www.w3.org/1999/xhtml">
   <!-- <inline-comment color='green'> Hello World QQQQ </inline-comment> -->
   <!-- <inline-comment color='blue' linebreak='yes'> Hello World QQQQ </inline-comment> -->
@@ -15,7 +15,7 @@
       <PPPubDate></PPPubDate>
       <PPCertificationID>unassigned</PPCertificationID>
       <CCVersion>3.1R4</CCVersion>
-      <Keywords>WIDS/WIPS</Keywords>
+      <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
       <entry>
         <name>Registration</name>
         <description>National Information Assurance Partnership</description>
@@ -23,7 +23,7 @@
     </ReferenceTable>
   </PPReference>
 
-  <!--<RevisionHistory role="draft">
+<RevisionHistory role="draft">
     <entry>
       <version>Round 1</version>
       <date></date>
@@ -31,21 +31,24 @@
     </entry>
   </RevisionHistory>
 
-  <RevisionHistory role="final">
+  <!-- <RevisionHistory role="final">
     <entry>
       <version>4.0</version>
       <date>2015-08-14</date>
       <subject>Release - significant revision</subject>
     </entry>
   </RevisionHistory>
- -->
- <!-- <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview"> The scope of this Protection Profile (PP) is to
-      describe the security functionality of operating systems in terms of <cite linkend="bibCC"/>
-      and to define functional and assurance requirements for such products.
-      An operating system is software that manages computer hardware and software
-      resources, and provides common services for application programs. The hardware
-      it manages may be physical or virtual.
+  -->
+ 
+ <chapter title="Introduction" id="int">
+    <section title="Overview" id="ppoverview">
+      This Extended Package (EP) describes security requirements for a Wireless Intrusion/Prevention System (WIDS/WIPS)
+      (defined to be a IEEE 802.11 network intrusion prevention product located at the edge of a private network that 
+      can collect, inspect, analyze, and react to network traffic in real-time) and is intended to provide a minimal 
+      baseline set of requirements that are targeted at mitigating well defined and described threats. This EP is not 
+      complete in itself, but rather extends either the collaborative Protection Profile for Network Devices (NDcPP). 
+      This introduction will describe the features of a compliant Target of Evaluation (TOE), and will also discuss 
+      how this EP is to be used in conjunction with the NDcPP. 
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
       technology terms used in this Protection Profile. <subsection title="Common Criteria Terms"
@@ -73,9 +76,8 @@
           </entry>
           <entry>
             <term><abbr title="Target of Evaluation">TOE</abbr></term>
-            <description>
-	      The product under evaluation. In this case, the Operating System as described in section 
-	      <xref linkend="TOEboundary"/> and its
+            <description> The product under evaluation. In this case, the Wireless Intrusion
+                Detection/Prevention System in section <xref linkend="TOEboundary"/> and its
               supporting documentation.
 	    </description>
           </entry>
@@ -111,11 +113,37 @@
       </subsection>
 	  </section>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      <subsection title="TOE Boundary" id="TOEboundary">
-        <figure entity="images/Toe.png" title="Figure 1: General TOE " id="toe"/>
-      </subsection>
-      <subsection title="TOE Platform" id="TOEplatform">
-      </subsection>
+      <h:p>This EP specifically addresses Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant 
+      WIDS/WIPS is a product that provides network security administrators with the ability to monitor, collect,
+      log, and react in real-time to potentially malicious network traffic.  A WIDS typically consists of multiple
+      sensors that passively scan their surrounding RF environment on the WLAN radio frequency spectrum for 
+      IEEE 802.11 traffic and a centralized mechanism such as a Server or Controller that processes the data 
+      collected by the sensors. The WIDS/WIPS could use an Embedded (be part of the WLAN infrastructure) or 
+      Overlay (independent from WLAN) architecture depending on vendor implementation.</h:p>
+      
+      <h:p>This EP is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the WIDS/WIPS 
+      will monitor will be wireless frames and RF spectrum for IEEE 802.11 a, b, g, and ac. Requirements for other 
+      technologies (i.e., cellular) and protocols are optional.</h:p>
+      
+      <h:p>Conformant TOEs will detect potentially malicious network traffic using various approaches. Broadly speaking,
+      the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification 
+      of ‘known’ threats may be performed through pattern matching, e.g. by matching strings of characters within a frame,
+      or by matching traffic patterns common with reconnaissance or denial of service (DoS) attacks. Identification of 
+      ‘unknown’ threats may be performed through use of various forms of ‘anomaly’ detection whereby the WIDS/WIPS is 
+      provided with (or ‘learns’/creates) a definition of ‘expected/typical’ traffic patterns, such that it’s able to 
+      detect and react to ’anomalous’ (unexpected/atypical) traffic patterns. </h:p>
+      
+      <h:p>The following are to be part of the evaluation:
+      <h:ul>
+        <h:li>Monitoring, detection and reporting capabilities offered by the WIDS/WIPS.</h:li>
+        <h:li>Use of secure communication paths between WIDS/WIPS components</h:li>
+        <h:li>Use of secure communication paths for WIDS/WIPS management and event monitoring.</h:li>
+        <h:li>Use of secure communication paths with external components (e.g., database and log server)</h:li>
+      </h:ul>
+      </h:p>
+    
+      <figure entity="images/Toe.png" title="Figure 1: General TOE " id="toe"/>
+      
     </section>
     <section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
       address the security problems in at least the following use cases. These use cases are intentionally
@@ -129,15 +157,15 @@
       </usecases>
     </section>
   </chapter>
-  -->
-  
-  <!--
+
+
   <chapter title="Conformance Claims" id="ccl">
     <cclaims>
       <cclaim id="Conformance Statement">
-        <description> To be conformant to this PP, a <abbr linkend="ST"/> must demonstrate Exact
+        <description> To be conformant to this EP, a <abbr linkend="ST"/> must demonstrate Exact
           Conformance, a subset of Strict Conformance as defined in <cite linkend="bibCC"/> Part 1
-          (ASE_CCL). The <abbr linkend="ST"/> must include all components in this PP that are: <h:ul>
+          (ASE_CCL). The <abbr linkend="ST"/> must include all components in this EP that are:
+          <h:ul>
             <h:li>unconditional (which are always required)</h:li>
             <h:li>selection-based (which are required when certain <h:i>selections</h:i> are chosen in the
               unconditional requirements)</h:li>
@@ -150,18 +178,25 @@
           conformant with this one, or extended by the <abbr linkend="ST"/>) not defined in this PP
           or a PP conformant to this one. 
           <h:br/>
-		  Some components in this Protection Profile have a dependency on
-		  other components.  In accordance with <cite linkend="bibCC"/> Part 1, <appref linkend="satisfiedreqs"/> 
-          includes justifications for those cases where the PP does not explicitly contain the component
-		  upon which there is a dependency.
+		      Some components in this Protection Profile have a dependency on other components.  In accordance 
+		      with <cite linkend="bibCC"/> Part 1, <appref linkend="satisfiedreqs"/> includes justifications for
+          those cases where the PP does not explicitly contain the component upon which there is a dependency.
         </description>
       </cclaim>
       <cclaim id="CC Conformance Claims">
-        <description>This PP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria
-          Version 3.1, Revision 4.<cite linkend="bibCC"/>.</description>
+        <description>
+          <h:p>The collaborative Protection Profile for Network Devices (NDcPP) defines the baseline Security 
+          Functional Requirements (SFRs) and Security Assurance Requirements (SARs) for network infrastructure
+          devices in general. This EP serves to extend the baseline set by either the NDcPP, with additional 
+          SFRs and associated ‘Assurance Activities’ specific to WIDS/WIPS devices. Assurance Activities are 
+          the actions that the evaluator performs in order to determine a TOE’s compliance to the SFRs. </h:p><h:br/>
+          
+          <h:p>This EP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria
+           Version 3.1, Revision 4.<cite linkend="bibCC"/>.</h:p><h:br/>
+        </description>
       </cclaim>
       <cclaim id="PP Claim">
-        <description>This PP does not claim conformance to any other Protection
+        <description>This EP does not claim conformance to any other Protection
           Profile.</description>
       </cclaim>
       <cclaim id="Package Claim">
@@ -169,24 +204,65 @@
       </cclaim>
     </cclaims>
   </chapter>
+
   
-  -->
   
-  
-  <chapter title="Security Problem Definition" id="spd">The security problem is described in terms
-    of the threats that the <abbr linkend="OS"/> is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the <abbr linkend="OS"/>
-    is expected to enforce. <section title="Threats" id="threats">
+  <chapter title="Security Problem Definition" id="spd">
+    <h:p>TWIDS/WIPS address a range of security threats related to detection of and reaction to potentially malicious WLAN 
+    traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, or to the 
+    network infrastructure, or to the TOE itself. Attacks against a WLAN could compromise the confidentiality and 
+    integrity of WLAN user and system data as well as the availability of the WLAN to legitimate users. </h:p><h:br/>
+    
+    <h:p>The term “monitored network” is used here to represent any WLAN that the TOE is configured to monitor and detect 
+    intrusions on.  The terms “WiFi Network” and “WLAN” will be used interchangeably to represent an IEEE 802.11 network.</h:p><h:br/> 
+    
+    <h:p>The proper installation, configuration, and administration of the WIDS/WIPS are critical to its correct operation. 
+    A site is responsible for developing its security policy and configuring a rule set that the WIDS/WIPS will enforce 
+    and provide an appropriate response to meet their needs, relative to their own risk analysis and their perceived threats.</h:p><h:br/>
+    
+    <h:p>Note that this EP does not repeat the threats identified in the NDcPP, though they all apply given the conformance 
+    and hence dependence of this EP on the NDcPP. Note also that while the NDcPP contains only threats to the ability of
+    the TOE to provide its security functions, this EP addresses only threats to resources in the operational environment. 
+    Together the threats of the NDcPP and those defined in this EP define the comprehensive set of security threats 
+    addressed by a WIDS/WIPS TOE.</h:p>
+    
+    
+    <section title="Threats" id="threats">
       <threats>
-        <threat id="T.QQQQ">
-          <description> </description>
+        <threat id="Unauthorized Disclosure of Information">
+          <description> Sensitive information on a protected WLAN might be disclosed resulting from disclosure/transmitted 
+            information in violation of policy, such as sending unencrypted sensitive data. The WIDS/WIPS will be capable 
+            of collecting and analyzing WLAN data to detect unauthorized disclosure of information.
+          </description>
           <objective-refer ref="O.QQQQ">
-            <rationale>The threat T.QQQQ is countered by O.QQQQ as this
+            <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by O.QQQQ as this
+              provides for .</rationale>
+          </objective-refer>
+        </threat>
+        <threat id="T.Unauthorized Access">
+          <description> An attacker may attempt to gain inappropriate access to one or more networks, endpoints, or services, 
+            such as by getting an end user device to connect to an unauthorized AP by impersonating an authorized AP. If 
+            malicious external devices are able to communicate with devices on the protected WLAN, then those devices may be
+            susceptible to the unauthorized disclosure of information.
+          </description>
+          <objective-refer ref="O.QQQQ">
+            <rationale>The threat T.Unauthorized_Access is countered by O.QQQQ as this
+              provides for .</rationale>
+          </objective-refer>
+        </threat>
+        <threat id="T.Disruption or Denial of Service (DoS)">
+          <description> Attacks against the WLAN infrastructure might lead to denial of services within a protected WLAN. A 
+            wireless DoS may occur in two ways: at the physical layer through RF Jamming, or at the data link layer through 
+            packet injection. 
+          </description>
+          <objective-refer ref="O.QQQQ">
+            <rationale>The threat T.Disruption is countered by O.QQQQ as this
               provides for .</rationale>
           </objective-refer>
         </threat>
       </threats>
     </section>
+    
     <section title="Assumptions" id="assumptions">
       <assumptions>
         <assumption id="A.QQQQ">
@@ -198,51 +274,78 @@
         </assumption>
       </assumptions>
     </section>
-<!--    <section title="Organizational Security Policies" id="OSPs">
-      <OSPs>
-        <OSP id="P.ENTERPRISE">
-          <description>If the OS is bound to a directory or management server, the configuration of
-            the OS software must be capable of adhering to the enterprise security policies
-            distributed by them.</description>
-          <objective-refer ref="O.MANAGEMENT">
-            <rationale>The organizational security policy P.ENTERPRISE is enforced through the
-              objective O.MANAGEMENT as this objective represents how the enterprise and user assert
-              management over the <abbr linkend="OS"/>.</rationale>
-          </objective-refer>
-        </OSP>
-      </OSPs>
-    </section> -->
+
   </chapter>
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.ACCOUNTABILITY">
-          <description> Conformant <abbr linkend="OS"/>s ensure that information exists that allows
-            administrators to discover unintentional issues with the configuration and operation of
-            the operating system and discover its cause.  Gathering event information and immediately 
-            transmitting it to another system can also enable incident response in the event
-            of system compromise.</description>
-          <component-refer ref="fau_gen.1"/>
+        <SO id="O.System Monitoring">
+          <description> 
+            To be able to analyze and react to potential network policy violations, the IPS must be able to 
+            collect and store essential data elements of network traffic on monitored networks. <h:br/>
+            (O.SYSTEM_MONITORING->)
+          </description>
+          <!--<component-refer ref="fau_gen.1"/>-->
+        </SO>
+        <SO id="O.Analysis of Network Traffic Policy Violations ">
+          <description> 
+            Entities that reside on or communicate across monitored networks must have network activity effectively
+            analyzed for potential violations of approved network usage.<h:br/>
+            
+            The TOE must be able to effectively analyze data collected from monitored networks to reduce the risk of
+            unauthorized disclosure of information, inappropriate access to services, and misuse of network resources.<h:br/>
+            
+            (O.IPS_ANALYZE->)
+          </description>
+          <!--<component-refer ref=""/>-->
+        </SO>
+        <SO id="O.Reaction to Network Traffic Policy Violations">
+          <description> The TOE must be able to react as configured by the administrators to isolate/contain 
+            WLAN devices that have been determined to violate administrator-defined IPS policies.  <h:br/>
+            (O.IPS_REACT->)
+          </description>
+          <!--<component-refer ref=""/>-->
+        </SO>
+        <SO id="O.TOE Administration ">
+          <description> To address the threat of unauthorized administrator access that is defined in the base PP, 
+            Conformant TOEs will provide the functions necessary for an administrator to configure the IDS/IPS Capabilities of the TOE.
+            <h:br/>
+            (O.TOE_ADMINISTRATION->)
+          </description>
+          <!--<component-refer ref=""/>-->
+        </SO>
+        <SO id="O.Insecure Operations">
+          <description> There may be instances where the TOE’s hardware malfunctions or the integrity of the TOE’s software is compromised, 
+            the latter being due to malicious or non-malicious intent. To address the concern of the TOE operating outside of its hardware 
+            or software specification, the TOE will shut down upon discovery of a problem reported via the self-test mechanism.
+            <h:br/>
+            (O.FAIL_SECURE ->)
+          </description>
+          <!--<component-refer ref=""/>-->
+        </SO>
+        <SO id="O.Trusted Communications">
+          <description> To further address the threat of untrusted communications channels that is defined in the base PP, conformant TOEs 
+            will provide trusted communications between distributed components if any exist. <h:br/>
+            (O.TRUSTED_COMMUNICATIONS->)
+          </description>
+          <!--<component-refer ref=""/>-->
         </SO>
       </SOs>
     </section>
     <section title="Security Objectives for the Operational Environment"
       id="SecurityObjectivesTOEorEnvironment">The following security objectives for the operational
-      environment assist the <abbr linkend="OS"/> in correctly providing its security functionality.
-      These track with the assumptions about the environment. <SOEs>
+      environment assist the TOE in correctly providing its security functionality.
+      These track with the assumptions about the environment. 
+      <SOEs>
         <SOE id="OE.PLATFORM">
-          <description>The <abbr linkend="OS"/> relies on being installed on trusted
+          <description>The <abbr linkend="WIDS/WIPS"/> relies on being installed on trusted
             hardware.</description>
         </SOE>
         <SOE id="OE.PROPER_USER">
-          <description> The user of the <abbr linkend="OS"/> is not willfully negligent or hostile,
-            and uses the software within compliance of the applied enterprise security policy.
-            Standard user accounts are provisioned in accordance with the least privilege model.
-            Users requiring higher levels of access should have a separate account dedicated for
-            that use. </description>
+          <description> Objective Description </description>
         </SOE>
         <SOE id="OE.PROPER_ADMIN">
-          <description> The administrator of the <abbr linkend="OS"/> is not careless, willfully
+          <description> The administrator of the is not careless, willfully
             negligent or hostile, and administers the OS within compliance of the applied enterprise
             security policy. </description>
         </SOE>
@@ -308,6 +411,7 @@
       clarification as to what the developer needs to provide to demonstrate the OS is compliant
       with the PP. <subsection title="Class ASE: Security Target" id="ase">As per ASE activities
         defined in <cite linkend="bibCEM"/>.</subsection>
+      
       <subsection title="Class ADV: Development" id="adv">The information about the <abbr
           linkend="OS"/> is contained in the guidance documentation available to the end user as
         well as the <abbr linkend="TSS"/> portion of the <abbr linkend="ST"/>. The <abbr
@@ -815,7 +919,7 @@
   </chapter>
 
   <appendix title="Optional Requirements" id="optional"> As indicated in <secref linkend="ccl"/>,
-    the baseline requirements (those that must be performed by the <abbr linkend="OS"/>) are
+    the baseline requirements (those that must be performed by the <abbr linkend="WIDS/WIPS"/>) are
     contained in the body of this PP. Additionally, there are three other types of requirements
     specified in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
       linkend="objective"/>. The first type (in this Appendix) are requirements that can be included
@@ -854,6 +958,9 @@
 	This information benefits systems engineering activities which call for inclusion of 
 	particular security controls.  Evaluation against the Protection Profile
 	provides evidence that these controls are present and have been evaluated.
+    
+    
+    
     <table>
 	<tr class="header">
 	<td>Requirement</td>
@@ -862,7 +969,7 @@
 	<tr>
 	<td>FIA_UAU.1 - Timing of authentication</td>
 	<td>
-	  <linkref linkend="FIA_AFL.1"/> implicitly requires that the OS perform all necessary actions, 
+	  <!--<linkref linkend="FIA_AFL.1"/>--> FIA_AFL.1 implicitly requires that the OS perform all necessary actions, 
 	  including those on behalf of the user who has not been authenticated, 
 	  in order to authenticate;
 	  therefore it is duplicative to include these actions as a 
@@ -870,69 +977,15 @@
 	</td>
 	</tr>
 	<tr>
-	<td>FIA_UID.1 - Timing of identification</td>
-	<td>
-	  <linkref linkend="FIA_AFL.1"/> implicitly requires that the OS perform all necessary actions, 
-	  including those on behalf of the user who has not been identified, 
-	  in order to authenticate;
-	  therefore it is duplicative to include these actions as a 
-	  separate assignment and test.
-	</td>
-	</tr>
-	<tr>
-	<td>FMT_SMR.1 - Security roles</td>
-	<td>
-	  <linkref linkend="FMT_MOF_EXT.1"/> specifies role-based management functions that implicitly defines
-	  user and privileged accounts; 
-	  therefore, it is duplicative to include separate role requirements.
-	</td>
-	</tr>
-	<tr>
-	<td>FPT_STM.1 - Reliable time stamps</td>
-	<td>
-	  <linkref linkend="FAU_GEN.1.2"/> explicitly requires that the OS associate timestamps with audit records;
-	  therefore it is duplicative to include a separate timestamp requirement.
-	</td>
-	</tr>
-	<tr>
-	<td>FTA_SSL.1 - TSF-initiated session locking</td>
-	<td>
-	  <linkref linkend="FMT_MOF_EXT.1"/> defines requirements for managing session locking;
-	  therefore, it is duplicative to include a separate session locking requirement.
-	</td>
-	</tr>
-	<tr>
-	<td>FTA_SSL.2 - User-initiated locking</td>
-	<td>
-	  <linkref linkend="FMT_MOF_EXT.1"/> defines requirements for user-initiated session locking;
-	  therefore, it is duplicative to include a separate session locking requirement.
-	</td>
-	</tr>
-	<tr>
-	<td>FAU_STG.1 - Protected audit trail storage</td>
-	<td>
-	  <linkref linkend="FPT_ACF_EXT.1"/> defines a requirement to protect audit logs;
-	  therefore, it is duplicative to include a separate protection of audit trail requirements.
-	</td>
-	</tr>
-	<tr>
 	<td>FAU_GEN.2 - User identity association</td>
 	<td>
-	  <linkref linkend="FAU_GEN.1.2"/> explicitly requires that the OS record
+	  <!--<linkref linkend="FAU_GEN.1.2"/> -->explicitly requires that the OS record
 	  any user account associated with each event; therefore, it is duplicative
 	  to include a separate requirement to associate a user account with each
 	  event.
 	</td>
 	</tr>
-	<tr>
-	  <td>FAU_SAR.1 - Audit review</td>
-	  <td>
-	    <linkref linkend="FPT_ACF_EXT.1.2"/> requires that audit logs (and other objects)
-	    are protected from reading by unprivileged users; therefore, it is duplicative
-	    to include a separate requirement to protect only the audit information.
-	  </td>
-	</tr>
-    </table>
+  </table>
 
   </appendix>
 
@@ -942,64 +995,19 @@
     evaluator will thoroughly understand the entropy source and why it can be relied upon to provide
     sufficient entropy. This documentation should include multiple detailed sections: design
     description, entropy justification, operating conditions, and health testing. This documentation
-    is not required to be part of the TSS. <section id="entropydesign" title="Design Description">
-      Documentation shall include the design of the entropy source as a whole, including the
-      interaction of all entropy source components. Any information that can be shared regarding the
-      design should also be included for any third-party entropy sources that are included in the
-      product. <h:br/> The documentation will describe the operation of the entropy source to include,
+    is not required to be part of the TSS. 
+    <section id="entropydesign" title="Design Description">
+      Documentation shall include the design of the entropy source as a whole, blah
+      <h:br/> The documentation will describe the operation of the entropy source to include,
       how entropy is produced, and how unprocessed (raw) data can be obtained from within the
-      entropy source for testing purposes. The documentation should walk through the entropy source
-      design indicating where the entropy comes from, where the entropy output is passed next, any
-      post-processing of the raw outputs (hash, XOR, etc.), if/where it is stored, and finally, how
-      it is output from the entropy source. Any conditions placed on the process (e.g., blocking)
-      should also be described in the entropy source design. Diagrams and examples are encouraged.
-      <h:br/> This design must also include a description of the content of the security boundary of
-      the entropy source and a description of how the security boundary ensures that an adversary
-      outside the boundary cannot affect the entropy rate. <h:br/> If implemented, the design
-      description shall include a description of how third-party applications can add entropy to the
-      RBG. A description of any RBG state saving between power-off and power-on shall be included. </section>
+    </section>
     <section id="entropyjustification" title="Entropy Justification"> There should be a technical
       argument for where the unpredictability in the source comes from and why there is confidence
       in the entropy source delivering sufficient entropy for the uses made of the RBG output (by
-      this particular OS). This argument will include a description of the expected min-entropy
-      rate (i.e. the minimum entropy (in bits) per bit or byte of source data) and explain that
-      sufficient entropy is going into the OS randomizer seeding process. This discussion will be
-      part of a justification for why the entropy source can be relied upon to produce bits with
-      entropy. <h:br/> The amount of information necessary to justify the expected min-entropy rate
-      depends on the type of entropy source included in the product. <h:br/> For developer provided
-      entropy sources, in order to justify the min-entropy rate, it is expected that a large number
-      of raw source bits will be collected, statistical tests will be performed, and the min-entropy
-      rate determined from the statistical tests. While no particular statistical tests are required
-      at this time, it is expected that some testing is necessary in order to determine the amount
-      of min-entropy in each output. <h:br/> For third-party provided entropy sources, in which the
-      OS vendor has limited access to the design and raw entropy data of the source, the
-      documentation will indicate an estimate of the amount of min-entropy obtained from this
-      third-party source. It is acceptable for the vendor to “assume” an amount of min-entropy,
-      however, this assumption must be clearly stated in the documentation provided. In particular,
-      the min-entropy estimate must be specified and the assumption included in the ST. <h:br/>
-      Regardless of type of entropy source, the justification will also include how the DRBG is
-      initialized with the entropy stated in the ST, for example by verifying that the min-entropy
-      rate is multiplied by the amount of source data used to seed the DRBG or that the rate of
-      entropy expected based on the amount of source data is explicitly stated and compared to the
-      statistical rate. If the amount of source data used to seed the DRBG is not clear or the
-      calculated rate is not explicitly related to the seed, the documentation will not be
-      considered complete. <h:br/> The entropy justification shall not include any data added from any
-      third-party application or from any state saving between restarts. </section>
-    <section id="entropyoperatingconditions" title="Operating Conditions"> The entropy rate may be
-      affected by conditions outside the control of the entropy source itself. For example, voltage,
-      frequency, temperature, and elapsed time after power-on are just a few of the factors that may
-      affect the operation of the entropy source. As such, documentation will also include the range
-      of operating conditions under which the entropy source is expected to generate random data. It
-      will clearly describe the measures that have been taken in the system design to ensure the
-      entropy source continues to operate under those conditions. Similarly, documentation shall
-      describe the conditions under which the entropy source is known to malfunction or become
-      inconsistent. Methods used to detect failure or degradation of the source shall be included. </section>
-    <section id="entropyhealthtesting" title="Health Testing"> More specifically, all entropy source
-      health tests and their rationale will be documented. This includes a description of the health
-      tests, the rate and conditions under which each health test is performed (e.g., at start,
-      continuously, or on-demand), the expected results for each health test, and rationale
-      indicating why each test is believed to be appropriate for detecting one or more failures in
-      the entropy source. </section>
+      this particular OS). 
+      <h:br/> The amount of information necessary to justify the expected min-entropy rate
+      depends on the type of entropy source included in the product. 
+    </section>
   </appendix>
 
   <appendix title="References" id="biblio">
@@ -1025,27 +1033,7 @@
             Evaluation Methodology for Information Technology Security - Evaluation Methodology</h:a>,
           CCMB-2012-09-004, Version 3.1, Revision 4, September 2012. </description>
       </entry>
-      <entry id="bibCESG">
-        <tag>CESG</tag>
-        <description>CESG - <h:a
-            href="https://www.gov.uk/government/collections/end-user-devices-security-guidance"> End
-            User Devices Security and Configuration Guidance</h:a></description>
-      </entry>
-      <entry id="bibCSA">
-        <tag>CSA</tag>
-        <description>
-          <h:a href="http://csrc.nist.gov/groups/SMA/ispab/documents/csa_87.txt">Computer Security Act
-            of 1987</h:a>, H.R. 145, June 11, 1987. </description>
-      </entry>
-      <entry id="bibOMB">
-        <tag>OMB</tag>
-        <description>
-          <h:a href="http://www.whitehouse.gov/sites/default/files/omb/memoranda/fy2006/m06-19.pdf"
-            >Reporting Incidents Involving Personally Identifiable Information and Incorporating the
-            Cost for Security in Agency Information Technology Investments</h:a>, OMB M-06-19, July
-          12, 2006. </description>
-      </entry>
-    </bibliography>
+  </bibliography>
   </appendix>
 
   <appendix title="Acronyms" id="acronyms">
@@ -1055,105 +1043,24 @@
         <description>Advanced Encryption Standard</description>
       </entry>
       <entry>
-        <term>ANSI</term>
-        <description>American National Standards Institute</description>
-      </entry>
-      <entry>
-        <term>API</term>
-        <description>Application Programming Interface</description>
-      </entry>
-      <entry>
-        <term>ASLR</term>
-        <description>Address Space Layout Randomization</description>
-      </entry>
-      <!-- Never used -->
-      <!-- <entry> -->
-      <!--   <term>CDSA</term> -->
-      <!--   <description>Common Data Security Architecture</description> -->
-      <!-- </entry> -->
-      <entry>
-        <term>CESG</term>
-        <description>Communications-Electronics Security Group</description>
-      </entry>
-      <entry>
-        <term>CMC</term>
-        <description>Certificate Management over CMS</description>
-      </entry>
-      <entry>
-        <term>CMS</term>
-        <description>Cryptographic Message Syntax</description>
-      </entry>
-      <entry>
-        <term>CN</term>
-        <description>Common Names</description>
-      </entry>
-      <entry>
-        <term>CRL</term>
-        <description>Certificate Revocation List</description>
-      </entry>
-      <entry>
-        <term>CSA</term>
-        <description>Computer Security Act</description>
-      </entry>
-      <entry>
-        <term>DEP</term>
-        <description>Data Execution Prevention</description>
-      </entry>
-      <entry>
         <term>DES</term>
         <description>Data Encryption Standard</description>
-      </entry>
-      <entry>
-        <term>DHE</term>
-        <description>Diffie-Hellman Ephemeral</description>
       </entry>
       <entry>
         <term>DNS</term>
         <description>Domain Name System</description>
       </entry>
       <entry>
-        <term>DRBG</term>
-        <description>Deterministic Random Bit Generator</description>
-      </entry>
-      <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <entry>
-        <term>DT</term>
-        <description>Date/Time Vector</description>
-      </entry>
-      <entry>
-        <term>DTLS</term>
-        <description>Datagram Transport Layer Security</description>
-      </entry>
-      <entry>
         <term>EAP</term>
         <description>Extensible Authentication Protocol</description>
       </entry>
       <entry>
-        <term>ECDHE</term>
-        <description>Elliptic Curve Diffie-Hellman Ephemeral</description>
-      </entry>
-      <entry>
-        <term>ECDSA</term>
-        <description>Elliptic Curve Digital Signature Algorithm</description>
-      </entry>
-      <entry>
-        <term>EST</term>
-        <description>Enrollment over Secure Transport</description>
+        <term>EP</term>
+        <description>Extended Package</description>
       </entry>
       <entry>
         <term>FIPS</term>
         <description>Federal Information Processing Standards</description>
-      </entry>
-      <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <entry>
-        <term>HMAC</term>
-        <description>Hash-based Message Authentication Code</description>
       </entry>
       <entry>
         <term>HTTP</term>
@@ -1164,36 +1071,12 @@
         <description>Hypertext Transfer Protocol Secure</description>
       </entry>
       <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <!-- <entry> -->
-      <!--   <term>IEC</term> -->
-      <!--   <description>International Electrotechnical Commission</description> -->
-      <!-- </entry> -->
-      <entry>
-        <term>IETF</term>
-        <description>Internet Engineering Task Force</description>
-      </entry>
-      <entry>
         <term>IP</term>
         <description>Internet Protocol</description>
       </entry>
       <entry>
         <term>ISO</term>
         <description>International Organization for Standardization</description>
-      </entry>
-      <entry>
-        <term>IT</term>
-        <description>Information Technology</description>
-      </entry>
-      <entry>
-        <term>ITSEF</term>
-        <description>Information Technology Security Evaluation Facility</description>
-      </entry>
-      <entry>
-        <term>NFC</term>
-        <description>Near Field Communication</description>
       </entry>
       <entry>
         <term>NIAP</term>
@@ -1232,24 +1115,8 @@
         <description>Protection Profile</description>
       </entry>
       <entry>
-        <term>RBG</term>
-        <description>Random Bit Generator</description>
-      </entry>
-      <entry>
         <term>RFC</term>
         <description>Request for Comment</description>
-      </entry>
-      <entry>
-        <term>RNG</term>
-        <description>Random Number Generator</description>
-      </entry>
-      <entry>
-        <term>RNGVS</term>
-        <description>Random Number Generator Validation System</description>
-      </entry>
-      <entry>
-        <term>SAN</term>
-        <description>Subject Alternative Name</description>
       </entry>
       <entry>
         <term>SAR</term>
@@ -1264,41 +1131,14 @@
         <description>Secure Hash Algorithm</description>
       </entry>
       <entry>
-        <term>S/MIME</term>
-        <description>Secure/Multi-purpose Internet Mail Extensions</description>
-      </entry>
-      <entry>
-        <term>SIP</term>
-        <description>Session Initiation Protocol</description>
-      </entry>
-      <entry>
-        <term>SWID</term>
-        <description>Software Identification</description>
-      </entry>
-      <entry>
         <term>TLS</term>
         <description>Transport Layer Security</description>
       </entry>
       <entry>
-        <term>URI</term>
-        <description>Uniform Resource Identifier</description>
+        <term>WIDS/WIPS</term>
+        <description>Wireless Intrusion Detection/Prevention System</description>
       </entry>
-      <entry>
-        <term>URL</term>
-        <description>Uniform Resource Locator</description>
-      </entry>
-      <entry>
-        <term>USB</term>
-        <description>Universal Serial Bus</description>
-      </entry>
-      <entry>
-        <term>XCCDF</term>
-        <description>eXtensible Configuration Checklist Description Format</description>
-      </entry>
-      <entry>
-        <term>XOR</term>
-        <description>Exclusive Or</description>
-      </entry>
+
     </acronyms>
   </appendix>
   
