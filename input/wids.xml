@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
-
 <PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="WIDS/WIPS EP"
     xmlns:h="http://www.w3.org/1999/xhtml">
   <!-- <inline-comment color='green'> Hello World QQQQ </inline-comment> -->
@@ -105,23 +104,23 @@
       <subsection title="Technology Terms" id="techterms">
         <glossary>
           <entry>
-            <term><abbr title="SOMETHING"></abbr></term>
-            <description>
-	    </description>
-          </entry>
+            <term><abbr title="Wireless Intrustion Detection System/Wireless Intrusion Prevention System">WIDS/WIPS</abbr></term>
+            <description>Describe what these are.<abbr linkend="TOE"/>.
+            </description>
+          </entry> 
         </glossary>
       </subsection>
 	  </section>
    
-   <section title="Conformance Claims" id="CC Conformance Claims">
-        <h:p>The collaborative Protection Profile for Network Devices (NDcPP) defines the baseline Security 
+   <section title="Conformance Claims" id="ConformanceClaims">
+         The collaborative Protection Profile for Network Devices (NDcPP) defines the baseline Security 
          Functional Requirements (SFRs) and Security Assurance Requirements (SARs) for network infrastructure
          devices in general. This EP serves to extend the baseline set by either the NDcPP, with additional 
          SFRs and associated ‘Assurance Activities’ specific to WIDS/WIPS devices. Assurance Activities are 
-         the actions that the evaluator performs in order to determine a TOE’s compliance to the SFRs. </h:p><h:br/>
-       
-       <h:p>This EP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria
-         Version 3.1, Revision 4.<cite linkend="bibCC"/>.</h:p>
+         the actions that the evaluator performs in order to determine a TOE’s compliance to the SFRs.
+         <h:br/><h:br/>
+         This EP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria
+         Version 3.1, Revision 4 <cite linkend="bibCC"/>.
    </section>
    
    <section title="How to Use This Extended Package" id="Usage">
@@ -204,7 +203,7 @@
     
     <section title="Threats" id="threats">
       <threats>
-        <threat id="T.Unauthorized_Disclosure_of_Information">
+        <threat id="T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">
           <description> Sensitive information on a protected WLAN might be disclosed resulting from disclosure/transmitted 
             information in violation of policy, such as sending unencrypted sensitive data. The WIDS/WIPS will be capable 
             of collecting and analyzing WLAN data to detect unauthorized disclosure of information.
@@ -214,7 +213,7 @@
               provides for .</rationale>
           </objective-refer>
         </threat>
-        <threat id="T.Unauthorized_Access">
+        <threat id="T.UNAUTHORIZED_ACCESS">
           <description> An attacker may attempt to gain inappropriate access to one or more networks, endpoints, or services, 
             such as by getting an end user device to connect to an unauthorized AP by impersonating an authorized AP. If 
             malicious external devices are able to communicate with devices on the protected WLAN, then those devices may be
@@ -225,7 +224,7 @@
               provides for .</rationale>
           </objective-refer>
         </threat>
-        <threat id="T.Disruption">
+        <threat id="T.DISRUPTION">
           <description> Attacks against the WLAN infrastructure might lead to denial of services (DoS) within a protected WLAN. A 
             wireless DoS may occur in two ways: at the physical layer through RF Jamming, or at the data link layer through 
             packet injection. 
@@ -254,7 +253,7 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.System Monitoring">
+        <SO id="O.SYSTEM_MONITORING">
           <description> 
             To be able to analyze and react to potential network policy violations, the IPS must be able to 
             collect and store essential data elements of network traffic on monitored networks. <h:br/>
@@ -262,7 +261,7 @@
           </description>
           <!--<component-refer ref="fau_gen.1"/>-->
         </SO>
-        <SO id="O.Analysis of Network Traffic Policy Violations ">
+        <SO id="O.ANALYSIS_OF_NETWORK_TRAFFIC_POLICY_VIOLATIONS">
           <description> 
             Entities that reside on or communicate across monitored networks must have network activity effectively
             analyzed for potential violations of approved network usage.<h:br/>
@@ -274,14 +273,14 @@
           </description>
           <!--<component-refer ref=""/>-->
         </SO>
-        <SO id="O.Reaction to Network Traffic Policy Violations">
+        <SO id="O.REACTION_TO_NETWORK_TRAFFIC_POLICY_VIOLATIONS">
           <description> The TOE must be able to react as configured by the administrators to isolate/contain 
             WLAN devices that have been determined to violate administrator-defined IPS policies.  <h:br/>
             (O.IPS_REACT->)
           </description>
           <!--<component-refer ref=""/>-->
         </SO>
-        <SO id="O.TOE Administration ">
+        <SO id="O.TOE_ADMINISTRATION">
           <description> To address the threat of unauthorized administrator access that is defined in the base PP, 
             Conformant TOEs will provide the functions necessary for an administrator to configure the IDS/IPS Capabilities of the TOE.
             <h:br/>
@@ -289,7 +288,7 @@
           </description>
           <!--<component-refer ref=""/>-->
         </SO>
-        <SO id="O.Insecure Operations">
+        <SO id="O.INSECURE_OPERATIONS">
           <description> There may be instances where the TOE’s hardware malfunctions or the integrity of the TOE’s software is compromised, 
             the latter being due to malicious or non-malicious intent. To address the concern of the TOE operating outside of its hardware 
             or software specification, the TOE will shut down upon discovery of a problem reported via the self-test mechanism.
@@ -298,7 +297,7 @@
           </description>
           <!--<component-refer ref=""/>-->
         </SO>
-        <SO id="O.Trusted Communications">
+        <SO id="O.TRUSTED_COMMUNICATIONS">
           <description> To further address the threat of untrusted communications channels that is defined in the base PP, conformant TOEs 
             will provide trusted communications between distributed components if any exist. <h:br/>
             (O.TRUSTED_COMMUNICATIONS->)
@@ -331,12 +330,9 @@
   </chapter>
   
   <chapter title="Security Requirements" id="req">This chapter describes the security requirements
-    which have to be fulfilled by the <abbr linkend="WIDS/WIPS"/>. 
-    
-    <section title="Conventions" id="Conventions">The CC defines operations on Security Functional 
-      Requirements: assignments, selections, assignments within selections and refinements. This 
-      document uses the following font conventions to identify the operations defined by the CC:
-     <h:ul>
+    which have to be fulfilled by the <abbr linkend="WIDS/WIPS"/>. Those requirements comprise functional
+    components from Part 2 and assurance components from Part 3 of <cite linkend="bibCC"/>. The
+    following notations are used: <h:ul>
       <h:li>
         <h:b>Refinement</h:b> operation (denoted by <h:b>bold text</h:b>): is used to add details to a
         requirement, and thus further restricts a requirement.</h:li>
@@ -351,7 +347,6 @@
         <h:b>Iteration</h:b> operation: are identified with a number inside parentheses (e.g.
         "(1)")</h:li>
     </h:ul>
-    </section>
     <section title="Security Functional Requirements" id="SFRs">The Security Functional Requirements
       included in this section are derived from Part 2 of the Common Criteria for Information
       Technology Security Evaluation, Version 3.1, Revision 4, with additional extended functional
