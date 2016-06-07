@@ -361,6 +361,37 @@
           </aactivity>
           </f-element>
         </f-component>
+        
+        <f-component id="QQQ_QQQ.2" name="QQQQO" status="objective">
+          <f-element id="QQQ_QQQ.1.2">
+            <title> 
+            </title>
+            <note role="application"></note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="QQQ_QQQ.3" name="QQQQOP" status="optional">
+          <f-element id="QQQ_QQQ.1.3">
+            <title> 
+            </title>
+            <note role="application"></note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="QQQ_QQQ.4" name="QQQQOS" status="sel-based">
+          <f-element id="QQQ_QQQ.1.4">
+            <title> 
+            </title>
+            <note role="application"></note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+        
       </subsection>
     </section>
   </chapter>
@@ -415,12 +446,7 @@
     
   </appendix>
   -->
-
-<!--  
-  <appendix title="Test" id="test">
-    Blah
-  </appendix>
- --> 
+  
   <appendix title="Optional Requirements" id="optional"> 
     As indicated in <secref linkend="ccl"/>,
     the baseline requirements (those that must be performed by the <abbr linkend="WIDS/WIPS"/>) are
@@ -436,18 +462,6 @@
     ST author is responsible for ensuring that requirements that may be associated with those in
     <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref linkend="objective"/>
     but are not listed (e.g., FMT-type requirements) are also included in the ST. 
-    <!--<section title="QQQQ" id="QQQQ">
-        <f-component id="QQQ_QQQ.1" name="QQQQQ" status="threshold">
-          <f-element id="QQQ_QQQ.1.1">
-            <title> 
-            </title>
-            <note role="application"></note>
-            <aactivity>	    
-            </aactivity>
-          </f-element>
-        </f-component>
-      </section>
-      -->  
   </appendix>
 
   <appendix title="Selection-Based Requirements" id="sel-based"> As indicated in the introduction to
@@ -455,20 +469,6 @@
     platform) are contained in the body of this PP. There are additional requirements based on
     selections in the body of the PP: if certain selections are made, then additional requirements
     below will need to be included. 
-    
-      <!--<section title="QQQQ" id="QQQQ">
-        <f-component id="QQQ_QQQ.1" name="QQQQQ" status="threshold">
-          <f-element id="QQQ_QQQ.1.1">
-            <title> 
-            </title>
-            <note role="application"></note>
-            <aactivity>	    
-            </aactivity>
-          </f-element>
-        </f-component>
-      </section>
-      -->
-    
   </appendix>
 
   <appendix title="Objective Requirements" id="objective"> This appendix includes requirements that
@@ -477,19 +477,6 @@
     in commercial technology. However, these requirements may be included in the ST such that the
     OS is still conformant to this PP, and it is expected that they be included as soon as
     possible. 
-    
-      <!--<section title="QQQQ" id="QQQQ">
-        <f-component id="QQQ_QQQ.1" name="QQQQQ" status="threshold">
-          <f-element id="QQQ_QQQ.1.1">
-            <title> 
-            </title>
-            <note role="application"></note>
-            <aactivity>	    
-            </aactivity>
-          </f-element>
-        </f-component>
-      </section>
-      -->
   </appendix>
 
   <appendix title="References" id="biblio">
