@@ -363,7 +363,7 @@
         </f-component>
         
         <f-component id="QQQ_QQQ.2" name="QQQQO" status="objective">
-          <f-element id="QQQ_QQQ.1.2">
+          <f-element id="QQQ_QQQ.1.2" status="objective">
             <title> 
             </title>
             <note role="application"></note>
