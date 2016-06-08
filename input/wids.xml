@@ -502,7 +502,7 @@
   -->
   
   <appendix title="Optional Requirements" id="optional"> 
-    As indicated in <secref linkend="ccl"/>,
+    As indicated in <secref linkend="ConformanceClaims"/>,
     the baseline requirements (those that must be performed by the <abbr linkend="WIDS/WIPS"/>) are
     contained in the body of this PP. Additionally, there are three other types of requirements
     specified in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
