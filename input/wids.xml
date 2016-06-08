@@ -102,8 +102,8 @@
         <glossary>
           <entry>
             <term><abbr title="Wireless Intrustion Detection/Prevention System">WIDS/WIPS</abbr></term>
-            <description>An WLAN security product that provides network security administrators with the ability to monitor, collect,
-              log, and react in real-time to potentially malicious wireless network traffic.</description>
+            <description>A security product that provides network security administrators with the ability to monitor, collect,
+              log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
           </entry> 
           <entry>
             <term><abbr title="Another Term">AT</abbr></term>
