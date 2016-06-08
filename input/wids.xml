@@ -136,11 +136,11 @@
    </section>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <h:p>This EP specifically addresses Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant 
-      WIDS/WIPS is a product that provides network security administrators with the ability to monitor, collect,
+      <abbr linkend="WIDS/WIPS"/> is a product that provides network security administrators with the ability to monitor, collect,
       log, and react in real-time to potentially malicious network traffic.  A WIDS typically consists of multiple
       sensors that passively scan their surrounding RF environment on the WLAN radio frequency spectrum for 
       IEEE 802.11 traffic and a centralized mechanism such as a Server or Controller that processes the data 
-      collected by the sensors. The WIDS/WIPS could use an Embedded (be part of the WLAN infrastructure) or 
+      collected by the sensors. The <abbr linkend="WIDS/WIPS"/> could use an Embedded (be part of the WLAN infrastructure) or 
       Overlay (independent from WLAN) architecture depending on vendor implementation.</h:p><h:br/>
       
       <h:p>This EP is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the WIDS/WIPS 
@@ -151,15 +151,15 @@
       the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification 
       of ‘known’ threats may be performed through pattern matching, e.g. by matching strings of characters within a frame,
       or by matching traffic patterns common with reconnaissance or denial of service (DoS) attacks. Identification of 
-      ‘unknown’ threats may be performed through use of various forms of ‘anomaly’ detection whereby the WIDS/WIPS is 
+      ‘unknown’ threats may be performed through use of various forms of ‘anomaly’ detection whereby the <abbr linkend="WIDS/WIPS"/> is 
       provided with (or ‘learns’/creates) a definition of ‘expected/typical’ traffic patterns, such that it’s able to 
       detect and react to ’anomalous’ (unexpected/atypical) traffic patterns. </h:p><h:br/>
       
       <h:p>The following are to be part of the evaluation:
       <h:ul>
-        <h:li>Monitoring, detection and reporting capabilities offered by the WIDS/WIPS.</h:li>
-        <h:li>Use of secure communication paths between WIDS/WIPS components</h:li>
-        <h:li>Use of secure communication paths for WIDS/WIPS management and event monitoring.</h:li>
+        <h:li>Monitoring, detection and reporting capabilities offered by the <abbr linkend="WIDS/WIPS"/>.</h:li>
+        <h:li>Use of secure communication paths between <abbr linkend="WIDS/WIPS"/> components</h:li>
+        <h:li>Use of secure communication paths for <abbr linkend="WIDS/WIPS"/> management and event monitoring.</h:li>
         <h:li>Use of secure communication paths with external components (e.g., database and log server)</h:li>
       </h:ul>
       </h:p>
@@ -182,7 +182,7 @@
   </chapter>  
   
   <chapter title="Security Problem Definition" id="spd">
-    <h:p>TWIDS/WIPS address a range of security threats related to detection of and reaction to potentially malicious WLAN 
+    <h:p><abbr linkend="WIDS/WIPS"/> address a range of security threats related to detection of and reaction to potentially malicious WLAN 
     traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, or to the 
     network infrastructure, or to the TOE itself. Attacks against a WLAN could compromise the confidentiality and 
     integrity of WLAN user and system data as well as the availability of the WLAN to legitimate users. </h:p><h:br/>
@@ -190,22 +190,22 @@
     <h:p>The term “monitored network” is used here to represent any WLAN that the TOE is configured to monitor and detect 
     intrusions on.  The terms “WiFi Network” and “WLAN” will be used interchangeably to represent an IEEE 802.11 network.</h:p><h:br/> 
     
-    <h:p>The proper installation, configuration, and administration of the WIDS/WIPS are critical to its correct operation. 
-    A site is responsible for developing its security policy and configuring a rule set that the WIDS/WIPS will enforce 
+    <h:p>The proper installation, configuration, and administration of the <abbr linkend="WIDS/WIPS"/> are critical to its correct operation. 
+    A site is responsible for developing its security policy and configuring a rule set that the <abbr linkend="WIDS/WIPS"/> will enforce 
     and provide an appropriate response to meet their needs, relative to their own risk analysis and their perceived threats.</h:p><h:br/>
     
     <h:p>Note that this EP does not repeat the threats identified in the NDcPP, though they all apply given the conformance 
     and hence dependence of this EP on the NDcPP. Note also that while the NDcPP contains only threats to the ability of
     the TOE to provide its security functions, this EP addresses only threats to resources in the operational environment. 
     Together the threats of the NDcPP and those defined in this EP define the comprehensive set of security threats 
-    addressed by a WIDS/WIPS TOE.</h:p>
+    addressed by a <abbr linkend="WIDS/WIPS"/> TOE.</h:p>
     
     
     <section title="Threats" id="threats">
       <threats>
         <threat id="T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">
           <description> Sensitive information on a protected WLAN might be disclosed resulting from disclosure/transmitted 
-            information in violation of policy, such as sending unencrypted sensitive data. The WIDS/WIPS will be capable 
+            information in violation of policy, such as sending unencrypted sensitive data. The <abbr linkend="WIDS/WIPS"/> will be capable 
             of collecting and analyzing WLAN data to detect unauthorized disclosure of information.
           </description>
           <objective-refer ref="O.QQQQ">
