@@ -101,7 +101,7 @@
       <subsection title="Technology Terms" id="techterms">
         <glossary>
           <entry>
-            <term><abbr title="Wireless Intrustion Detection System/Wireless Intrusion Prevention System">WIDS/WIPS</abbr></term>
+            <term><abbr title="Wireless Intrustion Detection/Prevention System">WIDS/WIPS</abbr></term>
             <description>Describe. This is the <abbr linkend="TOE"/>.</description>
           </entry> 
           <entry>
