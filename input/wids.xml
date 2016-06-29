@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
+<?xml-model href="../transforms/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="WIDS/WIPS EP"
     xmlns:h="http://www.w3.org/1999/xhtml">
   <!-- <inline-comment color='green'> Hello World QQQQ </inline-comment> -->
@@ -125,47 +126,44 @@
    </section>
    
    <section title="How to Use This Extended Package" id="Usage">
-     <h:p>As an EP of the NDcPP it is expected that the content of both this EP and the base PP be appropriately 
+     As an EP of the NDcPP it is expected that the content of both this EP and the base PP be appropriately 
        combined in the context of each product-specific Security Target. This EP has been specifically defined 
        such that there should be no difficulty or ambiguity in so doing. An ST must identify the applicable 
        version of the NDcPP (see http://www.niap-ccevs.org/pp/ for the current version) and this EP in its 
        conformance claims. 
-     </h:p>
-     
-     <!--<figure entity="images/Toe.png" title="Figure 1: General TOE " id="toe"/>-->
-     
    </section>
+
+
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      <h:p>This EP specifically addresses Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant 
+      This EP specifically addresses Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant 
       <abbr linkend="WIDS/WIPS"/> is a product that provides network security administrators with the ability to monitor, collect,
       log, and react in real-time to potentially malicious network traffic.  A WIDS typically consists of multiple
       sensors that passively scan their surrounding RF environment on the WLAN radio frequency spectrum for 
       IEEE 802.11 traffic and a centralized mechanism such as a Server or Controller that processes the data 
       collected by the sensors. The <abbr linkend="WIDS/WIPS"/> could use an Embedded (be part of the WLAN infrastructure) or 
-      Overlay (independent from WLAN) architecture depending on vendor implementation.</h:p><h:br/>
+      Overlay (independent from WLAN) architecture depending on vendor implementation.<h:br/><h:br/>
       
-      <h:p>This EP is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the WIDS/WIPS 
+      This EP is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the WIDS/WIPS 
       will monitor will be wireless frames and RF spectrum for IEEE 802.11 a, b, g, and ac. Requirements for other 
-      technologies (i.e., cellular) and protocols are optional.</h:p><h:br/>
+      technologies (i.e., cellular) and protocols are optional.<h:br/><h:br/>
       
-      <h:p>Conformant TOEs will detect potentially malicious network traffic using various approaches. Broadly speaking,
+      Conformant TOEs will detect potentially malicious network traffic using various approaches. Broadly speaking,
       the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification 
       of ‘known’ threats may be performed through pattern matching, e.g. by matching strings of characters within a frame,
       or by matching traffic patterns common with reconnaissance or denial of service (DoS) attacks. Identification of 
       ‘unknown’ threats may be performed through use of various forms of ‘anomaly’ detection whereby the <abbr linkend="WIDS/WIPS"/> is 
       provided with (or ‘learns’/creates) a definition of ‘expected/typical’ traffic patterns, such that it’s able to 
-      detect and react to ’anomalous’ (unexpected/atypical) traffic patterns. </h:p><h:br/>
+      detect and react to ’anomalous’ (unexpected/atypical) traffic patterns.<h:br/><h:br/>
       
-      <h:p>The following are to be part of the evaluation:
+      The following are to be part of the evaluation:
       <h:ul>
         <h:li>Monitoring, detection and reporting capabilities offered by the <abbr linkend="WIDS/WIPS"/>.</h:li>
         <h:li>Use of secure communication paths between <abbr linkend="WIDS/WIPS"/> components</h:li>
         <h:li>Use of secure communication paths for <abbr linkend="WIDS/WIPS"/> management and event monitoring.</h:li>
         <h:li>Use of secure communication paths with external components (e.g., database and log server)</h:li>
-      </h:ul>
-      </h:p>
-    
-      <figure entity="images/Toe.png" title="Figure 1: General TOE " id="toe"/>
+      </h:ul> <h:br/>
+      
+      <figure entity="images/TOE.jpg" title="Figure 1: General TOE " id="toe"/>
     </section>
    
    <!--<section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
@@ -183,23 +181,23 @@
   </chapter>  
   
   <chapter title="Security Problem Definition" id="spd">
-    <h:p><abbr linkend="WIDS/WIPS"/> address a range of security threats related to detection of and reaction to potentially malicious WLAN 
+    <abbr linkend="WIDS/WIPS"/> address a range of security threats related to detection of and reaction to potentially malicious WLAN 
     traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, or to the 
     network infrastructure, or to the TOE itself. Attacks against a WLAN could compromise the confidentiality and 
-    integrity of WLAN user and system data as well as the availability of the WLAN to legitimate users. </h:p><h:br/>
+    integrity of WLAN user and system data as well as the availability of the WLAN to legitimate users. <h:br/><h:br/> 
     
-    <h:p>The term “monitored network” is used here to represent any WLAN that the TOE is configured to monitor and detect 
-    intrusions on.  The terms “WiFi Network” and “WLAN” will be used interchangeably to represent an IEEE 802.11 network.</h:p><h:br/> 
+    The term “monitored network” is used here to represent any WLAN that the TOE is configured to monitor and detect 
+    intrusions on.  The terms “WiFi Network” and “WLAN” will be used interchangeably to represent an IEEE 802.11 network.<h:br/> <h:br/> 
     
-    <h:p>The proper installation, configuration, and administration of the <abbr linkend="WIDS/WIPS"/> are critical to its correct operation. 
+    The proper installation, configuration, and administration of the <abbr linkend="WIDS/WIPS"/> are critical to its correct operation. 
     A site is responsible for developing its security policy and configuring a rule set that the <abbr linkend="WIDS/WIPS"/> will enforce 
-    and provide an appropriate response to meet their needs, relative to their own risk analysis and their perceived threats.</h:p><h:br/>
+    and provide an appropriate response to meet their needs, relative to their own risk analysis and their perceived threats.<h:br/><h:br/> 
     
-    <h:p>Note that this EP does not repeat the threats identified in the NDcPP, though they all apply given the conformance 
+    Note that this EP does not repeat the threats identified in the NDcPP, though they all apply given the conformance 
     and hence dependence of this EP on the NDcPP. Note also that while the NDcPP contains only threats to the ability of
     the TOE to provide its security functions, this EP addresses only threats to resources in the operational environment. 
     Together the threats of the NDcPP and those defined in this EP define the comprehensive set of security threats 
-    addressed by a <abbr linkend="WIDS/WIPS"/> TOE.</h:p>
+    addressed by a <abbr linkend="WIDS/WIPS"/> TOE.
     
     
     <section title="Threats" id="threats">
@@ -353,12 +351,20 @@
       included in this section are derived from Part 2 of the Common Criteria for Information
       Technology Security Evaluation, Version 3.1, Revision 4, with additional extended functional
       components. 
-      <subsection title="QQQQ" id="QQQQ">
-        <f-component id="QQQ_QQQ.1" name="QQQQQ" status="threshold">
-          <f-element id="QQQ_QQQ.1.1">
-            <title> A threshold requirement.
+      <subsection title="Security Audit" id="FAU">
+        <f-component id="FAU_ARP.1" name="Security Alarms" status="threshold">
+          <f-element id="fau_arp.1.1">
+            <title> The TSF shall take <h:i>[the following actions: display alert to Authorized Administrator in 
+              sufficient detail to show severity level, </h:i><selectables>
+                <selectable>capture raw frame traffic that triggers the violation</selectable>
+                <selectable>no other actions</selectable>
+              </selectables>] upon detection of a potential security violation.
+              
             </title>
-            <note role="application"></note>
+            <note role="application">The capturing of raw frames that triggers the violation is an objective
+              requirement. If the ST author selects capturing of raw frames that triggers the violation, 
+              the ST author must include the following SFRs: FAU_STG_EXT.1.1/pcap, FAU_STG_EXT.1.2/pcap, 
+              FAU_STG_EXT.1.3/pcap</note>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
               </tss>
@@ -375,79 +381,908 @@
           </f-element>
         </f-component>
         
-        <f-component id="QQQ_QQQ.2" name="QQQQO" status="objective">
-          <f-element id="QQQ_QQQ.1.2">
-            <title> An objective requirement.
+        <f-component id="FAU_ARP_EXT.2" name="Security Alarm Filtering" status="threshold">
+          <f-element id="FAU_ARP_EXT.2.1">
+            <title> The TSF shall provide the ability to apply <assignable>methods of selection and/or ordering</assignable> 
+              to selectively exclude alerts from being generated.  
             </title>
-            <note role="application"></note>
-            <aactivity>	    
+      
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
             </aactivity>
           </f-element>
         </f-component>
         
-        <f-component id="QQQ_QQQ.3" name="QQQQOP" status="optional">
-          <f-element id="QQQ_QQQ.1.3">
-            <title> An optional requirement.
-            </title>
-            <note role="application"></note>
-            <aactivity>	    
-            </aactivity>
-          </f-element>
-        </f-component>
         
-        <f-component id="QQQ_QQQ.4" name="QQQQOS" status="sel-based">
-          <f-element id="QQQ_QQQ.1.4">
-            <title> A selection based requirement.  The TSF shall: 
+        <f-component id="FAU_IDS_EXT.1" name="Intrusion Detection System – Intrusion Detection Methods" status="threshold">
+          <f-element id="fau_ids_ext.1.1">
+            <title> The TSF shall provide the following methods of intrusion detection: 
               <selectables>
-                <selectable>selection 1</selectable>
-                <selectable>selection 2</selectable>
-                <selectable>selection 3</selectable>
-              </selectables> and no others. 
+                <selectable>anomaly-based</selectable>
+                <selectable>signature-based</selectable>
+                <selectable>hybrid</selectable>
+              </selectables>
             </title>
-            <note role="application"></note>
+            <note role="application">At least one detection method must be selected.Based on the selection made in 
+              this SFR, the following SFRs must also be included: <h:br/>
+              If anomaly-based detection is selected:   FAU_ANO_EXT.1.1 and FAU_ANO_EXT.1.2<h:br/>
+              If signature-based detection is selected:   FAU_SIG_EXT.1.1<h:br/>
+              If hybrid intrusion detection is selected indicate which methods are used. 
+             </note>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_inv_ext.1" name="Environmental Inventory" status="threshold">
+          <f-element id="fau_inv_ext.1.1">
+            <title> The TSF shall provide Authorized Administrators with the ability to define an inventory 
+              of <h:i>[authorized WLAN network devices]</h:i> based on <h:i>[EUD MAC addresses, AP MAC addresses]</h:i>.
+            </title>
+            <note role="application">This inventory is used as a whitelist to grant approval to devices seeking access
+              to the wireless network.</note>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_inv_ext.1.2">
+            <title> The TSF shall detect the presence of <h:i>[EUDs, APs]</h:i> in the Operational Environment that are 
+              not part of the defined inventory.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_inv_ext.2" name="Characteristics of Environmental Objects" status="threshold">
+          <f-element id="fau_inv_ext.2.1">
+            <title> he TSF shall detect the physical location of <h:i>[inventoried EUDs, APs]</h:i> within 
+              <h:i>[range of the TOE’s wireless sensors]</h:i>.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_inv_ext.2.2">
+            <title> The TSF shall detect <h:i>[signal strength,</h:i> <selectables>
+              <selectable>RF power levels above predetermined threshold</selectable>
+              <selectable>no other characteristics</selectable>
+            </selectables>] of hardware operating within <h:i>[range of the TOE’s wireless sensors]</h:i>.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_inv_ext.2.3">
+            <title> The TSF shall detect the <h:i>number of connected clients, bandwidth usage, usage time, connection status</h:i>
+              of hardware operating within <h:i>range of the TOE’s wireless sensors</h:i>.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        <f-component  id="fau_inv_ext.3" name="Behavior of Environmental Objects" status="threshold">
+          <f-element id="fau_inv_ext.3.1">
+            <title>
+              The TSF shall detect when <h:i>[inventoried devices]</h:i> exhibit the following behavior: [ 
+              
+              <ul>
+                <li><h:i>A client establishes a peer-to-peer connection with any other device</h:i></li>
+                <li><h:i>A device bridges two network interfaces</h:i></li>
+                <li><h:i>A device is serving as a Soft AP</h:i></li>
+                <li><h:i>A device probes for bridges using beacons</h:i></li>
+                <li><h:i>Two or more devices act as a common network bridge</h:i></li>
+              </ul>
+                   
+            </title>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_inv_ext.4/Cell" name="Precise Location of Environmental Objects (Cellular Devices)" status="sel-based">
+          <selection-depends req="fau_wid_ext.6.1"/>
+          <f-element id="fau_inv_ext.4.1/Cell">
+            <title> The TSF shall detect the physical location of [<h:i>detected cellular devices</h:i>] to within 
+              <assignable>distance degree of accuracy</assignable> of their actual location.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_inv_ext.4" name="Precise Location of Environmental Objects" status="objective">
+          <f-element id="fau_inv_ext.4.1">
+            <title> The TSF shall detect the physical location of [<h:i>EUDs, APs</h:i>] to within [<h:i>15 feet</h:i>] of their actual location.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_inv_ext.5" name="Detection of Unauthorized Connections" status="objective">
+          <f-element id="fau_inv_ext.5.1">
+            <title> The TSF shall detect when [<h:i>non-whitelisted APs as defined in FAU_INV_EXT.1</h:i>] have the following connections: 
+              [<h:i>wired connection to the internal corporate network</h:i>].</title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="FAU_MAC_EXT.1" name="Device Impersonation" status="objective">
+          <f-element id="fau_mac_ext.1.1">
+            <title> The TSF shall detect when two sensors in non-overlapping locations receive traffic from the same MAC address simultaneously.
+            </title>
+            <note role="application">The intent of this SFR is to detect MAC spoofing where an attacker is able to cause the whitelisted device 
+              to disconnect and promptly connects a non-whitelisted device using the MAC address of the whitelisted device.</note>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_mac_ext.1.2">
+            <title> The TSF shall detect when two sensors in non-overlapping locations receive traffic from the MAC addresses of 
+              [<h:i>non-whitelisted devices as defined in FAU_INV_EXT.1</h:i>] within 
+              [<h:i>an Authorized administrator-configurable timeframe based on distance between sensors</h:i>].      
+            </title>
+            <note role="application">The intent of this SFR is to allow the administrator to determine the time that should be 
+              allowed between a whitelisted device connecting in two distant locations</note>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        
+        <f-component  id="FAU_SAA.1" name="Potential Violation Analysis" status="threshold">
+          <f-element id="FAU_SAA.1.1">
+            <title>The TSF shall be able to apply a set of rules in monitoring the <h:b>wireless traffic</h:b> and based 
+              upon these rules indicate a potential <h:b>malicious action</h:b>.</title>
+          </f-element>
+          <f-element id="FAU_SAA.1.2">
+            <title>The TSF shall enforce the following rules for monitoring wireless traffic:
+              <ol type="a">
+                <li>Accumulation or combination of <h:i>[number of connected clients, bandwidth usage, usage time]</h:i>
+                  known to indicate a potential security violation;</li>
+                <li><h:i>[other potential security violations as defined by Table 1 below]</h:i>.</li>
+              </ol>
+              <table>
+                <tr class="header">
+                  <td>SFR</td>
+                  <td>Potential Security Violation</td>
+                </tr>
+                <tr>
+                  <td>FAU_INV_EXT.1</td>
+                  <td>
+                    Detection of network device that is not part of defined inventory
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>FAU_INV_EXT.3</td>
+                  <td>Detection of authorized EUD establishing peer-to-peer connection with any other device</td>
+                </tr>
+                <tr>
+                  <td>FAU_INV_EXT.3</td>
+                  <td>Detection of device bridging two network interfaces</td>
+                </tr>                
+                <tr>
+                  <td>FAU_INV_EXT.3</td>
+                  <td>Detection of device serving as a Soft AP</td>
+                </tr>                
+                <tr>
+                  <td>FAU_INV_EXT.3</td>
+                  <td>Detection of device probing for bridges using beacons</td>
+                </tr>                
+                <tr>
+                  <td>FAU_INV_EXT.3</td>
+                  <td>Detection of two or more devices acting as a common network bridge</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.1</td>
+                  <td>Detection of rogue AP</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.1</td>
+                  <td>Detection of malicious EUD</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.2</td>
+                  <td>Detection of unauthorized traffic</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.2</td>
+                  <td>Detection of traffic with excessive transmit power level</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.2</td>
+                  <td>Detection of active probing</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.2</td>
+                  <td>Detection of MAC spoofing</td>
+                </tr>   
+    	
+                <tr>
+                  <td>FAU_WID_EXT.3</td>
+                  <td>Detection of RF-based denial of service</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.3</td>
+                  <td>Detection of deauthentication flooding</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.3</td>
+                  <td>Detection of disassociation flooding</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.3</td>
+                  <td>Detection of request-to-send/clear-to-send abuse</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.4</td>
+                  <td>Detection of unauthorized authentication scheme use</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.5</td>
+                  <td>Detection of unauthorized encryption scheme use</td>
+                </tr>                
+                <tr>
+                  <td>FAU_WID_EXT.5</td>
+                  <td>Detection of unencrypted traffic</td>
+                </tr>
+              </table> 
+            </title>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_wid_ext.1" name="Wireless Intrusion Detection – Malicious Environmental Objects" status="threshold">
+          <f-element id="fau_wid_ext.1.1">
+            <title> The TSF shall apply <assignable>user-defined classification rules</assignable> to detect the following 
+              types of malicious environmental objects: <h:i>[rogue APs, EUDs]</h:i>.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.1.2">
+            <title> The TSF shall distinguish between benign and malicious <h:i>[APs, EUDs]</h:i> based on 
+              <h:i>[detection metrics]</h:i>.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.1.3">
+            <title> The TSF shall provide Authorized Administrators with the ability to exclude non-malicious <h:i>[APs, EUDs]</h:i> from monitoring.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+  
+        <f-component id="fau_wid_ext.2" name="Wireless Intrusion Detection – Passive Information Flow Monitoring" status="threshold">
+          <f-element id="fau_wid_ext.2.1">
+            <title>
+              The TSF shall monitor and analyze 
+              <selectables>
+                <selectable>simultaneously monitor and analyze</selectable>
+                <selectable>no other behavior</selectable>
+              </selectables> network traffic matching the <h:i>[802.11 monitoring SFP]</h:i> for all channels in the following RF Frequencies:
+               2.4 GHz and 4.9/5.0 GHz 
+              <selectables>
+                 <selectable>channels outside regulatory domain</selectable>
+                 <selectable>non-standard channel frequencies</selectable>
+                 <selectable>no other domains</selectable>
+               </selectables>
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.2.2">
+            <title> 
+              The TSF shall provide wireless sensors to detect network traffic matching the <h:i>[802.11 monitoring SFP]</h:i> that 
+              <selectables>
+                <selectable>can be configured to prevent transmission of data</selectable>
+                <selectable>does not transmit data</selectable>
+              </selectables>.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.2.3">
+            <title> 
+              The TSF shall provide the ability to define a subset of network traffic matching the <h:i>[802.11 monitoring SFP]</h:i> 
+              as unauthorized traffic based on <h:i>[channel used, SSID]</h:i>.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.2.4">
+            <title> 
+              The TSF shall detect the presence of unauthorized traffic on the network through the following methods: [
+              <ul>
+                <li>detection of authorized clients communicating over unauthorized channels,</li>
+                <li>detection of unauthorized APs broadcasting authorized SSIDs,</li>
+                <li>detection of unauthorized devices spoofing the MAC address of whitelisted devices,</li>
+                <li>detection of authorized clients associating to unauthorized SSIDs,</li>
+                <li>detection of unauthorized clients associating to authorized APs,</li>
+                <li>detection of unauthorized point to point wireless bridges,</li>
+                <li>detection of active probing,</li>
+                <li>
+                  <selectables>
+                    <selectable>illegal state transitions</selectable>
+                    <selectable>protocol violations 
+                      <selectables>
+                        <selectable>802.11</selectable>
+                        <selectable>802.1X</selectable>
+                        <selectable><assignable>proprietary vendor protocol(s)</assignable></selectable>
+                        <selectable>no other methods</selectable>
+                      </selectables>
+                    </selectable>
+                </selectables>
+                </li>
+              </ul>
+            </title>
+            <note role="application">“Authorized” clients/APs are those that are assigned to the whitelist as 
+              defined by FAU_INV_EXT.1.1. Detection of illegal state transitions and protocol violations are 
+              objective requirements and will be mandatory in future PP versions.
+            </note>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              </tss>
+              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
+                contains instructions on configuring ...
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Test 1</test>
+                  <test>Test 2</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          
+        </f-component>
+        <f-component id="fau_wid_ext.3" name="Wireless Intrusion Detection – Denial of Service" status="threshold">
+          <f-element id="fau_wid_ext.3.1">
+            <title> The TSF shall detect the following intrusions: 
+              <h:i>[RF-based denial of service, deauthentication flooding, disassociation flooding, request-to-send/clear-to-send abuse]</h:i>.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fau_wid_ext.4" name="Wireless Intrusion Detection – Unauthorized Authentication Schemes" status="threshold">
+          <f-element id="fau_wid_ext.4.1">
+            <title> 
+              The TSF shall provide Authorized Administrators the ability to define authorized WLAN authentication schemes.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.4.2">
+            <title> 
+              The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> attempt to use WLAN authentication 
+              schemes that are not authorized.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_wid_ext.5" name="Wireless Intrusion Detection – Unauthorized Encryption Schemes" status="threshold">
+          <f-element id="fau_wid_ext.5.1">
+            <title> 
+              The TSF shall provide Authorized Administrators the ability to define authorized WLAN encryption schemes.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.5.2">
+            <title> 
+              The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> attempt to use WLAN encryption schemes that are not authorized.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.5.3">
+            <title> 
+              The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> send or receive unencrypted data.
+            </title>
+            <note role="application">When referring to unencrypted data being received by a whitelisted device it refers to unencrypted data 
+              being sent to a whitelisted device from either a non-whitelisted or whitelisted device.</note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+     
+        <f-component id="fau_wid_ext.6" name="Wireless Intrusion Detection – Wireless Spectrum Monitoring" status="optional">
+          <f-element id="fau_wid_ext.6.1">
+            <title> 
+              The TSF shall detect the presence of network devices that operate in the following RF bands: 
+              <selectables>
+                <selectable>3.6 GHz</selectable>
+                <selectable>60 GHz</selectable>
+                <selectable>sub-GHz (0-900 MHz)</selectable>
+                <selectable>all cellular bands</selectable>
+              </selectables>
+            </title>
+            <note role="application">This SFR refers to Non-WiFi (IEEE 802.11 a, b, g, n, and ac) network devices that operate 
+              in the specified frequencies. If the ST author selects detection of devices in the cellular bands, the ST author 
+              must include selection-based requirement FAU_INV_EXT.4.1</note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+          <f-element id="fau_wid_ext.6.2">
+            <title> 
+              The TSF shall provide a dedicated sensor for wireless spectrum analysis.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_wid_ext.7" name="Wireless Intrusion Detection – Proprietary Traffic Monitoring" status="objective">
+          <f-element id="fau_wid_ext.7.1">
+            <title> The TSF shall detect the presence of all vendor proprietary network traffic matching the [<h:i>802.11 monitoring SFP</h:i>]
+              for [<h:i>all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:</h:i>
+              <ol>
+                <li><h:i>authorized APs and authorized clients</h:i></li>
+                <li><h:i>authorized APs and unauthorized clients</h:i></li>
+                <li><h:i>unauthorized APs and authorized clients</h:i></li>
+              </ol>]            
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fau_wip_ext.1" name="Wireless Intrusion Prevention" status="objective">
+          <f-element id="fau_wip_ext.1.1">
+            <title> The TSF shall allow an Authorized Administrator to isolate a wireless device from the network monitored 
+              by the TSF using the following methods: 
+              <selectables>
+                <selectable>wireless containment</selectable>
+                <selectable>wireside containment of an unauthorized AP connected to the internal corporate wired network</selectable>
+              </selectables>     
+            </title>
+            <note role="application">It is expected that an Authorized Administrator will be responsible for confirming the 
+              device as a rogue device to initiate wireless containment. <h:br/> 
+              In this SFR the containment of an an unauthorized AP connected to the internal corporate wired network refers to an unauthorized AP 
+              that is physically connected (via wire) to the protected internal wired infrastructure. 
+            </note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="FAU_GEN.1/WIDS" name="Audit Data Generation" status="threshold">
+          <f-element id="FAU_GEN.1.1/WIDS ">
+            <title> The TSF shall be able to generate an audit record of the following auditable events:
+              <ol type="a">
+                <li>Start-up and shutdown of the audit functions;</li>
+                <li>All auditable events for the [not specified] level of audit;</li>
+                <li><h:i>[Auditable events listed in Table 3;</h:i></li>
+                <li><h:i>Failure of wireless sensor communication].</h:i></li>
+              </ol>
+           </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+          <f-element id="FAU_GEN.1.2/WIDS">
+            <title> The TSF shall record within each audit record as 
+              <selectables>
+                <selectable>comma separated values (CSV)</selectable>
+                <selectable>common log format (CLF)</selectable>
+                <selectable>JavaScript Object Notation (JSON)</selectable>
+                <selectable>syslog</selectable>
+              </selectables>
+              at least the following information:
+              <ol type="a">
+                <li>Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event;</li>
+                <li>For each audit event type, based on the auditable event definitions of the functional components included in the PP/ST, 
+                  [<h:i>auditable events listed in Table 3</h:i>].
+                </li>
+              </ol>              
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+          <f-element id="Table 3">
+            <title>
+              <table>
+                <tr>
+                  <td>SFR</td>
+                  <td>Auditable Event</td>
+                  <td>Auditional Audit Record Contents</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </title>
+          </f-element>
+        </f-component>
+        
+        <f-component id="FAU_ANO_EXT.1" name="Anomaly-Based Intrusion Detection" status="sel-based">
+          <selection-depends req="fau_ids_ext.1.1"/>
+          <f-element id="FAU_ANO_EXT.1.1">
+            <title> The TSF shall support the definition of 
+              <selectables atleastone="yes">
+                <selectable>baselines (‘expected and approved’)</selectable>
+                <selectable>anomaly (‘unexpected’) traffic patterns</selectable>
+              </selectables>including the specification of 
+              <selectables linebreak="yes">
+                <selectable>throughput ([assignment: data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, 
+                  hours, days)])</selectable>
+                <selectable>time of day</selectable>
+                <selectable>frequency; </selectable>
+                <selectable>thresholds</selectable>
+                <selectable><assignable>other methods</assignable></selectable>
+              </selectables>  
+              and the following network protocol fields: 
+                <ul>
+                  <li>all management and control frame header elements </li>
+                </ul>
+              
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+          <f-element id="FAU_ANO_EXT.1.2">
+            <title> 
+              The TSF shall support the definition of anomaly activity through 
+              <selectables>
+                <selectable>manual configuration by administrators</selectable>
+                <selectable>automated configuration</selectable>
+              </selectables>. 
+            </title>
+            <note role="application">
+              The “baseline” and “anomaly” can be something manually defined/configured by a TOE administrator 
+              (or importing definitions), or something that the TOE is able to automatically define/create by inspecting
+              network traffic over a period of time (a.k.a. “profiling”). 
+            </note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>
+        <f-component id="FAU_SIG_EXT.1" name="Signature-Based Intrusion Detection" status="sel-based">
+          <selection-depends req="fau_ids_ext.1.1"/>
+          <f-element id="fau_sig_ext.1.1">
+            <title> 
+              The TSF shall support user-defined and customizable attack signatures.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>      
+      
+        <f-component id="fau_stg_ext.1/pcap" name="Protected Audit Event Storage (Packet Captures)" status="sel-based">
+          <selection-depends req="fau_arp.1.1"/>
+          <f-element id="fau_stg_ext.1.1/pcap">
+            <title>The TSF shall be able to transmit the generated <h:b>packet captures</h:b> to an external IT entity using a 
+              trusted channel according to FTP_ITC.1.
+             </title>
+            <note role="application">FTP_ITC.1 is inherited from the NDcPP.</note>
+             <aactivity>	    
+             </aactivity>
+           </f-element>
+          <f-element id="fau_stg_ext.1.2/pcap">
+            <title>The TSF shall be able to store generated <h:b>packet captures</h:b> on the TOE itself.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+          <f-element id="fau_stg_ext.1.3/pcap">
+            <title> The TSF shall 
+              <selectables>
+                <selectable>drop new packet capture data</selectable>
+                <selectable>overwrite previous packet captures according to the following rule
+                  <assignable>rule for overwriting previous packet captures</assignable>
+                </selectable>
+                <selectable>
+                  <assignable>other action</assignable>
+                </selectable> 
+              </selectables> when the local storage space for packet capture data is full.
+             
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+         </f-component>
+      </subsection>
+      
+      
+      <subsection title="User Data Protection" id="FDP">
+        <f-component id="FDP_IFC.1" name="Information Flow Control Policy" status="threshold">
+          <f-element id="FDP_IFC.1.1">
+            <title> 
+              The TSF shall enforce the <h:i>[802.11 monitoring SFP]</h:i> for <h:i>[all IEEE 802.11 a, b, g, n, ac frame types 
+              and subtypes between:</h:i>
+              <ul>
+                <li><h:i>authorized APs and authorized clients </h:i></li>
+                <li><h:i>authorized APs and unauthorized clients</h:i></li>
+                <li><h:i>unauthorized APs and authorized clients</h:i>].</li>
+              </ul>     
+            </title>
+            <note role="application">“Authorized” clients/APs are those that are assigned to the whitelist as defined by FAU_INV_EXT.1.1</note>
             <aactivity>	    
             </aactivity>
           </f-element>
         </f-component>
       </subsection>
       
-      <subsection title="Cryptographic Support (FCS)" id="fcs">
-        <f-component id="fcs_ckm_ext.3" name="Protection of Key and Key Material" status="sel-based">
-          <!--<selection-depends req="ftp_itc_ext.1.1"/>-->
-          <f-element id="fcs_ckm_ext.3.1">
-            <title>This is an embedded selection requirement. The TSF shall <selectables>
-              <selectable>not store keys in non-volatile memory</selectable>
-                <selectable>only store keys in non-volatile memory when wrapped as specified in
-                  <!--<linkref linkend="FCS_COP_EXT.2"/> --> unless the key meets any one of following
-                  criteria: <selectables linebreak="yes">
-                    <selectable>The plaintext key is not part of the key chain as specified in  </selectable>
-                    <selectable>The plaintext key is a key split that is combined as specified in and the other half of the key split is
-                      either 
-                      <selectables>
-                        <selectable>wrapped as specified in </selectable>
-                        <selectable>derived and not stored in non-volatile memory </selectable>
-                      </selectables>
-                    </selectable>
-                    <selectable>The plaintext key is stored on an external storage device for use as
-                      an authorization factor </selectable>
-                    <selectable>The plaintext key is the public portion of the key pair</selectable>
-                  </selectables>
-                </selectable>
-              </selectables>. 
+      <subsection id="FMT" title="Security Management">
+        <f-component id="FMT_SMF.1/WIDS" name="Specification of Management Functions (WIDS)" status="threshold">
+          <f-element id="FMT_SMF.1.1/WIDS">
+            <title> 
+              The TSF shall be capable of performing the following management functions for WIDS functionality: 
+              [<h:i>management functions listed in Table 2</h:i>].        
+              <table>
+                <tr>
+                  <td>SFR</td>
+                  <td>Management Function</td>
+                </tr>
+                <tr>
+                  <td>FAU_ANO_EXT.1</td>
+                  <td>Specification of periods of network activity that constitute baseline of expected behavior (optional)</td>
+                </tr>
+                <tr>
+                  <td>FAU_SAA.1</td>
+                  <td>Configuration of number of connected clients, bandwidth usage, usage time that triggers a security alert</td>
+                </tr>
+              </table>     
             </title>
-            <note role="application">The plaintext key storage in non-volatile memory is allowed for
-              several reasons. 
-            </note>
-            <aactivity>
-              <tss>The evaluator shall verify the <abbr linkend="TSS"/> for a high level
-              description of method used to protect keys stored in non-volatile memory.<h:br/> The
-              evaluator shall verify the <abbr linkend="TSS"/> to ensure ...
-              </tss>
-              <guidance>N/A</guidance>
+            <aactivity>	    
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>   
+       </subsection>
+      
+      <subsection id="FPT" title="Protection of the TSF">
+        <f-component id="FPT_ITT.1" name="Basic Internal TSF Data Transfer Protection" status="threshold">
+          <f-element id="FPT_ITT.1.1 Refinement">
+            <title> 
+              The TSF shall <h:b>use</h:b> <selectables atleastone="yes">
+                <selectable>IPsec</selectable>
+                <selectable>SSH</selectable>
+                <selectable>TLS</selectable>
+                <selectable>TLS/HTTPS</selectable>
+              </selectables> <h:b>with security strength commensurate with all other trusted communications to</h:b> protect TSF data from 
+              disclosure and modification when it is transmitted between separate parts of the TOE.
+            </title>
+            <note role="application">This requirement ensures all communications between components of a distributed TOE is protected 
+              through the use of an encrypted communications channel.  The data passed in this trusted communication channel are encrypted 
+              as defined in the protocol chosen in the selection.  The ST author chooses the mechanisms supported by the TOE, and then 
+              ensures the appropriate requirements from the NDcPP corresponding to their selection are copied to the ST if not already 
+              present. For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that 
+              the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the EP, and “other 
+              trusted communications” refers to the mechanisms specified in FPT_ITC.
+            </note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component> 
+        <f-component id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection" status="objective">
+          <f-element id="fpt_fls.1.1">
+            <title> The TSF shall preserve a secure state when the following types of failures occur: 
+              [<h:i>sensor functionality failure, potential compromise of the TSF</h:i>].
+            </title>
+            <note role="application">At minimum, the preservation of a secure state requires the generation of audit records when 
+              the defined failure conditions occur.
+            </note>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>  
+      </subsection>
+      <subsection id="FTP" title="Trusted Paths/Channels">
+        <f-component id="FTP_ITC.1" name="Inter-TSF trusted channel" status="threshold">
+          <f-element id="FTP_ITC.1.1 Refinement">
+            <title> 
+              The TSF shall be capable of using [selection: IPsec,  SSH,  TLS, HTTPS] to provide   a   trusted   communication   channel
+              between   itself   and authorized   IT   entities supporting  the  following  capabilities:  audit  server,  
+              <selectables>
+                <selectable><h:b>database server</h:b><assignable>other   capabilities</assignable></selectable>
+                <selectable></selectable>
+              </selectables> that   is   logically   distinct   from   other   communication channels  and  provides  assured  identification
+              of  its end  points  and  protection  of  the  channel  data from disclosure and detection of modification of the channel data.
+            </title>
+            <aactivity>	    
+            </aactivity>
+          </f-element>
+        </f-component>  
+      </subsection>
      </section>
   </chapter>
  
