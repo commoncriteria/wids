@@ -106,10 +106,6 @@
             <description>A security product that provides network security administrators with the ability to monitor, collect,
               log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
           </entry> 
-          <entry>
-            <term><abbr title="Another Term">AT</abbr></term>
-            <description>Describe the term.</description>
-          </entry> 
         </glossary>
       </subsection>
 	  </section>
@@ -165,19 +161,7 @@
       
       <figure entity="images/TOE.jpg" title="Figure 1: General TOE " id="toe"/>
     </section>
-   
-   <!--<section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
-      address the security problems in at least the following use cases. These use cases are intentionally
-      very broad, as many specific use cases exist for an operating system. These use cases may also
-      overlap with one another.  An operating system's functionality may even be effectively extended by
-      privileged applications installed onto it.  However, these are out of scope of this PP. <usecases>
-        <usecase title="End User Devices" id="enduserdevices">
-          <description>
-          </description>
-        </usecase>
-      </usecases>
-    </section>
-   -->
+  
   </chapter>  
   
   <chapter title="Security Problem Definition" id="spd">
@@ -245,6 +229,13 @@
             <rationale> The operational environment objective OE.CONNECTIONS is realized through A.CONNECTIONS.</rationale>
           </objective-refer>
         </assumption>
+        <assumption id="A.PROPER_ADMIN">
+          <description> The administrator of the WIDS/WIPS is not careless, willfully negligent or hostile, and administers 
+            the WIDS/WIPS within compliance of the applied enterprise security policy. </description>
+          <objective-refer ref="OE.PROPER_ADMIN">
+            <rationale> The operational environment objective OE.PROPER_ADMIN is realized through A.PROPER_ADMIN.</rationale>
+        </objective-refer>
+        </assumption>
       </assumptions>
     </section>
   </chapter>
@@ -254,13 +245,13 @@
       <SOs>
         <SO id="O.SYSTEM_MONITORING">
           <description> 
-            To be able to analyze and react to potential network policy violations, the IPS must be able to 
+            To be able to analyze and react to potential network policy violations, the WIDS/WIPS must be able to 
             collect and store essential data elements of network traffic on monitored networks. <h:br/>
             (O.SYSTEM_MONITORING->)
           </description>
-          <!--<component-refer ref="fau_gen.1"/>-->
+          <!--<component-refer ref="fau_gen.1.1/WIDS"/>-->
         </SO>
-        <SO id="O.ANALYSIS_OF_NETWORK_TRAFFIC_POLICY_VIOLATIONS">
+        <SO id="O.WIDS-WIPS_ANALYZE">
           <description> 
             Entities that reside on or communicate across monitored networks must have network activity effectively
             analyzed for potential violations of approved network usage.<h:br/>
@@ -272,16 +263,16 @@
           </description>
           <!--<component-refer ref=""/>-->
         </SO>
-        <SO id="O.REACTION_TO_NETWORK_TRAFFIC_POLICY_VIOLATIONS">
+        <SO id="O.WIPS_REACT">
           <description> The TOE must be able to react as configured by the administrators to isolate/contain 
-            WLAN devices that have been determined to violate administrator-defined IPS policies.  <h:br/>
+            WLAN devices that have been determined to violate administrator-defined WIPS policies.  <h:br/>
             (O.IPS_REACT->)
           </description>
           <!--<component-refer ref=""/>-->
         </SO>
         <SO id="O.TOE_ADMINISTRATION">
           <description> To address the threat of unauthorized administrator access that is defined in the base PP, 
-            Conformant TOEs will provide the functions necessary for an administrator to configure the IDS/IPS Capabilities of the TOE.
+            Conformant TOEs will provide the functions necessary for an administrator to configure the WIDS/WIPS Capabilities of the TOE.
             <h:br/>
             (O.TOE_ADMINISTRATION->)
           </description>
@@ -320,7 +311,7 @@
         </SOE>
         <SOE id="OE.PROPER_ADMIN">
           <description> The administrator of the is not careless, willfully
-            negligent or hostile, and administers the OS within compliance of the applied enterprise
+            negligent or hostile, and administers the WIDS/WIPS within compliance of the applied enterprise
             security policy. </description>
         </SOE>
       </SOEs></section>
@@ -352,7 +343,7 @@
       Technology Security Evaluation, Version 3.1, Revision 4, with additional extended functional
       components. 
       <subsection title="Security Audit" id="FAU">
-        <f-component id="FAU_ARP.1" name="Security Alarms" status="threshold">
+        <f-component id="fau_arp.1" name="Security Alarms" status="threshold">
           <f-element id="fau_arp.1.1">
             <title> The TSF shall take <h:i>[the following actions: display alert to Authorized Administrator in 
               sufficient detail to show severity level, </h:i><selectables>
@@ -381,8 +372,8 @@
           </f-element>
         </f-component>
         
-        <f-component id="FAU_ARP_EXT.2" name="Security Alarm Filtering" status="threshold">
-          <f-element id="FAU_ARP_EXT.2.1">
+        <f-component id="fau_arp_ext.2" name="Security Alarm Filtering" status="threshold">
+          <f-element id="fau_arp_ext.2.1">
             <title> The TSF shall provide the ability to apply <assignable>methods of selection and/or ordering</assignable> 
               to selectively exclude alerts from being generated.  
             </title>
@@ -404,7 +395,7 @@
         </f-component>
         
         
-        <f-component id="FAU_IDS_EXT.1" name="Intrusion Detection System – Intrusion Detection Methods" status="threshold">
+        <f-component id="fau_ids_ext.1" name="Intrusion Detection System – Intrusion Detection Methods" status="threshold">
           <f-element id="fau_ids_ext.1.1">
             <title> The TSF shall provide the following methods of intrusion detection: 
               <selectables>
@@ -440,8 +431,8 @@
             <title> The TSF shall provide Authorized Administrators with the ability to define an inventory 
               of <h:i>[authorized WLAN network devices]</h:i> based on <h:i>[EUD MAC addresses, AP MAC addresses]</h:i>.
             </title>
-            <note role="application">This inventory is used as a whitelist to grant approval to devices seeking access
-              to the wireless network.</note>
+            <note role="application">This inventory is used as a whitelist to indicate to the WIDS/WIPS which 
+              devices are legitimate memebers of the wireless network.</note>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
               </tss>
@@ -478,7 +469,7 @@
         
         <f-component id="fau_inv_ext.2" name="Characteristics of Environmental Objects" status="threshold">
           <f-element id="fau_inv_ext.2.1">
-            <title> he TSF shall detect the physical location of <h:i>[inventoried EUDs, APs]</h:i> within 
+            <title> The TSF shall detect the physical location of <h:i>[inventoried EUDs, APs]</h:i> within 
               <h:i>[range of the TOE’s wireless sensors]</h:i>.
             </title>
             <aactivity>	
@@ -612,7 +603,7 @@
           </f-element>
         </f-component>
         
-        <f-component id="FAU_MAC_EXT.1" name="Device Impersonation" status="objective">
+        <f-component id="fau_mac_ext.1" name="Device Impersonation" status="objective">
           <f-element id="fau_mac_ext.1.1">
             <title> The TSF shall detect when two sensors in non-overlapping locations receive traffic from the same MAC address simultaneously.
             </title>
@@ -656,12 +647,12 @@
         </f-component>
         
         
-        <f-component  id="FAU_SAA.1" name="Potential Violation Analysis" status="threshold">
-          <f-element id="FAU_SAA.1.1">
+        <f-component  id="fau_saa.1" name="Potential Violation Analysis" status="threshold">
+          <f-element id="fau_saa.1.1">
             <title>The TSF shall be able to apply a set of rules in monitoring the <h:b>wireless traffic</h:b> and based 
               upon these rules indicate a potential <h:b>malicious action</h:b>.</title>
           </f-element>
-          <f-element id="FAU_SAA.1.2">
+          <f-element id="fau_saa.1.2">
             <title>The TSF shall enforce the following rules for monitoring wireless traffic:
               <ol type="a">
                 <li>Accumulation or combination of <h:i>[number of connected clients, bandwidth usage, usage time]</h:i>
@@ -870,6 +861,9 @@
               The TSF shall provide the ability to define a subset of network traffic matching the <h:i>[802.11 monitoring SFP]</h:i> 
               as unauthorized traffic based on <h:i>[channel used, SSID]</h:i>.
             </title>
+            <note role="application">The administrator should have the ability to configure which channels and SSIDs are permitted
+            on the network, an alert should be generated if any traffic is detected that does not match an allowed channel or SSID 
+            by authorized devices</note>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
               </tss>
@@ -1044,8 +1038,8 @@
           </f-element>
         </f-component>
         
-        <f-component id="FAU_GEN.1/WIDS" name="Audit Data Generation" status="threshold">
-          <f-element id="FAU_GEN.1.1/WIDS ">
+        <f-component id="fau_gen.1/wids" name="Audit Data Generation" status="threshold">
+          <f-element id="fau_gen.1.1/wids">
             <title> The TSF shall be able to generate an audit record of the following auditable events:
               <ol type="a">
                 <li>Start-up and shutdown of the audit functions;</li>
@@ -1053,11 +1047,176 @@
                 <li><h:i>[Auditable events listed in Table 3;</h:i></li>
                 <li><h:i>Failure of wireless sensor communication].</h:i></li>
               </ol>
+              <table>
+                <tr><td><h:b>Requirement</h:b></td><td><h:b>Auditable Events</h:b></td><td><h:b>Additional Audit Record Contents</h:b></td></tr>
+                <tr><td>FAU_ANO_EXT.1.1</td><td>None</td><td>None</td></tr>
+                <tr><td>FAU_ANO_EXT.1.2</td><td>None</td><td>None</td></tr>
+                <tr><td>FAU_ARP.1.1</td><td>Alert generated by TSF upon detection of malicious activity.</td>
+                    <td>How many times it was observed on the network,
+                        Which sensors detected,
+                        Last seen on the network,
+                        Signature/anomaly rule that triggered alert,
+                        MAC address of malicious device,
+                        RSSI,
+                        SSID(if AP),
+                        Channel(s) discovered on,
+                        Security Type used,
+                        Authentication type used,
+                        MAC address of whitelisted devices that made a connection with malicious device,
+                        If it did make a connection with a whitelisted device: start, end, and duration of connection,
+                        Indicate if the malicious device connected to the, internal wired infrastructure,
+                        Action taken to contain (if any)</td></tr>
+                <tr><td>FAU_ARP_EXT.2.1</td><td>None</td><td>None</td></tr>
+                <tr><td>FAU_GEN.1.1/WIDS</td><td>Failure of wireless sensor communication alert</td>
+                     <td>Alert should indicated when the sensor was last seen online, duration of sensor being offline</td></tr>
+                <tr><td>FAU_GEN.1.2/WIDS</td><td>Audit records/logs</td>
+                     <td>The logs should include the same information provided in the alert generated by an intrusion/violation</td></tr>
+                <tr><td>FAU_IDS_EXT.1.1</td><td>None</td><td>None</td></tr>
+                <tr><td>FAU_INV_EXT.1.1</td><td>whitelisted devices information</td>
+                    <td>Type of device (AP or EUD),
+                        MAC Address, 
+                        Association between authorized devices (which APs are EUDs connected to), 
+                        Whether it is currently online or offline, 
+                        Channel, 
+                        RF Band, 
+                        Encryption Type, 
+                        IEEE 802.11 standard being used (a, b, g, n, ac), 
+                        SSID (if AP), 
+                        How many clients are associated to device (if AP),
+                </td></tr>
+                <tr><td>FAU_INV_EXT.1.2</td>
+                     <td>Information on devices detected that are not on the whitelist</td>
+                     <td>Classification (rogue, authorized/whitelisted, known non malicious device)
+                         Further detains must be specified if device is malicious as indicated in FAU_ARP.1.1</td></tr>
+                <tr><td>FAU_INV_EXT.2.1</td>
+                    <td>Information on location of device</td>
+                    <td>device identification information, device type, sensors that detected device, signal strength, classification of device </td></tr>
+                <tr><td>FAU_INV_EXT.2.2</td>
+                    <td>Alert generated by TSF upon detection of RF power threshold violation</td>
+                    <td>The alert must indicate the power levels detected and the difference between the threshold and the levels detected.</td></tr>
+                <tr><td>FAU_INV_EXT.2.3</td>
+                    <td>None</td>
+                    <td>None</td></tr>
+                <tr><td>FAU_INV_EXT.3.1</td>
+                    <td>Unexpected behavior by whitelisted device alert</td>
+                    <td>Description of behavior detected (i.e., bridge, ICS connection)
+                         MAC address of whitelisted device
+                         Device to which the whitelisted is making a connection with
+                         Connection start, end</td></tr>
+                <tr><td>FAU_INV_EXT.4.1</td>
+                    <td>Information on location of device</td>
+                    <td>device identification information, device type, sensors that detected device, signal strength, classification of device </td></tr>
+                <tr><td>FAU_INV_EXT.4.1/CELL</td>
+                    <td>Information on location of device</td>
+                    <td>device identification information, device type, sensors that detected device, signal strength, classification of device </td></tr>
+                <tr><td>FAU_INV_EXT.5.1</td>
+                    <td>Alert generated by detection of rogue device</td>
+                    <td>Description of alert, FAU_ARP.1.1 additional audit requirements.</td></tr>
+                <tr><td>FAU_MAC_EXT.1.1</td>
+                    <td>Alert generated by detection of mac spoofing</td>
+                    <td>Description of alert, Provide identity information of the devices involved, location as labeled by administrator, time elapsed between connection in different locations.</td></tr>
+                <tr><td>FAU_MAC_EXT.1.2</td>
+                    <td>Alert generated by detection of mac spoofing</td>
+                    <td>Description of alert, Provide identity information of the devices involved, location as labeled by administrator, time elapsed between connection in different locations.</td></tr>
+                <tr><td>FAU_SAA.1.1</td>
+                    <td>None</td>
+                    <td>None</td></tr>
+                <tr><td>FAU_SAA.1.2</td>
+                    <td>Security violation alert</td>
+                    <td>Description of behavior detected (i.e., rogue device, DoS)
+                  Additional alert requirements as specified in FAU_ARP.1.1 additional audit requirements.</td></tr>
+                <tr><td>FAU_SIG_EXT.1.1</td>
+                    <td>Alert generated by violaton of user defined signature</td>
+                    <td>Name of alert being triggered, Additional alert requirements as specified in FAU_ARP.1.1 additional audit requirements.</td></tr>
+                <tr><td>FAU_STG_EXT.1.1/PCAP</td>
+                    <td>None</td>
+                    <td>None</td></tr>
+                <tr><td>FAU_STG_EXT.1.2/PCAP</td>
+                    <td>None</td>
+                    <td>None</td></tr>
+                <tr><td>FAU_STG_EXT.1.2/pcap,</td>
+                    <td>None</td>
+                    <td>None</td></tr>
+                <tr><td>FAU_STG_EXT.1.3/PCAP</td>
+                    <td>None</td>
+                    <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.1.1</td>
+                    <td>Classification rules</td>
+                    <td>The TSF shall provide the administrator with the following options to make rules 
+                      for detecting rogue devices: SSID, signal strength, how many APs should be allow, 
+                      classification categories</td></tr>
+                <tr><td>FAU_WID_EXT.1.2</td>
+                  <td>Distinction between device classification types</td>
+                  <td>distinctly label the device as whitelisted, known non-malicious, and malicious devices</td></tr>
+                <tr><td>FAU_WID_EXT.1.3</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.2.1</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.2.2</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.2.3</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.2.4</td>
+                  <td>Alert generated for unauthorized activity</td>
+                  <td>For policy violations, Provide identity information of the devices involved, describe 
+                    violation (i.e. illegal channel), provide detail on configured policy and how the 
+                    violation differs from set policy (i.e. channel 13 being used, only channels 1 and 6 allowed), additional details depending on the violation. See FAU_ARP.1.1 additional audit requirements that might be aplicable.</td></tr>
+                <tr><td>FAU_WID_EXT.3.1</td>
+                  <td>Alert generated for DoS</td>
+                  <td>Provide identity information of the devices involved (both attacker and victim) DoS type, RF based, injection based. For injection, indicate type (i.e., deauth flood), </td></tr>
+                <tr><td>FAU_WID_EXT.4.1</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.4.2</td>
+                  <td>Alert generated for unauthorized authentication methods</td>
+                  <td>Provide identity information of the devices involved, authentication method used, indicated if a full association was completed. </td></tr>
+                <tr><td>FAU_WID_EXT.5.1</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.5.2</td>
+                  <td>Alert generated for unauthorized encryption methods</td>
+                  <td>Provide identity information of the devices involved, encryption method used, indicated if a full association was completed. </td></tr>
+                <tr><td>FAU_WID_EXT.5.3</td>
+                  <td>Alert generated for unencrypted data used</td>
+                  <td>Provide identity information of the devices involved (both sender and receiver)</td></tr>
+                <tr><td>FAU_WID_EXT.6.1</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.6.2</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WID_EXT.7.1</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FAU_WIP_EXT.1.1</td>
+                  <td>Information about action taken</td>
+                  <td>Provide device information and violation description and the type of containment used</td></tr>
+                <tr><td>FDP_IFC.1.1</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FMT_SMF.1.1/WIDS</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FPT_FLS.1.1</td>
+                  <td>Information about failure</td>
+                  <td>Indication that there was a failure and type of failure</td></tr>
+                <tr><td>FPT_ITT.1.1</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr><td>FTP_ITC.1.1</td>
+                  <td>None</td>
+                  <td>None</td></tr>
+                <tr>
+                  <td>Table 3: Auditable Events</td>
+                </tr>
+              </table>
            </title>
-            <aactivity>	    
-            </aactivity>
           </f-element>
-          <f-element id="FAU_GEN.1.2/WIDS">
+          <f-element id="fau_gen.1.2/wids">
             <title> The TSF shall record within each audit record as 
               <selectables>
                 <selectable>comma separated values (CSV)</selectable>
@@ -1072,24 +1231,6 @@
                   [<h:i>auditable events listed in Table 3</h:i>].
                 </li>
               </ol>              
-            </title>
-            <aactivity>	    
-            </aactivity>
-          </f-element>
-          <f-element id="Table 3">
-            <title>
-              <table>
-                <tr>
-                  <td>SFR</td>
-                  <td>Auditable Event</td>
-                  <td>Auditional Audit Record Contents</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </table>
             </title>
           </f-element>
         </f-component>
@@ -1292,50 +1433,7 @@
       When evaluating the TOE, it is necessary to apply the SARs defined for the base PP to the 
       entire TOE and not just the portion that is described by the base PP.</h:p>   
   </chapter>
-  <!-- 
-  <appendix title="Inherently Satisfied Requirements" id="satisfiedreqs"> This
-    appendix lists requirements that should be considered satisfied by products
-    successfully evaluated against this Protection Profile.  
-    However, these requirements are not featured explicitly as SFRs and should not be
-    included in the <abbr linkend="ST"/>.  
-    They are not included as standalone SFRs because it would
-    increase the time, cost, and complexity of evaluation.  This approach is permitted
-    by <cite linkend="bibCC"/> Part 1, <h:b>8.2 Dependencies between components</h:b>.
-    <h:br/>
-    This information benefits systems engineering activities which call for inclusion of 
-    particular security controls.  Evaluation against the Protection Profile
-    provides evidence that these controls are present and have been evaluated.
-    
-    
-    
-    <table>
-      <tr class="header">
-        <td>Requirement</td>
-        <td>Rationale for Satisfaction</td>
-      </tr>
-      <tr>
-        <td>FIA_UAU.1 - Timing of authentication</td>
-        <td>
-          <linkref linkend="FIA_AFL.1"/> FIA_AFL.1 implicitly requires that the OS perform all necessary actions, 
-          including those on behalf of the user who has not been authenticated, 
-          in order to authenticate;
-          therefore it is duplicative to include these actions as a 
-          separate assignment and test.
-        </td>
-      </tr>
-      <tr>
-        <td>FAU_GEN.2 - User identity association</td>
-        <td>
-          <linkref linkend="FAU_GEN.1.2"/>explicitly requires that the OS record
-          any user account associated with each event; therefore, it is duplicative
-          to include a separate requirement to associate a user account with each
-          event.
-        </td>
-      </tr>
-    </table>
-    
-  </appendix>
-  -->
+
   
   <appendix title="Optional Requirements" id="optional"> 
     As indicated in <secref linkend="ConformanceClaims"/>,
@@ -1343,7 +1441,7 @@
     contained in the body of this PP. Additionally, there are three other types of requirements
     specified in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
       linkend="objective"/>. The first type (in this Appendix) are requirements that can be included
-    in the <abbr linkend="ST"/>, but are not required in order for a OS to claim conformance to
+    in the <abbr linkend="ST"/>, but are not required in order for a WIDS/WIPS to claim conformance to
     this PP. The second type (in <appref linkend="sel-based"/>) are requirements based on selections
     in the body of the PP: if certain selections are made, then additional requirements in that
     appendix must be included. The third type (in <appref linkend="objective"/> are components that
@@ -1361,13 +1459,13 @@
     below will need to be included. 
   </appendix>
 
-  <appendix title="Objective Requirements" id="objective"> This appendix includes requirements that
-    specify security functionality which also addresses threats. The requirements are not currently
-    mandated in the body of this PP as they describe security functionality not yet widely-available
-    in commercial technology. However, these requirements may be included in the ST such that the
-    OS is still conformant to this PP, and it is expected that they be included as soon as
-    possible. 
-  </appendix>
+  <appendix title="Objective Requirements" id="objective"> This appendix includes requirements that 
+    specify security functionality which also addresses threats. The requirements are not currently 
+    mandated in the body of this PP as they describe security functionality not yet widely-available 
+    in commercial technology. However, these requirements may be included in the ST such that the 
+    WIDS/WIPS is still conformant to this PP. It is expected that these requirements will transition 
+    from objective requirements to baseline requirements in future versions of this EP.
+   </appendix>
 
   <appendix title="References" id="biblio">
     <bibliography>
@@ -1402,14 +1500,6 @@
         <description>Advanced Encryption Standard</description>
       </entry>
       <entry>
-        <term>DES</term>
-        <description>Data Encryption Standard</description>
-      </entry>
-      <entry>
-        <term>DNS</term>
-        <description>Domain Name System</description>
-      </entry>
-      <entry>
         <term>EAP</term>
         <description>Extensible Authentication Protocol</description>
       </entry>
@@ -1429,10 +1519,7 @@
         <term>HTTPS</term>
         <description>Hypertext Transfer Protocol Secure</description>
       </entry>
-      <entry>
-        <term>IP</term>
-        <description>Internet Protocol</description>
-      </entry>
+
       <entry>
         <term>ISO</term>
         <description>International Organization for Standardization</description>
@@ -1446,40 +1533,12 @@
         <description>National Institute of Standards and Technology</description>
       </entry>
       <entry>
-        <term>OCSP</term>
-        <description>Online Certificate Status Protocol</description>
-      </entry>
-      <entry>
-        <term>OID</term>
-        <description>Object Identifier</description>
-      </entry>
-      <entry>
-        <term>OMB</term>
-        <description>Office of Management and Budget</description>
-      </entry>
-      <entry>
-        <term>OS</term>
-        <description>Operating System</description>
-      </entry>
-      <entry>
-        <term>PII</term>
-        <description>Personally Identifiable Information</description>
-      </entry>
-      <entry>
-        <term>PKI</term>
-        <description>Public Key Infrastructure</description>
-      </entry>
-      <entry>
         <term>PP</term>
         <description>Protection Profile</description>
       </entry>
       <entry>
         <term>RFC</term>
         <description>Request for Comment</description>
-      </entry>
-      <entry>
-        <term>SHA</term>
-        <description>Secure Hash Algorithm</description>
       </entry>
       <entry>
         <term>TLS</term>
