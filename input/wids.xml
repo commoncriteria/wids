@@ -222,6 +222,10 @@
             <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.WIPS_REACT as this
               provides containment of unauthorized devices.</rationale>
           </objective-refer>
+          <objective-refer ref="O.TOE_ADMINISTRATION">
+            <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.TOE_ADMINISTRATION.</rationale>
+          </objective-refer>
+          
         </threat>
         <threat id="T.DISRUPTION">
           <description> Attacks against the WLAN infrastructure might lead to denial of services (DoS) within a protected WLAN. A 
@@ -292,7 +296,8 @@
         </SO>
         <SO id="O.TOE_ADMINISTRATION">
           <description> To address the threat of unauthorized administrator access that is defined in the base PP, 
-            Conformant TOEs will provide the functions necessary for an administrator to configure the WIDS/WIPS Capabilities of the TOE.
+            Conformant TOEs will provide the functions necessary for an administrator to configure the WIDS/WIPS 
+            Capabilities of the TOE.
             <h:br/>
           </description>
           <!--<component-refer ref=""/>-->
@@ -318,10 +323,6 @@
       environment assist the TOE in correctly providing its security functionality.
       These track with the assumptions about the environment. 
       <SOEs>
-        <SOE id="OE.PLATFORM">
-          <description>The <abbr linkend="WIDS/WIPS"/> relies on being installed on trusted
-            hardware.</description>
-        </SOE>
         <SOE id="OE.CONNECTIONS">
           <description> TOE administrators will ensure that the TOE is installed in a manner that will allow the TOE to effectively 
             enforce its policies on network traffic of monitored networks. </description>
