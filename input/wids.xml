@@ -1136,7 +1136,44 @@
             <title> The TSF shall detect the following intrusions: 
               <h:i>[RF-based denial of service, deauthentication flooding, disassociation flooding, request-to-send/clear-to-send abuse]</h:i>.
             </title>
-            <aactivity>	    
+            <aactivity>	
+              <tss>There are no TSS assurance activities for this SFR.</tss>
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              <tests>
+                <testlist>
+                  <h:b>RF-based DoS</h:b>
+                  <test>
+                    <ul>
+                      <li>Deploy whitelisted AP and configure to stay in a particular channel</li>
+                      <li>Connect a whitelisted client to the AP</li>
+                      <li>Use an RF Jammer or signal generator on the same frequency as the devices to create a DoS</li>
+                      <li>Verify that the TSF detects the RF-based DoS</li>
+                    </ul>          
+                  </test>                 
+                </testlist>
+                <testlist>
+                  <h:b>Traffic injection based DoS</h:b>
+                  <test> <h:b>Deauthentication Flood</h:b>
+                    <ul>
+                      <li>Deploy whitelisted AP and configure to stay in a particular channel</li>
+                      <li>Connect a whitelisted client to the AP</li>
+                      <li>Send an flood of deauthentication frames to the client device using the MAC address of whitelisted AP it is connected to</li>
+                      <li>Verify that the TSF detects the deauthentication flood</li>
+                      <li>Send an flood of deauthentication frames with the MAC address of whitelisted AP as the source and destination as a broadcast.</li>
+                      <li>Verify that the TSF detects the deauthentication flood</li>             
+                    </ul>          
+                  </test>
+                  <test> <h:b>Dissasociation Flood</h:b>
+                    <ul>
+                      <li>Deploy whitelisted AP and configure to stay in a particular channel</li>
+                      <li>Connect two whitelisted clients to the AP</li>
+                      <li>Send an flood of CTS frames to reserve RF medium</li>
+                      <li>Verify that the TSF detects the CTS abuse</li>
+                    </ul>          
+                  </test> 
+                </testlist>
+
+              </tests>
             </aactivity>
           </f-element>
         </f-component>
