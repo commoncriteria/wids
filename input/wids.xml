@@ -1183,7 +1183,12 @@
             <title> 
               The TSF shall provide Authorized Administrators the ability to define authorized WLAN authentication schemes.
             </title>
-            <aactivity>	    
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to set the allowed authentication schemes.. 
+              </tss>
+              <guidance>The evaluator shall configure the TSF with a set of authorized WLAN authentication schemes. The ability to detect violation
+                of this policy will be tested in FAU_WID_EXT.4.2</guidance>
+              
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.4.2">
@@ -1191,8 +1196,26 @@
               The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> attempt to use WLAN authentication 
               schemes that are not authorized.
             </title>
-            <aactivity>	    
+            <aactivity>	
+              <tss>There are no TSS assurance activities for this SFR.</tss>
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              
+              <tests> The evaluator shall configure the TSF with 802.1x authentication as the only mode of authorized WLAN authentication schemes and perform the following tests:<h:br/>
+                <testlist>
+                  <test>
+                    <ul>
+                      <li>Deploy a whitelisted AP with open authentication.</li>
+                      <li>Connect a whitelisted client to AP. </li>
+                      <li>Verify that the TSF detects the AP and the client using unauthorized authentication schemes </li>
+                      <li>Deploy a whitelisted AP that uses pre-shared key authentication</li>
+                      <li>Connect a whitelisted client to AP. </li>
+                      <li>Verify that the TSF detects the AP and the client using unauthorized authentication schemes </li>
+                    </ul>
+                  </test>
+                </testlist>
+              </tests>
             </aactivity>
+
           </f-element>
         </f-component>
         
@@ -1201,23 +1224,58 @@
             <title> 
               The TSF shall provide Authorized Administrators the ability to define authorized WLAN encryption schemes.
             </title>
-            <aactivity>	    
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to set the allowed encryption schemes.. 
+              </tss>
+              <guidance>The evaluator shall configure the TSF with a set of allowed encryption schemes. The ability to detect violation
+                of this policy will be tested in FAU_WID_EXT.5.2</guidance>
+              
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.5.2">
             <title> 
-              The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> attempt to use WLAN encryption schemes that are not authorized.
+              The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> attempt to use WLAN encryption schemes 
+              that are not authorized.
             </title>
-            <aactivity>	    
-            </aactivity>
-          </f-element>
+            <aactivity>	
+              <tss>There are no TSS assurance activities for this SFR.</tss>
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              
+              <tests> The evaluator shall configure the TSF with 128 bit AES encryption type as the only allowd encryption scheme 
+                and perform the following tests:<h:br/>
+                <testlist>
+                  <test>
+                    <ul>
+                      <li>Deploy a whitelisted AP with no encryption.</li>
+                      <li>Connect a whitelisted client to AP. </li>
+                      <li>Verify that the TSF detects the AP and the client using unauthorized encryption schemes </li>
+                      <li>Deploy a whitelisted AP that uses TKIP encryption only</li>
+                      <li>Connect a whitelisted client to AP. </li>
+                      <li>Verify that the TSF detects the AP and the client using unauthorized encryption schemes </li>
+                    </ul>
+                  </test>
+                </testlist>
+              </tests>
+            </aactivity>          </f-element>
           <f-element id="fau_wid_ext.5.3">
             <title> 
               The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> send or receive unencrypted data.
             </title>
             <note role="application">When referring to unencrypted data being received by a whitelisted device it refers to unencrypted data 
               being sent to a whitelisted device from either a non-whitelisted or whitelisted device.</note>
-            <aactivity>	    
+            <aactivity>
+              <tss>There are no TSS assurance activities for this SFR.</tss>
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              <tests>
+                <testlist>
+                  <test>
+                  <ul>
+                    <li>Send a set of unencrypted data frames to a whitelisted client device. </li>
+                    <li>Verify that the TSF detects unecrypted data frames being addressed to the whitelisted client</li>
+                  </ul>
+                </test>
+               </testlist>
+              </tests>
             </aactivity>
           </f-element>
         </f-component>
