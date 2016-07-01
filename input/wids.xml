@@ -479,6 +479,24 @@
           </f-element>
           <f-element id="fau_inv_ext.1.2">
             <title> The TSF shall detect the presence of <h:i>[EUDs, APs]</h:i> in the Operational Environment that are 
+              part of the defined inventory.
+            </title>
+            <aactivity>	
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on where in the WIDS/WIPS interface the list of detected devices is displayed</tss>
+              <guidance>There are no guidance activities for this SFR.
+              </guidance>
+              <tests> The evaluator shall perform the following tests:<h:br/>
+                <testlist>
+                  <test>Deploy a whitelisted AP and client</test>
+                  <test>Check the list of detected devices to comfirm that the whitelisted deployed devices appear on the list of detected devices</test>
+                  <test>If the devices are detected verify that they are classified as whitelisted devices.</test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          
+          <f-element id="fau_inv_ext.1.3">
+            <title> The TSF shall detect the presence of <h:i>[EUDs, APs]</h:i> in the Operational Environment that are 
               not part of the defined inventory.
             </title>
             <aactivity>	
@@ -504,7 +522,8 @@
             <note role="application">This SFR only checks for the ability to place the location of wireless devices on the map but does mandate the accuracy of the loaction.
               Objective requirement FAU_INV_EXT.4 is more stringent on the accuracy of the location tracking capabilities.</note>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure location tracking. 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure location tracking and optimal
+                sensor placement. 
               </tss>
               <guidance>The evaluator shall review the Operational Guidance for instructions on how to load a location map and where in the TSF administrator interface 
                 the location of devices can be viewed.
@@ -629,15 +648,17 @@
               <assignable>distance degree of accuracy</assignable> of their actual location.
             </title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure location tracking and optimal
+                sensor placement. 
               </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
+              <guidance>The evaluator shall review the Operational Guidance for instructions on how to load a location map (if applicable and where in the TSF administrator interface 
+                the location of devices can be viewed.
               </guidance>
               <tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
+                  <test>Deploy an cellular device within range of the sensors</test>
+                  <test>Check location map for the location device</test>
+                  <test>Verify that the device is in the general vicinity of the actual location indicated on the map</test>
                 </testlist>
               </tests>
             </aactivity>
@@ -649,15 +670,17 @@
             <title> The TSF shall detect the physical location of [<h:i>EUDs, APs</h:i>] to within [<h:i>15 feet</h:i>] of their actual location.
             </title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure location tracking and optimal
+                sensor placement. 
               </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
+              <guidance>The evaluator shall review the Operational Guidance for instructions on how to load a location map (if applicable and where in the TSF administrator interface 
+                the location of devices can be viewed.
               </guidance>
               <tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
+                  <test>Deploy an cellular device within range of the sensors</test>
+                  <test>Check location map for the location device</test>
+                  <test>Verify that the device is within 15 feet of location indicated on the map</test>
                 </testlist>
               </tests>
             </aactivity>
@@ -669,14 +692,19 @@
             <title> The TSF shall detect when [<h:i>non-whitelisted APs as defined in FAU_INV_EXT.1</h:i>] have the following connections: 
               [<h:i>wired connection to the internal corporate network</h:i>].</title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on whether the TSF has the capability of 
+                detecting devices connecting to the protected wired network infrastructure. If the capability is present the TSS shall include
+                configuration guidance for this feature. 
               </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
+              <guidance>The evaluator shall review the Operational Guidance for instructions on how to configure the WIDS/WIPS to detect
+                unauthorized devices connected to the protected wired infrastructure.
               </guidance>
               <tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
-                  <test>Test 1</test>
+                  <test>Deploy a non-whitelisted AP </test>
+                  <test>Connect the AP via wire to the protected network infrastructure</test>
+                  <test>Check the WIDS/WIPS user interface for a list of detected devices</test>
+                  <test>Verify that the rogue AP is detected and an alert generated on the detection of an AP connected to the wire.</test>
                 </testlist>
               </tests>
             </aactivity>
@@ -690,16 +718,24 @@
             <note role="application">The intent of this SFR is to detect MAC spoofing where an attacker is able to cause the whitelisted device 
               to disconnect and promptly connects a non-whitelisted device using the MAC address of the whitelisted device.</note>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> contains guidance on how to configure this detection (ie. how to
+                label locations of sensors). 
               </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
-              </guidance>
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              
               <tests> The evaluator shall perform the following tests:<h:br/>
-                <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
-                </testlist>
+                <ul>
+                  <li>Setup a whitelisted AP (Location 1). </li>
+                  <li>Connect a whitelisted client to AP.</li>
+                  <li>Setup a second whitelisted AP and a non-whitelisted client in a separate non-overlapping location where the WIDS 
+                    also has sensors. Or simulate the distant non-verlapping locations by deploying the second AP in a shielded environment 
+                    connected to the valid network. (Location 2)
+                  </li>
+                  <li>Spoof the MAC address of the client in location 1 with the client device in location 2 and connect it to the 
+                    whitelisted AP in location 2. Make sure both EUDs are connected at the same time. </li>
+                  <li>Check if TSF detected and generated an alert </li>             
+                </ul>
+               
               </tests>
             </aactivity>
           </f-element>
@@ -711,16 +747,25 @@
             <note role="application">The intent of this SFR is to allow the administrator to determine the time that should be 
               allowed between a whitelisted device connecting in two distant locations</note>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> contains guidance on how to configure the timeframe that should 
+                be allowed between a device connecting in two separate locations. 
               </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
-              </guidance>
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              
               <tests> The evaluator shall perform the following tests:<h:br/>
-                <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
-                </testlist>
+                <ul>
+                  <li>Configure the timeframe allowed between connection of two devices in two separate locations (Location 1, Location 2)</li>
+                  <li>Setup a whitelisted AP (Location 1). </li>
+                  <li>Connect a whitelisted client to AP.</li>
+                  <li>Setup a second whitelisted AP and a non-whitelisted client in a separate non-overlapping location where the WIDS 
+                    also has sensors. Or simulate the distant non-verlapping locations by deploying the second AP in a shielded environment 
+                    connected to the valid network. (Location 2)
+                  </li>
+                  <li>Spoof the MAC address of the client in location 1 with the client device in location 2 and connect it to the 
+                    whitelisted AP in location 2. Make sure that the time between connections is shorter than the time timeframe allowed/configured. </li>
+                  <li>Check if TSF detected and generated an alert </li>             
+                </ul>
+                
               </tests>
             </aactivity>
           </f-element>
@@ -824,6 +869,9 @@
                   <td>FAU_WID_EXT.5</td>
                   <td>Detection of unencrypted traffic</td>
                 </tr>
+                <tr>
+                  <td><h:b>Table 1: Potential Security Violations</h:b></td>
+                </tr>
               </table> 
             </title>
           </f-element>
@@ -850,7 +898,7 @@
           </f-element>
           <f-element id="fau_wid_ext.1.2">
             <title> The TSF shall distinguish between benign and malicious <h:i>[APs, EUDs]</h:i> based on 
-              <h:i>[detection metrics]</h:i>.
+              <h:i>[automatic detection metrics]</h:i>.
             </title>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
@@ -867,7 +915,8 @@
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.1.3">
-            <title> The TSF shall provide Authorized Administrators with the ability to exclude non-malicious <h:i>[APs, EUDs]</h:i> from monitoring.
+            <title> The TSF shall provide Authorized Administrators with the ability to exclude non-malicious <h:i>[APs, EUDs]</h:i> 
+              from monitoring.
             </title>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
@@ -1352,10 +1401,12 @@
                   <td>None</td>
                   <td>None</td></tr>
                 <tr>
-                  <td>Table 3: Auditable Events</td>
+                  <td><h:b>Table 3: Auditable Events</h:b></td>
                 </tr>
               </table>
            </title>
+            <note role="application">The Auditable Events table includes optional and objective requirements. 
+              The auditing of optional and objective requirements is only required if the vendor chooses to have the requirement evaluated by NIAP. </note>
           </f-element>
           <f-element id="fau_gen.1.2/wids">
             <title> The TSF shall record within each audit record as 
