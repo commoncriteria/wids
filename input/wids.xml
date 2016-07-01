@@ -922,16 +922,10 @@
               from monitoring.
             </title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
-              </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
-              </guidance>
-              <tests> The evaluator shall perform the following tests:<h:br/>
-                <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
-                </testlist>
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure exclusion of 
+                non-whitelisted, non-malicious devices from monitoring. </tss>
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              <tests> The evaluator shall configure the TSF to exclude non-whitelisted, non-malicious devices from monitoring.
               </tests>
             </aactivity>
           </f-element>
@@ -953,17 +947,21 @@
                </selectables>
             </title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on the channels the TSF can detect. 
               </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
+              <guidance>The evaluator shall review the Operational Guidance for the channels that the TSF is able to monitor and configure 
+              the TSF to monitor the channels as selected in the SFR.  Depending on the channel dwelling times implemented by the vendor it might 
+              take a while for the detection of devices. 
               </guidance>
               <tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
+                  <test>Deploy AP on at least 2 different channels within the regulatory domain, on both 2.4GHz and 4.9/5.0GHz bands.</test>
+                  <test>Deploy AP on at least 2 different channels outside the regulatory domain, on both 2.4GHz and 4.9/5.0GHz bands.</test>
+                  <test>Deploy AP on at least 2 different channels on non-standard channel frequencies.</test>
+                  For the domains tested, verify if the AP gets detected on each channel tested.
                 </testlist>
               </tests>
+                        
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.2.2">
@@ -988,12 +986,12 @@
                 Configure the sensor to not transmit wirelessly. <h:br/> 
                   
                 With a signal analyzer check for RF energy in the following scenarios. <h:br/>
-                <h:b>On 2.4 Ghz band</h:b> 
+                <h:b>On 2.4 GHz band</h:b> 
                 <testlist>
                   <test>at sensors boot up</test>
                   <test>during normal operations, watch for about 10 minutes on this band</test>
                 </testlist>
-                 <h:b>On 5Ghz band</h:b> 
+                 <h:b>On 5GHz band</h:b> 
                 <testlist>
                   <test>at sensors boot up</test>
                   <test>during normal operations, watch for about 10 minutes on this band</test>
@@ -1010,17 +1008,12 @@
             on the network, an alert should be generated if any traffic is detected that does not match an allowed channel or SSID 
             by authorized devices</note>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to set the allowed SSIDs and 
+                channels. 
               </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
-              </guidance>
-              <tests> The evaluator shall perform the following tests:<h:br/>
-                <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
-                </testlist>
-              </tests>
+              <guidance>The evaluator shall configure the TSF with a set of authorized channels and SSIDs. The ability to detect violation
+              of this policy will be tested in FAU_WID_EXT.2.4.</guidance>
+              
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.2.4">
@@ -1054,16 +1047,85 @@
               objective requirements and will be mandatory in future PP versions.
             </note>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to set the allowed SSIDs and 
+                channels. 
               </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
-              </guidance>
-              <tests> The evaluator shall perform the following tests:<h:br/>
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              
+              <tests> The evaluator shall configure the TSF with a set of authorized channels and SSIDs and perform the following tests:<h:br/>
                 <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
+                  <h:b>Unauthorized Channels, Unauthorized SSID, Unauthorized Connections - 2.4 GHz band</h:b>
+                  <test>
+                    <ul>
+                      <li>Configure a whitelisted AP to operate on an unauthorized channel on the 2.4 GHz band. </li>
+                      <li>Connect a non-whitelisted client to AP</li>
+                      <li>Change SSID to one not on the authorized list</li>    
+                      <li>Connect a whitelisted client to AP.</li>
+                      <li>Verify that the TSF detects the whitelisted AP on unauthorized channel and using unauthorized SSID
+                        and client associating to AP on unauthorized channel and to a unauthorized SSID.</li>
+                    </ul>
+                  </test>              
+                  <test>
+                    <ul>
+                      <li>Place Rogue AP on unauthorized channel on the 2.4 GHz band.</li>
+                      <li>Connect whitelisted client to the Rogue AP.</li>
+                      <li>Verify that the TSF detects whitelisted client connecting to AP on unauthorized channel.</li>
+                    </ul>
+                  </test>
                 </testlist>
+                
+                <testlist>
+                  <h:b>Unauthorized Channels, Unauthorized SSID, Unauthorized Connections - 5 GHz band</h:b>
+                  <test>
+                    <ul>
+                      <li>Configure a whitelisted AP to operate on an unauthorized channel on the 5 GHz band. </li>
+                      <li>Connect a non-whitelisted client to AP</li>
+                      <li>Change SSID to one not on the authorized list</li>    
+                      <li>Connect a whitelisted client to AP.</li>
+                      <li>Verify that the TSF detects the whitelisted AP on unauthorized channel and using unauthorized SSID
+                        and client associating to AP on unauthorized channel and to a unauthorized SSID.</li>
+                    </ul>
+                  </test>              
+                  <test>
+                    <ul>
+                      <li>Place Rogue AP on unauthorized channel on the 5 GHz band.</li>
+                      <li>Connect whitelisted client to the Rogue AP.</li>
+                      <li>Verify that the TSF detects whitelisted client connecting to AP on unauthorized channel.</li>
+                    </ul>
+                  </test>
+                </testlist>
+                
+                <testlist>
+                  <h:b>MAC Spoofing</h:b>
+                  <test>
+                    <ul>
+                      <li>Spoof mac address of valid client device connected to a whitelisted AP on a non-whitelisted client device. </li>
+                      <li>Connect client with spoofed MAC address to a whitelisted AP. </li>
+                      <li>Verify that the TSF detects the MAC spoofing</li>
+                    </ul>          
+                  </test>                 
+                </testlist>
+                
+                <testlist>
+                  <h:b>Active Probing</h:b>
+                  <test>
+                    <ul>
+                      <li>Perform an active scan on the subnet of the WLAN</li>
+                      <li>Verify that the TSF detects the active probing</li>
+                    </ul>          
+                  </test>                 
+                </testlist>
+                
+                <testlist>
+                  <h:b>Point-to-Point Wireless Bridges</h:b>
+                  <test>
+                    <ul>
+                      <li>Setup a point-to-point wireless bridge in the range of the wireless sensors.</li>
+                      <li>Verify that the TSF detects the bridge</li>
+                    </ul>          
+                  </test>                 
+                </testlist>
+ 
               </tests>
             </aactivity>
           </f-element>
