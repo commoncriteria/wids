@@ -880,18 +880,16 @@
         <f-component id="fau_wid_ext.1" name="Wireless Intrusion Detection – Malicious Environmental Objects" status="threshold">
           <f-element id="fau_wid_ext.1.1">
             <title> The TSF shall apply <assignable>user-defined, automatic</assignable> classification rules to detect the following 
-              types of malicious environmental objects: <h:i>[rogue APs, EUDs]</h:i>.
+              types of malicious environmental objects: <h:i>[rogue APs]</h:i>.
             </title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
-              </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
+              <tss>There are no TSS assurance activities for this SFR.</tss>
+              <guidance>The evaluator shall review the Operational Guidance for instructions on how to configure user-defined classification rules.
               </guidance>
-              <tests> The evaluator shall perform the following tests:<h:br/>
+              <tests> The evaluator shall perform configure an AP classifcation rule, then perform the following tests:<h:br/>
                 <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
+                  <test>Deploy an AP following the user-defined classification rule</test>
+                  <test>Check that the AP gets correctly classified</test>
                 </testlist>
               </tests>
             </aactivity>
@@ -901,16 +899,21 @@
               <h:i>[automatic detection metrics]</h:i>.
             </title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/>... 
-              </tss>
-              <guidance>The evaluator shall also review the Operational Guidance to ensure that it
-                contains instructions on configuring ...
-              </guidance>
+              <tss>There are no TSS assurance activities for this SFR.</tss>
+              
+              
+              <guidance>There are no guidance activities for this SFR.</guidance>
+              
               <tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
-                  <test>Test 1</test>
-                  <test>Test 2</test>
-                </testlist>
+                <test>Deploy a non-whitelisted AP in the area of the WIDS sensor but take no action against the network. </test>
+                <test>Deploy a non-whitelisted AP in the area of the WIDS sensor and connect it to the wire if available. </test>
+                <test>Connect a whitelisted client to an unauthorized AP. </test>
+                <test>Connect a non-whitelisted client to a whitelisted AP.</test>
+                <test>Launch an attack against authorized AP with an unauthorized client.</test>
+
+                  For each test above verify that the TSF detects devices and how they are classified.
+               </testlist> 
               </tests>
             </aactivity>
           </f-element>
