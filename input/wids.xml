@@ -1344,10 +1344,10 @@
                 <testlist>
                   <test>
                     <ul>
-                      <li>set the wids sensor for a set channel</li>
+                      <li>Set the wids sensor for a set channel</li>
                       <li>Start a traffic capture from the WIDS sensor</li>
-                      <li>Send frames with a set number of frames on the channel the sensor was set for all IEEE 802.11 a, b, g, n, ac vendor propietary 
-                        types and subtypes from/to the following:
+                      <li>Send a set number of frames on the channel the sensor's operating channel for all IEEE 802.11 a, b, g, n, ac 
+                        vendor propietaryframe types and subtypes from/to the following:
                         <ol>
                           <li><h:i>authorized APs and authorized clients</h:i></li>
                           <li><h:i>authorized APs and unauthorized clients</h:i></li>
@@ -1355,7 +1355,7 @@
                         </ol>]   
                       </li>
                       <li>
-                        Verify that there are frames from all the types and subtypes are in the capture. 
+                        Verify that there are frames from all the types and subtypes in the capture. 
                       </li>
                     </ul>
                   </test>
@@ -1702,9 +1702,9 @@
             </note>
             <aactivity>	
               <tss>
-                The evaluator shall verify that the TSS describes the available modes of configuration (manual or automatic) and how to configure..            
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes the available modes of configuration (manual or automatic) and how to configure or import the baseline. 
               </tss>
-              <guidance>The evaluator shall verify that the options indicated are available.</guidance>
+              <guidance>The evaluator shall verify that the options indicated are available. </guidance>
              </aactivity>
           </f-element>
         </f-component>
@@ -1716,7 +1716,7 @@
             </title>
             <aactivity>	
               <tss>
-                The evaluator shall verify that the TSS includes instructions on how to how to configure user-defined attack signatures and the frame types 
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to how to configure user-defined attack signatures and the frame types 
                 and subtypes that are available for the administrator to craft the signatures.            
               </tss>
               <guidance>The evaluator shall verify that the options indicated are available.</guidance>
@@ -1741,27 +1741,27 @@
               trusted channel according to FTP_ITC.1.
              </title>
             <note role="application">FTP_ITC.1 is inherited from the NDcPP.</note>
-             <aactivity>	    
+             <aactivity>	
+              <tss>
+                The evaluator shall verify that the <abbr linkend="TSS"/> include the list of trusted channels (as specified in FTP_ITC.1) available in the TSF to 
+                transmit packet catpures to an external entity. The TSS shall also include instructions on how to configure the trusted channel.
+              </tss>
+               <guidance>
+                 There are no guidance activities for this SFR.
+               </guidance>
+               <tests> 
+                   The evaluator shall configure packet captures to be stored in the TSF according to the guidance specified
+                   in the TSS. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the TSF..
+               </tests>
              </aactivity>
            </f-element>
           <f-element id="fau_stg_ext.1.2/pcap">
             <title>The TSF shall be able to store generated <h:b>packet captures</h:b> on the TOE itself.
             </title>
             <aactivity>
-              <tss>There are no TSS assurance activities for this SFR.</tss>
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes configuration guidance for storing a packet
+              capture on the TOE.</tss>
               <guidance>There are no guidance activities for this SFR.</guidance>
-              <tests>
-                <testlist>
-                  The evaluator shall configure packet captures on the TSF. 
-                  <test>
-                    <ul>
-                      <li>Start a packet capture from an external device to capture the traffic leaving the 
-                        TSF to the external entity that will store the packet captures.</li>
-                      <li>Send traffic to a whitelisted device to trigger an alert</li>
-                      <li>Check that the communication is protected as stated in FTP_ITC.1 from NDcPP </li>
-                     </ul></test>
-                </testlist>
-              </tests>
             </aactivity>
           </f-element>
           <f-element id="fau_stg_ext.1.3/pcap">
@@ -1777,8 +1777,9 @@
               </selectables> when the local storage space for packet capture data is full.             
             </title>
             <aactivity>
-              <tss>The evaluator shall confirm that the TSS includes instructions on how to set rules for for packet data retention and deletionon the TSF.</tss>
+              <tss>The evaluator shall confirm that the TSS includes instructions on how to set rules for for packet data retention and deletion on the TSF.</tss>
               <guidance>There are no guidance activities for this SFR.</guidance>
+              <tests>The evaluator shall packet data retention and deletion rules on the TSF as specified in the TSS and test the functionality of the specified rules.</tests>
              </aactivity>
           </f-element>
          </f-component>
@@ -1845,6 +1846,9 @@
                 <tr>
                   <td>FAU_SAA.1</td>
                   <td>Configuration of number of connected clients, bandwidth usage, usage time that triggers a security alert</td>
+                </tr>
+                <tr>
+                  <td>Table 2: Management Functions</td>
                 </tr>
               </table>     
             </title>
