@@ -1270,8 +1270,10 @@
                 <testlist>
                   <test>
                   <ul>
-                    <li>Send a set of unencrypted data frames to a whitelisted client device. </li>
+                    <li>Send a set of crafted unencrypted data frames to a whitelisted client device. </li>
                     <li>Verify that the TSF detects unecrypted data frames being addressed to the whitelisted client</li>
+                    <li>Send a set of crafted unencrypted data frames with the mac address of a whitelisted client device to another client device.</li>
+                    <li>Verify that the TSF detects unecrypted data frames being sent from the whitelisted client</li>
                   </ul>
                 </test>
                </testlist>
@@ -1314,12 +1316,12 @@
               The TSF shall provide a dedicated sensor for wireless spectrum analysis.
             </title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to enable and configure dedicated Spectrum analysis.
-            as well as the the hardware needed. 
+              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to enable and configure dedicated spectrum analysis
+                as well as the the hardware needed. The TSS should also include details on the spectrum analysis capabilities of the TSF.
               </tss>
               <guidance>There are no guidance activities for this SFR.</guidance>
               <tests>
-                The evaluator shall enable and configure dedicated spectrum analysis.            
+                The evaluator shall enable and configure dedicated spectrum analysis and test the capabilities listed in the TSS.             
               </tests>              
             </aactivity>
           </f-element>
@@ -1353,7 +1355,7 @@
                         </ol>]   
                       </li>
                       <li>
-                        Verify that there are frames from all the types and subtypes
+                        Verify that there are frames from all the types and subtypes are in the capture. 
                       </li>
                     </ul>
                   </test>
