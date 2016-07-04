@@ -153,9 +153,9 @@
       
       The following are to be part of the evaluation:
       <h:ul>
-        <h:li>Monitoring, detection and reporting capabilities offered by the <abbr linkend="WIDS/WIPS"/>.</h:li>
-        <h:li>Use of secure communication paths between <abbr linkend="WIDS/WIPS"/> components</h:li>
-        <h:li>Use of secure communication paths for <abbr linkend="WIDS/WIPS"/> management and event monitoring.</h:li>
+        <h:li>Monitoring, detection and reporting capabilities offered by the WIDS/WIPS/>.</h:li>
+        <h:li>Use of secure communication paths between WIDS/WIPS components</h:li>
+        <h:li>Use of secure communication paths for WIDS/WIPS management and event monitoring.</h:li>
         <h:li>Use of secure communication paths with external components (e.g., database and log server)</h:li>
       </h:ul> <h:br/>
       
@@ -1805,7 +1805,7 @@
                     <ul>
                       <li>set the wids sensor for a set channel</li>
                       <li>Start a traffic capture from the WIDS sensor</li>
-                      <li>Send frames with a set number of frames on the channel the sensor was set for all IEEE 802.11 a, b, g, n, ac frame 
+                      <li>Send a set number of frames on the channel the sensor's operating channel for all IEEE 802.11 a, b, g, n, ac frame 
                         types and subtypes from/to the following:
                         <ol>
                           <li><h:i>authorized APs and authorized clients</h:i></li>
@@ -1814,7 +1814,7 @@
                         </ol>]   
                       </li>
                       <li>
-                        Verify that there are frames from all the types and subtypes
+                        Verify that there are frames from all the types and subtypes in the capture.
                       </li>
                     </ul>
                   </test>
@@ -1870,6 +1870,32 @@
               the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the EP, and “other 
               trusted communications” refers to the mechanisms specified in FPT_ITC.
             </note>
+            <aactivity>
+              <tss>
+                The evaluator shall examine the TSS to determine that the methods and protocols used to protect
+                distributed TOE components are described. The evaluator shall also confirm that all protocols listed in
+                the TSS in support of TOE administration are consistent with those specified in the requirement, and are
+                included in the requirements in the ST.                 
+              </tss>
+              <guidance>
+                The evaluator shall confirm that the operational guidance contains instructions for establishing the
+                communication paths for each supported method. 
+              </guidance>
+              <tests>
+                The evaluator shall also perform the following tests:
+                <testlist>
+                  <test>The evaluators shall ensure that communications using each specified (in the operational
+                guidance) communications method is tested during the course of the evaluation, setting up the
+                connections as described in the operational guidance and ensuring that communication is successful.</test>
+                  <test>The evaluator shall ensure, for each method of communication, the channel data is not sent in
+                plaintext.</test>
+                </testlist>
+
+                Further assurance activities are associated with the specific protocols.
+                
+              </tests>
+              
+            </aactivity>
           </f-element>
         </f-component> 
         <f-component id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection" status="objective">
@@ -1882,8 +1908,16 @@
             </note>
             <aactivity>	
               <tss>
-                The evaluator shall review the TSS section to determine that the TOE’s implementation of the fail secure functionality is documented. 
+                The evaluator shall review the TSS section to determine that the TOE’s implementation of the fail secure 
+                functionality is documented. The evaluator shall examine the TSS section to ensure that all failure modes 
+                specified in the ST are described.
               </tss>
+              <guidance>There are no guidance activities for this SFR.
+              </guidance>
+              <tests> 
+                For each failure mode specified in the ST, the evaluator shall ensure that the TOE attains a secure state
+                after initiating each failure mode type.
+              </tests>
             </aactivity>
           </f-element>
         </f-component>  
@@ -1900,7 +1934,44 @@
               </selectables> that   is   logically   distinct   from   other   communication channels  and  provides  assured  identification
               of  its end  points  and  protection  of  the  channel  data from disclosure and detection of modification of the channel data.
             </title>
-            <aactivity>	    
+            <aactivity>
+              The evaluator shall perform the following activities in addition to the assurance activity specified in the
+              base NDcPP for this SFR: 
+              <tss>
+                The evaluator shall examine the TSS to determine that, for all communications with authorized IT
+                entities identified in the requirement, each communications mechanism is identified in terms of the
+                allowed protocols for that IT entity. The evaluator shall also confirm that all protocols listed in the TSS
+                are specified and included in the requirements in the ST. 
+              </tss>
+              <guidance>
+                The evaluator shall confirm that the guidance documentation contains instructions for establishing the
+                allowed protocols with each authorized IT entity, and that it contains recovery instructions should a
+                connection be unintentionally broken. 
+                
+              </guidance>
+              <tests>
+                <testlist>
+                 <test>
+                   The evaluators shall ensure that communications using each protocol with each authorized IT
+                entity is tested during the course of the evaluation, setting up the connections as described in the
+                guidance documentation and ensuring that communication is successful.
+                 </test> 
+                  <test>
+                    For each protocol that the TOE can initiate as defined in the requirement, the evaluator shall
+                follow the guidance documentation to ensure that in fact the communication channel can be initiated
+                from the TOE.
+                  </test>
+                 <test>
+                   The evaluator shall ensure, for each communication channel with an authorized IT entity, the
+                channel data is not sent in plaintext.
+                 </test>
+                  <test>The evaluators shall, for each protocol associated with each authorized IT entity tested during
+                test 1, physically interrupt an established connection. The evaluator shall ensure that when physical
+                connectivity is restored, communications are appropriately protected.
+                  </test>
+                </testlist>
+                Further assurance activities are associated with the specific protocols
+              </tests>
             </aactivity>
           </f-element>
         </f-component>  
