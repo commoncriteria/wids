@@ -978,9 +978,9 @@
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure the sensors
                 as completely passive. This can either be how to configure as dedicated sensor with prevention disabled
-                or if the sensor transmits even when no prevention capabilities are turned off how to turn off wireless transmissions.
+                or if the sensor transmits even when no prevention capabilities are turned off, how to turn off wireless transmissions.
               </tss>
-              <guidance>go GDC
+              <guidance>There are no guidance activities for this SFR. 
               </guidance>
               <tests> The evaluator shall perform the following tests:<h:br/>
                 Configure the sensor to not transmit wirelessly. <h:br/> 
