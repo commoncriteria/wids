@@ -1750,8 +1750,9 @@
                  There are no guidance activities for this SFR.
                </guidance>
                <tests> 
-                   The evaluator shall configure packet captures to be stored in the TSF according to the guidance specified
-                   in the TSS. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the TSF..
+                   The evaluator shall configure packet captures tguidance specified
+                   in the TSS. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the
+                   captured traffic being sent to the external device is being sent through a trusted channel.
                </tests>
              </aactivity>
            </f-element>
@@ -1760,8 +1761,12 @@
             </title>
             <aactivity>
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes configuration guidance for storing a packet
-              capture on the TOE.</tss>
+                capture on the TOE.</tss>
               <guidance>There are no guidance activities for this SFR.</guidance>
+              <tests> 
+                The evaluator shall configure packet captures to be stored on the TSF according to the guidance specified
+                in the TSS. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the TSF.
+              </tests>
             </aactivity>
           </f-element>
           <f-element id="fau_stg_ext.1.3/pcap">
@@ -1780,7 +1785,7 @@
               <tss>The evaluator shall confirm that the TSS includes instructions on how to set rules for for packet data retention and deletion on the TSF.</tss>
               <guidance>There are no guidance activities for this SFR.</guidance>
               <tests>The evaluator shall packet data retention and deletion rules on the TSF as specified in the TSS and test the functionality of the specified rules.</tests>
-             </aactivity>
+            </aactivity>
           </f-element>
          </f-component>
       </subsection>
