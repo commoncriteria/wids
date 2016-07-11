@@ -46,7 +46,7 @@
       (defined to be a IEEE 802.11 network intrusion prevention product located at the edge of a private network that 
       can collect, inspect, analyze, and react to network traffic in real-time) and is intended to provide a minimal 
       baseline set of requirements that are targeted at mitigating well defined and described threats. This EP is not 
-      complete in itself, but rather extends either the collaborative Protection Profile for Network Devices (NDcPP). 
+      complete in itself, but rather extends the collaborative Protection Profile for Network Devices (NDcPP). 
       This introduction will describe the features of a compliant Target of Evaluation (TOE), and will also discuss 
       how this EP is to be used in conjunction with the NDcPP. 
     </section>
@@ -113,11 +113,11 @@
    <section title="Conformance Claims" id="ConformanceClaims">
          The collaborative Protection Profile for Network Devices (NDcPP) defines the baseline Security 
          Functional Requirements (SFRs) and Security Assurance Requirements (SARs) for network infrastructure
-         devices in general. This EP serves to extend the baseline set by either the NDcPP, with additional 
-         SFRs and associated ‘Assurance Activities’ specific to <abbr linkend="WIDS/WIPS"/> devices. Assurance Activities are 
+         devices in general. This EP serves to extend the requirements and activities defined in the NDcPP, with additional SFRs and associated 
+         'Assurance Activities' specific to <abbr linkend="WIDS/WIPS"/> devices. Assurance Activities are 
          the actions that the evaluator performs in order to determine a TOE’s compliance to the SFRs.
          <h:br/><h:br/>
-         This EP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria
+         This EP is conformant to Parts 2 (extended) and 3 of Common Criteria
          Version 3.1, Revision 4 <cite linkend="bibCC"/>.
    </section>
    
@@ -141,7 +141,7 @@
       
       This EP is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the WIDS/WIPS 
       will monitor will be wireless frames and RF spectrum for IEEE 802.11 a, b, g, and ac. Requirements for other 
-      technologies (i.e., cellular) and protocols are optional.<h:br/><h:br/>
+      technologies (e.g., cellular) and protocols are optional.<h:br/><h:br/>
       
       Conformant TOEs will detect potentially malicious network traffic using various approaches. Broadly speaking,
       the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification 
@@ -153,7 +153,7 @@
       
       The following are to be part of the evaluation:
       <h:ul>
-        <h:li>Monitoring, detection and reporting capabilities offered by the WIDS/WIPS/>.</h:li>
+        <h:li>Monitoring, detection and reporting capabilities offered by the WIDS/WIPS.</h:li>
         <h:li>Use of secure communication paths between WIDS/WIPS components</h:li>
         <h:li>Use of secure communication paths for WIDS/WIPS management and event monitoring.</h:li>
         <h:li>Use of secure communication paths with external components (e.g., database and log server)</h:li>
@@ -434,14 +434,20 @@
                 <selectable>hybrid</selectable>
               </selectables>
             </title>
-            <note role="application">At least one detection method must be selected.Based on the selection made in 
+            <note role="application">At least one detection method must be selected based on the selection made in 
               this SFR, the following SFRs must also be included: <h:br/>
               If anomaly-based detection is selected:   FAU_ANO_EXT.1.1 and FAU_ANO_EXT.1.2<h:br/>
               If signature-based detection is selected:   FAU_SIG_EXT.1.1<h:br/>
-              If hybrid intrusion detection is selected indicate which methods are used. 
+              A hybrid detection method is one that incorporates two or more detection methods (e.g., both anomaly and signature based or signature and 
+              another method). If one of the detection methods in a hybrid solution includes either anomaly-based or signature-based detection methods, the
+              corresponding selection based requirements must also be met. 
+              
              </note>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on which intrusion detection technique(s) the TOE utilizes. 
+                If a hybrid intrusion detection is selected as the intrusion detection method, the TSS should provide details on the detection techniques utilized.
+                Furthermore, when using a hybrid detection method that includes detection methods other than anomaly or signature based, the TSS shall include more 
+                details about such detection methods. 
               </tss>
               <guidance>There are no guidance activities for this SFR.</guidance>
               <tests> Depending on the detection technique used by the TOE the evaluator shall note detection technique used and test 
@@ -457,13 +463,13 @@
               of <h:i>[authorized WLAN network devices]</h:i> based on <h:i>[EUD MAC addresses, AP MAC addresses]</h:i>.
             </title>
             <note role="application">This inventory is used as a whitelist to indicate to the WIDS/WIPS which 
-              devices are legitimate memebers of the wireless network.</note>
+              devices are legitimate members of the wireless network.</note>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to configure a whitelist of devices. 
                 If the list is configured automatically the operational guidance should include how this must be configured and how to modify the whitelist.
               </tss>
-              <guidance>The evaluator shall review the Operational Guidance to for instructions on how to configure and change clasification 
-                of devices to indicate that they are part of the whitelist. If the whitelist is configured automatically 
+              <guidance>The evaluator shall review the Operational Guidance for instructions on how to configure and change clasification 
+                of devices to indicate that they are part of the whitelist. 
               </guidance>
               <tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
@@ -519,7 +525,7 @@
             <title> The TSF shall detect the physical location of <h:i>[inventoried and malicious EUDs, APs]</h:i> within 
               <h:i>[range of the TOE’s wireless sensors]</h:i>.
             </title>
-            <note role="application">This SFR only checks for the ability to place the location of wireless devices on the map but does mandate the accuracy of the loaction.
+            <note role="application">This SFR only checks for the ability to place the location of wireless devices on the map but does mandate the accuracy of the location.
               Objective requirement FAU_INV_EXT.4 is more stringent on the accuracy of the location tracking capabilities.</note>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure location tracking and optimal
@@ -570,7 +576,7 @@
               <tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
                   <test>Deploy a whitelisted AP and two whitelisted clients, and an additional AP as unauthorized (malicious)</test>
-                  <test>Connec one whitelisted client to the whitelisted AP and one to the unauthorized AP</test>
+                  <test>Connect one whitelisted client to the whitelisted AP and one to the unauthorized AP</test>
                   <test>Check the WIDS/WIPS user interface for a list of detected devices</test>
                   <test>Verify that the connected clients, bandwidth usage, usage time, connection status are part of the information presented on the 
                     WIDS/WIPS user interface about the devices</test>
@@ -624,6 +630,7 @@
                       <li>Wifi Direct</li>
                     </ul>
                   </test>
+                  
                   <test>
                     <ul>
                       <li>Deploy a SoftAP in linux with a whitelisted client</li>
@@ -922,9 +929,10 @@
               from monitoring.
             </title>
             <aactivity>	
-              <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure exclusion of 
-                non-whitelisted, non-malicious devices from monitoring. </tss>
-              <guidance>There are no guidance activities for this SFR.</guidance>
+              
+              <tss>There are no TSS assurance activities for this SFR.</tss>
+              <guidance>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure exclusion of 
+                non-whitelisted, non-malicious devices from monitoring. </guidance>
               <tests> The evaluator shall configure the TSF to exclude non-whitelisted, non-malicious devices from monitoring.
               </tests>
             </aactivity>
@@ -1750,7 +1758,7 @@
                  There are no guidance activities for this SFR.
                </guidance>
                <tests> 
-                   The evaluator shall configure packet captures tguidance specified
+                   The evaluator shall configure packet captures according to the guidance specified
                    in the TSS. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the
                    captured traffic being sent to the external device is being sent through a trusted channel.
                </tests>
@@ -1938,7 +1946,7 @@
           <f-element id="FTP_ITC.1.1 Refinement">
             <title> 
               The TSF shall be capable of using [selection: IPsec,  SSH,  TLS, HTTPS] to provide   a   trusted   communication   channel
-              between   itself   and authorized   IT   entities supporting  the  following  capabilities:  audit  server,  
+              between   itself   and authorized   IT   entities supporting  the  following  capabilities:  audit  server  
               <selectables>
                 <selectable><h:b>database server</h:b><assignable>other   capabilities</assignable></selectable>
                 <selectable></selectable>
@@ -2062,30 +2070,13 @@
         <term>AES</term>
         <description>Advanced Encryption Standard</description>
       </entry>
-      <entry>
-        <term>EAP</term>
-        <description>Extensible Authentication Protocol</description>
-      </entry>
-      <entry>
+       <entry>
         <term>EP</term>
         <description>Extended Package</description>
       </entry>
       <entry>
-        <term>FIPS</term>
-        <description>Federal Information Processing Standards</description>
-      </entry>
-      <entry>
-        <term>HTTP</term>
-        <description>Hypertext Transfer Protocol</description>
-      </entry>
-      <entry>
         <term>HTTPS</term>
         <description>Hypertext Transfer Protocol Secure</description>
-      </entry>
-
-      <entry>
-        <term>ISO</term>
-        <description>International Organization for Standardization</description>
       </entry>
       <entry>
         <term>NIAP</term>
