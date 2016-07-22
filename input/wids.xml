@@ -70,6 +70,10 @@
               of products.</description>
           </entry>
           <entry>
+            <term><abbr title="Security Functional Policy">SFP</abbr></term>
+            <description>The security policy enforced by a security function.</description>
+          </entry>
+          <entry>
             <term><abbr title="Security Target">ST</abbr></term>
             <description>A set of implementation-dependent security requirements for a specific
               product.</description>
@@ -140,7 +144,7 @@
       Overlay (independent from WLAN) architecture depending on vendor implementation.<h:br/><h:br/>
       
       This EP is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the WIDS/WIPS 
-      will monitor will be wireless frames and RF spectrum for IEEE 802.11 a, b, g, and ac. Requirements for other 
+      will monitor will be wireless frames and RF spectrum for IEEE 802.11 a, b, g, n, and ac. Requirements for other 
       technologies (e.g., cellular) and protocols are optional.<h:br/><h:br/>
       
       Conformant TOEs will detect potentially malicious network traffic using various approaches. Broadly speaking,
@@ -372,8 +376,8 @@
             </title>
             <note role="application">The capturing of raw frames that triggers the violation is an objective
               requirement. If the ST author selects capturing of raw frames that triggers the violation, 
-              the ST author must include the following SFRs: FAU_STG_EXT.1.1/pcap, FAU_STG_EXT.1.2/pcap, 
-              FAU_STG_EXT.1.3/pcap</note>
+              the ST author must include the following SFRs: <linkref linkend="FAU_STG_EXT.1.1/pcap"/>, <linkref linkend="FAU_STG_EXT.1.2/pcap"/>, 
+              <linkref linkend="FAU_STG_EXT.1.3/pcap"/></note>
             <aactivity>	
               <tss>The evaluator shall verify that the TSS describes where to find the WIDS/WIPS alerts on the Administrator console/interface.</tss>
               <guidance>The evaluator shall use the operational guidance for instructions on where the alerts generated are displayed within the 
@@ -436,8 +440,8 @@
             </title>
             <note role="application">At least one detection method must be selected based on the selection made in 
               this SFR, the following SFRs must also be included: <h:br/>
-              If anomaly-based detection is selected:   FAU_ANO_EXT.1.1 and FAU_ANO_EXT.1.2<h:br/>
-              If signature-based detection is selected:   FAU_SIG_EXT.1.1<h:br/>
+              If anomaly-based detection is selected:   <linkref linkend="FAU_ANO_EXT.1.1"/> and <linkref linkend="FAU_ANO_EXT.1.2"/><h:br/>
+              If signature-based detection is selected:   <linkref linkend="FAU_SIG_EXT.1.1"/><h:br/>
               A hybrid detection method is one that incorporates two or more detection methods (e.g., both anomaly and signature based or signature and 
               another method). If one of the detection methods in a hybrid solution includes either anomaly-based or signature-based detection methods, the
               corresponding selection based requirements must also be met. 
@@ -525,8 +529,8 @@
             <title> The TSF shall detect the physical location of <h:i>[inventoried and malicious EUDs, APs]</h:i> within 
               <h:i>[range of the TOE’s wireless sensors]</h:i>.
             </title>
-            <note role="application">This SFR only checks for the ability to place the location of wireless devices on the map but does mandate the accuracy of the location.
-              Objective requirement FAU_INV_EXT.4 is more stringent on the accuracy of the location tracking capabilities.</note>
+            <note role="application">This SFR only checks for the ability to place the location of wireless devices on the map but does not mandate the accuracy of the location.
+              Objective requirement <linkref linkend="FAU_INV_EXT.4"/> is more stringent on the accuracy of the location tracking capabilities.</note>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on how to configure location tracking and optimal
                 sensor placement. 
@@ -544,7 +548,7 @@
             </aactivity>
           </f-element>
           <f-element id="fau_inv_ext.2.2">
-            <title> The TSF shall detect <h:i>[signal strength,</h:i> <selectables>
+            <title> The TSF shall detect <h:i>[received signal strength,</h:i> <selectables>
               <selectable>RF power levels above predetermined threshold</selectable>
               <selectable>no other characteristics</selectable>
             </selectables>] of hardware operating within <h:i>[range of the TOE’s wireless sensors]</h:i>.
@@ -696,7 +700,7 @@
         
         <f-component id="fau_inv_ext.5" name="Detection of Unauthorized Connections" status="objective">
           <f-element id="fau_inv_ext.5.1">
-            <title> The TSF shall detect when [<h:i>non-whitelisted APs as defined in FAU_INV_EXT.1</h:i>] have the following connections: 
+            <title> The TSF shall detect when [<h:i>non-whitelisted APs as defined in <linkref linkend="FAU_INV_EXT.1"/></h:i>] have the following connections: 
               [<h:i>wired connection to the internal corporate network</h:i>].</title>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on whether the TSF has the capability of 
@@ -748,7 +752,7 @@
           </f-element>
           <f-element id="fau_mac_ext.1.2">
             <title> The TSF shall detect when two sensors in non-overlapping locations receive traffic from the MAC addresses of 
-              [<h:i>non-whitelisted devices as defined in FAU_INV_EXT.1</h:i>] within 
+              [<h:i>non-whitelisted devices as defined in <linkref linkend="FAU_INV_EXT.1"/></h:i>] within 
               [<h:i>an Authorized administrator-configurable timeframe based on distance between sensors</h:i>].      
             </title>
             <note role="application">The intent of this SFR is to allow the administrator to determine the time that should be 
@@ -946,7 +950,7 @@
               <selectables>
                 <selectable>simultaneously monitor and analyze</selectable>
                 <selectable>no other behavior</selectable>
-              </selectables> network traffic matching the <h:i>[802.11 monitoring SFP]</h:i> for all channels in the following RF Frequencies:
+              </selectables> network traffic matching the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> for all channels in the following RF Frequencies:
                2.4 GHz and 4.9/5.0 GHz 
               <selectables>
                  <selectable>channels outside regulatory domain</selectable>
@@ -974,7 +978,7 @@
           </f-element>
           <f-element id="fau_wid_ext.2.2">
             <title> 
-              The TSF shall provide wireless sensors to detect network traffic matching the <h:i>[802.11 monitoring SFP]</h:i> that 
+              The TSF shall provide wireless sensors to detect network traffic matching the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> that 
               <selectables>
                 <selectable>can be configured to prevent transmission of data</selectable>
                 <selectable>does not transmit data</selectable>
@@ -1009,7 +1013,7 @@
           </f-element>
           <f-element id="fau_wid_ext.2.3">
             <title> 
-              The TSF shall provide the ability to define a subset of network traffic matching the <h:i>[802.11 monitoring SFP]</h:i> 
+              The TSF shall provide the ability to define a subset of network traffic matching the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> 
               as unauthorized traffic based on <h:i>[channel used, SSID]</h:i>.
             </title>
             <note role="application">The administrator should have the ability to configure which channels and SSIDs are permitted
@@ -1020,7 +1024,7 @@
                 channels. 
               </tss>
               <guidance>The evaluator shall configure the TSF with a set of authorized channels and SSIDs. The ability to detect violation
-              of this policy will be tested in FAU_WID_EXT.2.4.</guidance>
+                of this policy will be tested in <linkref linkend="FAU_WID_EXT.2.4"/>.</guidance>
               
             </aactivity>
           </f-element>
@@ -1043,10 +1047,11 @@
                         <selectable>802.11</selectable>
                         <selectable>802.1X</selectable>
                         <selectable><assignable>proprietary vendor protocol(s)</assignable></selectable>
-                        <selectable>no other methods</selectable>
                       </selectables>
                     </selectable>
-                </selectables>
+                    <selectable>no other methods</selectable>
+                  </selectables>
+                  ]
                 </li>
               </ul>
             </title>
@@ -1195,13 +1200,13 @@
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to set the allowed authentication schemes.. 
               </tss>
               <guidance>The evaluator shall configure the TSF with a set of authorized WLAN authentication schemes. The ability to detect violation
-                of this policy will be tested in FAU_WID_EXT.4.2</guidance>
+                of this policy will be tested in <linkref linkend="FAU_WID_EXT.4.2"/></guidance>
               
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.4.2">
             <title> 
-              The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> attempt to use WLAN authentication 
+              The TSF shall detect when <h:i>[whitelisted devices defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> attempt to use WLAN authentication 
               schemes that are not authorized.
             </title>
             <aactivity>	
@@ -1236,7 +1241,7 @@
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to set the allowed encryption schemes.. 
               </tss>
               <guidance>The evaluator shall configure the TSF with a set of allowed encryption schemes. The ability to detect violation
-                of this policy will be tested in FAU_WID_EXT.5.2</guidance>
+                of this policy will be tested in <linkref linkend="FAU_WID_EXT.5.2"/></guidance>
               
             </aactivity>
           </f-element>
@@ -1267,7 +1272,7 @@
             </aactivity>          </f-element>
           <f-element id="fau_wid_ext.5.3">
             <title> 
-              The TSF shall detect when <h:i>[whitelisted devices defined in FAU_INV_EXT.1.1]</h:i> send or receive unencrypted data.
+              The TSF shall detect when <h:i>[whitelisted devices defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> send or receive unencrypted data.
             </title>
             <note role="application">When referring to unencrypted data being received by a whitelisted device it refers to unencrypted data 
               being sent to a whitelisted device from either a non-whitelisted or whitelisted device.</note>
@@ -1303,7 +1308,7 @@
             </title>
             <note role="application">This SFR refers to Non-WiFi (IEEE 802.11 a, b, g, n, and ac) network devices that operate 
               in the specified frequencies. If the ST author selects detection of devices in the cellular bands, the ST author 
-              must include selection-based requirement FAU_INV_EXT.4.1</note>
+              must include selection-based requirement <linkref linkend="FAU_INV_EXT.4.1"/></note>
             <aactivity>	
               <tss>The evaluator shall verify that the <abbr linkend="TSS"/> includes the set of RF bands and 
                 technologies that the TSF detect devices on. The TSS should also include instructions on how to enable and the hardware
@@ -1337,7 +1342,7 @@
         
         <f-component id="fau_wid_ext.7" name="Wireless Intrusion Detection – Proprietary Traffic Monitoring" status="objective">
           <f-element id="fau_wid_ext.7.1">
-            <title> The TSF shall detect the presence of all vendor proprietary network traffic matching the [<h:i>802.11 monitoring SFP</h:i>]
+            <title> The TSF shall detect the presence of all vendor proprietary network traffic matching the [<h:i>802.11 monitoring <abbr linkend="SFP"/></h:i>]
               for [<h:i>all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:</h:i>
               <ol>
                 <li><h:i>authorized APs and authorized clients</h:i></li>
@@ -1472,18 +1477,16 @@
                     <td>Information on location of device</td>
                   <td>Device MAC address, device type, classification of device, sensors that detected device, 
                     signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters) </td></tr>
-                <tr><td>FAU_INV_EXT.2.2</td>
-                    <td>Alert generated by TSF upon detection of RF power threshold violation</td>
-                    <td>The alert must indicate the power levels detected and the difference between the threshold and the levels detected.</td></tr>
+                <tr><td>FAU_INV_EXT.2.2</td><td>None</td><td>None</td></tr>
                 <tr><td>FAU_INV_EXT.2.3</td>
                     <td>Details of the devices operating within the range of the sensor</td>
                     <td>Connected clients, bandwidth usage, usage time, connection status</td></tr>
                 <tr><td>FAU_INV_EXT.3.1</td>
                     <td>Unexpected behavior by whitelisted device alert</td>
-                    <td>Description of behavior detected (i.e., bridge, ICS connection)
-                         MAC address of whitelisted device
-                         Device to which the whitelisted is making a connection with
-                         Connection start, end</td></tr>
+                    <td>Description of behavior detected (i.e., bridge, ICS connection), 
+                         MAC address of whitelisted device,
+                         device to which the whitelisted device is making a connection with,
+                         connection start and end</td></tr>
                 <tr><td>FAU_INV_EXT.4.1</td>
                     <td>Information on location of device</td>
                   <td>Device MAC address, device type, classification of device, sensors that detected device, 
@@ -1803,7 +1806,7 @@
         <f-component id="FDP_IFC.1" name="Information Flow Control Policy" status="threshold">
           <f-element id="FDP_IFC.1.1">
             <title> 
-              The TSF shall enforce the <h:i>[802.11 monitoring SFP]</h:i> for <h:i>[all IEEE 802.11 a, b, g, n, ac frame types 
+              The TSF shall enforce the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> for <h:i>[all IEEE 802.11 a, b, g, n, ac frame types 
               and subtypes between:</h:i>
               <ul>
                 <li><h:i>authorized APs and authorized clients </h:i></li>
@@ -1811,7 +1814,7 @@
                 <li><h:i>unauthorized APs and authorized clients</h:i>].</li>
               </ul>     
             </title>
-            <note role="application">“Authorized” clients/APs are those that are assigned to the whitelist as defined by FAU_INV_EXT.1.1</note>
+            <note role="application">“Authorized” clients/APs are those that are assigned to the whitelist as defined by <linkref linkend="FAU_INV_EXT.1.1"/>. </note>
             <aactivity>
               <tss>There are no TSS assurance activities for this SFR.</tss>
               <guidance>There are no guidance activities for this SFR.</guidance>
@@ -2024,9 +2027,9 @@
   </appendix>
 
   <appendix title="Selection-Based Requirements" id="sel-based"> As indicated in the introduction to
-    this PP, the baseline requirements (those that must be performed by the OS or its underlying
+    this EP, the baseline requirements (those that must be performed by the OS or its underlying
     platform) are contained in the body of this EP. There are additional requirements based on
-    selections in the body of the PP: if certain selections are made, then additional requirements
+    selections in the body of the EP: if certain selections are made, then additional requirements
     below will need to be included. 
   </appendix>
 
