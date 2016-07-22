@@ -65,6 +65,12 @@
               Evaluation.</description>
           </entry>
           <entry>
+            <term><abbr title="Extended Package">EP</abbr></term>
+            <description>An implementation-independent set of security requirements for a product category that extend 
+              the requirements from a base PP to cover security requirements that are specific to a product type. In this case, 
+            the WIDS/WIPS EP extends the NDcPP.</description>
+          </entry>
+          <entry>
             <term><abbr title="Protection Profile">PP</abbr></term>
             <description>An implementation-independent set of security requirements for a category
               of products.</description>
