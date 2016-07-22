@@ -70,15 +70,6 @@
               of products.</description>
           </entry>
           <entry>
-            <term><abbr title="Security Functional Policy">SFP</abbr></term>
-            <description>The security policy enforced by a security function.</description>
-          </entry>
-          <entry>
-            <term><abbr title="Security Target">ST</abbr></term>
-            <description>A set of implementation-dependent security requirements for a specific
-              product.</description>
-          </entry>
-          <entry>
             <term><abbr title="Target of Evaluation">TOE</abbr></term>
             <description> The product under evaluation. In this case, the Wireless Intrusion
                 Detection/Prevention System in section <xref linkend="TOEboundary"/> and its
@@ -94,13 +85,24 @@
                 linkend="ST"/>. </description>
           </entry>
           <entry>
+            <term><abbr title="Security Assurance Requirement">SAR</abbr></term>
+            <description>A requirement to assure the security of the <abbr linkend="TOE"/>.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Security Functional Policy">SFP</abbr></term>
+            <description>The security policy enforced by a security function.</description>
+          </entry>
+
+          <entry>
             <term><abbr title="Security Functional Requirement">SFR</abbr></term>
             <description>A requirement for security enforcement by the <abbr linkend="TOE"/>.</description>
           </entry>
           <entry>
-            <term><abbr title="Security Assurance Requirement">SAR</abbr></term>
-            <description>A requirement to assure the security of the <abbr linkend="TOE"/>.</description>
+            <term><abbr title="Security Target">ST</abbr></term>
+            <description>A set of implementation-dependent security requirements for a specific
+              product.</description>
           </entry>
+
         </glossary>
       </subsection>
       <subsection title="Technology Terms" id="techterms">
@@ -1658,7 +1660,7 @@
         
         <f-component id="FAU_ANO_EXT.1" name="Anomaly-Based Intrusion Detection" status="sel-based">
           <selection-depends req="fau_ids_ext.1.1"/>
-          <f-element id="FAU_ANO_EXT.1.1">
+          <f-element id="fau_ano_ext.1.1">
             <title> The TSF shall support the definition of 
               <selectables atleastone="yes">
                 <selectable>baselines (‘expected and approved’)</selectable>
@@ -1698,7 +1700,7 @@
               </tests>
             </aactivity>
           </f-element>
-          <f-element id="FAU_ANO_EXT.1.2">
+          <f-element id="fau_ano_ext.1.2">
             <title> 
               The TSF shall support the definition of anomaly activity through 
               <selectables>
