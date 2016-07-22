@@ -70,6 +70,24 @@
               of products.</description>
           </entry>
           <entry>
+            <term><abbr title="Security Assurance Requirement">SAR</abbr></term>
+            <description>A requirement to assure the security of the <abbr linkend="TOE"/>.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Security Functional Policy">SFP</abbr></term>
+            <description>The security policy enforced by a security function.</description>
+          </entry>
+          
+          <entry>
+            <term><abbr title="Security Functional Requirement">SFR</abbr></term>
+            <description>A requirement for security enforcement by the <abbr linkend="TOE"/>.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Security Target">ST</abbr></term>
+            <description>A set of implementation-dependent security requirements for a specific
+              product.</description>
+          </entry>
+          <entry>
             <term><abbr title="Target of Evaluation">TOE</abbr></term>
             <description> The product under evaluation. In this case, the Wireless Intrusion
                 Detection/Prevention System in section <xref linkend="TOEboundary"/> and its
@@ -84,24 +102,7 @@
             <description>A description of how a <abbr linkend="TOE"/> satisfies the SFRs in a <abbr
                 linkend="ST"/>. </description>
           </entry>
-          <entry>
-            <term><abbr title="Security Assurance Requirement">SAR</abbr></term>
-            <description>A requirement to assure the security of the <abbr linkend="TOE"/>.</description>
-          </entry>
-          <entry>
-            <term><abbr title="Security Functional Policy">SFP</abbr></term>
-            <description>The security policy enforced by a security function.</description>
-          </entry>
-
-          <entry>
-            <term><abbr title="Security Functional Requirement">SFR</abbr></term>
-            <description>A requirement for security enforcement by the <abbr linkend="TOE"/>.</description>
-          </entry>
-          <entry>
-            <term><abbr title="Security Target">ST</abbr></term>
-            <description>A set of implementation-dependent security requirements for a specific
-              product.</description>
-          </entry>
+         
 
         </glossary>
       </subsection>
