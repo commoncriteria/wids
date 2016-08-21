@@ -183,7 +183,7 @@
     network infrastructure, or to the TOE itself. Attacks against a WLAN could compromise the confidentiality and 
     integrity of WLAN user and system data as well as the availability of the WLAN to legitimate users. <h:br/><h:br/> 
     
-    The term “monitored network” is used here to represent any WLAN and/or wired networl that the TOE is configured to monitor and detect 
+    The term “monitored network” is used here to represent any WLAN and/or wired network that the TOE is configured to monitor and detect 
     intrusions on. This extends to the wired networks as intrusions on the wireless network can also be damaging to the wired infrastructure. 
     The WIDS/WIPS also protects the wired infrastructure by detecting rogue devices that are directly connected to the wired infrastructure,
     which may expose the wired network, or unauthorized WLAN devices deployed in a no-wireless zone. The terms "Wi-Fi", “Wi-Fi Network” and 
