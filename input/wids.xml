@@ -1627,7 +1627,7 @@
                     <ul>
                       <li>The evaluator shall use the instructions in the operational guidance to configure baselines or anomaly-based rules</li>
                       <li>The evaluator shall send traffic that does not match the baseline or matches the anomaly-based rule 
-                        and verify the TSF detects the anomolous behavior and generates an alert.</li>              
+                        and verify the TSF detects the anomalous behavior and generates an alert.</li>              
                     </ul></test>
                 </testlist>
               </tests>
