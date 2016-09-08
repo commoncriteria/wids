@@ -22932,7 +22932,7 @@
           <xref show="link" id="fpt_ssp"/> establishes the requirement for certain
           critical functions of the TSF to use this trusted
           protocol. <xref show="link" id="fpt_ssp"/> ensures that two distributed
-          parts of the TOE (e.g. hosts) have synchronised their states
+          parts of the TOE (e.g. hosts) have synchronized their states
           after a security-relevant action.</para>
       </ff-behaviour>
       <ff-user-notes>
@@ -22949,10 +22949,10 @@
           <xref show="link" id="fpt_ssp"/> establishes the requirement for certain
           critical functions of the TSF to use a trusted
           protocol. <xref show="link" id="fpt_ssp"/> ensures that two distributed
-          parts of the TOE (e.g. hosts) have synchronised their states
+          parts of the TOE (e.g. hosts) have synchronized their states
           after a security-relevant action.</para>
         <para type="normal" id="pgfId-271327">
-          Some states may never be synchronised, or the transaction
+          Some states may never be synchronized, or the transaction
           cost may be too high for practical use; encryption key
           revocation is an example, where knowing the state after the
           revocation action is initiated can never be known. Either
