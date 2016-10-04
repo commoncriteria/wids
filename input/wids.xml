@@ -10,9 +10,9 @@
       <PPTitle>collaborative Protection Profile for Network Devices Extended Package (EP) for
 				Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS)
 	  </PPTitle>
-      <PPVersion>0</PPVersion>
+      <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate></PPPubDate>
+      <PPPubDate>2016-10-06</PPPubDate>
       <PPCertificationID>unassigned</PPCertificationID>
       <CCVersion>3.1R4</CCVersion>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
@@ -23,23 +23,15 @@
     </ReferenceTable>
   </PPReference>
 
-<RevisionHistory role="draft">
+<RevisionHistory role="final">
     <entry>
-      <version>Draft 2</version>
-      <date>09-22-2016</date>
-      <subject></subject>
+      <version>1.0</version>
+      <date>2016-10-06</date>
+      <subject>Initial Release - EP for NDcPP</subject>
     </entry>
-  </RevisionHistory>
+</RevisionHistory>
 
-  <!-- <RevisionHistory role="final">
-    <entry>
-      <version>4.0</version>
-      <date>2015-08-14</date>
-      <subject>Release - significant revision</subject>
-    </entry>
-  </RevisionHistory>
-  -->
- 
+
  <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview">
       This Extended Package (EP) describes security requirements for a Wireless Intrusion/Prevention System (WIDS/WIPS)
