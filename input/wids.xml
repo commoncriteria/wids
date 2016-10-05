@@ -2356,15 +2356,14 @@
         </f-component>  
       </subsection>
      </section>
-  </chapter>
  
-  <chapter title="Security Assurance Requirements" id="SARs">
-    <h:p>This EP does not define any SARs beyond those defined within the NDcPP. It is important 
-      to note that a TOE that is evaluated against this EP is inherently evaluated against NDcPP. 
-      When evaluating the TOE, it is necessary to apply the SARs defined for the base PP to the 
-      entire TOE and not just the portion that is described by the base PP.</h:p>   
-  </chapter>
-
+    <section title="Security Assurance Requirements" id="SARs">
+      <h:p>This EP does not define any SARs beyond those defined within the NDcPP. It is important 
+        to note that a TOE that is evaluated against this EP is inherently evaluated against NDcPP. 
+        When evaluating the TOE, it is necessary to apply the SARs defined for the base PP to the 
+        entire TOE and not just the portion that is described by the base PP.</h:p>   
+    </section>
+ </chapter>
   
   <appendix title="Optional Requirements" id="optional"> 
     As indicated in <secref linkend="ConformanceClaims"/>,
