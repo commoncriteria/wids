@@ -116,14 +116,37 @@
 	  </section>
    
    <section title="Conformance Claims" id="ConformanceClaims">
-         The collaborative Protection Profile for Network Devices (NDcPP) defines the baseline Security 
-         Functional Requirements (SFRs) and Security Assurance Requirements (SARs) for network infrastructure
-         devices in general. This EP serves to extend the requirements and activities defined in the NDcPP, with additional SFRs and associated 
-         'Assurance Activities' specific to <abbr linkend="WIDS/WIPS"/> devices. Assurance Activities are 
-         the actions that the evaluator performs in order to determine a TOE’s compliance to the SFRs.
-         <h:br/><h:br/>
-         This EP is conformant to Parts 2 (extended) and 3 of Common Criteria
-         Version 3.1, Revision 4 <cite linkend="bibCC"/>.
+     <h:b>Conformance Statement</h:b><h:br/>
+     This EP is conformant to Parts 2 (extended) and 3 of Common Criteria Version 3.1, Revision 4 <cite linkend="bibCC"/>.<h:br/>
+     
+     To be conformant to this EP, an ST must demonstrate Exact Conformance, a subset of Strict Conformance 
+     as defined in [CC] Part 1 (ASE_CCL). The ST must include all components in this EP that are:<h:br/>
+     
+     <h:ul>
+       <h:li>Unconditional (which are always required)</h:li>
+       <h:li>Selection-based (which are required when certain selections are chosen in the unconditional requirements)</h:li>
+     </h:ul>
+     
+     and may include components that are:
+     <h:ul>
+       <h:li>Optional</h:li>
+       <h:li>Objective.</h:li>
+     </h:ul>
+     Unconditional requirements are found in the main body of the document, while appendices contain the selection-based, 
+     optional, and objective requirements. The ST may iterate any of these components but it must not introduce any 
+     additional component (e.g. from CC Part 2 or 3) that is not defined in the NDcPP (which this EP extends), or in this EP itself.<h:br/><h:br/>
+     
+     <h:b>CC Conformance Claims</h:b><h:br/>
+     This EP is conformant to Parts 2 (extended) and 3 (conformant) of Common Criteria Version 3.1, Revision 4 <cite linkend="bibCC"/>.<h:br/><h:br/>
+     
+     
+     <h:b>PP Claim</h:b><h:br/>
+     This EP does not claim conformance to any Protection Profile. This EP extends the NDcPP, which means that it relies on the 
+     NDcPP to provide some set of 'base' functionality which is then expanded upon by this EP. This however does not imply that the EP itself is conformant to this PP.<h:br/><h:br/>
+     
+     <h:b>Package Claim</h:b><h:br/>
+     This EP does not claim conformance to any packages.
+         
    </section>
    
    <section title="How to Use This Extended Package" id="Usage">
