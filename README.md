@@ -1,4 +1,4 @@
-Wireless Intrusion Detection/Prevention Systems
+Wireless Intrusion Detection/Prevention Systems [![Build Status](https://jenkins-criteria.rhcloud.com/buildStatus/icon?job=protection-profiles/wids)](https://jenkins-criteria.rhcloud.com/job/protection-profiles/job/wids/)
 ===============
 
 collaborative Protection Profile for Network Devices Extended Package (EP) for Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS)
