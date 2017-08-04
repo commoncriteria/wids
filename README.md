@@ -1,7 +1,7 @@
 Extended Package for Wireless Intrusion Detection/Prevention Systems
 ===============
 [![Build Status](https://jenkins-criteria.rhcloud.com/buildStatus/icon?job=protection-profiles/wids)](https://jenkins-criteria.rhcloud.com/job/protection-profiles/job/wids/)
-[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/wids.svg?maxAge=2592000)](https://github.com/commoncriteria/wids/issues) 
+[![GitHub issues Open](https://img.shields.io/github/issues-raw/commoncriteria/wids.svg?maxAge=2592000)](https://github.com/commoncriteria/wids/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
 This repository hosts the draft version of the Network Devices Extended Package (EP) for Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) based on the 
@@ -12,8 +12,8 @@ A list of products that have passed evaluation against this Protection Profile c
 
 ## Working Draft
 
-* [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP)](http://common-criteria.rhcloud.com/wids/output/wids-release.html)
-* [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP)](http://common-criteria.rhcloud.com/wids/output/wids-release-paged.pdf)
+* [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP)](http://common-criteria.rhcloud.com/wids/output/wids-release.html) (html)
+* [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP)](http://common-criteria.rhcloud.com/wids/output/wids-release-paged.pdf) (pdf)
 
 ## Release Version
 * [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP) v1.0](https://www.niap-ccevs.org/Profile/Info.cfm?id=395)
