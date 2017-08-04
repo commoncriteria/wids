@@ -25,7 +25,7 @@ If you are interested in contributing directly to future versions the this Prote
 
 ## Feedback
 
-Questions, comments, and fixes can be submitted to the [repository issue tracker](https://github.com/commoncriteria/application/issues)
+Questions, comments, and fixes can be submitted to the [repository issue tracker](https://github.com/commoncriteria/wids/issues)
 
 ## Quickstart
 To clone this project along with its _transforms_ submodule run:
@@ -48,10 +48,6 @@ To pull updates from the upstream _transforms_ submodule and commit them run:
 * output - The output directory where the html is placed after transformation.
 * output/images - The directory where images are stored
 * transforms - Points to the transform subproject which is really a repository for resources shared amongst many Common Criteria projects.
-
-## Links 
-* [National Information Assurance Partnership (NIAP)](https://www.niap-ccevs.org/)
-* [Common Criteria Portal](https://www.commoncriteriaportal.org/)
 
 ## Links 
 * [National Information Assurance Partnership (NIAP)](https://www.niap-ccevs.org/)
