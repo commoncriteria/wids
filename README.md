@@ -12,8 +12,8 @@ A list of products that have passed evaluation against this Protection Profile c
 
 ## Draft Version
 
-* [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP)](http://common-criteria.rhcloud.com/wids/output/wids-release.html) (html)
-* [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP)](http://common-criteria.rhcloud.com/wids/output/wids-release-paged.pdf) (pdf)
+* [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP)](https://commoncriteria.github.io/pp/wids/wids-release.html) (html)
+* [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP)](https://commoncriteria.github.io/pp/wids/wids-release-paged.pdf) (pdf)
 
 ## Release Version
 * [Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) Extended Package (EP) v1.0](https://www.niap-ccevs.org/Profile/Info.cfm?id=395)
