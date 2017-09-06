@@ -1,6 +1,6 @@
 Extended Package for Wireless Intrusion Detection/Prevention Systems
 ===============
-[![Build Status](https://jenkins-criteria.rhcloud.com/buildStatus/icon?job=protection-profiles/wids)](https://jenkins-criteria.rhcloud.com/job/protection-profiles/job/wids/)
+[![Build Status](https://travis-ci.org/commoncriteria/wids.svg?branch=master)](https://travis-ci.org/commoncriteria/wids)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/wids.svg?maxAge=2592000)](https://github.com/commoncriteria/wids/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
