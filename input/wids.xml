@@ -1559,11 +1559,11 @@
           <f-element id="fau_wid_ext.7.1">
             <title> The TSF shall detect the presence of all vendor proprietary network traffic matching the [<h:i>802.11 monitoring <abbr linkend="SFP"/></h:i>]
               for [<h:i>all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:</h:i>
-              <ol>
+              <h:ol>
                 <h:li><h:i>authorized APs and authorized EUDs.</h:i></h:li>
                 <h:li><h:i>authorized APs and unauthorized EUDs.</h:i></h:li>
                 <h:li><h:i>unauthorized APs and authorized EUDs.</h:i></h:li>
-              </ol>]            
+              </h:ol>]            
             </title>
             <note role="Application">The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" 
               is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
@@ -1578,11 +1578,11 @@
                       <step>Start a traffic capture from the WIDS sensor.</step>
                       <step>Send a set number of frames on the sensor's operating channel for all IEEE 802.11 a, b, g, n, ac 
                         vendor propietary frame types and subtypes from/to the following:
-                        <ol>
+                        <h:ol>
                           <h:li><h:i>authorized APs and authorized EUDs.</h:i></h:li>
                           <h:li><h:i>authorized APs and unauthorized EUDs.</h:i></h:li>
                           <h:li><h:i>unauthorized APs and authorized EUDs.</h:i></h:li>
-                        </ol>
+                        </h:ol>
                       </step>
                       <step>Provide a list of the frames types and subtypos that were used for testing and verify that they were all detected.</step>
                     </steplist>
@@ -1781,12 +1781,12 @@
              
           <f-element id="fau_gen.2.1/wids">
             <title> The TSF shall be able to generate a WIDS/WIPS audit record of the following auditable events:
-              <ol type="a">
+              <h:ol type="a">
                 <h:li>Start-up and shutdown of the WIDS/WIPS functions;</h:li>
                 <h:li>All WIDS/WIPS auditable events for the [not specified] level of audit;</h:li>
                 <h:li><h:i>[Auditable events listed in Table 4;</h:i></h:li>
                 <h:li><h:i>Totals of similar events occurring within a specified time period]</h:i></h:li>
-              </ol>
+              </h:ol>
               <table>
                 <tr><td><h:b>Requirement</h:b></td><td><h:b>Auditable Events</h:b></td><td><h:b>Additional Audit Record Contents</h:b></td></tr>
                 <tr><td>FAU_ANO_EXT.1.1</td><td>None</td><td>None</td></tr>
@@ -1972,12 +1972,12 @@
                 <selectable>syslog</selectable>
               </selectables>
               at least the following information:
-              <ol type="a">
+              <h:ol type="a">
                 <h:li>Date and time of the event, type of event, and subject identity (if applicable);</h:li>
                 <h:li>For each audit event type, based on the auditable event definitions of the functional components included in the PP/ST, 
                   [<h:i>auditable events listed in Table 4</h:i>].
                 </h:li>
-              </ol>              
+              </h:ol>              
             </title>
             <aactivity>
               <TSS/>There are no TSS assurance activities for this SFR.
@@ -1993,7 +1993,7 @@
         </f-component>
       
         <f-component id="fau_ano_ext.1" name="Anomaly-Based Intrusion Detection" status="sel-based">
-          <selection-depends req="fau_ids_ext.1.1"/>
+          <selection-depends req="fau_ids_ext.1.1" ids=""/> <!-- FIX -->
           <f-element id="fau_ano_ext.1.1">
             <title> The TSF shall support the definition of 
               <selectables atleastone="yes">
@@ -2063,7 +2063,7 @@
           </f-element>
         </f-component>
         <f-component id="fau_sig_ext.1" name="Signature-Based Intrusion Detection" status="sel-based">
-          <selection-depends req="fau_ids_ext.1.1"/>
+          <selection-depends req="fau_ids_ext.1.1" ids=""/> <!-- FIX -->
           <f-element id="fau_sig_ext.1.1">
             <title> 
               The TSF shall support user-defined and customizable attack signatures.
@@ -2091,7 +2091,7 @@
         </f-component>      
       
         <f-component id="fau_stg_ext.1/pcap" name="Protected Audit Event Storage (Packet Captures)" status="sel-based">
-          <selection-depends req="fau_arp.1.1"/>
+          <selection-depends req="fau_arp.1.1" ids=""/> <!-- FIX -->
           <f-element id="fau_stg_ext.1.1/pcap">
             <title>The TSF shall be able to transmit the generated <h:b>packet captures</h:b> to an external IT entity using a 
               trusted channel according to FTP_ITC.1.
@@ -2190,11 +2190,11 @@
                       <h:li>Start a traffic capture from the WIDS sensor</h:li>
                       <h:li>Send a set number of frames on the channel the sensor's operating channel for all IEEE 802.11 a, b, g, n, ac frame 
                         types and subtypes from/to the following:
-                        <ol>
+                        <h:ol>
                           <h:li><h:i>authorized APs and authorized EUDs</h:i></h:li>
                           <h:li><h:i>authorized APs and unauthorized EUDs</h:i></h:li>
                           <h:li><h:i>unauthorized APs and authorized EUDs</h:i></h:li>
-                        </ol>]   
+                        </h:ol>]   
                       </h:li>
                       <h:li>
                         Verify that there are frames from all the types and subtypes in the capture.
@@ -2251,7 +2251,7 @@
         <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
           <f-element id="fpt_itt.1.1 Refinement">
             <title> 
-              The TSF shall <h:b>use</h:b> <selectables atleastone="yes">
+              The TSF shall <h:b>use</h:b> <selectables>
                 <selectable>IPsec</selectable>
                 <selectable>SSH</selectable>
                 <selectable>TLS</selectable>
@@ -2330,7 +2330,9 @@
               The TSF shall be capable of using [selection: IPsec,  SSH,  TLS, HTTPS] to provide   a   trusted   communication   channel
               between   itself   and authorized   IT   entities supporting  the  following  capabilities:  audit  server,  
               <selectables>
-                <selectable><h:b>database server,</h:b><assignable>other   capabilities</assignable>, none</selectable>
+                <selectable><h:b>database server</h:b></selectable>
+                 <selectable><assignable>other capabilities</assignable></selectable>
+                <selectable>none</selectable>
               </selectables> that   is   logically   distinct   from   other   communication channels  and  provides  assured  identification
               of  its end  points  and  protection  of  the  channel  data from disclosure and detection of modification of the channel data.
             </title>
