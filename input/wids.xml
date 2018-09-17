@@ -84,8 +84,7 @@
           <entry>
             <term><abbr title="Target of Evaluation">TOE</abbr></term>
             <description> The product under evaluation. In this case, the Wireless Intrusion
-                Detection/Prevention System in section <xref linkend="TOEboundary"/> and its
-              supporting documentation.</description>
+                Detection/Prevention System and its supporting documentation.</description>
           </entry>
           <entry>
             <term><abbr title="TOE Security Functionality">TSF</abbr></term>
