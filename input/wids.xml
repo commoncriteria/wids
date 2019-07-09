@@ -12,7 +12,6 @@
   - Are there any Use Cases??
   - Selection-Depends
 
-  
   NIAP
   - consistency rationales throughout document
   - ECDs throughout document
@@ -20,15 +19,9 @@
 
   Kevin
   - Iterations as '/' - need Kevin to allow '/' in component id. Need to update boilerplate text that defines iteration as (#)
-  - PPReference text is duplicated after table of contents
   - ND cPP is not in XML/github - how do I reference it?
-  - No base PP headers
-  - No Consistency Rationale section
-  - Why are EAs included in Module and no longer in separate SD?
   - Can we mark SFRs as (optional, sel-based, objective) in objective mapping?
-  - No appendicies for Optional/Sel-Based/Objective SFRs or bib or acroymns (content is displayed, but no headers and SFRs in the wrong order) 
-  
-
+ 
 -->
 
 
