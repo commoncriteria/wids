@@ -3,6 +3,7 @@
 
 <?xml-model href="https://github.com/commoncriteria/transforms/raw/master/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
+<!-- Kraken WIDS -->
 
 <!-- TODO:
   
@@ -45,6 +46,7 @@
 
  <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview">
+      This is a test
       This Protection Profile Module (<abbr linkend="PP-Module"/>) describes security requirements for a Wireless Intrusion/Prevention System (WIDS/WIPS) (defined to be an IEEE 802.11 network intrusion prevention product located at the edge of a private network that can collect, inspect, analyze, and react to network traffic in real-time) and is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. This <abbr linkend="PP-Module"/> is not complete in itself, but rather extends the collaborative Protection Profile for Network Devices (NDcPP). This introduction will describe the features of a compliant Target of Evaluation (TOE), and will also discuss how this <abbr linkend="PP-Module"/> is to be used in conjunction with the NDcPP. 
     </section>
    <section title="Terms" id="glossary">
