@@ -705,7 +705,8 @@
                 <selectable><assignable>proprietary vendor detection method (e.g. Splunk)</assignable></selectable>
               </selectables>
             </title>
-            <note role="application">At least one detection method must be selected. 
+            <note role="application">The system shall provide the ability to interact with an extensible interface to a custom proprietary or third party  wireless monitoring system
+            for the purposes of importing data from the wireless system. At least one detection method must be selected. 
 
             </note>  
 
