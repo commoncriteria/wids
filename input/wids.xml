@@ -3,18 +3,19 @@
 
 <?xml-model href="https://github.com/commoncriteria/transforms/raw/master/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
-<!-- Kraken WIDS -->
 
 <!-- TODO:
   
     - Tables (i.e., FAU_GEN) are in the SFR itself (<title>) - I believe this will cause issues with ST gen tool. In other PPs tables are in EAs is that where they are supposed to be?
   
   Justin
-  #
+  - Are there other technical terms that need to be defined?
+  - Split apart any generic reference to WIDS/WIPS. It should be clear if something is for WIDS or WIPS
   
   Lauren
   - Are there any Use Cases??
   - Selection-Depends
+  - Modified SFRs
 
   NIAP
   - consistency rationales throughout document
@@ -120,7 +121,7 @@
            <term><abbr title="Wireless Intrustion Detection/Prevention System">WIDS/WIPS</abbr></term>
            <description>A security product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
          </entry> 
-         <!-- TODO: Any other technical terms that need to be defined? -->
+         <!-- TODO_Justin: Any other technical terms that need to be defined? -->
        </glossary>
      </subsection>
    </section>  
@@ -166,7 +167,7 @@
         </description>
       </cclaim>
       <cclaim title="Package Claims">
-        <description><!-- TODO: Does this module need to claim any packages? -->
+        <description><!-- TODO_NIAP: Does this module need to claim any packages? -->
           <!-- If YES: This <abbr linkend="PP-Module"/> is <package name> Conformant. -->
             This <abbr linkend="PP-Module"/> does not claim conformance to any packages.</description>
       </cclaim>
@@ -280,7 +281,7 @@
           <component-refer ref="FAU_GEN.1/WIDS"/>
           <!-- Optional -->
           <component-refer ref="FAU_STG_EXT.1/PCAP"/>
-          <consistency-rationale><!-- TODO: NIAP  --></consistency-rationale>
+          <consistency-rationale></consistency-rationale>
         </SO>
         <SO id="O.WIDS_ANALYZE">
           <description> 
@@ -384,9 +385,123 @@
  <chapter title="Security Requirements" id="sfrs">
     <base-pp version="2.1" name="Network Device" product="Network Device" short="ND" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440" xmlurl="test">
       <!-- Kevin: What to do if base is not in github?? -->
-      <modified-sfrs/>
+      <modified-sfrs>
+        <subsection title="Protection of the TSF (FPT)" id="fpt" >
+          <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
+            <consistency-rationale></consistency-rationale>
+            <!-- This SFR is modified from ND - WIDS does not allow DTLS and makes the SFR mandatory (optional in ND) -->
+            <!-- TODO: Need to update wording to be more consistent with ND. Need to add 1.2 and 1.3 -->
+            <f-element id="fpt_itt.1.1">
+              <title> Refinement:
+                The TSF shall <h:b>use</h:b> <selectables>
+                  <selectable>IPsec</selectable>
+                  <selectable>SSH</selectable>
+                  <selectable>TLS</selectable>
+                  <selectable>TLS/HTTPS</selectable>
+                </selectables> <h:b>with security strength commensurate with all other trusted communications to</h:b> protect TSF data from 
+                disclosure and modification when it is transmitted between separate parts of the TOE.
+              </title>
+              <note role="application">              
+                This requirement ensures all communications between components of a distributed TOE is protected 
+                through the use of an encrypted communications channel.  The data passed in this trusted communication channel are encrypted 
+                as defined in the protocol chosen in the selection.  The ST author chooses the mechanisms supported by the TOE, and then 
+                ensures the appropriate requirements from the NDcPP corresponding to their selection are copied to the ST if not already present. For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the <abbr linkend="PP-Module"/>, and “other trusted communications” refers to the mechanisms specified in FPT_ITC.
+              </note>
+              <aactivity>
+                <TSS>
+                  The evaluator shall examine the TSS to determine that the methods and protocols used to protect distributed TOE components are described. The evaluator shall also confirm that all protocols listed in the TSS in support of TOE administration are consistent with those specified in the requirement, and are included in the requirements in the ST.                 
+                </TSS>
+                <Guidance>
+                  The evaluator shall confirm that the operationalbguidance contains instructions for establishing the communication paths for each supported method. 
+                </Guidance>
+                <Tests>
+                  The evaluator shall also perform the following tests:
+                  <testlist>
+                    <test>The evaluators shall ensure that communications using each specified (in the operational guidance) communications method is tested during the course of the evaluation, setting up the connections as described in the operational guidance and ensuring that communication is successful.</test>
+                    <test>The evaluator shall ensure, for each method of communication, the channel data is not sent in plaintext.</test>
+                  </testlist>               
+                  Further assurance activities are associated with the specific protocols.
+                </Tests>             
+              </aactivity>
+            </f-element>
+          </f-component> 
+        </subsection>   
+        
+        <subsection title="Trusted Paths/Channels (FTP)" id="ftp" >
+          <f-component id="ftp_itc.1" name="Inter-TSF trusted channel">
+            <consistency-rationale></consistency-rationale>
+            <f-element id="ftp_itc.1.1">
+              <title>  Refinement:
+                The TSF shall be capable of using <selectables>
+                  <selectable>IPsec</selectable>
+                  <selectable>SSH</selectable>
+                  <selectable>TLS</selectable>
+                  <selectable>HTTPS</selectable>
+                  
+                </selectables> to provide   a   trusted   communication   channel
+                between   itself   and authorized   IT   entities supporting  the  following  capabilities:  audit  server,  
+                <selectables>
+                  <selectable><h:b>database server</h:b></selectable>
+                  <selectable><assignable>other capabilities</assignable></selectable>
+                  <selectable>none</selectable>
+                </selectables> that   is   logically   distinct   from   other   communication channels  and  provides  assured  identification
+                of  its end  points  and  protection  of  the  channel  data from disclosure and detection of modification of the channel data.
+              </title>
+              <note role="Application">If the TSF uses a separate database server, the database server selection must included in the ST.</note>
+              <aactivity>
+                The evaluator shall perform the following activities in addition to the assurance activity specified in the
+                base NDcPP for this SFR: 
+                <TSS>
+                  The evaluator shall examine the TSS to determine that, for all communications with authorized IT
+                  entities identified in the requirement, each communications mechanism is identified in terms of the
+                  allowed protocols for that IT entity. The evaluator shall also confirm that all protocols listed in the TSS
+                  are specified and included in the requirements in the ST. 
+                </TSS>
+                <Guidance>
+                  The evaluator shall confirm that the guidance documentation contains instructions for establishing the
+                  allowed protocols with each authorized IT entity, and that it contains recovery instructions should a
+                  connection be unintentionally broken.                 
+                </Guidance>
+                <Tests>
+                  <testlist>
+                    <test>
+                      The evaluators shall ensure that communications using each protocol with each authorized IT
+                      entity is tested during the course of the evaluation, setting up the connections as described in the
+                      guidance documentation and ensuring that communication is successful.
+                    </test> 
+                    <test>
+                      For each protocol that the TOE can initiate as defined in the requirement, the evaluator shall
+                      follow the guidance documentation to ensure that in fact the communication channel can be initiated
+                      from the TOE.
+                    </test>
+                    <test>
+                      The evaluator shall ensure, for each communication channel with an authorized IT entity, the
+                      channel data is not sent in plaintext.
+                    </test>
+                    <test>The evaluators shall, for each protocol associated with each authorized IT entity tested during
+                      test 1, physically interrupt an established connection. The evaluator shall ensure that when physical
+                      connectivity is restored, communications are appropriately protected.
+                    </test>
+                  </testlist>
+                  Further assurance activities are associated with the specific protocols.
+                </Tests>
+              </aactivity>
+            </f-element>
+          </f-component>  
+        </subsection>  
+        
+        
+        
+
+   
+        
+        
+        
+      </modified-sfrs>
+      
       <additional-sfrs/>
-      <con-toe>When this <abbr linkend="PP-Module"/> extends the Network Device cPP, the TOE type for the overall TOE is still WIDS/WIPS products. 
+      <con-toe>
+        When this <abbr linkend="PP-Module"/> extends the Network Device cPP, the TOE type for the overall TOE is still WIDS/WIPS products. 
       </con-toe>
       <con-sec-prob/>
       <con-obj/>
@@ -526,13 +641,12 @@
               <TSS>There are no TSS assurance activities for this SFR.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>
               <Tests> The evaluator shall perform the following test:<h:br/>
-                The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/>
-                
+                The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/><h:br/>                
                 Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
               </Tests>
             </aactivity> 
           </f-element>
-        </f-component>   
+        </f-component>  
                      
         <ext-comp-def title="Intrusion Detection Methods" fam-id="FAU_IDS_EXT">
           <fam-behavior></fam-behavior>
@@ -662,7 +776,7 @@
         </f-component>
         
         <ext-comp-def title="Characteristics of Environmental Objects" fam-id="FAU_INV_EXT">
-          <mod-def> <!-- TODO --></mod-def>
+          <mod-def></mod-def>
         </ext-comp-def>
         <f-component id="fau_inv_ext.2" name="Characteristics of Environmental Objects">
           <consistency-rationale></consistency-rationale>
@@ -746,7 +860,7 @@
         </f-component>
         
         <ext-comp-def title="Behavior of Environmental Objects" fam-id="FAU_INV_EXT">
-          <mod-def> <!-- TODO --></mod-def>
+          <mod-def></mod-def>
         </ext-comp-def>
         <f-component  id="fau_inv_ext.3" name="Behavior of Environmental Objects">
           <consistency-rationale></consistency-rationale>
@@ -1407,132 +1521,41 @@
           </f-element>
         </f-component>
       </subsection>      
-      <subsection title="Security Management (FMT)" id="fmt" >
-        <f-component id="fmt_smf.1(wids)" name="Specification of Management Functions (WIDS)">
-          <consistency-rationale></consistency-rationale>
-          <f-element id="fmt_smf.1.1/wids">
-            <title> 
-              The TSF shall be capable of performing the following management functions for WIDS functionality: 
-              [<h:i>management functions listed in <ctr-ref refid="mgmt"/></h:i>].        
-              <h:table>
-                <h:tr>
-                  <h:td>SFR</h:td>
-                  <h:td>Management Function</h:td>
-                </h:tr>
-                <h:tr>
-                  <h:td>FAU_ANO_EXT.1</h:td>
-                  <h:td>Specification of periods of network activity that constitute baseline of expected behavior (optional).</h:td>
-                </h:tr>
-              </h:table>
-              <ctr id="mgmt" ctr-type="Table">: Management Functions</ctr>
-            </title>
-            <aactivity>
-              <TSS>The evaluator shall verify that the TSS describes how the baseline can be configured.</TSS>
-              <Guidance>The evaluator shall verify that the operational guidance describes the instructions for 
-                defining a baseline.</Guidance>
-              <Tests> The evaluator shall perform the following test:<h:br/>
-                <testlist>
-                  <test>Following the instructions in the operatinal guidance verify that the period of network activity that constitutes 
-                    a baseline can indicated in the TSF. </test>
-                </testlist>
-              </Tests>              
-            </aactivity>
-          </f-element>         
-        </f-component>
-      </subsection>     
-      <subsection title="Protection of the TSF (FPT)" id="fpt" >
-        <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
-          <consistency-rationale></consistency-rationale>
-          <f-element id="fpt_itt.1.1">
-            <title> Refinement:
-              The TSF shall <h:b>use</h:b> <selectables>
-                <selectable>IPsec</selectable>
-                <selectable>SSH</selectable>
-                <selectable>TLS</selectable>
-                <selectable>TLS/HTTPS</selectable>
-              </selectables> <h:b>with security strength commensurate with all other trusted communications to</h:b> protect TSF data from 
-              disclosure and modification when it is transmitted between separate parts of the TOE.
-            </title>
-            <note role="application">This requirement ensures all communications between components of a distributed TOE is protected 
-              through the use of an encrypted communications channel.  The data passed in this trusted communication channel are encrypted 
-              as defined in the protocol chosen in the selection.  The ST author chooses the mechanisms supported by the TOE, and then 
-              ensures the appropriate requirements from the NDcPP corresponding to their selection are copied to the ST if not already present. For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the <abbr linkend="PP-Module"/>, and “other trusted communications” refers to the mechanisms specified in FPT_ITC.
-            </note>
-            <aactivity>
-              <TSS>
-                The evaluator shall examine the TSS to determine that the methods and protocols used to protect distributed TOE components are described. The evaluator shall also confirm that all protocols listed in the TSS in support of TOE administration are consistent with those specified in the requirement, and are included in the requirements in the ST.                 
-              </TSS>
-              <Guidance>
-                The evaluator shall confirm that the operationalbguidance contains instructions for establishing the communication paths for each supported method. 
-              </Guidance>
-              <Tests>
-                The evaluator shall also perform the following tests:
-                <testlist>
-                  <test>The evaluators shall ensure that communications using each specified (in the operational guidance) communications method is tested during the course of the evaluation, setting up the connections as described in the operational guidance and ensuring that communication is successful.</test>
-                  <test>The evaluator shall ensure, for each method of communication, the channel data is not sent in plaintext.</test>
-                </testlist>               
-                Further assurance activities are associated with the specific protocols.
-              </Tests>             
-            </aactivity>
-          </f-element>
-        </f-component> 
-      </subsection>   
-      <subsection title="Trusted Paths/Channels (FTP)" id="ftp" >
-        <f-component id="ftp_itc.1" name="Inter-TSF trusted channel">
-          <consistency-rationale></consistency-rationale>
-          <f-element id="ftp_itc.1.1">
-            <title>  Refinement:
-              The TSF shall be capable of using [selection: IPsec,  SSH,  TLS, HTTPS] to provide   a   trusted   communication   channel
-              between   itself   and authorized   IT   entities supporting  the  following  capabilities:  audit  server,  
-              <selectables>
-                <selectable><h:b>database server</h:b></selectable>
-                <selectable><assignable>other capabilities</assignable></selectable>
-                <selectable>none</selectable>
-              </selectables> that   is   logically   distinct   from   other   communication channels  and  provides  assured  identification
-              of  its end  points  and  protection  of  the  channel  data from disclosure and detection of modification of the channel data.
-            </title>
-            <note role="Application">If the TSF uses a separate database server, the database server selection must included in the ST.</note>
-            <aactivity>
-              The evaluator shall perform the following activities in addition to the assurance activity specified in the
-              base NDcPP for this SFR: 
-              <TSS>
-                The evaluator shall examine the TSS to determine that, for all communications with authorized IT
-                entities identified in the requirement, each communications mechanism is identified in terms of the
-                allowed protocols for that IT entity. The evaluator shall also confirm that all protocols listed in the TSS
-                are specified and included in the requirements in the ST. 
-              </TSS>
-              <Guidance>
-                The evaluator shall confirm that the guidance documentation contains instructions for establishing the
-                allowed protocols with each authorized IT entity, and that it contains recovery instructions should a
-                connection be unintentionally broken.                 
-              </Guidance>
-              <Tests>
-                <testlist>
-                  <test>
-                    The evaluators shall ensure that communications using each protocol with each authorized IT
-                    entity is tested during the course of the evaluation, setting up the connections as described in the
-                    guidance documentation and ensuring that communication is successful.
-                  </test> 
-                  <test>
-                    For each protocol that the TOE can initiate as defined in the requirement, the evaluator shall
-                    follow the guidance documentation to ensure that in fact the communication channel can be initiated
-                    from the TOE.
-                  </test>
-                  <test>
-                    The evaluator shall ensure, for each communication channel with an authorized IT entity, the
-                    channel data is not sent in plaintext.
-                  </test>
-                  <test>The evaluators shall, for each protocol associated with each authorized IT entity tested during
-                    test 1, physically interrupt an established connection. The evaluator shall ensure that when physical
-                    connectivity is restored, communications are appropriately protected.
-                  </test>
-                </testlist>
-                Further assurance activities are associated with the specific protocols.
-              </Tests>
-            </aactivity>
-          </f-element>
-        </f-component>  
-      </subsection>       
+     <subsection title="Security Management (FMT)" id="fmt" >
+       <f-component id="fmt_smf.1(wids)" name="Specification of Management Functions (WIDS)">
+         <consistency-rationale></consistency-rationale>
+         <f-element id="fmt_smf.1.1/wids">
+           <title> 
+             The TSF shall be capable of performing the following management functions for WIDS functionality: 
+             [<h:i>management functions listed in <ctr-ref refid="mgmt"/></h:i>].        
+             <h:table>
+               <h:tr>
+                 <h:td>SFR</h:td>
+                 <h:td>Management Function</h:td>
+               </h:tr>
+               <h:tr>
+                 <h:td>FAU_ANO_EXT.1</h:td>
+                 <h:td>Specification of periods of network activity that constitute baseline of expected behavior (optional).</h:td>
+               </h:tr>
+             </h:table>
+             <ctr id="mgmt" ctr-type="Table">: Management Functions</ctr>
+           </title>
+           <aactivity>
+             <TSS>The evaluator shall verify that the TSS describes how the baseline can be configured.</TSS>
+             <Guidance>The evaluator shall verify that the operational guidance describes the instructions for 
+               defining a baseline.</Guidance>
+             <Tests> The evaluator shall perform the following test:<h:br/>
+               <testlist>
+                 <test>Following the instructions in the operatinal guidance verify that the period of network activity that constitutes 
+                   a baseline can indicated in the TSF. </test>
+               </testlist>
+             </Tests>              
+           </aactivity>
+         </f-element>         
+       </f-component>
+     </subsection>  
+
+     
     </man-sfrs>
     <opt-sfrs>    
       <subsection title="Security Audit (FAU)" id="fau">
@@ -1591,11 +1614,11 @@
     <sel-sfrs>
       <subsection title="Security Audit (FAU)" id="fau">
         <ext-comp-def title="Location of Environmental Objects (Cellular Devices)" fam-id="FAU_INV_EXT">
-          <mod-def> <!-- TODO --></mod-def>
+          <mod-def></mod-def>
         </ext-comp-def>
           <f-component id="fau_inv_ext.4(cell)" name="Location of Environmental Objects (Cellular Devices)">
         <!-- Kevin: Need to allow component id to have / in it -->
-        <selection-depends req="fau_wid_ext.6.1" ids=""/> <!-- FIX -->
+        <selection-depends req="fau_wid_ext.6.1" ids=""/> <!-- TODO_Lauren -->
         <consistency-rationale></consistency-rationale>
         <comp-lev></comp-lev>
         <management></management>
@@ -1629,7 +1652,7 @@
           <fam-behavior></fam-behavior>
         </ext-comp-def>
         <f-component id="fau_ano_ext.1" name="Anomaly-Based Intrusion Detection">
-          <selection-depends req="fau_ids_ext.1.1" ids="FIX"/> <!-- FIX -->
+          <selection-depends req="fau_ids_ext.1.1" ids="FIX"/> <!-- TODO_Lauren -->
           <consistency-rationale></consistency-rationale>          
           <comp-lev></comp-lev>
           <management></management>
@@ -1694,7 +1717,7 @@
           <fam-behavior></fam-behavior>
         </ext-comp-def>
         <f-component id="fau_sig_ext.1" name="Signature-Based Intrusion Detection">
-          <selection-depends req="fau_ids_ext.1.1" ids=""/> <!-- FIX -->
+          <selection-depends req="fau_ids_ext.1.1" ids=""/> <!-- TODO_Lauren -->
           <consistency-rationale></consistency-rationale>          
           <comp-lev></comp-lev>
           <management></management>
@@ -1730,7 +1753,7 @@
           <fam-behavior></fam-behavior>
         </ext-comp-def>
         <f-component id="fau_stg_ext.1(pcap)" name="Protected Audit Event Storage (Packet Captures)">
-          <selection-depends req="fau_arp.1.1" ids=""/> <!-- FIX -->
+          <selection-depends req="fau_arp.1.1" ids=""/> <!-- TODO_Lauren -->
           <consistency-rationale></consistency-rationale>          
           <comp-lev></comp-lev>
           <management></management>
@@ -2036,6 +2059,7 @@
           </f-element>
         </f-component>
       
+      <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 -->
         <f-component id="fau_gen.2(wids)" name="Alerts Data Generation (WIDS/WIPS)">
           <consistency-rationale></consistency-rationale>        
           <f-element id="fau_gen.2.1/wids">
