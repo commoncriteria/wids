@@ -1104,6 +1104,23 @@
               defined by FAU_INV_EXT.1.1. Detection of illegal state transitions and protocol violations are 
               objective requirements and will be mandatory in future PP versions.
             </note>
+
+            <f-element id="fau_wid_ext.2.5"> 
+             <title> 
+             The TSF shall perform stateful frame inspection and log attacks spanning multiple frames. 
+             </title> 
+             <note role="application">Adversaries possess the capability to distribute an attack across multiple frames in an attempt to avoid traditional detection measures that solely focus 
+             on packet headers. Stateful frame inspection will allow for the identification of obfuscation techniques centered around spreading an attack across multiple frames. Detection of 
+             illegal state transitions and protocol violations are objective requirements and will be mandatory in future PP versions. </note>
+ 
+            <f-element id="fau_wid_ext.2.6"> 
+             <title> 
+             The TSF shall detect a violation in allowing NULL SSID associations. 
+             </title> 
+             <note role="application">The 802.11 standard allows APs to beacon with the SSID field set to null - this is referred to as a hidden or cloaked SSID. The client seeking to associate 
+             with an AP using a hidden SSID must first send out a Probe Request that contains the SSID of that network, with the AP will return with a Probe request of its own. The TSF needs to 
+             be able to detect if an AP is allowing clients to associate without providing the valid SSID of the AP. </note>
+
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the methods that the TOE uses to detect the presence of unauthorized connections and unauthorized network traffic.</TSS>            
               <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to configure SSIDs as authorized.</Guidance>         
