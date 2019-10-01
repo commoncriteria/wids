@@ -12,6 +12,7 @@
   - Are there other technical terms that need to be defined?
   - Split apart any generic reference to WIDS/WIPS. It should be clear if something is for WIDS or WIPS
   - Added requirements to FAU_WID_EXT.2 Wireless Intrusion Detection – Passive Information Flow Monitoring (FAU_WID_EXT.2.5 and FAU_WID_EXT.2.6 (Lines 1107 - 1123))
+  - Added requirements to FAU_IDS_EXT.1 Wireless Intrusion Detection – Intrusion Detection System – Intrusion Detection and Reporting  Methods (FAU_IDS_EXT.1.2 and FAU_IDS_EXT.1.3 (Lines 1107 - 1123))
   
   Lauren
   - Are there any Use Cases??
@@ -654,7 +655,7 @@
         <ext-comp-def title="Intrusion Detection Methods" fam-id="FAU_IDS_EXT">
           <fam-behavior></fam-behavior>
         </ext-comp-def>
-        <f-component id="fau_ids_ext.1" name="Intrusion Detection System – Intrusion Detection Methods">
+        <f-component id="fau_ids_ext.1" name="Intrusion Detection System – Intrusion Detection and Reporting Methods">
           <consistency-rationale></consistency-rationale>
           <comp-lev></comp-lev>
           <management></management>
