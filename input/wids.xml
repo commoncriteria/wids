@@ -5,9 +5,7 @@
 
 
 <!-- TODO:
-  
-    - Tables (i.e., FAU_GEN) are in the SFR itself (<title>) - I believe this will cause issues with ST gen tool. In other PPs tables are in EAs is that where they are supposed to be?
-  
+    
   Justin
   - Are there other technical terms that need to be defined?
   - Split apart any generic reference to WIDS/WIPS. It should be clear if something is for WIDS or WIPS
@@ -15,7 +13,7 @@
   Lauren
   - Are there any Use Cases??
   - Selection-Depends
-  - Modified SFRs
+  - Table ctr
 
   NIAP
   - consistency rationales throughout document
@@ -26,6 +24,10 @@
   - Iterations as '/' - need Kevin to allow '/' in component id. Need to update boilerplate text that defines iteration as (#)
   - ND cPP is not in XML/github - how do I reference it?
   - Can we mark SFRs as (optional, sel-based, objective) in objective mapping?
+  - Can you define abbr in the acronyms section?
+ 
+ DONE:
+ - Moved fpt_itt and ftp_itc to modified sfrs
  
 -->
 
@@ -50,7 +52,7 @@
 
  <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview">
-      This Protection Profile Module (<abbr linkend="PP-Module"/>) describes security requirements for a Wireless Intrusion/Prevention System (WIDS/WIPS) (defined to be an IEEE 802.11 network intrusion prevention product located at the edge of a private network that can collect, inspect, analyze, and react to network traffic in real-time) and is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. This <abbr linkend="PP-Module"/> is not complete in itself, but rather extends the collaborative Protection Profile for Network Devices (NDcPP). This introduction will describe the features of a compliant Target of Evaluation (TOE), and will also discuss how this <abbr linkend="PP-Module"/> is to be used in conjunction with the NDcPP. 
+      This Protection Profile Module (<abbr linkend="PP-Module"/>) describes security requirements for a Wireless Intrusion/Prevention System (WIDS/WIPS) (defined to be an IEEE 802.11 network intrusion prevention product located at the edge of a private network that can collect, inspect, analyze, and react to network traffic in real-time) and is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. This <abbr linkend="PP-Module"/> is not complete in itself, but rather extends the collaborative Protection Profile for Network Devices (NDcPP). This introduction will describe the features of a compliant Target of Evaluation (<abbr linkend="TOE"/>), and will also discuss how this <abbr linkend="PP-Module"/> is to be used in conjunction with the NDcPP. 
     </section>
    <section title="Terms" id="glossary">
      <subsection title="Common Criteria Terms">
@@ -87,7 +89,7 @@
          </entry>
          <entry>
            <term><abbr title="Protection Profile Module">PP-Module</abbr></term>
-           <description>An implementation-independent statement of security needs for a TOE type
+           <description>An implementation-independent statement of security needs for a <abbr linkend="TOE"/> type
              complementary to one or more Base Protection Profiles. </description>
          </entry>
          <entry>
@@ -122,16 +124,89 @@
            <description>A security product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
          </entry> 
          <!-- TODO_Justin: Any other technical terms that need to be defined? -->
+         
+         <!-- These are just placeholders until we can use the acronyms section -->
+         
+         <entry>
+           <term><abbr title="Advanced Encryption Standard">AES</abbr></term>
+           <description>Advanced Encryption Standard</description>
+         </entry>
+         <entry>
+           <term><abbr title="Access Point">AP</abbr></term>
+           <description>Access Point</description>
+         </entry>
+         <entry>
+           <term><abbr title="Basic Service Set Identifier">BSSID</abbr></term>
+           <description>Basic Service Set Identifier</description>
+         </entry>
+         <entry>
+           <term><abbr title="Denial of Service">DoS</abbr></term>
+           <description>Denial of Service</description>
+         </entry>      
+         <entry>
+           <term><abbr title="End User Device">EUD</abbr></term>
+           <description>End User Device</description>
+         </entry>      
+         <entry>
+           <term><abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr></term>
+           <description>Hypertext Transfer Protocol Secure</description>
+         </entry>
+         <entry>
+           <term><abbr title="Internet Protocol Security">IPsec</abbr></term>
+           <description>Internet Protocol Security</description>
+         </entry>
+         <entry>
+           <term><abbr title="Media Access Control">MAC</abbr></term>
+           <description>Media Access Control</description>
+         </entry>      
+         <entry>
+           <term><abbr title="Secure Shell">SSH</abbr></term>
+           <description>Secure Shell</description>
+         </entry>
+         <entry>
+           <term><abbr title="Service Set Identifier">SSID</abbr></term>
+           <description>Service Set Identifier</description>
+         </entry>
+         <entry>
+           <term><abbr title="Transport Layer Security">TLS</abbr></term>
+           <description>Transport Layer Security</description>
+         </entry>
+         <entry>
+           <term>TKIP</term>
+           <description>Temporal Key Integrity Protocol</description>
+         </entry>
+         <entry>
+           <term><abbr title="Wired Equivalent Protocol">WEP</abbr></term>
+           <description>Wired Equivalent Protocol</description>
+         </entry>
+         <entry>
+           <term><abbr title="Wireless Intrusion Detection Systems">WIDS</abbr></term>
+           <description>Wireless Intrusion Detection Systems</description>
+         </entry>
+         <entry>
+           <term><abbr title="Wireless Intrusion Prevention Systems">WIPS</abbr></term>
+           <description>Wireless Intrusion Prevention Systems</description>
+         </entry>
+         <entry>
+           <term><abbr title="Wireless Local Area Network">WLAN</abbr></term>
+           <description>Wireless Local Area Network</description>
+         </entry>
+         <entry>
+           <term><abbr title="Wi-Fi Protected Access">WPA</abbr></term>
+           <description>Wi-Fi Protected Access</description>
+         </entry>    
+         
+         
        </glossary>
      </subsection>
    </section>  
    <section title="Compliant Targets of Evaluation" id="TOEdescription">
      <subsection title="TOE Boundary" id="TOEboundary">
-       This <abbr linkend="PP-Module"/> specifically addresses Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant <abbr linkend="WIDS/WIPS"/> is a product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious network traffic.  A WIDS typically consists of multiple sensors that passively scan their surrounding RF environment on the WLAN radio frequency spectrum and a centralized mechanism such as a Server or Controller that processes the data collected by the sensors. The <abbr linkend="WIDS/WIPS"/> could use an Embedded (be part of the WLAN infrastructure) or Overlay (independent from WLAN) architecture depending on vendor implementation.<h:br/><h:br/>
+       This <abbr linkend="PP-Module"/> specifically addresses Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant <abbr linkend="WIDS/WIPS"/> is a product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious network traffic.  A WIDS typically consists of multiple sensors that passively scan their surrounding RF environment on the <abbr linkend="WLAN"/> radio frequency spectrum and a centralized mechanism such as a Server or Controller that processes the data collected by the sensors. The <abbr linkend="WIDS/WIPS"/> could use an Embedded (be part of the <abbr linkend="WLAN"/> infrastructure) or Overlay (independent from <abbr linkend="WLAN"/>) architecture depending on vendor implementation.<h:br/><h:br/>
        
        This <abbr linkend="PP-Module"/> is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the WIDS/WIPS monitors is wireless frames in the RF spectrum utilized by IEEE 802.11 a, b, g, n, and ac. Requirements for other technologies (e.g., cellular) and protocols are optional.<h:br/><h:br/>
        
-       Conformant TOEs will detect potentially malicious network traffic using various approaches. Broadly speaking, the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification of ‘known’ threats may be performed through pattern matching, (e.g. by matching strings of characters within a frame with known patterns, or by matching traffic patterns common with reconnaissance or denial of service (DoS) attacks). Identification of ‘unknown’ threats may be performed through use of various forms of ‘anomaly’ detection whereby the <abbr linkend="WIDS/WIPS"/> is provided with (or ‘learns’/creates) a definition of ‘expected/typical’ traffic patterns, such that it’s able to detect and react to ’anomalous’ (unexpected/atypical) traffic patterns.<h:br/><h:br/>
+       Conformant <abbr linkend="TOE"/>s will detect potentially malicious network traffic using various approaches. Broadly speaking, the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification of ‘known’ threats may be performed through pattern matching, (e.g. by matching strings of characters within a frame with known patterns, or by matching traffic patterns common with reconnaissance or denial of service (DoS) attacks). Identification of ‘unknown’ threats may be performed through use of various forms of ‘anomaly’ detection whereby the <abbr linkend="WIDS/WIPS"/> is provided with (or ‘learns’/creates) a definition of ‘expected/typical’ traffic patterns, such that it’s able to detect and react to ’anomalous’ (unexpected/atypical) traffic patterns.<h:br/><h:br/>
        
        The following are to be part of the evaluation:
        <h:ul>
@@ -174,17 +249,17 @@
     </cclaims>
   </chapter>
  <chapter title="Security Problem Description" id="spd">
-    <abbr linkend="WIDS/WIPS"/> address a range of security threats related to detection of and reaction to potentially malicious WLAN traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, to the network infrastructure, or to the TOE itself. Attacks against a WLAN could compromise the confidentiality and integrity of WLAN user and system data as well as the availability of the WLAN to legitimate users. <h:br/><h:br/> 
+   <abbr linkend="WIDS/WIPS"/> address a range of security threats related to detection of and reaction to potentially malicious <abbr linkend="WLAN"/> traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, to the network infrastructure, or to the <abbr linkend="TOE"/> itself. Attacks against a <abbr linkend="WLAN"/> could compromise the confidentiality and integrity of <abbr linkend="WLAN"/> user and system data as well as the availability of the <abbr linkend="WLAN"/> to legitimate users. <h:br/><h:br/> 
     
-    The term “monitored network” is used here to represent any WLAN and/or wired network that the TOE is configured to monitor and detect intrusions on. This extends to the wired networks as intrusions on the wireless network can also be damaging to the wired infrastructure. The WIDS/WIPS also protect the wired infrastructure by detecting rogue devices that are directly connected to the wired infrastructure, which may expose the wired network, or unauthorized WLAN devices deployed in a no-wireless zone. The terms "Wi-Fi", “Wi-Fi Network” and “WLAN” will be used interchangeably to represent a Wi-Fi network.<h:br/> <h:br/> 
+    The term “monitored network” is used here to represent any <abbr linkend="WLAN"/> and/or wired network that the <abbr linkend="TOE"/> is configured to monitor and detect intrusions on. This extends to the wired networks as intrusions on the wireless network can also be damaging to the wired infrastructure. The WIDS/WIPS also protect the wired infrastructure by detecting rogue devices that are directly connected to the wired infrastructure, which may expose the wired network, or unauthorized <abbr linkend="WLAN"/> devices deployed in a no-wireless zone. The terms "Wi-Fi", “Wi-Fi Network” and “<abbr linkend="WLAN"/>” will be used interchangeably to represent a Wi-Fi network.<h:br/> <h:br/> 
     
     The proper installation, configuration, and administration of the <abbr linkend="WIDS/WIPS"/> are critical to its correct operation. A site is responsible for developing its security policy and configuring a rule set that the <abbr linkend="WIDS/WIPS"/> will enforce and provide an appropriate response to meet their needs, relative to their own risk analysis and their perceived threats.<h:br/><h:br/> 
     
-    Note that this <abbr linkend="PP-Module"/> does not repeat the threats identified in the NDcPP, though they all apply given the conformance and hence dependence of this <abbr linkend="PP-Module"/> on the NDcPP. Note also that while the NDcPP contains only threats to the ability of the TOE to provide its security functions, this <abbr linkend="PP-Module"/> addresses only threats to resources in the operational environment. Together the threats of the NDcPP and those defined in this <abbr linkend="PP-Module"/> define the comprehensive set of security threats addressed by a <abbr linkend="WIDS/WIPS"/> TOE.
+    Note that this <abbr linkend="PP-Module"/> does not repeat the threats identified in the NDcPP, though they all apply given the conformance and hence dependence of this <abbr linkend="PP-Module"/> on the NDcPP. Note also that while the NDcPP contains only threats to the ability of the <abbr linkend="TOE"/> to provide its security functions, this <abbr linkend="PP-Module"/> addresses only threats to resources in the operational environment. Together the threats of the NDcPP and those defined in this <abbr linkend="PP-Module"/> define the comprehensive set of security threats addressed by a <abbr linkend="WIDS/WIPS"/> <abbr linkend="TOE"/>.
     <section title="Threats" id="threats">
       <threats>
         <threat id="T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">
-          <description> Unintended/unauthorized disclosure of sensitive information on a protected WLAN, such as sending unencrypted sensitive data. The <abbr linkend="WIDS/WIPS"/> will be capable of collecting and analyzing WLAN data to detect unauthorized disclosure of information.
+          <description> Unintended/unauthorized disclosure of sensitive information on a protected <abbr linkend="WLAN"/>, such as sending unencrypted sensitive data. The <abbr linkend="WIDS/WIPS"/> will be capable of collecting and analyzing <abbr linkend="WLAN"/> data to detect unauthorized disclosure of information.
           </description>
           <objective-refer ref="O.SYSTEM_MONITORING">
             <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by O.SYSTEM_MONITORING as this provides for visibility into the network which enables detection of network violations.</rationale>
@@ -193,18 +268,18 @@
             <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by O.WIDS_ANALYZE as this provides detection of potential violations of approved network usage.</rationale>
           </objective-refer>
           <objective-refer ref="O.WIPS_REACT">
-            <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by O.WIPS_REACT as this provides containment of unauthorized APs and EUDs.</rationale>
+            <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by O.WIPS_REACT as this provides containment of unauthorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</rationale>
           </objective-refer>
         </threat>
         <threat id="T.UNAUTHORIZED_ACCESS">
           <description> An attacker may attempt to gain unauthorized access to a network, endpoints, or services, 
-            by methods such as impersonation of an authorized AP to get an EUD to connect to the unauthorized AP. 
-            If malicious external APs or EUDs are able to communicate with APs or EUDs on the protected WLAN, then those devices may be
+            by methods such as impersonation of an authorized <abbr linkend="AP"/> to get an <abbr linkend="EUD"/> to connect to the unauthorized <abbr linkend="AP"/> 
+            If malicious external <abbr linkend="AP"/>s or <abbr linkend="EUD"/>s are able to communicate with <abbr linkend="AP"/>s or <abbr linkend="EUD"/>s on the protected <abbr linkend="WLAN"/>, then those devices may be
             susceptible to the unauthorized disclosure of information.
           </description>
           <objective-refer ref="O.SYSTEM_MONITORING">
             <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.SYSTEM_MONITORING as this
-              provides for visibility into the network which enables detection of unauthorized APs and EUDs.</rationale>
+              provides for visibility into the network which enables detection of unauthorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</rationale>
           </objective-refer>
           <objective-refer ref="O.WIDS_ANALYZE">
             <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.WIDS_ANALYZE as this
@@ -212,14 +287,14 @@
           </objective-refer>
           <objective-refer ref="O.WIPS_REACT">
             <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.WIPS_REACT as this
-              provides containment of unauthorized APs and EUDs.</rationale>
+              provides containment of unauthorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</rationale>
           </objective-refer>
           <objective-refer ref="O.TOE_ADMINISTRATION">
             <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.TOE_ADMINISTRATION.</rationale>
           </objective-refer>         
         </threat>
         <threat id="T.DISRUPTION">
-          <description> Attacks against the WLAN infrastructure might lead to denial of service (DoS) attacks within a protected WLAN. A 
+          <description> Attacks against the <abbr linkend="WLAN"/> infrastructure might lead to denial of service (DoS) attacks within a protected <abbr linkend="WLAN"/>. A 
             wireless DoS may occur in two ways: at the physical layer through RF Jamming, or at the data link layer through 
             packet injection. 
           </description>
@@ -233,7 +308,7 @@
           </objective-refer>
           <objective-refer ref="O.WIPS_REACT">
             <rationale>The threat T.DISRUPTION  is countered by O.WIPS_REACT as this
-              provides containment of unauthorized APs and EUDs.</rationale>
+              provides containment of unauthorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</rationale>
           </objective-refer>
         </threat>       
       </threats>
@@ -241,7 +316,7 @@
     <section title="Assumptions" id="assumption">
       <assumptions>
         <assumption id="A.CONNECTIONS">
-          <description> It is assumed that the TOE is connected to distinct networks in a manner that ensures that the TOE's 
+          <description> It is assumed that the <abbr linkend="TOE"/> is connected to distinct networks in a manner that ensures that the <abbr linkend="TOE"/>'s 
             security policies will be enforced on all applicable network traffic flowing among the attached networks. </description>
           <objective-refer ref="OE.CONNECTIONS">
             <rationale> The operational environment objective OE.CONNECTIONS is realized through A.CONNECTIONS.</rationale>
@@ -257,7 +332,7 @@
       </assumptions>
     </section>
     <section title="Organizational Security Policies" id="osp">
-      An organization deploying the TOE is expected to satisfy the organizational security policy listed below in addition to all organizational 
+      An organization deploying the <abbr linkend="TOE"/> is expected to satisfy the organizational security policy listed below in addition to all organizational 
       security policies defined by the claimed base PP.
       <OSPs>
         <OSP id="P.ANALYZE">
@@ -285,8 +360,8 @@
         </SO>
         <SO id="O.WIDS_ANALYZE">
           <description> 
-            The WIDS/WIPS must be able to analyze collected or observed WLAN activity on monitored network to identify potential
-            violations of approved WLAN policies, unauthorized connections involving internal WLAN devices, and non-secure communications. <h:br/><h:br/>
+            The WIDS/WIPS must be able to analyze collected or observed <abbr linkend="WLAN"/> activity on monitored network to identify potential
+            violations of approved <abbr linkend="WLAN"/> policies, unauthorized connections involving internal <abbr linkend="WLAN"/> devices, and non-secure communications. <h:br/><h:br/>
           </description>
           <!-- Mandatory -->
           <component-refer ref="FAU_ARP.1"/>
@@ -314,8 +389,8 @@
           <consistency-rationale></consistency-rationale>
         </SO>
         <SO id="O.WIPS_REACT">
-          <description> The TOE must be able to react as configured by the administrators to isolate/contain 
-            WLAN devices that have been determined to violate administrator-defined WIPS policies.  <h:br/>
+          <description> The <abbr linkend="TOE"/> must be able to react as configured by the administrators to isolate/contain 
+            <abbr linkend="WLAN"/> devices that have been determined to violate administrator-defined WIPS policies.  <h:br/>
           </description>
           <!-- Mandatory -->
           
@@ -327,8 +402,8 @@
         </SO>
         <SO id="O.TOE_ADMINISTRATION">
           <description> To address the threat of unauthorized administrator access that is defined in the base PP, 
-            Conformant TOEs will provide the functions necessary for an administrator to configure the WIDS/WIPS 
-            Capabilities of the TOE.
+            Conformant <abbr linkend="TOE"/>s will provide the functions necessary for an administrator to configure the WIDS/WIPS 
+            Capabilities of the <abbr linkend="TOE"/>.
             <h:br/>
           </description>
           <!-- Mandatory -->
@@ -339,9 +414,9 @@
           <consistency-rationale></consistency-rationale>
         </SO>
         <SO id="O.INSECURE_OPERATIONS">
-          <description> There may be instances where the TOE’s hardware malfunctions or the integrity of the TOE’s software is compromised, 
-            the latter being due to malicious or non-malicious intent. To address the concern of the TOE operating outside of its hardware 
-            or software specification, the TOE will log or produce an alert upon discovery of a problem reported via the self-test mechanism.
+          <description> There may be instances where the <abbr linkend="TOE"/>’s hardware malfunctions or the integrity of the <abbr linkend="TOE"/>’s software is compromised, 
+            the latter being due to malicious or non-malicious intent. To address the concern of the <abbr linkend="TOE"/> operating outside of its hardware 
+            or software specification, the <abbr linkend="TOE"/> will log or produce an alert upon discovery of a problem reported via the self-test mechanism.
             <h:br/>
           </description>
           <!-- Mandatory -->
@@ -352,7 +427,7 @@
           <consistency-rationale></consistency-rationale>
         </SO>
         <SO id="O.TRUSTED_COMMUNICATIONS">
-          <description> To further address the threat of untrusted communications channels that is defined in the base PP, conformant TOEs 
+          <description> To further address the threat of untrusted communications channels that is defined in the base PP, conformant <abbr linkend="TOE"/>s 
             will provide trusted communications between distributed components if any exist. <h:br/>
           </description>
           <!-- Mandatory -->
@@ -366,10 +441,10 @@
       </SOs>
     </section>
     <section title="Security Objectives for the Operational Environment" id="SecurityObjectivesTOEorEnvironment">
-      The following security objectives for the operational environment assist the TOE in correctly providing its security functionality. These track the assumptions about the environment. 
+      The following security objectives for the operational environment assist the <abbr linkend="TOE"/> in correctly providing its security functionality. These track the assumptions about the environment. 
       <SOEs>
         <SOE id="OE.CONNECTIONS">
-          <description> TOE administrators will ensure that the TOE is installed in a manner that will allow the TOE to effectively enforce its policies on the network traffic of monitored networks. </description>
+          <description> <abbr linkend="TOE"/> administrators will ensure that the <abbr linkend="TOE"/> is installed in a manner that will allow the <abbr linkend="TOE"/> to effectively enforce its policies on the network traffic of monitored networks. </description>
           <consistency-rationale></consistency-rationale>
         </SOE>
         <SOE id="OE.PROPER_ADMIN">
@@ -393,23 +468,23 @@
             <!-- TODO: Need to update wording to be more consistent with ND. Need to add 1.2 and 1.3 -->
             <f-element id="fpt_itt.1.1">
               <title> Refinement:
-                The TSF shall <h:b>use</h:b> <selectables>
+                The <abbr linkend="TSF"/> shall <h:b>use</h:b> <selectables>
                   <selectable>IPsec</selectable>
                   <selectable>SSH</selectable>
                   <selectable>TLS</selectable>
                   <selectable>TLS/HTTPS</selectable>
-                </selectables> <h:b>with security strength commensurate with all other trusted communications to</h:b> protect TSF data from 
-                disclosure and modification when it is transmitted between separate parts of the TOE.
+                </selectables> <h:b>with security strength commensurate with all other trusted communications to</h:b> protect <abbr linkend="TSF"/> data from 
+                disclosure and modification when it is transmitted between separate parts of the <abbr linkend="TOE"/>.
               </title>
               <note role="application">              
-                This requirement ensures all communications between components of a distributed TOE is protected 
+                This requirement ensures all communications between components of a distributed <abbr linkend="TOE"/> is protected 
                 through the use of an encrypted communications channel.  The data passed in this trusted communication channel are encrypted 
-                as defined in the protocol chosen in the selection.  The ST author chooses the mechanisms supported by the TOE, and then 
-                ensures the appropriate requirements from the NDcPP corresponding to their selection are copied to the ST if not already present. For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the <abbr linkend="PP-Module"/>, and “other trusted communications” refers to the mechanisms specified in FPT_ITC.
+                as defined in the protocol chosen in the selection.  The <abbr linkend="ST"/> author chooses the mechanisms supported by the <abbr linkend="TOE"/>, and then 
+                ensures the appropriate requirements from the NDcPP corresponding to their selection are copied to the <abbr linkend="ST"/> if not already present. For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the <abbr linkend="PP-Module"/>, and “other trusted communications” refers to the mechanisms specified in FPT_ITC.
               </note>
               <aactivity>
                 <TSS>
-                  The evaluator shall examine the TSS to determine that the methods and protocols used to protect distributed TOE components are described. The evaluator shall also confirm that all protocols listed in the TSS in support of TOE administration are consistent with those specified in the requirement, and are included in the requirements in the ST.                 
+                  The evaluator shall examine the <abbr linkend="TSS"/> to determine that the methods and protocols used to protect distributed <abbr linkend="TOE"/> components are described. The evaluator shall also confirm that all protocols listed in the <abbr linkend="TSS"/> in support of <abbr linkend="TOE"/> administration are consistent with those specified in the requirement, and are included in the requirements in the <abbr linkend="ST"/>.                 
                 </TSS>
                 <Guidance>
                   The evaluator shall confirm that the operationalbguidance contains instructions for establishing the communication paths for each supported method. 
@@ -432,7 +507,7 @@
             <consistency-rationale></consistency-rationale>
             <f-element id="ftp_itc.1.1">
               <title>  Refinement:
-                The TSF shall be capable of using <selectables>
+                The <abbr linkend="TSF"/> shall be capable of using <selectables>
                   <selectable>IPsec</selectable>
                   <selectable>SSH</selectable>
                   <selectable>TLS</selectable>
@@ -447,15 +522,15 @@
                 </selectables> that   is   logically   distinct   from   other   communication channels  and  provides  assured  identification
                 of  its end  points  and  protection  of  the  channel  data from disclosure and detection of modification of the channel data.
               </title>
-              <note role="Application">If the TSF uses a separate database server, the database server selection must included in the ST.</note>
+              <note role="Application">If the <abbr linkend="TSF"/> uses a separate database server, the database server selection must included in the <abbr linkend="ST"/>.</note>
               <aactivity>
                 The evaluator shall perform the following activities in addition to the assurance activity specified in the
                 base NDcPP for this SFR: 
                 <TSS>
-                  The evaluator shall examine the TSS to determine that, for all communications with authorized IT
+                  The evaluator shall examine the <abbr linkend="TSS"/> to determine that, for all communications with authorized IT
                   entities identified in the requirement, each communications mechanism is identified in terms of the
-                  allowed protocols for that IT entity. The evaluator shall also confirm that all protocols listed in the TSS
-                  are specified and included in the requirements in the ST. 
+                  allowed protocols for that IT entity. The evaluator shall also confirm that all protocols listed in the <abbr linkend="TSS"/>
+                  are specified and included in the requirements in the <abbr linkend="ST"/>. 
                 </TSS>
                 <Guidance>
                   The evaluator shall confirm that the guidance documentation contains instructions for establishing the
@@ -470,9 +545,9 @@
                       guidance documentation and ensuring that communication is successful.
                     </test> 
                     <test>
-                      For each protocol that the TOE can initiate as defined in the requirement, the evaluator shall
+                      For each protocol that the <abbr linkend="TOE"/> can initiate as defined in the requirement, the evaluator shall
                       follow the guidance documentation to ensure that in fact the communication channel can be initiated
-                      from the TOE.
+                      from the <abbr linkend="TOE"/>.
                     </test>
                     <test>
                       The evaluator shall ensure, for each communication channel with an authorized IT entity, the
@@ -501,7 +576,7 @@
       
       <additional-sfrs/>
       <con-toe>
-        When this <abbr linkend="PP-Module"/> extends the Network Device cPP, the TOE type for the overall TOE is still WIDS/WIPS products. 
+        When this <abbr linkend="PP-Module"/> extends the Network Device cPP, the <abbr linkend="TOE"/> type for the overall <abbr linkend="TOE"/> is still WIDS/WIPS products. 
       </con-toe>
       <con-sec-prob/>
       <con-obj/>
@@ -513,22 +588,22 @@
         <f-component id="fau_arp.1" name="Security Alarms">       
           <consistency-rationale></consistency-rationale>
           <f-element id="fau_arp.1.1">
-            <title> The TSF shall take <h:i>[the following actions: display alert to Authorized Administrator in sufficient detail to show identity of APs and EUDs involved, description of alert and severity level, </h:i><selectables>
+            <title> The <abbr linkend="TSF"/> shall take <h:i>[the following actions: display alert to Authorized Administrator in sufficient detail to show identity of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s involved, description of alert and severity level, </h:i><selectables>
                 <selectable>capture raw frame traffic that triggers the violation</selectable>
                 <selectable>no other actions</selectable>
               </selectables>] upon detection of a potential security violation.          
             </title>
-            <note role="application">The capturing of raw frames that triggers the violation is an objective requirement. If the ST author selects capturing of raw frames that triggers the violation, the ST author must include the following SFRs: <linkref linkend="FAU_STG_EXT.1.1/pcap"/>, <linkref linkend="FAU_STG_EXT.1.2/pcap"/>, <linkref linkend="FAU_STG_EXT.1.3/pcap"/>.</note>
+            <note role="application">The capturing of raw frames that triggers the violation is an objective requirement. If the <abbr linkend="ST"/> author selects capturing of raw frames that triggers the violation, the <abbr linkend="ST"/> author must include the following SFRs: <linkref linkend="FAU_STG_EXT.1.1/pcap"/>, <linkref linkend="FAU_STG_EXT.1.2/pcap"/>, <linkref linkend="FAU_STG_EXT.1.3/pcap"/>.</note>
             <aactivity>	
               <TSS>
-              The evaluator shall verify that the TSS describes where to find the WIDS/WIPS alerts on the Administrator console/interface.</TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes where to find the WIDS/WIPS alerts on the Administrator console/interface.</TSS>
               <Guidance>
                 The evaluator shall use the operational guidance for instructions on where the alerts generated are displayed within the WIDS/WIPS interface. If the objective requirement to capture the raw frame that triggered an alert is selected, the evaluator must also test for corresponding selection-based requirements. The evaluator shall use the operational guidance to configure the traffic capture capabilities.</Guidance>         
               <Tests> The evaluator shall perform the following tests:<h:br/>             
                 <testlist>           
                   <test>The evaluator shall perform a series of events or generate traffic that would successfully trigger an alert. 
-                    The evaluator should verify and record whether the TOE generated the alert. The evaluator should also record the events or traffic 
-                    that was generated and what alert was attempted to be triggered and record the details provided by the TOE in the alert.<h:br/>
+                    The evaluator should verify and record whether the <abbr linkend="TOE"/> generated the alert. The evaluator should also record the events or traffic 
+                    that was generated and what alert was attempted to be triggered and record the details provided by the <abbr linkend="TOE"/> in the alert.<h:br/>
                   </test>
                   <test>
                     If capturing of raw frames was selected, verify that the packet capture was triggered and stored as appropriate. 
@@ -549,9 +624,9 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_arp_ext.2.1">
-            <title> The TSF shall provide the ability to apply <assignable>methods of selection</assignable> to selectively exclude alerts from being generated. </title>
+            <title> The <abbr linkend="TSF"/> shall provide the ability to apply <assignable>methods of selection</assignable> to selectively exclude alerts from being generated. </title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to transmit WIDS/WIPS alerts.</TSS>
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to transmit WIDS/WIPS alerts.</TSS>
               <Guidance>The evaluator shall verify that the operational guidance includes instructions on enabling and disabling alerts. </Guidance>           
               <Tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
@@ -559,10 +634,10 @@
                     <h:ul>
                       <h:li>The evaluator shall use the operational guidance to enable/disable detection of available detection capabilities through the WIDS/WIPS 
                           administrator interface. The evaluator shall then generate traffic that would successfully trigger the alert. The evaluator should verify 
-                          that the TOE generated the alert. The evaluator shall record the attack/intrusion that was generated and indicate which alert was triggered
+                          that the <abbr linkend="TOE"/> generated the alert. The evaluator shall record the attack/intrusion that was generated and indicate which alert was triggered
                           as well as the details that were provided by the WIDS about the alert.</h:li>
                       <h:li>The evaluator shall disable the alert. The evaluator shall then generate events as in previous test that should successfully 
-                        trigger the alert. The evaluator should check if the TOE generated an alert for the attack and record the findings. 
+                        trigger the alert. The evaluator should check if the <abbr linkend="TOE"/> generated an alert for the attack and record the findings. 
                       </h:li>
                     </h:ul>
                   </test>
@@ -575,7 +650,7 @@
         <f-component id="fau_gen.1(wids)" name="Audit Data Generation">
           <consistency-rationale></consistency-rationale>
           <f-element id="fau_gen.1.1/wids">
-            <title> The TSF shall be able to generate an audit record of the following auditable events:
+            <title> The <abbr linkend="TSF"/> shall be able to generate an audit record of the following auditable events:
               <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [not specified] level of audit;</h:li>
@@ -638,10 +713,10 @@
               The Auditable Events table includes optional and objective requirements. The auditing of optional and objective requirements is only required if the vendor chooses to have the requirement evaluated by NIAP. 
             </note>
             <aactivity>
-              <TSS>There are no TSS assurance activities for this SFR.</TSS>
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>
               <Tests> The evaluator shall perform the following test:<h:br/>
-                The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/><h:br/>                
+                The evaluator shall test the <abbr linkend="TOE"/>’s ability to correctly generate audit records by having the <abbr linkend="TOE"/> generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/><h:br/>                
                 Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
               </Tests>
             </aactivity> 
@@ -658,7 +733,7 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_ids_ext.1.1">
-            <title> The TSF shall provide the following methods of intrusion detection: 
+            <title> The <abbr linkend="TSF"/> shall provide the following methods of intrusion detection: 
               <selectables>
                 <selectable>anomaly-based</selectable>
                 <selectable>signature-based</selectable>
@@ -667,7 +742,8 @@
                 <selectable><assignable>proprietary vendor detection method</assignable></selectable>
               </selectables>
             </title>
-            <note role="application">At least one detection method must be selected. Based on the selection made in 
+            <note role="application">
+              At least one detection method must be selected. Based on the selection made in 
               this SFR, the following SFRs must also be included: <h:br/>
               If anomaly-based detection is selected:   <linkref linkend="FAU_ANO_EXT.1.1"/> and <linkref linkend="FAU_ANO_EXT.1.2"/><h:br/>
               If signature-based detection is selected:   <linkref linkend="FAU_SIG_EXT.1.1"/><h:br/><h:br/>
@@ -677,15 +753,15 @@
               
              </note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on which intrusion detection technique(s) the TOE utilizes. 
-                If a hybrid intrusion detection is selected as the intrusion detection method, the TSS should provide details on the detection techniques utilized.
-                Furthermore, when using a hybrid detection method that includes detection methods other than anomaly or signature based, the TSS shall include more 
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on which intrusion detection technique(s) the <abbr linkend="TOE"/> utilizes. 
+                If a hybrid intrusion detection is selected as the intrusion detection method, the <abbr linkend="TSS"/> should provide details on the detection techniques utilized.
+                Furthermore, when using a hybrid detection method that includes detection methods other than anomaly or signature based, the <abbr linkend="TSS"/> shall include more 
                 details about such detection methods. If proprietary vendor detection method is selected, technical details on the method must be provided. </TSS>
         
-              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to configure the TOE in order for it to detect 
+              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to configure the <abbr linkend="TOE"/> in order for it to detect 
                 such intrusions. </Guidance>
               
-              <Tests> Depending on the detection technique used by the TOE the evaluator shall note detection technique used and test 
+              <Tests> Depending on the detection technique used by the <abbr linkend="TOE"/> the evaluator shall note detection technique used and test 
                 for the appropriate selection-based requirements.</Tests>
               
             </aactivity>
@@ -702,17 +778,17 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_inv_ext.1.1">
-            <title> The TSF shall provide Authorized Administrators with the ability to define an inventory 
-              of <h:i>[authorized APs and EUDs]</h:i> based on <h:i>[EUD MAC addresses, AP MAC addresses]</h:i>.
+            <title> The <abbr linkend="TSF"/> shall provide Authorized Administrators with the ability to define an inventory 
+              of <h:i>[authorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s]</h:i> based on <h:i>[EUD MAC addresses, <abbr linkend="AP"/> MAC addresses]</h:i>.
             </title>
-            <note role="application">This inventory is used as a whitelist to indicate to the WIDS/WIPS which APs and EUDs are legitimate members of the wireless network. The terminology used to describe an inventoried or whitelisted device may vary by vendor product. This <abbr linkend="PP-Module"/> utilizes whitelisted to describe APs and EUDs that are part of the inventory and non-whitelisted to describe APs and EUDs that are not part of the inventory.</note>
+            <note role="application">This inventory is used as a whitelist to indicate to the WIDS/WIPS which <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s are legitimate members of the wireless network. The terminology used to describe an inventoried or whitelisted device may vary by vendor product. This <abbr linkend="PP-Module"/> utilizes whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are part of the inventory and non-whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are not part of the inventory.</note>
             <aactivity>	
               <TSS>
-                The evaluator shall review the <abbr linkend="TSS"/> to verify that it includes information the ability of the TOE to define inventory of authorized APs and EUDs.</TSS>         
-              <Guidance>The evaluator shall review the operational guidance for instructions on how to configure and change clasification of APs and EUDs to indicate that they are part of the whitelist. </Guidance>           
+                The evaluator shall review the <abbr linkend="TSS"/> to verify that it includes information the ability of the <abbr linkend="TOE"/> to define inventory of authorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</TSS>         
+              <Guidance>The evaluator shall review the operational guidance for instructions on how to configure and change clasification of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s to indicate that they are part of the whitelist. </Guidance>           
               <Tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
-                  Deploy an AP and EUD that should be classified as authorized devices. <h:br/>
+                  Deploy an <abbr linkend="AP"/> and <abbr linkend="EUD"/> that should be classified as authorized devices. <h:br/>
                   <test>
                     If the whitelist is configured automatically:
                     <h:ul>
@@ -725,9 +801,9 @@
                   <test>
                     If the set of authorized devices is configured manually:
                     <h:ul>
-                      <h:li>Add an AP and EUD to the list. Record whether AP and EUD are displayed on the inventory. </h:li>
+                      <h:li>Add an <abbr linkend="AP"/> and <abbr linkend="EUD"/> to the list. Record whether <abbr linkend="AP"/> and <abbr linkend="EUD"/> are displayed on the inventory. </h:li>
                       <h:li>Verify that the devices are classified as whitelisted in the list of whitelisted devices. </h:li>
-                      <h:li>Remove the AP from the inventory. </h:li>
+                      <h:li>Remove the <abbr linkend="AP"/> from the inventory. </h:li>
                       <h:li>Verify that the removed device does not appear in the inventory after removal.</h:li>
                     </h:ul>
                   </test>
@@ -736,39 +812,39 @@
             </aactivity>
           </f-element>
           <f-element id="fau_inv_ext.1.2">
-            <title> The TSF shall detect the presence and current information of<h:i>[EUDs, APs]</h:i> in the Operational Environment that are 
+            <title> The <abbr linkend="TSF"/> shall detect the presence and current information of<h:i>[EUDs, <abbr linkend="AP"/>s]</h:i> in the Operational Environment that are 
               part of the defined inventory.
             </title>
-            <note role="Application">When referring to current information that should be detected by the TSF, it is referring to information about the detected AP or EUD as is observed by the 
-              WIDS/WIPS such as operating channel and band, SSID of an AP, client(s) connected to an AP, and the AP that an EUD is connected to. FAU_INV_EXT.2.3 has a full list of the details 
-              about the AP or EUD that should be detected by the WIDS/WIPS.</note>
+            <note role="Application">When referring to current information that should be detected by the <abbr linkend="TSF"/>, it is referring to information about the detected <abbr linkend="AP"/> or <abbr linkend="EUD"/> as is observed by the 
+              WIDS/WIPS such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. FAU_INV_EXT.2.3 has a full list of the details 
+              about the <abbr linkend="AP"/> or <abbr linkend="EUD"/> that should be detected by the WIDS/WIPS.</note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes how the presence of authorized EUDs and APs is presented by the TOE and what information about the devices is provided.</TSS>
-              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to view authorized APs and EUDs that are within range of the TOE sensors.</Guidance>           
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes how the presence of authorized <abbr linkend="EUD"/>s and <abbr linkend="AP"/>s is presented by the <abbr linkend="TOE"/> and what information about the devices is provided.</TSS>
+              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to view authorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are within range of the <abbr linkend="TOE"/> sensors.</Guidance>           
               <Tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
-                  <test>Deploy a whitelisted AP and EUD, and connect the EUD to the AP.</test>
-                  <test>Verify that the list of detected APs and EUDs contains the whitelisted AP and EUD that were just deployed. </test>
-                  <test>If the AP and EUD are detected verify that they are classified as whitelisted devices.</test>
+                  <test>Deploy a whitelisted <abbr linkend="AP"/> and <abbr linkend="EUD"/>, and connect the <abbr linkend="EUD"/> to the <abbr linkend="AP"/>.</test>
+                  <test>Verify that the list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s contains the whitelisted <abbr linkend="AP"/> and <abbr linkend="EUD"/> that were just deployed. </test>
+                  <test>If the <abbr linkend="AP"/> and <abbr linkend="EUD"/> are detected verify that they are classified as whitelisted devices.</test>
                 </testlist>
               </Tests>
             </aactivity>
           </f-element>         
           <f-element id="fau_inv_ext.1.3">
-            <title> The TSF shall detect the presence and current information of <h:i>[EUDs, APs]</h:i> in the Operational Environment that are 
+            <title> The <abbr linkend="TSF"/> shall detect the presence and current information of <h:i>[EUDs, <abbr linkend="AP"/>s]</h:i> in the Operational Environment that are 
               not part of the defined inventory.
             </title>
-            <note role="Application">When referring to current information that should be detected by the TSF, it is referring to information about the detected AP or EUD as is observed by the 
-              WIDS/WIPS such as operating channel and band, SSID of an AP, client(s) connected to an AP, and the AP that an EUD is connected to. FAU_INV_EXT.2.3 has a full list of the details 
-              about the AP or EUD that should be detected by the WIDS/WIPS.</note>
+            <note role="Application">When referring to current information that should be detected by the <abbr linkend="TSF"/>, it is referring to information about the detected <abbr linkend="AP"/> or <abbr linkend="EUD"/> as is observed by the 
+              WIDS/WIPS such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. FAU_INV_EXT.2.3 has a full list of the details 
+              about the <abbr linkend="AP"/> or <abbr linkend="EUD"/> that should be detected by the WIDS/WIPS.</note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on where in the WIDS/WIPS interface the list of detected APs and EUDs is displayed.</TSS>
-              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to view unauthorized APs and EUDs that are within range of the TOE sensors.</Guidance>         
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on where in the WIDS/WIPS interface the list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s is displayed.</TSS>
+              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to view unauthorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are within range of the <abbr linkend="TOE"/> sensors.</Guidance>         
               <Tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
-                  <test>Deploy a non-whitelisted AP and EUD and connect the EUD to the AP.</test>
-                  <test>Verify that the list of detected APs and EUDs contains the non-whitelisted AP and EUD that were just deployed.</test>
-                  <test>If the AP and EUD are detected verify that they are not classified as whitelisted devices.</test>
+                  <test>Deploy a non-whitelisted <abbr linkend="AP"/> and <abbr linkend="EUD"/> and connect the <abbr linkend="EUD"/> to the <abbr linkend="AP"/>.</test>
+                  <test>Verify that the list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s contains the non-whitelisted <abbr linkend="AP"/> and <abbr linkend="EUD"/> that were just deployed.</test>
+                  <test>If the <abbr linkend="AP"/> and <abbr linkend="EUD"/> are detected verify that they are not classified as whitelisted devices.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -785,22 +861,22 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_inv_ext.2.1">
-            <title> The TSF shall detect information on the current physical location of <h:i>[inventoried and malicious EUDs, APs]</h:i> within 
-              <h:i>[range of the TOE’s wireless sensors]</h:i>.
+            <title> The <abbr linkend="TSF"/> shall detect information on the current physical location of <h:i>[inventoried and malicious <abbr linkend="EUD"/>s, <abbr linkend="AP"/>s]</h:i> within 
+              <h:i>[range of the <abbr linkend="TOE"/>’s wireless sensors]</h:i>.
             </title>
-            <note role="application">This SFR only checks for the ability of the WIDS/WIPS to track the location of APs and EUDs either by placing them on a map or
-              providing the distance of the AP or EUD from the sensor but does not mandate a certain degree of accuracy. 
+            <note role="application">This SFR only checks for the ability of the WIDS/WIPS to track the location of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s either by placing them on a map or
+              providing the distance of the <abbr linkend="AP"/> or <abbr linkend="EUD"/> from the sensor but does not mandate a certain degree of accuracy. 
               Objective requirement <linkref linkend="FAU_INV_EXT.4"/> is more stringent on the accuracy of the location tracking capabilities.</note>
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on location tracking, optimal number of sensors and sensor placement to meet the required level of accuracy. </TSS>          
-              <Guidance>The evaluator shall review the operational guidance for instructions on how to configure location tracking and where in the TSF administrator interface the location of APs and EUDs can be viewed.</Guidance>          
+              <Guidance>The evaluator shall review the operational guidance for instructions on how to configure location tracking and where in the <abbr linkend="TSF"/> administrator interface the location of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s can be viewed.</Guidance>          
               <Tests> The evaluator shall perform the following test:<h:br/>
                 <testlist>
                   <test>
                     <steplist>
-                      <step>Deploy an AP within range of the sensors.</step>
-                      <step>Verify that TSF is able to provide location information on the AP.</step>
-                      <step>Verify that the location presented by the TSF appears within the range of the sensors.</step>
+                      <step>Deploy an <abbr linkend="AP"/> within range of the sensors.</step>
+                      <step>Verify that <abbr linkend="TSF"/> is able to provide location information on the <abbr linkend="AP"/>.</step>
+                      <step>Verify that the location presented by the <abbr linkend="TSF"/> appears within the range of the sensors.</step>
                     </steplist>                  
                   </test>
                 </testlist>
@@ -808,22 +884,22 @@
             </aactivity>
           </f-element>
           <f-element id="fau_inv_ext.2.2">
-            <title> The TSF shall detect <h:i>[received signal strength,</h:i> <selectables>
+            <title> The <abbr linkend="TSF"/> shall detect <h:i>[received signal strength,</h:i> <selectables>
               <selectable>RF power levels above a predetermined threshold</selectable>
               <selectable>no other characteristics</selectable>
-            </selectables>] of hardware operating within <h:i>[range of the TOE’s wireless sensors]</h:i>.
+            </selectables>] of hardware operating within <h:i>[range of the <abbr linkend="TOE"/>’s wireless sensors]</h:i>.
             </title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the TSS contains information regarding the TSF’s ability to record signal strength of hardware operating within range of its sensors.</TSS>          
-              <Guidance>If the option for detection of RF power levels above a predetermined threshold is selected, the evaluator shall use the operational guidance to set or check what the threshold is in a given test. The evaluator should also verify that the operational guidance provides instruction on how to configure the TOE to generate an alert when the threshold is exceeded.</Guidance>            
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> contains information regarding the <abbr linkend="TSF"/>’s ability to record signal strength of hardware operating within range of its sensors.</TSS>          
+              <Guidance>If the option for detection of RF power levels above a predetermined threshold is selected, the evaluator shall use the operational guidance to set or check what the threshold is in a given test. The evaluator should also verify that the operational guidance provides instruction on how to configure the <abbr linkend="TOE"/> to generate an alert when the threshold is exceeded.</Guidance>            
               <Tests> The evaluator shall perform the following test:<h:br/>
                 <testlist>
                   <test>
                     <steplist>
-                      <step>Deploy an AP within range of the sensors.</step>
-                      <step>Check the WIDS/WIPS user interface for a list of detected APs and EUDs.</step>
+                      <step>Deploy an <abbr linkend="AP"/> within range of the sensors.</step>
+                      <step>Check the WIDS/WIPS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
                       <step>Verify that the current received signal strength is part of the information presented on the 
-                        WIDS/WIPS user interface about the APs and EUDs.</step>
+                        WIDS/WIPS user interface about the <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
                     </steplist>
                   </test>
                 </testlist>
@@ -831,26 +907,26 @@
             </aactivity>
           </f-element>
           <f-element id="fau_inv_ext.2.3">
-            <title> The TSF shall detect the <h:i>current RF band, current channel, MAC Address, classification of APs and EUDs, </h:i> <assignable>other details</assignable> of 
-              <h:i>[all APs and EUDs]</h:i> within <h:i>range of the TOE’s wireless sensors</h:i>. For <h:i>[APs]</h:i> the TOE shall detect the following additional details:
-              <h:i>encryption, number of connected EUDs</h:i>. For <h:i>[EUDs]</h:i> the TOE shall detect the following additional details:
-              <h:i>SSID and BSSID of AP it is connected to.</h:i> 
+            <title> The <abbr linkend="TSF"/> shall detect the <h:i>current RF band, current channel, MAC Address, classification of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s, </h:i> <assignable>other details</assignable> of 
+              <h:i>[all <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s]</h:i> within <h:i>range of the <abbr linkend="TOE"/>’s wireless sensors</h:i>. For <h:i>[<abbr linkend="AP"/>s]</h:i> the <abbr linkend="TOE"/> shall detect the following additional details:
+              <h:i>encryption, number of connected <abbr linkend="EUD"/>s</h:i>. For <h:i>[<abbr linkend="EUD"/>s]</h:i> the <abbr linkend="TOE"/> shall detect the following additional details:
+              <h:i>SSID and BSSID of <abbr linkend="AP"/> it is connected to.</h:i> 
             </title>
-            <note role="Application">For detection of encryption type, the TSF should be able to differentiate between the different WLAN encryption methods and when no encryption is in use.
+            <note role="Application">For detection of encryption type, the <abbr linkend="TSF"/> should be able to differentiate between the different <abbr linkend="WLAN"/> encryption methods and when no encryption is in use.
             </note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the TSS explains the capability of detecting the current RF band, current channel, MAC Address, classification of APs and EUDs within the TOE’s wireless range.</TSS>           
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> explains the capability of detecting the current RF band, current channel, MAC Address, classification of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s within the <abbr linkend="TOE"/>’s wireless range.</TSS>           
               <Guidance>The evaluator shall review the operational guidance in order to verify that there are instructions that show how to locate the device inventory mentioned above.</Guidance>            
               <Tests> The evaluator shall perform the following test:<h:br/>
                 <testlist>
                   <test>
                     <steplist>
-                      <step>Deploy a whitelisted AP, non-whitelisted AP and two whitelisted EUDs.</step>
-                      <step>Connect one whitelisted EUD to the whitelisted AP and one to the non-whitelisted AP.</step>
-                      <step>Check the WIDS/WIPS user interface for a list of detected APs and EUDs.</step>
+                      <step>Deploy a whitelisted <abbr linkend="AP"/>, non-whitelisted <abbr linkend="AP"/> and two whitelisted <abbr linkend="EUD"/>s.</step>
+                      <step>Connect one whitelisted <abbr linkend="EUD"/> to the whitelisted <abbr linkend="AP"/> and one to the non-whitelisted <abbr linkend="AP"/>.</step>
+                      <step>Check the WIDS/WIPS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
                       <step>Verify that current RF band, current channel, MAC Address, classification of device, are part of the information presented on the 
-                    WIDS/WIPS user interface for all the APs and EUDs detected. For APs verify that encryption, number of connected EUDs is presented.
-                    For EUDs verify that the SSID and BSSID of AP it is connected is presented.</step>
+                        WIDS/WIPS user interface for all the <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s detected. For <abbr linkend="AP"/>s verify that encryption, number of connected <abbr linkend="EUD"/>s is presented.
+                        For <abbr linkend="EUD"/>s verify that the SSID and BSSID of <abbr linkend="AP"/> it is connected is presented.</step>
                     </steplist>
                   </test>
                 </testlist>
@@ -870,10 +946,10 @@
           <dependencies></dependencies>
           <f-element id="fau_inv_ext.3.1">
             <title>
-              The TSF shall detect when <h:i>[inventoried EUDs]</h:i> exhibit the following behavior: An EUD establishes a peer-to-peer connection with any other EUD.
+              The <abbr linkend="TSF"/> shall detect when <h:i>[inventoried <abbr linkend="EUD"/>s]</h:i> exhibit the following behavior: An <abbr linkend="EUD"/> establishes a peer-to-peer connection with any other <abbr linkend="EUD"/>.
                   <selectables>
-                    <selectable>An EUD bridges two network interfaces</selectable>
-                    <selectable>An EUD uses internet connection sharing</selectable>
+                    <selectable>An <abbr linkend="EUD"/> bridges two network interfaces</selectable>
+                    <selectable>An <abbr linkend="EUD"/> uses internet connection sharing</selectable>
                     <selectable>other connection types</selectable>
                     <selectable>no other connections</selectable>
                   </selectables>               
@@ -881,13 +957,13 @@
             <note role="Application">For this requirement, it is acceptable for the WIDS/WIPS to use a generic terms for bridges or peer-to-peer connections when
               generating an alert for the detection of different types of bridges or peer-to-peer connections. The type of connection does not have to be specific. </note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the TOE to detect the network behavior described by the SFR.</TSS>
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to detect the network behavior described by the SFR.</TSS>
               <Guidance>The evaluator shall review the operational guidance to verify that it provides instructions on how alerts are presented to the administrator as well as information regarding the format of each alert.</Guidance>             
               <Tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
                   <test>
                     <h:br/>
-                    Create the following connections between two whitelisted EUDs. 
+                    Create the following connections between two whitelisted <abbr linkend="EUD"/>s. 
                         <h:ul>
                           <h:li>Windows Ad Hoc Connection</h:li>
                           <h:li>Mac OS Ad Hoc</h:li>
@@ -897,7 +973,7 @@
                     <h:br/>
                   </test>
                   <test>
-                    Create the following connections between one whitelisted EUD and a non-whitelisted EUD 
+                    Create the following connections between one whitelisted <abbr linkend="EUD"/> and a non-whitelisted <abbr linkend="EUD"/> 
                     <h:ul>
                       <h:li>Windows Ad Hoc Connection</h:li>
                       <h:li>Mac OS Ad Hoc</h:li>
@@ -906,12 +982,12 @@
                     </h:ul>
                   </test>
                   <test>(Optional)
-                    Bridge two network interfaces on a whitelisted EUD (one must be the wireless card listed as whitelisted).                    
+                    Bridge two network interfaces on a whitelisted <abbr linkend="EUD"/> (one must be the wireless card listed as whitelisted).                    
                   </test>
                   <test>
                     <h:ul>
-                      <h:li>Create a Windows Hosted Network with a whitelisted EUD. </h:li>
-                      <h:li>Connect a different whitelisted EUD to the network.</h:li>
+                      <h:li>Create a Windows Hosted Network with a whitelisted <abbr linkend="EUD"/>. </h:li>
+                      <h:li>Connect a different whitelisted <abbr linkend="EUD"/> to the network.</h:li>
                     </h:ul>
                   </test>
                 </testlist>
@@ -924,18 +1000,18 @@
         <f-component  id="fau_saa.1" name="Potential Violation Analysis">
         <consistency-rationale></consistency-rationale>
           <f-element id="fau_saa.1.1">
-            <title>The TSF shall be able to apply a set of rules for monitoring the <h:b>wireless traffic</h:b> and based 
+            <title>The <abbr linkend="TSF"/> shall be able to apply a set of rules for monitoring the <h:b>wireless traffic</h:b> and based 
               upon these rules indicate a potential <h:b>malicious action</h:b>.
             </title>
             <aactivity>
-              <TSS>There are no TSS assurance activities for this SFR.</TSS>
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>
               <Tests> There are no tests for this SFR, testing detection of potential malicious events is tested through the ability to detect
                 intrusions in other SFRs.</Tests>             
             </aactivity>
           </f-element>
           <f-element id="fau_saa.1.2">
-            <title>The TSF shall enforce the following rules for monitoring wireless traffic:
+            <title>The <abbr linkend="TSF"/> shall enforce the following rules for monitoring wireless traffic:
               <h:ol type="a">
                 <h:li>Accumulation or combination of [assignment: subset of defined auditable events] known to indicate a 
                 potential security violation;
@@ -949,19 +1025,19 @@
                 </h:tr>
                 <h:tr>
                   <h:td>FAU_INV_EXT.3</h:td>
-                  <h:td>Detection of authorized EUD establishing peer-to-peer connection with any other EUD.</h:td>
+                  <h:td>Detection of authorized <abbr linkend="EUD"/> establishing peer-to-peer connection with any other <abbr linkend="EUD"/>.</h:td>
                 </h:tr>
                 <h:tr>
                   <h:td>FAU_INV_EXT.3</h:td>
-                  <h:td>Detection of EUD bridging two network interfaces.</h:td>
+                  <h:td>Detection of <abbr linkend="EUD"/> bridging two network interfaces.</h:td>
                 </h:tr>                
                 <h:tr>
                   <h:td>FAU_WID_EXT.1</h:td>
-                  <h:td>Detection of rogue AP.</h:td>
+                  <h:td>Detection of rogue <abbr linkend="AP"/>.</h:td>
                 </h:tr>                
                 <h:tr>
                   <h:td>FAU_WID_EXT.1</h:td>
-                  <h:td>Detection of malicious EUD.</h:td>
+                  <h:td>Detection of malicious <abbr linkend="EUD"/>.</h:td>
                 </h:tr>                
                  <h:tr>
                   <h:td>FAU_WID_EXT.2</h:td>
@@ -1008,7 +1084,7 @@
               <ctr id="SecViolations" ctr-type="Table">: Potential Security Violations</ctr>
             </title>
             <aactivity>
-              <TSS>There are no TSS assurance activities for this SFR.</TSS>
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>
               <Tests>There are no tests for this SFR, testing of monotoring capabities is tested through the ability to detect
                 intrusions in other SFRs.</Tests>          
@@ -1026,18 +1102,18 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_wid_ext.1.1">
-            <title> The TSF shall apply <assignable>user-defined, automatic</assignable> classification rules to detect the following 
-              types of malicious environmental objects: <h:i>[rogue APs]</h:i>.
+            <title> The <abbr linkend="TSF"/> shall apply <assignable>user-defined, automatic</assignable> classification rules to detect the following 
+              types of malicious environmental objects: <h:i>[rogue <abbr linkend="AP"/>s]</h:i>.
             </title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the TSF describes how the TOE can detect rogue APs and whether this behavior is configurable.</TSS>
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes how the <abbr linkend="TOE"/> can detect rogue <abbr linkend="AP"/>s and whether this behavior is configurable.</TSS>
               <Guidance>The evaluator shall review the operational guidance for instructions on how to configure user-defined classification rules, if supported.</Guidance>    
-              <Tests> The evaluator shall perform configure an AP classifcation rule, then perform the following test:<h:br/>
+              <Tests> The evaluator shall perform configure an <abbr linkend="AP"/> classifcation rule, then perform the following test:<h:br/>
                 <testlist>
                   <test>
                     <h:ul>
-                      <h:li>Deploy an AP following the user-defined classification rule.</h:li>
-                      <h:li>Verify that the AP gets correctly classified.</h:li>
+                      <h:li>Deploy an <abbr linkend="AP"/> following the user-defined classification rule.</h:li>
+                      <h:li>Verify that the <abbr linkend="AP"/> gets correctly classified.</h:li>
                     </h:ul>
                   </test>
                 </testlist>
@@ -1045,24 +1121,24 @@
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.1.2">
-            <title> The TSF shall distinguish between benign and malicious <h:i>[APs, EUDs]</h:i> based on 
+            <title> The <abbr linkend="TSF"/> shall distinguish between benign and malicious <h:i>[<abbr linkend="AP"/>s, <abbr linkend="EUD"/>s]</h:i> based on 
               <h:i>[automatic detection metrics]</h:i>.
             </title>
             <aactivity>	
-              <TSS>There are no TSS assurance activities for this SFR.</TSS>          
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>          
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>           
               <Tests> The evaluator shall perform the following test:<h:br/>
                 <testlist>
                   <test>
                     <h:ul>
-                      <h:li>Deploy a non-whitelisted AP in the area of the WIDS sensor but take no action against the network.</h:li>
-                      <h:li>Deploy a non-whitelisted AP in the area of the WIDS sensor and connect it to the internal wired infrastructure (optional for overlay WIDS).</h:li>
-                      <h:li>Connect a whitelisted EUD to a non-whitelisted AP. </h:li>
-                      <h:li>Connect a non-whitelisted EUD to a whitelisted AP.</h:li>
-                      <h:li>Launch an attack against authorized AP with an unauthorized EUD.</h:li>
+                      <h:li>Deploy a non-whitelisted <abbr linkend="AP"/> in the area of the WIDS sensor but take no action against the network.</h:li>
+                      <h:li>Deploy a non-whitelisted <abbr linkend="AP"/> in the area of the WIDS sensor and connect it to the internal wired infrastructure (optional for overlay WIDS).</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to a non-whitelisted <abbr linkend="AP"/>. </h:li>
+                      <h:li>Connect a non-whitelisted <abbr linkend="EUD"/> to a whitelisted <abbr linkend="AP"/>.</h:li>
+                      <h:li>Launch an attack against authorized <abbr linkend="AP"/> with an unauthorized <abbr linkend="EUD"/>.</h:li>
                     </h:ul>
                   </test>
-                For each step above verify that the TSF detects APs and EUDs and that they are classified appropriately.
+                  For each step above verify that the <abbr linkend="TSF"/> detects <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s and that they are classified appropriately.
                </testlist> 
               </Tests>
             </aactivity>
@@ -1080,7 +1156,7 @@
           <dependencies></dependencies>
           <f-element id="fau_wid_ext.2.1">
             <title>
-              The TSF shall monitor and analyze 
+              The <abbr linkend="TSF"/> shall monitor and analyze 
               <selectables>
                 <selectable>simultaneously monitor and analyze</selectable>
                 <selectable>no other behavior</selectable>
@@ -1094,36 +1170,36 @@
             </title>
             <note role="Application">The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on the channels the TSF can detect. </TSS>          
-              <Guidance>The evaluator shall review the operational guidance for the channels that the TSF is able to monitor and how to configure 
-              the TSF to monitor the channels as selected in the SFR.  Depending on the channel dwelling times implemented by the vendor it might 
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on the channels the <abbr linkend="TSF"/> can detect. </TSS>          
+              <Guidance>The evaluator shall review the operational guidance for the channels that the <abbr linkend="TSF"/> is able to monitor and how to configure 
+                the <abbr linkend="TSF"/> to monitor the channels as selected in the SFR.  Depending on the channel dwelling times implemented by the vendor it might 
               take a while for the detection of devices. </Guidance>         
               <Tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
                   <test>
                     Channels on On 5GHz band
                     <steplist>
-                      <step>Configure the TSF to monitor the channels as selected in the SFR.</step>
-                      <step>Deploy AP on at least 2 different channels within the regulatory domain on 5GHz band.</step>
-                      <step>Deploy AP on at least 2 different channels outside the regulatory domain on 5GHz band.</step>
-                      <step>Verify that the AP gets detected on each channel tested.</step>
+                      <step>Configure the <abbr linkend="TSF"/> to monitor the channels as selected in the SFR.</step>
+                      <step>Deploy <abbr linkend="AP"/> on at least 2 different channels within the regulatory domain on 5GHz band.</step>
+                      <step>Deploy <abbr linkend="AP"/> on at least 2 different channels outside the regulatory domain on 5GHz band.</step>
+                      <step>Verify that the <abbr linkend="AP"/> gets detected on each channel tested.</step>
                     </steplist>
                   </test>               
                   <test>
                     Channels on 2.4GHz band
                     <steplist>
-                      <step>Configure the TSF to monitor the channels as selected in the SFR.</step>
-                      <step>Deploy AP on at least 2 different channels within the regulatory domain on 2.4GHz band.</step>
-                      <step>Deploy AP on at least 2 different channels outside the regulatory domain on 2.4GHz band.</step>
-                      <step>Verify that the AP gets detected on each channel tested.</step>
+                      <step>Configure the <abbr linkend="TSF"/> to monitor the channels as selected in the SFR.</step>
+                      <step>Deploy <abbr linkend="AP"/> on at least 2 different channels within the regulatory domain on 2.4GHz band.</step>
+                      <step>Deploy <abbr linkend="AP"/> on at least 2 different channels outside the regulatory domain on 2.4GHz band.</step>
+                      <step>Verify that the <abbr linkend="AP"/> gets detected on each channel tested.</step>
                     </steplist>
                   </test>                
                   <test>
                     Non-standard channel frequencies
                     <steplist>
-                      <step>Configure the TSF to monitor the channels as selected in the SFR.</step>
-                      <step>Deploy AP on at least 2 different channels on non-standard channel frequencies.</step>
-                      <step>Verify that the AP gets detected on each channel tested.</step>
+                      <step>Configure the <abbr linkend="TSF"/> to monitor the channels as selected in the SFR.</step>
+                      <step>Deploy <abbr linkend="AP"/> on at least 2 different channels on non-standard channel frequencies.</step>
+                      <step>Verify that the <abbr linkend="AP"/> gets detected on each channel tested.</step>
                     </steplist>
                   </test>                 
                 </testlist>
@@ -1132,7 +1208,7 @@
           </f-element>
           <f-element id="fau_wid_ext.2.2">
             <title> 
-              The TSF shall provide wireless sensors to detect network traffic matching the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> that 
+              The <abbr linkend="TSF"/> shall provide wireless sensors to detect network traffic matching the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> that 
               <selectables>
                 <selectable>can be configured to prevent transmission of data</selectable>
                 <selectable>does not transmit data</selectable>
@@ -1142,10 +1218,10 @@
               The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.
             </note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on how to configure the sensors as completely passive. Specifically, the TSS shall indicate whether the TOE can configured as a dedicated sensor with prevention disabled, or, if the sensor transmits data even with no prevention capabilities are enabled, how to disable wireless transmissions.</TSS>            
-              <Guidance>Specifically, the TSS shall indicate whether the TOE can configured as a dedicated sensor with prevention disabled, or, if the sensor transmits data even with no prevention capabilities are enabled, how to disable wireless transmissions. </Guidance>        
-              <Tests> If the TOE provides the ability to disable wireless transmission, the evaluator shall follow the operational guidance to configure the sensor 
-                to not transmit wirelessly. The evaluator shall then deploy a signal analyzer in order to check for wireless emanations from the TOE.<h:br/>
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on how to configure the sensors as completely passive. Specifically, the <abbr linkend="TSS"/> shall indicate whether the <abbr linkend="TOE"/> can configured as a dedicated sensor with prevention disabled, or, if the sensor transmits data even with no prevention capabilities are enabled, how to disable wireless transmissions.</TSS>            
+              <Guidance>Specifically, the <abbr linkend="TSS"/> shall indicate whether the <abbr linkend="TOE"/> can configured as a dedicated sensor with prevention disabled, or, if the sensor transmits data even with no prevention capabilities are enabled, how to disable wireless transmissions. </Guidance>        
+              <Tests> If the <abbr linkend="TOE"/> provides the ability to disable wireless transmission, the evaluator shall follow the operational guidance to configure the sensor 
+                to not transmit wirelessly. The evaluator shall then deploy a signal analyzer in order to check for wireless emanations from the <abbr linkend="TOE"/>.<h:br/>
                 The evaluator shall then perform the following tests:<h:br/>               
                 Deploy a signal analyzer and configure on the bands specified in the tests below.
                 <h:b>On 2.4 GHz band</h:b> 
@@ -1183,24 +1259,24 @@
           </f-element>
           <f-element id="fau_wid_ext.2.3">
             <title> 
-              The TSF shall provide the ability to define a subset of <h:i>[SSID(s)]</h:i> as authorized.
+              The <abbr linkend="TSF"/> shall provide the ability to define a subset of <h:i>[SSID(s)]</h:i> as authorized.
             </title>
             <note role="application">The administrator should have the ability to configure which SSIDs are permitted on the network. </note>
             <aactivity>	
-              <TSS>No TSS assurance activity specified.</TSS>
+              <TSS>No <abbr linkend="TSS"/> assurance activity specified.</TSS>
               <Guidance>The evaluator shall verify that the <abbr linkend="TSS"/> includes instructions on how to set the allowed SSIDs.</Guidance>
-              <Tests>The evaluator shall configure the TSF with a set of authorized channels and SSIDs. The ability to detect violation of this policy will be tested in <linkref linkend="FAU_WID_EXT.2.4"/>.</Tests>             
+              <Tests>The evaluator shall configure the <abbr linkend="TSF"/> with a set of authorized channels and SSIDs. The ability to detect violation of this policy will be tested in <linkref linkend="FAU_WID_EXT.2.4"/>.</Tests>             
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.2.4">
             <title> 
-              The TSF shall detect the presence of unauthorized traffic on the network through the following methods: [
+              The <abbr linkend="TSF"/> shall detect the presence of unauthorized traffic on the network through the following methods: [
               <h:ul>
-                <h:li>detection of unauthorized APs broadcasting authorized SSIDs,</h:li>
-                <h:li>detection of APs and EUDs spoofing the MAC address of whitelisted APs and EUDs,</h:li>
-                <h:li>detection of authorized EUDs associating to unauthorized SSIDs,</h:li>
-                <h:li>detection of unauthorized EUDs associating to authorized APs,</h:li>
-                <h:li>detection of unauthorized point to point wireless bridges by whitelisted APs,</h:li>
+                <h:li>detection of unauthorized <abbr linkend="AP"/>s broadcasting authorized SSIDs,</h:li>
+                <h:li>detection of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s spoofing the MAC address of whitelisted <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s,</h:li>
+                <h:li>detection of authorized <abbr linkend="EUD"/>s associating to unauthorized SSIDs,</h:li>
+                <h:li>detection of unauthorized <abbr linkend="EUD"/>s associating to authorized <abbr linkend="AP"/>s,</h:li>
+                <h:li>detection of unauthorized point to point wireless bridges by whitelisted <abbr linkend="AP"/>s,</h:li>
                 <h:li>detection of active probing,</h:li>
                 <h:li>
                   <selectables>
@@ -1218,37 +1294,37 @@
                 </h:li>
               </h:ul>
             </title>
-            <note role="application">“Authorized” EUDs/APs are those that are assigned to the whitelist as 
+            <note role="application">“Authorized” <abbr linkend="EUD"/>s/<abbr linkend="AP"/>s are those that are assigned to the whitelist as 
               defined by FAU_INV_EXT.1.1. Detection of illegal state transitions and protocol violations are 
               objective requirements and will be mandatory in future PP versions.
             </note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the methods that the TOE uses to detect the presence of unauthorized connections and unauthorized network traffic.</TSS>            
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the methods that the <abbr linkend="TOE"/> uses to detect the presence of unauthorized connections and unauthorized network traffic.</TSS>            
               <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to configure SSIDs as authorized.</Guidance>         
-              <Tests> The evaluator shall configure the TSF with a set of authorized SSIDs and perform the following tests:<h:br/>
+              <Tests> The evaluator shall configure the <abbr linkend="TSF"/> with a set of authorized SSIDs and perform the following tests:<h:br/>
                 <testlist>
                   <h:b>Unauthorized SSID, Unauthorized Connections - 2.4 GHz band</h:b>
                   <test>
                      <steplist>
-                      <step>Configure a whitelisted AP to operate on a set channel on the 2.4 GHz band with an authorized SSID. </step>
-                      <step>Connect a non-whitelisted EUD to AP.</step>
-                      <step>Verify that the TSF detects the non-whitelisted EUD connecting to the whitelisted AP.</step>
-                      <step>hange the AP's SSID to one not on the authorized list.</step>
-                      <step>Connect a whitelisted EUD to AP.</step>
-                      <step>Verify that the TSF detects the whitelisted AP using unauthorized SSID
-                        and the EUD associating to an unauthorized SSID.</step>
+                       <step>Configure a whitelisted <abbr linkend="AP"/> to operate on a set channel on the 2.4 GHz band with an authorized SSID. </step>
+                       <step>Connect a non-whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>.</step>
+                       <step>Verify that the <abbr linkend="TSF"/> detects the non-whitelisted <abbr linkend="EUD"/> connecting to the whitelisted <abbr linkend="AP"/>.</step>
+                       <step>hange the <abbr linkend="AP"/>'s SSID to one not on the authorized list.</step>
+                       <step>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>.</step>
+                       <step>Verify that the <abbr linkend="TSF"/> detects the whitelisted <abbr linkend="AP"/> using unauthorized SSID
+                         and the <abbr linkend="EUD"/> associating to an unauthorized SSID.</step>
                     </steplist>
                   </test><h:br/>                      
                   <h:b>Unauthorized SSID, Unauthorized Connections - 5 GHz band</h:b>
                   <test>
                     <steplist>
-                      <step>Configure a whitelisted AP to operate on a set channel on the 5 GHz band with an authorized SSID. </step>
-                      <step>Connect a non-whitelisted EUD to AP.</step>
-                      <step>Verify that the TSF detects the non-whitelisted EUD connecting to the whitelisted AP.</step>
-                      <step>hange the AP's SSID to one not on the authorized list.</step>
-                      <step>Connect a whitelisted EUD to AP.</step>
-                      <step>Verify that the TSF detects the whitelisted AP using unauthorized SSID
-                        and the EUD associating to an unauthorized SSID.</step>
+                      <step>Configure a whitelisted <abbr linkend="AP"/> to operate on a set channel on the 5 GHz band with an authorized SSID. </step>
+                      <step>Connect a non-whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>.</step>
+                      <step>Verify that the <abbr linkend="TSF"/> detects the non-whitelisted <abbr linkend="EUD"/> connecting to the whitelisted <abbr linkend="AP"/>.</step>
+                      <step>hange the <abbr linkend="AP"/>'s SSID to one not on the authorized list.</step>
+                      <step>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>.</step>
+                      <step>Verify that the <abbr linkend="TSF"/> detects the whitelisted <abbr linkend="AP"/> using unauthorized SSID
+                        and the <abbr linkend="EUD"/> associating to an unauthorized SSID.</step>
                     </steplist>
                   </test><h:br/>    
                 </testlist>           
@@ -1256,16 +1332,16 @@
                   <h:b>MAC Spoofing</h:b>
                   <test>
                     <h:ul>
-                      <h:li>Spoof mac address of whiteliste EUD connected to a whitelisted AP on a second EUD. </h:li>
-                      <h:li>Connect EUD with spoofed MAC address to another whitelisted AP while the valid EUD it is spoofing 
-                        is connected to the first AP.. </h:li>
-                      <h:li>Verify that the TSF detected the MAC spoofing.</h:li>
+                      <h:li>Spoof mac address of whiteliste <abbr linkend="EUD"/> connected to a whitelisted <abbr linkend="AP"/> on a second <abbr linkend="EUD"/>. </h:li>
+                      <h:li>Connect <abbr linkend="EUD"/> with spoofed MAC address to another whitelisted <abbr linkend="AP"/> while the valid <abbr linkend="EUD"/> it is spoofing 
+                        is connected to the first <abbr linkend="AP"/>. </h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detected the MAC spoofing.</h:li>
                     </h:ul>          
                   </test>          
                   <test>
                     <h:ul>
-                      <h:li>Spoof mac address of whiteliste AP on a second AP. </h:li>
-                      <h:li>Verify that the TSF detected the MAC spoofing.</h:li>
+                      <h:li>Spoof mac address of whiteliste <abbr linkend="AP"/> on a second <abbr linkend="AP"/>. </h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detected the MAC spoofing.</h:li>
                     </h:ul>          
                   </test> 
                 </testlist>              
@@ -1273,8 +1349,8 @@
                   <h:b>Active Probing</h:b>
                   <test>
                     <h:ul>
-                      <h:li>Perform an active scan on the subnet of the WLAN.</h:li>
-                      <h:li>Record tools used and type of scan performed. Verify that the TSF detects the active probing.</h:li>
+                      <h:li>Perform an active scan on the subnet of the <abbr linkend="WLAN"/>.</h:li>
+                      <h:li>Record tools used and type of scan performed. Verify that the <abbr linkend="TSF"/> detects the active probing.</h:li>
                     </h:ul>          
                   </test>                 
                 </testlist>               
@@ -1282,8 +1358,8 @@
                   <h:b>Point-to-Point Wireless Bridges</h:b>
                   <test>
                     <h:ul>
-                      <h:li>Setup a point-to-point wireless bridge using whitelisted APs in the range of the wireless sensors.</h:li>
-                      <h:li>Verift that the TSF detects the bridge.</h:li>
+                      <h:li>Setup a point-to-point wireless bridge using whitelisted <abbr linkend="AP"/>s in the range of the wireless sensors.</h:li>
+                      <h:li>Verift that the <abbr linkend="TSF"/> detects the bridge.</h:li>
                     </h:ul>          
                   </test>                 
                 </testlist>
@@ -1302,7 +1378,7 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_wid_ext.3.1">
-            <title> The TSF shall detect the following intrusions: 
+            <title> The <abbr linkend="TSF"/> shall detect the following intrusions: 
               RF-based denial of service, deauthentication flooding, disassociation flooding, <assignable>other DoS methods</assignable>, 
                 <selectables>
                   <selectable>request-to-send/clear-to-send abuse</selectable>
@@ -1310,18 +1386,18 @@
                 </selectables>
             </title>
             <aactivity>	
-              <TSS>The evaluator shall examine the TSS to verify that it describes the denial of service attacks that can be detected by the TOE.</TSS>
-              <Guidance>If the ability of the TOE to detect different types of denial of service attacks is configurable, the evaluator shall verify that 
+              <TSS>The evaluator shall examine the <abbr linkend="TSS"/> to verify that it describes the denial of service attacks that can be detected by the <abbr linkend="TOE"/>.</TSS>
+              <Guidance>If the ability of the <abbr linkend="TOE"/> to detect different types of denial of service attacks is configurable, the evaluator shall verify that 
                 the operational guidance provides instructions on how to specify the attack(s) that are detected.</Guidance>
               <Tests>
                 <testlist>
                   <h:b>RF-based DoS</h:b>
                   <test>
                     <h:ul>
-                      <h:li>Deploy whitelisted AP and configure to stay in a particular channel.</h:li>
-                      <h:li>Connect a whitelisted EUD to the AP.</h:li>
-                      <h:li>Use an RF Jammer or signal generator on the same frequency as the AP and EUD to create a DoS.</h:li>
-                      <h:li>Verify that the TSF detects the RF-based DoS.</h:li>
+                      <h:li>Deploy whitelisted <abbr linkend="AP"/> and configure to stay in a particular channel.</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to the <abbr linkend="AP"/>.</h:li>
+                      <h:li>Use an RF Jammer or signal generator on the same frequency as the <abbr linkend="AP"/> and <abbr linkend="EUD"/> to create a DoS.</h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects the RF-based DoS.</h:li>
                     </h:ul>          
                   </test>                 
                 </testlist>
@@ -1329,20 +1405,20 @@
                   <h:b>Traffic injection based DoS</h:b>
                   <test> <h:b>Deauthentication Flood</h:b>
                     <h:ul>
-                      <h:li>Deploy whitelisted AP and configure to a set channel.</h:li>
-                      <h:li>Connect a whitelisted EUD to the AP.</h:li>
-                      <h:li>Send an flood of deauthentication frames to the EUD using the MAC address of whitelisted AP it is connected to.</h:li>
-                      <h:li>Verify that the TSF detects the deauthentication flood.</h:li>
-                      <h:li>Send an flood of deauthentication frames with the MAC address of whitelisted AP as the source and destination as a broadcast.</h:li>
-                      <h:li>Verify that the TSF detects the deauthentication flood.</h:li>             
+                      <h:li>Deploy whitelisted <abbr linkend="AP"/> and configure to a set channel.</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to the <abbr linkend="AP"/>.</h:li>
+                      <h:li>Send an flood of deauthentication frames to the <abbr linkend="EUD"/> using the MAC address of whitelisted <abbr linkend="AP"/> it is connected to.</h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects the deauthentication flood.</h:li>
+                      <h:li>Send an flood of deauthentication frames with the MAC address of whitelisted <abbr linkend="AP"/> as the source and destination as a broadcast.</h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects the deauthentication flood.</h:li>             
                     </h:ul>          
                   </test>
                   <test> <h:b>Dissasociation Flood</h:b>
                     <h:ul>
-                      <h:li>Deploy whitelisted AP and configure to a set channel.</h:li>
-                      <h:li>Connect two whitelisted EUDs to the AP.</h:li>
+                      <h:li>Deploy whitelisted <abbr linkend="AP"/> and configure to a set channel.</h:li>
+                      <h:li>Connect two whitelisted <abbr linkend="EUD"/>s to the <abbr linkend="AP"/>.</h:li>
                       <h:li>Send an flood of CTS frames to reserve RF medium.</h:li>
-                      <h:li>Verify that the TSF detects the CTS abuse.</h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects the CTS abuse.</h:li>
                     </h:ul>          
                   </test> 
                 </testlist>
@@ -1362,35 +1438,35 @@
           <dependencies></dependencies>
           <f-element id="fau_wid_ext.4.1">
             <title> 
-              The TSF shall provide Authorized Administrators the ability to define authorized WLAN authentication schemes.
+              The <abbr linkend="TSF"/> shall provide Authorized Administrators the ability to define authorized <abbr linkend="WLAN"/> authentication schemes.
             </title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to allow authorized administrators to define 
-                authorized WLAN authentication schemes.</TSS>            
-              <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions on how to define a WLAN authentication 
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to allow authorized administrators to define 
+                authorized <abbr linkend="WLAN"/> authentication schemes.</TSS>            
+              <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions on how to define a <abbr linkend="WLAN"/> authentication 
                 scheme as authorized or unauthorized for the purposes of detection.</Guidance>            
-              <Tests>The evaluator shall configure the TSF with a set of authorized WLAN authentication schemes. The ability to detect violation
+              <Tests>The evaluator shall configure the <abbr linkend="TSF"/> with a set of authorized <abbr linkend="WLAN"/> authentication schemes. The ability to detect violation
                 of this policy will be tested in <linkref linkend="FAU_WID_EXT.4.2"/>.</Tests>             
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.4.2">
             <title> 
-              The TSF shall detect when <h:i>[whitelisted APs and EUDs defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> attempt to use WLAN authentication 
+              The <abbr linkend="TSF"/> shall detect when <h:i>[whitelisted <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> attempt to use <abbr linkend="WLAN"/> authentication 
               schemes that are not authorized.
             </title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to detect when unauthorized WLAN authentication schemes are used.</TSS>
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to detect when unauthorized <abbr linkend="WLAN"/> authentication schemes are used.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>          
-              <Tests> The evaluator shall configure the TSF with 802.1x authentication as the only mode of authorized WLAN authentication schemes and perform the following tests:<h:br/>
+              <Tests> The evaluator shall configure the <abbr linkend="TSF"/> with 802.1x authentication as the only mode of authorized <abbr linkend="WLAN"/> authentication schemes and perform the following tests:<h:br/>
                 <testlist>
                   <test>
                     <h:ul>
-                      <h:li>Deploy a whitelisted AP with open authentication.</h:li>
-                      <h:li>Connect a whitelisted EUD to AP. </h:li>
-                      <h:li>Verify that the TSF detects the AP and the EUD using unauthorized authentication schemes. </h:li>
-                      <h:li>Deploy a whitelisted AP that uses pre-shared key authentication.</h:li>
-                      <h:li>Connect a whitelisted EUD to AP. </h:li>
-                      <h:li>Verify that the TSF detects the AP and the EUD using unauthorized authentication schemes. </h:li>
+                      <h:li>Deploy a whitelisted <abbr linkend="AP"/> with open authentication.</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>. </h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects the <abbr linkend="AP"/> and the <abbr linkend="EUD"/> using unauthorized authentication schemes. </h:li>
+                      <h:li>Deploy a whitelisted <abbr linkend="AP"/> that uses pre-shared key authentication.</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>. </h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects the <abbr linkend="AP"/> and the <abbr linkend="EUD"/> using unauthorized authentication schemes. </h:li>
                     </h:ul>
                   </test>
                 </testlist>
@@ -1410,34 +1486,34 @@
           <dependencies></dependencies>
           <f-element id="fau_wid_ext.5.1">
             <title> 
-              The TSF shall provide Authorized Administrators the ability to define authorized WLAN encryption schemes.
+              The <abbr linkend="TSF"/> shall provide Authorized Administrators the ability to define authorized <abbr linkend="WLAN"/> encryption schemes.
             </title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to allow authorized administrators to define 
-                authorized WLAN encryption schemes.</TSS>
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to allow authorized administrators to define 
+                authorized <abbr linkend="WLAN"/> encryption schemes.</TSS>
               <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions on how to define a 
-                WLAN encryption scheme as authorized or unauthorized for the purposes of detection.</Guidance>             
-              <Tests>The evaluator shall configure the TSF with a set of allowed encryption schemes. The ability to detect violation
+                <abbr linkend="WLAN"/> encryption scheme as authorized or unauthorized for the purposes of detection.</Guidance>             
+              <Tests>The evaluator shall configure the <abbr linkend="TSF"/> with a set of allowed encryption schemes. The ability to detect violation
                 of this policy will be tested in <linkref linkend="FAU_WID_EXT.5.2"/>.</Tests>       
             </aactivity>
           </f-element>
           <f-element id="fau_wid_ext.5.2">
             <title> 
-              The TSF shall detect when <h:i>[whitelisted APs and EUDs defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> attempt to use WLAN encryption schemes that are not authorized.</title>
+              The <abbr linkend="TSF"/> shall detect when <h:i>[whitelisted <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> attempt to use <abbr linkend="WLAN"/> encryption schemes that are not authorized.</title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to detect when unauthorized WLAN encryption schemes are used.</TSS>
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to detect when unauthorized <abbr linkend="WLAN"/> encryption schemes are used.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>             
-              <Tests> The evaluator shall configure the TSF with 128 bit AES encryption type as the only allowd encryption scheme 
+              <Tests> The evaluator shall configure the <abbr linkend="TSF"/> with 128 bit AES encryption type as the only allowd encryption scheme 
                 and perform the following test:<h:br/>
                 <testlist>
                   <test>
                     <h:ul>
-                      <h:li>Deploy a whitelisted AP with no encryption.</h:li>
-                      <h:li>Connect a whitelisted EUD to AP. </h:li>
-                      <h:li>Verify that the TSF detects the AP and the EUD using unauthorized encryption schemes. </h:li>
-                      <h:li>Deploy a whitelisted AP that uses TKIP encryption only.</h:li>
-                      <h:li>Connect a whitelisted EUD to AP. </h:li>
-                      <h:li>Verify that the TSF detects the AP and the EUD using unauthorized encryption schemes. </h:li>
+                      <h:li>Deploy a whitelisted <abbr linkend="AP"/> with no encryption.</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>. </h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects the <abbr linkend="AP"/> and the <abbr linkend="EUD"/> using unauthorized encryption schemes. </h:li>
+                      <h:li>Deploy a whitelisted <abbr linkend="AP"/> that uses TKIP encryption only.</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>. </h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects the <abbr linkend="AP"/> and the <abbr linkend="EUD"/> using unauthorized encryption schemes. </h:li>
                     </h:ul>
                   </test>
                 </testlist>
@@ -1446,30 +1522,31 @@
           </f-element>
           <f-element id="fau_wid_ext.5.3">
             <title> 
-              The TSF shall detect when <h:i>[whitelisted APs and EUDs defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> send or receive unencrypted data.
+              The <abbr linkend="TSF"/> shall detect when <h:i>[whitelisted <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> send or receive unencrypted data.
             </title>
-            <note role="application">When referring to unencrypted data being received by a whitelisted AP or EUD it refers to unencrypted data 
-              being sent to a whitelisted AP or EUD from either a non-whitelisted or whitelisted AP or EUD.</note>
+            <note role="application">
+              When referring to unencrypted data being received by a whitelisted <abbr linkend="AP"/> or <abbr linkend="EUD"/> it refers to unencrypted data 
+              being sent to a whitelisted <abbr linkend="AP"/> or <abbr linkend="EUD"/> from either a non-whitelisted or whitelisted <abbr linkend="AP"/> or <abbr linkend="EUD"/>.</note>
             <aactivity>
-              <TSS>The evaluator shall verify that the TSS describes the ability of the TOE to detect when unauthorized APs and EUDs
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to detect when unauthorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s
                 send or receive unencrypted data. </TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>
               <Tests>
                 <testlist>
                   <test>
                   <h:ul>
-                    <h:li>Deploy a whitelisted AP with no encryption.</h:li>
-                    <h:li>Connect a whitelisted EUD to AP and generate traffic.</h:li>
-                    <h:li>Verify that the TSF detects unencrypted data frames being sent between the whitelisted AP and EUD.</h:li>
-                    <h:li>Connect a non-whitelisted EUD to AP and generate traffic.</h:li>
-                    <h:li>Verify that the TSF detects unencrypted data frames being sent between the whitelisted AP and non-whitelisted EUD.</h:li>
+                    <h:li>Deploy a whitelisted <abbr linkend="AP"/> with no encryption.</h:li>
+                    <h:li>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/> and generate traffic.</h:li>
+                    <h:li>Verify that the <abbr linkend="TSF"/> detects unencrypted data frames being sent between the whitelisted <abbr linkend="AP"/> and <abbr linkend="EUD"/>.</h:li>
+                    <h:li>Connect a non-whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/> and generate traffic.</h:li>
+                    <h:li>Verify that the <abbr linkend="TSF"/> detects unencrypted data frames being sent between the whitelisted <abbr linkend="AP"/> and non-whitelisted <abbr linkend="EUD"/>.</h:li>
                   </h:ul>
                   </test>
                   <test>
                     <h:ul>
-                      <h:li>Deploy a non-whitelisted AP with no encryption.</h:li>
-                      <h:li>Connect a whitelisted EUD to AP and generate traffic.</h:li>
-                      <h:li>Verify that the TSF detects unencrypted data frames being between the non-whitelisted AP and whitelisted EUD.</h:li>
+                      <h:li>Deploy a non-whitelisted <abbr linkend="AP"/> with no encryption.</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/> and generate traffic.</h:li>
+                      <h:li>Verify that the <abbr linkend="TSF"/> detects unencrypted data frames being between the non-whitelisted <abbr linkend="AP"/> and whitelisted <abbr linkend="EUD"/>.</h:li>
                     </h:ul>
                   </test>
                </testlist>
@@ -1484,19 +1561,19 @@
           <consistency-rationale></consistency-rationale>
           <f-element id="fdp_ifc.1.1">
             <title> 
-              The TSF shall enforce the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> for <h:i>[all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:</h:i>
+              The <abbr linkend="TSF"/> shall enforce the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> for <h:i>[all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:</h:i>
               <h:ul>
-                <h:li><h:i>authorized APs and authorized EUDs </h:i></h:li>
-                <h:li><h:i>authorized APs and unauthorized EUDs</h:i></h:li>
-                <h:li><h:i>unauthorized APs and authorized EUDs</h:i>].</h:li>
+                <h:li><h:i>authorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s </h:i></h:li>
+                <h:li><h:i>authorized <abbr linkend="AP"/>s and unauthorized <abbr linkend="EUD"/>s</h:i></h:li>
+                <h:li><h:i>unauthorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s</h:i>].</h:li>
               </h:ul>     
             </title>
-            <note role="application">“Authorized” EUDs/APs are those that are assigned to the whitelist as defined by <linkref linkend="FAU_INV_EXT.1.1"/>. 
+            <note role="application">“Authorized” <abbr linkend="EUD"/>s/APs are those that are assigned to the whitelist as defined by <linkref linkend="FAU_INV_EXT.1.1"/>. 
               <h:br></h:br>
               The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
             <aactivity>
-              <TSS>There are no TSS assurance activities for this SFR.</TSS>
-              <Guidance>If this functionality is configurable, the evaluator shall verify that the operational guidance provides instructions on how to configure the TOE to monitor different types of IEEE 802.11 frame types and subtypes.</Guidance>
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
+              <Guidance>If this functionality is configurable, the evaluator shall verify that the operational guidance provides instructions on how to configure the <abbr linkend="TOE"/> to monitor different types of IEEE 802.11 frame types and subtypes.</Guidance>
               <Tests>
                 <testlist>
                   <test>
@@ -1505,9 +1582,9 @@
                       <h:li>Start a traffic capture from the WIDS sensor</h:li>
                       <h:li>Send a set number of frames on the channel the sensor's operating channel for all IEEE 802.11 a, b, g, n, ac frame types and subtypes from/to the following:
                         <h:ol>
-                          <h:li><h:i>authorized APs and authorized EUDs</h:i></h:li>
-                          <h:li><h:i>authorized APs and unauthorized EUDs</h:i></h:li>
-                          <h:li><h:i>unauthorized APs and authorized EUDs</h:i></h:li>
+                          <h:li><h:i>authorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s</h:i></h:li>
+                          <h:li><h:i>authorized <abbr linkend="AP"/>s and unauthorized <abbr linkend="EUD"/>s</h:i></h:li>
+                          <h:li><h:i>unauthorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s</h:i></h:li>
                         </h:ol>]   
                       </h:li>
                       <h:li>
@@ -1526,7 +1603,7 @@
          <consistency-rationale></consistency-rationale>
          <f-element id="fmt_smf.1.1/wids">
            <title> 
-             The TSF shall be capable of performing the following management functions for WIDS functionality: 
+             The <abbr linkend="TSF"/> shall be capable of performing the following management functions for WIDS functionality: 
              [<h:i>management functions listed in <ctr-ref refid="mgmt"/></h:i>].        
              <h:table>
                <h:tr>
@@ -1541,13 +1618,13 @@
              <ctr id="mgmt" ctr-type="Table">: Management Functions</ctr>
            </title>
            <aactivity>
-             <TSS>The evaluator shall verify that the TSS describes how the baseline can be configured.</TSS>
+             <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes how the baseline can be configured.</TSS>
              <Guidance>The evaluator shall verify that the operational guidance describes the instructions for 
                defining a baseline.</Guidance>
              <Tests> The evaluator shall perform the following test:<h:br/>
                <testlist>
                  <test>Following the instructions in the operatinal guidance verify that the period of network activity that constitutes 
-                   a baseline can indicated in the TSF. </test>
+                   a baseline can indicated in the <abbr linkend="TSF"/>. </test>
                </testlist>
              </Tests>              
            </aactivity>
@@ -1570,7 +1647,7 @@
         <dependencies></dependencies>
         <f-element id="fau_wid_ext.6.1">
           <title> 
-            The TSF shall detect the presence of network devices that operate in the following RF bands: 
+            The <abbr linkend="TSF"/> shall detect the presence of network devices that operate in the following RF bands: 
             <selectables>
               <selectable>3.6 GHz</selectable>
               <selectable>60 GHz</selectable>
@@ -1579,33 +1656,33 @@
             </selectables>
           </title>
           <note role="application">This SFR refers to Non-WiFi (IEEE 802.11 a, b, g, n, and ac) network devices that operate 
-            in the specified frequencies. If the ST author selects detection of devices in the cellular bands, the ST author 
+            in the specified frequencies. If the <abbr linkend="ST"/> author selects detection of devices in the cellular bands, the <abbr linkend="ST"/> author 
             must include selection-based requirement <linkref linkend="FAU_INV_EXT.4.1"/></note>
           <aactivity>	
             <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes the set of RF bands and 
-              technologies that the TSF can detect the use of. The TSS should also include instructions on how to enable and the hardware
+              technologies that the <abbr linkend="TSF"/> can detect the use of. The <abbr linkend="TSS"/> should also include instructions on how to enable and the hardware
               that is necessary for the additional band detection. </TSS>          
             <Guidance>The evaluator shall verify that the operational guidance describes how to enable and configure detection of the 
-              technologies included in the ST as well as the hardware that is needed to perform this function.</Guidance>
+              technologies included in the <abbr linkend="ST"/> as well as the hardware that is needed to perform this function.</Guidance>
             <Tests>
               The evaluator shall enable and configure detection of the selected technologies.
               <testlist>
-                <test>Deploy a device within the given technology and verify that the TSF detects the device.</test>
+                <test>Deploy a device within the given technology and verify that the <abbr linkend="TSF"/> detects the device.</test>
               </testlist>               
             </Tests>            
           </aactivity>
         </f-element>
         <f-element id="fau_wid_ext.6.2">
           <title> 
-            The TSF shall provide a dedicated sensor for wireless spectrum analysis.
+            The <abbr linkend="TSF"/> shall provide a dedicated sensor for wireless spectrum analysis.
           </title>
           <aactivity>	
-            <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> to verify that the TOE provides a dedicated sensor for wireless spectrum analysis.</TSS>
+            <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> to verify that the <abbr linkend="TOE"/> provides a dedicated sensor for wireless spectrum analysis.</TSS>
             
             <Guidance>The evaluator shall verify that the operational guidance describes how to enable and configure dedicated spectrum analysis as well as 
               the hardware that is needed to perform this function.</Guidance>
             <Tests>
-              The evaluator shall enable and configure dedicated spectrum analysis and test the capabilities listed in the TSS.</Tests>
+              The evaluator shall enable and configure dedicated spectrum analysis and test the capabilities listed in the <abbr linkend="TSS"/>.</Tests>
           </aactivity>
         </f-element>
       </f-component>
@@ -1625,21 +1702,21 @@
         <audit></audit>
         <dependencies></dependencies>
         <f-element id="fau_inv_ext.4.1/cell">
-          <title> The TSF shall detect the physical location of [<h:i>detected cellular devices</h:i>] to within 
+          <title> The <abbr linkend="TSF"/> shall detect the physical location of [<h:i>detected cellular devices</h:i>] to within 
             <assignable>distance degree of accuracy</assignable> of their actual location.
           </title>
           <aactivity>	
-            <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on the TOE’s ability to detect the 
+            <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on the <abbr linkend="TOE"/>’s ability to detect the 
               physical location of cellular devices.</TSS>            
             <Guidance>The evaluator shall review the operational guidance for instructions on how to configure location tracking, how to 
-              load a location map (if applicable), and where in the TSF administrator interface the location of devices can be viewed.</Guidance>             
+              load a location map (if applicable), and where in the <abbr linkend="TSF"/> administrator interface the location of devices can be viewed.</Guidance>             
             <Tests> The evaluator shall perform the following tests:<h:br/>
               <testlist>
                 <test>
                   <steplist>
                     <step>Deploy a cellular device within range of the sensors.</step>
-                    <step>Verify that the TSF is able to track the  location of the device.</step>
-                    <step>Verify the level of accuracy indicated by the TSF falls within the one indicated in the assignment.</step>
+                    <step>Verify that the <abbr linkend="TSF"/> is able to track the  location of the device.</step>
+                    <step>Verify the level of accuracy indicated by the <abbr linkend="TSF"/> falls within the one indicated in the assignment.</step>
                   </steplist>
                 </test>
               </testlist>
@@ -1659,7 +1736,7 @@
           <audit></audit>
           <dependencies></dependencies>        
           <f-element id="fau_ano_ext.1.1">
-            <title> The TSF shall support the definition of 
+            <title> The <abbr linkend="TSF"/> shall support the definition of 
               <selectables>
                 <selectable>baselines (‘expected and approved’)</selectable>
                 <selectable>anomaly (‘unexpected’) traffic patterns</selectable>
@@ -1679,15 +1756,15 @@
             </title>
             <aactivity>	
               <TSS>
-                The evaluator shall verify that the TSS describes the composition and construction of baselines or anomaly-based attributes specified in the SFR. The evaluator shall verify that the TSS provides a description of how baselines are defined and implemented by the TSF, or a description of how anomaly-based rules are defined and configured by the administrator. </TSS>                    
-              <Guidance>The evaluator shall verify that the operational guidance describes how to configure baseline and/or anomalous traffic patterns based on what is claimed in the TSS.</Guidance>
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes the composition and construction of baselines or anomaly-based attributes specified in the SFR. The evaluator shall verify that the <abbr linkend="TSS"/> provides a description of how baselines are defined and implemented by the <abbr linkend="TSF"/>, or a description of how anomaly-based rules are defined and configured by the administrator. </TSS>                    
+              <Guidance>The evaluator shall verify that the operational guidance describes how to configure baseline and/or anomalous traffic patterns based on what is claimed in the <abbr linkend="TSS"/>.</Guidance>
               <Tests>
                 <testlist>
                   <test>
                     <h:ul>
                       <h:li>The evaluator shall use the instructions in the operational guidance to configure baselines or anomaly-based rules</h:li>
                       <h:li>The evaluator shall send traffic that does not match the baseline or matches the anomaly-based rule 
-                        and verify the TSF detects the anomalous behavior and generates an alert.</h:li>              
+                        and verify the <abbr linkend="TSF"/> detects the anomalous behavior and generates an alert.</h:li>              
                     </h:ul></test>
                 </testlist>
               </Tests>
@@ -1695,20 +1772,20 @@
           </f-element>
           <f-element id="fau_ano_ext.1.2">
             <title> 
-              The TSF shall support the definition of anomaly activity through 
+              The <abbr linkend="TSF"/> shall support the definition of anomaly activity through 
               <selectables>
                 <selectable>manual configuration by administrators</selectable>
                 <selectable>automated configuration</selectable>
               </selectables>. 
             </title>
             <note role="application">
-              The “baseline” and “anomaly” can be something manually defined/configured by a TOE administrator (or importing definitions), or something that the TOE is able to automatically define/create by inspecting network traffic over a period of time (a.k.a. “profiling”). 
+              The “baseline” and “anomaly” can be something manually defined/configured by a <abbr linkend="TOE"/> administrator (or importing definitions), or something that the <abbr linkend="TOE"/> is able to automatically define/create by inspecting network traffic over a period of time (a.k.a. “profiling”). 
             </note>
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the <abbr linkend="TSS"/> describes the available modes of configuration (manual or automatic) and how to configure or import the baseline. </TSS>
-              <Guidance>The evaluator shall verify that the operational guidance describes how to perform automatic and/or manual definition of anomaly activity based on what is selected in the ST.</Guidance>
-              <Tests>This test may be performed in conjunction with FAU_ANO_EXT.1.1. The evaluator shall follow the operational guidance and define anomaly activity through automated and/or manual means based on what is selected in the ST. The evaluator shall verify in each case that the anomaly activity is defined correctly by determining that anomalous traffic is identified by the TSF.</Tests>
+              <Guidance>The evaluator shall verify that the operational guidance describes how to perform automatic and/or manual definition of anomaly activity based on what is selected in the <abbr linkend="ST"/>.</Guidance>
+              <Tests>This test may be performed in conjunction with FAU_ANO_EXT.1.1. The evaluator shall follow the operational guidance and define anomaly activity through automated and/or manual means based on what is selected in the <abbr linkend="ST"/>. The evaluator shall verify in each case that the anomaly activity is defined correctly by determining that anomalous traffic is identified by the <abbr linkend="TSF"/>.</Tests>
             </aactivity>
           </f-element>
         </f-component>
@@ -1725,11 +1802,11 @@
           <dependencies></dependencies> 
           <f-element id="fau_sig_ext.1.1">
             <title> 
-              The TSF shall support user-defined and customizable attack signatures.
+              The <abbr linkend="TSF"/> shall support user-defined and customizable attack signatures.
             </title>
             <aactivity>	
               <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> describes the user-defined and customizable attack signatures that the TOE can define.
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes the user-defined and customizable attack signatures that the <abbr linkend="TOE"/> can define.
               </TSS>
               <Guidance>The evaluator shall verify that the operational guidance provides information on how to configure user-defined and customizable attack 
                 signatures, including a description of the customization options that are available.
@@ -1738,9 +1815,9 @@
                 <testlist>
                   <test>
                     <steplist>
-                      <step>Craft a signature with the available fields indicated in the TSS.</step>
-                      <step>Send a crafted frame that matches the signature to a whitelisted EUD</step>
-                      <step>Verify that the TSF triggers an alert based on the newly defined signature.</step>
+                      <step>Craft a signature with the available fields indicated in the <abbr linkend="TSS"/>.</step>
+                      <step>Send a crafted frame that matches the signature to a whitelisted <abbr linkend="EUD"/></step>
+                      <step>Verify that the <abbr linkend="TSF"/> triggers an alert based on the newly defined signature.</step>
                     </steplist>
                   </test>
                 </testlist>
@@ -1760,14 +1837,14 @@
           <audit></audit>
           <dependencies></dependencies> 
           <f-element id="fau_stg_ext.1.1/pcap">
-            <title>The TSF shall be able to transmit the generated <h:b>packet captures</h:b> to an external IT entity using a 
+            <title>The <abbr linkend="TSF"/> shall be able to transmit the generated <h:b>packet captures</h:b> to an external IT entity using a 
               trusted channel according to FTP_ITC.1.
             </title>
             <note role="application">FTP_ITC.1 is inherited from the NDcPP.</note>
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the <abbr linkend="TSS"/> include the list of trusted channels (as specified in FTP_ITC.1) available in 
-                the TSF to transmit packet captures to an external entity. The TSS shall also include instructions on how to configure the trusted channel.
+                the <abbr linkend="TSF"/> to transmit packet captures to an external entity. The <abbr linkend="TSS"/> shall also include instructions on how to configure the trusted channel.
               </TSS>
               <Guidance>
                 There are no operational guidance activities for this SFR.
@@ -1776,7 +1853,7 @@
                 <testlist>
                   <test>
                     The evaluator shall configure packet captures according to the guidance specified
-                    in the TSS. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the
+                    in the <abbr linkend="TSS"/>. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the
                     captured traffic being sent to the external device is being sent through a trusted channel.
                   </test>   
                 </testlist>
@@ -1784,23 +1861,23 @@
             </aactivity>
           </f-element>
           <f-element id="fau_stg_ext.1.2/pcap">
-            <title>The TSF shall be able to store generated <h:b>packet captures</h:b> on the TOE itself.
+            <title>The <abbr linkend="TSF"/> shall be able to store generated <h:b>packet captures</h:b> on the <abbr linkend="TOE"/> itself.
             </title>
             <aactivity>
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the TOE to store packet capture data within itself.
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to store packet capture data within itself.
               </TSS>
               <Guidance>The evaluator shall verify that the operational guidance provides information on how much storage space is available for 
                 packet capture data and where that data is stored.</Guidance>
               <Tests>
                 <testlist>
-                  <test>The evaluator shall configure packet captures to be stored on the TSF according to the guidance specified
-                    in the TSS. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the TSF.</test>
+                  <test>The evaluator shall configure packet captures to be stored on the <abbr linkend="TSF"/> according to the guidance specified
+                    in the <abbr linkend="TSS"/>. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the <abbr linkend="TSF"/>.</test>
                 </testlist>
               </Tests> 
             </aactivity>
           </f-element>
           <f-element id="fau_stg_ext.1.3/pcap">
-            <title> The TSF shall 
+            <title> The <abbr linkend="TSF"/> shall 
               <selectables>
                 <selectable>drop new packet capture data</selectable>
                 <selectable>overwrite previous packet captures according to the following rule
@@ -1812,14 +1889,14 @@
               </selectables> when the local storage space for packet capture data is full.             
             </title>
             <aactivity>
-              <TSS>The evaluator shall verify that the TSS describes the behavior of the TOE when local storage space for packet capture data is exhausted 
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the behavior of the <abbr linkend="TOE"/> when local storage space for packet capture data is exhausted 
                 and whether this behavior is configurable.</TSS>             
-              <Guidance>If the behavior of the TOE when local storage space for packet capture data is exhausted is configurable, the evaluator shall verify 
+              <Guidance>If the behavior of the <abbr linkend="TOE"/> when local storage space for packet capture data is exhausted is configurable, the evaluator shall verify 
                 that the operational guidance provides information on what the configurable behaviors are and how they can be set.
               </Guidance>
               <Tests>
                 <testlist>
-                  <test>The evaluator shall define packet data retention and deletion rules on the TSF as specified in the TSS and test the functionality of the 
+                  <test>The evaluator shall define packet data retention and deletion rules on the <abbr linkend="TSF"/> as specified in the <abbr linkend="TSS"/> and test the functionality of the 
                     specified rules.</test>
                 </testlist>
               </Tests>
@@ -1841,19 +1918,19 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_inv_ext.4.1">
-            <title> The TSF shall detect the physical location of [<h:i>APs, EUDs</h:i>] to within [<h:i>15 feet</h:i>] of their actual location.</title>
+            <title> The <abbr linkend="TSF"/> shall detect the physical location of [<h:i><abbr linkend="AP"/>s, <abbr linkend="EUD"/>s</h:i>] to within [<h:i>15 feet</h:i>] of their actual location.</title>
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on location tracking, optimal
               number of sensors and sensor placement to meet the required level of accuracy. </TSS>           
               <Guidance>The evaluator shall review the operational guidance for instructions on how to configure location tracking, how to 
-              load a location map (if applicable), and where in the TSF administrator interface the location of APs and EUDs can be viewed.</Guidance>       
+                load a location map (if applicable), and where in the <abbr linkend="TSF"/> administrator interface the location of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s can be viewed.</Guidance>       
               <Tests> The evaluator shall perform the following test:<h:br/>
                <testlist>
                   <test>
                     <steplist>
-                     <step>Deploy an AP within range of the sensors.</step>
-                     <step>Verify the TS provides location tracking information about the AP.</step>
-                     <step>Verify the AP location presented is within 15 feet actual location.</step>
+                      <step>Deploy an <abbr linkend="AP"/> within range of the sensors.</step>
+                      <step>Verify the TS provides location tracking information about the <abbr linkend="AP"/>.</step>
+                      <step>Verify the <abbr linkend="AP"/> location presented is within 15 feet actual location.</step>
                     </steplist>
                   </test>
                 </testlist>
@@ -1872,24 +1949,24 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_inv_ext.5.1">
-            <title> The TSF shall detect when [<h:i>non-whitelisted APs as defined in <linkref linkend="FAU_INV_EXT.1"/></h:i>] have the following connections: 
+            <title> The <abbr linkend="TSF"/> shall detect when [<h:i>non-whitelisted <abbr linkend="AP"/>s as defined in <linkref linkend="FAU_INV_EXT.1"/></h:i>] have the following connections: 
               [<h:i>wired connection to the internal corporate network</h:i>].</title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on whether the TSF has the capability of 
-              detecting APs connecting to the protected wired network infrastructure. If the capability is present the TSS shall include
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on whether the <abbr linkend="TSF"/> has the capability of 
+                detecting <abbr linkend="AP"/>s connecting to the protected wired network infrastructure. If the capability is present the <abbr linkend="TSS"/> shall include
               configuration guidance for this feature.</TSS>
               
               <Guidance>The evaluator shall review the operational guidance for instructions on how to configure the WIDS/WIPS to detect
-              unauthorized APs connected to the protected wired infrastructure.</Guidance>
+                unauthorized <abbr linkend="AP"/>s connected to the protected wired infrastructure.</Guidance>
               
               <Tests> The evaluator shall perform the following test:<h:br/>
               <testlist>
                 <test>
                   <steplist>
-                    <step>Deploy a non-whitelisted AP.</step>
-                    <step>Connect the AP via wire to the protected network infrastructure.</step>
-                    <step>Check the WIDS/WIPS user interface for a list of detected APs and EUDs.</step>
-                    <step>Verify that the rogue AP is detected and an alert generated on the detection of an AP connected to the protected wired infrastructure.</step>
+                    <step>Deploy a non-whitelisted <abbr linkend="AP"/>.</step>
+                    <step>Connect the <abbr linkend="AP"/> via wire to the protected network infrastructure.</step>
+                    <step>Check the WIDS/WIPS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
+                    <step>Verify that the rogue <abbr linkend="AP"/> is detected and an alert generated on the detection of an <abbr linkend="AP"/> connected to the protected wired infrastructure.</step>
                   </steplist>
                 </test>
               </testlist>
@@ -1909,15 +1986,15 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_mac_ext.1.1">
-            <title> The TSF shall detect when two sensors in non-overlapping locations receive traffic from the same MAC address simultaneously.</title>
-            <note role="application">The intent of this SFR is to detect MAC spoofing where an attacker is able to cause the whitelisted EUD 
-              to disconnect and promptly connects a non-whitelisted device using the MAC address of the whitelisted EUD.</note>
+            <title> The <abbr linkend="TSF"/> shall detect when two sensors in non-overlapping locations receive traffic from the same MAC address simultaneously.</title>
+            <note role="application">The intent of this SFR is to detect MAC spoofing where an attacker is able to cause the whitelisted <abbr linkend="EUD"/> 
+              to disconnect and promptly connects a non-whitelisted device using the MAC address of the whitelisted <abbr linkend="EUD"/>.</note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the behavior of the TOE when two sensors in 
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the behavior of the <abbr linkend="TOE"/> when two sensors in 
               non-overlapping locations receive traffic from the same MAC address simultaneously.</TSS>
               
-              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to deploy the TOE in 
-              a manner that allows the TSF to detect when two sensors in non-overlapping locations receive traffic from the same 
+              <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to deploy the <abbr linkend="TOE"/> in 
+                a manner that allows the <abbr linkend="TSF"/> to detect when two sensors in non-overlapping locations receive traffic from the same 
               MAC address simultaneously (i.e. information about the range and placement of sensors to ensure non-overlapping coverage).</Guidance>
               
               
@@ -1925,14 +2002,14 @@
               <testlist>
                 <test>
                   <steplist>
-                    <step>Setup a whitelisted AP (Location 1).</step>
-                    <step>Connect a whitelisted EUD to AP.</step>
-                    <step>Setup a second whitelisted AP and a non-whitelisted EUD in a separate non-overlapping location where the WIDS 
-                      also has sensors. Or simulate the distant non-verlapping locations by deploying the second AP in a shielded environment 
+                    <step>Setup a whitelisted <abbr linkend="AP"/> (Location 1).</step>
+                    <step>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>.</step>
+                    <step>Setup a second whitelisted <abbr linkend="AP"/> and a non-whitelisted <abbr linkend="EUD"/> in a separate non-overlapping location where the WIDS 
+                      also has sensors. Or simulate the distant non-verlapping locations by deploying the second <abbr linkend="AP"/> in a shielded environment 
                       connected to the valid network (Location 2).</step>
-                    <step>Spoof the MAC address of the EUD in location 1 with the EUD in location 2 and connect it to the 
-                      whitelisted AP in location 2. Make sure both EUDs are connected at the same time.</step>
-                    <step>Verify that the TSF detected and generated an alert.</step>
+                    <step>Spoof the MAC address of the <abbr linkend="EUD"/> in location 1 with the <abbr linkend="EUD"/> in location 2 and connect it to the 
+                      whitelisted <abbr linkend="AP"/> in location 2. Make sure both <abbr linkend="EUD"/>s are connected at the same time.</step>
+                    <step>Verify that the <abbr linkend="TSF"/> detected and generated an alert.</step>
                   </steplist>
                 </test>
               </testlist>
@@ -1940,29 +2017,29 @@
             </aactivity>
           </f-element>         
           <f-element id="fau_mac_ext.1.2">
-            <title> The TSF shall detect when two sensors in non-overlapping locations receive traffic from the MAC addresses of 
-              [<h:i>non-whitelisted EUDs as defined in <linkref linkend="FAU_INV_EXT.1"/></h:i>] within 
+            <title> The <abbr linkend="TSF"/> shall detect when two sensors in non-overlapping locations receive traffic from the MAC addresses of 
+              [<h:i>non-whitelisted <abbr linkend="EUD"/>s as defined in <linkref linkend="FAU_INV_EXT.1"/></h:i>] within 
               [<h:i>an Authorized administrator-configurable timeframe based on distance between sensors</h:i>].</title>
             <note role="application">The intent of this SFR is to allow the administrator to determine the time that should be 
-              allowed between a whitelisted EUD connecting in two distant locations.</note>
+              allowed between a whitelisted <abbr linkend="EUD"/> connecting in two distant locations.</note>
             <aactivity>	
-              <TSS>There are no TSS assurance activities for this SFR. </TSS>            
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR. </TSS>            
               <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to configure the timeframe 
-              that should be allowed between two subsequent attempts for an EUD to connect from two separate locations.</Guidance>           
+                that should be allowed between two subsequent attempts for an <abbr linkend="EUD"/> to connect from two separate locations.</Guidance>           
               <Tests> The evaluator shall perform the following test:<h:br/>
               <testlist>
                 <test>
                   <steplist>
-                    <step>Configure the timeframe allowed between connection of two EUDs in two separate locations (Location 1, Location 2).</step>
-                    <step>Setup a whitelisted AP (Location 1). </step>
-                    <step>Connect a whitelisted EUD to AP.</step>
-                    <step>Setup a second whitelisted AP and a non-whitelisted EUD in a separate non-overlapping location where the WIDS 
-                      also has sensors. Or simulate the distant non-verlapping locations by deploying the second AP in a shielded environment 
+                    <step>Configure the timeframe allowed between connection of two <abbr linkend="EUD"/>s in two separate locations (Location 1, Location 2).</step>
+                    <step>Setup a whitelisted <abbr linkend="AP"/> (Location 1). </step>
+                    <step>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>.</step>
+                    <step>Setup a second whitelisted <abbr linkend="AP"/> and a non-whitelisted <abbr linkend="EUD"/> in a separate non-overlapping location where the WIDS 
+                      also has sensors. Or simulate the distant non-verlapping locations by deploying the second <abbr linkend="AP"/> in a shielded environment 
                       connected to the valid network (Location 2).</step>
-                    <step>Spoof the MAC address of the EUD in location 1 with the EUD in location 2 and connect it to the 
-                      whitelisted AP in location 2. Make sure that the time between connections is shorter than the time timeframe 
+                    <step>Spoof the MAC address of the <abbr linkend="EUD"/> in location 1 with the <abbr linkend="EUD"/> in location 2 and connect it to the 
+                      whitelisted <abbr linkend="AP"/> in location 2. Make sure that the time between connections is shorter than the time timeframe 
                       allowed/configured. </step>
-                    <step>Verify that the TSF detected and generated an alert.</step>
+                    <step>Verify that the <abbr linkend="TSF"/> detected and generated an alert.</step>
                   </steplist>
                 </test>
               </testlist>
@@ -1981,18 +2058,18 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_wid_ext.7.1">
-            <title> The TSF shall detect the presence of all vendor proprietary network traffic matching the [<h:i>802.11 monitoring <abbr linkend="SFP"/></h:i>]
+            <title> The <abbr linkend="TSF"/> shall detect the presence of all vendor proprietary network traffic matching the [<h:i>802.11 monitoring <abbr linkend="SFP"/></h:i>]
               for [<h:i>all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:</h:i>
               <h:ol>
-                <h:li><h:i>authorized APs and authorized EUDs.</h:i></h:li>
-                <h:li><h:i>authorized APs and unauthorized EUDs.</h:i></h:li>
-                <h:li><h:i>unauthorized APs and authorized EUDs.</h:i></h:li>
+                <h:li><h:i>authorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s.</h:i></h:li>
+                <h:li><h:i>authorized <abbr linkend="AP"/>s and unauthorized <abbr linkend="EUD"/>s.</h:i></h:li>
+                <h:li><h:i>unauthorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s.</h:i></h:li>
               </h:ol>]            
             </title>
             <note role="Application">The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" 
               is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
             <aactivity>
-              <TSS>There are no TSS assurance activities for this SFR.</TSS>
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>
               <Tests>
                 <testlist>
@@ -2003,9 +2080,9 @@
                       <step>Send a set number of frames on the sensor's operating channel for all IEEE 802.11 a, b, g, n, ac 
                         vendor propietary frame types and subtypes from/to the following:
                         <h:ol>
-                          <h:li><h:i>authorized APs and authorized EUDs.</h:i></h:li>
-                          <h:li><h:i>authorized APs and unauthorized EUDs.</h:i></h:li>
-                          <h:li><h:i>unauthorized APs and authorized EUDs.</h:i></h:li>
+                          <h:li><h:i>authorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s.</h:i></h:li>
+                          <h:li><h:i>authorized <abbr linkend="AP"/>s and unauthorized <abbr linkend="EUD"/>s.</h:i></h:li>
+                          <h:li><h:i>unauthorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s.</h:i></h:li>
                         </h:ol>
                       </step>
                       <step>Provide a list of the frames types and subtypos that were used for testing and verify that they were all detected.</step>
@@ -2027,30 +2104,30 @@
           <audit></audit>
           <dependencies></dependencies>
           <f-element id="fau_wip_ext.1.1">
-            <title> The TSF shall allow an Authorized Administrator to isolate a wireless AP or EUD from the network monitored 
-              by the TSF using the following methods: 
+            <title> The <abbr linkend="TSF"/> shall allow an Authorized Administrator to isolate a wireless <abbr linkend="AP"/> or <abbr linkend="EUD"/> from the network monitored 
+              by the <abbr linkend="TSF"/> using the following methods: 
               <selectables>
                 <selectable>wireless containment</selectable>
-                <selectable>wire-side containment of an unauthorized AP connected to the internal corporate wired network.</selectable>
+                <selectable>wire-side containment of an unauthorized <abbr linkend="AP"/> connected to the internal corporate wired network.</selectable>
               </selectables>     
             </title>
             <note role="application">It is expected that an Authorized Administrator will be responsible for confirming the 
-              AP or EUD as a rogue AP or EUD to initiate wireless containment. <h:br/> 
-              In this SFR the containment of an an unauthorized AP connected to the internal corporate wired network refers to an unauthorized AP 
+              <abbr linkend="AP"/> or <abbr linkend="EUD"/> as a rogue <abbr linkend="AP"/> or <abbr linkend="EUD"/> to initiate wireless containment. <h:br/> 
+              In this SFR the containment of an an unauthorized <abbr linkend="AP"/> connected to the internal corporate wired network refers to an unauthorized <abbr linkend="AP"/> 
               that is physically connected (via wire) to the protected internal wired infrastructure. 
             </note>
             <aactivity>
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes a list of available containment methods on the TSF and 
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes a list of available containment methods on the <abbr linkend="TSF"/> and 
                 how to configure them.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>
-              <Tests> Configure the containment methods available on the TSF and perform the following test for each method.
+              <Tests> Configure the containment methods available on the <abbr linkend="TSF"/> and perform the following test for each method.
                 <testlist>
                   <test>
                     <steplist>
-                      <step>Deploy a non-whitelisted AP and connect to the protected wired infrastructure via wire  
+                      <step>Deploy a non-whitelisted <abbr linkend="AP"/> and connect to the protected wired infrastructure via wire  
                         (make sure it gets classified as rogue, or manually classify as such).</step>
-                      <step>Connect a whitelisted EUD to the AP.</step>
-                      <step>Verify that TSF generates an alert, breaks the connection of the whitelisted EUD from the rogue AP, and contains the rogue AP.</step>                  
+                      <step>Connect a whitelisted <abbr linkend="EUD"/> to the <abbr linkend="AP"/>.</step>
+                      <step>Verify that <abbr linkend="TSF"/> generates an alert, breaks the connection of the whitelisted <abbr linkend="EUD"/> from the rogue <abbr linkend="AP"/>, and contains the rogue <abbr linkend="AP"/>.</step>                  
                     </steplist>
                   </test>
                 </testlist>
@@ -2063,7 +2140,7 @@
         <f-component id="fau_gen.2(wids)" name="Alerts Data Generation (WIDS/WIPS)">
           <consistency-rationale></consistency-rationale>        
           <f-element id="fau_gen.2.1/wids">
-            <title> The TSF shall be able to generate a WIDS/WIPS audit record of the following auditable events:
+            <title> The <abbr linkend="TSF"/> shall be able to generate a WIDS/WIPS audit record of the following auditable events:
               <h:ol type="a">
                 <h:li>Start-up and shutdown of the WIDS/WIPS functions;</h:li>
                 <h:li>All WIDS/WIPS auditable events for the [not specified] level of audit;</h:li>
@@ -2078,7 +2155,7 @@
                 <h:tr><h:td>FAU_ARP_EXT.2.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_GEN.1.2/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_IDS_EXT.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.1.1</h:td><h:td>whitelisted devices information</h:td><h:td>Type of device (AP or EUD), MAC Address.</h:td></h:tr>
+                <h:tr><h:td>FAU_INV_EXT.1.1</h:td><h:td>whitelisted devices information</h:td><h:td>Type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address.</h:td></h:tr>
                 <h:tr><h:td>FAU_INV_EXT.1.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_INV_EXT.1.3</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_INV_EXT.2.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
@@ -2087,11 +2164,11 @@
                 <h:tr><h:td>FAU_INV_EXT.3.1</h:td><h:td>Unexpected behavior by whitelisted device alert</h:td><h:td>Description of behavior detected (i.e., bridge, ICS connection), MAC address of whitelisted device, MAC address of the device that the whitelisted device made a connection with, connection start and end.</h:td></h:tr>
                 <h:tr><h:td>FAU_INV_EXT.4.1</h:td><h:td>Information on location of device</h:td><h:td>Device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
                 <h:tr><h:td>FAU_INV_EXT.4.1/CELL</h:td><h:td>Information on location of device</h:td><h:td>device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.5.1</h:td><h:td>Alert generated by detection of rogue device.</h:td><h:td>Description of alert, type of device (AP or EUD), MAC Address, associations made between authorized devices (which APs are EUDs connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if AP).</h:td></h:tr>
+                <h:tr><h:td>FAU_INV_EXT.5.1</h:td><h:td>Alert generated by detection of rogue device.</h:td><h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
                 <h:tr><h:td>FAU_MAC_EXT.1.1</h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
-                  <h:td>Description of alert, type of device (AP or EUD), MAC Address, associations made between authorized devices (which APs are EUDs connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if AP).</h:td></h:tr>
+                  <h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
                 <h:tr><h:td>FAU_MAC_EXT.1.2</h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
-                  <h:td>Description of alert, location as labeled by administrator, time elapsed between connection in different locations, type of device (AP or EUD), MAC Address, associations made between authorized devices (which APs are EUDs connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if AP).</h:td></h:tr>
+                  <h:td>Description of alert, location as labeled by administrator, time elapsed between connection in different locations, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
                 <h:tr><h:td>FAU_SAA.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_SAA.1.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                    
                 <h:tr><h:td>FAU_SIG_EXT.1.1</h:td><h:td>Alert generated by violaton of user defined signature.</h:td><h:td>Name of alert being triggered(as provided when creating the signature), description of alert (as provided when creating the signature), MAC address of devices involved.</h:td></h:tr>
@@ -2104,8 +2181,8 @@
                 <h:tr><h:td>FAU_WID_EXT.2.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.2.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.2.3</h:td><h:td>Details about what SSIDs are set as authorized.</h:td><h:td>SSIDs set by administrator as authorized.</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.2.4</h:td><h:td>Unauthorized activity</h:td><h:td>description of violation (i.e. whitelisted EUD connected to unauthorized SSID), identity information of the devices involved.</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.3.1</h:td><h:td>Alert generated for DoS.</h:td><h:td>MAC Address, device type, and classification AP or EUD attacked, DoS details (RF or injection based), for injection-based, indicate type (i.e., deauth flood). </h:td></h:tr>
+                <h:tr><h:td>FAU_WID_EXT.2.4</h:td><h:td>Unauthorized activity</h:td><h:td>description of violation (i.e. whitelisted <abbr linkend="EUD"/> connected to unauthorized SSID), identity information of the devices involved.</h:td></h:tr>
+                <h:tr><h:td>FAU_WID_EXT.3.1</h:td><h:td>Alert generated for DoS.</h:td><h:td>MAC Address, device type, and classification <abbr linkend="AP"/> or <abbr linkend="EUD"/> attacked, DoS details (RF or injection based), for injection-based, indicate type (i.e., deauth flood). </h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.4.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.4.2</h:td><h:td>Information about devices and unauthorized authentication methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, authentication method used.</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.5.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
@@ -2124,19 +2201,19 @@
               <ctr id="audit" ctr-type="Table">: WIDS/WIPS Alerts</ctr> 
             </title>         
             <note role="application">The alerts table contains the contents of the alert produced by the WIDS/WIPS. The Alert table includes optional and objective requirements. The auditing of optional and objective requirements is only required if the vendor chooses to have the requirement evaluated by NIAP. <h:br/>         
-              With regards to ‘similar’ type events, 'similar’ events are multiple occurrences of the same auditable event within some time period where the only significant difference between these events is the timestamp. For example, it is not expected that the TOE generate an individual audit message for every event of the same kind that occurs within a reasonable time period. An alert must, at a minum, include the details as outlined on the table, but may contain additional details.
+              With regards to ‘similar’ type events, 'similar’ events are multiple occurrences of the same auditable event within some time period where the only significant difference between these events is the timestamp. For example, it is not expected that the <abbr linkend="TOE"/> generate an individual audit message for every event of the same kind that occurs within a reasonable time period. An alert must, at a minum, include the details as outlined on the table, but may contain additional details.
             </note>
             <aactivity>
-              <TSS>There are no TSS assurance activities for this SFR.</TSS>
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
               <Guidance>There are no operational guidance activities for this SFR.</Guidance>
               <Tests> The evaluator shall perform the following test:<h:br/>
-                The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/>               
+                The evaluator shall test the <abbr linkend="TOE"/>’s ability to correctly generate audit records by having the <abbr linkend="TOE"/> generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/>               
                 Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
               </Tests>
             </aactivity> 
           </f-element>
           <f-element id="fau_gen.2.2/wids">
-            <title> The TSF shall record within each WIDS/WIPS auditable event as 
+            <title> The <abbr linkend="TSF"/> shall record within each WIDS/WIPS auditable event as 
               <selectables>
                 <selectable>comma separated values (CSV)</selectable>
                 <selectable>common log format (CLF)</selectable>
@@ -2152,11 +2229,11 @@
               </h:ol>              
             </title>
             <aactivity>
-              <TSS>There are no TSS assurance activities for this SFR.</TSS>
-              <Guidance>The evaluator shall verify that the operational guidance describes how to configure the TOE to result in applicable WIDS/WIPS data logging.
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
+              <Guidance>The evaluator shall verify that the operational guidance describes how to configure the <abbr linkend="TOE"/> to result in applicable WIDS/WIPS data logging.
                 The evaluator shall verify that the operational guidance provides instructions for any configuration that may be done in regard to logging similar events (e.g., setting thresholds, defining time windows, etc.).</Guidance>
               <Tests> The evaluator shall perform the following test:<h:br/>
-                The evaluator shall test that the alerts yield the expected WIDS/WIPS audit data in the format selected in the ST for each WIDS/WIPS auditable event in table 4. Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
+                The evaluator shall test that the alerts yield the expected WIDS/WIPS audit data in the format selected in the <abbr linkend="ST"/> for each WIDS/WIPS auditable event in table 4. Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
               </Tests>
             </aactivity>
           </f-element>
@@ -2166,25 +2243,25 @@
         <f-component id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection">
           <consistency-rationale></consistency-rationale>
           <f-element id="fpt_fls.1.1">
-            <title> The TSF shall preserve a secure state when the following types of failures occur: 
-              [<h:i>sensor functionality failure, potential compromise of the TSF</h:i>].
+            <title> The <abbr linkend="TSF"/> shall preserve a secure state when the following types of failures occur: 
+              [<h:i>sensor functionality failure, potential compromise of the <abbr linkend="TSF"/></h:i>].
             </title>
             <note role="application">At minimum, the preservation of a secure state requires the generation of audit records when 
               the defined failure conditions occur.
             </note>
             <aactivity>	
               <TSS>
-                The evaluator shall review the TSS section to determine that the TOE’s implementation of the fail secure 
-                functionality is documented. The evaluator shall examine the TSS section to ensure that all failure modes 
-                specified in the ST are described.
+                The evaluator shall review the <abbr linkend="TSS"/> section to determine that the <abbr linkend="TOE"/>’s implementation of the fail secure 
+                functionality is documented. The evaluator shall examine the <abbr linkend="TSS"/> section to ensure that all failure modes 
+                specified in the <abbr linkend="ST"/> are described.
               </TSS>
-              <Guidance>The evaluator shall review the operational guidance to verify that it identifies the potential TOE failures, how the TSF 
-                preserves a secure state following these failures, and any actions that are required to restore the TOE to normal operation 
+              <Guidance>The evaluator shall review the operational guidance to verify that it identifies the potential <abbr linkend="TOE"/> failures, how the <abbr linkend="TSF"/> 
+                preserves a secure state following these failures, and any actions that are required to restore the <abbr linkend="TOE"/> to normal operation 
                 following the transition to a failure state. 
               </Guidance>
               <Tests> 
                 <testlist>
-                  <test>For each failure mode specified in the ST, the evaluator shall ensure that the TOE attains a secure state
+                  <test>For each failure mode specified in the <abbr linkend="ST"/>, the evaluator shall ensure that the <abbr linkend="TOE"/> attains a secure state
                     after initiating each failure mode type.</test>
                 </testlist>
               </Tests>
@@ -2198,85 +2275,73 @@
     <cc-entry/>
   </bibliography>
  <acronyms>
-      <entry>
-        <term>AES</term>
-        <description>Advanced Encryption Standard</description>
-      </entry>
-      <entry>
-        <term>AP</term>
-        <description>Access Point</description>
-      </entry>
-      <entry>
-        <term>BSSID</term>
-        <description>Basic Service Set Identifier</description>
-      </entry>
-      <entry>
-        <term>DoS</term>
-        <description>Denial of Service</description>
-      </entry>      
-      <entry>
-        <term>EUD</term>
-        <description>End User Device</description>
-      </entry>      
-      <entry>
-        <term>HTTPS</term>
-        <description>Hypertext Transfer Protocol Secure</description>
-      </entry>
-      <entry>
-        <term>IPsec</term>
-        <description>Internet Protocol Security</description>
-      </entry>
-      <entry>
-        <term>MAC</term>
-        <description>Media Access Control</description>
-      </entry>
-      <entry>
-        <term>NIAP</term>
-        <description>National Information Assurance Partnership</description>
-      </entry>
-      <entry>
-        <term>NIST</term>
-        <description>National Institute of Standards and Technology</description>
-      </entry>
-      <entry>
-        <term>PP</term>
-        <description>Protection Profile</description>
-      </entry>
-      <entry>
-        <term>SSH</term>
-        <description>Secure Shell</description>
-      </entry>
-      <entry>
-        <term>SSID</term>
-        <description>Service Set Identifier</description>
-      </entry>
-      <entry>
-        <term>TLS</term>
-        <description>Transport Layer Security</description>
-      </entry>
-      <entry>
-        <term>TKIP</term>
-        <description>Temporal Key Integrity Protocol</description>
-      </entry>
-      <entry>
-        <term>WEP</term>
-        <description>Wired Equivalent Protocol</description>
-      </entry>
-      <entry>
-        <term>WIDS</term>
-        <description>Wireless Intrusion Detection Systems</description>
-      </entry>
-      <entry>
-        <term>WIPS</term>
-        <description>Wireless Intrusion Prevention Systems</description>
-      </entry>
-      <entry>
-        <term>WLAN</term>
-        <description>Wireless Local Area Network</description>
-      </entry>
-      <entry>
-        <term>WPA</term>
-        <description>Wi-Fi Protected Access</description>
-      </entry>     
+   <entry>
+     <term><abbr title="Advanced Encryption Standard">AES</abbr></term>
+     <description>Advanced Encryption Standard</description>
+   </entry>
+   <entry>
+     <term><abbr title="Access Point">AP</abbr></term>
+     <description>Access Point</description>
+   </entry>
+   <entry>
+     <term><abbr title="Basic Service Set Identifier">BSSID</abbr></term>
+     <description>Basic Service Set Identifier</description>
+   </entry>
+   <entry>
+     <term><abbr title="Denial of Service">DoS</abbr></term>
+     <description>Denial of Service</description>
+   </entry>      
+   <entry>
+     <term><abbr title="End User Device">EUD</abbr></term>
+     <description>End User Device</description>
+   </entry>      
+   <entry>
+     <term><abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr></term>
+     <description>Hypertext Transfer Protocol Secure</description>
+   </entry>
+   <entry>
+     <term><abbr title="Internet Protocol Security">IPsec</abbr></term>
+     <description>Internet Protocol Security</description>
+   </entry>
+   <entry>
+     <term><abbr title="Media Access Control">MAC</abbr></term>
+     <description>Media Access Control</description>
+   </entry>      
+   <entry>
+     <term><abbr title="Secure Shell">SSH</abbr></term>
+     <description>Secure Shell</description>
+   </entry>
+   <entry>
+     <term><abbr title="Service Set Identifier">SSID</abbr></term>
+     <description>Service Set Identifier</description>
+   </entry>
+   <entry>
+     <term><abbr title="Transport Layer Security">TLS</abbr></term>
+     <description>Transport Layer Security</description>
+   </entry>
+   <entry>
+     <term>TKIP</term>
+     <description>Temporal Key Integrity Protocol</description>
+   </entry>
+   <entry>
+     <term><abbr title="Wired Equivalent Protocol">WEP</abbr></term>
+     <description>Wired Equivalent Protocol</description>
+   </entry>
+   <entry>
+     <term><abbr title="Wireless Intrusion Detection Systems">WIDS</abbr></term>
+     <description>Wireless Intrusion Detection Systems</description>
+   </entry>
+   <entry>
+     <term><abbr title="Wireless Intrusion Prevention Systems">WIPS</abbr></term>
+     <description>Wireless Intrusion Prevention Systems</description>
+   </entry>
+   <entry>
+     <term><abbr title="Wireless Local Area Network">WLAN</abbr></term>
+     <description>Wireless Local Area Network</description>
+   </entry>
+   <entry>
+     <term><abbr title="Wi-Fi Protected Access">WPA</abbr></term>
+     <description>Wi-Fi Protected Access</description>
+   </entry>    
     </acronyms>
 </Module>
