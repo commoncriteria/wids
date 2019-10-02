@@ -1996,7 +1996,7 @@
             
           <f-element id="fau_inv_ext.4.2">
             <title> The <abbr linkend="TSF"/> shall include a signal library.</title>
-            <note role="application">The TSF will need to have the ability to import, export, or update the exisiting signal library</note>
+            <note role="application">The TSF will need to have the ability to import, export, or update the exisiting signal library.</note>
           </f-element>
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on location tracking, optimal
