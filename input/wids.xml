@@ -8,8 +8,19 @@
     
   Justin
   - Are there other technical terms that need to be defined?
+      * Added "Access Point (AP)"
+      * Added "End User Device (EUD)"
+      * Seperately defined WIDS and WIPS
+      * SSID
+
+ 20190930     
   - Split apart any generic reference to WIDS/WIPS. It should be clear if something is for WIDS or WIPS
+  - Push #1: Added requirements to FAU_WID_EXT.2 Wireless Intrusion Detection – Passive Information Flow Monitoring (FAU_WID_EXT.2.5 and FAU_WID_EXT.2.6 (Lines 1107 - 1123))
+  - Push #2: Added requirements to FAU_IDS_EXT.1 Wireless Intrusion Detection – Intrusion Detection System – Intrusion Detection and Reporting  Methods (FAU_IDS_EXT.1.2 and FAU_IDS_EXT.1.3 (Lines 1107 - 1123))
+  - Push #3: Updated Updated FAU_IDS_EXT.1.3
+  - Push #4: Updated technical terms  and replaced 46 out of 58 referenced to "WIDS/WIPS" with  "WIDS"
   
+
   Lauren
   - Are there any Use Cases??
   - Selection-Depends
@@ -120,9 +131,30 @@
      <subsection title="Technical Terms">
        <glossary>
          <entry>
-           <term><abbr title="Wireless Intrustion Detection/Prevention System">WIDS/WIPS</abbr></term>
+           <term><abbr title="Wireless Intrustion Detection/Prevention System">WIDS</abbr></term>
+           <description>A security product that provides network security administrators with the ability to monitor, collect, and log real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
+         </entry> 
+
+         <entry>
+           <term><abbr title="Wireless Intrustion Detection/Prevention System">WIPS</abbr></term>
            <description>A security product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
          </entry> 
+
+         <entry>
+           <term><abbr title="Wireless Intrustion Detection/Prevention System">Access Point (AP)</abbr></term>
+           <description>A device that creates a wireless local area network, or WLAN, usually in an office or large building.</description>
+         </entry> 
+
+         <entry>
+           <term><abbr title="Wireless Intrustion Detection/Prevention System">End User Device (EUD)</abbr></term>
+           <description>A device that has the ability to process, transmit,  and/or store information.</description>
+         </entry> 
+
+         <entry>
+           <term><abbr title="Wireless Intrustion Detection/Prevention System">Service Set Identifier (SSID)</abbr></term>
+           <description>The primary name associated with an 802.11 wireless local area network (WLAN)</description>
+         </entry> 
+
          <!-- TODO_Justin: Any other technical terms that need to be defined? -->
          
          <!-- These are just placeholders until we can use the acronyms section -->
@@ -210,10 +242,10 @@
        
        The following are to be part of the evaluation:
        <h:ul>
-         <h:li>Monitoring, detection and reporting capabilities offered by the WIDS/WIPS.</h:li>
+         <h:li>Monitoring, detection and reporting capabilities offered by the WIDS.</h:li>
          <h:li>Location Tracking.</h:li>
-         <h:li>Use of secure communication paths between WIDS/WIPS components.</h:li>
-         <h:li>Use of secure communication paths for WIDS/WIPS management and event monitoring.</h:li>
+         <h:li>Use of secure communication paths between WIDS components.</h:li>
+         <h:li>Use of secure communication paths for WIDS management and event monitoring.</h:li>
          <h:li>Use of secure communication paths with external components (e.g., database and log server)</h:li>
        </h:ul> <h:br/>
        
@@ -249,17 +281,17 @@
     </cclaims>
   </chapter>
  <chapter title="Security Problem Description" id="spd">
-   <abbr linkend="WIDS/WIPS"/> address a range of security threats related to detection of and reaction to potentially malicious <abbr linkend="WLAN"/> traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, to the network infrastructure, or to the <abbr linkend="TOE"/> itself. Attacks against a <abbr linkend="WLAN"/> could compromise the confidentiality and integrity of <abbr linkend="WLAN"/> user and system data as well as the availability of the <abbr linkend="WLAN"/> to legitimate users. <h:br/><h:br/> 
-    
+   <abbr linkend="WIDS"/> address a range of security threats related to detection of and reaction to potentially malicious <abbr linkend="WLAN"/> traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, to the network infrastructure, or to the <abbr linkend="TOE"/> itself. Attacks against a <abbr linkend="WLAN"/> could compromise the confidentiality and integrity of <abbr linkend="WLAN"/> user and system data as well as the availability of the <abbr linkend="WLAN"/> to legitimate users. <h:br/><h:br/> 
+
     The term “monitored network” is used here to represent any <abbr linkend="WLAN"/> and/or wired network that the <abbr linkend="TOE"/> is configured to monitor and detect intrusions on. This extends to the wired networks as intrusions on the wireless network can also be damaging to the wired infrastructure. The WIDS/WIPS also protect the wired infrastructure by detecting rogue devices that are directly connected to the wired infrastructure, which may expose the wired network, or unauthorized <abbr linkend="WLAN"/> devices deployed in a no-wireless zone. The terms "Wi-Fi", “Wi-Fi Network” and “<abbr linkend="WLAN"/>” will be used interchangeably to represent a Wi-Fi network.<h:br/> <h:br/> 
     
-    The proper installation, configuration, and administration of the <abbr linkend="WIDS/WIPS"/> are critical to its correct operation. A site is responsible for developing its security policy and configuring a rule set that the <abbr linkend="WIDS/WIPS"/> will enforce and provide an appropriate response to meet their needs, relative to their own risk analysis and their perceived threats.<h:br/><h:br/> 
+    The proper installation, configuration, and administration of the <abbr linkend="WIDS"/> are critical to its correct operation. A site is responsible for developing its security policy and configuring a rule set that the <abbr linkend="WIDS"/> will enforce and provide an appropriate response to meet their needs, relative to their own risk analysis and their perceived threats.<h:br/><h:br/> 
     
-    Note that this <abbr linkend="PP-Module"/> does not repeat the threats identified in the NDcPP, though they all apply given the conformance and hence dependence of this <abbr linkend="PP-Module"/> on the NDcPP. Note also that while the NDcPP contains only threats to the ability of the <abbr linkend="TOE"/> to provide its security functions, this <abbr linkend="PP-Module"/> addresses only threats to resources in the operational environment. Together the threats of the NDcPP and those defined in this <abbr linkend="PP-Module"/> define the comprehensive set of security threats addressed by a <abbr linkend="WIDS/WIPS"/> <abbr linkend="TOE"/>.
+    Note that this <abbr linkend="PP-Module"/> does not repeat the threats identified in the NDcPP, though they all apply given the conformance and hence dependence of this <abbr linkend="PP-Module"/> on the NDcPP. Note also that while the NDcPP contains only threats to the ability of the <abbr linkend="TOE"/> to provide its security functions, this <abbr linkend="PP-Module"/> addresses only threats to resources in the operational environment. Together the threats of the NDcPP and those defined in this <abbr linkend="PP-Module"/> define the comprehensive set of security threats addressed by a <abbr linkend="WIDS"/> <abbr linkend="TOE"/>.
     <section title="Threats" id="threats">
       <threats>
         <threat id="T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">
-          <description> Unintended/unauthorized disclosure of sensitive information on a protected <abbr linkend="WLAN"/>, such as sending unencrypted sensitive data. The <abbr linkend="WIDS/WIPS"/> will be capable of collecting and analyzing <abbr linkend="WLAN"/> data to detect unauthorized disclosure of information.
+          <description> Unintended/unauthorized disclosure of sensitive information on a protected <abbr linkend="WLAN"/>, such as sending unencrypted sensitive data. The <abbr linkend="WIDS"/> will be capable of collecting and analyzing <abbr linkend="WLAN"/> data to detect unauthorized disclosure of information.
           </description>
           <objective-refer ref="O.SYSTEM_MONITORING">
             <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by O.SYSTEM_MONITORING as this provides for visibility into the network which enables detection of network violations.</rationale>
@@ -323,8 +355,8 @@
           </objective-refer>
         </assumption>
         <assumption id="A.PROPER_ADMIN">
-          <description> The administrator of the WIDS/WIPS is not careless, willfully negligent or hostile, and administers 
-            the WIDS/WIPS within compliance of the applied enterprise security policy. </description>
+          <description> The administrator of the WIDS is not careless, willfully negligent or hostile, and administers 
+            the WIDS within compliance of the applied enterprise security policy. </description>
           <objective-refer ref="OE.PROPER_ADMIN">
             <rationale> The operational environment objective OE.PROPER_ADMIN is realized through A.PROPER_ADMIN.</rationale>
           </objective-refer>
@@ -336,7 +368,7 @@
       security policies defined by the claimed base PP.
       <OSPs>
         <OSP id="P.ANALYZE">
-          <description>Analytical processes and information to derive conclusions about potential intrusions must be applied to WIDS/WIPS 
+          <description>Analytical processes and information to derive conclusions about potential intrusions must be applied to WIDS 
             data and appropriate response actions taken.</description>
           <objective-refer ref="O.WIDS_ANALYZE">
             <rationale>The organizational security policy P.ANALYZE is facilitated through O.WIDS_ANALYZE. </rationale>
@@ -350,7 +382,7 @@
       <SOs>
         <SO id="O.SYSTEM_MONITORING">
           <description> 
-            To be able to analyze and react to potential network policy violations, the WIDS/WIPS must be able to collect and store essential data elements of network traffic on monitored networks.<h:br/>
+            To be able to analyze and react to potential network policy violations, the WIDS must be able to collect and store essential data elements of network traffic on monitored networks.<h:br/>
           </description>    
           <!-- Mandatory -->
           <component-refer ref="FAU_GEN.1/WIDS"/>
@@ -360,7 +392,8 @@
         </SO>
         <SO id="O.WIDS_ANALYZE">
           <description> 
-            The WIDS/WIPS must be able to analyze collected or observed <abbr linkend="WLAN"/> activity on monitored network to identify potential
+
+            The WIDS must be able to analyze collected or observed <abbr linkend="WLAN"/> activity on monitored network to identify potential
             violations of approved <abbr linkend="WLAN"/> policies, unauthorized connections involving internal <abbr linkend="WLAN"/> devices, and non-secure communications. <h:br/><h:br/>
           </description>
           <!-- Mandatory -->
@@ -402,7 +435,7 @@
         </SO>
         <SO id="O.TOE_ADMINISTRATION">
           <description> To address the threat of unauthorized administrator access that is defined in the base PP, 
-            Conformant <abbr linkend="TOE"/>s will provide the functions necessary for an administrator to configure the WIDS/WIPS 
+            Conformant <abbr linkend="TOE"/>s will provide the functions necessary for an administrator to configure the WIDS 
             Capabilities of the <abbr linkend="TOE"/>.
             <h:br/>
           </description>
@@ -448,7 +481,7 @@
           <consistency-rationale></consistency-rationale>
         </SOE>
         <SOE id="OE.PROPER_ADMIN">
-          <description> The administrator of the WIDS/WIPS is not careless, willfully negligent or hostile, and administers the WIDS/WIPS within compliance of the applied enterprise security policy. </description>
+          <description> The administrator of the WIDS is not careless, willfully negligent or hostile, and administers the WIDS within compliance of the applied enterprise security policy. </description>
           <consistency-rationale></consistency-rationale>
         </SOE>
       </SOEs>    
@@ -596,9 +629,9 @@
             <note role="application">The capturing of raw frames that triggers the violation is an objective requirement. If the <abbr linkend="ST"/> author selects capturing of raw frames that triggers the violation, the <abbr linkend="ST"/> author must include the following SFRs: <linkref linkend="FAU_STG_EXT.1.1/pcap"/>, <linkref linkend="FAU_STG_EXT.1.2/pcap"/>, <linkref linkend="FAU_STG_EXT.1.3/pcap"/>.</note>
             <aactivity>	
               <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> describes where to find the WIDS/WIPS alerts on the Administrator console/interface.</TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes where to find the WIDS alerts on the Administrator console/interface.</TSS>
               <Guidance>
-                The evaluator shall use the operational guidance for instructions on where the alerts generated are displayed within the WIDS/WIPS interface. If the objective requirement to capture the raw frame that triggered an alert is selected, the evaluator must also test for corresponding selection-based requirements. The evaluator shall use the operational guidance to configure the traffic capture capabilities.</Guidance>         
+                The evaluator shall use the operational guidance for instructions on where the alerts generated are displayed within the WIDS interface. If the objective requirement to capture the raw frame that triggered an alert is selected, the evaluator must also test for corresponding selection-based requirements. The evaluator shall use the operational guidance to configure the traffic capture capabilities.</Guidance>         
               <Tests> The evaluator shall perform the following tests:<h:br/>             
                 <testlist>           
                   <test>The evaluator shall perform a series of events or generate traffic that would successfully trigger an alert. 
@@ -626,13 +659,13 @@
           <f-element id="fau_arp_ext.2.1">
             <title> The <abbr linkend="TSF"/> shall provide the ability to apply <assignable>methods of selection</assignable> to selectively exclude alerts from being generated. </title>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to transmit WIDS/WIPS alerts.</TSS>
-              <Guidance>The evaluator shall verify that the operational guidance includes instructions on enabling and disabling alerts. </Guidance>           
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to transmit WIDS alerts.</TSS>
+              <Guidance>The evaluator shall verify that the operational guidance includes instructions on enabling and disabling alerts. </Guidance>          
               <Tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
                   <test>
                     <h:ul>
-                      <h:li>The evaluator shall use the operational guidance to enable/disable detection of available detection capabilities through the WIDS/WIPS 
+                      <h:li>The evaluator shall use the operational guidance to enable/disable detection of available detection capabilities through the WIDS 
                           administrator interface. The evaluator shall then generate traffic that would successfully trigger the alert. The evaluator should verify 
                           that the <abbr linkend="TOE"/> generated the alert. The evaluator shall record the attack/intrusion that was generated and indicate which alert was triggered
                           as well as the details that were provided by the WIDS about the alert.</h:li>
@@ -689,7 +722,9 @@
                 <h:tr><h:td>FAU_WID_EXT.2.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.2.2</h:td><h:td>Sensor wireless transmissions capabilities.</h:td><h:td>Wireless transmission cappabilities are turned on.</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.2.3</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.2.4</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
+                <h:tr><h:td>FAU_WID_EXT.2.4</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_WID_EXT.2.5</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_WID_EXT.2.6</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
                 <h:tr><h:td>FAU_WID_EXT.3.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.4.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.4.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
@@ -726,7 +761,7 @@
         <ext-comp-def title="Intrusion Detection Methods" fam-id="FAU_IDS_EXT">
           <fam-behavior></fam-behavior>
         </ext-comp-def>
-        <f-component id="fau_ids_ext.1" name="Intrusion Detection System – Intrusion Detection Methods">
+        <f-component id="fau_ids_ext.1" name="Intrusion Detection System – Intrusion Detection and Reporting Methods">
           <consistency-rationale></consistency-rationale>
           <comp-lev></comp-lev>
           <management></management>
@@ -752,6 +787,38 @@
               corresponding selection based requirements must also be met.        
               
              </note>
+          </f-element>
+
+             <f-element id="fau_ids_ext.1.2">
+            <title> The TSF shall provide the ability to provide Syslog and SNMP trap reporting: 
+              <selectables>
+                <selectable>custom API</selectable>
+                <selectable>Syslog</selectable>
+                <selectable>Simple Network Management Protocol (SNMP)</selectable>
+                <selectable>hybrid</selectable>
+                <selectable><assignable>proprietary vendor detection method (e.g. Splunk)</assignable></selectable>
+              </selectables>
+            </title>
+            <note role="application">At least one reporting method must be selected. Based on the selection made in 
+              this SFR, the following SFRs must also be included. A hybrid detection and reporting method is one that incorporates two or more methods 
+              (e.g., both Syslog and API or another method).
+              
+             </note>
+             </f-element>
+          
+             <f-element id="fau_ids_ext.1.3">
+            <title> The TSF shall provide the ability to import data from the system: 
+              <selectables>
+                <selectable>custom API</selectable>
+                <selectable>Syslog</selectable>
+                <selectable><assignable>proprietary vendor detection method (e.g. Splunk)</assignable></selectable>
+              </selectables>
+            </title>
+            <note role="application">The system shall provide the ability to interact with an extensible interface to a custom proprietary or third party  wireless monitoring system
+            for the purposes of importing data from the wireless system. At least one detection method must be selected. 
+
+            </note>  
+
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on which intrusion detection technique(s) the <abbr linkend="TOE"/> utilizes. 
                 If a hybrid intrusion detection is selected as the intrusion detection method, the <abbr linkend="TSS"/> should provide details on the detection techniques utilized.
@@ -781,7 +848,9 @@
             <title> The <abbr linkend="TSF"/> shall provide Authorized Administrators with the ability to define an inventory 
               of <h:i>[authorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s]</h:i> based on <h:i>[EUD MAC addresses, <abbr linkend="AP"/> MAC addresses]</h:i>.
             </title>
-            <note role="application">This inventory is used as a whitelist to indicate to the WIDS/WIPS which <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s are legitimate members of the wireless network. The terminology used to describe an inventoried or whitelisted device may vary by vendor product. This <abbr linkend="PP-Module"/> utilizes whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are part of the inventory and non-whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are not part of the inventory.</note>
+
+            <note role="application">This inventory is used as a whitelist to indicate to the WIDS which <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s are legitimate members of the wireless network. The terminology used to describe an inventoried or whitelisted device may vary by vendor product. This <abbr linkend="PP-Module"/> utilizes whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are part of the inventory and non-whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are not part of the inventory.</note>
+
             <aactivity>	
               <TSS>
                 The evaluator shall review the <abbr linkend="TSS"/> to verify that it includes information the ability of the <abbr linkend="TOE"/> to define inventory of authorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</TSS>         
@@ -816,8 +885,8 @@
               part of the defined inventory.
             </title>
             <note role="Application">When referring to current information that should be detected by the <abbr linkend="TSF"/>, it is referring to information about the detected <abbr linkend="AP"/> or <abbr linkend="EUD"/> as is observed by the 
-              WIDS/WIPS such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. FAU_INV_EXT.2.3 has a full list of the details 
-              about the <abbr linkend="AP"/> or <abbr linkend="EUD"/> that should be detected by the WIDS/WIPS.</note>
+              WIDS such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. FAU_INV_EXT.2.3 has a full list of the details 
+              about the <abbr linkend="AP"/> or <abbr linkend="EUD"/> that should be detected by the WIDS.</note>
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes how the presence of authorized <abbr linkend="EUD"/>s and <abbr linkend="AP"/>s is presented by the <abbr linkend="TOE"/> and what information about the devices is provided.</TSS>
               <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to view authorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are within range of the <abbr linkend="TOE"/> sensors.</Guidance>           
@@ -835,10 +904,10 @@
               not part of the defined inventory.
             </title>
             <note role="Application">When referring to current information that should be detected by the <abbr linkend="TSF"/>, it is referring to information about the detected <abbr linkend="AP"/> or <abbr linkend="EUD"/> as is observed by the 
-              WIDS/WIPS such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. FAU_INV_EXT.2.3 has a full list of the details 
-              about the <abbr linkend="AP"/> or <abbr linkend="EUD"/> that should be detected by the WIDS/WIPS.</note>
+              WIDS such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. FAU_INV_EXT.2.3 has a full list of the details 
+              about the <abbr linkend="AP"/> or <abbr linkend="EUD"/> that should be detected by the WIDS.</note>
             <aactivity>	
-              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on where in the WIDS/WIPS interface the list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s is displayed.</TSS>
+              <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on where in the WIDS interface the list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s is displayed.</TSS>
               <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to view unauthorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are within range of the <abbr linkend="TOE"/> sensors.</Guidance>         
               <Tests> The evaluator shall perform the following tests:<h:br/>
                 <testlist>
@@ -864,8 +933,10 @@
             <title> The <abbr linkend="TSF"/> shall detect information on the current physical location of <h:i>[inventoried and malicious <abbr linkend="EUD"/>s, <abbr linkend="AP"/>s]</h:i> within 
               <h:i>[range of the <abbr linkend="TOE"/>’s wireless sensors]</h:i>.
             </title>
-            <note role="application">This SFR only checks for the ability of the WIDS/WIPS to track the location of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s either by placing them on a map or
+
+            <note role="application">This SFR only checks for the ability of the WIDS to track the location of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s either by placing them on a map or
               providing the distance of the <abbr linkend="AP"/> or <abbr linkend="EUD"/> from the sensor but does not mandate a certain degree of accuracy. 
+
               Objective requirement <linkref linkend="FAU_INV_EXT.4"/> is more stringent on the accuracy of the location tracking capabilities.</note>
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> includes information on location tracking, optimal number of sensors and sensor placement to meet the required level of accuracy. </TSS>          
@@ -897,9 +968,9 @@
                   <test>
                     <steplist>
                       <step>Deploy an <abbr linkend="AP"/> within range of the sensors.</step>
-                      <step>Check the WIDS/WIPS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
+                      <step>Check the WIDS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
                       <step>Verify that the current received signal strength is part of the information presented on the 
-                        WIDS/WIPS user interface about the <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
+                        WIDS user interface about the <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
                     </steplist>
                   </test>
                 </testlist>
@@ -923,9 +994,9 @@
                     <steplist>
                       <step>Deploy a whitelisted <abbr linkend="AP"/>, non-whitelisted <abbr linkend="AP"/> and two whitelisted <abbr linkend="EUD"/>s.</step>
                       <step>Connect one whitelisted <abbr linkend="EUD"/> to the whitelisted <abbr linkend="AP"/> and one to the non-whitelisted <abbr linkend="AP"/>.</step>
-                      <step>Check the WIDS/WIPS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
+                      <step>Check the WIDS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
                       <step>Verify that current RF band, current channel, MAC Address, classification of device, are part of the information presented on the 
-                        WIDS/WIPS user interface for all the <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s detected. For <abbr linkend="AP"/>s verify that encryption, number of connected <abbr linkend="EUD"/>s is presented.
+                        WIDS user interface for all the <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s detected. For <abbr linkend="AP"/>s verify that encryption, number of connected <abbr linkend="EUD"/>s is presented.
                         For <abbr linkend="EUD"/>s verify that the SSID and BSSID of <abbr linkend="AP"/> it is connected is presented.</step>
                     </steplist>
                   </test>
@@ -954,7 +1025,7 @@
                     <selectable>no other connections</selectable>
                   </selectables>               
             </title>
-            <note role="Application">For this requirement, it is acceptable for the WIDS/WIPS to use a generic terms for bridges or peer-to-peer connections when
+            <note role="Application">For this requirement, it is acceptable for the WIDS to use a generic terms for bridges or peer-to-peer connections when
               generating an alert for the detection of different types of bridges or peer-to-peer connections. The type of connection does not have to be specific. </note>
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to detect the network behavior described by the SFR.</TSS>
@@ -1214,7 +1285,7 @@
                 <selectable>does not transmit data</selectable>
               </selectables>.
             </title>
-            <note role="application">The intent of this SFR is to employ WIDS/WIPS sensors that can have all wireless transmission capabilities disabled for instances where a site wishes to implement a no wireless policy. <h:br/>
+            <note role="application">The intent of this SFR is to employ WIDS sensors that can have all wireless transmission capabilities disabled for instances where a site wishes to implement a no wireless policy. <h:br/>
               The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.
             </note>
             <aactivity>	
@@ -1298,6 +1369,26 @@
               defined by FAU_INV_EXT.1.1. Detection of illegal state transitions and protocol violations are 
               objective requirements and will be mandatory in future PP versions.
             </note>
+          </f-element>
+
+<!-- NEW SFRs - Did we add to EA -->
+            <f-element id="fau_wid_ext.2.5"> 
+             <title> 
+             The TSF shall perform stateful frame inspection and log attacks spanning multiple frames. 
+             </title> 
+             <note role="application">Adversaries possess the capability to distribute an attack across multiple frames in an attempt to avoid traditional detection measures that solely focus 
+             on packet headers. Stateful frame inspection will allow for the identification of obfuscation techniques centered around spreading an attack across multiple frames. Detection of 
+             illegal state transitions and protocol violations are objective requirements and will be mandatory in future PP versions. </note>
+            </f-element>
+          <!-- NEW SFRs - Did we add to EA -->
+          <f-element id="fau_wid_ext.2.6"> 
+             <title> 
+             The TSF shall detect a violation in allowing NULL SSID associations. 
+             </title> 
+             <note role="application">The 802.11 standard allows APs to beacon with the SSID field set to null - this is referred to as a hidden or cloaked SSID. The client seeking to associate 
+             with an AP using a hidden SSID must first send out a Probe Request that contains the SSID of that network, with the AP will return with a Probe request of its own. The TSF needs to 
+             be able to detect if an AP is allowing clients to associate without providing the valid SSID of the AP. </note>
+
             <aactivity>	
               <TSS>The evaluator shall verify that the <abbr linkend="TSS"/> describes the methods that the <abbr linkend="TOE"/> uses to detect the presence of unauthorized connections and unauthorized network traffic.</TSS>            
               <Guidance>The evaluator shall verify that the operational guidance provides instructions on how to configure SSIDs as authorized.</Guidance>         
@@ -1956,7 +2047,7 @@
                 detecting <abbr linkend="AP"/>s connecting to the protected wired network infrastructure. If the capability is present the <abbr linkend="TSS"/> shall include
               configuration guidance for this feature.</TSS>
               
-              <Guidance>The evaluator shall review the operational guidance for instructions on how to configure the WIDS/WIPS to detect
+              <Guidance>The evaluator shall review the operational guidance for instructions on how to configure the WIDS to detect
                 unauthorized <abbr linkend="AP"/>s connected to the protected wired infrastructure.</Guidance>
               
               <Tests> The evaluator shall perform the following test:<h:br/>
@@ -1965,7 +2056,7 @@
                   <steplist>
                     <step>Deploy a non-whitelisted <abbr linkend="AP"/>.</step>
                     <step>Connect the <abbr linkend="AP"/> via wire to the protected network infrastructure.</step>
-                    <step>Check the WIDS/WIPS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
+                    <step>Check the WIDS user interface for a list of detected <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s.</step>
                     <step>Verify that the rogue <abbr linkend="AP"/> is detected and an alert generated on the detection of an <abbr linkend="AP"/> connected to the protected wired infrastructure.</step>
                   </steplist>
                 </test>
@@ -2137,13 +2228,13 @@
         </f-component>
       
       <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 -->
-        <f-component id="fau_gen.2(wids)" name="Alerts Data Generation (WIDS/WIPS)">
+        <f-component id="fau_gen.2(wids)" name="Alerts Data Generation (WIDS)">
           <consistency-rationale></consistency-rationale>        
           <f-element id="fau_gen.2.1/wids">
-            <title> The <abbr linkend="TSF"/> shall be able to generate a WIDS/WIPS audit record of the following auditable events:
+            <title> The <abbr linkend="TSF"/> shall be able to generate a WIDS audit record of the following auditable events:
               <h:ol type="a">
-                <h:li>Start-up and shutdown of the WIDS/WIPS functions;</h:li>
-                <h:li>All WIDS/WIPS auditable events for the [not specified] level of audit;</h:li>
+                <h:li>Start-up and shutdown of the WIDS functions;</h:li>
+                <h:li>All WIDS auditable events for the [not specified] level of audit;</h:li>
                 <h:li><h:i>[Auditable events listed in <ctr-ref refid="audit"/>;</h:i></h:li>
                 <h:li><h:i>Totals of similar events occurring within a specified time period]</h:i></h:li>
               </h:ol>
@@ -2198,9 +2289,9 @@
                 <h:tr><h:td>FPT_ITT.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FTP_ITC.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
               </h:table>
-              <ctr id="audit" ctr-type="Table">: WIDS/WIPS Alerts</ctr> 
+              <ctr id="audit" ctr-type="Table">: WIDS Alerts</ctr> 
             </title>         
-            <note role="application">The alerts table contains the contents of the alert produced by the WIDS/WIPS. The Alert table includes optional and objective requirements. The auditing of optional and objective requirements is only required if the vendor chooses to have the requirement evaluated by NIAP. <h:br/>         
+            <note role="application">The alerts table contains the contents of the alert produced by the WIDS. The Alert table includes optional and objective requirements. The auditing of optional and objective requirements is only required if the vendor chooses to have the requirement evaluated by NIAP. <h:br/>         
               With regards to ‘similar’ type events, 'similar’ events are multiple occurrences of the same auditable event within some time period where the only significant difference between these events is the timestamp. For example, it is not expected that the <abbr linkend="TOE"/> generate an individual audit message for every event of the same kind that occurs within a reasonable time period. An alert must, at a minum, include the details as outlined on the table, but may contain additional details.
             </note>
             <aactivity>
@@ -2213,7 +2304,8 @@
             </aactivity> 
           </f-element>
           <f-element id="fau_gen.2.2/wids">
-            <title> The <abbr linkend="TSF"/> shall record within each WIDS/WIPS auditable event as 
+<!-- TODO: Can we just change this to auditable event?? -->
+            <title> The <abbr linkend="TSF"/> shall record within each WIDS auditable event as 
               <selectables>
                 <selectable>comma separated values (CSV)</selectable>
                 <selectable>common log format (CLF)</selectable>
@@ -2230,10 +2322,10 @@
             </title>
             <aactivity>
               <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
-              <Guidance>The evaluator shall verify that the operational guidance describes how to configure the <abbr linkend="TOE"/> to result in applicable WIDS/WIPS data logging.
+              <Guidance>The evaluator shall verify that the operational guidance describes how to configure the <abbr linkend="TOE"/> to result in applicable WIDS data logging.
                 The evaluator shall verify that the operational guidance provides instructions for any configuration that may be done in regard to logging similar events (e.g., setting thresholds, defining time windows, etc.).</Guidance>
               <Tests> The evaluator shall perform the following test:<h:br/>
-                The evaluator shall test that the alerts yield the expected WIDS/WIPS audit data in the format selected in the <abbr linkend="ST"/> for each WIDS/WIPS auditable event in table 4. Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
+                The evaluator shall test that the alerts yield the expected WIDS/WIPS audit data in the format selected in the <abbr linkend="ST"/> for each WIDS auditable event in table 4. Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
               </Tests>
             </aactivity>
           </f-element>
