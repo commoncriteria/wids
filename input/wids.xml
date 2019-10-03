@@ -26,6 +26,7 @@
   - Selection-Depends
   - Table ctr
   - Audit table
+  FAU_WIDS_EXT.3 - need to update and put assignment in the selection??
 
   NIAP
   - consistency rationales throughout document
@@ -600,13 +601,6 @@
           </f-component>  
         </subsection>  
         
-        
-        
-
-   
-        
-        
-        
       </modified-sfrs>
       
       <additional-sfrs/>
@@ -628,7 +622,7 @@
                 <selectable>no other actions</selectable>
               </selectables>] upon detection of a potential security violation.          
             </title>
-            <note role="application">The capturing of raw frames that triggers the violation is an objective requirement. If the <abbr linkend="ST"/> author selects capturing of raw frames that triggers the violation, the <abbr linkend="ST"/> author must include the following SFRs: <linkref linkend="FAU_STG_EXT.1.1/pcap"/>, <linkref linkend="FAU_STG_EXT.1.2/pcap"/>, <linkref linkend="FAU_STG_EXT.1.3/pcap"/>.</note>
+            <note role="application">The capturing of raw frames that triggers the violation is an objective requirement. If the <abbr linkend="ST"/> author selects capturing of raw frames that triggers the violation, the <abbr linkend="ST"/> author must include <linkref linkend="FAU_STG_EXT.1/pcap"/>.</note>
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the <abbr linkend="TSS"/> describes where to find the WIDS alerts on the Administrator console/interface.</TSS>
@@ -694,8 +688,7 @@
               </h:ol>
               <h:table>
                 <h:tr><h:td><h:b>Requirement</h:b></h:td><h:td><h:b>Auditable Events</h:b></h:td><h:td><h:b>Additional Audit Record Contents</h:b></h:td></h:tr>
-                <h:tr><h:td>FAU_ANO_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                
+                <h:tr><h:td>FAU_ANO_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>              
                 <h:tr><h:td>FAU_ARP.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_ARP_EXT.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_GEN.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
@@ -727,12 +720,12 @@
               <ctr id="auditWids" ctr-type="Table">: Auditable Events</ctr>            
             </title> 
             <note role="application">
-              There are additional auditable events in this SRF serve to extend the FAU_GEN.1 SFR found in the ND cPP. The events in the table should be combined with those of the ND cPP in the context of a conforming Security Target.<h:br/>
-              The Auditable Events table includes optional and objective requirements. The auditing of optional and objective requirements is only required if the vendor chooses to have the requirement evaluated by NIAP. 
+              The auditable events defined in <ctr-ref refid="auditWids"/> are for the SFRs that are explicitly defined in this PP-Module and are intended to extend FAU_GEN.1 in the Base-PP. The events in the <ctr-ref refid="auditWids"/> should be combined with those of the ND cPP in the context of a conforming Security Target.<h:br/><h:br/>
+              The Auditable Events (<ctr-ref refid="auditWids"/>) includes optional and objective SFRs. The auditing of optional and objective SFRs is only required if that SFR is included in the <abbr linkend="ST"/>.  
             </note>
             <aactivity>
-              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR.</TSS>
-              <Guidance>There are no operational guidance activities for this SFR.</Guidance>
+              <TSS>There are no <abbr linkend="TSS"/> assurance activities for this SFR. <h:br/><h:br/></TSS>
+              <Guidance>There are no operational guidance activities for this SFR.<h:br/><h:br/></Guidance>
               <Tests> The evaluator shall perform the following test:<h:br/>
                 The evaluator shall test the <abbr linkend="TOE"/>’s ability to correctly generate audit records by having the <abbr linkend="TOE"/> generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/><h:br/>                
                 Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
@@ -797,7 +790,8 @@
                 <selectable><assignable>proprietary vendor detection method (e.g. Splunk)</assignable></selectable>
               </selectables>
             </title>
-            <note role="application">The system shall provide the ability to interact with an extensible interface to a custom proprietary or third party  wireless monitoring system
+            <note role="application">
+              The system shall provide the ability to interact with an extensible interface to a custom proprietary or third party  wireless monitoring system
             for the purposes of importing data from the wireless system. At least one detection method must be selected. 
 
             </note>  
@@ -2215,7 +2209,9 @@
           </f-element>
         </f-component>
       
-      <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 -->
+      <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 
+      How does this differ from FAU_GEN.1???
+      -->
         <f-component id="fau_gen.2(wids)" name="Alerts Data Generation (WIDS)">
           <consistency-rationale></consistency-rationale>        
           <f-element id="fau_gen.2.1/wids">
@@ -2228,54 +2224,39 @@
               </h:ol>
               <h:table>
                 <h:tr><h:td><h:b>Requirement</h:b></h:td><h:td><h:b>Auditable Events</h:b></h:td><h:td><h:b>Additional Audit Record Contents</h:b></h:td></h:tr>
-                <h:tr><h:td>FAU_ANO_EXT.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_ANO_EXT.1.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_ARP.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_ARP_EXT.2.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_GEN.1.2/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_IDS_EXT.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.1.1</h:td><h:td>whitelisted devices information</h:td><h:td>Type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address.</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.1.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.1.3</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.2.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.2.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.2.3</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.3.1</h:td><h:td>Unexpected behavior by whitelisted device alert</h:td><h:td>Description of behavior detected (i.e., bridge, ICS connection), MAC address of whitelisted device, MAC address of the device that the whitelisted device made a connection with, connection start and end.</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.4.1</h:td><h:td>Information on location of device</h:td><h:td>Device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.4.1/CELL</h:td><h:td>Information on location of device</h:td><h:td>device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.5.1</h:td><h:td>Alert generated by detection of rogue device.</h:td><h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
+                <h:tr><h:td>FAU_ANO_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_ARP.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_ARP_EXT.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_GEN.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_IDS_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_INV_EXT.1</h:td><h:td>whitelisted devices information</h:td><h:td>Type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address.</h:td></h:tr>
+                <h:tr><h:td>FAU_INV_EXT.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_INV_EXT.3</h:td><h:td>Unexpected behavior by whitelisted device alert</h:td><h:td>Description of behavior detected (i.e., bridge, ICS connection), MAC address of whitelisted device, MAC address of the device that the whitelisted device made a connection with, connection start and end.</h:td></h:tr>
+                <h:tr><h:td>FAU_INV_EXT.4</h:td><h:td>Information on location of device</h:td><h:td>Device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
+                <h:tr><h:td>FAU_INV_EXT.4/CELL</h:td><h:td>Information on location of device</h:td><h:td>device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
+                <h:tr><h:td>FAU_INV_EXT.5</h:td><h:td>Alert generated by detection of rogue device.</h:td><h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
                 <h:tr><h:td>FAU_MAC_EXT.1.1</h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
                   <h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
                 <h:tr><h:td>FAU_MAC_EXT.1.2</h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
                   <h:td>Description of alert, location as labeled by administrator, time elapsed between connection in different locations, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
-                <h:tr><h:td>FAU_SAA.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_SAA.1.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                    
-                <h:tr><h:td>FAU_SIG_EXT.1.1</h:td><h:td>Alert generated by violaton of user defined signature.</h:td><h:td>Name of alert being triggered(as provided when creating the signature), description of alert (as provided when creating the signature), MAC address of devices involved.</h:td></h:tr>
-                <h:tr><h:td>FAU_STG_EXT.1.1/PCAP</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_STG_EXT.1.2/PCAP</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_STG_EXT.1.2/pcap,</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_STG_EXT.1.3/PCAP</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_SAA.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_SIG_EXT.1</h:td><h:td>Alert generated by violaton of user defined signature.</h:td><h:td>Name of alert being triggered(as provided when creating the signature), description of alert (as provided when creating the signature), MAC address of devices involved.</h:td></h:tr>
+                <h:tr><h:td>FAU_STG_EXT.1/PCAP</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.1.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.2.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.2.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.2.3</h:td><h:td>Details about what SSIDs are set as authorized.</h:td><h:td>SSIDs set by administrator as authorized.</h:td></h:tr>
+                <h:tr><h:td>FAU_WID_EXT.2</h:td><h:td>Details about what SSIDs are set as authorized.</h:td><h:td>SSIDs set by administrator as authorized.</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.2.4</h:td><h:td>Unauthorized activity</h:td><h:td>description of violation (i.e. whitelisted <abbr linkend="EUD"/> connected to unauthorized SSID), identity information of the devices involved.</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.3.1</h:td><h:td>Alert generated for DoS.</h:td><h:td>MAC Address, device type, and classification <abbr linkend="AP"/> or <abbr linkend="EUD"/> attacked, DoS details (RF or injection based), for injection-based, indicate type (i.e., deauth flood). </h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.4.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.4.2</h:td><h:td>Information about devices and unauthorized authentication methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, authentication method used.</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.5.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.5.2</h:td><h:td>Information about devices and unauthorized encryption methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, encryption method used.</h:td></h:tr>
+                <h:tr><h:td>FAU_WID_EXT.3</h:td><h:td>Alert generated for DoS.</h:td><h:td>MAC Address, device type, and classification <abbr linkend="AP"/> or <abbr linkend="EUD"/> attacked, DoS details (RF or injection based), for injection-based, indicate type (i.e., deauth flood). </h:td></h:tr>
+                <h:tr><h:td>FAU_WID_EXT.4</h:td><h:td>Information about devices and unauthorized authentication methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, authentication method used.</h:td></h:tr>            
+                <h:tr><h:td>FAU_WID_EXT.5</h:td><h:td>Information about devices and unauthorized encryption methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, encryption method used.</h:td></h:tr>
                 <h:tr><h:td>FAU_WID_EXT.5.3</h:td><h:td>Information about devices involved.</h:td><h:td>MAC Address, device type, and classification of devices involved (sending and receiving devices).</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.6.1</h:td><h:td>Information about detected devices.</h:td><h:td>Frequency band, channel used within frequency band, identification information (MAC address if applicable or other similar unique ID), device technology (i.e.,cellular), sensor(s) that detected devices.</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.6.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.7.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WIP_EXT.1.1</h:td><h:td>Information about action taken.</h:td><h:td>description of violation,the type of containment used, was containment triggered manually or automatically, sensor performing the containment (if wireless), details about the device (s) being contained (classification, device type, MAC address).</h:td></h:tr>
-                <h:tr><h:td>FDP_IFC.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FMT_SMF.1.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FPT_FLS.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
-                <h:tr><h:td>FPT_ITT.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FTP_ITC.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_WID_EXT.6</h:td><h:td>Information about detected devices.</h:td><h:td>Frequency band, channel used within frequency band, identification information (MAC address if applicable or other similar unique ID), device technology (i.e.,cellular), sensor(s) that detected devices.</h:td></h:tr>   
+                <h:tr><h:td>FAU_WID_EXT.7</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_WIP_EXT.1</h:td><h:td>Information about action taken.</h:td><h:td>description of violation,the type of containment used, was containment triggered manually or automatically, sensor performing the containment (if wireless), details about the device (s) being contained (classification, device type, MAC address).</h:td></h:tr>
+                <h:tr><h:td>FDP_IFC.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FMT_SMF.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FPT_FLS.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
+                <h:tr><h:td>FPT_ITT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FTP_ITC.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
               </h:table>
               <ctr id="audit" ctr-type="Table">: WIDS Alerts</ctr> 
             </title>         
