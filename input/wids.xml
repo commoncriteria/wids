@@ -134,104 +134,34 @@
      <subsection title="Technical Terms">
        <glossary>
          <entry>
-           <term><abbr title="Wireless Intrustion Detection/Prevention System">WIDS</abbr></term>
-           <description>A security product that provides network security administrators with the ability to monitor, collect, and log real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
-         </entry> 
-
-         <entry>
-           <term><abbr title="Wireless Intrustion Detection/Prevention System">WIPS</abbr></term>
-           <description>A security product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
-         </entry> 
-
-         <entry>
-           <term><abbr title="Wireless Intrustion Detection/Prevention System">Access Point (AP)</abbr></term>
-           <description>A device that creates a wireless local area network, or WLAN, usually in an office or large building.</description>
-         </entry> 
-
-         <entry>
-           <term><abbr title="Wireless Intrustion Detection/Prevention System">End User Device (EUD)</abbr></term>
-           <description>A device that has the ability to process, transmit,  and/or store information.</description>
-         </entry> 
-
-         <entry>
-           <term><abbr title="Wireless Intrustion Detection/Prevention System">Service Set Identifier (SSID)</abbr></term>
-           <description>The primary name associated with an 802.11 wireless local area network (WLAN)</description>
-         </entry> 
-
-         <!-- TODO_Justin: Any other technical terms that need to be defined? -->
-         
-         <!-- These are just placeholders until we can use the acronyms section -->
-         
-         <entry>
-           <term><abbr title="Advanced Encryption Standard">AES</abbr></term>
-           <description>Advanced Encryption Standard</description>
-         </entry>
-         <entry>
            <term><abbr title="Access Point">AP</abbr></term>
-           <description>Access Point</description>
-         </entry>
-         <entry>
-           <term><abbr title="Basic Service Set Identifier">BSSID</abbr></term>
-           <description>Basic Service Set Identifier</description>
-         </entry>
-         <entry>
-           <term><abbr title="Denial of Service">DoS</abbr></term>
-           <description>Denial of Service</description>
-         </entry>      
+           <description>A device that provides the network interface that enables wireless client hosts to access a wired network.</description>
+         </entry> 
          <entry>
            <term><abbr title="End User Device">EUD</abbr></term>
-           <description>End User Device</description>
-         </entry>      
-         <entry>
-           <term><abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr></term>
-           <description>Hypertext Transfer Protocol Secure</description>
-         </entry>
-         <entry>
-           <term><abbr title="Internet Protocol Security">IPsec</abbr></term>
-           <description>Internet Protocol Security</description>
-         </entry>
+           <description>A device that has the ability to process, transmit,  and/or store information.</description>
+         </entry> 
          <entry>
            <term><abbr title="Media Access Control">MAC</abbr></term>
            <description>Media Access Control</description>
          </entry>      
          <entry>
-           <term><abbr title="Secure Shell">SSH</abbr></term>
-           <description>Secure Shell</description>
-         </entry>
-         <entry>
            <term><abbr title="Service Set Identifier">SSID</abbr></term>
-           <description>Service Set Identifier</description>
+           <description>The primary name associated with an 802.11 wireless local area network (WLAN).</description>
+         </entry>         
+         <entry>
+           <term><abbr title="Wireless Intrustion Detection System">WIDS</abbr></term>
+           <description>A security product that provides network security administrators with the ability to monitor, collect, and log real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
          </entry>
          <entry>
-           <term><abbr title="Transport Layer Security">TLS</abbr></term>
-           <description>Transport Layer Security</description>
-         </entry>
-         <entry>
-           <term><abbr title="Temporal Layer Security">TKIP</abbr></term>
-           <description>Temporal Key Integrity Protocol</description>
-         </entry>
-         <entry>
-           <term><abbr title="Wired Equivalent Protocol">WEP</abbr></term>
-           <description>Wired Equivalent Protocol</description>
-         </entry>
-         <entry>
-           <term><abbr title="Wireless Intrusion Detection Systems">WIDS</abbr></term>
-           <description>Wireless Intrusion Detection Systems</description>
-         </entry>
-         <entry>
-           <term><abbr title="Wireless Intrusion Prevention Systems">WIPS</abbr></term>
-           <description>Wireless Intrusion Prevention Systems</description>
-         </entry>
+           <!-- Justin: Need to update description to be specifically for WIPS -->
+           <term><abbr title="Wireless Intrustion Prevention System">WIPS</abbr></term>
+           <description>A security product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
+         </entry> 
          <entry>
            <term><abbr title="Wireless Local Area Network">WLAN</abbr></term>
-           <description>Wireless Local Area Network</description>
+           <description></description>
          </entry>
-         <entry>
-           <term><abbr title="Wi-Fi Protected Access">WPA</abbr></term>
-           <description>Wi-Fi Protected Access</description>
-         </entry>    
-         
-         
        </glossary>
      </subsection>
    </section>  
