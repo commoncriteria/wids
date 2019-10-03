@@ -21,6 +21,7 @@ A list of products that have passed evaluation against this Protection Profile c
 ## Contributing
 
 If you are interested in contributing directly to future versions the this Protection Profile, please consider joining the NIAP technical community.
+
 * [How to join the NIAP Technical Community (Mailing list and updates)](https://www.niap-ccevs.org/NIAP_Evolution/tech_communities.cfm)
 
 ## Feedback
