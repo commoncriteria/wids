@@ -26,9 +26,10 @@
 
 20191003
   - Push # 1: Added a component requirment under Objective SFRs ("PLACEHOLDER" element name) for TSF Device Configurations - Monitoring Time and Frequency. (Lines: 2332 - 2371)
-  - Push #2: Added a component requirment under Objective SFRs ("PLACEHOLDER" element name) for TSF Device Configurations - Device Configuration - Exporting Configuration and Event Data.
+  - Push # 2: Added a component requirment under Objective SFRs ("PLACEHOLDER" element name) for TSF Device Configurations - Device Configuration - Exporting Configuration and Event Data.
     (Lines: 2375 - 2421)
     Corrected formatting issue.
+  - Push # 3: Push to synchronize changes.
 
 
 
