@@ -20,6 +20,13 @@
   - Push #3: Updated Updated FAU_IDS_EXT.1.3
   - Push #4: Updated technical terms  and replaced 46 out of 58 referenced to "WIDS/WIPS" with  "WIDS"
   
+  20191002
+  - Push #1: Added requirement to Objective SFRs (FAU_INV_EXT.4 Precise Location of Environmental Objects) for the inclusion of a signal library.
+  - Push #2: Made some grammar and punctuation changes. 
+
+20191003
+  - Push # 1: Added requirment for TSF Device Configurations. 
+
 
   Lauren
   - Are there any Use Cases??
@@ -2320,6 +2327,79 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           </f-element>
         </f-component>
       
+        <ext-comp-def title="Device Configuration" fam-id="PLACEHOLDER">
+          <fam-behavior></fam-behavior>
+        </ext-comp-def>
+        <f-component id="PLACEHOLDER" name="Device Configuration - Monitoring Time and Frequency">
+          <consistency-rationale></consistency-rationale>
+          <comp-lev></comp-lev>
+          <management></management>
+          <audit></audit>
+          <dependencies></dependencies>
+          <f-element id="PLACEHOLDER.1">
+            <title> 
+            The <abbr linkend="TSF"/> shall allow for the configuration of the time it monitors a specific frequency. 
+            </title>
+            <note role="application">It is expected that an Authorized Administrator will be responsible for configuring the 
+              <abbr linkend="AP"/> to operate on a specific frequency persuaent to the 802.11 standard. The  <abbr linkend="TSF"/> will have the ability to adjust the amount of time
+              it passively monitors and captures WLAN traffic on a given frequency and channel.
+            </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes a list of available containment methods on the <abbr linkend="TSF"/> and 
+                how to configure them.<h:br/><h:br/> 
+              </TSS>
+              <Guidance>
+                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
+              </Guidance>
+              <Tests> 
+                Configure the containment methods available on the <abbr linkend="TSF"/> and perform the following test for each method.
+                <testlist>
+                  <test>
+                    <steplist>
+                      <step>Deploy a non-whitelisted <abbr linkend="AP"/> and connect to the protected wired infrastructure via wire  
+                        (make sure it gets classified as rogue, or manually classify as such).</step>
+                      <step>Connect a whitelisted <abbr linkend="EUD"/> to the <abbr linkend="AP"/>.</step>
+                      <step>Verify that the <abbr linkend="TSF"/> can be configured to capture traffic on a specific channel for specific interval of time.</step>                  
+                    </steplist>
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+
+          <f-element id="PLACEHOLDER.2">
+            <title> 
+            The <abbr linkend="TSF"/> shall allow for the for the export of all captured event logs. 
+            </title>
+            <note role="application">It is expected that an Authorized Administrator will be responsible for providing event output from the <abbr linkend="TSF"/>
+            for the purposes of ingest into other analysis and reporting mechanisms.
+            </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes a list of available containment methods on the <abbr linkend="TSF"/> and 
+                how to configure them.<h:br/><h:br/> 
+              </TSS>
+              <Guidance>
+                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
+              </Guidance>
+              <Tests> 
+                Configure the containment methods available on the <abbr linkend="TSF"/> and perform the following test for each method.
+                <testlist>
+                  <test>
+                    <steplist>
+                      <step>Deploy a non-whitelisted <abbr linkend="AP"/> and connect to the protected wired infrastructure via wire  
+                        (make sure it gets classified as rogue, or manually classify as such).</step>
+                      <step>Connect a whitelisted <abbr linkend="EUD"/> to the <abbr linkend="AP"/>.</step>
+                      <step>Verify that the <abbr linkend="TSF"/> can be configured to capture traffic on a specific channel for specific interval of time.</step>                  
+                    </steplist>
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+
       <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 
       How does this differ from FAU_GEN.1???
       From Diana - FAU_GEN.1.1/WIDS is for regular audit functions. FAU_GEN.2 is meant it to be the actual alerts that get generated by the wids. She originally had them together and TC stated that alerts are not audit so she moved them all and call them Alerts Data Generation instead of Audit. 
