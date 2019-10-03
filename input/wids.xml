@@ -30,6 +30,8 @@
     (Lines: 2375 - 2421)
     Corrected formatting issue.
   - Push # 3: Push to synchronize changes.
+     # Need to troubleshoot why I don't see the changes for Push #2, but I see the other ones. Commited and pushed changes twice, but when I refresh the https://commoncriteria.github.io/pp/wids/wids-release.html
+         page, the changes aren't there. I see the push in GitHub, and all the other changes pushed today were successfully changed and verified.
 
 
 
