@@ -26,6 +26,7 @@
   - Selection-Depends
   - Table ctr
   - Audit table
+  - FPT_ITA, FPT_ITC, FPT_ITI - exportability of TSF data 
   FAU_WIDS_EXT.3 - need to update and put assignment in the selection??
 
   NIAP
@@ -217,9 +218,11 @@
     </cclaims>
   </chapter>
  <chapter title="Security Problem Description" id="spd">
-   <abbr linkend="WIDS"/> address a range of security threats related to detection of and reaction to potentially malicious <abbr linkend="WLAN"/> traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, to the network infrastructure, or to the <abbr linkend="TOE"/> itself. Attacks against a <abbr linkend="WLAN"/> could compromise the confidentiality and integrity of <abbr linkend="WLAN"/> user and system data as well as the availability of the <abbr linkend="WLAN"/> to legitimate users. <h:br/><h:br/> 
+   <abbr linkend="WIDS"/> address a range of security threats related to detection of and reaction to potentially malicious <abbr linkend="WLAN"/> traffic. The malicious traffic may pose a threat to one or more endpoints on the monitored networks, to the network infrastructure, or to the <abbr linkend="TOE"/> itself. Attacks against a <abbr linkend="WLAN"/> could compromise the confidentiality and integrity of <abbr linkend="WLAN"/> users and system data as well as the availability of the <abbr linkend="WLAN"/> to legitimate users. <h:br/><h:br/> 
 
-The term “monitored network” is used here to represent any <abbr linkend="WLAN"/> and/or wired network that the <abbr linkend="TOE"/> is configured to monitor and detect intrusions on. This extends to the wired networks as intrusions on the wireless network can also be damaging to the wired infrastructure. The <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> also protect the wired infrastructure by detecting rogue devices that are directly connected to the wired infrastructure, which may expose the wired network, or unauthorized <abbr linkend="WLAN"/> devices deployed in a no-wireless zone. The terms "Wi-Fi", “Wi-Fi Network” and “<abbr linkend="WLAN"/>” will be used interchangeably to represent a Wi-Fi network.<h:br/> <h:br/> 
+The term “monitored network” is used here to represent any <abbr linkend="WLAN"/> and/or wired network that the <abbr linkend="TOE"/> is configured to monitor and detect intrusions on. This extends to the wired networks as intrusions on the wireless network can also be damaging to the wired infrastructure. The <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> also protect the wired infrastructure by detecting rogue devices that are directly connected to the wired infrastructure, which may expose the wired network, or unauthorized <abbr linkend="WLAN"/> devices deployed in a no-wireless zone. 
+   
+   The terms "Wi-Fi", “Wi-Fi Network” and “<abbr linkend="WLAN"/>” will be used interchangeably to represent a Wi-Fi network.<h:br/> <h:br/> 
     
     The proper installation, configuration, and administration of the <abbr linkend="WIDS"/> are critical to its correct operation. A site is responsible for developing its security policy and configuring a rule set that the <abbr linkend="WIDS"/> will enforce and provide an appropriate response to meet their needs, relative to their own risk analysis and their perceived threats.<h:br/><h:br/> 
     
@@ -808,7 +811,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </title>
             <note role="Application">
               When referring to current information that should be detected by the <abbr linkend="TSF"/>, it is referring to information about the detected <abbr linkend="AP"/> or <abbr linkend="EUD"/> as is observed by the 
-              <abbr linkend="WIDS"/> such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. FAU_INV_EXT.2.3 has a full list of the details 
+              <abbr linkend="WIDS"/> such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. <linkref linkend="FAU_INV_EXT.2.3"/> has a full list of the details 
               about the <abbr linkend="AP"/> or <abbr linkend="EUD"/> that should be detected by the <abbr linkend="WIDS"/>.
             </note>
             <aactivity>	
@@ -832,7 +835,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               not part of the defined inventory.
             </title>
             <note role="Application">When referring to current information that should be detected by the <abbr linkend="TSF"/>, it is referring to information about the detected <abbr linkend="AP"/> or <abbr linkend="EUD"/> as is observed by the 
-              <abbr linkend="WIDS"/> such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. FAU_INV_EXT.2.3 has a full list of the details 
+              <abbr linkend="WIDS"/> such as operating channel and band, SSID of an <abbr linkend="AP"/>, client(s) connected to an <abbr linkend="AP"/>, and the <abbr linkend="AP"/> that an <abbr linkend="EUD"/> is connected to. <linkref linkend="FAU_INV_EXT.2.3"/> has a full list of the details 
               about the <abbr linkend="AP"/> or <abbr linkend="EUD"/> that should be detected by the <abbr linkend="WIDS"/>.</note>
             <aactivity>	
               <TSS>
@@ -1054,60 +1057,60 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                   <h:td>Potential Security Violation.</h:td>
                 </h:tr>
                 <h:tr>
-                  <h:td>FAU_INV_EXT.3</h:td>
+                  <h:td><linkref linkend="FAU_INV_EXT.3"/></h:td>
                   <h:td>Detection of authorized <abbr linkend="EUD"/> establishing peer-to-peer connection with any other <abbr linkend="EUD"/>.</h:td>
                 </h:tr>
                 <h:tr>
-                  <h:td>FAU_INV_EXT.3</h:td>
+                  <h:td><linkref linkend="FAU_INV_EXT.3"/></h:td>
                   <h:td>Detection of <abbr linkend="EUD"/> bridging two network interfaces.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.1</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.1"/></h:td>
                   <h:td>Detection of rogue <abbr linkend="AP"/>.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.1</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.1"/></h:td>
                   <h:td>Detection of malicious <abbr linkend="EUD"/>.</h:td>
                 </h:tr>                
                  <h:tr>
-                  <h:td>FAU_WID_EXT.2</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.2"/></h:td>
                   <h:td>Detection of traffic with excessive transmit power level.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.2</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.2"/></h:td>
                   <h:td>Detection of active probing.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.2</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.2"/></h:td>
                   <h:td>Detection of MAC spoofing.</h:td>
                 </h:tr>   
     	
                 <h:tr>
-                  <h:td>FAU_WID_EXT.3</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.3"/></h:td>
                   <h:td>Detection of RF-based denial of service.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.3</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.3"/></h:td>
                   <h:td>Detection of deauthentication flooding.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.3</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.3"/></h:td>
                   <h:td>Detection of disassociation flooding.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.3</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.3"/></h:td>
                   <h:td>Detection of request-to-send/clear-to-send abuse.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.4</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.4"/></h:td>
                   <h:td>Detection of unauthorized authentication scheme use.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.5</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.5"/></h:td>
                   <h:td>Detection of unauthorized encryption scheme use.</h:td>
                 </h:tr>                
                 <h:tr>
-                  <h:td>FAU_WID_EXT.5</h:td>
+                  <h:td><linkref linkend="FAU_WID_EXT.5"/></h:td>
                   <h:td>Detection of unencrypted traffic.</h:td>
                 </h:tr>
               </h:table>
@@ -1212,9 +1215,9 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                  <selectable>channels outside regulatory domain</selectable>
                  <selectable>non-standard channel frequencies</selectable>
                  <selectable>no other domains</selectable>
-               </selectables>
+               </selectables>.
             </title>
-            <note role="Application">The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
+            <note role="Application">The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in <linkref linkend="FDP_IFC.1"/> and defined through <linkref linkend="FAU_WID_EXT"/> SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the <abbr linkend="TSS"/> includes information on the channels the <abbr linkend="TSF"/> can detect.<h:br/><h:br/> 
@@ -1266,7 +1269,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </selectables>.
             </title>
             <note role="application">The intent of this SFR is to employ <abbr linkend="WIDS"/> sensors that can have all wireless transmission capabilities disabled for instances where a site wishes to implement a no wireless policy. <h:br/>
-              The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.
+              The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in <linkref linkend="FDP_IFC.1.1"/> and defined through <linkref linkend="FAU_WID_EXT"/> SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.
             </note>
             <aactivity>	
               <TSS>
@@ -1356,7 +1359,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </h:ul>
             </title>
             <note role="application">“Authorized” <abbr linkend="EUD"/>s/<abbr linkend="AP"/>s are those that are assigned to the whitelist as 
-              defined by FAU_INV_EXT.1.1. Detection of illegal state transitions and protocol violations are 
+              defined by <linkref linkend="FAU_INV_EXT.1"/>. Detection of illegal state transitions and protocol violations are 
               objective requirements and will be mandatory in future PP versions.
             </note>
           </f-element>
@@ -1373,12 +1376,11 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <!-- NEW SFRs - Did we add to EA -->
           <f-element id="fau_wid_ext.2.6"> 
              <title> 
-             The TSF shall detect a violation in allowing NULL SSID associations. 
+               The TSF shall detect a violation in allowing NULL <abbr linkend="SSID"/> associations. 
              </title> 
-             <note role="application">The 802.11 standard allows APs to beacon with the SSID field set to null - this is referred to as a hidden or cloaked SSID. The client seeking to associate 
-             with an AP using a hidden SSID must first send out a Probe Request that contains the SSID of that network, then the AP will return with a Probe Request of its own. The TSF needs to 
-             be able to detect if an AP is allowing clients to associate without providing the valid SSID of the AP. </note>
-
+             <note role="application">
+               The 802.11 standard allows <abbr linkend="AP"/>s to beacon with the <abbr linkend="SSID"/> field set to null - this is referred to as a hidden or cloaked <abbr linkend="SSID"/>. The client seeking to associate with an <abbr linkend="AP"/> using a hidden <abbr linkend="SSID"/> must first send out a Probe Request that contains the <abbr linkend="SSID"/> of that network, then the <abbr linkend="AP"/> will return with a Probe Request of its own. The <abbr linkend="TSF"/> needs to be able to detect if an <abbr linkend="AP"/> is allowing clients to associate without providing the valid <abbr linkend="SSID"/> of the <abbr linkend="AP"/>. 
+             </note>
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the <abbr linkend="TSS"/> describes the methods that the <abbr linkend="TOE"/> uses to detect the presence of unauthorized connections and unauthorized network traffic.<h:br/><h:br/> 
@@ -1452,8 +1454,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>             
             </aactivity>
           </f-element>         
-        </f-component>
-        
+        </f-component>   
         <ext-comp-def title="Denial of Service" fam-id="FAU_WID_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
@@ -1516,7 +1517,6 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </aactivity>
           </f-element>
         </f-component>
-
         <ext-comp-def title="Unauthorized Authentication Schemes" fam-id="FAU_WID_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
@@ -1532,16 +1532,14 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </title>
             <aactivity>	
               <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to allow authorized administrators to define 
-                authorized <abbr linkend="WLAN"/> authentication schemes.<h:br/><h:br/> 
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to allow authorized administrators to define authorized <abbr linkend="WLAN"/> authentication schemes.<h:br/><h:br/> 
               </TSS>            
               <Guidance>
                 The evaluator shall examine the operational guidance to verify that it provides instructions on how to define a <abbr linkend="WLAN"/> authentication 
                 scheme as authorized or unauthorized for the purposes of detection.<h:br/><h:br/> 
               </Guidance>            
               <Tests>
-                The evaluator shall configure the <abbr linkend="TSF"/> with a set of authorized <abbr linkend="WLAN"/> authentication schemes. The ability to detect violation
-                of this policy will be tested in <linkref linkend="FAU_WID_EXT.4.2"/>.<h:br/><h:br/> 
+                The evaluator shall configure the <abbr linkend="TSF"/> with a set of authorized <abbr linkend="WLAN"/> authentication schemes. The ability to detect violation of this policy will be tested in <linkref linkend="FAU_WID_EXT.4.2"/>.<h:br/><h:br/> 
               </Tests>             
             </aactivity>
           </f-element>
@@ -1574,8 +1572,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>
           </f-element>
-        </f-component>
-             
+        </f-component>          
         <ext-comp-def title="Unauthorized Encryption Schemes" fam-id="FAU_WID_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
@@ -1591,8 +1588,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </title>
             <aactivity>	
               <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to allow authorized administrators to define 
-                authorized <abbr linkend="WLAN"/> encryption schemes.<h:br/><h:br/> 
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to allow authorized administrators to define authorized <abbr linkend="WLAN"/> encryption schemes.<h:br/><h:br/> 
               </TSS>
               <Guidance>
                 The evaluator shall examine the operational guidance to verify that it provides instructions on how to define a 
@@ -1669,8 +1665,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>
           </f-element>
-        </f-component>
-         
+        </f-component>      
       </subsection>  
       <subsection title="User Data Protection (FDP)" id="fdp">
         <f-component id="fdp_ifc.1" name="Information Flow Control Policy">
@@ -1686,7 +1681,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </title>
             <note role="application">“Authorized” <abbr linkend="EUD"/>s/APs are those that are assigned to the whitelist as defined by <linkref linkend="FAU_INV_EXT.1.1"/>. 
               <h:br></h:br>
-              The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
+              The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in <linkref linkend="FDP_IFC.1"/> and defined through <linkref linkend="FAU_WID_EXT"/> SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
             <aactivity>
               <TSS>
                 There are no <abbr linkend="TSS"/> assurance activities for this SFR.<h:br/><h:br/> 
@@ -1731,7 +1726,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                  <h:td>Management Function</h:td>
                </h:tr>
                <h:tr>
-                 <h:td>FAU_ANO_EXT.1</h:td>
+                 <h:td><linkref linkend="FAU_ANO_EXT.1"/></h:td>
                  <h:td>Specification of periods of network activity that constitute baseline of expected behavior (optional).</h:td>
                </h:tr>
              </h:table>
@@ -1756,8 +1751,6 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
          </f-element>         
        </f-component>
      </subsection>  
-
-     
     </man-sfrs>
     <opt-sfrs>    
       <subsection title="Security Audit (FAU)" id="fau">
@@ -1780,14 +1773,14 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               <selectable>all cellular bands</selectable>
             </selectables>
           </title>
-          <note role="application">This SFR refers to Non-WiFi (IEEE 802.11 a, b, g, n, and ac) network devices that operate 
+          <note role="application">
+            This SFR refers to Non-Wi-Fi (IEEE 802.11 a, b, g, n, and ac) network devices that operate 
             in the specified frequencies. If the <abbr linkend="ST"/> author selects detection of devices in the cellular bands, the <abbr linkend="ST"/> author 
-            must include selection-based requirement <linkref linkend="FAU_INV_EXT.4.1"/></note>
+            must include selection-based requirement <linkref linkend="FAU_INV_EXT.4.1"/>.
+          </note>
           <aactivity>	
             <TSS>
-              The evaluator shall verify that the <abbr linkend="TSS"/> includes the set of RF bands and 
-              technologies that the <abbr linkend="TSF"/> can detect the use of. The <abbr linkend="TSS"/> should also include instructions on how to enable and the hardware
-              that is necessary for the additional band detection. <h:br/><h:br/> 
+              The evaluator shall verify that the <abbr linkend="TSS"/> includes the set of RF bands and technologies that the <abbr linkend="TSF"/> can detect the use of. The <abbr linkend="TSS"/> should also include instructions on how to enable and the hardware that is necessary for the additional band detection. <h:br/><h:br/> 
             </TSS>          
             <Guidance>
               The evaluator shall verify that the operational guidance describes how to enable and configure detection of the 
@@ -1808,8 +1801,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <aactivity>	
             <TSS>
               The evaluator shall verify that the <abbr linkend="TSS"/> to verify that the <abbr linkend="TOE"/> provides a dedicated sensor for wireless spectrum analysis.<h:br/><h:br/> 
-            </TSS>
-            
+            </TSS>      
             <Guidance>
               The evaluator shall verify that the operational guidance describes how to enable and configure dedicated spectrum analysis as well as 
               the hardware that is needed to perform this function.<h:br/><h:br/> 
@@ -1931,7 +1923,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                 The evaluator shall verify that the operational guidance describes how to perform automatic and/or manual definition of anomaly activity based on what is selected in the <abbr linkend="ST"/>.<h:br/><h:br/> 
               </Guidance>
               <Tests>
-                This test may be performed in conjunction with FAU_ANO_EXT.1.1. The evaluator shall follow the operational guidance and define anomaly activity through automated and/or manual means based on what is selected in the <abbr linkend="ST"/>. The evaluator shall verify in each case that the anomaly activity is defined correctly by determining that anomalous traffic is identified by the <abbr linkend="TSF"/>.
+                This test may be performed in conjunction with <linkref linkend="FAU_ANO_EXT.1"/>. The evaluator shall follow the operational guidance and define anomaly activity through automated and/or manual means based on what is selected in the <abbr linkend="ST"/>. The evaluator shall verify in each case that the anomaly activity is defined correctly by determining that anomalous traffic is identified by the <abbr linkend="TSF"/>.
               </Tests>
             </aactivity>
           </f-element>
@@ -2242,7 +2234,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                 <h:li><h:i>unauthorized <abbr linkend="AP"/>s and authorized <abbr linkend="EUD"/>s.</h:i></h:li>
               </h:ol>]            
             </title>
-            <note role="Application">The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in FDP_IFC.1.1 and defined through FAU_WID_EXT SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
+            <note role="Application">The "802.11 monitoring SFP" is a security function policy and the SFRs that reference this policy describe what the policy does. The "802.11 monitoring SFP" is established in <linkref linkend="FDP_IFC.1"/> and defined through <linkref linkend="FAU_WID_EXT"/> SFRs. A vendor does not have to formally define this policy, it only needs to comply with the SFRs.</note>
             <aactivity>
               <TSS>
                 There are no <abbr linkend="TSS"/> assurance activities for this SFR.<h:br/><h:br/> 
@@ -2320,7 +2312,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           </f-element>
         </f-component>
       
-      <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 
+      <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 or maybe 
       How does this differ from FAU_GEN.1???
       From Diana - FAU_GEN.1.1/WIDS is for regular audit functions. FAU_GEN.2 is meant it to be the actual alerts that get generated by the wids. She originally had them together and TC stated that alerts are not audit so she moved them all and call them Alerts Data Generation instead of Audit. 
       -->
@@ -2336,39 +2328,39 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </h:ol>
               <h:table>
                 <h:tr><h:td><h:b>Requirement</h:b></h:td><h:td><h:b>Auditable Events</h:b></h:td><h:td><h:b>Additional Audit Record Contents</h:b></h:td></h:tr>
-                <h:tr><h:td>FAU_ANO_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_ARP.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_ARP_EXT.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_GEN.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_IDS_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.1</h:td><h:td>whitelisted devices information</h:td><h:td>Type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address.</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.3</h:td><h:td>Unexpected behavior by whitelisted device alert</h:td><h:td>Description of behavior detected (i.e., bridge, ICS connection), MAC address of whitelisted device, MAC address of the device that the whitelisted device made a connection with, connection start and end.</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.4</h:td><h:td>Information on location of device</h:td><h:td>Device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.4/CELL</h:td><h:td>Information on location of device</h:td><h:td>device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.5</h:td><h:td>Alert generated by detection of rogue device.</h:td><h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
-                <h:tr><h:td>FAU_MAC_EXT.1.1</h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
+                <h:tr><h:td><linkref linkend="FAU_ANO_EXT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_ARP.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_ARP_EXT.2"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_GEN.1/WIDS"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_IDS_EXT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.1"/></h:td><h:td>whitelisted devices information</h:td><h:td>Type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.2"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.3"/></h:td><h:td>Unexpected behavior by whitelisted device alert</h:td><h:td>Description of behavior detected (i.e., bridge, ICS connection), MAC address of whitelisted device, MAC address of the device that the whitelisted device made a connection with, connection start and end.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.4"/></h:td><h:td>Information on location of device</h:td><h:td>Device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.4/CELL"/></h:td><h:td>Information on location of device</h:td><h:td>device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.5"/></h:td><h:td>Alert generated by detection of rogue device.</h:td><h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_MAC_EXT.1.1"/></h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
                   <h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
-                <h:tr><h:td>FAU_MAC_EXT.1.2</h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
+                <h:tr><h:td><linkref linkend="FAU_MAC_EXT.1.2"/></h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
                   <h:td>Description of alert, location as labeled by administrator, time elapsed between connection in different locations, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
-                <h:tr><h:td>FAU_SAA.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_SIG_EXT.1</h:td><h:td>Alert generated by violaton of user defined signature.</h:td><h:td>Name of alert being triggered(as provided when creating the signature), description of alert (as provided when creating the signature), MAC address of devices involved.</h:td></h:tr>
-                <h:tr><h:td>FAU_STG_EXT.1/PCAP</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.1.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.2</h:td><h:td>Details about what SSIDs are set as authorized.</h:td><h:td>SSIDs set by administrator as authorized.</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.2.4</h:td><h:td>Unauthorized activity</h:td><h:td>description of violation (i.e. whitelisted <abbr linkend="EUD"/> connected to unauthorized SSID), identity information of the devices involved.</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.3</h:td><h:td>Alert generated for DoS.</h:td><h:td>MAC Address, device type, and classification <abbr linkend="AP"/> or <abbr linkend="EUD"/> attacked, DoS details (RF or injection based), for injection-based, indicate type (i.e., deauth flood). </h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.4</h:td><h:td>Information about devices and unauthorized authentication methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, authentication method used.</h:td></h:tr>            
-                <h:tr><h:td>FAU_WID_EXT.5</h:td><h:td>Information about devices and unauthorized encryption methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, encryption method used.</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.5.3</h:td><h:td>Information about devices involved.</h:td><h:td>MAC Address, device type, and classification of devices involved (sending and receiving devices).</h:td></h:tr>
-                <h:tr><h:td>FAU_WID_EXT.6</h:td><h:td>Information about detected devices.</h:td><h:td>Frequency band, channel used within frequency band, identification information (MAC address if applicable or other similar unique ID), device technology (i.e.,cellular), sensor(s) that detected devices.</h:td></h:tr>   
-                <h:tr><h:td>FAU_WID_EXT.7</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_WIP_EXT.1</h:td><h:td>Information about action taken.</h:td><h:td>description of violation,the type of containment used, was containment triggered manually or automatically, sensor performing the containment (if wireless), details about the device (s) being contained (classification, device type, MAC address).</h:td></h:tr>
-                <h:tr><h:td>FDP_IFC.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FMT_SMF.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FPT_FLS.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
-                <h:tr><h:td>FPT_ITT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FTP_ITC.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_SAA.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_SIG_EXT.1"/></h:td><h:td>Alert generated by violaton of user defined signature.</h:td><h:td>Name of alert being triggered(as provided when creating the signature), description of alert (as provided when creating the signature), MAC address of devices involved.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_STG_EXT.1/PCAP"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.1.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.2"/></h:td><h:td>Details about what SSIDs are set as authorized.</h:td><h:td>SSIDs set by administrator as authorized.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.2.4"/></h:td><h:td>Unauthorized activity</h:td><h:td>description of violation (i.e. whitelisted <abbr linkend="EUD"/> connected to unauthorized SSID), identity information of the devices involved.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.3"/></h:td><h:td>Alert generated for DoS.</h:td><h:td>MAC Address, device type, and classification <abbr linkend="AP"/> or <abbr linkend="EUD"/> attacked, DoS details (RF or injection based), for injection-based, indicate type (i.e., deauth flood). </h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.4"/></h:td><h:td>Information about devices and unauthorized authentication methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, authentication method used.</h:td></h:tr>            
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.5"/></h:td><h:td>Information about devices and unauthorized encryption methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, encryption method used.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.5.3"/></h:td><h:td>Information about devices involved.</h:td><h:td>MAC Address, device type, and classification of devices involved (sending and receiving devices).</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.6"/></h:td><h:td>Information about detected devices.</h:td><h:td>Frequency band, channel used within frequency band, identification information (MAC address if applicable or other similar unique ID), device technology (i.e.,cellular), sensor(s) that detected devices.</h:td></h:tr>   
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.7"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WIP_EXT.1"/></h:td><h:td>Information about action taken.</h:td><h:td>description of violation,the type of containment used, was containment triggered manually or automatically, sensor performing the containment (if wireless), details about the device (s) being contained (classification, device type, MAC address).</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FDP_IFC.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FMT_SMF.1/WIDS"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FPT_FLS.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
+                <h:tr><h:td><linkref linkend="FPT_ITT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FTP_ITC.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
               </h:table>
               <ctr id="audit" ctr-type="Table">: <abbr linkend="WIDS"/> Alerts</ctr> 
             </title>         
@@ -2384,15 +2376,14 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Guidance>
               <Tests> 
                 The evaluator shall perform the following test:<h:br/>
-                The evaluator shall test the <abbr linkend="TOE"/>’s ability to correctly generate audit records by having the <abbr linkend="TOE"/> generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/>               
+                The evaluator shall test the <abbr linkend="TOE"/>’s ability to correctly generate audit records by having the <abbr linkend="TOE"/> generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/><h:br/>                
                 Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
               </Tests>
             </aactivity> 
           </f-element>
+          <!-- TODO: need to change the wording of this to be more about the alerts. Need to rename this SFR -->
           <f-element id="fau_gen.2.2/wids">
-<!-- TODO: Can we just change this to auditable event?? -->
-            <title> The <abbr linkend="TSF"/> shall record within each <abbr linkend="WIDS"/> auditable event as 
-              <selectables>
+            <title> The <abbr linkend="TSF"/> shall record within each <abbr linkend="WIDS"/> auditable event as <selectables>
                 <selectable>comma separated values (CSV)</selectable>
                 <selectable>common log format (CLF)</selectable>
                 <selectable>JavaScript Object Notation (JSON)</selectable>
@@ -2411,8 +2402,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                 There are no <abbr linkend="TSS"/> assurance activities for this SFR.<h:br/><h:br/> 
               </TSS>
               <Guidance>
-                The evaluator shall verify that the operational guidance describes how to configure the <abbr linkend="TOE"/> to result in applicable <abbr linkend="WIDS"/> data logging.
-                The evaluator shall verify that the operational guidance provides instructions for any configuration that may be done in regard to logging similar events (e.g., setting thresholds, defining time windows, etc.).<h:br/><h:br/> 
+                The evaluator shall verify that the operational guidance describes how to configure the <abbr linkend="TOE"/> to result in applicable <abbr linkend="WIDS"/> data logging. The evaluator shall verify that the operational guidance provides instructions for any configuration that may be done in regard to logging similar events (e.g., setting thresholds, defining time windows, etc.).<h:br/><h:br/> 
               </Guidance>
               <Tests> 
                 The evaluator shall perform the following test:<h:br/>
@@ -2429,8 +2419,8 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             <title> The <abbr linkend="TSF"/> shall preserve a secure state when the following types of failures occur: 
               [<h:i>sensor functionality failure, potential compromise of the <abbr linkend="TSF"/></h:i>].
             </title>
-            <note role="application">At minimum, the preservation of a secure state requires the generation of audit records when 
-              the defined failure conditions occur.
+            <note role="application">
+              At minimum, the preservation of a secure state requires the generation of audit records when the defined failure conditions occur.
             </note>
             <aactivity>	
               <TSS>
@@ -2438,9 +2428,8 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                 functionality is documented. The evaluator shall examine the <abbr linkend="TSS"/> section to ensure that all failure modes 
                 specified in the <abbr linkend="ST"/> are described.<h:br/><h:br/> 
               </TSS>
-              <Guidance>The evaluator shall review the operational guidance to verify that it identifies the potential <abbr linkend="TOE"/> failures, how the <abbr linkend="TSF"/> 
-                preserves a secure state following these failures, and any actions that are required to restore the <abbr linkend="TOE"/> to normal operation 
-                following the transition to a failure state. <h:br/><h:br/> 
+              <Guidance>
+                The evaluator shall review the operational guidance to verify that it identifies the potential <abbr linkend="TOE"/> failures, how the <abbr linkend="TSF"/> preserves a secure state following these failures, and any actions that are required to restore the <abbr linkend="TOE"/> to normal operation following the transition to a failure state. <h:br/><h:br/> 
               </Guidance>
               <Tests> 
                 <testlist>
