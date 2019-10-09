@@ -40,14 +40,14 @@
    - Push # 2: Comments: Lauren - I identified the purpose behind "FAU_GEN.2(WIDS) Alerts Data Generation (WIDS/WIPS)"" table we had questions about yesterday, and I've changed my opinion about it usefullness. 
                       I now support it's inclusion for the following reason (please argue against if you think I'm missing something here):
 
-                      The FAU_SAA.1 Potential Violation Analysis - Potential Security Violations table simply labels the types of auditable events the TSF should trigger off of, and whether it's a mandatory,
-                       objective, or optional SFR.  Applying a set of rules for monitoring the wireless traffic, and based upon these rules, indicating a potential malicious action is different than identifying what 
-                      information should be contanied within the triggered alert. If an event is triggerable, the "FAU_GEN.2(WIDS) Alerts Data Generation (WIDS/WIPS)" table specifically identifies what 
-                      attributes (i.e. MAC address, SSID, signal strength, BSSID) should be captured and contained within the alert; and then eventually parsed and displayed by a reporting mechanism (e.g. SIEM, 
-                      syslog, proprietary 3rd party solution). This table provides a space within the mudule to define the specific device and event attributes that should be monitored for and captured within a 
-                      triggerable event. Not all of the SFRs trigger an actual alert, hence why some requirements within the table have have "None" specified under the "Auditable Events" column.
+                      The "FAU_SAA.1 Potential Violation Analysis - Potential Security Violations" table simply labels the types of auditable events the TSF should trigger off of, and whether it's a mandatory,
+                       objective, or optional SFR.  Applying a set of rules for monitoring the wireless traffic, and based upon these rules, indicating a potential malicious action is different than actually identifying 
+                       what information should be contanied within the triggered alert. If an event is triggerable, the "FAU_GEN.2(WIDS) Alerts Data Generation (WIDS/WIPS)" table specifically identifies what 
+                      attributes (i.e. MAC address, SSID, signal strength, BSSID) should be captured and contained within the alert, and then eventually parsed and displayed by a reporting mechanism (e.g. SIEM, 
+                      syslog, proprietary 3rd party solution). This table sperately provides a space within the mudule to define the specific device and event attributes that should be monitored for and captured 
+                      within a triggerable event. Not all of the SFRs trigger an actual alert, hence why some requirements within the table have "None" specified under the "Auditable Events" column.
 
-                      Let me know if you see and holes in my logic and understanding here. 
+                      Let me know if you see and holes in my logic and understanding. 
  
 
   Lauren
