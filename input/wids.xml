@@ -20,6 +20,22 @@
   - Push #3: Updated Updated FAU_IDS_EXT.1.3
   - Push #4: Updated technical terms  and replaced 46 out of 58 referenced to "WIDS/WIPS" with  "WIDS"
   
+  20191002
+  - Push #1: Added requirement to Objective SFRs (FAU_INV_EXT.4 Precise Location of Environmental Objects) for the inclusion of a signal library.
+  - Push #2: Made some grammar and punctuation changes. 
+
+20191003
+  - Push # 1: Added a component requirment under Objective SFRs ("PLACEHOLDER" element name) for TSF Device Configurations - Monitoring Time and Frequency. (Lines: 2332 - 2371)
+  - Push # 2: Added a component requirment under Objective SFRs ("PLACEHOLDER" element name) for TSF Device Configurations - Device Configuration - Exporting Configuration and Event Data.
+    (Lines: 2375 - 2421)
+    Corrected formatting issue.
+  - Push # 3: Push to synchronize changes.
+     # Need to troubleshoot why I don't see the changes for Push #2, but I see the other ones. Commited and pushed changes twice, but when I refresh the https://commoncriteria.github.io/pp/wids/wids-release.html
+         page, the changes aren't there. I see the push in GitHub, and all the other changes pushed today were successfully changed and verified.
+20191004
+  - Fixed build issue. Removed extra <steplist> tag that had no closing tag. Added </f-component> closing tag that was missing.
+
+
 
   Lauren
   - Are there any Use Cases??
@@ -67,10 +83,11 @@
 
  <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview">
-      <!-- We need to make sure that we clearly define what we consider a WIDS and what we consider a WIPS -->
-      This Protection Profile Module (<abbr linkend="PP-Module"/>) describes security requirements for a Wireless Intrusion Detection System (<abbr linkend="WIDS"/>) defined to be an IEEE 802.11 network intrusion <!-- detection? -->prevention product located at the edge of a private network that can collect, inspect, analyze, and react to network traffic in real-time and is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <!-- TODO: need to add a statement that PP-Module also includes optional requirements for WIPS -->
+     
+      This Protection Profile Module (<abbr linkend="PP-Module"/>) describes security requirements for a Wireless Intrusion Detection System (<abbr linkend="WIDS"/>) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This <abbr linkend="PP-Module"/> is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/>
+      This Protection Profile Module (<abbr linkend="PP-Module"/>) contains optional requirements for a Wireless Intrustion Protection System (<abbr linkend="WIPS"/>) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.     
       <h:br/><h:br/>
-      This <abbr linkend="PP-Module"/> is not complete in itself, but rather extends the collaborative Protection Profile for Network Devices (NDcPP). This introduction will describe the features of a compliant Target of Evaluation (<abbr linkend="TOE"/>), and will also discuss how this <abbr linkend="PP-Module"/> is to be used in conjunction with the NDcPP. 
+      This <abbr linkend="PP-Module"/> is not complete in itself, but rather extends the collaborative Protection Profile for Network Devices (NDcPP). <!-- TODO: Add version number for ND --> This introduction will describe the features of a compliant Target of Evaluation (<abbr linkend="TOE"/>), and will also discuss how this <abbr linkend="PP-Module"/> is to be used in conjunction with the NDcPP. 
     </section>
    <section title="Terms" id="glossary">
      <subsection title="Common Criteria Terms">
@@ -158,19 +175,18 @@
            <description>A security product that provides network security administrators with the ability to monitor, collect, and log real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
          </entry>
          <entry>
-           <!-- Justin: Need to update description to be specifically for WIPS -->
            <term><abbr title="Wireless Intrustion Prevention System">WIPS</abbr></term>
            <description>A security product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
          </entry> 
          <entry>
            <term><abbr title="Wireless Local Area Network">WLAN</abbr></term>
-           <description></description>
+           <description><!-- TODO --></description>
          </entry>
        </glossary>
      </subsection>
    </section>  
    <section title="Compliant Targets of Evaluation" id="TOEdescription">
-     <subsection title="TOE Boundary" id="TOEboundary">
+     <subsection title="TOE Boundary" id="TOEboundary"> <!-- TODO: Lauren -->
        This <abbr linkend="PP-Module"/> specifically addresses Wireless Intrusion Detection/Prevention Systems (<abbr linkend="WIDS"/>/<abbr linkend="WIPS"/>). A conformant <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> is a product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious network traffic.  A <abbr linkend="WIDS"/> typically consists of multiple sensors that passively scan their surrounding RF environment on the <abbr linkend="WLAN"/> radio frequency spectrum and a centralized mechanism such as a Server or Controller that processes the data collected by the sensors. The <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> could use an Embedded (be part of the <abbr linkend="WLAN"/> infrastructure) or Overlay (independent from <abbr linkend="WLAN"/>) architecture depending on vendor implementation.<h:br/><h:br/>
        
        This <abbr linkend="PP-Module"/> is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> monitors is wireless frames in the RF spectrum utilized by IEEE 802.11 a, b, g, n, and ac. Requirements for other technologies (e.g., cellular) and protocols are optional.<h:br/><h:br/>
@@ -432,6 +448,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
     <base-pp version="2.1" name="Network Device" product="Network Device" short="ND" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440" xmlurl="test">
       <!-- Kevin: What to do if base is not in github?? -->
       <modified-sfrs>
+        <!-- TODO: Lauren modify boilerplate text -->
         <subsection title="Protection of the TSF (FPT)" id="fpt" >
           <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
             <consistency-rationale></consistency-rationale>
@@ -709,24 +726,31 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               
              </note>
           </f-element>
-<!-- NEW SFR - Did we add testing?? -->
-             <f-element id="fau_ids_ext.1.2">
-            <title> The TSF shall provide the ability to provide Syslog and SNMP trap reporting: 
-              <selectables>
-                <selectable>custom API</selectable>
-                <selectable>Syslog</selectable>
-                <selectable>Simple Network Management Protocol (SNMP)</selectable>
-                <selectable>hybrid</selectable>
-                <selectable><assignable>proprietary vendor detection method (e.g. Splunk)</assignable></selectable>
-              </selectables>
+<!-- NEW SFR - Did we add testing?? No - need testing
+          Show capability exists - can we tie into another SFR EA?
+          -->
+             <f-element id="fau_ids_ext.1.2"> 
+               <!-- Mandate that they do either Syslog or SNMP -->
+            <title> The TSF shall provide <selectables linebreak="yes">
+              <selectable>Syslog using <selectables>
+                <selectable>defined API</selectable>
+                <selectable>Syslog</selectable>        
+                <selectable><assignable>other detection method</assignable></selectable>
+              </selectables></selectable>
+              <selectable>SNMP trap reporting using <selectables>
+              <selectable>defined API</selectable>
+                <selectable>Simple Network Management Protocol (SNMP)</selectable>         
+                <selectable><assignable>other detection method</assignable></selectable>
+              </selectables></selectable>
+            </selectables>.             
             </title>
-            <note role="application">At least one reporting method must be selected. Based on the selection made in 
-              this SFR, the following SFRs must also be included. A hybrid detection and reporting method is one that incorporates two or more methods 
-              (e.g., both Syslog and API or another method).
-              
+            <note role="application">
+              Syslog and/or SNMP trap reporting can be used. At least one reporting method must be selected. <!-- TODO: If SNMP is selected - then need to specify version number -->
              </note>
              </f-element>
-<!-- NEW SFR - Did we add testing?? -->          
+<!-- NEW SFR - Did we add testing?? -->  
+          <!-- Import/export data post processing from WIDS controller
+          Import/export configuration - management of sensor -->
              <f-element id="fau_ids_ext.1.3">
             <title> The TSF shall provide the ability to import data from the system: 
               <selectables>
@@ -1373,7 +1397,8 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
              on packet headers. Stateful frame inspection will allow for the identification of obfuscation techniques centered around spreading an attack across multiple frames. Detection of 
              illegal state transitions and protocol violations are objective requirements and will be mandatory in future PP versions. </note>
             </f-element>
-          <!-- NEW SFRs - Did we add to EA -->
+          <!-- NEW SFRs - Did we add to EA - no
+          Add to FAU_SAA.1.2-->
           <f-element id="fau_wid_ext.2.6"> 
              <title> 
                The TSF shall detect a violation in allowing NULL <abbr linkend="SSID"/> associations. 
@@ -1381,6 +1406,11 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
              <note role="application">
                The 802.11 standard allows <abbr linkend="AP"/>s to beacon with the <abbr linkend="SSID"/> field set to null - this is referred to as a hidden or cloaked <abbr linkend="SSID"/>. The client seeking to associate with an <abbr linkend="AP"/> using a hidden <abbr linkend="SSID"/> must first send out a Probe Request that contains the <abbr linkend="SSID"/> of that network, then the <abbr linkend="AP"/> will return with a Probe Request of its own. The <abbr linkend="TSF"/> needs to be able to detect if an <abbr linkend="AP"/> is allowing clients to associate without providing the valid <abbr linkend="SSID"/> of the <abbr linkend="AP"/>. 
              </note>
+            <!-- EA:
+            
+            
+            
+            -->
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the <abbr linkend="TSS"/> describes the methods that the <abbr linkend="TOE"/> uses to detect the presence of unauthorized connections and unauthorized network traffic.<h:br/><h:br/> 
@@ -2068,7 +2098,8 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           </f-element>
           <!-- NEW SFRs -->
           <f-element id="fau_inv_ext.4.2">
-            <title> The <abbr linkend="TSF"/> shall include a signal library.</title>
+            <title> The <abbr linkend="TSF"/> shall include a signal library.</title> <!-- GAP Analysis -->
+            
             <note role="application">The TSF will need to have the ability to import, export, or update the exisiting signal library.</note>
             <aactivity>	
               <TSS>
@@ -2312,7 +2343,94 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           </f-element>
         </f-component>
       
-      <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 or maybe 
+
+        
+        <f-component id="fmt_mof.1" name="Device Configuration - Monitoring Time and Frequency"> <!-- NEW SFRs --><!-- Need to move, but testing was added -->
+          <consistency-rationale></consistency-rationale>
+          <comp-lev></comp-lev>
+          <management></management>
+          <audit></audit>
+          <dependencies></dependencies>
+          <f-element id="PLACEHOLDER.1">
+            <title> 
+            The <abbr linkend="TSF"/> shall allow for the configuration of the time it monitors a specific frequency. 
+            </title>
+            <note role="application">It is expected that an Authorized Administrator will be responsible for configuring the 
+              <abbr linkend="AP"/> to operate on a specific frequency persuaent to the 802.11 standard. The  <abbr linkend="TSF"/> will have the ability to adjust the amount of time
+              it passively monitors and captures WLAN traffic on a given frequency and channel.
+            </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes a list of available containment methods on the <abbr linkend="TSF"/> and 
+                how to configure them.<h:br/><h:br/> 
+              </TSS>
+              <Guidance>
+                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
+              </Guidance>
+              <Tests> 
+                The evaluator shall perform the following test on the <abbr linkend="TSF"/>: 
+                <testlist>
+                  <test>
+                    <steplist>
+                      <step>Deploy a whitelisted <abbr linkend="AP"/> and connect it to the protected wired infrastructure via wire.</step>
+                      <step>Confirm that the <abbr linkend="TSF"/> can observe and capture traffic and events generated by the <abbr linkend="AP"/>.</step>
+                      <step>Verify that the <abbr linkend="TSF"/> can be configured to capture traffic on a specific channel for specific interval of time, and assign a specified frequency and time interval.</step> 
+                      <step>Confirm that the <abbr linkend="TSF" /> remains on the frequency and channel for the time period specified.</step>                 
+                    </steplist>
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+       
+        
+         <f-component id="fau_gen.1" name="Device Configuration - Exporting Event Data"> <!-- NEW SFR -->
+           <!-- TODO: Not gen -->
+          <consistency-rationale></consistency-rationale>
+          <comp-lev></comp-lev>
+          <management></management>
+          <audit></audit>
+          <dependencies></dependencies>
+          <f-element id="PLACEHOLDER.1">
+            <title> 
+            The <abbr linkend="TSF"/> shall allow for the for the export of all captured event logs. 
+            </title>
+            <note role="application">It is expected that an Authorized Administrator will be responsible for providing event output from the <abbr linkend="TSF"/>
+            for the purposes of ingest into other analysis and reporting mechanisms. Having the ability to export event log data from the device is a necessary capability
+            to satisfy this requirement.
+            </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes a list of available containment methods on the <abbr linkend="TSF"/> and 
+                how to configure them.<h:br/><h:br/> 
+              </TSS>
+              <Guidance>
+                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
+              </Guidance>
+              <Tests> 
+                 The evaluator shall perform the following test on the <abbr linkend="TSF"/>: 
+                <testlist>
+                  <test>
+                    <steplist>
+                      <step>Deploy a whitelisted <abbr linkend="AP"/> and connect it to the protected wired infrastructure via wire.</step>
+                      <step>Confirm that the <abbr linkend="TSF"/> can observe and capture traffic and events generated by the <abbr linkend="AP"/>.</step>
+                      <step>Verify that the <abbr linkend="TSF"/> can export its configuration and observable event data in any of the following formats:</step> 
+                        <h:ul>
+                          <h:li>comma separated values (CSV)</h:li>
+                          <h:li>common log format (CLF)</h:li>
+                          <h:li>JavaScript Object Notation (JSON)</h:li>
+                          <h:li>syslog</h:li>
+                        </h:ul>   
+                    </steplist>
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+      <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 
       How does this differ from FAU_GEN.1???
       From Diana - FAU_GEN.1.1/WIDS is for regular audit functions. FAU_GEN.2 is meant it to be the actual alerts that get generated by the wids. She originally had them together and TC stated that alerts are not audit so she moved them all and call them Alerts Data Generation instead of Audit. 
       -->
