@@ -49,6 +49,8 @@
 
                       Let me know if you see and holes in my logic and understanding. 
  
+ 20191011
+ - Push # 1: Added Assurance Activity to "fau_wid_ext.2.5" and "fau_wid_ext.2.6" 
 
   Lauren
   - Are there any Use Cases??
@@ -1364,8 +1366,32 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
              </title> 
              <note role="application">Adversaries possess the capability to distribute an attack across multiple frames in an attempt to avoid traditional detection measures that solely focus 
              on packet headers. Stateful frame inspection will allow for the identification of obfuscation techniques centered around spreading an attack across multiple frames. Detection of 
-             illegal state transitions and protocol violations are objective requirements and will be mandatory in future PP versions. </note>
-            </f-element>
+             illegal state transitions and protocol violations are objective requirements and will be mandatory in future PP versions. 
+             </note>
+
+             <aactivity>	
+              <TSS>
+                
+              </TSS>
+              <Guidance>
+                The <abbr linkend="TOE"/> shall have the ability to perform stateful frame inspection and log attacks spanning multiple frames. The evaluator shall verify that 
+                the operational guidance provides instructions on how to specify and confirm that stateful frame capture and inspection is being performed.<h:br/><h:br/> 
+              </Guidance>
+              <Tests>
+                <testlist>
+                  <h:b>Stateful Frame Inspection</h:b>
+                  <test>
+                    <h:ul>
+                      <h:li>Deploy whitelisted <abbr linkend="AP"/>.</h:li>
+                      <h:li>Connect a whitelisted <abbr linkend="EUD"/> to the <abbr linkend="AP"/>.</h:li>
+                      <h:li>Deploy a protocol analyzer (e.g. Wireshark) or native capability within the WIDS Controller between the <abbr linkend="AP"/> and <abbr linkend="EUD"/>.</h:li>
+                      <h:li>Verify from the network traffic packet capture that all frames are being inspected to validate their connection state from the <abbr linkend="TSF"/></h:li>
+                    </h:ul>          
+                  </test>                 
+                 </testlist>
+             </Tests>  
+             </aactivity>
+             </f-element>
           <!-- NEW SFRs - Did we add to EA - no
           Add to FAU_SAA.1.2-->
           <f-element id="fau_wid_ext.2.6"> 
@@ -1373,8 +1399,37 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                The TSF shall detect a violation in allowing NULL <abbr linkend="SSID"/> associations. 
              </title> 
              <note role="application">
-               The 802.11 standard allows <abbr linkend="AP"/>s to beacon with the <abbr linkend="SSID"/> field set to null - this is referred to as a hidden or cloaked <abbr linkend="SSID"/>. The client seeking to associate with an <abbr linkend="AP"/> using a hidden <abbr linkend="SSID"/> must first send out a Probe Request that contains the <abbr linkend="SSID"/> of that network, then the <abbr linkend="AP"/> will return with a Probe Request of its own. The <abbr linkend="TSF"/> needs to be able to detect if an <abbr linkend="AP"/> is allowing clients to associate without providing the valid <abbr linkend="SSID"/> of the <abbr linkend="AP"/>. 
+               The 802.11 standard allows <abbr linkend="AP"/>s to beacon with the <abbr linkend="SSID"/> field set to null. This is referred to as a hidden or cloaked 
+               <abbr linkend="SSID"/>. The client seeking to associate with an <abbr linkend="AP"/> using a hidden <abbr linkend="SSID"/> must first send out a Probe 
+               Request that contains the <abbr linkend="SSID"/> of that network, then the <abbr linkend="AP"/> will return with a Probe Request of its own. 
+               The <abbr linkend="TSF"/> needs to be able to detect if an <abbr linkend="AP"/> is allowing clients to associate without providing the valid <abbr linkend="SSID"/> 
+               of the <abbr linkend="AP"/>. 
              </note>
+
+             <aactivity>	
+              <TSS>
+                
+              </TSS>
+              <Guidance>
+                The <abbr linkend="TOE"/> shall have the ability to perform stateful frame inspection and log attacks spanning multiple frames. The evaluator shall verify that 
+                the operational guidance provides instructions on how to specify and confirm that stateful frame capture and inspection is being performed.<h:br/><h:br/> 
+              </Guidance>
+              <Tests>
+                <testlist>
+                  <h:b>NULL Client Associations</h:b>
+                  <test>
+                    <h:ul>
+                      <h:li>Deploy whitelisted <abbr linkend="AP"/>.</h:li>
+                      <h:li>Configure the <abbr linkend="AP"/> to have null SSID.</h:li>
+                      <h:li>Attempt to connect a whitelisted <abbr linkend="EUD"/> to the <abbr linkend="AP"/> without supplying the correct <abbr linkend="AP"/> SSID.</h:li>
+                      <h:li>Verify that the <abbr linkend="AP"/> does not permit the <abbr linkend="EUD"/> to complete an association by returning a Probe Request.</h:li>
+                      <h:li>If an association does occur, confirm that an alert is triggered due to a violation of policy.</h:li>
+                    </h:ul>          
+                  </test>                 
+                 </testlist>
+             </Tests>  
+             </aactivity>
+             </f-element>
             <!-- EA:
             
             
@@ -1396,7 +1451,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                        <step>Configure a whitelisted <abbr linkend="AP"/> to operate on a set channel on the 2.4 GHz band with an authorized SSID. </step>
                        <step>Connect a non-whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>.</step>
                        <step>Verify that the <abbr linkend="TSF"/> detects the non-whitelisted <abbr linkend="EUD"/> connecting to the whitelisted <abbr linkend="AP"/>.</step>
-                       <step>hange the <abbr linkend="AP"/>'s SSID to one not on the authorized list.</step>
+                       <step>Change the <abbr linkend="AP"/>'s SSID to one not on the authorized list.</step>
                        <step>Connect a whitelisted <abbr linkend="EUD"/> to <abbr linkend="AP"/>.</step>
                        <step>Verify that the <abbr linkend="TSF"/> detects the whitelisted <abbr linkend="AP"/> using unauthorized SSID
                          and the <abbr linkend="EUD"/> associating to an unauthorized SSID.</step>
