@@ -92,15 +92,12 @@
       <subject>Initial Release - EP for NDcPP</subject>
     </entry>
 </RevisionHistory>
-
-
  <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview">
-     
       This Protection Profile Module (<abbr linkend="PP-Module"/>) describes security requirements for a Wireless Intrusion Detection System (<abbr linkend="WIDS"/>) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This <abbr linkend="PP-Module"/> is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/>
-      This Protection Profile Module (<abbr linkend="PP-Module"/>) contains optional requirements for a Wireless Intrustion Protection System (<abbr linkend="WIPS"/>) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.     
+      This <abbr linkend="PP-Module"/> contains optional requirements for a Wireless Intrustion Protection System (<abbr linkend="WIPS"/>) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.     
       <h:br/><h:br/>
-      This <abbr linkend="PP-Module"/> is not complete in itself, but rather extends the collaborative Protection Profile for Network Devices (NDcPP). <!-- TODO: Add version number for ND --> This introduction will describe the features of a compliant Target of Evaluation (<abbr linkend="TOE"/>), and will also discuss how this <abbr linkend="PP-Module"/> is to be used in conjunction with the NDcPP. 
+      This <abbr linkend="PP-Module"/> extends the collaborative Protection Profile for Network Devices (NDcPP).
     </section>
    <section title="Terms" id="glossary">
      <subsection title="Common Criteria Terms">
@@ -199,22 +196,14 @@
      </subsection>
    </section>  
    <section title="Compliant Targets of Evaluation" id="TOEdescription">
-     <subsection title="TOE Boundary" id="TOEboundary"> <!-- TODO: Lauren -->
-       This <abbr linkend="PP-Module"/> specifically addresses Wireless Intrusion Detection/Prevention Systems (<abbr linkend="WIDS"/>/<abbr linkend="WIPS"/>). A conformant <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> is a product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious network traffic.  A <abbr linkend="WIDS"/> typically consists of multiple sensors that passively scan their surrounding RF environment on the <abbr linkend="WLAN"/> radio frequency spectrum and a centralized mechanism such as a Server or Controller that processes the data collected by the sensors. The <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> could use an Embedded (be part of the <abbr linkend="WLAN"/> infrastructure) or Overlay (independent from <abbr linkend="WLAN"/>) architecture depending on vendor implementation.<h:br/><h:br/>
-       
-       This <abbr linkend="PP-Module"/> is focused on inspecting layers 1 and 2 of the OSI network model as the traffic that the <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> monitors is wireless frames in the RF spectrum utilized by IEEE 802.11 a, b, g, n, and ac. Requirements for other technologies (e.g., cellular) and protocols are optional.<h:br/><h:br/>
-       
-       Conformant <abbr linkend="TOE"/>s will detect potentially malicious network traffic using various approaches. Broadly speaking, the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification of ‘known’ threats may be performed through pattern matching, (e.g. by matching strings of characters within a frame with known patterns, or by matching traffic patterns common with reconnaissance or denial of service (DoS) attacks). Identification of ‘unknown’ threats may be performed through use of various forms of ‘anomaly’ detection whereby the <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> is provided with (or ‘learns’/creates) a definition of ‘expected/typical’ traffic patterns, such that it’s able to detect and react to ’anomalous’ (unexpected/atypical) traffic patterns.<h:br/><h:br/>
-       
-       The following are to be part of the evaluation:
-       <h:ul>
-         <h:li>Monitoring, detection and reporting capabilities offered by the <abbr linkend="WIDS"/>.</h:li>
-         <h:li>Location Tracking.</h:li>
-         <h:li>Use of secure communication paths between <abbr linkend="WIDS"/> components.</h:li>
-         <h:li>Use of secure communication paths for <abbr linkend="WIDS"/> management and event monitoring.</h:li>
-         <h:li>Use of secure communication paths with external components (e.g., database and log server)</h:li>
-       </h:ul> <h:br/>
-       
+     <subsection title="TOE Boundary" id="TOEboundary"> 
+       This <abbr linkend="PP-Module"/> specifically addresses Wireless Intrusion Detection/Prevention Systems (<abbr linkend="WIDS"/>/<abbr linkend="WIPS"/>). A conformant <abbr linkend="WIDS"/> is a product that can monitor, collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. <!-- TODO: add something about being able to detect the location of the endpoint --><abbr linkend="WIPS"/> functionality is not required to conform to this <abbr linkend="PP-Module"/>, and it is optional for the <abbr linkend="TOE"/> to have the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.<h:br/><h:br/>
+       A <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> <abbr linkend="TOE"/> consists of multiple sensors that passively scan the RF environment on the <abbr linkend="WLAN"/> radio frequency spectrum and a centralized mechanism such as a Server or Controller that processes the data collected by the sensors. Conformant <abbr linkend="TOE"/>s must use a secure communication path(s) between <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> components.
+       <h:br/><h:br/>
+       A <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> can be Integrated (be part of the <abbr linkend="WLAN"/> infrastructure) or Overlay (independent from <abbr linkend="WLAN"/>) architecture depending on vendor implementation. The two different architectures are illustrated in the <xref linkend="toe"/> figure below. <h:br/><h:br/>
+       A <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> is expected to inspect layers 1 and 2 network traffic, per the OSI network model and monitor wireless frames in the RF spectrum utilized by IEEE 802.11 a, b, g, n, and ac. Monitoring and inspection of other technologies (e.g., cellular) and protocols are optional.<h:br/><h:br/>
+       Conformant <abbr linkend="TOE"/>s will detect potentially malicious network traffic using various approaches. Broadly speaking, the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification of ‘known’ threats may be performed through pattern matching, (e.g. by matching strings of characters within a frame with known patterns, or by matching traffic patterns common with reconnaissance or denial of service (DoS) attacks). Identification of ‘unknown’ threats may be performed through use of various forms of anomaly detection whereby the <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> is provided with (or learns/creates) a definition of expected/typical traffic patterns, such that it’s able to detect and react to anomalous (unexpected/atypical) traffic patterns.<h:br/><h:br/>
+     
        <figure entity="images/TOE.jpg" title="General TOE" id="toe"/>
      </subsection>
    </section>
@@ -240,7 +229,7 @@
         </description>
       </cclaim>
       <cclaim title="Package Claims">
-        <description><!-- TODO_NIAP: Does this module need to claim any packages? -->
+        <description><!-- NIAP: Does this module need to claim any packages? -->
           <!-- If YES: This <abbr linkend="PP-Module"/> is <package name> Conformant. -->
             This <abbr linkend="PP-Module"/> does not claim conformance to any packages.</description>
       </cclaim>
@@ -388,6 +377,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <component-refer ref="FAU_WID_EXT.7"/>
           <consistency-rationale></consistency-rationale>
         </SO>
+        <!-- NIAP: WIPS functionality is optional, so technically this is an optional objective - that's not allowed right? -->
         <SO id="O.WIPS_REACT">
           <description> The <abbr linkend="TOE"/> must be able to react as configured by the administrators to isolate/contain 
             <abbr linkend="WLAN"/> devices that have been determined to violate administrator-defined <abbr linkend="WIPS"/> policies.  <h:br/>
@@ -461,113 +451,76 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
     <base-pp version="2.1" name="Network Device" product="Network Device" short="ND" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440" xmlurl="test">
       <!-- Kevin: What to do if base is not in github?? -->
       <modified-sfrs>
-        <!-- TODO: Lauren modify boilerplate text -->
         <subsection title="Protection of the TSF (FPT)" id="fpt" >
           <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
             <consistency-rationale></consistency-rationale>
-            <!-- This SFR is modified from ND - WIDS does not allow DTLS and makes the SFR mandatory (optional in ND) -->
-            <!-- TODO: Need to update wording to be more consistent with ND. Need to add 1.2 and 1.3 -->
             <f-element id="fpt_itt.1.1">
-              <title> Refinement:
-                The <abbr linkend="TSF"/> shall <h:b>use</h:b> <selectables>
+              <title>The <abbr linkend="TSF"/> shall protect TSF data from <h:u>disclosure and <h:b>detect its</h:b> modification</h:u> when it is transmitted between separate parts of the <abbr linkend="TOE"/> <h:b>through the use of <selectables>
                   <selectable>IPsec</selectable>
                   <selectable>SSH</selectable>
                   <selectable>TLS</selectable>
                   <selectable>TLS/HTTPS</selectable>
-                </selectables> <h:b>with security strength commensurate with all other trusted communications to</h:b> protect <abbr linkend="TSF"/> data from 
-                disclosure and modification when it is transmitted between separate parts of the <abbr linkend="TOE"/>.
+                </selectables></h:b>.         
+                <!-- Old:
+                Refinement: The TSF shall use [selection: IPsec, SSH, TLS, TLS/HTTPS] with security strength commensurate with all other trusted communications to protect TSF data from disclosure and modification when it is transmitted between separate parts of the TOE.
+                -->              
               </title>
-              <note role="application">              
-                This requirement ensures all communications between components of a distributed <abbr linkend="TOE"/> is protected 
-                through the use of an encrypted communications channel.  The data passed in this trusted communication channel are encrypted 
-                as defined in the protocol chosen in the selection.  The <abbr linkend="ST"/> author chooses the mechanisms supported by the <abbr linkend="TOE"/>, and then 
-                ensures the appropriate requirements from the NDcPP corresponding to their selection are copied to the <abbr linkend="ST"/> if not already present. For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the <abbr linkend="PP-Module"/>, and “other trusted communications” refers to the mechanisms specified in FPT_ITC.
+              <note role="application">
+                <!-- NIAP: WRT how ND defines a distributed TOE, would a WIDS (Sensors and controller) be considered a distributed TOE?-->
+                FPT_ITT.1 is optional in NDcPP, however, since a <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> <abbr linkend="TOE"/> is distributed, FPT_ITT.1 shall be included in the ST as modified in this <abbr linkend="PP-Module"/> and is applicable to the data transmitted between the sensors and controller.<h:br/><h:br/>
+                This requirement ensures all communications between components of a distributed <abbr linkend="TOE"/> is protected through the use of an encrypted communications channel.  The data passed in this trusted communication channel are encrypted as defined in the protocol chosen in the selection.  The <abbr linkend="ST"/> author chooses the mechanisms supported by the <abbr linkend="TOE"/>, and then ensures that the detailed protocol requirements in Appendix B of NDcPP corresponding to their selection are included in the <abbr linkend="ST"/>, if not already present. 
+                <!-- NIAP -->
+                <!--  For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the <abbr linkend="PP-Module"/>, and “other trusted communications” refers to the mechanisms specified in FPT_ITC.-->
               </note>
               <aactivity>
-                <TSS>
-                  The evaluator shall examine the <abbr linkend="TSS"/> to determine that the methods and protocols used to protect distributed <abbr linkend="TOE"/> components are described. The evaluator shall also confirm that all protocols listed in the <abbr linkend="TSS"/> in support of <abbr linkend="TOE"/> administration are consistent with those specified in the requirement, and are included in the requirements in the <abbr linkend="ST"/>. <h:br/><h:br/>              
-                </TSS>
-                <Guidance>
-                  The evaluator shall confirm that the operationalbguidance contains instructions for establishing the communication paths for each supported method. <h:br/><h:br/> 
-                </Guidance>
-                <Tests>
-                  The evaluator shall also perform the following tests:
-                  <testlist>
-                    <test>The evaluators shall ensure that communications using each specified (in the operational guidance) communications method is tested during the course of the evaluation, setting up the connections as described in the operational guidance and ensuring that communication is successful.</test>
-                    <test>The evaluator shall ensure, for each method of communication, the channel data is not sent in plaintext.</test>
-                  </testlist>               
-                  Further assurance activities are associated with the specific protocols.
-                </Tests>             
+                <!-- TODO: Need to remove TSS tags, but currently does not render if not in a tag   -->
+                <TSS>The evaluator shall perform the evaluation activity specified in NDcPP for this SFR.</TSS>                                    
               </aactivity>
             </f-element>
           </f-component> 
-        </subsection>   
-        
+        </subsection>          
         <subsection title="Trusted Paths/Channels (FTP)" id="ftp" >
           <f-component id="ftp_itc.1" name="Inter-TSF trusted channel">
             <consistency-rationale></consistency-rationale>
             <f-element id="ftp_itc.1.1">
               <title>  Refinement:
-                The <abbr linkend="TSF"/> shall be capable of using <selectables>
+                The <abbr linkend="TSF"/> shall <h:b>be capable of using <selectables>
                   <selectable>IPsec</selectable>
                   <selectable>SSH</selectable>
                   <selectable>TLS</selectable>
-                  <selectable>HTTPS</selectable>
-                  
-                </selectables> to provide   a   trusted   communication   channel
-                between   itself   and authorized   IT   entities supporting  the  following  capabilities:  audit  server,  
-                <selectables>
-                  <selectable><h:b>database server</h:b></selectable>
+                  <selectable>HTTPS</selectable>  
+                </selectables> to</h:b> provide a trusted communication channel between itself and <h:b>authorized IT entities supporting the following capabilities:  audit server, <selectables>
+                  <selectable>database server</selectable>
                   <selectable><assignable>other capabilities</assignable></selectable>
-                  <selectable>none</selectable>
-                </selectables> that   is   logically   distinct   from   other   communication channels  and  provides  assured  identification
-                of  its end  points  and  protection  of  the  channel  data from disclosure and detection of modification of the channel data.
+                  <selectable>no other capabilities</selectable>
+                </selectables></h:b> that is logically distinct from other communication channels  and  provides  assured  identification
+                of its end  points  and  protection  of  the  channel  data from <h:b>disclosure and detection of modification of the channel data.</h:b>
               </title>
-              <note role="Application">If the <abbr linkend="TSF"/> uses a separate database server, the database server selection must included in the <abbr linkend="ST"/>.</note>
+              
+            </f-element>
+            <f-element id="ftp_itc.1.2">
+              <title>The <abbr linkend="TSF"/> shall permit <h:b><h:u>the <abbr linkend="TSF"/> or the authorized IT entities</h:u></h:b> to initiate communication via the trusted channel.</title>
+            </f-element>
+            <f-element id="ftp_itc.1.3">
+              <title>The <abbr linkend="TSF"/> shall initiate communication via the trusted channel for [assignment: list of services for which the <abbr linkend="TSF"/> is able to initiate communications].</title>
+              <note role="Application">
+                <!-- NIAP: Should I copy the entire App note from ND? -->
+                The intent of the above requirement is to provide a means by which a cryptographic protocol may be used to protect external communications with authorized IT entities that the TOE interacts with to perform its functions. The TOE uses at least one of the listed protocols for communications with the server that collects the audit information. <h:br/><h:br/> 
+                If the <abbr linkend="TSF"/> uses a separate database server, the database server selection must included in the <abbr linkend="ST"/>.<h:br/><h:br/>
+                If other authorized IT entities are protected, the ST author makes the appropriate
+              assignments (for those entities) and selections (for the protocols that are used to protect those
+              connections). The ST author selects the mechanism or mechanisms supported by the TOE, and
+              then ensures that the detailed protocol requirements in Appendix B of NDcPP corresponding to their
+              selection are included in the ST.            
+              </note>
               <aactivity>
-                The evaluator shall perform the following activities in addition to the assurance activity specified in the
-                base NDcPP for this SFR: 
-                <TSS>
-                  The evaluator shall examine the <abbr linkend="TSS"/> to determine that, for all communications with authorized IT
-                  entities identified in the requirement, each communications mechanism is identified in terms of the
-                  allowed protocols for that IT entity. The evaluator shall also confirm that all protocols listed in the <abbr linkend="TSS"/>
-                  are specified and included in the requirements in the <abbr linkend="ST"/>. <h:br/><h:br/> 
-                </TSS>
-                <Guidance>
-                  The evaluator shall confirm that the guidance documentation contains instructions for establishing the
-                  allowed protocols with each authorized IT entity, and that it contains recovery instructions should a
-                  connection be unintentionally broken. <h:br/><h:br/>                 
-                </Guidance>
-                <Tests>
-                  <testlist>
-                    <test>
-                      The evaluators shall ensure that communications using each protocol with each authorized IT
-                      entity is tested during the course of the evaluation, setting up the connections as described in the
-                      guidance documentation and ensuring that communication is successful.
-                    </test> 
-                    <test>
-                      For each protocol that the <abbr linkend="TOE"/> can initiate as defined in the requirement, the evaluator shall
-                      follow the guidance documentation to ensure that in fact the communication channel can be initiated
-                      from the <abbr linkend="TOE"/>.
-                    </test>
-                    <test>
-                      The evaluator shall ensure, for each communication channel with an authorized IT entity, the
-                      channel data is not sent in plaintext.
-                    </test>
-                    <test>The evaluators shall, for each protocol associated with each authorized IT entity tested during
-                      test 1, physically interrupt an established connection. The evaluator shall ensure that when physical
-                      connectivity is restored, communications are appropriately protected.
-                    </test>
-                  </testlist>
-                  Further assurance activities are associated with the specific protocols.
-                </Tests>
+                <!-- TODO: Need to remove TSS tags once this issue is fixed -->
+                <TSS>The evaluator shall perform the evaluation activity specified in NDcPP for this SFR, with the inclusion of test 4, which is objective in NDcPP.  </TSS>
               </aactivity>
             </f-element>
           </f-component>  
-        </subsection>  
-        
-      </modified-sfrs>
-      
+        </subsection>         
+      </modified-sfrs>   
       <additional-sfrs/>
       <con-toe>
         When this <abbr linkend="PP-Module"/> extends the Network Device cPP, the <abbr linkend="TOE"/> type for the overall <abbr linkend="TOE"/> is still <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> products. 
@@ -583,11 +536,12 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <consistency-rationale></consistency-rationale>
           <f-element id="fau_arp.1.1">
             <title> The <abbr linkend="TSF"/> shall take <h:i>[the following actions: display alert to Authorized Administrator in sufficient detail to show identity of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s involved, description of alert and severity level, </h:i><selectables>
-                <selectable>capture raw frame traffic that triggers the violation</selectable>
+                <selectable id="pcap">capture raw frame traffic that triggers the violation</selectable>
                 <selectable>no other actions</selectable>
               </selectables>] upon detection of a potential security violation.          
             </title>
-            <note role="application">The capturing of raw frames that triggers the violation is an objective requirement. If the <abbr linkend="ST"/> author selects capturing of raw frames that triggers the violation, the <abbr linkend="ST"/> author must include <linkref linkend="FAU_STG_EXT.1/pcap"/>.</note>
+            <note role="application">
+              If "capture raw frame traffic that triggers the violation" is selected then <linkref linkend="FAU_STG_EXT.1/pcap"/> shall be included in the <abbr linkend="ST"/>.</note>
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the <abbr linkend="TSS"/> describes where to find the <abbr linkend="WIDS"/> alerts on the Administrator console/interface.<h:br/><h:br/> 
@@ -721,29 +675,30 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <f-element id="fau_ids_ext.1.1">
             <title> The <abbr linkend="TSF"/> shall provide the following methods of intrusion detection: 
               <selectables>
-                <selectable>anomaly-based</selectable>
-                <selectable>signature-based</selectable>
+                <selectable id="anoBased">anomaly-based</selectable>
+                <selectable id="sigBased">signature-based</selectable>
                 <selectable>behavior-based</selectable>
                 <selectable>hybrid</selectable>
-                <selectable><assignable>proprietary vendor detection method</assignable></selectable>
+                <selectable><assignable>other detection method</assignable></selectable>
               </selectables>
             </title>
             <note role="application">
               At least one detection method must be selected. Based on the selection made in 
               this SFR, the following SFRs must also be included: <h:br/>
-              If anomaly-based detection is selected:   <linkref linkend="FAU_ANO_EXT.1.1"/> and <linkref linkend="FAU_ANO_EXT.1.2"/><h:br/>
-              If signature-based detection is selected:   <linkref linkend="FAU_SIG_EXT.1.1"/><h:br/><h:br/>
+              If anomaly-based detection is selected: <linkref linkend="FAU_ANO_EXT.1"/> <h:br/>
+              If signature-based detection is selected: <linkref linkend="FAU_SIG_EXT.1"/><h:br/><h:br/>
               A hybrid detection method is one that incorporates two or more detection methods (e.g., both anomaly and signature based or signature and 
               another method). If one of the detection methods in a hybrid solution includes either anomaly-based or signature-based detection methods, the
               corresponding selection based requirements must also be met.        
-              
+              <!-- Justin: Why do we need hybrid? Can't they just select all that applies or is hybrid something special? -->
              </note>
           </f-element>
-<!-- NEW SFR - Did we add testing?? No - need testing
+<!-- NEW SFR -->
+            <!-- Justin: Did you add testing?? 
           Show capability exists - can we tie into another SFR EA?
           -->
              <f-element id="fau_ids_ext.1.2"> 
-               <!-- Mandate that they do either Syslog or SNMP -->
+               
             <title> The TSF shall provide <selectables linebreak="yes">
               <selectable>Syslog using <selectables>
                 <selectable>defined API</selectable>
@@ -761,7 +716,8 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               Syslog and/or SNMP trap reporting can be used. At least one reporting method must be selected. <!-- TODO: If SNMP is selected - then need to specify version number -->
              </note>
              </f-element>
-<!-- NEW SFR - Did we add testing?? -->  
+<!-- NEW SFR -->
+            <!-- Justin: Did we add testing?? -->  
           <!-- Import/export data post processing from WIDS controller
           Import/export configuration - management of sensor -->
              <f-element id="fau_ids_ext.1.3">
@@ -780,7 +736,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
 
             <aactivity>	
               <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on which intrusion detection technique(s) the <abbr linkend="TOE"/> utilizes. If a hybrid intrusion detection is selected as the intrusion detection method, the <abbr linkend="TSS"/> should provide details on the detection techniques utilized. Furthermore, when using a hybrid detection method that includes detection methods other than anomaly or signature based, the <abbr linkend="TSS"/> shall include more details about such detection methods. If proprietary vendor detection method is selected, technical details on the method must be provided.<h:br/><h:br/>
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on which intrusion detection technique(s) the <abbr linkend="TOE"/> utilizes. If a hybrid intrusion detection is selected as the intrusion detection method, the <abbr linkend="TSS"/> should provide details on the detection techniques utilized. Furthermore, when using a hybrid detection method that includes detection methods other than anomaly or signature based, the <abbr linkend="TSS"/> shall include more details about such detection methods. <!-- TODO: FIX -->If proprietary vendor detection method is selected, technical details on the method must be provided.<h:br/><h:br/>
               </TSS>    
               <Guidance>
                 The evaluator shall verify that the operational guidance provides instructions on how to configure the <abbr linkend="TOE"/> in order for it to detect 
@@ -1498,6 +1454,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </aactivity>
           </f-element>         
         </f-component>   
+        
         <ext-comp-def title="Denial of Service" fam-id="FAU_WID_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
@@ -1560,6 +1517,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </aactivity>
           </f-element>
         </f-component>
+        
         <ext-comp-def title="Unauthorized Authentication Schemes" fam-id="FAU_WID_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
@@ -1616,6 +1574,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </aactivity>
           </f-element>
         </f-component>          
+        
         <ext-comp-def title="Unauthorized Encryption Schemes" fam-id="FAU_WID_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
@@ -1813,13 +1772,12 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               <selectable>3.6 GHz</selectable>
               <selectable>60 GHz</selectable>
               <selectable>sub-GHz (0-900 MHz)</selectable>
-              <selectable>all cellular bands</selectable>
+              <selectable id="cell">all cellular bands</selectable>
             </selectables>
           </title>
           <note role="application">
             This SFR refers to Non-Wi-Fi (IEEE 802.11 a, b, g, n, and ac) network devices that operate 
-            in the specified frequencies. If the <abbr linkend="ST"/> author selects detection of devices in the cellular bands, the <abbr linkend="ST"/> author 
-            must include selection-based requirement <linkref linkend="FAU_INV_EXT.4.1"/>.
+            in the specified frequencies. If the <abbr linkend="ST"/> author selects detection of devices in the cellular bands, <linkref linkend="FAU_INV_EXT.4.1"/> must be included in the <abbr linkend="ST"/>. 
           </note>
           <aactivity>	
             <TSS>
@@ -1837,7 +1795,9 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </Tests>            
           </aactivity>
         </f-element>
-        <f-element id="fau_wid_ext.6.2">
+        <!-- Justin: Did we add this SFR? -->
+          <!-- should this be two different components so that they can be added individually? How do these two elements fit together?  -->
+          <f-element id="fau_wid_ext.6.2">
           <title> 
             The <abbr linkend="TSF"/> shall provide a dedicated sensor for wireless spectrum analysis.
           </title>
@@ -1859,19 +1819,79 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
     </opt-sfrs>
     <sel-sfrs>
       <subsection title="Security Audit (FAU)" id="fau">
+        <ext-comp-def title="Anomaly-Based Intrusion Detection" fam-id="FAU_ANO_EXT">
+          <fam-behavior></fam-behavior>
+        </ext-comp-def>
+        <f-component id="fau_ano_ext.1" name="Anomaly-Based Intrusion Detection">
+          <selection-depends req="fau_ids_ext.1.1" ids="anoBased"/> 
+          <consistency-rationale></consistency-rationale>          
+          <comp-lev></comp-lev>
+          <management></management>
+          <audit></audit>
+          <dependencies></dependencies>        
+          <f-element id="fau_ano_ext.1.1">
+            <title> The <abbr linkend="TSF"/> shall support the definition of 
+              <selectables>
+                <selectable>baselines (‘expected and approved’)</selectable>
+                <selectable>anomaly (‘unexpected’) traffic patterns</selectable>
+              </selectables>including the specification of 
+              <selectables linebreak="yes">
+                <selectable>throughput ([assignment: data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, 
+                  hours, days)])</selectable> <!-- Justin: does this cover the bandwidth thing that was identified in the gap analysis? -->
+                <selectable>time of day</selectable>
+                <selectable>frequency; </selectable>
+                <selectable>thresholds</selectable>
+                <selectable><assignable>other methods</assignable></selectable>
+              </selectables>  
+              and the following network protocol fields: 
+              <h:ul>
+                <h:li>all management and control frame header elements </h:li>
+              </h:ul>             
+            </title>
+          </f-element>
+          <f-element id="fau_ano_ext.1.2">
+            <title> 
+              The <abbr linkend="TSF"/> shall support the definition of anomaly activity through 
+              <selectables>
+                <selectable>manual configuration by administrators</selectable>
+                <selectable>automated configuration</selectable>
+              </selectables>. 
+            </title>
+            <note role="application">
+              The “baseline” and “anomaly” can be something manually defined/configured by a <abbr linkend="TOE"/> administrator (or importing definitions), or something that the <abbr linkend="TOE"/> is able to automatically define/create by inspecting network traffic over a period of time (a.k.a. “profiling”). 
+            </note>
+            <aactivity>	
+              <TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes the composition and construction of baselines or anomaly-based attributes specified in the SFR. The evaluator shall verify that the <abbr linkend="TSS"/> provides a description of how baselines are defined and implemented by the <abbr linkend="TSF"/>, or a description of how anomaly-based rules are defined and configured by the administrator. <h:br/><h:br/> 
+                
+                The evaluator shall verify that the <abbr linkend="TSS"/> describes the available modes of configuration (manual or automatic) and how to configure or import the baseline.<h:br/><h:br/> 
+              </TSS>                    
+              <Guidance>
+                The evaluator shall verify that the operational guidance describes how to configure baseline and/or anomalous traffic patterns based on what is stated in the <abbr linkend="TSS"/>.<h:br/><h:br/> 
+                The evaluator shall verify that the operational guidance describes how to perform automatic and/or manual definition of anomaly activity based on what is selected in the <abbr linkend="ST"/>.<h:br/><h:br/> 
+              </Guidance>
+              <Tests>
+                The evaluator shall use the instructions in the operational guidance to configure baselines or anomaly-based rules through automated and/or manual means based on what is selected in the <abbr linkend="ST"/>. The evaluator shall send traffic that does not match the baseline or matches the anomaly-based rule and verify the <abbr linkend="TSF"/> detects the anomalous behavior and generates an alert.              
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+<!-- Kevin: Need to allow component id to have / in it -->
+        <!-- Justin: Is there really a need to allow a different range of accuracy for locating a device using cellular versus Wi-Fi? FAU_INV_EXT.4 states a 15 feet range to locate APs and EUDs -->        
         <ext-comp-def title="Location of Environmental Objects (Cellular Devices)" fam-id="FAU_INV_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
-          <f-component id="fau_inv_ext.4(cell)" name="Location of Environmental Objects (Cellular Devices)">
-        <!-- Kevin: Need to allow component id to have / in it -->
-        <selection-depends req="fau_wid_ext.6.1" ids=""/> <!-- TODO_Lauren -->
+        <f-component id="fau_inv_ext.4(cell)" name="Location of Environmental Objects (Cellular Devices)">        
+        <selection-depends req="fau_wid_ext.6.1" ids="cell"/> <!-- TODO_Lauren -->
         <consistency-rationale></consistency-rationale>
         <comp-lev></comp-lev>
         <management></management>
         <audit></audit>
         <dependencies></dependencies>
+
         <f-element id="fau_inv_ext.4.1/cell">
-          <title> The <abbr linkend="TSF"/> shall detect the physical location of [<h:i>detected cellular devices</h:i>] to within 
+          <title> The <abbr linkend="TSF"/> shall detect the physical location of cellular devices to within 
             <assignable>distance degree of accuracy</assignable> of their actual location.
           </title>
           <aactivity>	
@@ -1899,84 +1919,12 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
         </f-element>
       </f-component>
       
-        <ext-comp-def title="Anomaly-Based Intrusion Detection" fam-id="FAU_ANO_EXT">
-          <fam-behavior></fam-behavior>
-        </ext-comp-def>
-        <f-component id="fau_ano_ext.1" name="Anomaly-Based Intrusion Detection">
-          <selection-depends req="fau_ids_ext.1.1" ids="FIX"/> <!-- TODO_Lauren -->
-          <consistency-rationale></consistency-rationale>          
-          <comp-lev></comp-lev>
-          <management></management>
-          <audit></audit>
-          <dependencies></dependencies>        
-          <f-element id="fau_ano_ext.1.1">
-            <title> The <abbr linkend="TSF"/> shall support the definition of 
-              <selectables>
-                <selectable>baselines (‘expected and approved’)</selectable>
-                <selectable>anomaly (‘unexpected’) traffic patterns</selectable>
-              </selectables>including the specification of 
-              <selectables linebreak="yes">
-                <selectable>throughput ([assignment: data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, 
-                  hours, days)])</selectable>
-                <selectable>time of day</selectable>
-                <selectable>frequency; </selectable>
-                <selectable>thresholds</selectable>
-                <selectable><assignable>other methods</assignable></selectable>
-              </selectables>  
-              and the following network protocol fields: 
-              <h:ul>
-                <h:li>all management and control frame header elements </h:li>
-              </h:ul>             
-            </title>
-            <aactivity>	
-              <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> describes the composition and construction of baselines or anomaly-based attributes specified in the SFR. The evaluator shall verify that the <abbr linkend="TSS"/> provides a description of how baselines are defined and implemented by the <abbr linkend="TSF"/>, or a description of how anomaly-based rules are defined and configured by the administrator. <h:br/><h:br/> 
-              </TSS>                    
-              <Guidance>
-                The evaluator shall verify that the operational guidance describes how to configure baseline and/or anomalous traffic patterns based on what is claimed in the <abbr linkend="TSS"/>.<h:br/><h:br/> 
-              </Guidance>
-              <Tests>
-                <testlist>
-                  <test>
-                    <h:ul>
-                      <h:li>The evaluator shall use the instructions in the operational guidance to configure baselines or anomaly-based rules</h:li>
-                      <h:li>The evaluator shall send traffic that does not match the baseline or matches the anomaly-based rule 
-                        and verify the <abbr linkend="TSF"/> detects the anomalous behavior and generates an alert.</h:li>              
-                    </h:ul></test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <f-element id="fau_ano_ext.1.2">
-            <title> 
-              The <abbr linkend="TSF"/> shall support the definition of anomaly activity through 
-              <selectables>
-                <selectable>manual configuration by administrators</selectable>
-                <selectable>automated configuration</selectable>
-              </selectables>. 
-            </title>
-            <note role="application">
-              The “baseline” and “anomaly” can be something manually defined/configured by a <abbr linkend="TOE"/> administrator (or importing definitions), or something that the <abbr linkend="TOE"/> is able to automatically define/create by inspecting network traffic over a period of time (a.k.a. “profiling”). 
-            </note>
-            <aactivity>	
-              <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> describes the available modes of configuration (manual or automatic) and how to configure or import the baseline.<h:br/><h:br/> 
-              </TSS>
-              <Guidance>
-                The evaluator shall verify that the operational guidance describes how to perform automatic and/or manual definition of anomaly activity based on what is selected in the <abbr linkend="ST"/>.<h:br/><h:br/> 
-              </Guidance>
-              <Tests>
-                This test may be performed in conjunction with <linkref linkend="FAU_ANO_EXT.1"/>. The evaluator shall follow the operational guidance and define anomaly activity through automated and/or manual means based on what is selected in the <abbr linkend="ST"/>. The evaluator shall verify in each case that the anomaly activity is defined correctly by determining that anomalous traffic is identified by the <abbr linkend="TSF"/>.
-              </Tests>
-            </aactivity>
-          </f-element>
-        </f-component>
-      
+        
         <ext-comp-def title="Signature-Based Intrusion Detection" fam-id="FAU_SIG_EXT">
           <fam-behavior></fam-behavior>
         </ext-comp-def>
         <f-component id="fau_sig_ext.1" name="Signature-Based Intrusion Detection">
-          <selection-depends req="fau_ids_ext.1.1" ids=""/> <!-- TODO_Lauren -->
+          <selection-depends req="fau_ids_ext.1.1" ids="sigBased"/> 
           <consistency-rationale></consistency-rationale>          
           <comp-lev></comp-lev>
           <management></management>
@@ -2013,7 +1961,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <fam-behavior></fam-behavior>
         </ext-comp-def>
         <f-component id="fau_stg_ext.1(pcap)" name="Protected Audit Event Storage (Packet Captures)">
-          <selection-depends req="fau_arp.1.1" ids=""/> <!-- TODO_Lauren -->
+          <selection-depends req="fau_arp.1.1" ids="pcap"/>
           <consistency-rationale></consistency-rationale>          
           <comp-lev></comp-lev>
           <management></management>
@@ -2023,44 +1971,13 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             <title>The <abbr linkend="TSF"/> shall be able to transmit the generated <h:b>packet captures</h:b> to an external IT entity using a 
               trusted channel according to FTP_ITC.1.
             </title>
-            <note role="application">FTP_ITC.1 is inherited from the NDcPP.</note>
-            <aactivity>	
-              <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> include the list of trusted channels (as specified in FTP_ITC.1) available in 
-                the <abbr linkend="TSF"/> to transmit packet captures to an external entity. The <abbr linkend="TSS"/> shall also include instructions on how to configure the trusted channel.<h:br/><h:br/> 
-              </TSS>
-              <Guidance>
-                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
-              </Guidance>
-              <Tests>
-                <testlist>
-                  <test>
-                    The evaluator shall configure packet captures according to the guidance specified
-                    in the <abbr linkend="TSS"/>. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the
-                    captured traffic being sent to the external device is being sent through a trusted channel.
-                  </test>   
-                </testlist>
-              </Tests>
-            </aactivity>
+            <note role="application">
+              This <abbr linkend="PP-Module"/> modifies <linkref linkend="FTP_ITC.1"/> from NDcPP.</note>
+          
           </f-element>
           <f-element id="fau_stg_ext.1.2/pcap">
             <title>The <abbr linkend="TSF"/> shall be able to store generated <h:b>packet captures</h:b> on the <abbr linkend="TOE"/> itself.
             </title>
-            <aactivity>
-              <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to store packet capture data within itself.<h:br/><h:br/> 
-              </TSS>
-              <Guidance>
-                The evaluator shall verify that the operational guidance provides information on how much storage space is available for 
-                packet capture data and where that data is stored.<h:br/><h:br/> 
-              </Guidance>
-              <Tests>
-                <testlist>
-                  <test>The evaluator shall configure packet captures to be stored on the <abbr linkend="TSF"/> according to the guidance specified
-                    in the <abbr linkend="TSS"/>. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the <abbr linkend="TSF"/>.</test>
-                </testlist>
-              </Tests> 
-            </aactivity>
           </f-element>
           <f-element id="fau_stg_ext.1.3/pcap">
             <title> The <abbr linkend="TSF"/> shall 
@@ -2076,17 +1993,17 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </title>
             <aactivity>
               <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> describes the behavior of the <abbr linkend="TOE"/> when local storage space for packet capture data is exhausted 
-                and whether this behavior is configurable.<h:br/><h:br/> 
-              </TSS>             
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes the list of trusted channels (as specified in FTP_ITC.1) available in 
+                the <abbr linkend="TSF"/> to transmit packet captures to an external entity. The evaluator shall verify that the <abbr linkend="TSS"/> describes the ability of the <abbr linkend="TOE"/> to store packet capture data within itself, how much storage space is available for packet capture data and where that data is stored. The evaluator shall verify that the <abbr linkend="TSS"/> describes the behavior of the <abbr linkend="TOE"/> when local storage space for packet capture data is exhausted and whether this behavior is configurable.<h:br/><h:br/> 
+              </TSS>
               <Guidance>
-                If the behavior of the <abbr linkend="TOE"/> when local storage space for packet capture data is exhausted is configurable, the evaluator shall verify 
-                that the operational guidance provides information on what the configurable behaviors are and how they can be set.<h:br/><h:br/> 
+                The evaluator shall verify that the operational guidance provides instructions on how to configure the trusted channel. If the behavior of the <abbr linkend="TOE"/> when local storage space for packet capture data is exhausted is configurable, the evaluator shall verify that the operational guidance provides information on what the configurable behaviors are and how they can be set.<h:br/><h:br/>      
               </Guidance>
               <Tests>
                 <testlist>
-                  <test>The evaluator shall define packet data retention and deletion rules on the <abbr linkend="TSF"/> as specified in the <abbr linkend="TSS"/> and test the functionality of the 
-                    specified rules.</test>
+                  <test>The evaluator shall configure packet captures according to the guidance specified. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the captured traffic being sent to the external device is being sent through a trusted channel.</test>   
+                  <test>The evaluator shall configure packet captures to be stored on the <abbr linkend="TSF"/> according to the guidance specified. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the <abbr linkend="TSF"/>.</test>
+                  <test>The evaluator shall define packet data retention and deletion rules on the <abbr linkend="TSF"/> according to the guidance specified and test the functionality of the specified rules.</test>        
                 </testlist>
               </Tests>
             </aactivity>
@@ -2097,6 +2014,153 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
     </sel-sfrs>
     <obj-sfrs>
       <subsection title="Security Audit (FAU)" id="fau">
+        
+        <f-component id="fau_gen.1" name="Device Configuration - Exporting Event Data"> <!-- NEW SFR -->
+          <!-- TODO: Not gen -->
+          <consistency-rationale></consistency-rationale>
+          <comp-lev></comp-lev>
+          <management></management>
+          <audit></audit>
+          <dependencies></dependencies>
+          <f-element id="PLACEHOLDER.1">
+            <title> 
+              The <abbr linkend="TSF"/> shall allow for the for the export of all captured event logs. 
+            </title>
+            <note role="application">It is expected that an Authorized Administrator will be responsible for providing event output from the <abbr linkend="TSF"/>
+              for the purposes of ingest into other analysis and reporting mechanisms. Having the ability to export event log data from the device is a necessary capability
+              to satisfy this requirement.
+            </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes a list of available containment methods on the <abbr linkend="TSF"/> and 
+                how to configure them.<h:br/><h:br/> 
+              </TSS>
+              <Guidance>
+                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
+              </Guidance>
+              <Tests> 
+                The evaluator shall perform the following test on the <abbr linkend="TSF"/>: 
+                <testlist>
+                  <test>
+                    <steplist>
+                      <step>Deploy a whitelisted <abbr linkend="AP"/> and connect it to the protected wired infrastructure via wire.</step>
+                      <step>Confirm that the <abbr linkend="TSF"/> can observe and capture traffic and events generated by the <abbr linkend="AP"/>.</step>
+                      <step>Verify that the <abbr linkend="TSF"/> can export its configuration and observable event data in any of the following formats:</step> 
+                      <h:ul>
+                        <h:li>comma separated values (CSV)</h:li>
+                        <h:li>common log format (CLF)</h:li>
+                        <h:li>JavaScript Object Notation (JSON)</h:li>
+                        <h:li>syslog</h:li>
+                      </h:ul>   
+                    </steplist>
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 
+      How does this differ from FAU_GEN.1???
+      From Diana - FAU_GEN.1.1/WIDS is for regular audit functions. FAU_GEN.2 is meant it to be the actual alerts that get generated by the wids. She originally had them together and TC stated that alerts are not audit so she moved them all and call them Alerts Data Generation instead of Audit. 
+      -->
+        <f-component id="fau_gen.2(wids)" name="Alerts Data Generation (WIDS)">
+          <consistency-rationale></consistency-rationale>        
+          <f-element id="fau_gen.2.1/wids">
+            <title> The <abbr linkend="TSF"/> shall be able to generate a <abbr linkend="WIDS"/> audit record of the following auditable events:
+              <h:ol type="a">
+                <h:li>Start-up and shutdown of the <abbr linkend="WIDS"/> functions;</h:li>
+                <h:li>All <abbr linkend="WIDS"/> auditable events for the [not specified] level of audit;</h:li>
+                <h:li><h:i>[Auditable events listed in <ctr-ref refid="audit"/>;</h:i></h:li>
+                <h:li><h:i>Totals of similar events occurring within a specified time period]</h:i></h:li>
+              </h:ol>
+              <h:table>
+                <h:tr><h:td><h:b>Requirement</h:b></h:td><h:td><h:b>Auditable Events</h:b></h:td><h:td><h:b>Additional Audit Record Contents</h:b></h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_ANO_EXT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_ARP.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_ARP_EXT.2"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_GEN.1/WIDS"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_IDS_EXT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.1"/></h:td><h:td>whitelisted devices information</h:td><h:td>Type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.2"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.3"/></h:td><h:td>Unexpected behavior by whitelisted device alert</h:td><h:td>Description of behavior detected (i.e., bridge, ICS connection), MAC address of whitelisted device, MAC address of the device that the whitelisted device made a connection with, connection start and end.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.4"/></h:td><h:td>Information on location of device</h:td><h:td>Device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.4/CELL"/></h:td><h:td>Information on location of device</h:td><h:td>device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_INV_EXT.5"/></h:td><h:td>Alert generated by detection of rogue device.</h:td><h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_MAC_EXT.1.1"/></h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
+                  <h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_MAC_EXT.1.2"/></h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
+                  <h:td>Description of alert, location as labeled by administrator, time elapsed between connection in different locations, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_SAA.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_SIG_EXT.1"/></h:td><h:td>Alert generated by violaton of user defined signature.</h:td><h:td>Name of alert being triggered(as provided when creating the signature), description of alert (as provided when creating the signature), MAC address of devices involved.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_STG_EXT.1/PCAP"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.1.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.2"/></h:td><h:td>Details about what SSIDs are set as authorized.</h:td><h:td>SSIDs set by administrator as authorized.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.2.4"/></h:td><h:td>Unauthorized activity</h:td><h:td>description of violation (i.e. whitelisted <abbr linkend="EUD"/> connected to unauthorized SSID), identity information of the devices involved.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.3"/></h:td><h:td>Alert generated for DoS.</h:td><h:td>MAC Address, device type, and classification <abbr linkend="AP"/> or <abbr linkend="EUD"/> attacked, DoS details (RF or injection based), for injection-based, indicate type (i.e., deauth flood). </h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.4"/></h:td><h:td>Information about devices and unauthorized authentication methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, authentication method used.</h:td></h:tr>            
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.5"/></h:td><h:td>Information about devices and unauthorized encryption methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, encryption method used.</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.5.3"/></h:td><h:td>Information about devices involved.</h:td><h:td>MAC Address, device type, and classification of devices involved (sending and receiving devices).</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.6"/></h:td><h:td>Information about detected devices.</h:td><h:td>Frequency band, channel used within frequency band, identification information (MAC address if applicable or other similar unique ID), device technology (i.e.,cellular), sensor(s) that detected devices.</h:td></h:tr>   
+                <h:tr><h:td><linkref linkend="FAU_WID_EXT.7"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FAU_WIP_EXT.1"/></h:td><h:td>Information about action taken.</h:td><h:td>description of violation,the type of containment used, was containment triggered manually or automatically, sensor performing the containment (if wireless), details about the device (s) being contained (classification, device type, MAC address).</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FDP_IFC.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FMT_SMF.1/WIDS"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FPT_FLS.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
+                <h:tr><h:td><linkref linkend="FPT_ITT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td><linkref linkend="FTP_ITC.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+              </h:table>
+              <ctr id="audit" ctr-type="Table">: <abbr linkend="WIDS"/> Alerts</ctr> 
+            </title>         
+            <note role="application">The alerts table contains the contents of the alert produced by the <abbr linkend="WIDS"/>. The Alert table includes optional and objective requirements. The auditing of optional and objective requirements is only required if the vendor chooses to have the requirement evaluated by NIAP. <h:br/>         
+              With regards to ‘similar’ type events, 'similar’ events are multiple occurrences of the same auditable event within some time period where the only significant difference between these events is the timestamp. For example, it is not expected that the <abbr linkend="TOE"/> generate an individual audit message for every event of the same kind that occurs within a reasonable time period. An alert must, at a minum, include the details as outlined on the table, but may contain additional details.
+            </note>
+            <aactivity>
+              <TSS>
+                There are no <abbr linkend="TSS"/> assurance activities for this SFR.<h:br/><h:br/> 
+              </TSS>
+              <Guidance>
+                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
+              </Guidance>
+              <Tests> 
+                The evaluator shall perform the following test:<h:br/>
+                The evaluator shall test the <abbr linkend="TOE"/>’s ability to correctly generate audit records by having the <abbr linkend="TOE"/> generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/><h:br/>                
+                Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
+              </Tests>
+            </aactivity> 
+          </f-element>
+          <!-- TODO: need to change the wording of this to be more about the alerts. Need to rename this SFR -->
+          <f-element id="fau_gen.2.2/wids">
+            <title> The <abbr linkend="TSF"/> shall record within each <abbr linkend="WIDS"/> auditable event as <selectables>
+              <selectable>comma separated values (CSV)</selectable>
+              <selectable>common log format (CLF)</selectable>
+              <selectable>JavaScript Object Notation (JSON)</selectable>
+              <selectable>syslog</selectable>
+            </selectables>
+              at least the following information:
+              <h:ol type="a">
+                <h:li>Date and time of the event, type of event, and subject identity (if applicable);</h:li>
+                <h:li>For each audit event type, based on the auditable event definitions of the functional components included in the PP/ST, 
+                  [<h:i>auditable events listed in Table 4</h:i>].
+                </h:li>
+              </h:ol>              
+            </title>
+            <aactivity>
+              <TSS>
+                There are no <abbr linkend="TSS"/> assurance activities for this SFR.<h:br/><h:br/> 
+              </TSS>
+              <Guidance>
+                The evaluator shall verify that the operational guidance describes how to configure the <abbr linkend="TOE"/> to result in applicable <abbr linkend="WIDS"/> data logging. The evaluator shall verify that the operational guidance provides instructions for any configuration that may be done in regard to logging similar events (e.g., setting thresholds, defining time windows, etc.).<h:br/><h:br/> 
+              </Guidance>
+              <Tests> 
+                The evaluator shall perform the following test:<h:br/>
+                The evaluator shall test that the alerts yield the expected <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> audit data in the format selected in the <abbr linkend="ST"/> for each <abbr linkend="WIDS"/> auditable event in table 4. Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component> 
+        
+        
         <ext-comp-def title="Precise Location of Environmental Objects" fam-id="FAU_INV_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
@@ -2358,6 +2422,14 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
       
 
         
+       
+       
+        
+            
+      </subsection>     
+      
+      <subsection title="Security Management (FMT)" id="fmt">
+        
         <f-component id="fmt_mof.1" name="Device Configuration - Monitoring Time and Frequency"> <!-- NEW SFRs --><!-- Need to move, but testing was added -->
           <consistency-rationale></consistency-rationale>
           <comp-lev></comp-lev>
@@ -2366,7 +2438,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <dependencies></dependencies>
           <f-element id="PLACEHOLDER.1">
             <title> 
-            The <abbr linkend="TSF"/> shall allow for the configuration of the time it monitors a specific frequency. 
+              The <abbr linkend="TSF"/> shall allow for the configuration of the time it monitors a specific frequency. 
             </title>
             <note role="application">It is expected that an Authorized Administrator will be responsible for configuring the 
               <abbr linkend="AP"/> to operate on a specific frequency persuaent to the 802.11 standard. The  <abbr linkend="TSF"/> will have the ability to adjust the amount of time
@@ -2396,153 +2468,10 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </aactivity>
           </f-element>
         </f-component>
-       
         
-         <f-component id="fau_gen.1" name="Device Configuration - Exporting Event Data"> <!-- NEW SFR -->
-           <!-- TODO: Not gen -->
-          <consistency-rationale></consistency-rationale>
-          <comp-lev></comp-lev>
-          <management></management>
-          <audit></audit>
-          <dependencies></dependencies>
-          <f-element id="PLACEHOLDER.1">
-            <title> 
-            The <abbr linkend="TSF"/> shall allow for the for the export of all captured event logs. 
-            </title>
-            <note role="application">It is expected that an Authorized Administrator will be responsible for providing event output from the <abbr linkend="TSF"/>
-            for the purposes of ingest into other analysis and reporting mechanisms. Having the ability to export event log data from the device is a necessary capability
-            to satisfy this requirement.
-            </note>
-            <aactivity>
-              <TSS>
-                The evaluator shall verify that the <abbr linkend="TSS"/> includes a list of available containment methods on the <abbr linkend="TSF"/> and 
-                how to configure them.<h:br/><h:br/> 
-              </TSS>
-              <Guidance>
-                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
-              </Guidance>
-              <Tests> 
-                 The evaluator shall perform the following test on the <abbr linkend="TSF"/>: 
-                <testlist>
-                  <test>
-                    <steplist>
-                      <step>Deploy a whitelisted <abbr linkend="AP"/> and connect it to the protected wired infrastructure via wire.</step>
-                      <step>Confirm that the <abbr linkend="TSF"/> can observe and capture traffic and events generated by the <abbr linkend="AP"/>.</step>
-                      <step>Verify that the <abbr linkend="TSF"/> can export its configuration and observable event data in any of the following formats:</step> 
-                        <h:ul>
-                          <h:li>comma separated values (CSV)</h:li>
-                          <h:li>common log format (CLF)</h:li>
-                          <h:li>JavaScript Object Notation (JSON)</h:li>
-                          <h:li>syslog</h:li>
-                        </h:ul>   
-                    </steplist>
-                  </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-        </f-component>
-
-      <!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1 
-      How does this differ from FAU_GEN.1???
-      From Diana - FAU_GEN.1.1/WIDS is for regular audit functions. FAU_GEN.2 is meant it to be the actual alerts that get generated by the wids. She originally had them together and TC stated that alerts are not audit so she moved them all and call them Alerts Data Generation instead of Audit. 
-      -->
-        <f-component id="fau_gen.2(wids)" name="Alerts Data Generation (WIDS)">
-          <consistency-rationale></consistency-rationale>        
-          <f-element id="fau_gen.2.1/wids">
-            <title> The <abbr linkend="TSF"/> shall be able to generate a <abbr linkend="WIDS"/> audit record of the following auditable events:
-              <h:ol type="a">
-                <h:li>Start-up and shutdown of the <abbr linkend="WIDS"/> functions;</h:li>
-                <h:li>All <abbr linkend="WIDS"/> auditable events for the [not specified] level of audit;</h:li>
-                <h:li><h:i>[Auditable events listed in <ctr-ref refid="audit"/>;</h:i></h:li>
-                <h:li><h:i>Totals of similar events occurring within a specified time period]</h:i></h:li>
-              </h:ol>
-              <h:table>
-                <h:tr><h:td><h:b>Requirement</h:b></h:td><h:td><h:b>Auditable Events</h:b></h:td><h:td><h:b>Additional Audit Record Contents</h:b></h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_ANO_EXT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_ARP.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_ARP_EXT.2"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_GEN.1/WIDS"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_IDS_EXT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_INV_EXT.1"/></h:td><h:td>whitelisted devices information</h:td><h:td>Type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address.</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_INV_EXT.2"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_INV_EXT.3"/></h:td><h:td>Unexpected behavior by whitelisted device alert</h:td><h:td>Description of behavior detected (i.e., bridge, ICS connection), MAC address of whitelisted device, MAC address of the device that the whitelisted device made a connection with, connection start and end.</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_INV_EXT.4"/></h:td><h:td>Information on location of device</h:td><h:td>Device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_INV_EXT.4/CELL"/></h:td><h:td>Information on location of device</h:td><h:td>device MAC address, device type, classification of device, sensors that detected device, signal strength as received by detecting sensor(s), proximity to detecting sensor(s) (in meters). </h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_INV_EXT.5"/></h:td><h:td>Alert generated by detection of rogue device.</h:td><h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_MAC_EXT.1.1"/></h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
-                  <h:td>Description of alert, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_MAC_EXT.1.2"/></h:td><h:td>Alert generated by detection of mac spoofing.</h:td>
-                  <h:td>Description of alert, location as labeled by administrator, time elapsed between connection in different locations, type of device (<abbr linkend="AP"/> or <abbr linkend="EUD"/>), MAC Address, associations made between authorized devices (which <abbr linkend="AP"/>s are <abbr linkend="EUD"/>s connected to), channel detected on, RF Band detected on, encryption type used by rogue, IEEE 802.11 standard used (a, b, g, n, ac), SSID (if <abbr linkend="AP"/>).</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_SAA.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_SIG_EXT.1"/></h:td><h:td>Alert generated by violaton of user defined signature.</h:td><h:td>Name of alert being triggered(as provided when creating the signature), description of alert (as provided when creating the signature), MAC address of devices involved.</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_STG_EXT.1/PCAP"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.1.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.2"/></h:td><h:td>Details about what SSIDs are set as authorized.</h:td><h:td>SSIDs set by administrator as authorized.</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.2.4"/></h:td><h:td>Unauthorized activity</h:td><h:td>description of violation (i.e. whitelisted <abbr linkend="EUD"/> connected to unauthorized SSID), identity information of the devices involved.</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.3"/></h:td><h:td>Alert generated for DoS.</h:td><h:td>MAC Address, device type, and classification <abbr linkend="AP"/> or <abbr linkend="EUD"/> attacked, DoS details (RF or injection based), for injection-based, indicate type (i.e., deauth flood). </h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.4"/></h:td><h:td>Information about devices and unauthorized authentication methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, authentication method used.</h:td></h:tr>            
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.5"/></h:td><h:td>Information about devices and unauthorized encryption methods.</h:td><h:td>MAC Address, device type, and classification of devices involved, encryption method used.</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.5.3"/></h:td><h:td>Information about devices involved.</h:td><h:td>MAC Address, device type, and classification of devices involved (sending and receiving devices).</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.6"/></h:td><h:td>Information about detected devices.</h:td><h:td>Frequency band, channel used within frequency band, identification information (MAC address if applicable or other similar unique ID), device technology (i.e.,cellular), sensor(s) that detected devices.</h:td></h:tr>   
-                <h:tr><h:td><linkref linkend="FAU_WID_EXT.7"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FAU_WIP_EXT.1"/></h:td><h:td>Information about action taken.</h:td><h:td>description of violation,the type of containment used, was containment triggered manually or automatically, sensor performing the containment (if wireless), details about the device (s) being contained (classification, device type, MAC address).</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FDP_IFC.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FMT_SMF.1/WIDS"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FPT_FLS.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
-                <h:tr><h:td><linkref linkend="FPT_ITT.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td><linkref linkend="FTP_ITC.1"/></h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-              </h:table>
-              <ctr id="audit" ctr-type="Table">: <abbr linkend="WIDS"/> Alerts</ctr> 
-            </title>         
-            <note role="application">The alerts table contains the contents of the alert produced by the <abbr linkend="WIDS"/>. The Alert table includes optional and objective requirements. The auditing of optional and objective requirements is only required if the vendor chooses to have the requirement evaluated by NIAP. <h:br/>         
-              With regards to ‘similar’ type events, 'similar’ events are multiple occurrences of the same auditable event within some time period where the only significant difference between these events is the timestamp. For example, it is not expected that the <abbr linkend="TOE"/> generate an individual audit message for every event of the same kind that occurs within a reasonable time period. An alert must, at a minum, include the details as outlined on the table, but may contain additional details.
-            </note>
-            <aactivity>
-              <TSS>
-                There are no <abbr linkend="TSS"/> assurance activities for this SFR.<h:br/><h:br/> 
-              </TSS>
-              <Guidance>
-                There are no operational guidance activities for this SFR.<h:br/><h:br/> 
-              </Guidance>
-              <Tests> 
-                The evaluator shall perform the following test:<h:br/>
-                The evaluator shall test the <abbr linkend="TOE"/>’s ability to correctly generate audit records by having the <abbr linkend="TOE"/> generate audit records in accordance with the assurance activities associated with the functional requirements in this <abbr linkend="PP-Module"/>. When verifying the test results, the evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries. <h:br/><h:br/>                
-                Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
-              </Tests>
-            </aactivity> 
-          </f-element>
-          <!-- TODO: need to change the wording of this to be more about the alerts. Need to rename this SFR -->
-          <f-element id="fau_gen.2.2/wids">
-            <title> The <abbr linkend="TSF"/> shall record within each <abbr linkend="WIDS"/> auditable event as <selectables>
-                <selectable>comma separated values (CSV)</selectable>
-                <selectable>common log format (CLF)</selectable>
-                <selectable>JavaScript Object Notation (JSON)</selectable>
-                <selectable>syslog</selectable>
-              </selectables>
-              at least the following information:
-              <h:ol type="a">
-                <h:li>Date and time of the event, type of event, and subject identity (if applicable);</h:li>
-                <h:li>For each audit event type, based on the auditable event definitions of the functional components included in the PP/ST, 
-                  [<h:i>auditable events listed in Table 4</h:i>].
-                </h:li>
-              </h:ol>              
-            </title>
-            <aactivity>
-              <TSS>
-                There are no <abbr linkend="TSS"/> assurance activities for this SFR.<h:br/><h:br/> 
-              </TSS>
-              <Guidance>
-                The evaluator shall verify that the operational guidance describes how to configure the <abbr linkend="TOE"/> to result in applicable <abbr linkend="WIDS"/> data logging. The evaluator shall verify that the operational guidance provides instructions for any configuration that may be done in regard to logging similar events (e.g., setting thresholds, defining time windows, etc.).<h:br/><h:br/> 
-              </Guidance>
-              <Tests> 
-                The evaluator shall perform the following test:<h:br/>
-                The evaluator shall test that the alerts yield the expected <abbr linkend="WIDS"/>/<abbr linkend="WIPS"/> audit data in the format selected in the <abbr linkend="ST"/> for each <abbr linkend="WIDS"/> auditable event in table 4. Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
-              </Tests>
-            </aactivity>
-          </f-element>
-        </f-component>     
-      </subsection>     
+        
+      </subsection>
+      
       <subsection title="Protection of the TSF (FPT)" id="fpt" >
         <f-component id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection">
           <consistency-rationale></consistency-rationale>
