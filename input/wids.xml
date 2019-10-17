@@ -450,8 +450,8 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
     </section>
   </chapter>
  <chapter title="Security Requirements" id="sfrs">
-    <base-pp version="2.1" name="Network Device" product="Network Device" short="ND" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440" xmlurl="test">
-      <!-- Kevin: What to do if base is not in github?? -->
+   <!-- Kevin: What to do if base is not in github?? --> 
+   <base-pp version="2.1" name="Network Device" product="Network Device" short="ND" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440" xmlurl="test">
       <modified-sfrs>
         <subsection title="Protection of the TSF (FPT)" id="fpt" >
           <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
@@ -766,7 +766,9 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               of <h:i>[authorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s]</h:i> based on <h:i>[EUD MAC addresses, <abbr linkend="AP"/> MAC addresses]</h:i>.
             </title>
 
-            <note role="application">This inventory is used as a whitelist to indicate to the <abbr linkend="WIDS"/> which <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s are legitimate members of the wireless network. The terminology used to describe an inventoried or whitelisted device may vary by vendor product. This <abbr linkend="PP-Module"/> utilizes whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are part of the inventory and non-whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are not part of the inventory.</note>
+            <note role="application">
+              This inventory is used as a whitelist to indicate to the <abbr linkend="WIDS"/> which <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s are legitimate members of the wireless network. The terminology used to describe an inventoried or whitelisted device may vary by vendor product. This <abbr linkend="PP-Module"/> utilizes whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are part of the inventory and non-whitelisted to describe <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s that are not part of the inventory.
+            </note>
 
             <aactivity>	
               <TSS>
@@ -864,11 +866,9 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             <title> The <abbr linkend="TSF"/> shall detect information on the current physical location of <h:i>[inventoried and malicious <abbr linkend="EUD"/>s, <abbr linkend="AP"/>s]</h:i> within 
               <h:i>[range of the <abbr linkend="TOE"/>’s wireless sensors]</h:i>.
             </title>
-
-            <note role="application">This SFR only checks for the ability of the <abbr linkend="WIDS"/> to track the location of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s either by placing them on a map or
-              providing the distance of the <abbr linkend="AP"/> or <abbr linkend="EUD"/> from the sensor but does not mandate a certain degree of accuracy. 
-
-              Objective requirement <linkref linkend="FAU_INV_EXT.4"/> is more stringent on the accuracy of the location tracking capabilities.</note>
+            <note role="application">
+              This SFR only checks for the ability of the <abbr linkend="WIDS"/> to track the location of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s either by placing them on a map or providing the distance of the <abbr linkend="AP"/> or <abbr linkend="EUD"/> from the sensor but does not mandate a certain degree of accuracy. Objective requirement <linkref linkend="FAU_INV_EXT.4"/> is more stringent on the accuracy of the location tracking capabilities.
+            </note>
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the <abbr linkend="TSS"/> includes information on location tracking, optimal number of sensors and sensor placement to meet the required level of accuracy.<h:br/><h:br/>  
@@ -1078,8 +1078,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                 <h:tr>
                   <h:td><linkref linkend="FAU_WID_EXT.2"/></h:td>
                   <h:td>Detection of MAC spoofing.</h:td>
-                </h:tr>   
-    	
+                </h:tr>     	
                 <h:tr>
                   <h:td><linkref linkend="FAU_WID_EXT.3"/></h:td>
                   <h:td>Detection of RF-based denial of service.</h:td>
@@ -1927,20 +1926,20 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
         </f-component>
         
 <!-- Kevin: Need to allow component id to have / in it -->
-        <!-- Justin: Is there really a need to allow a different range of accuracy for locating a device using cellular versus Wi-Fi? FAU_INV_EXT.4 states a 15 feet range to locate APs and EUDs -->        
+<!-- Justin: Is there really a need to allow a different range of accuracy for locating a device using cellular versus Wi-Fi? FAU_INV_EXT.4 states a 15 feet range to locate APs and EUDs -->        
         <ext-comp-def title="Location of Environmental Objects (Cellular Devices)" fam-id="FAU_INV_EXT">
           <mod-def></mod-def>
         </ext-comp-def>
         <f-component id="fau_inv_ext.4(cell)" name="Location of Environmental Objects (Cellular Devices)">        
-        <selection-depends req="fau_wid_ext.6.1" ids="cell"/> <!-- TODO_Lauren -->
+        <selection-depends req="fau_wid_ext.6.1" ids="cell"/>
         <consistency-rationale></consistency-rationale>
         <comp-lev></comp-lev>
         <management></management>
         <audit></audit>
         <dependencies></dependencies>
-
         <f-element id="fau_inv_ext.4.1/cell">
-          <title> The <abbr linkend="TSF"/> shall detect the physical location of cellular devices to within 
+          <title> 
+            The <abbr linkend="TSF"/> shall detect the physical location of cellular devices to within 
             <assignable>distance degree of accuracy</assignable> of their actual location.
           </title>
           <aactivity>	
@@ -2021,8 +2020,8 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               trusted channel according to FTP_ITC.1.
             </title>
             <note role="application">
-              This <abbr linkend="PP-Module"/> modifies <linkref linkend="FTP_ITC.1"/> from NDcPP.</note>
-          
+              This <abbr linkend="PP-Module"/> modifies <linkref linkend="FTP_ITC.1"/> from NDcPP.
+            </note>        
           </f-element>
           <f-element id="fau_stg_ext.1.2/pcap">
             <title>The <abbr linkend="TSF"/> shall be able to store generated <h:b>packet captures</h:b> on the <abbr linkend="TOE"/> itself.
@@ -2058,7 +2057,6 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </aactivity>
           </f-element>
         </f-component>
-
       </subsection>
     </sel-sfrs>
     <obj-sfrs>
