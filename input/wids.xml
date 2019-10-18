@@ -693,12 +693,31 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               another method). If one of the detection methods in a hybrid solution includes either anomaly-based or signature-based detection methods, the
               corresponding selection based requirements must also be met.        
               <!-- Justin: Why do we need hybrid? Can't they just select all that applies or is hybrid something special? -->
+              <!-- Lauren: No, we can remove hybrid. Either selection will satisfy the SFR from a technical standpoint. I removed the reverence to the hybrid solution in the aaactivity TSS. -->
              </note>
           </f-element>
 <!-- NEW SFR -->
             <!-- Justin: Did you add testing?? 
-          Show capability exists - can we tie into another SFR EA?
-          -->
+                   Show capability exists - can we tie into another SFR EA?
+              
+              <!-- ** Lauren: Regarding testing, would just like to show capability exists here.
+              <aactivity>	
+              <TSS>
+                The evaluator shall verify that the <abbr linkend="TSS"/> includes guidance on which intrusion detection technique(s) the <abbr linkend="TOE"/> utilizes. 
+                If a hybrid intrusion detection is selected as the intrusion detection method, the <abbr linkend="TSS"/> should provide details on the detection techniques utilized. 
+                If a proprietary vendor detection method is selected, technical details on the method must be provided.<h:br/><h:br/>
+              </TSS>    
+              <Guidance>
+                The evaluator shall verify that the operational guidance provides instructions on how to configure the <abbr linkend="TOE"/> in order for it to detect 
+                such intrusions.<h:br/><h:br/>  
+              </Guidance>            
+              <Tests> 
+                Depending on the detection technique used by the <abbr linkend="TOE"/>, the evaluator shall note the existence of the capability, detection technique used, and 
+                test for the appropriate selection-based requirements.
+              </Tests>             
+            </aactivity>
+            -->
+
              <f-element> 
                
             <title> The TSF shall provide <selectables linebreak="yes">
@@ -732,7 +751,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </title>
             <note role="application">
               The system shall provide the ability to interact with an extensible interface to a custom proprietary or third party  wireless monitoring system
-            for the purposes of importing data from the wireless system. At least one detection method must be selected. 
+              for the purposes of importing data from the wireless system. At least one detection method must be selected. 
 
             </note>  
 
@@ -744,9 +763,9 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                 The evaluator shall verify that the operational guidance provides instructions on how to configure the <abbr linkend="TOE"/> in order for it to detect 
                 such intrusions.<h:br/><h:br/>  
               </Guidance>            
-              <Tests> 
-                Depending on the detection technique used by the <abbr linkend="TOE"/> the evaluator shall note detection technique used and test 
-                for the appropriate selection-based requirements.
+              <Tests> <!-- Updated test language to reflect the confirmation that the capability exists natively within the TOE -->
+                Depending on the detection technique used by the <abbr linkend="TOE"/>, the evaluator shall confirm and note the existence of the capability, and 
+                test for the appropriate selection-based requirements.
               </Tests>             
             </aactivity>
           </f-element>
@@ -1844,7 +1863,8 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           </aactivity>
         </f-element>
         <!-- Justin: Did we add this SFR? -->
-          <!-- should this be two different components so that they can be added individually? How do these two elements fit together?  -->
+          <!-- Should this be two different components so that they can be added individually? How do these two elements fit together?  -->
+          <!-- Lauren: We didn't add this SFR, but I do see this as two seperate components. A special sensor dedicated to spectrum analysis significatntle differs from RF detection/presense.-->
           <f-element>
           <title> 
             The <abbr linkend="TSF"/> shall provide a dedicated sensor for wireless spectrum analysis.
