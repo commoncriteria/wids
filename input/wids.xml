@@ -141,7 +141,7 @@
          </entry>
          <entry>
            <term><abbr title="Security Functional Requirement">SFR</abbr></term>
-           <description>A requirement for security enforcement by the TOE".</description>
+           <description>A requirement for security enforcement by the TOE.</description>
          </entry>
          <entry>
            <term><abbr title="Security Target">ST</abbr></term>
