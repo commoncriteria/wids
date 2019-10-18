@@ -456,7 +456,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
         <subsection title="Protection of the TSF (FPT)" id="fpt" >
           <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
             <consistency-rationale></consistency-rationale>
-            <f-element id="fpt_itt.1.1">
+            <f-element>
               <title>The <abbr linkend="TSF"/> shall protect TSF data from <h:u>disclosure and <h:b>detect its</h:b> modification</h:u> when it is transmitted between separate parts of the <abbr linkend="TOE"/> <h:b>through the use of <selectables>
                   <selectable>IPsec</selectable>
                   <selectable>SSH</selectable>
@@ -484,7 +484,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
         <subsection title="Trusted Paths/Channels (FTP)" id="ftp" >
           <f-component id="ftp_itc.1" name="Inter-TSF trusted channel">
             <consistency-rationale></consistency-rationale>
-            <f-element id="ftp_itc.1.1">
+            <f-element>
               <title>  Refinement:
                 The <abbr linkend="TSF"/> shall <h:b>be capable of using <selectables>
                   <selectable>IPsec</selectable>
@@ -500,10 +500,10 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </title>
               
             </f-element>
-            <f-element id="ftp_itc.1.2">
+            <f-element>
               <title>The <abbr linkend="TSF"/> shall permit <h:b><h:u>the <abbr linkend="TSF"/> or the authorized IT entities</h:u></h:b> to initiate communication via the trusted channel.</title>
             </f-element>
-            <f-element id="ftp_itc.1.3">
+            <f-element>
               <title>The <abbr linkend="TSF"/> shall initiate communication via the trusted channel for [assignment: list of services for which the <abbr linkend="TSF"/> is able to initiate communications].</title>
               <note role="Application">
                 <!-- NIAP: Should I copy the entire App note from ND? -->
@@ -536,7 +536,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
       <subsection title="Security Audit (FAU)" id="fau">
         <f-component id="fau_arp.1" name="Security Alarms">       
           <consistency-rationale></consistency-rationale>
-          <f-element id="fau_arp.1.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall take <h:i>[the following actions: display alert to Authorized Administrator in sufficient detail to show identity of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s involved, description of alert and severity level, </h:i><selectables>
                 <selectable id="pcap">capture raw frame traffic that triggers the violation</selectable>
                 <selectable>no other actions</selectable>
@@ -575,7 +575,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_arp_ext.2.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall provide the ability to apply <assignable>methods of selection</assignable> to selectively exclude alerts from being generated. </title>
             <aactivity>	
               <TSS>
@@ -605,7 +605,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
            
         <f-component id="fau_gen.1(wids)" name="Audit Data Generation">
           <consistency-rationale></consistency-rationale>
-          <f-element id="fau_gen.1.1/wids">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall be able to generate an audit record of the following auditable events:
               <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
@@ -674,7 +674,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_ids_ext.1.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall provide the following methods of intrusion detection: 
               <selectables>
                 <selectable id="anoBased">anomaly-based</selectable>
@@ -699,7 +699,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             <!-- Justin: Did you add testing?? 
           Show capability exists - can we tie into another SFR EA?
           -->
-             <f-element id="fau_ids_ext.1.2"> 
+             <f-element> 
                
             <title> The TSF shall provide <selectables linebreak="yes">
               <selectable>Syslog using <selectables>
@@ -722,7 +722,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             <!-- Justin: Did we add testing?? -->  
           <!-- Import/export data post processing from WIDS controller
           Import/export configuration - management of sensor -->
-             <f-element id="fau_ids_ext.1.3">
+             <f-element>
             <title> The TSF shall provide the ability to import data from the system: 
               <selectables>
                 <selectable>custom API</selectable>
@@ -761,7 +761,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_inv_ext.1.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall provide Authorized Administrators with the ability to define an inventory 
               of <h:i>[authorized <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s]</h:i> based on <h:i>[EUD MAC addresses, <abbr linkend="AP"/> MAC addresses]</h:i>.
             </title>
@@ -803,7 +803,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>
           </f-element>
-          <f-element id="fau_inv_ext.1.2">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect the presence and current information of<h:i>[EUDs, <abbr linkend="AP"/>s]</h:i> in the Operational Environment that are part of the defined inventory.
             </title>
             <note role="Application">
@@ -827,7 +827,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>
           </f-element>         
-          <f-element id="fau_inv_ext.1.3">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect the presence and current information of <h:i>[EUDs, <abbr linkend="AP"/>s]</h:i> in the Operational Environment that are 
               not part of the defined inventory.
             </title>
@@ -862,7 +862,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_inv_ext.2.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect information on the current physical location of <h:i>[inventoried and malicious <abbr linkend="EUD"/>s, <abbr linkend="AP"/>s]</h:i> within 
               <h:i>[range of the <abbr linkend="TOE"/>’s wireless sensors]</h:i>.
             </title>
@@ -890,7 +890,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>
           </f-element>
-          <f-element id="fau_inv_ext.2.2">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect <h:i>[received signal strength,</h:i> <selectables>
               <selectable>RF power levels above a predetermined threshold</selectable>
               <selectable>no other characteristics</selectable>
@@ -918,7 +918,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>   
             </aactivity>
           </f-element>
-          <f-element id="fau_inv_ext.2.3">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect the <h:i>current RF band, current channel, MAC Address, classification of <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s, </h:i> <assignable>other details</assignable> of 
               <h:i>[all <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s]</h:i> within <h:i>range of the <abbr linkend="TOE"/>’s wireless sensors</h:i>. For <h:i>[<abbr linkend="AP"/>s]</h:i> the <abbr linkend="TOE"/> shall detect the following additional details:
               <h:i>encryption, number of connected <abbr linkend="EUD"/>s</h:i>. For <h:i>[<abbr linkend="EUD"/>s]</h:i> the <abbr linkend="TOE"/> shall detect the following additional details:
@@ -961,7 +961,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_inv_ext.3.1">
+          <f-element>
             <title>
               The <abbr linkend="TSF"/> shall detect when <h:i>[inventoried <abbr linkend="EUD"/>s]</h:i> exhibit the following behavior: An <abbr linkend="EUD"/> establishes a peer-to-peer connection with any other <abbr linkend="EUD"/>.
                   <selectables>
@@ -1021,7 +1021,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
 
         <f-component  id="fau_saa.1" name="Potential Violation Analysis">
         <consistency-rationale></consistency-rationale>
-          <f-element id="fau_saa.1.1">
+          <f-element>
             <title>The <abbr linkend="TSF"/> shall be able to apply a set of rules for monitoring the <h:b>wireless traffic</h:b> and based 
               upon these rules indicate a potential <h:b>malicious action</h:b>.
             </title>
@@ -1038,7 +1038,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>             
             </aactivity>
           </f-element>
-          <f-element id="fau_saa.1.2">
+          <f-element>
             <title>The <abbr linkend="TSF"/> shall enforce the following rules for monitoring wireless traffic:
               <h:ol type="a">
                 <h:li>Accumulation or combination of [assignment: subset of defined auditable events] known to indicate a 
@@ -1134,7 +1134,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_wid_ext.1.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall apply <assignable>user-defined, automatic</assignable> classification rules to detect the following 
               types of malicious environmental objects: <h:i>[rogue <abbr linkend="AP"/>s]</h:i>.
             </title>
@@ -1158,7 +1158,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>
           </f-element>
-          <f-element id="fau_wid_ext.1.2">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall distinguish between benign and malicious <h:i>[<abbr linkend="AP"/>s, <abbr linkend="EUD"/>s]</h:i> based on 
               <h:i>[automatic detection metrics]</h:i>.
             </title>
@@ -1197,7 +1197,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_wid_ext.2.1">
+          <f-element>
             <title>
               The <abbr linkend="TSF"/> shall monitor and analyze 
               <selectables>
@@ -1255,7 +1255,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>                       
             </aactivity>
           </f-element>
-          <f-element id="fau_wid_ext.2.2">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall provide wireless sensors to detect network traffic matching the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> that 
               <selectables>
@@ -1312,7 +1312,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>
           </f-element>
-          <f-element id="fau_wid_ext.2.3">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall provide the ability to define a subset of <h:i>[SSID(s)]</h:i> as authorized.
             </title>
@@ -1329,7 +1329,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
                 The evaluator shall configure the <abbr linkend="TSF"/> with a set of authorized channels and SSIDs. The ability to detect violation of this policy will be tested in <linkref linkend="FAU_WID_EXT.2.4"/>.</Tests>             
             </aactivity>
           </f-element>
-          <f-element id="fau_wid_ext.2.4">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall detect the presence of unauthorized traffic on the network through the following methods: [
               <h:ul>
@@ -1435,7 +1435,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           </f-element>
 
 <!-- NEW SFRs -->
-            <f-element id="fau_wid_ext.2.5"> 
+            <f-element> 
              <title> 
              The TSF shall perform stateful frame inspection and log attacks spanning multiple frames. 
              </title> 
@@ -1468,7 +1468,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
 <!-- NEW SFR -->
             
            <!--Add to FAU_SAA.1.2-->
-          <f-element id="fau_wid_ext.2.6"> 
+          <f-element> 
              <title> 
                The TSF shall detect a violation in allowing NULL <abbr linkend="SSID"/> associations. 
              </title> 
@@ -1512,7 +1512,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_wid_ext.3.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect the following intrusions: 
               RF-based denial of service, deauthentication flooding, disassociation flooding, <assignable>other DoS methods</assignable>, 
                 <selectables>
@@ -1575,7 +1575,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_wid_ext.4.1">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall provide Authorized Administrators the ability to define authorized <abbr linkend="WLAN"/> authentication schemes.
             </title>
@@ -1592,7 +1592,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>             
             </aactivity>
           </f-element>
-          <f-element id="fau_wid_ext.4.2">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall detect when <h:i>[whitelisted <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> attempt to use <abbr linkend="WLAN"/> authentication 
               schemes that are not authorized.
@@ -1632,7 +1632,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_wid_ext.5.1">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall provide Authorized Administrators the ability to define authorized <abbr linkend="WLAN"/> encryption schemes.
             </title>
@@ -1650,7 +1650,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>       
             </aactivity>
           </f-element>
-          <f-element id="fau_wid_ext.5.2">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall detect when <h:i>[whitelisted <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> attempt to use <abbr linkend="WLAN"/> encryption schemes that are not authorized.</title>
             <aactivity>	
@@ -1678,7 +1678,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>          
           </f-element>
-          <f-element id="fau_wid_ext.5.3">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall detect when <h:i>[whitelisted <abbr linkend="AP"/>s and <abbr linkend="EUD"/>s defined in <linkref linkend="FAU_INV_EXT.1.1"/>]</h:i> send or receive unencrypted data.
             </title>
@@ -1720,7 +1720,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
       <subsection title="User Data Protection (FDP)" id="fdp">
         <f-component id="fdp_ifc.1" name="Information Flow Control Policy">
           <consistency-rationale></consistency-rationale>
-          <f-element id="fdp_ifc.1.1">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall enforce the <h:i>[802.11 monitoring <abbr linkend="SFP"/>]</h:i> for <h:i>[all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:</h:i>
               <h:ul>
@@ -1766,7 +1766,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
      <subsection title="Security Management (FMT)" id="fmt" >
        <f-component id="fmt_smf.1(wids)" name="Specification of Management Functions (WIDS)">
          <consistency-rationale></consistency-rationale>
-         <f-element id="fmt_smf.1.1/wids">
+         <f-element>
            <title> 
              The <abbr linkend="TSF"/> shall be capable of performing the following management functions for <abbr linkend="WIDS"/> functionality: 
              [<h:i>management functions listed in <ctr-ref refid="mgmt"/></h:i>].        
@@ -1813,7 +1813,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
         <management></management>
         <audit></audit>
         <dependencies></dependencies>
-        <f-element id="fau_wid_ext.6.1">
+        <f-element>
           <title> 
             The <abbr linkend="TSF"/> shall detect the presence of network devices that operate in the following RF bands: 
             <selectables>
@@ -1845,7 +1845,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
         </f-element>
         <!-- Justin: Did we add this SFR? -->
           <!-- should this be two different components so that they can be added individually? How do these two elements fit together?  -->
-          <f-element id="fau_wid_ext.6.2">
+          <f-element>
           <title> 
             The <abbr linkend="TSF"/> shall provide a dedicated sensor for wireless spectrum analysis.
           </title>
@@ -1877,7 +1877,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>        
-          <f-element id="fau_ano_ext.1.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall support the definition of 
               <selectables>
                 <selectable>baselines (‘expected and approved’)</selectable>
@@ -1897,7 +1897,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </h:ul>             
             </title>
           </f-element>
-          <f-element id="fau_ano_ext.1.2">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall support the definition of anomaly activity through 
               <selectables>
@@ -1937,7 +1937,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
         <management></management>
         <audit></audit>
         <dependencies></dependencies>
-        <f-element id="fau_inv_ext.4.1/cell">
+        <f-element>
           <title> 
             The <abbr linkend="TSF"/> shall detect the physical location of cellular devices to within 
             <assignable>distance degree of accuracy</assignable> of their actual location.
@@ -1978,7 +1978,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies> 
-          <f-element id="fau_sig_ext.1.1">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall support user-defined and customizable attack signatures.
             </title>
@@ -2015,7 +2015,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies> 
-          <f-element id="fau_stg_ext.1.1/pcap">
+          <f-element>
             <title>The <abbr linkend="TSF"/> shall be able to transmit the generated <h:b>packet captures</h:b> to an external IT entity using a 
               trusted channel according to FTP_ITC.1.
             </title>
@@ -2023,11 +2023,11 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               This <abbr linkend="PP-Module"/> modifies <linkref linkend="FTP_ITC.1"/> from NDcPP.
             </note>        
           </f-element>
-          <f-element id="fau_stg_ext.1.2/pcap">
+          <f-element>
             <title>The <abbr linkend="TSF"/> shall be able to store generated <h:b>packet captures</h:b> on the <abbr linkend="TOE"/> itself.
             </title>
           </f-element>
-          <f-element id="fau_stg_ext.1.3/pcap">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall 
               <selectables>
                 <selectable>drop new packet capture data</selectable>
@@ -2069,7 +2069,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="PLACEHOLDER.1">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall allow for the for the export of all captured event logs. 
             </title>
@@ -2113,7 +2113,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
       -->
         <f-component id="fau_gen.2(wids)" name="Alerts Data Generation (WIDS)">
           <consistency-rationale></consistency-rationale>        
-          <f-element id="fau_gen.2.1/wids">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall be able to generate a <abbr linkend="WIDS"/> audit record of the following auditable events:
               <h:ol type="a">
                 <h:li>Start-up and shutdown of the <abbr linkend="WIDS"/> functions;</h:li>
@@ -2177,7 +2177,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
             </aactivity> 
           </f-element>
           <!-- TODO: need to change the wording of this to be more about the alerts. Need to rename this SFR -->
-          <f-element id="fau_gen.2.2/wids">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall record within each <abbr linkend="WIDS"/> auditable event as <selectables>
               <selectable>comma separated values (CSV)</selectable>
               <selectable>common log format (CLF)</selectable>
@@ -2217,11 +2217,11 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_inv_ext.4.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect the physical location of [<h:i><abbr linkend="AP"/>s, <abbr linkend="EUD"/>s</h:i>] to within [<h:i>15 feet</h:i>] of their actual location.</title>
           </f-element>
           <!-- NEW SFRs -->
-          <f-element id="fau_inv_ext.4.2">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall include a signal library.</title> <!-- GAP Analysis -->
             
             <note role="application">The TSF will need to have the ability to import, export, or update the exisiting signal library.</note>
@@ -2259,7 +2259,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_inv_ext.5.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect when [<h:i>non-whitelisted <abbr linkend="AP"/>s as defined in <linkref linkend="FAU_INV_EXT.1"/></h:i>] have the following connections: 
               [<h:i>wired connection to the internal corporate network</h:i>].</title>
             <aactivity>	
@@ -2301,7 +2301,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_mac_ext.1.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect when two sensors in non-overlapping locations receive traffic from the same MAC address simultaneously.</title>
             <note role="application">The intent of this SFR is to detect MAC spoofing where an attacker is able to cause the whitelisted <abbr linkend="EUD"/> 
               to disconnect and promptly connects a non-whitelisted device using the MAC address of the whitelisted <abbr linkend="EUD"/>.</note>
@@ -2334,7 +2334,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
               </Tests>
             </aactivity>
           </f-element>         
-          <f-element id="fau_mac_ext.1.2">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect when two sensors in non-overlapping locations receive traffic from the MAC addresses of 
               [<h:i>non-whitelisted <abbr linkend="EUD"/>s as defined in <linkref linkend="FAU_INV_EXT.1"/></h:i>] within 
               [<h:i>an Authorized administrator-configurable timeframe based on distance between sensors</h:i>].</title>
@@ -2380,7 +2380,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_wid_ext.7.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall detect the presence of all vendor proprietary network traffic matching the [<h:i>802.11 monitoring <abbr linkend="SFP"/></h:i>]
               for [<h:i>all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:</h:i>
               <h:ol>
@@ -2429,7 +2429,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="fau_wip_ext.1.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall allow an Authorized Administrator to isolate a wireless <abbr linkend="AP"/> or <abbr linkend="EUD"/> from the network monitored 
               by the <abbr linkend="TSF"/> using the following methods: 
               <selectables>
@@ -2483,7 +2483,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element id="PLACEHOLDER.1">
+          <f-element>
             <title> 
               The <abbr linkend="TSF"/> shall allow for the configuration of the time it monitors a specific frequency. 
             </title>
@@ -2522,7 +2522,7 @@ The <abbr linkend="WIDS"/> must be able to analyze collected or observed <abbr l
       <subsection title="Protection of the TSF (FPT)" id="fpt" >
         <f-component id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection">
           <consistency-rationale></consistency-rationale>
-          <f-element id="fpt_fls.1.1">
+          <f-element>
             <title> The <abbr linkend="TSF"/> shall preserve a secure state when the following types of failures occur: 
               [<h:i>sensor functionality failure, potential compromise of the <abbr linkend="TSF"/></h:i>].
             </title>
