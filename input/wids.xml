@@ -86,7 +86,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2019-07-06</PPPubDate>
+      <PPPubDate>2019-10-25</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -98,7 +98,7 @@
     </entry>
 </RevisionHistory>
  <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview">
+   <section title="Overview" id="ppoverview">
       This Protection Profile Module (PP-Module) describes security requirements for a Wireless Intrusion Detection System (WIDS) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This PP-Module is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/>
       This PP-Module contains optional requirements for a Wireless Intrustion Protection System (WIPS) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.     
       <h:br/><h:br/>
@@ -118,8 +118,7 @@
          </entry>
          <entry>
            <term>Common Criteria Testing Laboratory</term>
-           <description>Within the context of the Common Criteria Evaluation and Validation Scheme
-             (CCEVS), an IT security evaluation facility, accredited by the National Voluntary
+           <description>Within the context of the Common Criteria Evaluation and Validation Scheme (CCEVS), an IT security evaluation facility, accredited by the National Voluntary
              Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to
              conduct Common Criteria-based evaluations.</description>
          </entry>
@@ -206,7 +205,6 @@
        A WIDS/WIPS can be Integrated (be part of the WLAN infrastructure) or Overlay (independent from WLAN) architecture depending on vendor implementation. The two different architectures are illustrated in the <xref linkend="toe"/> figure below. <h:br/><h:br/>
        A WIDS/WIPS is expected to inspect layers 1 and 2 network traffic, per the OSI network model and monitor wireless frames in the RF spectrum utilized by IEEE 802.11 a, b, g, n, and ac. Monitoring and inspection of other technologies (e.g., cellular) and protocols are optional.<h:br/><h:br/>
        Conformant TOEs will detect potentially malicious network traffic using various approaches. Broadly speaking, the traffic analysis could be based on identification of ‘known’ threats, or ‘unknown’ threats. Identification of ‘known’ threats may be performed through pattern matching, (e.g. by matching strings of characters within a frame with known patterns, or by matching traffic patterns common with reconnaissance or denial of service (DoS) attacks). Identification of ‘unknown’ threats may be performed through use of various forms of anomaly detection whereby the WIDS/WIPS is provided with (or learns/creates) a definition of expected/typical traffic patterns, such that it’s able to detect and react to anomalous (unexpected/atypical) traffic patterns.<h:br/><h:br/>
-     
        <figure entity="images/TOE.jpg" title="General TOE" id="toe"/>
      </subsection>
    </section>
@@ -753,9 +751,7 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
             <note role="application">
               The system shall provide the ability to interact with an extensible interface to a custom proprietary or third party  wireless monitoring system
               for the purposes of importing data from the wireless system. At least one detection method must be selected. 
-
             </note>  
-
             <aactivity>	
               <TSS>
                 The evaluator shall verify that the TSS includes guidance on which intrusion detection technique(s) the TOE utilizes. If a hybrid intrusion detection is selected as the intrusion detection method, the TSS should provide details on the detection techniques utilized. Furthermore, when using a hybrid detection method that includes detection methods other than anomaly or signature based, the TSS shall include more details about such detection methods. <!-- TODO: FIX -->If proprietary vendor detection method is selected, technical details on the method must be provided.<h:br/><h:br/>
