@@ -96,107 +96,45 @@
       <date>2016-10-06</date>
       <subject>Initial Release - EP for NDcPP</subject>
     </entry>
-</RevisionHistory>
- <chapter title="Introduction" id="int">
+<RevisionHistory>
+  <tech-terms>
+      <term abbr="AES" title="Advanced Encryption Standard"/>
+      <term abbr="AP" full="Access Point">
+	A device that provides the network interface that enables wireless client hosts to access a wired network.
+      </term>
+      <term abbr="BSSID" title="Basic Service Set Identifier"/>
+      <term abbr="DoS" title="Denial of Service"/>
+      <term abbr="EUD" full="End User Device">
+	A device that has the ability to process, transmit,  and/or store information.
+      </term>
+      <term abbr="HTTPS" title="Hypertext Transfer Protocol Secure"/>
+      <term abbr="IPsec" title="Internet Protocol Security"/>
+      <term abbr="MAC" full="Media Access Control"/>
+      <term abbr="SSH" title="Secure Shell"/>
+      <term abbr="SSID" full="Service Set Identifier">
+	The primary name associated with an 802.11 wireless local area network (WLAN).
+      </term>
+      <term abbr="TLS" title="Transport Layer Security"/>
+      <term abbr="TKIP" title="Temporal Key Integrity Protocol"/>
+      <term abbr="WEP" title="Wired Equivalent Protocol"/>
+      <term abbr="WIDS" full="Wireless Intrustion Detection System">
+	A security product that provides network security administrators with the ability to monitor, collect, and log real-time to potentially malicious wireless (IEEE 802.11) network traffic.
+      </term>
+      <term abbr="WIPS" full="Wireless Intrustion Prevention System">
+	A security product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.
+      </term>
+      <term abbr="WLAN" full="Wireless Local Area Network">
+	A wireless computer network that links two or more devices using wireless communication to form a local area network (LAN) within a limited area such as a home, school, computer laboratory, campus, office building etc. 
+      </term>
+      <term abbr="WPA" title="Wi-Fi Protected Access"/>
+  </tech-terms>
+  <chapter title="Introduction" id="int">
    <section title="Overview" id="ppoverview">
       This Protection Profile Module (PP-Module) describes security requirements for a Wireless Intrusion Detection System (WIDS) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This PP-Module is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/>
       This PP-Module contains optional requirements for a Wireless Intrustion Protection System (WIPS) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.     
       <h:br/><h:br/>
       This PP-Module extends the collaborative Protection Profile for Network Devices (NDcPP).
     </section>
-   <section title="Terms" id="glossary">
-     <subsection title="Common Criteria Terms">
-       <glossary>
-         <entry>
-           <term><abbr title="Base Protection Profile">Base-PP</abbr></term>
-           <description>Protection Profile used to build a PP-Configuration.</description>
-         </entry>
-         <entry>
-           <term><abbr title="Common Criteria">CC</abbr></term>
-           <description>Common Criteria for Information Technology Security Evaluation
-             (International Standard ISO/IEC 15408).</description>
-         </entry>
-         <entry>
-           <term>Common Criteria Testing Laboratory</term>
-           <description>Within the context of the Common Criteria Evaluation and Validation Scheme (CCEVS), an IT security evaluation facility, accredited by the National Voluntary
-             Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to
-             conduct Common Criteria-based evaluations.</description>
-         </entry>
-         <entry>
-           <term><abbr title="Common Evaluation Methodology">CEM</abbr></term>
-           <description>Common Evaluation Methodology for Information Technology Security
-             Evaluation.</description>
-         </entry>
-         <entry>
-           <term><abbr title="Protection Profile">PP</abbr></term>
-           <description>An implementation-independent set of security requirements for a category
-             of products.</description>
-         </entry>
-         <entry>
-           <term><abbr title="Protection Profile Configuration">PP-Configuration</abbr></term>
-           <description>A comprehensive set of security requirements for a product type that consists of at least one Base-PP and at least one PP-Module.</description>
-         </entry>
-         <entry>
-           <term><abbr title="Protection Profile Module">PP-Module</abbr></term>
-           <description>An implementation-independent statement of security needs for a TOE type
-             complementary to one or more Base Protection Profiles. </description>
-         </entry>
-         <entry>
-           <term><abbr title="Security Functional Requirement">SFR</abbr></term>
-           <description>A requirement for security enforcement by the TOE.</description>
-         </entry>
-         <entry>
-           <term><abbr title="Security Target">ST</abbr></term>
-           <description>A set of implementation-dependent security requirements for a specific
-             product.</description>
-         </entry>
-         <entry>
-           <term><abbr title="Target of Evaluation">TOE</abbr></term>
-           <description>The security functionality of the product under evaluation.</description>
-         </entry>
-         <entry>
-           <term><abbr title="TOE Security Functionality">TSF</abbr></term>
-           <description>The security functionality of the product under evaluation.</description>
-         </entry>
-         <entry>
-           <term><abbr title="TOE Summary Specification">TSS</abbr></term>
-           <description>A description of how a TOE satisfies the SFRs in an ST.</description>
-         </entry>
-       </glossary>
-     </subsection>
-     <subsection title="Technical Terms">
-       <glossary>
-         <entry>
-           <term><abbr title="Access Point">AP</abbr></term>
-           <description>A device that provides the network interface that enables wireless client hosts to access a wired network.</description>
-         </entry> 
-         <entry>
-           <term><abbr title="End User Device">EUD</abbr></term>
-           <description>A device that has the ability to process, transmit,  and/or store information.</description>
-         </entry> 
-         <entry>
-           <term><abbr title="Media Access Control">MAC</abbr></term>
-           <description>Media Access Control</description>
-         </entry>      
-         <entry>
-           <term><abbr title="Service Set Identifier">SSID</abbr></term>
-           <description>The primary name associated with an 802.11 wireless local area network (WLAN).</description>
-         </entry>         
-         <entry>
-           <term><abbr title="Wireless Intrustion Detection System">WIDS</abbr></term>
-           <description>A security product that provides network security administrators with the ability to monitor, collect, and log real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
-         </entry>
-         <entry>
-           <term><abbr title="Wireless Intrustion Prevention System">WIPS</abbr></term>
-           <description>A security product that provides network security administrators with the ability to monitor, collect, log, and react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.</description>
-         </entry> 
-         <entry>
-           <term><abbr title="Wireless Local Area Network">WLAN</abbr></term>
-           <description>A wireless computer network that links two or more devices using wireless communication to form a local area network (LAN) within a limited area such as a home, school, computer laboratory, campus, office building etc. </description>
-         </entry>
-       </glossary>
-     </subsection>
-   </section>  
    <section title="Compliant Targets of Evaluation" id="TOEdescription">
      <subsection title="TOE Boundary" id="TOEboundary"> 
        This PP-Module specifically addresses Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant WIDS is a product that can monitor, collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. <!-- TODO: add something about being able to detect the location of the endpoint -->WIPS functionality is not required to conform to this PP-Module, and it is optional for the TOE to have the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.<h:br/><h:br/>
@@ -2577,74 +2515,5 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
  <bibliography>
     <cc-entry/>
   </bibliography>
- <acronyms>
-   <entry>
-     <term><abbr title="Advanced Encryption Standard">AES</abbr></term>
-     <description>Advanced Encryption Standard</description>
-   </entry>
-   <entry>
-     <term><abbr title="Access Point">AP</abbr></term>
-     <description>Access Point</description>
-   </entry>
-   <entry>
-     <term><abbr title="Basic Service Set Identifier">BSSID</abbr></term>
-     <description>Basic Service Set Identifier</description>
-   </entry>
-   <entry>
-     <term><abbr title="Denial of Service">DoS</abbr></term>
-     <description>Denial of Service</description>
-   </entry>      
-   <entry>
-     <term><abbr title="End User Device">EUD</abbr></term>
-     <description>End User Device</description>
-   </entry>      
-   <entry>
-     <term><abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr></term>
-     <description>Hypertext Transfer Protocol Secure</description>
-   </entry>
-   <entry>
-     <term><abbr title="Internet Protocol Security">IPsec</abbr></term>
-     <description>Internet Protocol Security</description>
-   </entry>
-   <entry>
-     <term><abbr title="Media Access Control">MAC</abbr></term>
-     <description>Media Access Control</description>
-   </entry>      
-   <entry>
-     <term><abbr title="Secure Shell">SSH</abbr></term>
-     <description>Secure Shell</description>
-   </entry>
-   <entry>
-     <term><abbr title="Service Set Identifier">SSID</abbr></term>
-     <description>Service Set Identifier</description>
-   </entry>
-   <entry>
-     <term><abbr title="Transport Layer Security">TLS</abbr></term>
-     <description>Transport Layer Security</description>
-   </entry>
-   <entry>
-     <term><abbr title="Temporal Key Integrity Protocol">TKIP</abbr></term>
-     <description>Temporal Key Integrity Protocol</description>
-   </entry>
-   <entry>
-     <term><abbr title="Wired Equivalent Protocol">WEP</abbr></term>
-     <description>Wired Equivalent Protocol</description>
-   </entry>
-   <entry>
-     <term><abbr title="Wireless Intrusion Detection Systems">WIDS</abbr></term>
-     <description>Wireless Intrusion Detection Systems</description>
-   </entry>
-   <entry>
-     <term><abbr title="Wireless Intrusion Prevention Systems">WIPS</abbr></term>
-     <description>Wireless Intrusion Prevention Systems</description>
-   </entry>
-   <entry>
-     <term><abbr title="Wireless Local Area Network">WLAN</abbr></term>
-     <description>Wireless Local Area Network</description>
-   </entry>
-   <entry>
-     <term><abbr title="Wi-Fi Protected Access">WPA</abbr></term>
-     <description>Wi-Fi Protected Access</description>
-   </entry>    
-    </acronyms>
+ <acronyms
 </Module>
