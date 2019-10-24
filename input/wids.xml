@@ -97,6 +97,13 @@
       <subject>Initial Release - EP for NDcPP</subject>
     </entry>
   </RevisionHistory>
+  <chapter title="Introduction" id="int">
+   <section title="Overview" id="ppoverview">
+      This Protection Profile Module (PP-Module) describes security requirements for a Wireless Intrusion Detection System (WIDS) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This PP-Module is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/>
+      This PP-Module contains optional requirements for a Wireless Intrustion Protection System (WIPS) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.     
+      <h:br/><h:br/>
+      This PP-Module extends the collaborative Protection Profile for Network Devices (NDcPP).
+    </section>
   <tech-terms>
       <term abbr="AES" title="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point">
@@ -128,13 +135,6 @@
       </term>
       <term abbr="WPA" title="Wi-Fi Protected Access"/>
   </tech-terms>
-  <chapter title="Introduction" id="int">
-   <section title="Overview" id="ppoverview">
-      This Protection Profile Module (PP-Module) describes security requirements for a Wireless Intrusion Detection System (WIDS) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This PP-Module is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/>
-      This PP-Module contains optional requirements for a Wireless Intrustion Protection System (WIPS) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.     
-      <h:br/><h:br/>
-      This PP-Module extends the collaborative Protection Profile for Network Devices (NDcPP).
-    </section>
    <section title="Compliant Targets of Evaluation" id="TOEdescription">
      <subsection title="TOE Boundary" id="TOEboundary"> 
        This PP-Module specifically addresses Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant WIDS is a product that can monitor, collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. <!-- TODO: add something about being able to detect the location of the endpoint -->WIPS functionality is not required to conform to this PP-Module, and it is optional for the TOE to have the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic.<h:br/><h:br/>
