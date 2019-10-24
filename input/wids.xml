@@ -90,13 +90,13 @@
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
     </ReferenceTable>
   </PPReference>
-<RevisionHistory>
+  <RevisionHistory>
     <entry>
       <version>1.0</version>
       <date>2016-10-06</date>
       <subject>Initial Release - EP for NDcPP</subject>
     </entry>
-<RevisionHistory>
+  </RevisionHistory>
   <tech-terms>
       <term abbr="AES" title="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point">
@@ -2515,5 +2515,5 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
  <bibliography>
     <cc-entry/>
   </bibliography>
- <acronyms
+ <acronyms/>
 </Module>
