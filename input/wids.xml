@@ -105,25 +105,25 @@
       This PP-Module extends the collaborative Protection Profile for Network Devices (NDcPP).
     </section>
   <tech-terms>
-      <term abbr="AES" title="Advanced Encryption Standard"/>
+      <term abbr="AES" full="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point">
 	A device that provides the network interface that enables wireless client hosts to access a wired network.
       </term>
-      <term abbr="BSSID" title="Basic Service Set Identifier"/>
-      <term abbr="DoS" title="Denial of Service"/>
+      <term abbr="BSSID" full="Basic Service Set Identifier"/>
+      <term abbr="DoS" full="Denial of Service"/>
       <term abbr="EUD" full="End User Device">
 	A device that has the ability to process, transmit,  and/or store information.
       </term>
-      <term abbr="HTTPS" title="Hypertext Transfer Protocol Secure"/>
-      <term abbr="IPsec" title="Internet Protocol Security"/>
+      <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
+      <term abbr="IPsec" full="Internet Protocol Security"/>
       <term abbr="MAC" full="Media Access Control"/>
-      <term abbr="SSH" title="Secure Shell"/>
+      <term abbr="SSH" full="Secure Shell"/>
       <term abbr="SSID" full="Service Set Identifier">
 	The primary name associated with an 802.11 wireless local area network (WLAN).
       </term>
-      <term abbr="TLS" title="Transport Layer Security"/>
-      <term abbr="TKIP" title="Temporal Key Integrity Protocol"/>
-      <term abbr="WEP" title="Wired Equivalent Protocol"/>
+      <term abbr="TLS" full="Transport Layer Security"/>
+      <term abbr="TKIP" full="Temporal Key Integrity Protocol"/>
+      <term abbr="WEP" full="Wired Equivalent Protocol"/>
       <term abbr="WIDS" full="Wireless Intrustion Detection System">
 	A security product that provides network security administrators with the ability to monitor, collect, and log real-time to potentially malicious wireless (IEEE 802.11) network traffic.
       </term>
@@ -133,7 +133,7 @@
       <term abbr="WLAN" full="Wireless Local Area Network">
 	A wireless computer network that links two or more devices using wireless communication to form a local area network (LAN) within a limited area such as a home, school, computer laboratory, campus, office building etc. 
       </term>
-      <term abbr="WPA" title="Wi-Fi Protected Access"/>
+      <term abbr="WPA" full="Wi-Fi Protected Access"/>
   </tech-terms>
    <section title="Compliant Targets of Evaluation" id="TOEdescription">
      <subsection title="TOE Boundary" id="TOEboundary"> 
