@@ -448,10 +448,8 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
               selection are included in the ST.            
               </note>
               <aactivity>
-                <!-- Todo: Need to remove TSS tags once this issue is fixed -->
-                <TSS>
                  The evaluator shall perform the evaluation activity specified in NDcPP for this SFR, with the inclusion of test 4, which is objective in NDcPP. 
-                </TSS>
+                <no-tests/>
               </aactivity>
             </f-element>
           </f-component>  
