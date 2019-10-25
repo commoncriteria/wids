@@ -281,9 +281,9 @@ The term “monitored network” is used here to represent any WLAN and/or wired
             To be able to analyze and react to potential network policy violations, the WIDS must be able to collect and store essential data elements of network traffic on monitored networks.<h:br/>
           </description>    
           <!-- Mandatory -->
-          <component-refer ref="FAU_GEN.1/WIDS"/>
-          <!-- Optional -->
-          <component-refer ref="FAU_STG_EXT.1/PCAP"/>
+          <component-refer ref="FAU_GEN.1" iteration="WIDS"/>
+          <!-- optional -->
+          <component-refer ref="FAU_STG_EXT.1" iteration="PCAP"/>
           <consistency-rationale></consistency-rationale>
         </SO>
         <SO id="O.WIDS_ANALYZE">
@@ -308,7 +308,7 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
           <!-- Optional -->
           <component-refer ref="FAU_ANO_EXT.1"/>
           <component-refer ref="FAU_INV_EXT.4"/>
-          <component-refer ref="FAU_INV_EXT.4/CELL"/>
+          <component-refer ref="FAU_INV_EXT.4" iteration="CELL"/>
           <component-refer ref="FAU_INV_EXT.5"/>
           <component-refer ref="FAU_MAC_EXT.1"/>
           <component-refer ref="FAU_SIG_EXT.1"/>
@@ -336,7 +336,7 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
             <h:br/>
           </description>
           <!-- Mandatory -->
-          <component-refer ref="FMT_SMF.1/WIDS"/>
+          <component-refer ref="FMT_SMF.1" iteration="WIDS"/>
           
           <!-- Optional -->
           
