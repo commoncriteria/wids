@@ -1,4 +1,4 @@
 -include User.make
-DIGG_TAGS="v1.0"
+DIFF_TAGS="v1.0"
 TRANS?=transforms
 include $(TRANS)/module/Module.make
