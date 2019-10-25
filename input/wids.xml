@@ -5,13 +5,8 @@
 
 
 <!-- TODO:
-    
-  Justin
-  - Are there other technical terms that need to be defined?
-      * Added "Access Point (AP)"
-      * Added "End User Device (EUD)"
-      * Seperately defined WIDS and WIPS
-      * SSID
+
+  
 
  20190930     
   - Split apart any generic reference to WIDS/WIPS. It should be clear if something is for WIDS or WIPS
@@ -57,8 +52,7 @@
 
   Lauren
   - Are there any Use Cases??
-  - Selection-Depends
-  - Table ctr
+  
   - Audit table
   - FPT_ITA, FPT_ITC, FPT_ITI - exportability of TSF data 
   FAU_WIDS_EXT.3 - need to update and put assignment in the selection??
@@ -76,7 +70,8 @@
  
  DONE:
  - Moved fpt_itt and ftp_itc to modified sfrs
- 
+ - DONE: Selection-Depends
+  - DONE: Table ctr
  
 -->
 
@@ -86,7 +81,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2019-10-25</PPPubDate>
+      <PPPubDate>2019-10-26</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -453,8 +448,10 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
               selection are included in the ST.            
               </note>
               <aactivity>
-                <!-- TODO: Need to remove TSS tags once this issue is fixed -->
-                <TSS>The evaluator shall perform the evaluation activity specified in NDcPP for this SFR, with the inclusion of test 4, which is objective in NDcPP.  </TSS>
+                <!-- Todo: Need to remove TSS tags once this issue is fixed -->
+                <TSS>
+                 The evaluator shall perform the evaluation activity specified in NDcPP for this SFR, with the inclusion of test 4, which is objective in NDcPP. 
+                </TSS>
               </aactivity>
             </f-element>
           </f-component>  
@@ -723,20 +720,41 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
           <audit></audit>
           <dependencies></dependencies>
           <f-element>
-            <title> The TSF shall provide Authorized Administrators with the ability to define an inventory 
-              of <h:i>[authorized APs and EUDs]</h:i> based on <h:i>[EUD MAC addresses, AP MAC addresses]</h:i>.
+            <title> The TSF shall provide Authorized Administrators with the ability to define an inventory of <h:i>[authorized APs and EUDs]</h:i> based on <h:i>[EUD MAC addresses, AP MAC addresses]</h:i>.
             </title>
-
             <note role="application">
               This inventory is used as a whitelist to indicate to the WIDS which APs and EUDs are legitimate members of the wireless network. The terminology used to describe an inventoried or whitelisted device may vary by vendor product. This PP-Module utilizes whitelisted to describe APs and EUDs that are part of the inventory and non-whitelisted to describe APs and EUDs that are not part of the inventory.
             </note>
-
+          </f-element>
+          <f-element>
+            <title> The TSF shall detect the presence and current information of<h:i>[EUDs, APs]</h:i> in the Operational Environment that are part of the defined inventory.
+            </title>
+            <note role="Application">
+              When referring to current information that should be detected by the TSF, it is referring to information about the detected AP or EUD as is observed by the 
+              WIDS such as operating channel and band, SSID of an AP, client(s) connected to an AP, and the AP that an EUD is connected to. <linkref linkend="FAU_INV_EXT.2.3"/> has a full list of the details 
+              about the AP or EUD that should be detected by the WIDS.
+            </note>
+          </f-element>         
+          <f-element>
+            <title> The TSF shall detect the presence and current information of <h:i>[EUDs, APs]</h:i> in the Operational Environment that are 
+              not part of the defined inventory.
+            </title>
+            <note role="Application">When referring to current information that should be detected by the TSF, it is referring to information about the detected AP or EUD as is observed by the WIDS such as operating channel and band, SSID of an AP, client(s) connected to an AP, and the AP that an EUD is connected to. <linkref linkend="FAU_INV_EXT.2.3"/> has a full list of the details about the AP or EUD that should be detected by the WIDS.</note>
             <aactivity>	
+              <!-- TODO:Need to clean up EA -->
               <TSS>
                 The evaluator shall review the TSS to verify that it includes information the ability of the TOE to define inventory of authorized APs and EUDs.<h:br/><h:br/> 
+                
+                The evaluator shall verify that the TSS describes how the presence of authorized EUDs and APs is presented by the TOE and what information about the devices is provided.<h:br/><h:br/> 
+                
+                The evaluator shall verify that the TSS includes guidance on where in the WIDS interface the list of detected APs and EUDs is displayed.<h:br/><h:br/> 
               </TSS>         
               <Guidance>
                 The evaluator shall review the operational guidance for instructions on how to configure and change clasification of APs and EUDs to indicate that they are part of the whitelist.<h:br/><h:br/>  
+                
+                The evaluator shall verify that the operational guidance provides instructions on how to view authorized APs and EUDs that are within range of the TOE sensors.<h:br/><h:br/> 
+                
+                The evaluator shall verify that the operational guidance provides instructions on how to view unauthorized APs and EUDs that are within range of the TOE sensors.<h:br/><h:br/> 
               </Guidance>           
               <Tests> 
                 The evaluator shall perform the following tests:<h:br/>
@@ -761,54 +779,35 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
                     </h:ul>
                   </test>
                 </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <f-element>
-            <title> The TSF shall detect the presence and current information of<h:i>[EUDs, APs]</h:i> in the Operational Environment that are part of the defined inventory.
-            </title>
-            <note role="Application">
-              When referring to current information that should be detected by the TSF, it is referring to information about the detected AP or EUD as is observed by the 
-              WIDS such as operating channel and band, SSID of an AP, client(s) connected to an AP, and the AP that an EUD is connected to. <linkref linkend="FAU_INV_EXT.2.3"/> has a full list of the details 
-              about the AP or EUD that should be detected by the WIDS.
-            </note>
-            <aactivity>	
-              <TSS>
-                The evaluator shall verify that the TSS describes how the presence of authorized EUDs and APs is presented by the TOE and what information about the devices is provided.<h:br/><h:br/> 
-              </TSS>
-              <Guidance>
-                The evaluator shall verify that the operational guidance provides instructions on how to view authorized APs and EUDs that are within range of the TOE sensors.<h:br/><h:br/> 
-              </Guidance>           
-              <Tests> The evaluator shall perform the following tests:<h:br/>
-                <testlist>
-                  <test>Deploy a whitelisted AP and EUD, and connect the EUD to the AP.</test>
-                  <test>Verify that the list of detected APs and EUDs contains the whitelisted AP and EUD that were just deployed. </test>
-                  <test>If the AP and EUD are detected verify that they are classified as whitelisted devices.</test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>         
-          <f-element>
-            <title> The TSF shall detect the presence and current information of <h:i>[EUDs, APs]</h:i> in the Operational Environment that are 
-              not part of the defined inventory.
-            </title>
-            <note role="Application">When referring to current information that should be detected by the TSF, it is referring to information about the detected AP or EUD as is observed by the 
-              WIDS such as operating channel and band, SSID of an AP, client(s) connected to an AP, and the AP that an EUD is connected to. <linkref linkend="FAU_INV_EXT.2.3"/> has a full list of the details 
-              about the AP or EUD that should be detected by the WIDS.</note>
-            <aactivity>	
-              <TSS>
-                The evaluator shall verify that the TSS includes guidance on where in the WIDS interface the list of detected APs and EUDs is displayed.<h:br/><h:br/> 
-              </TSS>
-              <Guidance>
-                The evaluator shall verify that the operational guidance provides instructions on how to view unauthorized APs and EUDs that are within range of the TOE sensors.<h:br/><h:br/> 
-              </Guidance>         
-              <Tests> 
+                
+                
+                
+                The evaluator shall perform the following tests:<h:br/>
+                  <testlist>
+                    <test>Deploy a whitelisted AP and EUD, and connect the EUD to the AP.</test>
+                    <test>Verify that the list of detected APs and EUDs contains the whitelisted AP and EUD that were just deployed. </test>
+                    <test>If the AP and EUD are detected verify that they are classified as whitelisted devices.</test>
+                  </testlist>
+                
                 The evaluator shall perform the following tests:<h:br/>
                 <testlist>
                   <test>Deploy a non-whitelisted AP and EUD and connect the EUD to the AP.</test>
                   <test>Verify that the list of detected APs and EUDs contains the non-whitelisted AP and EUD that were just deployed.</test>
                   <test>If the AP and EUD are detected verify that they are not classified as whitelisted devices.</test>
                 </testlist>
+                
+                
+              </Tests>
+              
+              
+              
+              
+             
+              <Guidance>
+               
+              </Guidance>         
+              <Tests> 
+                
               </Tests>
             </aactivity>
           </f-element>
@@ -922,15 +921,14 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
           <management></management>
           <audit></audit>
           <dependencies></dependencies>
-          <f-element>
-            <title>
-              The TSF shall detect when <h:i>[inventoried EUDs]</h:i> exhibit the following behavior: An EUD establishes a peer-to-peer connection with any other EUD.
+          <f-element><title>
+              The TSF shall detect when <h:i>[inventoried EUDs]</h:i> exhibit the following behavior: An EUD establishes a peer-to-peer connection with any other EUD,
                   <selectables>
                     <selectable>An EUD bridges two network interfaces</selectable>
                     <selectable>An EUD uses internet connection sharing</selectable>
                     <selectable>other connection types</selectable>
                     <selectable>no other connections</selectable>
-                  </selectables>               
+                  </selectables>.               
             </title>
             <note role="Application">For this requirement, it is acceptable for the WIDS to use a generic terms for bridges or peer-to-peer connections when
               generating an alert for the detection of different types of bridges or peer-to-peer connections. The type of connection does not have to be specific. </note>
@@ -983,8 +981,7 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
         <f-component  id="fau_saa.1" name="Potential Violation Analysis">
         <consistency-rationale></consistency-rationale>
           <f-element>
-            <title>The TSF shall be able to apply a set of rules for monitoring the <h:b>wireless traffic</h:b> and based 
-              upon these rules indicate a potential <h:b>malicious action</h:b>.
+            <title>The TSF shall be able to apply a set of rules for monitoring the <h:b>wireless traffic</h:b> and based upon these rules indicate a potential <h:b>malicious action</h:b>.
             </title>
             <aactivity>
               <TSS>
@@ -1079,8 +1076,7 @@ The WIDS must be able to analyze collected or observed WLAN activity on monitore
                 There are no operational guidance activities for this SFR.<h:br/><h:br/> 
               </Guidance>
               <Tests>
-                There are no tests for this SFR, testing of monotoring capabities is tested through the ability to detect
-                intrusions in other SFRs.
+                There are no tests for this SFR, testing of monotoring capabities is tested through the ability to detect intrusions in other SFRs.
               </Tests>          
             </aactivity>
           </f-element>
