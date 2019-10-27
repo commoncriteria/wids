@@ -283,10 +283,10 @@
             monitored networks.<h:br/>
           </description>
           <!-- Mandatory -->
-          <component-refer ref="FAU_GEN.1/WIDS"/>
-          <!-- Optional -->
-          <component-refer ref="FAU_STG_EXT.1/PCAP"/>
-          <consistency-rationale/>
+          <component-refer ref="FAU_GEN.1" iteration="WIDS"/>
+          <!-- optional -->
+          <component-refer ref="FAU_STG_EXT.1" iteration="PCAP"/>
+          <consistency-rationale></consistency-rationale>
         </SO>
         <SO id="O.WIDS_ANALYZE">
           <description> The WIDS must be able to analyze collected or observed WLAN activity on
@@ -311,7 +311,7 @@
           <!-- Optional -->
           <component-refer ref="FAU_ANO_EXT.1"/>
           <component-refer ref="FAU_INV_EXT.4"/>
-          <component-refer ref="FAU_INV_EXT.4/CELL"/>
+          <component-refer ref="FAU_INV_EXT.4" iteration="CELL"/>
           <component-refer ref="FAU_INV_EXT.5"/>
           <component-refer ref="FAU_MAC_EXT.1"/>
           <component-refer ref="FAU_SIG_EXT.1"/>
@@ -339,7 +339,7 @@
             administrator to configure the WIDS Capabilities of the TOE. <h:br/>
           </description>
           <!-- Mandatory -->
-          <component-refer ref="FMT_SMF.1/WIDS"/>
+          <component-refer ref="FMT_SMF.1" iteration="WIDS"/>
           
           <!-- Optional -->
           
@@ -427,9 +427,8 @@
                 <!--  For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the PP-Module, and “other trusted communications” refers to the mechanisms specified in FPT_ITC.-->
               </note>
               <aactivity>
-                <!-- TODO: Need to remove TSS tags, but currently does not render if not in a tag   -->
-                <TSS>The evaluator shall perform the evaluation activity specified in NDcPP for this
-                  SFR.</TSS>
+                The evaluator shall perform the evaluation activity specified in NDcPP for this SFR.
+              <no-tests/>
               </aactivity>
             </f-element>
           </f-component>
@@ -475,9 +474,8 @@
                 protocol requirements in Appendix B of NDcPP corresponding to their selection are
                 included in the ST. </note>
               <aactivity>
-                <!-- Todo: Need to remove TSS tags once this issue is fixed -->
-                <TSS> The evaluator shall perform the evaluation activity specified in NDcPP for
-                  this SFR, with the inclusion of test 4, which is objective in NDcPP. </TSS>
+                 The evaluator shall perform the evaluation activity specified in NDcPP for this SFR, with the inclusion of test 4, which is objective in NDcPP. 
+                <no-tests/>
               </aactivity>
             </f-element>
           </f-component>
