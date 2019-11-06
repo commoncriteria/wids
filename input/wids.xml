@@ -723,7 +723,7 @@
                 Depending on the detection technique used by the <abbr linkend="TOE"/>, the
                 evaluator shall confirm and note the existence of the capability, and test for the
                 appropriate selection-based requirements.
-                <!-- Justin: Look at this and modify if needed. -->
+                <!-- NOW_Justin: Look at this and modify if needed. -->
                 <testlist>
                   <test>
                     <steplist>
