@@ -2372,11 +2372,34 @@ The evaluator shall examine the operational guidance to verify that it
             <title> The TSF shall include a signal library.</title>
             <note role="application">The TSF will need to have the ability to import, export, or
               update the exisiting signal library.</note>
+            
             <aactivity> 
-              <TSS>test</TSS>
-              <Guidance>test</Guidance>
-              <Tests>test</Tests>
+              <TSS>             
+                There are no TSS assurance activities for this SFR.
+              </TSS>
+              <Guidance> 
+                The evaluator shall review the operational guidance for instructions on how
+                to locate and verify that the WIDS comes preloaded with a signal library, as well as 
+                possesses the ability to import, export, and update the existing signal library if present.<h:br/><h:br/>
+              </Guidance>
+              <Tests>
+                Depending on operation guidance provided for the <abbr linkend="TOE"/>, the
+                evaluator shall confirm and note the existence of the signal library, and test for the
+                ability to import, export, and update the signal library.
+                <!-- DONE: Justin: Look at this and modify if needed. -->
+                <testlist>
+                  <test>
+                    <steplist>
+                      <step>Deploy a whitelisted AP and connect it to the protected wired
+                        infrastructure via wire.</step>
+                      <step>Confirm and note whether the TSF has an existing signal library.</step>
+                      <step>If existence is confirmed, verify that the TSF can import, export, and update the existing signal library.</step>
+                    </steplist>
+                  </test>
+                </testlist>              
+              </Tests>
             </aactivity>
+            
           </f-element>
         </f-component>
         
