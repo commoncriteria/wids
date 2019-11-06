@@ -14,9 +14,10 @@
   
   - Audit table
   - FPT_ITA, FPT_ITC, FPT_ITI - exportability of TSF data 
-  FAU_WIDS_EXT.3 - need to update and put assignment in the selection??
+
 
   NIAP
+  - FAU_SAA
   - consistency rationales throughout document
   - ECDs throughout document
   - Does this Module claim any packages?
@@ -150,9 +151,8 @@
           Criteria Version 3.1, Release 5 [CC]. </description>
       </cclaim>
       <cclaim title="Package Claims">
-        <description><!-- NIAP: Does this module need to claim any packages? -->
-          <!-- If YES: This PP-Module is <package name> Conformant. --> This PP-Module does not
-          claim conformance to any packages.</description>
+        <description><!-- Later_NIAP: Does this module need to claim any packages? If YES: This PP-Module is <package name> Conformant. --> 
+          This PP-Module does not claim conformance to any packages.</description>
       </cclaim>
     </cclaims>
   </chapter>
@@ -284,7 +284,7 @@
   </chapter>
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
-      <!-- Draft2: Make sure new SFRs are mapped to SOs -->
+      <!-- Later_todo: Make sure new SFRs are mapped to SOs -->
       <SOs>
         <SO id="O.SYSTEM_MONITORING">
           <description> To be able to analyze and react to potential network policy violations, the
@@ -329,7 +329,7 @@
           <component-refer ref="FAU_WID_EXT.8"/>
           <consistency-rationale/>
         </SO>    
-        <SO id="O.WIPS_REACT"><!-- NIAP: WIPS functionality is optional, so technically this is an optional objective - that's not allowed right? -->
+        <SO id="O.WIPS_REACT"><!-- Later_ NIAP: WIPS functionality is optional, so technically this is an optional objective -->
           <description> The TOE must be able to react as configured by the administrators to
             isolate/contain WLAN devices that have been determined to violate administrator-defined
             WIPS policies. <h:br/>
@@ -406,7 +406,6 @@
     </section>
   </chapter>
   <chapter title="Security Requirements" id="sfrs">
-    <!-- Kevin: What to do if base is not in github?? -->
     <base-pp version="2.1" name="Network Device" product="Network Device" short="ND" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440" xmlurl="test">
       <modified-sfrs>
         <subsection title="Protection of the TSF (FPT)" id="fpt">
@@ -431,8 +430,7 @@
                 in this trusted communication channel are encrypted as defined in the protocol
                 chosen in the selection. The ST author chooses the mechanisms supported by the TOE,
                 and then ensures that the detailed protocol requirements in Appendix B of NDcPP
-                corresponding to their selection are included in the ST, if not already present. <!-- NIAP -->
-                <!--  For the purposes of this requirement, security strength is defined by NIST SP 800-57, “commensurate” means that the strengths must, at a minimum, meet the requirements for the cryptographic primitives listed in the PP-Module, and “other trusted communications” refers to the mechanisms specified in FPT_ITC.-->
+                corresponding to their selection are included in the ST, if not already present. 
               </note>
               <aactivity>               
                 The evaluator shall perform the evaluation activity specified in NDcPP for this SFR.
@@ -469,7 +467,7 @@
               <title>
                 The TSF shall initiate communication via the trusted channel for <assignable>list of services for which the TSF is able to initiate communications</assignable>.</title>
               <note role="Application">
-                <!-- NIAP: Should I copy the entire App note from ND? --> 
+                <!-- Later_NIAP: Should entire App note from ND be copied? --> 
                 The intent of the above requirement is to provide a means by which a cryptographic protocol may be used to
                 protect external communications with authorized IT entities that the TOE interacts
                 with to perform its functions. The TOE uses at least one of the listed protocols for
@@ -582,9 +580,9 @@
           </f-element>
         </f-component>
         
-        <f-component id="fau_gen.1" name="Audit Data Generation" iteration="WIDS"><!-- DONE, but looking at combining with other fau_gen -->
+        <f-component id="fau_gen.1" name="Audit Data Generation" iteration="WIDS"><!-- DONE for now. FAU_SAA is how to look at audit records and determine that something bad may have happened, so should all of the "events" in FAU_SAA be audit records? -->
           <consistency-rationale/>
-          <f-element>
+          <f-element> <!-- Changed: Moved the actual audit events from objective FAU_GEN and put here. -->
             <title> The TSF shall be able to generate an audit record of the following auditable
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
@@ -674,12 +672,68 @@
           </f-element>
         </f-component>
         
-    
-            
+        <ext-comp-def title="Reporting Methods" fam-id="FAU_GEN_EXT">
+          <mod-def/>
+        </ext-comp-def>
+        <f-component name="Intrusion Detection System – Reporting Methods" id="fau_gen_ext.1"> <!-- DONE -->
+          <!-- New Component --> <!-- Import/export data post processing from WIDS controller. Import/export configuration - management of sensor -->
+          <consistency-rationale/>
+          <comp-lev/>
+          <management/>
+          <audit/>
+          <dependencies/>                
+          <f-element>
+            <title> 
+              The TSF shall provide <selectables linebreak="yes">
+                <selectable>Syslog using <selectables>
+                  <selectable>defined API</selectable>
+                  <selectable>Syslog</selectable>
+                  <selectable><assignable>other detection method</assignable></selectable>
+                </selectables></selectable>
+                <selectable>SNMP trap reporting using <selectables>
+                  <selectable>defined API</selectable>
+                  <selectable>Simple Network Management Protocol (SNMP)</selectable>
+                  <selectable><assignable>other detection method</assignable></selectable>
+                </selectables></selectable>
+              </selectables>. </title>
+            <note role="application"> Syslog and/or SNMP trap reporting can be used. At least one reporting method must be selected.
+              <!-- TODO: If SNMP is selected - then need to specify version number -->
+            </note>
+          </f-element>        
+          <f-element>
+            <title> The TSF shall provide the ability to import data from the system: <selectables>
+              <selectable>custom API</selectable>
+              <selectable>Syslog</selectable>
+              <selectable>common log format</selectable>
+              <selectable>CSV</selectable>
+              <selectable><assignable> vendor detection method (e.g. Splunk)</assignable></selectable>
+            </selectables>
+            </title>
+            <note role="application"> The system shall provide the ability to interact with an
+              extensible interface to a third party wireless monitoring system
+              for the purposes of importing data from the wireless system.</note>
+            <aactivity>
+              <TSS> 
+                <!-- TODO: need EA for new elements -->
+                The evaluator shall verify that the TSS includes which method the TOE utilizes. 
+              </TSS>
+              <Guidance> 
+                
+              </Guidance>
+              <Tests>
+                Depending on the detection technique used by the <abbr linkend="TOE"/>, the
+                evaluator shall confirm and note the existence of the capability, and test for the
+                appropriate selection-based requirements.
+                
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
         <ext-comp-def title="Intrusion Detection Methods" fam-id="FAU_IDS_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_ids_ext.1" name="Intrusion Detection System – Intrusion Detection and Reporting Methods"> <!-- TODO: Need to fix element 2 and 3 --><!-- Todo: probably should move the reporting elements that Justin added to different component. If we do that then remove reporting from title. Need to fix EA -->
+        <f-component id="fau_ids_ext.1" name="Intrusion Detection System – Intrusion Detection Methods"><!-- DONE -->
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -710,56 +764,7 @@
               </Tests>
             </aactivity>
           </f-element>
-<!-- NEW SFR -->          
-          <f-element>
-            <title> 
-              The TSF shall provide <selectables linebreak="yes">
-              <selectable>Syslog using <selectables>
-                <selectable>defined API</selectable>
-                <selectable>Syslog</selectable>
-                <selectable><assignable>other detection method</assignable></selectable>
-              </selectables></selectable>
-              <selectable>SNMP trap reporting using <selectables>
-                <selectable>defined API</selectable>
-                <selectable>Simple Network Management Protocol (SNMP)</selectable>
-                <selectable><assignable>other detection method</assignable></selectable>
-              </selectables></selectable>
-            </selectables>. </title>
-            <note role="application"> Syslog and/or SNMP trap reporting can be used. At least one reporting method must be selected.
-              <!-- TODO: If SNMP is selected - then need to specify version number -->
-            </note>
-          </f-element>
-          <!-- Import/export data post processing from WIDS controller
-            Import/export configuration - management of sensor -->
-<!-- NEW SFR -->          
-          <f-element>
-            <title> The TSF shall provide the ability to import data from the system: <selectables>
-              <selectable>custom API</selectable>
-              <selectable>Syslog</selectable>
-              <selectable>common log format</selectable>
-              <selectable>CSV</selectable>
-              <selectable><assignable> vendor detection method (e.g. Splunk)</assignable></selectable>
-            </selectables>
-            </title>
-            <note role="application"> The system shall provide the ability to interact with an
-              extensible interface to a third party wireless monitoring system
-              for the purposes of importing data from the wireless system.</note>
-            <aactivity>
-              <TSS> 
-                <!-- TODO: need EA for new elements -->
-                The evaluator shall verify that the TSS includes which method the TOE utilizes. 
-              </TSS>
-              <Guidance> 
 
-              </Guidance>
-              <Tests>
-                Depending on the detection technique used by the <abbr linkend="TOE"/>, the
-                evaluator shall confirm and note the existence of the capability, and test for the
-                appropriate selection-based requirements.
-               
-              </Tests>
-            </aactivity>
-          </f-element>
         </f-component>
                
         <ext-comp-def title="Environmental Inventory" fam-id="FAU_INV_EXT">
@@ -835,15 +840,13 @@
         <ext-comp-def title="Characteristics of Environmental Objects" fam-id="FAU_INV_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_inv_ext.2" name="Characteristics of Environmental Objects"> <!-- DONE -->
-          <!-- Change: Broke 2.3 up into 2.3,2.4 and 2.5. As it was written it was too wordy -->
+        <f-component id="fau_inv_ext.2" name="Characteristics of Environmental Objects"> <!-- DONE -->    
           <consistency-rationale/>
           <comp-lev/>
           <management/>
           <audit/>
-          <dependencies/>
-          
-          <f-element> 
+          <dependencies/>   
+          <f-element> <!-- Changed: Broke (what was) 2.3 (now 2.1) up into (now) 2.1,2.2 and 2.3. As it was written it was too wordy -->
             <title> 
               The TSF shall detect the <h:ul>
               <h:li>current RF band</h:li>
@@ -1260,7 +1263,7 @@ enforcement of the SFRs.  -->
         <ext-comp-def title="Passive Information Flow Monitoring" fam-id="FAU_WID_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_wid_ext.2" name="Wireless Intrusion Detection – Passive Information Flow Monitoring"><!-- DONE for now -->
+        <f-component id="fau_wid_ext.2" name="Wireless Intrusion Detection – Passive Information Flow Monitoring"><!-- DONE for now. These elements should be broken up into different components. -->
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -1286,7 +1289,7 @@ enforcement of the SFRs.  -->
               <linkref linkend="FAU_WID_EXT"/> SFRs. A vendor does not have to formally define
               this policy, it only needs to comply with the SFRs.</note>           
           </f-element>
-          <f-element>
+          <f-element> <!-- Later_todo: Fix this wording. I do not think that the 802.11 monitoring SPF needs to be included. This is really just an on/off button for sensor transmit. -->
             <title> 
               The TSF shall provide wireless sensors to detect network traffic matching the 802.11 monitoring SFP that <selectables>
                 <selectable>can be configured to prevent transmission of data</selectable>
@@ -1302,8 +1305,7 @@ enforcement of the SFRs.  -->
               The "802.11 monitoring SFP" is established in <linkref linkend="FDP_IFC.1.1"/> and
               defined through <linkref linkend="FAU_WID_EXT"/> SFRs. A vendor does not have to
               formally define this policy, it only needs to comply with the SFRs. </note>
-          </f-element>
-          
+          </f-element>      
           <f-element> <!-- Changed: Added new element (NULL SSID) -->
             <title> 
               The TSF shall detect the presence of the following unauthorized connections and unauthorized network traffic:<h:ul>
@@ -1336,11 +1338,9 @@ enforcement of the SFRs.  -->
             contains the SSID of that network, then the AP will return with a Probe Request of its
             own. The TSF needs to be able to detect if an AP is allowing clients to associate
             without providing the valid SSID of the AP. 
-            </note>
-            
+            </note>    
           </f-element>
           <f-element><!-- NEW SFR -->
-            <!--Keep in this component and move EA from element to componenet.-->
             <title> 
               The TSF shall perform stateful frame inspection and log attacks spanning multiple frames. </title>
             <note role="application"> 
@@ -1506,7 +1506,7 @@ enforcement of the SFRs.  -->
                 detected.<h:br/><h:br/>
               </Guidance>
               <Tests>
-                <!-- TODO: Do we need a specific test for RTS/CTS abuse? -->
+                <!-- Later_Justin: Do we need a specific test for RTS/CTS abuse? -->
                 <testlist>                  
                   <test>
                     <h:b>RF-based DoS</h:b>
@@ -1762,9 +1762,9 @@ enforcement of the SFRs.  -->
       </subsection>
       
       <subsection title="Security Management (FMT)" id="fmt">
-        <f-component id="fmt_smf.1" name="Specification of Management Functions (WIDS)" iteration="WIDS"> <!-- TODO: Complete the EA -->
+        <f-component id="fmt_smf.1" name="Specification of Management Functions (WIDS)" iteration="WIDS"> <!-- TODO: Need to finish EA. Can simply say that these functions shall be tested in conjunction of the other components listed below-->
           <consistency-rationale/>
-          <f-element>
+          <f-element> <!-- Later_Justin: Anyother current requirements that would require configuration? Any other capabilities that we would want to manage. -->
             <title> The TSF shall be capable of performing the following management functions for WIDS functionality: <h:ul>
               <h:li>Define an inventory of authorized APs based on MAC addresses,</h:li> <!-- FAU_INV_EXT.1.1 --> <!-- Done -->
               <h:li>Define an inventory of authorized EUDs based on MAC addresses,</h:li> <!-- FAU_INV_EXT.1.1 --> <!-- Done -->
@@ -1789,61 +1789,40 @@ enforcement of the SFRs.  -->
             </h:ul>
             </title>
             <note role="application">
-              <!-- TODO: Anyother selections that would require configuration -->
-              
               Define authorized WLAN authentication and encryption schemes does not enforce, but rather establishes a baseline to determine if an unauthorized scheme is used.<h:br/><h:br/>
-              
               If <linkref linkend="FAU_ANO_EXT.1"/> is included in the ST, "Specification of periods of network activity that constitute baseline of expected behavior" shall be selected. If <linkref linkend="FAU_ANO_EXT.1"/> is included in the ST and "manual configuration by administrators" is selected in <linkref linkend="FAU_ANO_EXT.1.2"/>, then "Definition of anomaly activity" shall be selected.<h:br/><h:br/>
               
-              If "can be configured to prevent transmission of data" is selected in <linkref linkend="FAU_WID_EXT.2.2"/> then "Enable/Disable transmission of data by wireless sensor" shall be selected.
-              
-              </note>
-            
-            <!-- The below is for the configuration of time spent on frequency and/or channel -->
-           <!--     
-            <note role="application">It is expected that an Authorized Administrator will be
+              If "can be configured to prevent transmission of data" is selected in <linkref linkend="FAU_WID_EXT.2.2"/> then "Enable/Disable transmission of data by wireless sensor" shall be selected.<h:br/><h:br/>
+              It is expected that an Authorized Administrator will be
               responsible for configuring the AP to operate on a specific frequency persuaent to the
               802.11 standard. The TSF will have the ability to adjust the amount of time it
-              passively monitors and captures WLAN traffic on a given frequency and channel. </note>
+              passively monitors and captures WLAN traffic on a given frequency and channel. 
+              </note>
             <aactivity>
-              <TSS> The evaluator shall verify that the TSS includes a list of available containment
-                methods on the TSF and how to configure them.<h:br/><h:br/>
+              <!-- TODO: Add EAs for new functions. Current EA is just for the configuration of time spent on frequency and/or channel  -->
+              <TSS> 
+                The evaluator shall verify that the TSS includes a list of available containment
+                methods on the TSF and how to configure them.
+                <h:br/><h:br/>
               </TSS>
-              <Guidance> There are no operational guidance activities for this SFR.<h:br/><h:br/>
-              </Guidance>
-              <Tests> 
-              <testlist>
-                <test>
-                  <steplist>
-                    <step>Deploy a whitelisted AP and connect it to the protected wired
-                      infrastructure via wire.</step>
-                    <step>Confirm that the TSF can observe and capture traffic and events
-                      generated by the AP.</step>
-                    <step>Verify that the TSF can be configured to capture traffic on a specific
-                      channel for specific interval of time, and assign a specified frequency and
-                      time interval.</step>
-                    <step>Confirm that the TSF" /> remains on the frequency and channel for the
-                      time period specified.</step>
-                  </steplist>
-                </test>
-              </testlist>
-              </Tests>
-            </aactivity>
-              -->
-              
-           
-            <aactivity>
-              <!-- TODO: Add EAs for new functions -->
-              <TSS> The evaluator shall verify that the TSS describes how the baseline can be
-                configured.<h:br/><h:br/>
-              </TSS>
-              <Guidance> The evaluator shall verify that the operational guidance describes the
-                instructions for defining a baseline.<h:br/><h:br/>
+              <Guidance> 
+                There are no operational guidance activities for this SFR.
+                <h:br/><h:br/>
               </Guidance>
               <Tests>
                 <testlist>
-                  <test>Following the instructions in the operatinal guidance verify that the period
-                    of network activity that constitutes a baseline can indicated in the TSF.
+                  <test>
+                    <steplist>
+                      <step>Deploy a whitelisted AP and connect it to the protected wired
+                        infrastructure via wire.</step>
+                      <step>Confirm that the TSF can observe and capture traffic and events
+                        generated by the AP.</step>
+                      <step>Verify that the TSF can be configured to capture traffic on a specific
+                        channel for specific interval of time, and assign a specified frequency and
+                        time interval.</step>
+                      <step>Confirm that the TSF" /> remains on the frequency and channel for the
+                        time period specified.</step>
+                    </steplist>
                   </test>
                 </testlist>
               </Tests>
@@ -1987,7 +1966,7 @@ enforcement of the SFRs.  -->
         </f-component>
         
         
-        <!-- Removed - comment out for now -->
+        <!-- Removed - commented out for now -->
         <!--  <ext-comp-def title="Location of Environmental Objects (Cellular Devices)"
           fam-id="FAU_INV_EXT">
           <mod-def/>
@@ -2070,7 +2049,7 @@ enforcement of the SFRs.  -->
         <ext-comp-def title="Protected Audit Event Storage (Packet Captures)" fam-id="FAU_STG_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_stg_ext.1" iteration="PCAP" name="Protected Audit Event Storage (Packet Captures)"> <!-- TODO: Look at 1.2 in ND -->
+        <f-component id="fau_stg_ext.1" iteration="PCAP" name="Protected Audit Event Storage (Packet Captures)"> <!-- Later_TODO: Look at 1.2 in ND -->
           <!-- This component is copied from ND cPP and iterated to make a distintion between audit records and PCAPs -->
           <selection-depends req="fau_arp.1.1" ids="pcap"/>
           <consistency-rationale/>
@@ -2087,7 +2066,7 @@ enforcement of the SFRs.  -->
               If "capture raw frame traffic that triggers the violation" is selected in <linkref linkend="FAU_ARP.1"/>, then this SFR shall be included in the ST, and this iteration is for the PCAPs generated as a selectable action completed upon detection of a potential security violation in <linkref linkend="FAU_ARP.1"/>.
                </note>
           </f-element>
-          <f-element> <!-- TODO: Look at this element in NDcPP -->
+          <f-element> <!-- Later_TODO: Look at this element in NDcPP -->
             <title>The TSF shall be able to store generated packet captures on the TOE itself. </title>
           </f-element>
           <f-element>
@@ -2183,10 +2162,8 @@ enforcement of the SFRs.  -->
           </f-component> -->
         
         
-        <!--  How does this differ from FAU_GEN.1???
-          From Diana - FAU_GEN.1.1/WIDS is for regular audit functions. FAU_GEN.2 is meant it to be the actual alerts that get generated by the wids. She originally had them together and TC stated that alerts are not audit so she moved them all and call them Alerts Data Generation instead of Audit. 
-        -->
-        <f-component iteration="WIDS2" id="fau_gen.1" name="Alerts Data Generation (WIDS)"><!-- TODO: This component needs to be renumbered. It is actually a third iteration of FAU_GEN.1. Or maybe rewrite the alert items, to be more audit like. -->
+        
+        <f-component iteration="WIDS2" id="fau_gen.1" name="Alerts Data Generation (WIDS)"><!-- TODO: Remaining items (not commented out) needs to be moved to FAU_SAA -->
           <consistency-rationale/>
           <f-element>
             <title> The TSF shall be able to generate a WIDS audit record of the following auditable
@@ -2328,7 +2305,7 @@ enforcement of the SFRs.  -->
         </ext-comp-def>
         <f-component id="PLACEHOLDER" name="Signal Library"> <!-- TODO: ID (and possibly re-alphabetize) and EA -->
           <consistency-rationale></consistency-rationale>
-          <f-element><!-- from GAP Analysis -->
+          <f-element>
             <title> The TSF shall include a signal library.</title>
             <note role="application">The TSF will need to have the ability to import, export, or
               update the exisiting signal library.</note>
