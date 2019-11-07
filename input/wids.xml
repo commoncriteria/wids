@@ -34,7 +34,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2019-10-26</PPPubDate>
+      <PPPubDate>2019-11-07</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -1061,7 +1061,7 @@
         </f-component>
         
         
-        <f-component id="fau_saa.1" name="Potential Violation Analysis"> 
+        <f-component id="fau_saa.1" name="Potential Violation Analysis"> <!-- NIAP: Is this expected format? Meaning does each rule have to be tied to a SFR or can it just be a list of rules? Probably have other rules to add - NULL SSID -->
           <consistency-rationale/>
           <!-- The TSF shall be able to apply a set of rules in monitoring the audited events and based upon these rules indicate a potential violation of the
 enforcement of the SFRs.  -->
