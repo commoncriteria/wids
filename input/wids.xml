@@ -475,7 +475,7 @@
       <subsection title="Security Audit (FAU)" id="fau">
         <f-component id="fau_arp.1" name="Security Alarms"> <!-- DONE -->
           <consistency-rationale/>
-          <f-element>
+          <f-element id="fel-arp">
             <title>
               The TSF shall <h:i>display an alert to Authorized Administrator in sufficient detail to include identity of APs and EUDs involved, description of alert and severity level and</h:i>
               <selectables>
@@ -734,7 +734,7 @@
           <management/>
           <audit/>
           <dependencies/>
-          <f-element>
+          <f-element id="fel-ids-meth">
             <title> 
               The TSF shall provide the following methods of intrusion detection <selectables>
               <selectable id="anoBased">anomaly-based</selectable>
@@ -2016,7 +2016,7 @@ The evaluator shall examine the operational guidance to verify that it
           <fam-behavior/>
         </ext-comp-def>
         <f-component id="fau_ano_ext.1" name="Anomaly-Based Intrusion Detection"> <!-- DONE -->
-          <selection-depends req="fau_ids_ext.1.1" ids="anoBased"/>
+          <selection-depends req="fel-ids-meth" ids="anoBased"/>
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -2117,7 +2117,7 @@ The evaluator shall examine the operational guidance to verify that it
           <fam-behavior/>
         </ext-comp-def>
         <f-component id="fau_sig_ext.1" name="Signature-Based Intrusion Detection"><!-- DONE -->
-          <selection-depends req="fau_ids_ext.1.1" ids="sigBased"/>
+          <selection-depends req="fel-ids-meth" ids="sigBased"/>
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -2156,7 +2156,7 @@ The evaluator shall examine the operational guidance to verify that it
         </ext-comp-def>
         <f-component id="fau_stg_ext.1" iteration="PCAP" name="Protected Audit Event Storage (Packet Captures)"> <!-- Later_TODO: Look at 1.2 in ND -->
           <!-- This component is copied from ND cPP and iterated to make a distintion between audit records and PCAPs -->
-          <selection-depends req="fau_arp.1.1" ids="pcap"/>
+          <selection-depends req="fel-arp" ids="pcap"/> <!-- fau_arp.1.1 -->
           <consistency-rationale/>
           <comp-lev/>
           <management/>
