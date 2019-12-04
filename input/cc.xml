@@ -606,7 +606,7 @@
           packet-filter firewall is an example of such a TOE, where
           there are no untrusted entity domains; there are only data
           structures maintained by the TSF. The existence of domains,
-          then, is dependant upon 1) the type of TOE and 2) the SFRs
+          then, is dependent upon 1) the type of TOE and 2) the SFRs
           levied on the TOE. In the cases where the TOE does provide
           domains for untrusted entities, this family requires that
           those domains are isolated from one another such that
@@ -22932,7 +22932,7 @@
           <xref show="link" id="fpt_ssp"/> establishes the requirement for certain
           critical functions of the TSF to use this trusted
           protocol. <xref show="link" id="fpt_ssp"/> ensures that two distributed
-          parts of the TOE (e.g. hosts) have synchronised their states
+          parts of the TOE (e.g. hosts) have synchronized their states
           after a security-relevant action.</para>
       </ff-behaviour>
       <ff-user-notes>
@@ -22949,10 +22949,10 @@
           <xref show="link" id="fpt_ssp"/> establishes the requirement for certain
           critical functions of the TSF to use a trusted
           protocol. <xref show="link" id="fpt_ssp"/> ensures that two distributed
-          parts of the TOE (e.g. hosts) have synchronised their states
+          parts of the TOE (e.g. hosts) have synchronized their states
           after a security-relevant action.</para>
         <para type="normal" id="pgfId-271327">
-          Some states may never be synchronised, or the transaction
+          Some states may never be synchronized, or the transaction
           cost may be too high for practical use; encryption key
           revocation is an example, where knowing the state after the
           revocation action is initiated can never be known. Either
@@ -31344,7 +31344,7 @@
               <italic>SFR-related</italic> actions. Regular actions
               are descriptions of what the interface does. The amount
               of information provided for this description is
-              dependant on the complexity of the interface. The
+              dependent on the complexity of the interface. The
               SFR-related actions are those that are visible at any
               external interface (for instance, audit activity caused
               by the invocation of an interface (assuming audit
@@ -31837,7 +31837,7 @@
               <italic>SFR-related</italic> actions. Regular actions
               are descriptions of what the interface does. The amount
               of information provided for this description is
-              dependant on the complexity of the interface. The
+              dependent on the complexity of the interface. The
               SFR-related actions are those that are visible at any
               external interface (for instance, audit activity caused
               by the invocation of an interface (assuming audit
