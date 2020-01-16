@@ -387,9 +387,7 @@
           <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection"><!-- DONE -->
             <consistency-rationale/>
             <f-element>
-              <title>The TSF shall protect TSF data from <h:u>disclosure and <h:b>detect its</h:b>
-                modification</h:u> when it is transmitted between separate parts of the TOE
-                <h:b>through the use of <selectables>
+              <title>The TSF shall protect TSF data from <h:u>disclosure and <h:b>detect its</h:b> modification</h:u> when it is transmitted between separate parts of the TOE <h:b>through the use of <selectables>
                   <selectable>IPsec</selectable>
                   <selectable>SSH</selectable>
                   <selectable>TLS</selectable>
@@ -2000,6 +1998,7 @@ The evaluator shall examine the operational guidance to verify that it
         </f-component>
       </subsection>
     </opt-sfrs>
+    
     <sel-sfrs>
       <subsection title="Security Audit (FAU)" id="fau">
         <ext-comp-def title="Anomaly-Based Intrusion Detection" fam-id="FAU_ANO_EXT">
@@ -2059,7 +2058,6 @@ The evaluator shall examine the operational guidance to verify that it
             </aactivity>
           </f-element>
         </f-component>
-        
         
         <!-- Removed - commented out for now -->
         <!--  <ext-comp-def title="Location of Environmental Objects (Cellular Devices)"
@@ -2153,12 +2151,9 @@ The evaluator shall examine the operational guidance to verify that it
           <audit/>
           <dependencies/>
           <f-element>
-            <title>The TSF shall be able to transmit the generated packet captures to an
-              external IT entity using a trusted channel according to FTP_ITC.1. </title>
+            <title>The TSF shall be able to transmit the generated packet captures to an external IT entity using a trusted channel according to FTP_ITC.1. </title>
             <note role="application"> 
-              Per FAU_STG_EXT.1 in the Base-PP, the TOE must support transfer of the audit data to an external IT entity using a trusted channel per FTP_ITC.1. Note that this PP-Module modifies FTP_ITC.1 from the Base-PP.
-              
-              If "capture raw frame traffic that triggers the violation" is selected in FAU_ARP.1, then this SFR shall be included in the ST, and this iteration is for the PCAPs generated as a selectable action completed upon detection of a potential security violation in FAU_ARP.1.
+              Per FAU_STG_EXT.1 in the Base-PP, the TOE must support transfer of the audit data to an external IT entity using a trusted channel per FTP_ITC.1. Note that this PP-Module modifies FTP_ITC.1 from the Base-PP. If "capture raw frame traffic that triggers the violation" is selected in FAU_ARP.1, then this SFR shall be included in the ST, and this iteration is for the PCAPs generated as a selectable action completed upon detection of a potential security violation in FAU_ARP.1.
                </note>
           </f-element>
           <f-element> <!-- Later_TODO: Look at this element in NDcPP -->
@@ -2175,35 +2170,16 @@ The evaluator shall examine the operational guidance to verify that it
             </selectables> when the local storage space for packet capture data is full. </title>
             <aactivity>
               <TSS> 
-                The evaluator shall verify that the TSS includes the list of trusted channels
-                (as specified in FTP_ITC.1) available in the TSF to transmit packet captures to an
-                external entity. The evaluator shall verify that the TSS describes the ability of
-                the TOE to store packet capture data within itself, how much storage space is
-                available for packet capture data and where that data is stored. The evaluator shall
-                verify that the TSS describes the behavior of the TOE when local storage space for
-                packet capture data is exhausted and whether this behavior is
-                configurable.<h:br/><h:br/>
+                The evaluator shall verify that the TSS includes the list of trusted channels (as specified in FTP_ITC.1) available in the TSF to transmit packet captures to an external entity. The evaluator shall verify that the TSS describes the ability of the TOE to store packet capture data within itself, how much storage space is available for packet capture data and where that data is stored. The evaluator shall verify that the TSS describes the behavior of the TOE when local storage space for packet capture data is exhausted and whether this behavior is configurable.<h:br/><h:br/>
               </TSS>
               <Guidance> 
-                The evaluator shall verify that the operational guidance provides
-                instructions on how to configure the trusted channel. If the behavior of the TOE
-                when local storage space for packet capture data is exhausted is configurable, the
-                evaluator shall verify that the operational guidance provides information on what
-                the configurable behaviors are and how they can be set.<h:br/><h:br/>
+                The evaluator shall verify that the operational guidance provides instructions on how to configure the trusted channel. If the behavior of the TOE when local storage space for packet capture data is exhausted is configurable, the evaluator shall verify that the operational guidance provides information on what the configurable behaviors are and how they can be set.<h:br/><h:br/>
               </Guidance>
               <Tests>
                 <testlist>
-                  <test>The evaluator shall configure packet captures according to the guidance
-                    specified. The evaluator shall then trigger an event that starts a capture and
-                    verify through the tests in FTP_ITC.1 that the captured traffic being sent to
-                    the external device is being sent through a trusted channel.</test>
-                  <test>The evaluator shall configure packet captures to be stored on the TSF
-                    according to the guidance specified. The evaluator shall then trigger an event
-                    that starts a capture and verify that the packet capture was stored on the
-                    TSF.</test>
-                  <test>The evaluator shall define packet data retention and deletion rules on the
-                    TSF according to the guidance specified and test the functionality of the
-                    specified rules.</test>
+                  <test>The evaluator shall configure packet captures according to the guidance specified. The evaluator shall then trigger an event that starts a capture and verify through the tests in FTP_ITC.1 that the captured traffic being sent to the external device is being sent through a trusted channel.</test>
+                  <test>The evaluator shall configure packet captures to be stored on the TSF according to the guidance specified. The evaluator shall then trigger an event that starts a capture and verify that the packet capture was stored on the TSF.</test>
+                  <test>The evaluator shall define packet data retention and deletion rules on the TSF according to the guidance specified and test the functionality of the specified rules.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -2211,7 +2187,9 @@ The evaluator shall examine the operational guidance to verify that it
         </f-component>
       </subsection>
     </sel-sfrs>
+    
     <obj-sfrs>
+
       <subsection title="Security Audit (FAU)" id="fau">
         <!-- Originally I asked Justin to add this SFR, most likely do not need it, b/c ND cPP covers it.  -->
         <!-- <f-component id="fau_gen.1" name="Device Configuration - Exporting Event Data">         
@@ -2256,15 +2234,6 @@ The evaluator shall examine the operational guidance to verify that it
           </f-element>
           </f-component> -->
         
-        
-        
-
-        <!-- NEW Component -->        
-        <ext-comp-def title="Signal Library" fam-id="FAU_INV_EXT">
-          <mod-def/>
-        </ext-comp-def>
-        
-        
         <ext-comp-def title="Detection of Unauthorized Connections" fam-id="FAU_INV_EXT">
           <mod-def/>
         </ext-comp-def>
@@ -2303,7 +2272,11 @@ The evaluator shall examine the operational guidance to verify that it
             </aactivity>
           </f-element>
         </f-component>
-        
+          
+        <!-- NEW Component --> 
+        <ext-comp-def title="Signal Library" fam-id="FAU_INV_EXT">
+          <mod-def/>
+        </ext-comp-def>
         <f-component id="fau_inv_ext.6" name="Signal Library"> <!-- DONE -->
           <consistency-rationale></consistency-rationale>
           <f-element>
@@ -2526,25 +2499,17 @@ The evaluator shall examine the operational guidance to verify that it
         <f-component id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection"> <!-- DONE -->
           <consistency-rationale/>
           <f-element>
-            <title> The TSF shall preserve a secure state when the following types of failures
-              occur: [<h:i>sensor functionality failure, potential compromise of the TSF</h:i>]. </title>
-            <note role="application"> At minimum, the preservation of a secure state requires the
-              generation of audit records when the defined failure conditions occur. </note>
+            <title> The TSF shall preserve a secure state when the following types of failures occur: [<h:i>sensor functionality failure, potential compromise of the TSF</h:i>]. </title>
+            <note role="application"> 
+              At minimum, the preservation of a secure state requires the generation of audit records when the defined failure conditions occur. </note>
             <aactivity>
-              <TSS> The evaluator shall review the TSS section to determine that the TOE’s
-                implementation of the fail secure functionality is documented. The evaluator shall
-                examine the TSS section to ensure that all failure modes specified in the ST are
-                described.<h:br/><h:br/>
+              <TSS> The evaluator shall review the TSS section to determine that the TOE’s implementation of the fail secure functionality is documented. The evaluator shall examine the TSS section to ensure that all failure modes specified in the ST are described.<h:br/><h:br/>
               </TSS>
-              <Guidance> The evaluator shall review the operational guidance to verify that it
-                identifies the potential TOE failures, how the TSF preserves a secure state
-                following these failures, and any actions that are required to restore the TOE to
-                normal operation following the transition to a failure state. <h:br/><h:br/>
+              <Guidance> The evaluator shall review the operational guidance to verify that it identifies the potential TOE failures, how the TSF preserves a secure state following these failures, and any actions that are required to restore the TOE to normal operation following the transition to a failure state. <h:br/><h:br/>
               </Guidance>
               <Tests>
                 <testlist>
-                  <test>For each failure mode specified in the ST, the evaluator shall ensure that
-                    the TOE attains a secure state after initiating each failure mode type.</test>
+                  <test>For each failure mode specified in the ST, the evaluator shall ensure that the TOE attains a secure state after initiating each failure mode type.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -2553,6 +2518,8 @@ The evaluator shall examine the operational guidance to verify that it
       </subsection>
     </obj-sfrs>
   </chapter>
+  
+  
   <bibliography>
     <cc-entry/>
   </bibliography>
