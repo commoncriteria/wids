@@ -563,7 +563,10 @@
                 <h:li><h:i>Failure of wireless sensor communication].</h:i></h:li>
               </h:ol>
               <h:table>
-                <h:tr><h:td><h:b>Requirement</h:b></h:td><h:td><h:b>Auditable Events</h:b></h:td><h:td><h:b>Additional Audit Record Contents</h:b></h:td></h:tr>
+                <h:thead>
+                  <h:tr><h:td colspan="99"> <ctr id="auditWids" pre="Table " ctr-type="Table">: Auditable Events</ctr> </h:td></h:tr>
+                  <h:tr><h:th>Requirement</h:th><h:th>Auditable Events</h:th><h:th>Additional Audit Record Contents</h:th></h:tr>
+                </h:thead>
                 <h:tr><h:td>FAU_ANO_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_ARP.1</h:td><h:td>Actions taken due to potential security violations</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_ARP_EXT.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
@@ -602,7 +605,6 @@
                 <h:tr><h:td>FPT_ITT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FTP_ITC.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
               </h:table>
-              <ctr id="auditWids" ctr-type="Table">: Auditable Events</ctr>
             </title>
             <note role="application"> 
               
