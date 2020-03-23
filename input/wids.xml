@@ -14,12 +14,11 @@
   - consistency rationales throughout document
   - ECDs throughout document
   - Does this Module claim any packages?
+  - Distributed TOE - what do we need to do for ND?
+  - Optional objectives
 
   Kevin
-  - Iterations as '/' - need Kevin to allow '/' in component id. Need to update boilerplate text that defines iteration as (#)
   - ND cPP is not in XML/github - how do I reference it?
-  - Can we mark SFRs as (optional, sel-based, objective) in objective mapping?
-  - Can you define abbr in the acronyms section?
  
  DONE:
  - Moved fpt_itt and ftp_itc to modified sfrs
@@ -47,16 +46,9 @@
   </RevisionHistory>
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
-      This Protection Profile Module (PP-Module) describes
-      security requirements for a Wireless Intrusion Detection System (WIDS) defined to be an IEEE
-      802.11 network intrusion detection product located at the edge of a private network that can
-      collect, inspect, and analyze real-time network traffic and alert the administrator of policy
-      violations. This PP-Module is intended to provide a minimal baseline set of requirements that
-      are targeted at mitigating well defined and described threats. <h:br/><h:br/> This PP-Module
-      contains optional requirements for a Wireless Intrustion Protection System (WIPS) a security
-      product that provides network security administrators with the additional ability to react in
-      real-time to potentially malicious wireless (IEEE 802.11) network traffic. <h:br/><h:br/> This
-      PP-Module extends the collaborative Protection Profile for Network Devices (NDcPP). </section>
+      This Protection Profile Module (PP-Module) describes security requirements for a Wireless Intrusion Detection System (WIDS) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This PP-Module is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/> 
+      This PP-Module contains optional requirements for a Wireless Intrustion Protection System (WIPS) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic. <h:br/><h:br/> 
+      This PP-Module extends the collaborative Protection Profile for Network Devices (NDcPP). </section>
     <tech-terms>
       <term abbr="AES" full="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point"> 
@@ -120,7 +112,8 @@
         <figure entity="images/TOE.jpg" title="General TOE" id="toe"/>
       </subsection>
     </section>
-    <section title="Use Cases" id="usecases">
+    
+    <section title="Use Cases" id="usecases"><!-- TODO: Need to either add a use case or delete this section -->
       <usecases>
         <usecase id="usecase1" title="Use Case 1">
           <description/>
@@ -128,6 +121,7 @@
       </usecases>
     </section>
   </chapter>
+  
   <chapter title="Conformance Claims" id="ConformanceClaims">
     <cclaims>
       <cclaim title="Conformance Statement">
@@ -330,7 +324,8 @@
           <!-- Optional -->
           <consistency-rationale/>
         </SO>
-        <SO id="O.INSECURE_OPERATIONS">
+        <SO id="O.INSECURE_OPERATIONS"> <!-- Technically this is an optional objective because only optional requirements map to it - this is not allowed -->
+          <!-- Justin: Are there any mandatory requirements that can map to this security objective? -->
           <description> There may be instances where the TOE’s hardware malfunctions or the
             integrity of the TOE’s software is compromised, the latter being due to malicious or
             non-malicious intent. To address the concern of the TOE operating outside of its
@@ -340,7 +335,7 @@
 	  <addressed-by>
             <!-- Mandatory -->
             <!-- Optional -->
-	    FPT_FLS.1(Optional)
+	    FPT_FLS.1(OPTIONAL)
 	  </addressed-by>
           <consistency-rationale/>
         </SO>
@@ -602,7 +597,9 @@
                 <h:tr><h:td>FPT_ITT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FTP_ITC.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
               </h:table>
-              <ctr id="auditWids" ctr-type="Table">: Auditable Events</ctr>
+              <ctr ctr-type="Table" id="auditWids">: Auditable Events</ctr>
+              
+             
             </title>
             <note role="application"> 
               
