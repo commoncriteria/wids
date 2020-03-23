@@ -25,10 +25,20 @@
  - DONE: Selection-Depends
  - DONE: Table ctr
  
+ Arnolds Comments
+ 1. Title: Specify 802.11 WIDS/WIPS
+ 2. Section 1: Plance 802.11 in front of Wireless Intrusion Detection System
+ 3. Section 1.1: Added "in addition to the 802.11 WIDS capability" to  statement
+ 4. Section 1.2.2: Add 802.11 to "AP, "EUD", and "WLAN" definitions
+ 5. Section 1.3.1: Replace Wireless Intrusion Detection/Prevention System with "WIDS/WIPS"
+ 6. Section 1.3.1: Change the word "Overlay" to "Standalone"
+ 7. Section 1.3.1 - 3: Corrected 3 punctuation errors
+ 8. Section 3: Removed the last sentence reference the to "Wi-Fi" spelling variances/permutations. 
+ Change everything instance of "Wi-Fi" (2) to "WLAN"
 -->
 
 
-<Module boilerplate="yes" target-products="WIDS/WIPS" xmlns="https://niap-ccevs.org/cc/v1" name="Wireless Intrusion Detection/Prevention Systems" xmlns:h="http://www.w3.org/1999/xhtml">
+<Module boilerplate="yes" target-products="WIDS/WIPS" xmlns="https://niap-ccevs.org/cc/v1" name="802.11 Wireless Intrusion Detection/Prevention Systems" xmlns:h="http://www.w3.org/1999/xhtml">
   <PPReference>
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
@@ -46,18 +56,17 @@
   </RevisionHistory>
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
-      This Protection Profile Module (PP-Module) describes security requirements for a Wireless Intrusion Detection System (WIDS) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This PP-Module is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/> 
-      This PP-Module contains optional requirements for a Wireless Intrustion Protection System (WIPS) a security product that provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic. <h:br/><h:br/> 
+      This Protection Profile Module (PP-Module) describes security requirements for a 802.11 Wireless Intrusion Detection System (WIDS) defined to be an IEEE 802.11 network intrusion detection product located at the edge of a private network that can collect, inspect, and analyze real-time network traffic and alert the administrator of policy violations. This PP-Module is intended to provide a minimal baseline set of requirements that are targeted at mitigating well defined and described threats. <h:br/><h:br/> 
+      This PP-Module contains optional requirements for a Wireless Intrustion Protection System (WIPS), a security product that in addition to the 802.11 WIDS capability, provides network security administrators with the additional ability to react in real-time to potentially malicious wireless (IEEE 802.11) network traffic. <h:br/><h:br/> 
       This PP-Module extends the collaborative Protection Profile for Network Devices (NDcPP). </section>
     <tech-terms>
       <term abbr="AES" full="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point"> 
-        A device that provides the network interface that enables
-        wireless client hosts to access a wired network. </term>
+        A device that provides the network interface that enables 802.11 wireless client hosts to access a wired network. </term>
       <term abbr="BSSID" full="Basic Service Set Identifier"/>
       <term abbr="DoS" full="Denial of Service"/>
       <term abbr="EUD" full="End User Device"> 
-        A device that has the ability to process, transmit,
+        An 802.11 enabled device that has the ability to process, transmit,
         and/or store information. </term>
       <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
       <term abbr="IPsec" full="Internet Protocol Security"/>
@@ -78,14 +87,14 @@
         provides network security administrators with the ability to monitor, collect, log, and
         react in real-time to potentially malicious wireless (IEEE 802.11) network traffic. </term>
       <term abbr="WLAN" full="Wireless Local Area Network"> 
-        A wireless computer network that links
+        An 802.11 wireless computer network that links
         two or more devices using wireless communication to form a local area network (LAN) within a
         limited area such as a home, school, computer laboratory, campus, office building etc. </term>
-      <term abbr="WPA" full="Wi-Fi Protected Access"/>
+      <term abbr="WPA" full="WLAN Protected Access"/>
     </tech-terms>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="TOEboundary"> This PP-Module specifically addresses
-        Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS). A conformant WIDS is a product
+        WIDS/WIPS. A conformant WIDS is a product
         that can monitor, collect, inspect, and analyze real-time network traffic and alert the
         administrator of policy violations. WIPS functionality is not required to conform to this
         PP-Module, and it is optional for the TOE to have the additional ability to react in
@@ -94,10 +103,10 @@
         WLAN radio frequency spectrum and a centralized mechanism such as a Server or Controller
         that processes the data collected by the sensors. Conformant TOEs must use a secure
         communication path(s) between WIDS/WIPS components. <h:br/><h:br/> A WIDS/WIPS can be
-        Integrated (be part of the WLAN infrastructure) or Overlay (independent from WLAN)
+        Integrated (be part of the WLAN infrastructure) or Standalone (independent from WLAN)
         architecture depending on vendor implementation. The two different architectures are
         illustrated in the <figref refid="toe"/> figure below. <h:br/><h:br/> A WIDS/WIPS is
-        expected to inspect layers 1 and 2 network traffic, per the OSI network model and monitor
+        expected to inspect layers 1 and 2 network traffic, per the OSI network model, and monitor
         wireless frames in the RF spectrum utilized by IEEE 802.11 a, b, g, n, and ac. Monitoring
         and inspection of other technologies (e.g., cellular) and protocols are
         optional.<h:br/><h:br/> Conformant TOEs will detect potentially malicious network traffic
@@ -154,10 +163,9 @@
     This extends to the wired networks as intrusions on the wireless network can also be damaging to
     the wired infrastructure. The WIDS/WIPS also protect the wired infrastructure by detecting rogue
     devices that are directly connected to the wired infrastructure, which may expose the wired
-    network, or unauthorized WLAN devices deployed in a no-wireless zone. The terms "Wi-Fi", “Wi-Fi
-    Network” and “WLAN” will be used interchangeably to represent a Wi-Fi network.<h:br/>
+    network, or unauthorized WLAN devices deployed in a no-wireless zone.<h:br/>
     <h:br/> 
-    The proper installation, configuration, and administration of the WIDS are critical to
+    The proper installation, configuration, and administration of the WIDS is critical to
     its correct operation. A site is responsible for developing its security policy and configuring
     a rule set that the WIDS will enforce and provide an appropriate response to meet their needs,
     relative to their own risk analysis and their perceived threats.<h:br/><h:br/> 
@@ -170,7 +178,7 @@
     security threats addressed by a WIDS TOE. 
     <section title="Threats" id="threats">
       <threats>
-        <threat id="T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">
+        <threat name="T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">
           <description> Unintended/unauthorized disclosure of sensitive information on a protected
             WLAN, such as sending unencrypted sensitive data. The WIDS will be capable of collecting
             and analyzing WLAN data to detect unauthorized disclosure of information. </description>
@@ -189,7 +197,7 @@
               O.WIPS_REACT as this provides containment of unauthorized APs and EUDs.</rationale>
           </objective-refer>
         </threat>
-        <threat id="T.UNAUTHORIZED_ACCESS">
+        <threat name="T.UNAUTHORIZED_ACCESS">
           <description> An attacker may attempt to gain unauthorized access to a network, endpoints,
             or services, by methods such as impersonation of an authorized AP to get an EUD to
             connect to the unauthorized AP If malicious external APs or EUDs are able to communicate
@@ -213,7 +221,7 @@
               O.TOE_ADMINISTRATION.</rationale>
           </objective-refer>
         </threat>
-        <threat id="T.DISRUPTION">
+        <threat name="T.DISRUPTION">
           <description> Attacks against the WLAN infrastructure might lead to denial of service
             (DoS) attacks within a protected WLAN. A wireless DoS may occur in two ways: at the
             physical layer through RF Jamming, or at the data link layer through packet injection. </description>
@@ -234,7 +242,7 @@
     </section>
     <section title="Assumptions" id="assumption">
       <assumptions>
-        <assumption id="A.CONNECTIONS">
+        <assumption name="A.CONNECTIONS">
           <description> It is assumed that the TOE is connected to distinct networks in a manner
             that ensures that the TOE's security policies will be enforced on all applicable network
             traffic flowing among the attached networks. </description>
@@ -243,7 +251,7 @@
               A.CONNECTIONS.</rationale>
           </objective-refer>
         </assumption>
-        <assumption id="A.PROPER_ADMIN">
+        <assumption name="A.PROPER_ADMIN">
           <description> The administrator of the WIDS is not careless, willfully negligent or
             hostile, and administers the WIDS within compliance of the applied enterprise security
             policy. </description>
@@ -257,7 +265,7 @@
     <section title="Organizational Security Policies" id="osp"> An organization deploying the TOE is
       expected to satisfy the organizational security policy listed below in addition to all
       organizational security policies defined by the claimed base PP. <OSPs>
-        <OSP id="P.ANALYZE">
+        <OSP name="P.ANALYZE">
           <description>Analytical processes and information to derive conclusions about potential
             intrusions must be applied to WIDS data and appropriate response actions
             taken.</description>
@@ -273,16 +281,17 @@
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <!-- Later: Make sure new SFRs are mapped to SOs -->
       <SOs>
-        <SO id="O.SYSTEM_MONITORING">
+        <SO name="O.SYSTEM_MONITORING">
           <description> To be able to analyze and react to potential network policy violations, the
             WIDS must be able to collect and store essential data elements of network traffic on
             monitored networks.<h:br/>
           </description>
 	  <addressed-by>FAU_GEN.1/WIDS, FAU_STG_EXT.1/PCAP</addressed-by>
           <!-- Mandatory -->
+          <rationale></rationale>
           <consistency-rationale></consistency-rationale>
         </SO>
-        <SO id="O.WIDS_ANALYZE">
+        <SO name="O.WIDS_ANALYZE">
           <description> The WIDS must be able to analyze collected or observed WLAN activity on
             monitored network to identify potential violations of approved WLAN policies,
             unauthorized connections involving internal WLAN devices, and non-secure communications.
@@ -297,10 +306,11 @@
 	    <!--  <component-refer ref="FAU_INV_EXT.4" iteration="CELL"/>-->
 	    FAU_INV_EXT.5(OPTIONAL), FAU_MAC_EXT.1(OPTIONAL), FAU_SIG_EXT.1(OPTIONAL), FAU_WID_EXT.6(OPTIONAL),
 	    FAU_WID_EXT.7(OPTIONAL), FAU_WID_EXT.8(OPTIONAL)
-	  </addressed-by>          
+	  </addressed-by>  
+          <rationale></rationale>
 	  <consistency-rationale/>
         </SO>    
-        <SO id="O.WIPS_REACT"><!-- NIAP: WIPS functionality is optional, so technically this is an optional objective -->
+        <SO name="O.WIPS_REACT"><!-- NIAP: WIPS functionality is optional, so technically this is an optional objective -->
           <description> The TOE must be able to react as configured by the administrators to
             isolate/contain WLAN devices that have been determined to violate administrator-defined
             WIPS policies. <h:br/>
@@ -310,9 +320,10 @@
 	  <addressed-by>
             FAU_WIP_EXT.1 (OPTIONAL)
 	  </addressed-by>
+          <rationale></rationale>
           <consistency-rationale/>
         </SO>
-        <SO id="O.TOE_ADMINISTRATION">
+        <SO name="O.TOE_ADMINISTRATION">
           <description> To address the threat of unauthorized administrator access that is defined
             in the base PP, Conformant TOEs will provide the functions necessary for an
             administrator to configure the WIDS Capabilities of the TOE. <h:br/>
@@ -322,9 +333,10 @@
             FMT_SMF.1/WIDS
           </addressed-by>
           <!-- Optional -->
+          <rationale></rationale>
           <consistency-rationale/>
         </SO>
-        <SO id="O.INSECURE_OPERATIONS"> <!-- Technically this is an optional objective because only optional requirements map to it - this is not allowed -->
+        <SO name="O.INSECURE_OPERATIONS"> <!-- Technically this is an optional objective because only optional requirements map to it - this is not allowed -->
           <!-- Justin: Are there any mandatory requirements that can map to this security objective? -->
           <description> There may be instances where the TOE’s hardware malfunctions or the
             integrity of the TOE’s software is compromised, the latter being due to malicious or
@@ -337,9 +349,10 @@
             <!-- Optional -->
 	    FPT_FLS.1(OPTIONAL)
 	  </addressed-by>
+          <rationale></rationale>
           <consistency-rationale/>
         </SO>
-        <SO id="O.TRUSTED_COMMUNICATIONS">
+        <SO name="O.TRUSTED_COMMUNICATIONS">
           <description> To further address the threat of untrusted communications channels that is
             defined in the base PP, conformant TOEs will provide trusted communications between
             distributed components if any exist. <h:br/>
@@ -349,6 +362,7 @@
 	    FPT_ITT.1, FTP_ITC.1
             <!-- Optional -->
 	  </addressed-by>
+          <rationale></rationale>
           <consistency-rationale/>
         </SO>
       </SOs>
@@ -357,13 +371,13 @@
       The following security objectives for the operational
       environment assist the TOE in correctly providing its security functionality. These track the
       assumptions about the environment. <SOEs>
-        <SOE id="OE.CONNECTIONS">
+        <SOE name="OE.CONNECTIONS">
           <description> TOE administrators will ensure that the TOE is installed in a manner that
             will allow the TOE to effectively enforce its policies on the network traffic of
             monitored networks. </description>
           <consistency-rationale/>
         </SOE>
-        <SOE id="OE.PROPER_ADMIN">
+        <SOE name="OE.PROPER_ADMIN">
           <description> The administrator of the WIDS is not careless, willfully negligent or
             hostile, and administers the WIDS within compliance of the applied enterprise security
             policy. </description>
@@ -558,7 +572,10 @@
                 <h:li><h:i>Failure of wireless sensor communication].</h:i></h:li>
               </h:ol>
               <h:table>
-                <h:tr><h:td><h:b>Requirement</h:b></h:td><h:td><h:b>Auditable Events</h:b></h:td><h:td><h:b>Additional Audit Record Contents</h:b></h:td></h:tr>
+                <h:thead>
+                  <h:tr><h:td colspan="99"> <ctr id="auditWids" pre="Table " ctr-type="Table">: Auditable Events</ctr> </h:td></h:tr>
+                  <h:tr><h:th>Requirement</h:th><h:th>Auditable Events</h:th><h:th>Additional Audit Record Contents</h:th></h:tr>
+                </h:thead>
                 <h:tr><h:td>FAU_ANO_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_ARP.1</h:td><h:td>Actions taken due to potential security violations</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_ARP_EXT.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
@@ -597,9 +614,7 @@
                 <h:tr><h:td>FPT_ITT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FTP_ITC.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
               </h:table>
-              <ctr ctr-type="Table" id="auditWids">: Auditable Events</ctr>
-              
-             
+              <ctr ctr-type="Table" id="auditWids">: Auditable Events</ctr>             
             </title>
             <note role="application"> 
               
@@ -1941,7 +1956,7 @@ The evaluator shall examine the operational guidance to verify that it
                 <selectable id="cell">all cellular bands</selectable>
               </selectables>
             </title>
-            <note role="application"> This SFR refers to Non-Wi-Fi (IEEE 802.11 a, b, g, n, and ac)
+            <note role="application"> This SFR refers to Non-WLAN (IEEE 802.11 a, b, g, n, and ac)
               network devices that operate in the specified frequencies. If the ST author selects
               detection of devices in the cellular bands, FAU_INV_EXT.4 must
               be included in the ST. </note>
