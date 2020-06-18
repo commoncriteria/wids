@@ -1050,7 +1050,7 @@
                       <steplist>
                         <step>Setup a user defined detection signature.</step>
                         <step>Verify that the TSF generates an alert once the rules of signature have been violated.</step>
-                    </steplist>
+                      </steplist>
                     <h:br/><h:br/>
                   </test>
                   <test><h:b>Detection of ICS connection</h:b>:
@@ -1058,7 +1058,7 @@
                        <steplist>
                          <step>Setup an Internet Connection Sharing (ICS) connection.</step>
                          <step>Verify that the TSF detects the establishment of the ICS connection.</step>
-                    </steplist>
+                       </steplist>
                     <h:br/><h:br/>
                   </test>
                   <test><h:b>Detection of traffic with excessive transmit power level</h:b>:
@@ -1072,7 +1072,7 @@
                          <step>Collect wireless traffic with range of the TSF.</step>
                          <step>Verify that the TSF detects wireless traffic that exceeds
                           100mW on 2.4GHz and 200mW on 5GHz.</step>
-                    </steplist>
+                       </steplist>
                     <h:br/><h:br/>
                   </test>              
                   <test><h:b>Detection of MAC spoofing</h:b>:                
@@ -1110,7 +1110,10 @@
                   </test>
                   <test><h:b>Detection of whitelisted EUD connected to unauthorized SSID</h:b>: 
                     <steplist>
-                      <!-- Justin: Is an unauthorized SSID being broadcasted by an authorized AP different than if it was broadcasted from an unauthorized AP? -->
+                      <!-- Justin: Is an unauthorized SSID being broadcasted by an authorized AP different than if it was broadcasted from an unauthorized AP?
+                           Response: Yes, this would imply two different scenarios; one being a threat and the other being a compromise. An unauthorized SSID
+                           being broadcast from an unauthorized AP would indicate a possible masquerade or deauth attempt. An unauthorized SSID being broadcast from an
+                           authorized AP would indicate either a malfunction in the authorized AP, a compromised AP, or a spoofed or rogue AP present within the WLAN. -->
                       <step>Configure a whitelisted AP to operate on a set channel on the 2.4 GHz band with an unauthorized SSID.</step>
                       <step>Connect a whitelisted EUD to the AP.</step>
                       <step>Verify that the TSF detects the whitelisted EUD associated to the whitelisted AP .</step>
@@ -1140,13 +1143,18 @@
                     <steplist>
                       <step>Perform an active scan on the subnet of the WLAN.</step>
                       <step>Record tools used and type of scan performed. </step>
-                      <step> Verify that the TSF detects the active probing.</step>
+                      <step>Verify that the TSF detects the active probing.</step>
                     </steplist>
                   
                 </test>
                   <test><h:b>Detection of packet flooding/DoS/DDoS</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <steplist>
+                      <step>Generate a large amount of TCP and UDP traffic from a single EUD.</step>
+                      <step>Verify that the TSF detects the network-based DoS.</step>
+                      <step>Generate a large amount of TCP and UDP traffic from multiple EUDs.</step>
+                      <step>Verify that the TSF detects the network-based DDoS.</step>
+                    </steplist>
                   </test>
                   <test><h:b>Detection of RF-based denial of service</h:b>:                  
                     <steplist>
@@ -1178,7 +1186,11 @@
                   </test>
                   <test><h:b>Detection of disassociation flooding</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                        <steplist>
+                          <step>Deploy a whitelisted AP and connect authorized EUDs.</step>
+                          <step>Generate disassociation frames from an unauthorized EUD.</step>
+                          <step>Verify that the TSF detected the disassociation flooding.</step>
+                        </steplist>
                   </test>
                   <test><h:b>Detection of request-to-send/clear-to-send abuse</h:b>:
                     <steplist>
@@ -1250,27 +1262,61 @@
                   </test>
                   <test><h:b>Detection of whitelisted EUD or AP that is using weak/outdated WLAN protocols and protocol implementations</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP that utilizes the 802.11g or older WLAN protocol.</step>
+                          <step>Verify that the TSF detects the weak/outdated WLAN protocol and generates an alert.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of extremely high numbers of client devices using a particular AP</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP.</step>
+                          <step>Configure a threshold amount of client devices that can use a particular AP.</step>
+                          <step>Connect enough client devices to the AP to purposely exceed the defined threshold.</step>
+                          <step>Verify that the TSF detects when the client usage exceeds the threshold.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of a high number of failed attempts to join the WLAN in a short period of time</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP.</step>
+                          <step>Configure a threshold amount of connection attempts that can occur in a particular timeframe.</step>
+                          <step>Attempt to authenticate to the AP with enough client devices to purposely exceed the defined threshold.</step>
+                          <step>Verify that the TSF detects when the connection attempts within the specic timeframe exceeds the threshold.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of the use of active WLAN scanners (e.g. wardriving tools) to generate WLAN traffic</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP.</step>
+                          <step>Verify that the TSF detects when WLAN scanners are the source of WLAN traffic.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of the physical location of an identified WLAN threat by using triangulation</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a non-whitelisted AP or EUD within range of the TSF.</step>
+                          <step>Verify that the TSF can track and locate the AP or EUD to within 5 meters.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of an SSID changing its encryption options in advertises</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP and configure it encryption options.</step>
+                          <step>Change the encryption options the AP advertises.
+                          <step>Verify that the TSF detects when the AP's encryption options change.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of the alteration of the advertised beacon rate of an SSID</h:b>:
                     <!-- Justin: This needs a test -->
