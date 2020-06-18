@@ -1065,10 +1065,10 @@
                     <!-- Justin: This needs a test -->
                        <steplist>
                          <step>Configure a source of network traffic that can exceed the maximum transmit
-                          power levels of 100mW on 2.4GHz and 200mW on 5GHz.
+                             power levels of 100mW on 2.4GHz and 200mW on 5GHz.</step>
                          <step>Configure a user defined signature to detects traffic with transmit power levels
-                          that exceed the maximum.
-                         <step>Commence with the transmission of network traffic at excessive power levels.
+                             that exceed the maximum.</step>
+                         <step>Commence with the transmission of network traffic at excessive power levels.</step>
                          <step>Collect wireless traffic with range of the TSF.</step>
                          <step>Verify that the TSF detects wireless traffic that exceeds
                           100mW on 2.4GHz and 200mW on 5GHz.</step>
@@ -1313,7 +1313,7 @@
                     <h:br/>
                     <steplist>
                           <step>Deploy a whitelisted AP and configure it encryption options.</step>
-                          <step>Change the encryption options the AP advertises.
+                          <step>Change the encryption options the AP advertises.</step>
                           <step>Verify that the TSF detects when the AP's encryption options change.</step>
                     </steplist>
                     <h:br/>
