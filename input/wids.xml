@@ -1655,7 +1655,8 @@
           <f-element>
             <!-- Justin: Any other current requirements that would require configuration? Any other capabilities that we would want to manage. 
                  Response: Added one new capability requirement below. I'm definitely open to a technical feasibiltiy/sanity check discussion for the addition. -->
-            <title> The TSF shall be capable of performing the following management functions for WIDS functionality: <h:ul>
+                 <title> The TSF shall be capable of performing the following management functions for WIDS functionality: 
+             <h:ul>
                 <h:li>Define an inventory of authorized APs based on MAC addresses,</h:li><!-- FAU_INV_EXT.1.1 -->
                 
                 <h:li>Define an inventory of authorized EUDs based on MAC addresses,</h:li><!-- FAU_INV_EXT.1.1 -->
