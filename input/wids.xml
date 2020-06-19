@@ -1312,7 +1312,7 @@
                     <!-- Justin: This needs a test -->
                     <h:br/>
                     <steplist>
-                          <step>Deploy a whitelisted AP and configure it encryption options.</step>
+                          <step>Deploy a whitelisted AP and configure its encryption options.</step>
                           <step>Change the encryption options the AP advertises.</step>
                           <step>Verify that the TSF detects when the AP's encryption options change.</step>
                     </steplist>
@@ -1320,31 +1320,72 @@
                   </test>
                   <test><h:b>Detection of the alteration of the advertised beacon rate of an SSID</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP and configure its beacon rate options.</step>
+                          <step>Change the AP's beacon rate.</step>
+                          <step>Verify that the TSF detects when the AP's beacon rate is changed.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of invalid or out-of-sequence BSS timestamps</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP.</step>
+                          <step>Capture wireless traffic observed by the AP.</step>
+                          <step>Alter the BSS timestamps of captured packets and replay them through the AP.</step>
+                          <step>Verify that the TSF detects that the BSS timestamps have been manipualted or are out-of-sequence.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of AP SSID larger than 32 bytes</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP and configure its SSID to be larger than 32 bytes.</step>
+                          <step>Configure a user defined signature on the WIDS to detect when an SSID is larger than 32 bytes.</step>
+                          <step>Verify that the TSF detects when the AP's SSID is larger than 32 bytes.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of channel discrepancies between an AP beacon packet and probe response</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP and configure it to a specific channel.</step>
+                          <step>Verify that the TSF detects when there are channel discrepancies between an AP beacon packet and probe response</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of excessive WPS negotiations</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP and permit WPS authentication.</step>
+                          <step>Configure a threshold amount of WPS connections that are allowed in a specific amount of time on the AP</step>
+                          <step>Verify that the TSF detects when the AP's WPS connection threshold has been exceeded.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of DHCP DISCOVER packets containing Client-ID tag (Tag 61) that doesn't match the source MAC address</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP.</step>
+                          <step>Craft and deploy DHCP DISCOVER packets containing Client-ID tag (Tag 61) that don't match the EUD source MAC address.</step>
+                          <step>Verify that the TSF detects DHCP DISCOVER packets containing Client-ID tag (Tag 61) that don't match the EUD source MAC address.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   <test><h:b>Detection of EUD that requests a DHCP address, receives a response, but operates on a different IP address</h:b>:
                     <!-- Justin: This needs a test -->
-                    <h:br/><h:br/>
+                    <h:br/>
+                    <steplist>
+                          <step>Deploy a whitelisted AP and configure DHCP.</step>
+                          <step>Verify that the TSF detects an EUD that requests a DHCP address, receives a DHCP response, but operates on a different IP address.</step>
+                    </steplist>
+                    <h:br/>
                   </test>
                   
                 </testlist>
@@ -1397,12 +1438,13 @@
                   </test>
                   <test> For each test below the evaluator shall verify that the TOE detects and appropriately classifies the APs and EUDs. 
                     <testlist>
-                      <!-- Justin: If we are keeping these requirements then, we need to state the appropriate classification (benign or malicious) is for each of the tests listed. The tests needs to read like, do this action and verify that the TOE classifies the AP as malicious. Also "attack" is probably too vague. -->
+                      <!-- Justin: If we are keeping these requirements then, we need to state the appropriate classification (benign or malicious) is for each of the tests listed. The tests needs to read like, do this action and verify that the TOE classifies the AP as malicious. Also "attack" is probably too vague. 
+                           Response: Further defined the type(s) of "attack" that an unauthorized EUD could launch. Need additional clarity on where I should denote the classification of the APs and EUDs. -->
                       <test>Deploy a non-whitelisted AP in the area of the WIDS sensor, but take no action against the network.</test>
                       <test>Deploy a non-whitelisted AP in the area of the WIDS sensor and connect it to the internal wired infrastructure (optional for overlay WIDS).</test>
                       <test>Connect a whitelisted EUD to a non-whitelisted AP.</test>
                       <test>Connect a non-whitelisted EUD to a whitelisted AP.</test>
-                      <test>Launch an attack against authorized AP with an unauthorized EUD.</test>
+                      <test>Launch an RF Flooding, DoD/DDoS, masqueraded or spoofing attack against authorized AP with an unauthorized EUD.</test>
                     </testlist>
                   </test>
                 </testlist>
@@ -1611,7 +1653,8 @@
           iteration="WIDS">
           <consistency-rationale/>
           <f-element>
-            <!-- Justin: Any other current requirements that would require configuration? Any other capabilities that we would want to manage. -->
+            <!-- Justin: Any other current requirements that would require configuration? Any other capabilities that we would want to manage. 
+                 Response: Added one new capability requirement below. I'm definitely open to a technical feasibiltiy/sanity check discussion for the addition. -->
             <title> The TSF shall be capable of performing the following management functions for WIDS functionality: <h:ul>
                 <h:li>Define an inventory of authorized APs based on MAC addresses,</h:li><!-- FAU_INV_EXT.1.1 -->
                 
@@ -1624,6 +1667,13 @@
                 <h:li>Define authorized WLAN authentication schemes,</h:li><!-- FAU_SAA.1 -->
                 
                 <h:li>Define authorized WLAN encryption schemes,</h:li><!--FAU_SAA.1  -->
+
+                <!-- New: (e.g. Floods of deauthentication frames or SYN packets should not be allowed). Defining authorized
+                                and unauthorized TCP/IP and UDP traffic would be beneficial. Defining known malicious activity ports
+                                that are used, or detecting the use of SSH tunneling techniques could be an appropriate mitigation strategy. 
+                                This would of course also be accomplished at the network's boundary, and should not fall solely on the WIDS to
+                                detect, but having some form of network traffic scheme-of-detection seems appropriate. -->
+                <h:li>Define authorized WLAN traffic schemes,
                 
                 <h:li><selectables>
                     <selectable>Specification of periods of network activity that constitute
