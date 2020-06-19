@@ -1673,7 +1673,7 @@
                                 that are used, or detecting the use of SSH tunneling techniques could be an appropriate mitigation strategy. 
                                 This would of course also be accomplished at the network's boundary, and should not fall solely on the WIDS to
                                 detect, but having some form of network traffic scheme-of-detection seems appropriate. -->
-                <h:li>Define authorized WLAN traffic schemes,
+                <h:li>Define authorized WLAN traffic schemes,</h:li>
                 
                 <h:li><selectables>
                     <selectable>Specification of periods of network activity that constitute
