@@ -35,9 +35,9 @@
   xmlns:h="http://www.w3.org/1999/xhtml">
   <PPReference>
     <ReferenceTable>
-      <PPVersion>1.0</PPVersion>
+      <PPVersion>0.8</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-01-16</PPPubDate>
+      <PPPubDate>2020-06-22</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
     </ReferenceTable>
   </PPReference>
