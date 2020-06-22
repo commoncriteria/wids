@@ -1371,58 +1371,60 @@
         <ext-comp-def title="Malicious Environmental Objects" fam-id="FAU_WID_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_wid_ext.1" name="Wireless Intrusion Detection – Malicious Environmental Objects"> <!-- Justin: 1.1 and 1.2 seem like duplicative requirements of FAU_INV_EXT.1. Besides for the ability to configure or automatically detect APs, it seems like the same as FAU_SAA. Do you agree? 1.3 is not a duplicative-->
+        <f-component id="fau_wid_ext.1" name="Wireless Intrusion Detection – Malicious Environmental Objects"> 
           <consistency-rationale/>
           <comp-lev/>
           <management/>
           <audit/>
           <dependencies/>
           <f-element>
-            <title> The TSF shall apply <selectables>
-                <selectable>configurable</selectable>
-                <selectable>automatic</selectable>
-              </selectables> classification rules to detect rogue APs. </title>
-            <note role="application"> 
-              If "configurable" is selected then, "Define classification rules to detect rogue APs" shall be selected in FMT_SMF.1/WIDS. </note>
-          </f-element>
-          <f-element>
-            <title> The TSF shall distinguish between benign and malicious APs and EUDs based on automatic detection metrics. </title>
+            <title> The TSF shall distinguish between benign and malicious APs and EUDs based on if the APs and EUDs are authorized and <selectables>
+              <selectable>automatic detection metrics</selectable>
+              <selectable>no other method</selectable>
+            </selectables>.</title>
+            <note role="Application"> 
+              FAU_INV_EXT.1 defines that an AP or EUD is authorized based on if the MAC address is whitelisted as configured in FMT_SMF.1. A non-whitelisted device does not always have to be conducting malicious activity. It is acceptable to equate a whitelisted AP/EUD as both authorized and thus benign and a nonwhitelisted AP/EUD as both not authorized and thus malicious. If the TOE supports automatic malicious device detection, based on in-depth network traffic analysis, "automatic detection metrics" shall be selected. This can be used to further distinguish if the AP/EUD is benign or malicious. If the TOE does not support automatic detection metrics, "no other method" shall be selected.
+            </note>
           </f-element>
           <f-element>
             <title> The TSF shall provide the ability to determine if a given SSID is authorized. </title>
             <note role="application"> FMT_SMF.1/WIDS defines the subset of authorized SSID(s). </note>
             <aactivity>
-              <TSS> The evaluator shall verify that the TSS describes how the TOE can detect rogue
-                APs and whether the classification rules are configurable. The evaluator shall
+              <TSS> The evaluator shall verify that the TSS describes how the TOE detects malicious
+                APs/EUDs and whether the TOE supports automatic detection. The evaluator shall
                 verify that the TSS includes how the TOE determines if a given SSID is authorized.
                 <h:br/><h:br/>
               </TSS>
-              <Guidance> If classification rules for rogue APs are configurable, the evaluator shall
+              <Guidance> If TOE supports automatic detection, the evaluator shall
                 verify that the operational guidance contains instructions for configuring the
-                classification rules. The evaluator shall verify that the operational guidance
+                automatic detection metrics. The evaluator shall verify that the operational guidance
                 provides instructions on how to configure SSIDs as authorized.<h:br/><h:br/>
               </Guidance>
               <Tests>
-                <testlist>
-                  <test>
-                    <steplist>
-                      <step>The evaluator shall configure the AP classifcation rules, if supported.</step>
-                      <step>Deploy an AP that would be detected as rogue by the classification rules.</step>
-                      <step>Verify that the AP gets correctly classified.</step>
-                    </steplist>
-                  </test>
-                  <test> For each test below the evaluator shall verify that the TOE detects and appropriately classifies the APs and EUDs. 
-                    <testlist>
-                      <!-- Justin: If we are keeping these requirements then, we need to state the appropriate classification (benign or malicious) is for each of the tests listed. The tests needs to read like, do this action and verify that the TOE classifies the AP as malicious. Also "attack" is probably too vague. 
-                           Response: Further defined the type(s) of "attack" that an unauthorized EUD could launch. Need additional clarity on where I should denote the classification of the APs and EUDs. -->
-                      <test>Deploy a non-whitelisted AP in the area of the WIDS sensor, but take no action against the network.</test>
-                      <test>Deploy a non-whitelisted AP in the area of the WIDS sensor and connect it to the internal wired infrastructure (optional for overlay WIDS).</test>
-                      <test>Connect a whitelisted EUD to a non-whitelisted AP.</test>
-                      <test>Connect a non-whitelisted EUD to a whitelisted AP.</test>
-                      <test>Launch an RF Flooding, DoD/DDoS, masqueraded or spoofing attack against authorized AP with an unauthorized EUD.</test>
+                               
+                  For test 1 and 2 below the evaluator shall verify that the TOE detects and appropriately classifies the APs and EUDs. It is acceptable if the TOE uses different but equivalent descriptors for the classification. If the TOE does not support automatic detection metrics and equates a non-whitelisted AP/EUD as malicious, than it is sufficient that the the classification given to the AP/EUD in step 1 is the same as in step 2. If the TOE supports automatic detection metrics and distinguishes between a non-whitelisted AP/EUD and a malicious AP/EUD, then the classification for the AP/EUD should differ between step 1 and step 2.
+                    <testlist>                    
+                      <test>
+                        <steplist>
+                          <step>Deploy a non-whitelisted AP in the area of the WIDS sensor, but take no action against the network. Verify that the AP is classified as non-authorized.</step>
+                          <step>Deploy a non-whitelisted AP in the area of the WIDS sensor and launch an attack against the network. Verify that the AP is classified as malicious.</step>
+                        </steplist> 
+                      </test>
+                      <test>
+                        <steplist>
+                          <step>Deploy a non-whitelisted EUD in the area of the WIDS sensor, but take no action against the network. Verify that the EUD is classified as non-authorized.</step>
+                          <step>Launch an RF Flooding, DoD/DDoS, masqueraded or spoofing attack against authorized AP with an unauthorized EUD. Verify that the EUD is classified as malicious.</step>                        
+                        </steplist>
+                      </test>
+                      <test>
+                        <steplist>
+                          <step>Deploy an AP with an unauthorized SSID in the area of the WIDS sensor.</step>
+                          <step>Verify that the TOE detects the unauthorized SSID.</step>
+                        </steplist>
+                      </test>
                     </testlist>
-                  </test>
-                </testlist>
+                  
+                
               </Tests>
             </aactivity>
           </f-element>
@@ -1628,8 +1630,6 @@
           iteration="WIDS">
           <consistency-rationale/>
           <f-element>
-            <!-- Justin: Any other current requirements that would require configuration? Any other capabilities that we would want to manage. 
-                 Response: Added one new capability requirement below. I'm definitely open to a technical feasibiltiy/sanity check discussion for the addition. -->
             <title> The TSF shall be capable of performing the following management functions for WIDS functionality: 
               <h:ul>
                 <h:li>Define an inventory of authorized APs based on MAC addresses,</h:li><!-- FAU_INV_EXT.1.1 -->
@@ -1639,7 +1639,7 @@
                 <h:li>Define authorized WLAN authentication schemes,</h:li><!-- FAU_SAA.1 -->
                 <h:li>Define authorized WLAN encryption schemes,</h:li><!--FAU_SAA.1  -->
                 <h:li>Define authorized WLAN traffic schemes,</h:li>
-                <h:li>Define authorized and unauthorized TCP/IP and UDP traffic</h:li> <!-- Justin: Are these what you wanted? -->
+                <h:li>Define authorized and unauthorized TCP/IP and UDP traffic</h:li>
                 <h:li>Define known malicious activity ports</h:li>
                 <!-- New: (e.g. Floods of deauthentication frames or SYN packets should not be allowed). Defining authorized
                                 and unauthorized TCP/IP and UDP traffic would be beneficial. Defining known malicious activity ports
