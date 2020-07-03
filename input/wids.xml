@@ -373,6 +373,7 @@
                     <selectable>SSH</selectable>
                     <selectable>TLS</selectable>
                     <selectable>TLS/HTTPS</selectable>
+                    <selectable>DTLS</selectable>
                   </selectables></h:b>. </title>
               <note role="application"> FPT_ITT.1 is optional in NDcPP, however, since a WIDS/WIPS
                 TOE is distributed, FPT_ITT.1 shall be included in the ST as modified in this
@@ -399,6 +400,7 @@
                     <selectable>SSH</selectable>
                     <selectable>TLS</selectable>
                     <selectable>HTTPS</selectable>
+                    <selectable>DTLS</selectable>
                   </selectables> to</h:b> provide a trusted communication channel between itself and
                   <h:b>authorized IT entities supporting the following capabilities: audit server, <selectables>
                     <selectable>database server</selectable>
@@ -733,7 +735,7 @@
           <audit/>
           <dependencies/>
           <f-element>
-            <title> The TSF shall determine if a given AP or EUD is authorized based on MAC addresses. </title>
+            <title> The TSF shall determine if a given AP or EUD is authorized based on [selection: MAC addresses, [assignment:  other unique device identifier]]</title>
           </f-element>
           <f-element>
             <title> The TSF shall detect the presence of whitelisted EUDs and APs in the Operational Environment. </title>
@@ -762,8 +764,8 @@
                 <testlist>
                   <test>
                     <steplist>
-                      <step>Per guidance in FMT_SMF.1/WIDS, add MAC Addresses for an AP and EUD to
-                        the whitelist.</step>
+                      <step>Per guidance in FMT_SMF.1/WIDS, add MAC Addresses or other unique device identifier 
+                        for an AP and EUD to the whitelist.</step>
                       <step>Deploy the AP and EUD that were added to whitelist within the range of
                         the TOE's sensors.</step>
                       <step>Verify that the devices are classified as authorized.</step>
@@ -876,7 +878,7 @@
           <dependencies/>
           <f-element>
             <title> The TSF shall detect the physical location of APs and EUDs to within
-                <assignable>value equal or less than 15</assignable> feet of their actual
+                <assignable>value equal or less than 25</assignable> feet of their actual
               location.</title>
           </f-element>
           <f-element>
@@ -907,7 +909,7 @@
                       <step>Deploy an AP within range of the sensors.</step>
                       <step>Verify the TSF provides location tracking information about the
                         AP.</step>
-                      <step>Verify the AP location presented is within 15 feet actual
+                      <step>Verify the AP location presented is within 25 feet actual
                         location.</step>
                     </steplist>
                   </test>
@@ -1383,7 +1385,7 @@
               <selectable>no other method</selectable>
             </selectables>.</title>
             <note role="Application"> 
-              FAU_INV_EXT.1 defines that an AP or EUD is authorized based on if the MAC address is whitelisted as configured in FMT_SMF.1. A non-whitelisted device does not always have to be conducting malicious activity. It is acceptable to equate a whitelisted AP/EUD as both authorized and thus benign and a nonwhitelisted AP/EUD as both not authorized and thus malicious. If the TOE supports automatic malicious device detection, based on in-depth network traffic analysis, "automatic detection metrics" shall be selected. This can be used to further distinguish if the AP/EUD is benign or malicious. If the TOE does not support automatic detection metrics, "no other method" shall be selected.
+              FAU_INV_EXT.1 defines that an AP or EUD is authorized based on if the [selection:  MAC addresses, [assignment:  other unique device identifier]] is whitelisted as configured in FMT_SMF.1. A non-whitelisted device does not always have to be conducting malicious activity. It is acceptable to equate a whitelisted AP/EUD as both authorized and thus benign and a nonwhitelisted AP/EUD as both not authorized and thus malicious. If the TOE supports automatic malicious device detection, based on in-depth network traffic analysis, "automatic detection metrics" shall be selected. This can be used to further distinguish if the AP/EUD is benign or malicious. If the TOE does not support automatic detection metrics, "no other method" shall be selected.
             </note>
           </f-element>
           <f-element>
@@ -1632,7 +1634,7 @@
           <f-element>
             <title> The TSF shall be capable of performing the following management functions for WIDS functionality: 
               <h:ul>
-                <h:li>Define an inventory of authorized APs based on MAC addresses,</h:li><!-- FAU_INV_EXT.1.1 -->
+                <h:li>Define an inventory of authorized APs based on [selection: MAC addresses, [assignment:  other unique device identifier]],</h:li><!-- FAU_INV_EXT.1.1 -->
                 <h:li>Define an inventory of authorized EUDs based on MAC addresses,</h:li><!-- FAU_INV_EXT.1.1 -->
                 <h:li>Define rules for monitoring and alerting on the wireless traffic,</h:li><!-- FAU_SAA.1.1 -->
                 <h:li>Define authorized SSID(s),</h:li><!-- FAU_WID_EXT.2.3 -->
