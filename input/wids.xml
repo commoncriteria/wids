@@ -363,7 +363,7 @@
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440" xmlurl="test">
       <modified-sfrs>
         <subsection title="Protection of the TSF (FPT)" id="fpt">
-          <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection"> <!-- DONE -->
+          <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection"> <!-- NIAP: So now that we have added DTLS back it, this is no longer modified from how it is in ND. It is optional in ND, but needs to be mandatory for WIDS. -->
             <consistency-rationale/>
             <f-element>
               <title>The TSF shall protect TSF data from <h:u>disclosure and <h:b>detect its</h:b>
@@ -372,13 +372,13 @@
                     <selectable>IPsec</selectable>
                     <selectable>SSH</selectable>
                     <selectable>TLS</selectable>
-                    <selectable>TLS/HTTPS</selectable>
                     <selectable>DTLS</selectable>
+                    <selectable>HTTPS</selectable>                   
                   </selectables></h:b>. </title>
               <note role="application"> FPT_ITT.1 is optional in NDcPP, however, since a WIDS/WIPS
-                TOE is distributed, FPT_ITT.1 shall be included in the ST as modified in this
-                PP-Module and is applicable to the data transmitted between the sensors and
-                controller.<h:br/><h:br/> This requirement ensures all communications between
+                TOE is distributed, FPT_ITT.1 shall be included in the ST and is applicable to the data transmitted between the sensors and
+                controller.<h:br/><h:br/> 
+                This requirement ensures all communications between
                 components of a distributed TOE is protected through the use of an encrypted
                 communications channel. The data passed in this trusted communication channel are
                 encrypted as defined in the protocol chosen in the selection. The ST author chooses
@@ -396,11 +396,11 @@
             <consistency-rationale/>
             <f-element>
               <title> The TSF shall <h:b>be capable of using <selectables>
-                    <selectable>IPsec</selectable>
-                    <selectable>SSH</selectable>
-                    <selectable>TLS</selectable>
-                    <selectable>HTTPS</selectable>
-                    <selectable>DTLS</selectable>
+                <selectable>IPsec</selectable>
+                <selectable>SSH</selectable>
+                <selectable>TLS</selectable>
+                <selectable>DTLS</selectable>
+                <selectable>HTTPS</selectable>                
                   </selectables> to</h:b> provide a trusted communication channel between itself and
                   <h:b>authorized IT entities supporting the following capabilities: audit server, <selectables>
                     <selectable>database server</selectable>
@@ -735,7 +735,18 @@
           <audit/>
           <dependencies/>
           <f-element>
-            <title> The TSF shall determine if a given AP or EUD is authorized based on [selection: MAC addresses, [assignment:  other unique device identifier]]</title>
+            <title> The TSF shall determine if a given AP is authorized based on <selectables>
+              <selectable>MAC addresses</selectable>
+              <selectable><assignable>other unique device identifier</assignable></selectable>
+            </selectables>
+            </title>
+          </f-element>
+          <f-element>
+            <title> The TSF shall determine if a given EUD is authorized based on <selectables>
+              <selectable>MAC addresses</selectable>
+              <selectable><assignable>other unique device identifier</assignable></selectable>
+            </selectables>
+            </title>
           </f-element>
           <f-element>
             <title> The TSF shall detect the presence of whitelisted EUDs and APs in the Operational Environment. </title>
@@ -743,10 +754,8 @@
           <f-element>
             <title> The TSF shall detect the presence of non-whitelisted EUDs and APs in the Operational Environment. </title>
             <note role="application"> 
-              The inventory of authorized APs and EUDs is defined by FMT_SMF.1/WIDS. <h:br/><h:br/> 
-              This inventory is used as a whitelist to indicate to
-              the WIDS which APs and EUDs are legitimate members of the wireless network. The
-              terminology used to describe an inventoried or whitelisted device may vary by vendor
+              This inventory is used as a whitelist to indicate to the WIDS which APs and EUDs are authorized members of the wireless network. The inventory of authorized APs and EUDs is configured by FMT_SMF.1/WIDS. <h:br/><h:br/> 
+              The terminology used to describe an inventoried or whitelisted device may vary by vendor
               product. This PP-Module utilizes whitelisted to describe APs and EUDs that are part of
               the inventory and non-whitelisted to describe APs and EUDs that are not part of the
               inventory. </note>
@@ -1385,7 +1394,7 @@
               <selectable>no other method</selectable>
             </selectables>.</title>
             <note role="Application"> 
-              FAU_INV_EXT.1 defines that an AP or EUD is authorized based on if the [selection:  MAC addresses, [assignment:  other unique device identifier]] is whitelisted as configured in FMT_SMF.1. A non-whitelisted device does not always have to be conducting malicious activity. It is acceptable to equate a whitelisted AP/EUD as both authorized and thus benign and a nonwhitelisted AP/EUD as both not authorized and thus malicious. If the TOE supports automatic malicious device detection, based on in-depth network traffic analysis, "automatic detection metrics" shall be selected. This can be used to further distinguish if the AP/EUD is benign or malicious. If the TOE does not support automatic detection metrics, "no other method" shall be selected.
+              FAU_INV_EXT.1 defines that an AP or EUD is authorized based on if the AP/EUD is whitelisted as configured in FMT_SMF.1. A non-whitelisted device does not always have to be conducting malicious activity. However, it is acceptable to equate a whitelisted AP/EUD as both authorized/benign and a nonwhitelisted AP/EUD as both not authorized and thus malicious. If the TOE supports automatic malicious device detection, based on in-depth network traffic analysis, "automatic detection metrics" shall be selected. This can be used to further distinguish if the AP/EUD is benign or malicious. If the TOE does not support automatic detection metrics, "no other method" shall be selected.
             </note>
           </f-element>
           <f-element>
@@ -1634,7 +1643,10 @@
           <f-element>
             <title> The TSF shall be capable of performing the following management functions for WIDS functionality: 
               <h:ul>
-                <h:li>Define an inventory of authorized APs based on [selection: MAC addresses, [assignment:  other unique device identifier]],</h:li><!-- FAU_INV_EXT.1.1 -->
+                <h:li>Define an inventory of authorized APs based on <selectables>
+                  <selectable>MAC addresses</selectable>
+                  <selectable><assignable>other unique device identifier</assignable></selectable>
+                </selectables>,</h:li><!-- FAU_INV_EXT.1.1 -->
                 <h:li>Define an inventory of authorized EUDs based on MAC addresses,</h:li><!-- FAU_INV_EXT.1.1 -->
                 <h:li>Define rules for monitoring and alerting on the wireless traffic,</h:li><!-- FAU_SAA.1.1 -->
                 <h:li>Define authorized SSID(s),</h:li><!-- FAU_WID_EXT.2.3 -->
