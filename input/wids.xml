@@ -120,7 +120,13 @@
     <section title="Use Cases" id="usecases"><!-- NIAP: Do we have to have a use case? Todo: Need to either add a use case or delete this section -->
       <usecases>
         <usecase id="usecase1" title="Use Case 1">
-          <description/>
+          <description/> A WIDS consists of sensors (preferably dedicated) and a central controller working together to provide 24/7 monitoring, primarily to the 
+          802.11 Wireless Local Area Network (WLAN) spectrum and protocol, to detect, identify, and geo-locate WLAN devices within the controlled space. A WIDS is
+          vital for the security of a WLAN access system deployed within a controlled space. A WIDS may be used to monitor controlled space without a CSfC WLAN Access System,
+          but this use case is outside the scope of the CSfC guidance.<h:br/><h:br/> The WIDS may be capable of detecting or monitoring traffic other than 802.11 WLAN, such as
+          802.15.4 based protocols, which enhances the security of the controlled space. However, a WIDS is not required to monitor additional protocols outside of 802.11 when
+          supporting a WLAN Access Solution. A WIDS monitors all 802.11 WLAN traffic emanating from and traversing the controlled space, thus inadvertant collection of any 802.11
+          signals is possible when operating a WIDS.</description> 
         </usecase>
       </usecases>
     </section>
@@ -408,7 +414,10 @@
                     <selectable>no other capabilities</selectable>
                   </selectables></h:b> that is logically distinct from other communication channels
                 and provides assured identification of its end points and protection of the channel
-                data from <h:b>disclosure and detection of modification of the channel data.</h:b>
+                data from <h:b>disclosure and detection of modification of the channel data. The intent of the database server is to store WIDS/WIPS data that must
+                be queryable, such as events/alarms, triangulation calculations, wireless spectrum analysis (including RF jammer/Denial of Service (DoS)),
+                and packet capture analysis. Authorized Administrators must be permitted to view alarms, raw event data, and any other data stored in the database.
+                The Administrator must access the database through a trusted channel if done so remotely.</h:b>
               </title>
             </f-element>
             <f-element>
@@ -750,9 +759,6 @@
             </title>
           </f-element>
           <f-element>
-            <title> The TSF shall detect the presence of whitelisted EUDs and APs in the Operational Environment. </title>
-          </f-element>
-          <f-element>
             <title> The TSF shall detect the presence of non-whitelisted EUDs and APs in the Operational Environment. </title>
             <note role="application"> 
               This inventory is used as a whitelist to indicate to the WIDS which APs and EUDs are authorized members of the wireless network. The inventory of authorized APs and EUDs is configured by FMT_SMF.1/WIDS. <h:br/><h:br/> 
@@ -962,7 +968,6 @@
                 <h:li><h:i>Detection of unauthorized AP broadcasting authorized SSIDs</h:i>;</h:li>
                 <h:li><h:i>Detection of authorized AP broadcasting an unauthorized SSID</h:i>;</h:li>
                 <h:li><h:i>Detection of whitelisted EUD connected to unauthorized SSID</h:i>;</h:li>
-                <h:li><h:i>Detection of unauthorized EUD associating to authorized APs</h:i>;</h:li>
                 <h:li><h:i>Detection of NULL SSID associations</h:i>;</h:li>              
                 <h:li><h:i>Detection of active probing</h:i>;</h:li>
                 <h:li><h:i>Detection of packet flooding/DoS/DDoS</h:i>;</h:li>
@@ -974,14 +979,12 @@
                 <h:li><h:i>Detection of unauthorized encryption scheme use</h:i>;</h:li>
                 <h:li><h:i>Detection of unencrypted traffic</h:i>;</h:li>
                 <h:li><h:i>Detection of whitelisted EUD or AP that is using weak/outdated WLAN protocols and protocol implementations</h:i>;</h:li>
-                <h:li><h:i>Detection of extremely high numbers of client devices using a particular AP</h:i>;</h:li> 
+                <h:li><h:i>Detection of extremely high numbers of client devices using a particular whitelisted AP</h:i>;</h:li> 
                 <h:li><h:i>Detection of a high number of failed attempts to join the WLAN in a short period of time</h:i>;</h:li>
                 <h:li><h:i>Detection of the use of active WLAN scanners (e.g. wardriving tools) to generate WLAN traffic, such as Probes, Auths, and Assoc frames</h:i>;</h:li>
                 <h:li><h:i>Detection of the physical location of an identified WLAN threat by using triangulation</h:i>;</h:li>
-                <h:li><h:i>Detection of an SSID changing its encryption options in advertises</h:i>;</h:li>
-                <h:li><h:i>Detection of the alteration of the advertised beacon rate of an SSID</h:i>;</h:li>
+                <h:li><h:i>Detection of an SSID using weak/unsupported/disallowed encryption options</h:i>;</h:li>
                 <h:li><h:i>Detection of AP SSID larger than 32 bytes</h:i>;</h:li>
-                <h:li><h:i>Detection of channel discrepancies between an AP beacon packet and probe response;</h:i>;</h:li>
                 <h:li><h:i>Detection of excessive WPS negotiations</h:i>;</h:li>
                 <h:li><assignable>any other rules</assignable>.</h:li>
               </h:ol>           
@@ -1118,17 +1121,6 @@
                       <step>Configure a whitelisted AP to operate on a set channel on the 2.4 GHz band with an unauthorized SSID.</step>
                       <step>Connect a whitelisted EUD to the AP.</step>
                       <step>Verify that the TSF detects the whitelisted EUD associated to the whitelisted AP broadcasting an unauthorized SSID.</step>
-                      <step>Repeat the test utilizing the 5 GHz band.</step>
-                    </steplist>
-                    <h:br/>
-                  </test>
-                  <test><h:b>Detection of non-whitelisted EUDs associating to authorized APs</h:b>:
-                    <steplist>
-                      <step>Configure a whitelisted AP to operate on a set channel on the 2.4 GHz
-                        band with an authorized SSID.</step>
-                      <step>Connect a non-whitelisted EUD to the AP.</step>
-                      <step>Verify that the TSF detects the non-whitelisted EUD associated to the
-                        whitelisted AP.</step>
                       <step>Repeat the test utilizing the 5 GHz band.</step>
                     </steplist>
                     <h:br/>
@@ -1276,7 +1268,7 @@
                     </steplist>
                     <h:br/>
                   </test>
-                  <test><h:b>Detection of extremely high numbers of client devices using a particular AP</h:b>:                   
+                  <test><h:b>Detection of extremely high numbers of client devices using a particular whitelisted AP</h:b>:                   
                     <steplist>
                           <step>Deploy a whitelisted AP.</step>
                           <step>Configure a threshold amount of client devices that can use a particular AP.</step>
@@ -1308,19 +1300,11 @@
                     </steplist>
                     <h:br/>
                   </test>
-                  <test><h:b>Detection of an SSID changing its encryption options in advertises</h:b>:
+                  <test><h:b>Detection of an SSID using weak/unsupported/disallowed encryption options</h:b>:
                     <steplist>
                           <step>Deploy a whitelisted AP and configure its encryption options.</step>
                           <step>Change the encryption options the AP advertises.</step>
                           <step>Verify that the TSF detects when the AP's encryption options change.</step>
-                    </steplist>
-                    <h:br/>
-                  </test>
-                  <test><h:b>Detection of the alteration of the advertised beacon rate of an SSID</h:b>:
-                    <steplist>
-                          <step>Deploy a whitelisted AP and configure its beacon rate options.</step>
-                          <step>Change the AP's beacon rate.</step>
-                          <step>Verify that the TSF detects when the AP's beacon rate is changed.</step>
                     </steplist>
                     <h:br/>
                   </test>
@@ -1329,13 +1313,6 @@
                           <step>Deploy a whitelisted AP and configure its SSID to be larger than 32 bytes.</step>
                           <step>Configure a user defined signature on the WIDS to detect when an SSID is larger than 32 bytes.</step>
                           <step>Verify that the TSF detects when the AP's SSID is larger than 32 bytes.</step>
-                    </steplist>
-                    <h:br/>
-                  </test>
-                  <test><h:b>Detection of channel discrepancies between an AP beacon packet and probe response</h:b>:
-                    <steplist>
-                          <step>Deploy a whitelisted AP and configure it to a specific channel.</step>
-                          <step>Verify that the TSF detects when there are channel discrepancies between an AP beacon packet and probe response</step>
                     </steplist>
                     <h:br/>
                   </test>
@@ -1392,8 +1369,8 @@
                       <test>
                         <steplist>
                           <step>Deploy a non-whitelisted AP in the area of the WIDS sensor, but take no action against the network. Verify that the AP is classified as non-authorized.</step>
-                          <step>Deploy a non-whitelisted AP in the area of the WIDS sensor and launch an attack against the network. Verify that the AP is classified as malicious.</step>
-                        </steplist> 
+                          <step>Deploy a non-whitelisted AP in the area of the WIDS sensor and launch an attack against the network. This can be any variation of Fake AP, Spoof AP or DoS attack. Verify that the AP is classified as malicious.</step>
+                        </steplist>
                       </test>
                       <test>
                         <steplist>
