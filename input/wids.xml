@@ -101,7 +101,8 @@
         Conformant TOEs must use a secure communication path(s) between WIDS/WIPS components.
         <h:br/><h:br/> A WIDS/WIPS can be Integrated (be part of the WLAN infrastructure) or
         Standalone (independent from WLAN) architecture depending on vendor implementation. The two
-        different architectures are illustrated in the <figref refid="toe"/> figure below.
+        different architectures are illustrated in the <figref refid="toe"/> figure below. The TOE
+        boundary is indicated by the yellow box.
         <h:br/><h:br/> A WIDS/WIPS is expected to inspect layers 1 and 2 network traffic, per the
         OSI network model, and monitor wireless frames in the RF spectrum utilized by IEEE 802.11 a,
         b, g, n, and ac. Monitoring and inspection of other technologies (e.g., cellular) and
@@ -139,7 +140,7 @@
           Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based
           SFRs, and Optional SFRs (dated May 2017).<h:br/><h:br/> The following PPs and PP-Modules
           are allowed to be specified in a PP-Configuration with this PP-Module. <h:ul>
-            <h:li>Network Device cPP, version 2.1</h:li>
+            <h:li>Network Device cPP, version 2.2e</h:li>
           </h:ul>
         </description>
       </cclaim>
@@ -464,7 +465,7 @@
               <selectables>
                 <selectable id="pcap">capture raw frame traffic that triggered the violation</selectable>
                 <selectable>no other actions</selectable>
-              </selectables> upon detection of a potential security violation.</title>
+              </selectables>upon detection of a potential security violation.</title>
             <note role="application"> If "capture raw frame traffic that triggers the violation" is
               selected then FAU_STG_EXT.1/PCAP shall be included in the ST. <h:br/><h:br/>
               FAU_SAA.1 defines the rules for monitoring the wireless traffic to detect for potential security violations. FAU_INV_EXT.2 defines the information the TOE needs to collect for all APs and EUDs within range of the the TOE's sensors. Device attributes can then be individually filtered
@@ -482,9 +483,9 @@
               <Tests>
                 <testlist>
                   <test>The evaluator shall perform a series of events or generate traffic that
-                    would successfully trigger an alert per the rules defined in FAU_SAA.1. The evaluator should verify and record
-                    whether the TOE generated the alert and provided sufficient details. The evaluator should also record the events
-                    or traffic that was generated and what alert was attempted to be triggered and
+                    would successfully trigger an alert for each of the rules defined in FAU_SAA.1. The evaluator should verify and record
+                    whether the TOE generated the alert for each rule, and provided sufficient details. The evaluator should also record the events
+                    or traffic that was generated as each alert was attempted to be triggered and
                     record the details provided by the TOE in the alert. </test>
                   <test><h:i>[conditional]</h:i> If capturing of raw frames was selected, verify
                     that the packet capture was triggered and stored as appropriate.</test>
@@ -709,7 +710,6 @@
             <title> The TSF shall provide the following methods of intrusion detection <selectables>
                 <selectable id="anoBased">anomaly-based</selectable>
                 <selectable id="sigBased">signature-based</selectable>
-                <selectable>behavior-based</selectable>
                 <selectable><assignable>other detection method</assignable></selectable>
               </selectables>. </title>
             <note role="application"> At least one detection method must be selected. If multiple
@@ -1369,13 +1369,15 @@
                       <test>
                         <steplist>
                           <step>Deploy a non-whitelisted AP in the area of the WIDS sensor, but take no action against the network. Verify that the AP is classified as non-authorized.</step>
-                          <step>Deploy a non-whitelisted AP in the area of the WIDS sensor and launch an attack against the network. This can be any variation of Fake AP, Spoof AP or DoS attack. Verify that the AP is classified as malicious.</step>
+                          <step>Deploy a non-whitelisted AP in the area of the WIDS sensor and launch an attack against the network. This can be any variation of Fake AP, Spoof AP, Flood or DoS attack.</step> 
+                          <step>Verify that the AP is classified as malicious.</step>
                         </steplist>
                       </test>
                       <test>
                         <steplist>
                           <step>Deploy a non-whitelisted EUD in the area of the WIDS sensor, but take no action against the network. Verify that the EUD is classified as non-authorized.</step>
-                          <step>Launch an RF Flooding, DoD/DDoS, masqueraded or spoofing attack against authorized AP with an unauthorized EUD. Verify that the EUD is classified as malicious.</step>                        
+                          <step>Launch an RF Flooding, DoD/DDoS, masqueraded or spoofing attack against authorized AP with an unauthorized EUD.</step> 
+                          <step>Verify that the EUD is classified as malicious.</step>                        
                         </steplist>
                       </test>
                       <test>
@@ -1603,14 +1605,15 @@
                 <h:li>Define authorized SSID(s),</h:li><!-- FAU_WID_EXT.2.3 -->
                 <h:li>Define authorized WLAN authentication schemes,</h:li><!-- FAU_SAA.1 -->
                 <h:li>Define authorized WLAN encryption schemes,</h:li><!--FAU_SAA.1  -->
-                <h:li>Define authorized WLAN traffic schemes,</h:li>
                 <h:li>Define authorized and unauthorized TCP/IP and UDP traffic</h:li>
                 <h:li>Define known malicious activity ports</h:li>
                 <!-- New: (e.g. Floods of deauthentication frames or SYN packets should not be allowed). Defining authorized
                                 and unauthorized TCP/IP and UDP traffic would be beneficial. Defining known malicious activity ports
                                 that are used, or detecting the use of SSH tunneling techniques could be an appropriate mitigation strategy. 
                                 This would of course also be accomplished at the network's boundary, and should not fall solely on the WIDS to
-                                detect, but having some form of network traffic scheme-of-detection seems appropriate. -->
+                                detect, but having some form of network traffic scheme-of-detection seems appropriate. Update: Having the WIDS track, manage, define
+                                WLAN traffic schemes has been removed. This function should not reside on the WIDS, an an overlay solution has no visibility into 
+                                WLAN traffic due to encryption. -->
                 
                 <h:li><selectables>
                     <selectable>Specification of periods of network activity that constitute baseline of expected behavior</selectable><!-- FAU_ANO_EXT.1-->
@@ -1720,7 +1723,10 @@ The evaluator shall examine the operational guidance to verify that it
               </selectables>
             </title>
             <note role="application"> This SFR refers to Non-WLAN (IEEE 802.11 a, b, g, n, and ac)
-              network devices that operate in the specified frequencies. </note>
+              network devices that operate in the specified frequencies. There is an understanding that this 
+              capability requires a TOE to use specialized, licensed radio systems. This SFR will allow for the introduction of an
+              open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party
+              integrations.</note>
             <aactivity>
               <TSS> The evaluator shall verify that the TSS includes the set of RF bands and
                 technologies that the TSF can detect the use of. The TSS should also include
@@ -1879,8 +1885,8 @@ The evaluator shall examine the operational guidance to verify that it
           <audit/>
           <dependencies/>
           <f-element>
-            <title>The TSF shall be able to transmit the generated packet captures to an external IT
-              entity using a trusted channel according to FTP_ITC.1. </title>
+            <title>The TSF shall be able to transmit the captured/generated packets to an external IT
+              entity hosting a protocol analyzer using a trusted channel according to FTP_ITC.1. </title>
             <note role="application"> Per FAU_STG_EXT.1 in the Base-PP, the TOE must support
               transfer of the audit data to an external IT entity using a trusted channel per
               FTP_ITC.1. Note that this PP-Module modifies FTP_ITC.1 from the Base-PP. If "capture
