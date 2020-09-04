@@ -101,7 +101,7 @@
         Conformant TOEs must use a secure communication path(s) between WIDS/WIPS components.
         <h:br/><h:br/> A WIDS/WIPS can be Integrated (be part of the WLAN infrastructure) or
         Standalone (independent from WLAN) architecture depending on vendor implementation. The two
-        different architectures are illustrated in the <figref refid="toe"/> figure below. The TOE
+        different architectures are illustrated in the <figref ref-id="toe"/> figure below. The TOE
         boundary is indicated by the yellow box.
         <h:br/><h:br/> A WIDS/WIPS is expected to inspect layers 1 and 2 network traffic, per the
         OSI network model, and monitor wireless frames in the RF spectrum utilized by IEEE 802.11 a,
@@ -179,6 +179,7 @@
           <description> Unintended/unauthorized disclosure of sensitive information on a protected
             WLAN, such as sending unencrypted sensitive data. The WIDS will be capable of collecting
             and analyzing WLAN data to detect unauthorized disclosure of information. </description>
+          <consistency-rationale></consistency-rationale>
           <objective-refer ref="O.SYSTEM_MONITORING">
             <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by
               O.SYSTEM_MONITORING as this provides for visibility into the network which enables
@@ -200,6 +201,7 @@
             connect to the unauthorized AP If malicious external APs or EUDs are able to communicate
             with APs or EUDs on the protected WLAN, then those devices may be susceptible to the
             unauthorized disclosure of information. </description>
+          <consistency-rationale></consistency-rationale>
           <objective-refer ref="O.SYSTEM_MONITORING">
             <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.SYSTEM_MONITORING as this
               provides for visibility into the network which enables detection of unauthorized APs
@@ -222,6 +224,7 @@
           <description> Attacks against the WLAN infrastructure might lead to denial of service
             (DoS) attacks within a protected WLAN. A wireless DoS may occur in two ways: at the
             physical layer through RF Jamming, or at the data link layer through packet injection. </description>
+          <consistency-rationale></consistency-rationale>
           <objective-refer ref="O.SYSTEM_MONITORING">
             <rationale>The threat T.DISRUPTION is countered by O.SYSTEM_MONITORING as this provides
               for visibility into the network which enables detection of DoS attacks.</rationale>
@@ -243,6 +246,7 @@
           <description> It is assumed that the TOE is connected to distinct networks in a manner
             that ensures that the TOE's security policies will be enforced on all applicable network
             traffic flowing among the attached networks. </description>
+          <consistency-rationale></consistency-rationale>
           <objective-refer ref="OE.CONNECTIONS">
             <rationale> The operational environment objective OE.CONNECTIONS is realized through
               A.CONNECTIONS.</rationale>
@@ -252,6 +256,7 @@
           <description> The administrator of the WIDS is not careless, willfully negligent or
             hostile, and administers the WIDS within compliance of the applied enterprise security
             policy. </description>
+          <consistency-rationale></consistency-rationale>
           <objective-refer ref="OE.PROPER_ADMIN">
             <rationale> The operational environment objective OE.PROPER_ADMIN is realized through
               A.PROPER_ADMIN.</rationale>
@@ -266,6 +271,7 @@
           <description>Analytical processes and information to derive conclusions about potential
             intrusions must be applied to WIDS data and appropriate response actions
             taken.</description>
+          <consistency-rationale></consistency-rationale>
           <objective-refer ref="O.WIDS_ANALYZE">
             <rationale>The organizational security policy P.ANALYZE is facilitated through
               O.WIDS_ANALYZE. </rationale>
@@ -283,9 +289,9 @@
             WIDS must be able to collect and store essential data elements of network traffic on
             monitored networks.<h:br/>
           </description>
+          <consistency-rationale/>
           <addressed-by>FAU_GEN.1/WIDS, FAU_STG_EXT.1/PCAP</addressed-by>
           <rationale/>
-          <consistency-rationale/>
         </SO>
         <SO name="O.WIDS_ANALYZE">
           <description> The WIDS must be able to analyze collected or observed WLAN activity on
@@ -293,13 +299,13 @@
             unauthorized connections involving internal WLAN devices, and non-secure communications.
             <h:br/>
           </description>
+          <consistency-rationale/>
           <addressed-by>FAU_ARP.1, FAU_ARP_EXT.2, FAU_ANO_EXT.1 (OPTIONAL), FAU_IDS_EXT.1,
             FAU_INV_EXT.1, FAU_INV_EXT.2, FAU_INV_EXT.3, FAU_INV_EXT.5
             (OPTIONAL), FAU_INV_EXT.6 (OPTIONAL), FAU_MAC_EXT.1 (OPTIONAL), FAU_SAA.1, FAU_SIG_EXT.1
             (OPTIONAL), FAU_WID_EXT.1, FAU_WID_EXT.2,
             FAU_WID_EXT.3 (OPTIONAL), FAU_WID_EXT.4 (OPTIONAL), FDP_IFC.1</addressed-by>
-          <rationale/>
-          <consistency-rationale/>
+          <rationale/>         
         </SO>
         <SO name="O.WIPS_REACT">
           <!-- NIAP: All WIPS functionality is optional, so technically this is an optional objective. How should we handle this? -->
@@ -307,18 +313,18 @@
             isolate/contain WLAN devices that have been determined to violate administrator-defined
             WIPS policies. <h:br/>
           </description>
-          <addressed-by>FAU_WIP_EXT.1 (OPTIONAL)</addressed-by>
-          <rationale/>
           <consistency-rationale/>
+          <addressed-by>FAU_WIP_EXT.1 (OPTIONAL)</addressed-by>
+          <rationale/>         
         </SO>
         <SO name="O.TOE_ADMINISTRATION">
           <description> To address the threat of unauthorized administrator access that is defined
             in the base PP, Conformant TOEs will provide the functions necessary for an
             administrator to configure the WIDS Capabilities of the TOE. <h:br/>
           </description>
-          <addressed-by>FMT_SMF.1/WIDS</addressed-by>
-          <rationale/>
           <consistency-rationale/>
+          <addressed-by>FMT_SMF.1/WIDS</addressed-by>
+          <rationale/>         
         </SO>
         <SO name="O.INSECURE_OPERATIONS">
           <!-- NIAP: Optional objective, but ND has similar SFRs, but ND does not have SOs. Not sure how to handle this. -->
@@ -328,18 +334,18 @@
             hardware or software specification, the TOE will log or produce an alert upon discovery
             of a problem reported via the self-test mechanism. <h:br/>
           </description>
-          <addressed-by>FPT_FLS.1 (OPTIONAL)</addressed-by>
-          <rationale/>
           <consistency-rationale/>
+          <addressed-by>FPT_FLS.1 (OPTIONAL)</addressed-by>
+          <rationale/>         
         </SO>
         <SO name="O.TRUSTED_COMMUNICATIONS">
           <description> To further address the threat of untrusted communications channels that is
             defined in the base PP, conformant TOEs will provide trusted communications between
             distributed components if any exist. <h:br/>
           </description>
-          <addressed-by>FPT_ITT.1, FTP_ITC.1</addressed-by>
-          <rationale/>
           <consistency-rationale/>
+          <addressed-by>FPT_ITT.1, FTP_ITC.1</addressed-by>
+          <rationale/>          
         </SO>
       </SOs>
     </section>
@@ -370,7 +376,7 @@
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=440&amp;id=440" xmlurl="test">
       <modified-sfrs>
         <subsection title="Protection of the TSF (FPT)" id="fpt">
-          <f-component id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection"> <!-- NIAP: So now that we have added DTLS back it, this is no longer modified from how it is in ND. It is optional in ND, but needs to be mandatory for WIDS. -->
+          <f-component cc-id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection"> <!-- NIAP: So now that we have added DTLS back it, this is no longer modified from how it is in ND. It is optional in ND, but needs to be mandatory for WIDS. -->
             <consistency-rationale/>
             <f-element>
               <title>The TSF shall protect TSF data from <h:u>disclosure and <h:b>detect its</h:b>
@@ -399,7 +405,7 @@
           </f-component>
         </subsection>
         <subsection title="Trusted Paths/Channels (FTP)" id="ftp">
-          <f-component id="ftp_itc.1" name="Inter-TSF trusted channel"> <!-- DONE -->
+          <f-component cc-id="ftp_itc.1" name="Inter-TSF trusted channel"> <!-- DONE -->
             <consistency-rationale/>
             <f-element>
               <title> The TSF shall <h:b>be capable of using <selectables>
@@ -457,15 +463,15 @@
     </base-pp>
     <man-sfrs>
       <subsection title="Security Audit (FAU)" id="fau">
-        <f-component id="fau_arp.1" name="Security Alarms"> <!-- DONE -->
+        <f-component cc-id="fau_arp.1" name="Security Alarms"> <!-- DONE -->
           <consistency-rationale/>
           <f-element id="fel-arp">
-            <title> The TSF shall <h:i>display an alert to Authorized Administrator in sufficient
-              detail to include identity of APs and EUDs involved, signal strength, accurate event timestamp, description of alert and severity level and</h:i>
+            <title> The TSF shall <refinement>display an alert to Authorized Administrator in sufficient
+              detail to include identity of APs and EUDs involved, signal strength, accurate event timestamp, description of alert and severity level and
               <selectables>
                 <selectable id="pcap">capture raw frame traffic that triggered the violation</selectable>
                 <selectable>no other actions</selectable>
-              </selectables>upon detection of a potential security violation.</title>
+              </selectables></refinement> upon detection of a potential security violation.</title>
             <note role="application"> If "capture raw frame traffic that triggers the violation" is
               selected then FAU_STG_EXT.1/PCAP shall be included in the ST. <h:br/><h:br/>
               FAU_SAA.1 defines the rules for monitoring the wireless traffic to detect for potential security violations. FAU_INV_EXT.2 defines the information the TOE needs to collect for all APs and EUDs within range of the the TOE's sensors. Device attributes can then be individually filtered
@@ -497,7 +503,7 @@
         <ext-comp-def title="Security Alarm Filtering" fam-id="FAU_ARP_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_arp_ext.2" name="Security Alarm Filtering"> <!-- DONE -->
+        <f-component cc-id="fau_arp_ext.2" name="Security Alarm Filtering"> <!-- DONE -->
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -532,14 +538,14 @@
             </aactivity>
           </f-element>
         </f-component>
-        <f-component id="fau_gen.1" name="Audit Data Generation" iteration="WIDS">  <!-- DONE -->      
+        <f-component cc-id="fau_gen.1" name="Audit Data Generation" iteration="WIDS">  <!-- DONE -->      
           <consistency-rationale/>
           <f-element>
             <title> The TSF shall be able to generate an audit record of the following auditable
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [not specified] level of audit;</h:li>
-                <h:li><h:i>[Auditable events listed in <ctr-ref refid="auditWids"/>;</h:i></h:li>
+                <h:li><h:i>[Auditable events listed in <ctr-ref ref-id="auditWids"/>;</h:i></h:li>
                 <h:li><h:i>Failure of wireless sensor communication].</h:i></h:li>
               </h:ol>
               <h:table>
@@ -592,11 +598,11 @@
               </h:table>
               <ctr ctr-type="Table" id="auditWids">: Auditable Events</ctr>
             </title>
-            <note role="application"> The auditable events defined in <ctr-ref refid="auditWids"/>
+            <note role="application"> The auditable events defined in <ctr-ref ref-id="auditWids"/>
               are for the SFRs that are explicitly defined in this PP-Module and are intended to
-              extend FAU_GEN.1 in the Base-PP. The events in the <ctr-ref refid="auditWids"/> should
+              extend FAU_GEN.1 in the Base-PP. The events in the <ctr-ref ref-id="auditWids"/> should
               be combined with those of the ND cPP in the context of a conforming Security
-              Target.<h:br/><h:br/> The Auditable Events (<ctr-ref refid="auditWids"/>) includes
+              Target.<h:br/><h:br/> The Auditable Events (<ctr-ref ref-id="auditWids"/>) includes
               optional and objective SFRs. The auditing of optional and objective SFRs is only
               required if that SFR is included in the ST. <h:br/><h:br/> Per FAU_STG_EXT.1 in the
               Base-PP, the TOE must support transfer of the audit data to an external IT entity
@@ -609,7 +615,7 @@
                   applicable);</h:li>
                 <h:li>For each audit event type, based on the auditable event definitions of the
                   functional components included in the PP/ST, [<h:i>auditable events listed in
-                      <ctr-ref refid="auditWids"/></h:i>]. </h:li>
+                      <ctr-ref ref-id="auditWids"/></h:i>]. </h:li>
               </h:ol>
             </title>
             <note role="application"> The subject identity in this case is the whitelisted inventory
@@ -633,7 +639,7 @@
         <ext-comp-def title="Reporting Methods" fam-id="FAU_GEN_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component name="Intrusion Detection System – Reporting Methods" id="fau_gen_ext.1">
+        <f-component name="Intrusion Detection System – Reporting Methods" cc-id="fau_gen_ext.1">
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -699,7 +705,7 @@
         <ext-comp-def title="Intrusion Detection Methods" fam-id="FAU_IDS_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_ids_ext.1"
+        <f-component cc-id="fau_ids_ext.1"
           name="Intrusion Detection System – Intrusion Detection Methods">
           <consistency-rationale/>
           <comp-lev/>
@@ -738,7 +744,7 @@
         <ext-comp-def title="Environmental Inventory" fam-id="FAU_INV_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_inv_ext.1" name="Environmental Inventory">
+        <f-component cc-id="fau_inv_ext.1" name="Environmental Inventory">
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -817,7 +823,7 @@
         <ext-comp-def title="Characteristics of Environmental Objects" fam-id="FAU_INV_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_inv_ext.2" name="Characteristics of Environmental Objects"> <!-- DONE -->
+        <f-component cc-id="fau_inv_ext.2" name="Characteristics of Environmental Objects"> <!-- DONE -->
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -886,7 +892,7 @@
         <ext-comp-def title="Location of Environmental Objects" fam-id="FAU_INV_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_inv_ext.3" name="Location of Environmental Objects"> <!-- DONE -->
+        <f-component cc-id="fau_inv_ext.3" name="Location of Environmental Objects"> <!-- DONE -->
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -944,7 +950,7 @@
             </aactivity>
           </f-element>
         </f-component>
-        <f-component id="fau_saa.1" name="Potential Violation Analysis"> 
+        <f-component cc-id="fau_saa.1" name="Potential Violation Analysis"> 
           <consistency-rationale/>
           <f-element>
             <title>The TSF shall be able to apply a set of rules for monitoring <h:b>the wireless
@@ -1333,7 +1339,7 @@
         <ext-comp-def title="Malicious Environmental Objects" fam-id="FAU_WID_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_wid_ext.1" name="Wireless Intrusion Detection – Malicious Environmental Objects"> 
+        <f-component cc-id="fau_wid_ext.1" name="Wireless Intrusion Detection – Malicious Environmental Objects"> 
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -1396,7 +1402,7 @@
         <ext-comp-def title="Passive Information Flow Monitoring" fam-id="FAU_WID_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_wid_ext.2" name="Wireless Intrusion Detection – Passive Information Flow Monitoring">
+        <f-component cc-id="fau_wid_ext.2" name="Wireless Intrusion Detection – Passive Information Flow Monitoring">
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -1541,7 +1547,7 @@
       </subsection>
 
       <subsection title="User Data Protection (FDP)" id="fdp">
-        <f-component id="fdp_ifc.1" name="Information Flow Control Policy">
+        <f-component cc-id="fdp_ifc.1" name="Information Flow Control Policy">
           <consistency-rationale/>
           <f-element>
             <title> The TSF shall enforce the <h:i>[802.11 monitoring SFP]</h:i> on <h:i>[all IEEE
@@ -1590,7 +1596,7 @@
       </subsection>
 
       <subsection title="Security Management (FMT)" id="fmt">
-        <f-component id="fmt_smf.1" name="Specification of Management Functions (WIDS)"
+        <f-component cc-id="fmt_smf.1" name="Specification of Management Functions (WIDS)"
           iteration="WIDS">
           <consistency-rationale/>
           <f-element>
@@ -1706,8 +1712,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Wireless Spectrum Monitoring" fam-id="FAU_WID_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_wid_ext.3"
-          name="Wireless Intrusion Detection – Non-Wireless Spectrum Monitoring">
+        <f-component cc-id="fau_wid_ext.3" name="Wireless Intrusion Detection – Non-Wireless Spectrum Monitoring">
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -1749,7 +1754,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Wireless Spectrum Monitoring" fam-id="FAU_WID_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_wid_ext.4"
+        <f-component cc-id="fau_wid_ext.4"
           name="Wireless Intrusion Detection – Wireless Spectrum Analysis">
           <consistency-rationale/>
           <comp-lev/>
@@ -1778,7 +1783,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Anomaly-Based Intrusion Detection" fam-id="FAU_ANO_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_ano_ext.1" name="Anomaly-Based Intrusion Detection">
+        <f-component cc-id="fau_ano_ext.1" name="Anomaly-Based Intrusion Detection">
           <selection-depends req="fel-ids-meth" ids="anoBased"/>
           <consistency-rationale/>
           <comp-lev/>
@@ -1836,7 +1841,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Signature-Based Intrusion Detection" fam-id="FAU_SIG_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_sig_ext.1" name="Signature-Based Intrusion Detection">
+        <f-component cc-id="fau_sig_ext.1" name="Signature-Based Intrusion Detection">
           <selection-depends req="fel-ids-meth" ids="sigBased"/>
           <consistency-rationale/>
           <comp-lev/>
@@ -1873,7 +1878,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Protected Audit Event Storage (Packet Captures)" fam-id="FAU_STG_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_stg_ext.1" iteration="PCAP"
+        <f-component cc-id="fau_stg_ext.1" iteration="PCAP"
           name="Protected Audit Event Storage (Packet Captures)">
           <!-- Later_TODO: Look at 1.2 in ND -->
           <!-- This component is copied from ND cPP and iterated to make a distintion between audit records and PCAPs -->
@@ -1994,7 +1999,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Detection of Unauthorized Connections" fam-id="FAU_INV_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_inv_ext.5" name="Detection of Unauthorized Connections">
+        <f-component cc-id="fau_inv_ext.5" name="Detection of Unauthorized Connections">
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -2034,7 +2039,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Signal Library" fam-id="FAU_INV_EXT">
           <mod-def/>
         </ext-comp-def>
-        <f-component id="fau_inv_ext.6" name="Signal Library">
+        <f-component cc-id="fau_inv_ext.6" name="Signal Library">
           <consistency-rationale/>
           <f-element>
             <title> The TSF shall include a signal library.</title>
@@ -2067,7 +2072,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Device Impersonation" fam-id="FAU_MAC_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_mac_ext.1" name="Device Impersonation">
+        <f-component cc-id="fau_mac_ext.1" name="Device Impersonation">
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -2196,7 +2201,7 @@ The evaluator shall examine the operational guidance to verify that it
         <ext-comp-def title="Wireless Intrusion Prevention" fam-id="FAU_WIP_EXT">
           <fam-behavior/>
         </ext-comp-def>
-        <f-component id="fau_wip_ext.1" name="Wireless Intrusion Prevention">
+        <f-component cc-id="fau_wip_ext.1" name="Wireless Intrusion Prevention">
           <consistency-rationale/>
           <comp-lev/>
           <management/>
@@ -2241,7 +2246,7 @@ The evaluator shall examine the operational guidance to verify that it
       </subsection>
 
       <subsection title="Protection of the TSF (FPT)" id="fpt">
-        <f-component id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection">
+        <f-component cc-id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection">
           <consistency-rationale/>
           <f-element>
             <title> The TSF shall preserve a secure state when the following types of failures
