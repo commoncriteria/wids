@@ -121,7 +121,7 @@
     <section title="Use Cases" id="usecases"><!-- NIAP: Do we have to have a use case? Todo: Need to either add a use case or delete this section -->
       <usecases>
         <usecase id="usecase1" title="Use Case 1">
-          <description/> A WIDS consists of sensors (preferably dedicated) and a central controller working together to provide 24/7 monitoring, primarily to the 
+          <description> A WIDS consists of sensors (preferably dedicated) and a central controller working together to provide 24/7 monitoring, primarily to the 
           802.11 Wireless Local Area Network (WLAN) spectrum and protocol, to detect, identify, and geo-locate WLAN devices within the controlled space. A WIDS is
           vital for the security of a WLAN access system deployed within a controlled space. A WIDS may be used to monitor controlled space without a CSfC WLAN Access System,
           but this use case is outside the scope of the CSfC guidance.<h:br/><h:br/> The WIDS may be capable of detecting or monitoring traffic other than 802.11 WLAN, such as
