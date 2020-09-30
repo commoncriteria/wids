@@ -70,7 +70,7 @@ implied certain tests were mandatory despite the functions being in selections
     <ReferenceTable>
       <PPVersion>0.8</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-06-22</PPPubDate>
+      <PPPubDate>2020-09-30</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -404,8 +404,7 @@ implied certain tests were mandatory despite the functions being in selections
           </rationale>         
         </SO>
         <SO name="O.WIDS_REACT">
-          <!-- NIAP: All WIPS functionality is optional, so technically this is an optional objective. How should we handle this? -->
-          <description>The TOE must be able to react as configured by the administrators in response to 
+          <description>The TOE must be able to react, as configured by the administrators, to 
             configured policy violations or other potential malicious activity.<h:p/>
             Addressed by: FAU_ARP.1, FAU_SAA.1, FMT_SMF.1/WIDS, FAU_ANO_EXT.1 (selection-based), FAU_WIP_EXT.1 (objective)
           </description>
@@ -467,8 +466,8 @@ implied certain tests were mandatory despite the functions being in selections
         </SO>
       </SOs>
     </section>
-    <section title="Security Objectives for the Operational Environment"
-      id="SecurityObjectivesTOEorEnvironment"> The following security objectives for the operational
+    <section title="Security Objectives for the Operational Environment" id="SecurityObjectivesTOEorEnvironment"> 
+      The following security objectives for the operational
       environment assist the TOE in correctly providing its security functionality. These track the
       assumptions about the environment. <SOEs>
         <SOE name="OE.CONNECTIONS">
@@ -627,8 +626,7 @@ implied certain tests were mandatory despite the functions being in selections
                 which a cryptographic protocol may be used to protect external communications with
                 authorized IT entities that the TOE interacts with to perform its functions. The TOE
                 uses at least one of the listed protocols for communications with the server that
-                collects the audit information. <h:p/> If the TSF uses a separate database
-                server, the database server selection must included in the ST.<h:p/> If
+                collects the audit information. <h:p/>  If
                 other authorized IT entities are protected, the ST author makes the appropriate
                 assignments (for those entities) and selections (for the protocols that are used to
                 protect those connections). The ST author selects the mechanism or mechanisms
@@ -756,7 +754,7 @@ implied certain tests were mandatory despite the functions being in selections
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [not specified] level of audit;</h:li>
-                <h:li>[<h:i>Auditable events listed in Auditable Events table;</h:i></h:li>
+                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<ctr-ref ref-id="auditWids"/>);</h:i></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i>].</h:li>
               </h:ol>
               <h:table>
@@ -825,7 +823,7 @@ implied certain tests were mandatory despite the functions being in selections
                   applicable);</h:li>
                 <h:li>For each audit event type, based on the auditable event definitions of the
                   functional components included in the PP/ST, [<h:i>auditable events listed in
-                      Auditable Events table</h:i>]. </h:li>
+                    Auditable Events table (<ctr-ref ref-id="auditWids"/>)</h:i>]. </h:li>
               </h:ol>
             </title>
             <note role="application"> The subject identity in this case is the allowlisted inventory
