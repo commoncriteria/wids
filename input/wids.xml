@@ -78,8 +78,8 @@ implied certain tests were mandatory despite the functions being in selections
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2016-10-06</date>
-      <subject>Initial Release - EP for NDcPP</subject>
+      <date>2020-10-01</date>
+      <subject>Initial Release - PP-Module for NDcPP</subject>
     </entry>
   </RevisionHistory> 
   <chapter title="Introduction" id="int">
@@ -897,7 +897,7 @@ implied certain tests were mandatory despite the functions being in selections
           </management>
           <audit>
             The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the PP/ST: <h:ul>
-              <h:li>Presence of whitelisted device</h:li>
+              <h:li>Presence of allowlisted device</h:li>
             </h:ul>
           </audit>
           <dependencies>FAU_INV_EXT.2 Characteristics of Environmental Objects</dependencies>
@@ -1835,10 +1835,9 @@ implied certain tests were mandatory despite the functions being in selections
                 <testlist>
                   <test>
                     <h:ul>
-                      <h:li>Set the WIDS sensor for a set channel</h:li>
-                      <h:li>Start a traffic capture from the WIDS sensor</h:li>
-                      <h:li>Send a set number of frames on the sensor's operating channel for all
-                        IEEE 802.11 a, b, g, n, ac frame types and subtypes from/to the following: <h:ul>
+                      <h:li>Deploy a whitelisted AP/WIDS</h:li>
+                      <h:li>Start a traffic capture from the AP/WIDS sensor</h:li>
+                      <h:li>Send a set number of frames to the sensor for all IEEE 802.11 a, b, g, n, ac frame types and subtypes from/to the following:<h:ul>
                           <h:li><h:i>authorized APs and authorized EUDs</h:i></h:li>
                           <h:li><h:i>authorized APs and unauthorized EUDs</h:i></h:li>
                           <h:li><h:i>unauthorized APs and authorized EUDs</h:i></h:li>
@@ -1870,8 +1869,6 @@ implied certain tests were mandatory despite the functions being in selections
                 <h:li>Define authorized SSID(s),</h:li><!-- FAU_WID_EXT.2.3 -->
                 <h:li>Define authorized WLAN authentication schemes,</h:li><!-- FAU_SAA.1 -->
                 <h:li>Define authorized WLAN encryption schemes,</h:li><!--FAU_SAA.1  -->
-                <h:li>Define authorized and unauthorized TCP/IP and UDP traffic,</h:li>
-                <h:li>Define known malicious activity ports,</h:li>
                 <!-- New: (e.g. Floods of deauthentication frames or SYN packets should not be allowed). Defining authorized
                                 and unauthorized TCP/IP and UDP traffic would be beneficial. Defining known malicious activity ports
                                 that are used, or detecting the use of SSH tunneling techniques could be an appropriate mitigation strategy. 
@@ -1894,6 +1891,8 @@ implied certain tests were mandatory despite the functions being in selections
                         <selectable>frequency</selectable>
                         <selectable>channel</selectable>
                       </selectables></selectable>
+                    <selectable>Define authorized and unauthorized TCP/IP and UDP traffic,</selectable>
+                    <selectable>Define known malicious activity ports,</selectable>
                     <selectable>No other capabilities</selectable>
                   </selectables>.</h:li>
               </h:ul>
