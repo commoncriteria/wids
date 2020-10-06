@@ -68,7 +68,7 @@ implied certain tests were mandatory despite the functions being in selections
   xmlns:h="http://www.w3.org/1999/xhtml">
   <PPReference>
     <ReferenceTable>
-      <PPVersion>0.8</PPVersion>
+      <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2020-09-30</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
@@ -95,7 +95,9 @@ implied certain tests were mandatory despite the functions being in selections
       provides network security administrators with the additional ability to react in real-time to
       potentially malicious wireless (IEEE 802.11) network traffic. 
       <h:p/> 
-      This PP-Module extends the collaborative Protection Profile for Network Devices (NDcPP). 
+      This PP_Module is intended for use with the following Bsae-PP: <h:ul>
+        <h:li>Collaborative Protection Profile for Network Devices (NDcPP), Version 2.2e</h:li>
+      </h:ul>
       <h:p/>
       A TOE that conforms to a PP-Configuration containing this PP-Module must be a 'Distributed TOE' as defined in the NDcPP. 
       The expectation for this PP-Module is that a WIDS must include distributed sensor nodes to ensure that the full physical range of a wireless network
@@ -144,7 +146,7 @@ implied certain tests were mandatory despite the functions being in selections
         Conformant TOEs must use a secure communication path(s) between WIDS/WIPS components.
         <h:p/> A WIDS/WIPS can be Integrated (be part of the WLAN infrastructure) or
         Standalone (independent from WLAN) architecture depending on vendor implementation. The two
-        different architectures are illustrated in the <figref ref-id="toe"/> figure below. The TOE
+        different architectures are illustrated in <figref ref-id="toe"/> below. The TOE
         boundary is indicated by the yellow box.
         <h:p/> A WIDS/WIPS is expected to inspect layers 1 and 2 network traffic, per the
         OSI network model, and monitor wireless frames in the RF spectrum utilized by IEEE 802.11 a,
@@ -167,11 +169,10 @@ implied certain tests were mandatory despite the functions being in selections
       <usecases>  
         <usecase id="usecase1" title="Use Case 1">
           <description> A WIDS consists of sensors (preferably dedicated) and a central controller working together to provide 24/7 monitoring, primarily to the 
-          802.11 Wireless Local Area Network (WLAN) spectrum and protocol, to detect, identify, and geo-locate WLAN devices within the controlled space. A WIDS is
-          vital for the security of a WLAN access system deployed within a controlled space. A WIDS may be used to monitor controlled space without a CSfC WLAN Access System,
-          but this use case is outside the scope of the CSfC guidance.<h:p/> The WIDS may be capable of detecting or monitoring traffic other than 802.11 WLAN, such as
-          802.15.4 based protocols, which enhances the security of the controlled space. However, a WIDS is not required to monitor additional protocols outside of 802.11 when
-          supporting a WLAN Access Solution. A WIDS monitors all 802.11 WLAN traffic emanating from and traversing the controlled space, thus inadvertant collection of any 802.11
+          802.11 Wireless Local Area Network (WLAN) spectrum and protocol, to detect, identify, and geo-locate WLAN devices within a controlled space.
+            <h:p/> The WIDS may be capable of detecting or monitoring traffic other than 802.11 WLAN, such as
+          802.15.4 based protocols, which enhances the security of the controlled space. However, a WIDS is not required to monitor additional protocols outside of 802.11. 
+          A WIDS monitors all 802.11 WLAN traffic emanating from and traversing the controlled space, thus inadvertant collection of any 802.11
           signals is possible when operating a WIDS.</description> 
         </usecase>
       </usecases>  
@@ -184,8 +185,9 @@ implied certain tests were mandatory despite the functions being in selections
         <description> This PP-Module inherits exact conformance as required from the specified
           Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based
           SFRs, and Optional SFRs (dated May 2017).<h:p/>
-          The PPs and PP-Modules that are allowed to be specified in a PP-Configuration with this PP-Module
-          are identified on the NIAP site by the PP-Configurations that include this PP-Module.
+          The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module: <h:ul>
+            <h:li>PP-Module for Virtual Private Network (VPN) Gateways,  Version 1.1</h:li>
+          </h:ul>
           
         </description>
       </cclaim>
@@ -606,6 +608,7 @@ implied certain tests were mandatory despite the functions being in selections
                 <selectable>HTTPS</selectable>                
                   </selectables> to provide a trusted communication channel between itself and
                   authorized IT entities supporting the following capabilities: audit server, <selectables>
+                    <selectable>authentication server</selectable>
                     <selectable><h:b>database server</h:b></selectable>
                     <selectable><assignable>other capabilities</assignable></selectable>
                     <selectable>no other capabilities</selectable>
@@ -999,7 +1002,7 @@ implied certain tests were mandatory despite the functions being in selections
               </h:ul>of all APs and EUDs within range of the TOE's wireless sensors.</title>
           </f-element>
           <f-element>
-            <title> The TSF shall detect the follow additional details for all APs within range of the TOE's wireless sensors:<h:ul>
+            <title> The TSF shall detect the following additional details for all APs within range of the TOE's wireless sensors:<h:ul>
                 <h:li>encryption</h:li>
                 <h:li>number of connected EUDs.</h:li>
               <h:li>Received frames/packets</h:li>
@@ -1189,38 +1192,38 @@ implied certain tests were mandatory despite the functions being in selections
             <title>The TSF shall enforce the following rules for monitoring <h:b>wireless traffic:</h:b>
               <h:ol type="a">
                 <h:li>Accumulation or combination of <assignable>subset of defined auditable
-                    events</assignable> known to indicate a potential security violation; [</h:li>
-                <h:li><h:i>Detection of non-allowlisted AP</h:i>;</h:li>
-                <h:li><h:i>Detection of non-allowlisted EUD</h:i>;</h:li>               
-                <h:li><h:i>Detection of authorized EUD establishing peer-to-peer connection with any other EUD</h:i>;</h:li>
-                <h:li><h:i>Detection of EUD bridging two network interfaces</h:i>;</h:li>
-                <h:li><h:i>Detection of unauthorized point-to-point wireless bridges by allowlisted APs</h:i>;</h:li>        
-                <h:li><h:i>Alert generated by violation of user defined signature</h:i>;</h:li>
-                <h:li><h:i>Detection of ICS connection</h:i>;</h:li>
-                <h:li><h:i>Detection of traffic with excessive transmit power level</h:i>;</h:li>         
-                <h:li><h:i>Detection of MAC spoofing</h:i>;</h:li>
-                <h:li><h:i>Detection of unauthorized AP broadcasting authorized SSIDs</h:i>;</h:li>
-                <h:li><h:i>Detection of authorized AP broadcasting an unauthorized SSID</h:i>;</h:li>
-                <h:li><h:i>Detection of allowlisted EUD connected to unauthorized SSID</h:i>;</h:li>
-                <h:li><h:i>Detection of NULL SSID associations</h:i>;</h:li>              
-                <h:li><h:i>Detection of active probing</h:i>;</h:li>
-                <h:li><h:i>Detection of packet flooding/DoS/DDoS</h:i>;</h:li>
-                <h:li><h:i>Detection of RF-based denial of service</h:i>;</h:li>
-                <h:li><h:i>Detection of deauthentication flooding</h:i>;</h:li>
-                <h:li><h:i>Detection of disassociation flooding</h:i>;</h:li>
-                <h:li><h:i>Detection of request-to-send/clear-to-send abuse</h:i>;</h:li>             
-                <h:li><h:i>Detection of unauthorized authentication scheme use</h:i>;</h:li>
-                <h:li><h:i>Detection of unauthorized encryption scheme use</h:i>;</h:li>
-                <h:li><h:i>Detection of unencrypted traffic</h:i>;</h:li>
-                <h:li><h:i>Detection of allowlisted EUD or AP that is using weak/outdated WLAN protocols and protocol implementations</h:i>;</h:li>
-                <h:li><h:i>Detection of extremely high numbers of client devices using a particular allowlisted AP</h:i>;</h:li> 
-                <h:li><h:i>Detection of a high number of failed attempts to join the WLAN in a short period of time</h:i>;</h:li>
-                <h:li><h:i>Detection of the use of active WLAN scanners (e.g. wardriving tools) to generate WLAN traffic, such as Probes, Auths, and Assoc frames</h:i>;</h:li>
-                <h:li><h:i>Detection of the physical location of an identified WLAN threat by using triangulation</h:i>;</h:li>
-                <h:li><h:i>Detection of an SSID using weak/unsupported/disallowed encryption options</h:i>;</h:li>
-                <h:li><h:i>Detection of AP SSID larger than 32 bytes</h:i>;</h:li>
-                <h:li><h:i>Detection of excessive WPS negotiations</h:i>;</h:li>
-                <h:li><h:i><assignable>any other rules</assignable></h:i>].</h:li>
+                    events</assignable> known to indicate a potential security violation, </h:li>
+                <h:li><h:i>Detection of non-allowlisted AP</h:i>,</h:li>
+                <h:li><h:i>Detection of non-allowlisted EUD</h:i>,</h:li>               
+                <h:li><h:i>Detection of authorized EUD establishing peer-to-peer connection with any other EUD</h:i>,</h:li>
+                <h:li><h:i>Detection of EUD bridging two network interfaces</h:i>,</h:li>
+                <h:li><h:i>Detection of unauthorized point-to-point wireless bridges by allowlisted APs</h:i>,</h:li>        
+                <h:li><h:i>Alert generated by violation of user defined signature</h:i>,</h:li>
+                <h:li><h:i>Detection of ICS connection</h:i>,</h:li>
+                <h:li><h:i>Detection of traffic with excessive transmit power level</h:i>,</h:li>         
+                <h:li><h:i>Detection of MAC spoofing</h:i>,</h:li>
+                <h:li><h:i>Detection of unauthorized AP broadcasting authorized SSIDs</h:i>,</h:li>
+                <h:li><h:i>Detection of authorized AP broadcasting an unauthorized SSID</h:i>,</h:li>
+                <h:li><h:i>Detection of allowlisted EUD connected to unauthorized SSID</h:i>,</h:li>
+                <h:li><h:i>Detection of NULL SSID associations</h:i>,</h:li>              
+                <h:li><h:i>Detection of active probing</h:i>,</h:li>
+                <h:li><h:i>Detection of packet flooding/DoS/DDoS</h:i>,</h:li>
+                <h:li><h:i>Detection of RF-based denial of service</h:i>,</h:li>
+                <h:li><h:i>Detection of deauthentication flooding</h:i>,</h:li>
+                <h:li><h:i>Detection of disassociation flooding</h:i>,</h:li>
+                <h:li><h:i>Detection of request-to-send/clear-to-send abuse</h:i>,</h:li>             
+                <h:li><h:i>Detection of unauthorized authentication scheme use</h:i>,</h:li>
+                <h:li><h:i>Detection of unauthorized encryption scheme use</h:i>,</h:li>
+                <h:li><h:i>Detection of unencrypted traffic</h:i>,</h:li>
+                <h:li><h:i>Detection of allowlisted EUD or AP that is using weak/outdated WLAN protocols and protocol implementations</h:i>,</h:li>
+                <h:li><h:i>Detection of extremely high numbers of client devices using a particular allowlisted AP</h:i>,</h:li> 
+                <h:li><h:i>Detection of a high number of failed attempts to join the WLAN in a short period of time</h:i>,</h:li>
+                <h:li><h:i>Detection of the use of active WLAN scanners (e.g. wardriving tools) to generate WLAN traffic, such as Probes, Auths, and Assoc frames</h:i>,</h:li>
+                <h:li><h:i>Detection of the physical location of an identified WLAN threat by using triangulation</h:i>,</h:li>
+                <h:li><h:i>Detection of an SSID using weak/unsupported/disallowed encryption options</h:i>,</h:li>
+                <h:li><h:i>Detection of AP SSID larger than 32 bytes</h:i>,</h:li>
+                <h:li><h:i>Detection of excessive WPS negotiations</h:i>,</h:li>
+                <h:li><h:i><assignable>any other rules</assignable></h:i>.</h:li>
               </h:ol>           
             </title>
             <note role="Application">
@@ -1272,10 +1275,10 @@ implied certain tests were mandatory despite the functions being in selections
                   </test>
                   <test><h:b>Detection of EUD bridging two network interfaces</h:b>:<h:br/>
                      Bridge two network interfaces on an allowlisted EUD (one must be the wireless card listed as allowlisted).                  
-                      <h:ul>
-                        <h:li>Create a Windows Hosted Network with an allowlisted EUD. </h:li>
-                        <h:li>Connect a different allowlisted EUD to the network.</h:li>
-                      </h:ul>
+                    <steplist>
+                      <step>Create a Windows Hosted Network with an allowlisted EUD. </step>
+                        <step>Connect a different allowlisted EUD to the network.</step>
+                    </steplist>
                     Verify that alerts were generated by each of the connections in each test.
                     <h:p/>
                   </test>
@@ -1283,7 +1286,7 @@ implied certain tests were mandatory despite the functions being in selections
                       <steplist>
                         <step>Setup a point-to-point wireless bridge using allowlisted APs in the
                           range of the wireless sensors.</step>
-                        <step>Verift that the TSF detects the bridge.</step>
+                        <step>Verify that the TSF detects the bridge.</step>
                       </steplist>
                     <h:br/>
                   </test>             
@@ -1726,9 +1729,7 @@ implied certain tests were mandatory despite the functions being in selections
                 The evaluator shall review the operational guidance for how to configure
                 the TOE to monitor the channels as selected in the SFR. If the sensor ability to
                 transmits data is configurable, the evaluator shall review the operational guidance
-                for how to disable wireless transmissions from the sensor. The TOE shall have the
-                ability to perform stateful frame inspection and log attacks spanning multiple
-                frames. The evaluator shall verify that the operational guidance provides
+                for how to disable wireless transmissions from the sensor. The evaluator shall verify that the operational guidance provides
                 instructions on how to specify and confirm that stateful frame capture and
                 inspection is being performed.<h:p/>
               </Guidance>
@@ -1835,7 +1836,7 @@ implied certain tests were mandatory despite the functions being in selections
                 <testlist>
                   <test>
                     <h:ul>
-                      <h:li>Deploy a whitelisted AP/WIDS</h:li>
+                      <h:li>Deploy an allowlisted AP/WIDS</h:li>
                       <h:li>Start a traffic capture from the AP/WIDS sensor</h:li>
                       <h:li>Send a set number of frames to the sensor for all IEEE 802.11 a, b, g, n, ac frame types and subtypes from/to the following:<h:ul>
                           <h:li><h:i>authorized APs and authorized EUDs</h:i></h:li>
@@ -1891,8 +1892,8 @@ implied certain tests were mandatory despite the functions being in selections
                         <selectable>frequency</selectable>
                         <selectable>channel</selectable>
                       </selectables></selectable>
-                    <selectable>Define authorized and unauthorized TCP/IP and UDP traffic,</selectable>
-                    <selectable>Define known malicious activity ports,</selectable>
+                    <selectable>Define authorized and unauthorized TCP/IP and UDP traffic</selectable>
+                    <selectable>Define known malicious activity ports</selectable>
                     <selectable>No other capabilities</selectable>
                   </selectables>.</h:li>
               </h:ul>
@@ -1927,7 +1928,7 @@ The evaluator shall review the TSS to verify that it includes information the
                 The evaluator shall review the operational guidance for instructions on how
                 to configure and change clasification of APs and EUDs to indicate that they are part
                 of the allowlist.<h:p/> 
-The evaluator shall review the operation guidance to determine how to configure which SSIDs are permitted on the network.<h:p/>
+The evaluator shall review the operational guidance to determine how to configure which SSIDs are permitted on the network.<h:p/>
 
 The evaluator shall examine the operational guidance to verify that it
                 provides instructions on how to define a WLAN authentication scheme as authorized or
@@ -2176,7 +2177,7 @@ The evaluator shall examine the operational guidance to verify that it
               <selectable>The TOE shall be a distributed TOE that stores <h:b>packet capture</h:b> data on the following TOE components: <assignable>identification of TOE components</assignable></selectable> 
               <selectable>The TOE shall be a distributed TOE with storage of <h:b>packet capture</h:b> data provided externally for the following TOE components: 
                 <assignable>list of TOE components that do not store <h:b>packet capture</h:b> data locally and the other TOE components to which they transmit their generated <h:b>packet capture</h:b> data</assignable></selectable>
-            </selectables>
+            </selectables>.
             </title>
           </f-element>
           <f-element>
@@ -2568,7 +2569,7 @@ The evaluator shall examine the operational guidance to verify that it
         <h:td>Rationale for Satisfaction</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FDP_IFC.1 - Subset Information Flow Control</h:td>
+        <h:td>FDP_IFF.1 - Information Flow Control Functions</h:td>
         <h:td>
           CC Part 2 specifies FDP_IFF.1 as a dependency of FDP_IFC.1 because the TSF must define the information flow control SFP rules associated with a given SFP. 
           This dependency is implicitly addressed through FAU_WID_EXT.2, which defines the rules for the 802.11 monitoring SFP defined by FDP_IFC.1.
