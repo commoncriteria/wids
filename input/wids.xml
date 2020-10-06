@@ -95,7 +95,7 @@ implied certain tests were mandatory despite the functions being in selections
       provides network security administrators with the additional ability to react in real-time to
       potentially malicious wireless (IEEE 802.11) network traffic. 
       <h:p/> 
-      This PP_Module is intended for use with the following Bsae-PP: <h:ul>
+      This PP-Module is intended for use with the following Bsae-PP: <h:ul>
         <h:li>Collaborative Protection Profile for Network Devices (NDcPP), Version 2.2e</h:li>
       </h:ul>
       <h:p/>
@@ -1883,8 +1883,8 @@ implied certain tests were mandatory despite the functions being in selections
                     <selectable>Define anomaly activity</selectable><!-- FAU_ANO_EXT.1.2 -->
                     <selectable>Define classification rules to detect rogue APs</selectable><!-- FAU_WID_EXT.1.1 -->
                     <selectable><selectables>
-                        <selectable>Enable</selectable>
-                        <selectable>Disable</selectable>
+                        <selectable>enable</selectable>
+                        <selectable>disable</selectable>
                       </selectables> transmission of data by wireless sensor</selectable><!-- FAU_WID_EXT.2.2 -->
                     <selectable>Define attack signatures</selectable><!-- FAU_SIG_EXT.1.1 -->
                     <selectable>Define rules for overwriting previous packet captures</selectable><!-- FAU_STG_EXT.1.3/PCAP -->
