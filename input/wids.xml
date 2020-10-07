@@ -496,7 +496,7 @@ implied certain tests were mandatory despite the functions being in selections
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=447&amp;id=447" xmlurl="test">
       <modified-sfrs>
                 
-        <subsection title="Security Audit (FAU)" id="fau">
+        <subsection title="Security Audit (FAU)" id="ss-mod-fau">
           
           <f-component cc-id="fau_gen_ext.1" name="Security Audit Data Generation for Distributed TOE Components"> 
             <consistency-rationale>This PP-Module mandates the inclusion of this selection-based SFR because a TOE that conforms to this PP-Module will always be deployed in a configuration that requires this SFR to be claimed.</consistency-rationale>
@@ -538,7 +538,7 @@ implied certain tests were mandatory despite the functions being in selections
           </f-component>
           
         </subsection>
-        <subsection title="Communications (FCO)" id="fco">
+        <subsection title="Communications (FCO)" id="ss-mod-fco">
           <f-component cc-id="fco_cpc_ext.1" name="Communication Partner Control"> 
             <consistency-rationale>This PP-Module mandates the inclusion of this optional SFR because it is required to implement functionality required by this PP-Module.</consistency-rationale>
             <f-element>
@@ -570,7 +570,7 @@ implied certain tests were mandatory despite the functions being in selections
               </f-element>  
           </f-component>
         </subsection>
-        <subsection title="Protection of the TSF (FPT)" id="fpt">
+        <subsection title="Protection of the TSF (FPT)" id="ss-mod-fpt">
           <f-component cc-id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection"> <!-- NIAP: So now that we have added DTLS back it, this is no longer modified from how it is in ND. It is optional in ND, but needs to be mandatory for WIDS. -->
             <consistency-rationale>This PP-Module mandates the inclusion of this optional SFR because it is required to implement functionality required by this PP-Module.</consistency-rationale>
             <f-element>
@@ -599,7 +599,7 @@ implied certain tests were mandatory despite the functions being in selections
             </f-element>
           </f-component>
         </subsection>
-        <subsection title="Trusted Paths/Channels (FTP)" id="ftp">
+        <subsection title="Trusted Paths/Channels (FTP)" id="ss-mod-ftp">
           <f-component cc-id="ftp_itc.1" name="Inter-TSF trusted channel"> <!-- DONE -->
             <consistency-rationale>This PP-Module refines the Base-PP SFR to add a selection for a specific external entity that may be applicable to a TOE that conforms to this PP-Module.</consistency-rationale>
             <f-element>
@@ -676,7 +676,7 @@ implied certain tests were mandatory despite the functions being in selections
       <con-op-en/>
     </base-pp>
     <man-sfrs>
-      <subsection title="Security Audit (FAU)" id="fau">
+      <subsection title="Security Audit (FAU)" id="ss-man-fau">
         <f-component cc-id="fau_arp.1" name="Security Alarms"> <!-- DONE -->
           <consistency-rationale>This SFR defines operations to be performed on collected WIDS data, which is collected using an external interface defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <f-element id="fel-arp">
@@ -1809,7 +1809,7 @@ implied certain tests were mandatory despite the functions being in selections
         </f-component>        
       </subsection>
 
-      <subsection title="User Data Protection (FDP)" id="fdp">
+      <subsection title="User Data Protection (FDP)" id="ss-man-fdp">
         <f-component cc-id="fdp_ifc.1" name="Subset Information Flow Control">
           <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <f-element>
@@ -1857,7 +1857,7 @@ implied certain tests were mandatory despite the functions being in selections
         </f-component>
       </subsection>
 
-      <subsection title="Security Management (FMT)" id="fmt">
+      <subsection title="Security Management (FMT)" id="ss-man-fmt">
         <f-component cc-id="fmt_smf.1" name="Specification of Management Functions (WIDS)"
           iteration="WIDS">
           <consistency-rationale>This SFR iterates the FMT_SMF.1 SFR defined in the Base-PP to define management functions for the functionality that is specific to this PP-Module.</consistency-rationale>
@@ -1970,7 +1970,7 @@ The evaluator shall examine the operational guidance to verify that it
       </subsection>
     </man-sfrs>
     <opt-sfrs>
-      <subsection title="Security Audit (FAU)" id="fau">
+      <subsection title="Security Audit (FAU)" id="ss-opt-fau">
 <!--         <ext-comp-def title="Wireless Spectrum Monitoring" fam-id="FAU_WID_EXT">
           <fam-behavior/>
         </ext-comp-def>  -->
@@ -2046,7 +2046,7 @@ The evaluator shall examine the operational guidance to verify that it
       </subsection>
     </opt-sfrs>
     <sel-sfrs>
-      <subsection title="Security Audit (FAU)" id="fau">
+      <subsection title="Security Audit (FAU)" id="ss-sel-fau">
         <ext-comp-def title="Anomaly-Based Intrusion Detection" fam-id="FAU_ANO_EXT">
           <fam-behavior>This family defines requirements for detection of malicious network activity based on anomalous behavior.</fam-behavior>
         </ext-comp-def>
@@ -2228,7 +2228,7 @@ The evaluator shall examine the operational guidance to verify that it
     </sel-sfrs>
     <obj-sfrs>
 
-      <subsection title="Security Audit (FAU)" id="fau">
+      <subsection title="Security Audit (FAU)" id="ss-obj-fau">
         <!-- Originally I thought we needed to add this SFR, most likely do not need it, b/c ND cPP covers it.  -->
         <!-- <f-component id="fau_gen.1" name="Device Configuration - Exporting Event Data">         
           <consistency-rationale/>
@@ -2531,7 +2531,7 @@ The evaluator shall examine the operational guidance to verify that it
         </f-component>
       </subsection>
 
-      <subsection title="Protection of the TSF (FPT)" id="fpt">
+      <subsection title="Protection of the TSF (FPT)" id="ss-obj-fpt">
         <f-component cc-id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection">
           <consistency-rationale>This SFR defines preservation of a secure state in the event that a failure condition is detected. 
             The Base-PP does not define an SFR for this behavior but this SFR mitigates the T.SECURITY_FUNCTIONALITY_FAILURE threat defined in the Base-PP, 
