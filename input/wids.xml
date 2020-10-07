@@ -506,8 +506,11 @@ implied certain tests were mandatory despite the functions being in selections
                 subset of security relevant audit events which can occur on the TOE component.
               </title>
               <note role="application">This SFR is selection-based in the Base-PP but is mandated by this PP-Module because the ST author must claim a distributed TOE selection in FAU_STG_EXT.1.2.</note>
-              <aactivity>There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                The PP-Module modifies this SFR to make its inclusion mandatory rather than selection-based, but there is no change to how the SFR must be implemented.<no-tests/>
+              <aactivity>
+                <no-tests>
+                  There is no change to the EAs specified for this SFR in the NDcPP SD. 
+                The PP-Module modifies this SFR to make its inclusion mandatory rather than selection-based, but there is no change to how the SFR must be implemented.
+                  </no-tests>
               </aactivity>
             </f-element>  
           </f-component>
@@ -528,8 +531,8 @@ implied certain tests were mandatory despite the functions being in selections
               </title>
             <note role="application">This SFR is selection-based in the Base-PP but is mandated by this PP-Module because the ST author must claim a distributed TOE selection in FAU_STG_EXT.1.2.<h:p/>
               This SFR is modified from its definition in the Base-PP by removing the selection option for the TOE to be standalone. A TOE that conforms to this PP-Module is expected to be distributed.</note>
-              <aactivity>There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                The PP-Module modifies this SFR to remove one of the possible selection items, but there is no change to how the SFR is to be implemented.<no-tests/>
+              <aactivity><no-tests>There is no change to the EAs specified for this SFR in the NDcPP SD. 
+                The PP-Module modifies this SFR to remove one of the possible selection items, but there is no change to how the SFR is to be implemented.</no-tests>
               </aactivity>
             </f-element>  
           </f-component>
@@ -561,8 +564,8 @@ implied certain tests were mandatory despite the functions being in selections
               <title>The TSF shall enable a Security Administrator to disable
                 communications between any pair of TOE components.</title>
             <note role="application">This SFR is optional in the NDcPP but is mandated by this PP-Module because the WIDS TOE is expected to be a distributed system. </note>
-              <aactivity>There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                The PP-Module modifies this SFR to make its inclusion mandatory rather than optional, but there is no change to how the SFR is to be implemented.<no-tests/>
+              <aactivity><no-tests>There is no change to the EAs specified for this SFR in the NDcPP SD. 
+                The PP-Module modifies this SFR to make its inclusion mandatory rather than optional, but there is no change to how the SFR is to be implemented.</no-tests>
               </aactivity>
               </f-element>  
           </f-component>
@@ -590,8 +593,8 @@ implied certain tests were mandatory despite the functions being in selections
                 the mechanisms supported by the TOE, and then ensures that the detailed protocol
                 requirements in Appendix B of NDcPP corresponding to their selection are included in
                 the ST, if not already present. </note>
-              <aactivity>There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                The PP-Module modifies this SFR to make its inclusion mandatory rather than optional, but there is no change to how the SFR is to be implemented. <no-tests/>
+              <aactivity><no-tests>There is no change to the EAs specified for this SFR in the NDcPP SD. 
+                The PP-Module modifies this SFR to make its inclusion mandatory rather than optional, but there is no change to how the SFR is to be implemented. </no-tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -656,9 +659,9 @@ implied certain tests were mandatory despite the functions being in selections
                 protect those connections). The ST author selects the mechanism or mechanisms
                 supported by the TOE, and then ensures that the detailed protocol requirements in
                 Appendix B of NDcPP corresponding to their selection are included in the ST. </note> -->
-              <aactivity> There is no change to the EAs specified for this SFR in the NDcPP SD. 
+              <aactivity> <no-tests>There is no change to the EAs specified for this SFR in the NDcPP SD. 
                 If ‘database server’ is selected in FTP_ITC.1.1, the evaluator shall ensure that the required tests are performed on that external interface in addition to the other claimed interfaces.<h:p/>
-                The evaluator shall also perform test 4 for this SFR in the NDcPP SD, which is objective in NDcPP. <no-tests/>
+                The evaluator shall also perform test 4 for this SFR in the NDcPP SD, which is objective in NDcPP. </no-tests>
               </aactivity>
             </f-element>
           </f-component>
