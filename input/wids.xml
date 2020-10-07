@@ -531,7 +531,7 @@ implied certain tests were mandatory despite the functions being in selections
               </title>
             <note role="application">This SFR is selection-based in the Base-PP but is mandated by this PP-Module because the ST author must claim a distributed TOE selection in FAU_STG_EXT.1.2.<h:p/>
               This SFR is modified from its definition in the Base-PP by removing the selection option for the TOE to be standalone. A TOE that conforms to this PP-Module is expected to be distributed.</note>
-              <aactivity><no-tests>There is no change to the EAs specified for this SFR in the NDcPP SD. 
+              <aactivity><no-tests> There is no change to the EAs specified for this SFR in the NDcPP SD. 
                 The PP-Module modifies this SFR to remove one of the possible selection items, but there is no change to how the SFR is to be implemented.</no-tests>
               </aactivity>
             </f-element>  
