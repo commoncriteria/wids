@@ -755,7 +755,7 @@ implied certain tests were mandatory despite the functions being in selections
         </f-component>
         <f-component cc-id="fau_gen.1" name="Audit Data Generation (WIDS)" iteration="WIDS">  <!-- DONE -->      
           <consistency-rationale>This SFR iterates the FAU_GEN.1 SFR defined in the Base-PP to define auditable events for the functionality that is specific to this PP-Module.</consistency-rationale>
-          <f-element id="fel-audit-gen">
+          <f-element id="fel-audit-gen-wids">
             <title> The TSF shall be able to generate an audit record of the following auditable
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
