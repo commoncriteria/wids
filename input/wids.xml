@@ -96,7 +96,7 @@ implied certain tests were mandatory despite the functions being in selections
       potentially malicious wireless (IEEE 802.11) network traffic. 
       <h:p/> 
       This PP-Module is intended for use with the following Base-PP: <h:ul>
-        <h:li>Collaborative Protection Profile for Network Devices (NDcPP), Version 2.2e</h:li>
+        <h:li>collaborative Protection Profile for Network Devices (NDcPP), Version 2.2e</h:li>
       </h:ul>
       <h:p/>
       A TOE that conforms to a PP-Configuration containing this PP-Module must be a 'Distributed TOE' as defined in the NDcPP. 
