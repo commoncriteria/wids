@@ -61,7 +61,7 @@ implied certain tests were mandatory despite the functions being in selections
 -->
 
 
-<Module boilerplate="yes" target-products="WIDS/WIPS" xmlns="https://niap-ccevs.org/cc/v1"
+<Module boilerplate="yes" target-products="Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS)" xmlns="https://niap-ccevs.org/cc/v1"
   name="802.11 Wireless Intrusion Detection/Prevention Systems"
   xmlns:h="http://www.w3.org/1999/xhtml">
   <PPReference>
