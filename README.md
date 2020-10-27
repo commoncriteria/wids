@@ -4,6 +4,7 @@ Wireless Intrusion Detection/Prevention Systems Protection Profile Module
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/wids.svg?maxAge=2592000)](https://github.com/commoncriteria/wids/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
+
 This repository hosts the draft version of the Network Devices PP-Module for Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/wids/wids-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
