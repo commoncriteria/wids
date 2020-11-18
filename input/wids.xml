@@ -1223,7 +1223,7 @@ implied certain tests were mandatory despite the functions being in selections
                 <h:li><h:i>Detection of the physical location of an identified WLAN threat by using triangulation</h:i>,</h:li>
                 <h:li><h:i>Detection of an SSID using weak/unsupported/disallowed encryption options</h:i>,</h:li>
                 <h:li><h:i>Detection of AP SSID larger than 32 bytes</h:i>,</h:li>
-                <h:li><h:i>Detection of excessive WPS negotiations</h:i>,</h:li>
+                <!-- <h:li><h:i>Detection of excessive WPS negotiations</h:i>,</h:li>-->
                 <h:li><h:i><assignable>any other rules</assignable></h:i>.</h:li>
               </h:ol>           
             </title>
@@ -1554,14 +1554,14 @@ implied certain tests were mandatory despite the functions being in selections
                     </steplist>
                     <h:br/>
                   </test>
-                  <test><h:b>Detection of excessive WPS negotiations</h:b>:
+                  <!-- <test><h:b>Detection of excessive WPS negotiations</h:b>:
                     <steplist>
                           <step>Deploy an allowlisted AP and permit WPS authentication.</step>
                           <step>Configure a threshold amount of WPS connections that are allowed in a specific amount of time on the AP</step>
                           <step>Verify that the TSF detects when the AP's WPS connection threshold has been exceeded.</step>
                     </steplist>
                     <h:br/>
-                  </test>
+                  </test>-->
                   
                 </testlist>
               </Tests>
