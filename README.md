@@ -1,6 +1,6 @@
 Wireless Intrusion Detection/Prevention Systems Protection Profile Module
 ===============
-[![Build Status](https://travis-ci.com/commoncriteria/wids.svg?branch=master)](https://travis-ci.com/commoncriteria/wids)
+![Build](https://github.com/commoncriteria/wids/workflows/Build/badge.svg)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/wids.svg?maxAge=2592000)](https://github.com/commoncriteria/wids/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
