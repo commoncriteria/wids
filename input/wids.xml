@@ -1308,13 +1308,13 @@ implied certain tests were mandatory despite the functions being in selections
                   <test><h:b>Detection of traffic with excessive transmit power level</h:b>:                
                        <steplist>
                          <step>Configure a source of network traffic that can exceed the maximum transmit
-                             power levels of 100mW on 2.4GHz and 200mW on 5GHz.</step>
+                             power levels of 100mW on 2.4 GHz, 200mW on 5 GHz, and 250mW on 6 GHz.</step>
                          <step>Configure a user defined signature to detects traffic with transmit power levels
                              that exceed the maximum.</step>
                          <step>Commence with the transmission of network traffic at excessive power levels.</step>
                          <step>Collect wireless traffic with range of the TSF.</step>
                          <step>Verify that the TSF detects wireless traffic that exceeds
-                          100mW on 2.4GHz and 200mW on 5GHz.</step>
+                          100mW on 2.4 GHz, 200mW on 5 GHz, and 250mW on 6 GHz.</step>
                        </steplist>
                     <h:br/>
                   </test>              
@@ -1343,6 +1343,7 @@ implied certain tests were mandatory despite the functions being in selections
                       <step>Configure a non-allowlisted AP to operate on a set channel on the 2.4 GHz band broadcasting an authorized SSID.</step>
                       <step>Verify that the TSF detects the non-allowlisted AP broadcasting an authorized SSID.</step>
                       <step>Repeat the test utilizing the 5 GHz band.</step>
+                      <step>Repeat the test utilizing the 6 GHz band.</step>
                     </steplist>
                     <h:br/>
                   </test>                 
@@ -1351,6 +1352,7 @@ implied certain tests were mandatory despite the functions being in selections
                       <step>Configure an allowlisted AP to operate on a set channel on the 2.4 GHz band broadcasting an unauthorized SSID.</step>
                       <step>Verify that the TSF detects the non-allowlisted AP broadcasting an authorized SSID.</step>
                       <step>Repeat the test utilizing the 5 GHz band.</step>
+                      <step>Repeat the test utilizing the 6 GHz band.</step>
                     </steplist>
                     <h:br/>
                   </test>
@@ -1360,6 +1362,7 @@ implied certain tests were mandatory despite the functions being in selections
                       <step>Connect an allowlisted EUD to the AP.</step>
                       <step>Verify that the TSF detects the allowlisted EUD associated to the allowlisted AP broadcasting an unauthorized SSID.</step>
                       <step>Repeat the test utilizing the 5 GHz band.</step>
+                      <step>Repeat the test utilizing the 6 GHz band.</step>
                     </steplist>
                     <h:br/>
                   </test>
@@ -1672,6 +1675,7 @@ implied certain tests were mandatory despite the functions being in selections
               for all channels in the following RF frequencies: <h:ul>
                 <h:li>2.4 GHz</h:li>
                 <h:li>5.0 GHz</h:li>
+                <h:li>6.0 GHz</h:li>
               </h:ul> and
               <selectables linebreak="yes">
                 <selectable><assignable>specified Wi-Fi channels</assignable> in the 4.9 GHz regulatory domain</selectable>
@@ -1746,18 +1750,24 @@ implied certain tests were mandatory despite the functions being in selections
                       <step>Verify that the AP gets detected on each channel tested.</step>
                     </steplist>
                   </test>
-                  <test> Channels on 2.4GHz band <steplist>
+                  <test> Channels on 2.4 GHz band <steplist>
                       <step>Configure the TSF to monitor the channels as selected in the SFR.</step>
                       <step>Deploy AP on at least 2 different channels within the regulatory domain
-                        on 2.4GHz band.</step>
+                        on 2.4 GHz band.</step>
                       <step>Deploy AP on at least 2 different channels outside the regulatory domain
-                        on 2.4GHz band.</step>
+                        on 2.4 GHz band.</step>
                       <step>Verify that the AP gets detected on each channel tested.</step>
                     </steplist>
                   </test>
-                  <test> Channels on 4.9GHz band (if selected)<steplist>
+                  <test> Channels on 4.9 GHz band (if selected)<steplist>
                     <step>Configure the TSF to monitor the channels specified in the SFR.</step>
                     <step>Deploy AP and set to channels within the 4.9 GHz band outlined in the TSS.</step>
+                    <step>Verify that the AP gets detected on each channel tested.</step>
+                  </steplist>
+                  </test>
+                  <test> Channels on 6 GHz band (if selected)<steplist>
+                    <step>Configure the TSF to monitor the channels specified in the SFR.</step>
+                    <step>Deploy AP and set to channels within the 6 GHz band outlined in the TSS.</step>
                     <step>Verify that the AP gets detected on each channel tested.</step>
                   </steplist>
                   </test>
@@ -1771,7 +1781,7 @@ implied certain tests were mandatory despite the functions being in selections
                 </testlist>
                 <h:b>Wireless Sensor Transmission of Data</h:b><h:p/> 
                 If the TOE provides the ability to disable wireless transmission, the evaluator shall follow the operational guidance to configure the sensor to not transmit wirelessly. The evaluator shall then deploy a signal analyzer in order to check for wireless emanations from the TOE. <h:br/> 
-                Repeat the two tests below, for both the 2.4GHz and the 5 GHz band.<h:br/> 
+                Repeat the two tests below, for both the 2.4 GHz, 5 GHz, and 6 GHz band.<h:br/> 
                 <testlist>
                   <test>
                     <steplist>
