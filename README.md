@@ -1,8 +1,14 @@
 Wireless Intrusion Detection/Prevention Systems Protection Profile Module
 ===============
+![Master Badges](https://img.shields.io/badge/Build-master-black.svg)
 ![Build](https://github.com/commoncriteria/wids/workflows/Build/badge.svg)
-[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/wids.svg?maxAge=2592000)](https://github.com/commoncriteria/wids/issues) 
-![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
+![Validate](https://github.com/commoncriteria/wids/workflows/Validate/badge.svg)
+
+![Last QuickBuilt Branch](https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/build-branch-badge.svg)
+[![Validation](https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/validation.svg)](https://github.com/commoncriteria/wids/blob/gh-pages/ValidationReport.txt)
+[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/warnings.svg)](https://github.com/commoncriteria/wids/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/wids/blob/gh-pages/SpellCheckReport.txt)
+[![QuickBuild](https://github.com/commoncriteria/wids/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/wids)
 
 
 This repository hosts the draft version of the Network Devices PP-Module for Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) based on the 
