@@ -22,36 +22,51 @@ Contents										Contents
 --------										--------
 
 ::: {#toc .toc}										::: {#toc .toc}
-[1Introduction](#int)[1.1Overview](#ppoverview)[1.2Terms](#glossary)[1.2.1Common      |	[1Overview](#ppoverview)[1.1Terms](#glossary)[1.1.1Common Criteria
-Criteria Terms](#cc-terms)[1.2.2Technical					      |	Terms](#cc-terms)[1.1.2Technical Terms](#tech-terms)[2Compliant Targets
-Terms](#tech-terms)[1.3Compliant Targets of					      |	of Evaluation](#TOEdescription)[3Use
-Evaluation](#TOEdescription)[1.3.1TOE Boundary](#TOEboundary)[1.4Use		      |	Cases](#usecases)[4Threats](#threats)[5Assumptions](#assumption)[6Organizational
-Cases](#usecases)[2Conformance Claims](#ConformanceClaims)[3Security		      |	Security Policies](#osp)[7Security Objectives for the
-Problem										      |	TOE](#SecurityObjectivesTOE)[8Security Objectives for the Operational
-Description](#spd)[3.1Threats](#threats)[3.2Assumptions](#assumption)[3.3Organization |	Environment](#SecurityObjectivesTOEorEnvironment)[8.1Security Objectives
-Security Policies](#osp)[4Security Objectives](#obj)[4.1Security		      |	Rationale](#SOR)[9Security Requirements](#sfrs)[9.1NDcPP Security
-Objectives for the TOE](#SecurityObjectivesTOE)[4.2Security Objectives		      |	Functional Requirements Direction ](#secreq-)[9.1.1 Modified SFRs
-for the Operational								      |	](#modsfr-)[9.2TOE Security Functional Requirements](#man-sfrs)[9.3TOE
-Environment](#SecurityObjectivesTOEorEnvironment)[4.3Security Objectives	      |	Security Functional Requirements Rationale](#obj-req-map)[9.4TOE
-Rationale](#SOR)[5Security Requirements](#sfrs)[5.0.0.1Security Audit		      |	Security Assurance Requirements](#mod-sars)[10Consistency
-(FAU)](#fau)[5.0.0.2Communications (FCO)](#fco)[5.0.0.3Protection of the	      |	Rationale](#mod-conrat)[10.1Collaborative Protection Profile for Network
-TSF (FPT)](#fpt)[5.0.0.4Trusted Paths/Channels					      |	Device](#conrat-)[10.1.1 Consistency of TOE Type ](#contoe-)[10.1.2
-(FTP)](#ftp)[5.0.1Security Audit (FAU)](#fau)[5.0.2User Data Protection		      |	Consistency of Security Problem Definition ](#consecprob-)[10.1.3
-(FDP)](#fdp)[5.0.3Security Management (FMT)](#fmt)[5.0.4Security Audit		      |	Consistency of Objectives ](#conobj-)[10.1.4 Consistency of Requirements
-(FAU)](#fau)[5.0.5Security Audit (FAU)](#fau)[5.0.6Security Audit		      |	](#conreq-)[Appendix A - Optional SFRs](#opt-sfrs)[A.1Strictly Optional
-(FAU)](#fau)[5.0.7Protection of the TSF (FPT)](#fpt)[Appendix A -		      |	Requirements ](#opt-sfrs)[A.2Objective Requirements
-Implicitly Satisfied Requirements](#satisfiedreqs)[Appendix B -			      |	](#obj-sfrs)[Appendix B - Selection-based Requirements
-Allocation of Requirements in Distributed TOEs](#allocation)[Appendix C		      |	](#sel-sfrs)[Appendix C - Extended Component
-- Entropy Documentation and Assessment](#EAR)					      |	Definitions](#ext-comp-defs)[C.1Extended Components
-:::										      |	Table](#ext-comp-defs-bg)[C.2Extended Component
-										      |	Definitions](#ext-comp-defs-bg)[C.2.1Security Audit
-0.8 National Information Assurance Partnership 2020-09-30			      |	(FAU)](#ext-comp-FAU)[C.2.1.1FAU\_ARP\_EXT Security Alarm
-[WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS), Wireless Intrusion			      |	Filtering](#ext-comp-FAU_ARP_EXT)[C.2.1.2FAU\_IDS\_EXT Intrusion
-Detection/Prevention System 1.0 2020-10-01 Initial Release -			      |	Detection Methods](#ext-comp-FAU_IDS_EXT)[C.2.1.3FAU\_INV\_EXT
-[PP-Module](#abbr_PP-Module) for NDcPP						      |	Environmental Inventory](#ext-comp-FAU_INV_EXT)[C.2.1.4FAU\_RPT\_EXT
-										      |	Reporting Methods](#ext-comp-FAU_RPT_EXT)[C.2.1.5FAU\_WID\_EXT Wireless
-1 Introduction {#int .indexable data-level="1"}					      |	Intrusion Detection](#ext-comp-FAU_WID_EXT)[C.2.1.6FAU\_ANO\_EXT
-==============									      |	Anomaly-Based Intrusion
+[1Introduction](#int)[1.1Overview](#ppoverview)[1.2Terms](#glossary)[1.2.1Common      |	[1Introduction](#Introduction)[1.1Overview](#Overview)[1.2Terms](#glossary)[1.2.1Comm
+Criteria Terms](#cc-terms)[1.2.2Technical						Criteria Terms](#cc-terms)[1.2.2Technical
+Terms](#tech-terms)[1.3Compliant Targets of						Terms](#tech-terms)[1.3Compliant Targets of
+Evaluation](#TOEdescription)[1.3.1TOE Boundary](#TOEboundary)[1.4Use			Evaluation](#TOEdescription)[1.3.1TOE Boundary](#TOEboundary)[1.4Use
+Cases](#usecases)[2Conformance Claims](#ConformanceClaims)[3Security		      |	Cases](#usecases)[2Conformance Claims](#Conformance_Claims)[3Security
+Problem											Problem
+Description](#spd)[3.1Threats](#threats)[3.2Assumptions](#assumption)[3.3Organization |	Description](#Security_Problem_Description)[3.1Threats](#threats)[3.2Assumptions](#as
+Security Policies](#osp)[4Security Objectives](#obj)[4.1Security		      |	Security Policies](#osp)[4Security
+Objectives for the TOE](#SecurityObjectivesTOE)[4.2Security Objectives		      |	Objectives](#Security_Objectives)[4.1Security Objectives for the
+for the Operational								      |	TOE](#SecurityObjectivesTOE)[4.2Security Objectives for the Operational
+Environment](#SecurityObjectivesTOEorEnvironment)[4.3Security Objectives		Environment](#SecurityObjectivesTOEorEnvironment)[4.3Security Objectives
+Rationale](#SOR)[5Security Requirements](#sfrs)[5.0.0.1Security Audit		      |	Rationale](#SOR)[5Security Requirements](#)[5.1NDcPP Security Functional
+(FAU)](#fau)[5.0.0.2Communications (FCO)](#fco)[5.0.0.3Protection of the	      |	Requirements Direction ](#secreq-b-nd)[5.1.1 Modified SFRs
+TSF (FPT)](#fpt)[5.0.0.4Trusted Paths/Channels					      |	](#modsfr-b-nd)[5.1.1.1Security Audit
+(FTP)](#ftp)[5.0.1Security Audit (FAU)](#fau)[5.0.2User Data Protection		      |	(FAU)](#ss-mod-fau)[5.1.1.2Communications
+(FDP)](#fdp)[5.0.3Security Management (FMT)](#fmt)[5.0.4Security Audit		      |	(FCO)](#ss-mod-fco)[5.1.1.3Protection of the TSF
+(FAU)](#fau)[5.0.5Security Audit (FAU)](#fau)[5.0.6Security Audit		      |	(FPT)](#ss-mod-fpt)[5.1.1.4Trusted Paths/Channels
+(FAU)](#fau)[5.0.7Protection of the TSF (FPT)](#fpt)[Appendix A -		      |	(FTP)](#ss-mod-ftp)[5.2TOE Security Functional
+Implicitly Satisfied Requirements](#satisfiedreqs)[Appendix B -			      |	Requirements](#man-sfrs)[5.2.1Security Audit
+Allocation of Requirements in Distributed TOEs](#allocation)[Appendix C		      |	(FAU)](#ss-man-fau)[5.2.2User Data Protection
+- Entropy Documentation and Assessment](#EAR)					      |	(FDP)](#ss-man-fdp)[5.2.3Security Management (FMT)](#ss-man-fmt)[5.3TOE
+:::										      |	Security Functional Requirements Rationale](#obj-req-map)[5.4TOE
+										      |	Security Assurance Requirements](#mod-sars)[6Consistency
+0.8 National Information Assurance Partnership 2020-09-30			      |	Rationale](#mod-conrat)[6.1Collaborative Protection Profile for Network
+[WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS), Wireless Intrusion			      |	Device](#conrat-b-nd)[6.1.1 Consistency of TOE Type
+Detection/Prevention System 1.0 2020-10-01 Initial Release -			      |	](#contoe-b-nd)[6.1.2 Consistency of Security Problem Definition
+[PP-Module](#abbr_PP-Module) for NDcPP						      |	](#consecprob-b-nd)[6.1.3 Consistency of Objectives
+										      >	](#conobj-b-nd)[6.1.4 Consistency of Requirements
+										      >	](#conreq-b-nd)[Appendix A - Optional SFRs](#opt-sfrs)[A.1Strictly
+										      >	Optional Requirements ](#opt-sfrs)[A.1.1Security Audit
+										      >	(FAU)](#ss-opt-fau)[A.2Objective Requirements ](#obj-sfrs)[A.2.1Security
+										      >	Audit (FAU)](#ss-obj-fau)[A.2.2Protection of the TSF
+										      >	(FPT)](#ss-obj-fpt)[A.3Implementation-dependent Requirements
+										      >	](#impl-dep-sfrs)[Appendix B - Selection-based Requirements
+										      >	](#sel-sfrs)[B.1Security Audit (FAU)](#ss-sel-fau)[Appendix C - Extended
+										      >	Component Definitions](#ext-comp-defs)[C.1Extended Components
+										      >	Table](#ext-comp-defs-bg)[C.2Extended Component
+										      >	Definitions](#ext-comp-defs-bg)[C.2.1Security Audit
+										      >	(FAU)](#ext-comp-FAU)[C.2.1.1FAU\_ARP\_EXT Security Alarm
+										      >	Filtering](#ext-comp-FAU_ARP_EXT)[C.2.1.2FAU\_IDS\_EXT Intrusion
+										      >	Detection Methods](#ext-comp-FAU_IDS_EXT)[C.2.1.3FAU\_INV\_EXT
+										      >	Environmental Inventory](#ext-comp-FAU_INV_EXT)[C.2.1.4FAU\_RPT\_EXT
+										      >	Reporting Methods](#ext-comp-FAU_RPT_EXT)[C.2.1.5FAU\_WID\_EXT Wireless
+										      >	Intrusion Detection](#ext-comp-FAU_WID_EXT)[C.2.1.6FAU\_ANO\_EXT
+										      >	Anomaly-Based Intrusion
 										      >	Detection](#ext-comp-FAU_ANO_EXT)[C.2.1.7FAU\_SIG\_EXT Signature-Based
 										      >	Intrusion Detection](#ext-comp-FAU_SIG_EXT)[C.2.1.8FAU\_MAC\_EXT Device
 										      >	Impersonation](#ext-comp-FAU_MAC_EXT)[C.2.1.9FAU\_WIP\_EXT Wireless
@@ -62,8 +77,11 @@ Detection/Prevention System 1.0 2020-10-01 Initial Release -			      |	Detection
 										      >	Acronyms](#acronyms)[Appendix H - Bibliography](#appendix-bibliography)
 										      >	:::
 
-1.1 Overview {#ppoverview .indexable data-level="2"}				      |	1 Overview {#ppoverview .indexable data-level="1"}
-------------									      |	==========
+1 Introduction {#int .indexable data-level="1"}					      |	1 Introduction {#Introduction .indexable data-level="1"}
+==============										==============
+
+1.1 Overview {#ppoverview .indexable data-level="2"}				      |	1.1 Overview {#Overview .indexable data-level="2"}
+------------										------------
 
 This Protection Profile Module ([PP-Module](#abbr_PP-Module)) describes			This Protection Profile Module ([PP-Module](#abbr_PP-Module)) describes
 security requirements for a 802.11 Wireless Intrusion Detection System			security requirements for a 802.11 Wireless Intrusion Detection System
@@ -96,14 +114,14 @@ distributed sensor nodes to ensure that the full physical range of a			distribut
 wireless network to ensure that user interactions with the network			wireless network to ensure that user interactions with the network
 cannot evade detection.									cannot evade detection.
 
-1.2 Terms {#glossary .indexable data-level="2"}					      |	::: {.no-link}
-										      >	1.1 Terms {#glossary .indexable data-level="2"}
+										      >	::: {.no-link}
+1.2 Terms {#glossary .indexable data-level="2"}						1.2 Terms {#glossary .indexable data-level="2"}
 ---------										---------
 
 The following sections list Common Criteria and technology terms used in		The following sections list Common Criteria and technology terms used in
 this document.										this document.
 
-### 1.2.1 Common Criteria Terms {#cc-terms .indexable data-level="3"}		      |	### 1.1.1 Common Criteria Terms {#cc-terms .indexable data-level="3"}
+### 1.2.1 Common Criteria Terms {#cc-terms .indexable data-level="3"}			### 1.2.1 Common Criteria Terms {#cc-terms .indexable data-level="3"}
 
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Assurance}                  | Grounds for confidence that a     |	      |	| ::: {#Assurance}                  | Grounds for confidence that a TOE |
@@ -212,7 +230,7 @@ this document.										this document.
 | :::                               |                                   |		| :::                               |                                   |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 
-### 1.2.2 Technical Terms {#tech-terms .indexable data-level="3"}		      |	### 1.1.2 Technical Terms {#tech-terms .indexable data-level="3"}
+### 1.2.2 Technical Terms {#tech-terms .indexable data-level="3"}			### 1.2.2 Technical Terms {#tech-terms .indexable data-level="3"}
 
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Access_Point}               | A device that provides the        |		| ::: {#Access_Point}               | A device that provides the        |
@@ -256,10 +274,10 @@ this document.										this document.
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 										      >	:::
 
-1.3 Compliant Targets of Evaluation {#TOEdescription .indexable data-level="2"}	      |	2 Compliant Targets of Evaluation {#TOEdescription .indexable data-level="1"}
------------------------------------						      |	=================================
-										      <
-### 1.3.1 TOE Boundary {#TOEboundary .indexable data-level="3"}			      <
+1.3 Compliant Targets of Evaluation {#TOEdescription .indexable data-level="2"}		1.3 Compliant Targets of Evaluation {#TOEdescription .indexable data-level="2"}
+-----------------------------------							-----------------------------------
+
+### 1.3.1 TOE Boundary {#TOEboundary .indexable data-level="3"}				### 1.3.1 TOE Boundary {#TOEboundary .indexable data-level="3"}
 
 This [PP-Module](#abbr_PP-Module) specifically addresses				This [PP-Module](#abbr_PP-Module) specifically addresses
 [WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS). A conformant [WIDS](#abbr_WIDS)			[WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS). A conformant [WIDS](#abbr_WIDS)
@@ -280,9 +298,9 @@ sensors. Conformant TOEs must use a secure communication path(s) between	      |
 A [WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS) can be Integrated (be part of			A [WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS) can be Integrated (be part of
 the [WLAN](#abbr_WLAN) infrastructure) or Standalone (independent from			the [WLAN](#abbr_WLAN) infrastructure) or Standalone (independent from
 [WLAN](#abbr_WLAN)) architecture depending on vendor implementation. The		[WLAN](#abbr_WLAN)) architecture depending on vendor implementation. The
-two different architectures are illustrated in the [Figure			      |	two different architectures are illustrated in below. The
-[1]{.counter}](#figure-toe){.figure-toe-ref} figure below. The			      <
-[TOE](#abbr_TOE) boundary is indicated by the yellow box.				[TOE](#abbr_TOE) boundary is indicated by the yellow box.
+two different architectures are illustrated in the [Figure			      |	two different architectures are illustrated in [Figure
+[1]{.counter}](#figure-toe){.figure-toe-ref} figure below. The			      |	[1]{.counter}](#toe){.toe-ref} below. The [TOE](#abbr_TOE) boundary is
+[TOE](#abbr_TOE) boundary is indicated by the yellow box.			      |	indicated by the yellow box.
 
 A [WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS) is expected to inspect layers 1			A [WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS) is expected to inspect layers 1
 and 2 network traffic, per the OSI network model, and monitor wireless			and 2 network traffic, per the OSI network model, and monitor wireless
@@ -311,8 +329,8 @@ traffic patterns.									traffic patterns.
 data-counter-type="ct-figure"}: General [TOE](#abbr_TOE)				data-counter-type="ct-figure"}: General [TOE](#abbr_TOE)
 :::											:::
 
-1.4 Use Cases {#usecases .indexable data-level="2"}				      |	3 Use Cases {#usecases .indexable data-level="1"}
--------------									      |	===========
+1.4 Use Cases {#usecases .indexable data-level="2"}					1.4 Use Cases {#usecases .indexable data-level="2"}
+-------------										-------------
 
  \[USE CASE 1\] Use Case 1								 \[USE CASE 1\] Use Case 1
 :   A [WIDS](#abbr_WIDS) consists of sensors (preferably dedicated) and			:   A [WIDS](#abbr_WIDS) consists of sensors (preferably dedicated) and
@@ -335,30 +353,37 @@ data-counter-type="ct-figure"}: General [TOE](#abbr_TOE)				data-counter-type="c
     controlled space, thus inadvertant collection of any 802.11 signals			    controlled space, thus inadvertant collection of any 802.11 signals
     is possible when operating a [WIDS](#abbr_WIDS).					    is possible when operating a [WIDS](#abbr_WIDS).
 
-2 Conformance Claims {#ConformanceClaims .indexable data-level="1"}		      |	<!-- -->
-====================								      <
+2 Conformance Claims {#ConformanceClaims .indexable data-level="1"}		      |	2 Conformance Claims {#Conformance_Claims .indexable data-level="1"}
+====================									====================
 
+										      >	Conformance Statement
+										      >
 :   This [PP-Module](#abbr_PP-Module) inherits exact conformance as			:   This [PP-Module](#abbr_PP-Module) inherits exact conformance as
     required from the specified [Base-PP](#abbr_Base-PP) and as defined			    required from the specified [Base-PP](#abbr_Base-PP) and as defined
     in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact			    in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact
-    Conformance, Selection-Based SFRs, and Optional SFRs (dated May		      |	    Conformance, Selection-Based [SFRs](#abbr_SFR), and Optional
+    Conformance, Selection-Based SFRs, and Optional SFRs (dated May		      |	    Conformance, Selection-based [SFRs](#abbr_SFR), and Optional
     2017).									      |	    [SFRs](#abbr_SFR) (dated May 2017).
-    The PPs and [PP](#abbr_PP)-Modules that are allowed to be specified		      |	    The following [PPs](#abbr_PP) and [PP](#abbr_PP)-Modules are allowed
-    in a [PP-Configuration](#abbr_PP-Configuration) with this			      |	    to be specified in a [PP-Configuration](#abbr_PP-Configuration) with
-    [PP-Module](#abbr_PP-Module) are identified on the NIAP site by the		      |	    this [PP-Module](#abbr_PP-Module):
-    [PP](#abbr_PP)-Configurations that include this				      |	    -   [PP-Module](#abbr_PP-Module) for Virtual Private Network (VPN)
-    [PP-Module](#abbr_PP-Module).						      |	        Gateways, Version 1.1
+    The PPs and [PP](#abbr_PP)-Modules that are allowed to be specified		      |
+    in a [PP-Configuration](#abbr_PP-Configuration) with this			      |	    The following [PPs](#abbr_PP) and [PP](#abbr_PP)-Modules are allowed
+    [PP-Module](#abbr_PP-Module) are identified on the NIAP site by the		      |	    to be specified in a [PP-Configuration](#abbr_PP-Configuration) with
+    [PP](#abbr_PP)-Configurations that include this				      |	    this [PP-Module](#abbr_PP-Module).
+    [PP-Module](#abbr_PP-Module).						      |
+										      |	    -   [Network Device, version
+:   This [PP-Module](#abbr_PP-Module) is conformant to Parts 2			      |	        2.2e](https://www.niap-ccevs.org/Profile/Info.cfm?PPID=447&id=447%22%3E)
+    (extended) and 3 (conformant) of Common Criteria Version 3.1,		      |
+    Release 5 \[[CC](#abbr_CC)\].						      |	CC Conformance Claims
+										      >	:   This Module is conformant to Parts 2 (extended) and 3 (conformant)
+										      >	    of Common Criteria Version 3.1, Revision 5.
+										      >
+										      >	PP Claim 
+										      >	:   This Module does not claim conformance to any Protection Profile.
 
-:   This [PP-Module](#abbr_PP-Module) is conformant to Parts 2				:   This [PP-Module](#abbr_PP-Module) is conformant to Parts 2
-    (extended) and 3 (conformant) of Common Criteria Version 3.1,			    (extended) and 3 (conformant) of Common Criteria Version 3.1,
-    Release 5 \[[CC](#abbr_CC)\].							    Release 5 \[[CC](#abbr_CC)\].
+:   This [PP-Module](#abbr_PP-Module) does not claim conformance to any		      |	Package Claim
+    packages.									      |	:   This Module does not claim conformance to any packages.
 
-:   This [PP-Module](#abbr_PP-Module) does not claim conformance to any			:   This [PP-Module](#abbr_PP-Module) does not claim conformance to any
-    packages.										    packages.
+3 Security Problem Description {#spd .indexable data-level="1"}			      |	3 Security Problem Description {#Security_Problem_Description .indexable data-level="
+==============================								==============================
 
-3 Security Problem Description {#spd .indexable data-level="1"}			      <
-==============================							      <
-										      <
 [WIDS](#abbr_WIDS) address a range of security threats related to			[WIDS](#abbr_WIDS) address a range of security threats related to
 detection of and reaction to potentially malicious [WLAN](#abbr_WLAN)			detection of and reaction to potentially malicious [WLAN](#abbr_WLAN)
 traffic. The malicious traffic may pose a threat to one or more				traffic. The malicious traffic may pose a threat to one or more
@@ -396,8 +421,8 @@ defined in this [PP-Module](#abbr_PP-Module) define the comprehensive			defined 
 set of security threats addressed by a [WIDS](#abbr_WIDS)				set of security threats addressed by a [WIDS](#abbr_WIDS)
 [TOE](#abbr_TOE).									[TOE](#abbr_TOE).
 
-3.1 Threats {#threats .indexable data-level="2"}				      |	4 Threats {#threats .indexable data-level="1"}
------------									      |	=========
+3.1 Threats {#threats .indexable data-level="2"}					3.1 Threats {#threats .indexable data-level="2"}
+-----------										-----------
 
 T.UNAUTHORIZED\_DISCLOSURE\_OF\_INFORMATION						T.UNAUTHORIZED\_DISCLOSURE\_OF\_INFORMATION
 :   A malicious actor may take advantage of unintended/unauthorized			:   A malicious actor may take advantage of unintended/unauthorized
@@ -424,8 +449,8 @@ T.DISRUPTION										T.DISRUPTION
     ways: at the physical layer through RF Jamming, or at the data link			    ways: at the physical layer through RF Jamming, or at the data link
     layer through packet injection.							    layer through packet injection.
 
-3.2 Assumptions {#assumption .indexable data-level="2"}				      |	5 Assumptions {#assumption .indexable data-level="1"}
----------------									      |	=============
+3.2 Assumptions {#assumption .indexable data-level="2"}					3.2 Assumptions {#assumption .indexable data-level="2"}
+---------------										---------------
 
 These assumptions are made on the Operational Environment in order to be	      |	These assumptions are made on the Operational Environment
 able to ensure that the security functionality specified in the			      |	([OE](#abbr_OE)) in order to be able to ensure that the security
@@ -447,13 +472,8 @@ A.PROPER\_ADMIN										A.PROPER\_ADMIN
     [WIDS](#abbr_WIDS) within compliance of the applied enterprise			    [WIDS](#abbr_WIDS) within compliance of the applied enterprise
     security policy.									    security policy.
 
-3.3 Organizational Security Policies {#osp .indexable data-level="2"}		      |	6 Organizational Security Policies {#osp .indexable data-level="1"}
-------------------------------------						      |	==================================
-										      >
-										      >	An organization deploying the [TOE](#abbr_TOE) is expected to satisfy
-										      >	the organizational security policy listed below in addition to all
-										      >	organizational security policies defined by the claimed
-										      >	[Base-PP](#abbr_Base-PP).
+3.3 Organizational Security Policies {#osp .indexable data-level="2"}			3.3 Organizational Security Policies {#osp .indexable data-level="2"}
+------------------------------------							------------------------------------
 
 An organization deploying the [TOE](#abbr_TOE) is expected to satisfy			An organization deploying the [TOE](#abbr_TOE) is expected to satisfy
 the organizational security policy listed below in addition to all			the organizational security policy listed below in addition to all
@@ -465,11 +485,11 @@ P.ANALYZE										P.ANALYZE
     potential intrusions must be applied to [WIDS](#abbr_WIDS) data and			    potential intrusions must be applied to [WIDS](#abbr_WIDS) data and
     appropriate response actions taken.							    appropriate response actions taken.
 
-4 Security Objectives {#obj .indexable data-level="1"}				      |	7 Security Objectives for the TOE {#SecurityObjectivesTOE .indexable data-level="1"}
-=====================								      |	=================================
-										      <
-4.1 Security Objectives for the TOE {#SecurityObjectivesTOE .indexable data-level="2" <
------------------------------------						      <
+4 Security Objectives {#obj .indexable data-level="1"}				      |	4 Security Objectives {#Security_Objectives .indexable data-level="1"}
+=====================									=====================
+
+4.1 Security Objectives for the TOE {#SecurityObjectivesTOE .indexable data-level="2"	4.1 Security Objectives for the TOE {#SecurityObjectivesTOE .indexable data-level="2"
+-----------------------------------							-----------------------------------
 
 O.SYSTEM\_MONITORING									O.SYSTEM\_MONITORING
 :   To be able to analyze and react to potential network policy				:   To be able to analyze and react to potential network policy
@@ -538,8 +558,8 @@ O.TRUSTED\_COMMUNICATIONS								O.TRUSTED\_COMMUNICATIONS
     [Base-PP](#abbr_Base-PP)), [FTP\_ITC.1](#FTP_ITC.1) (from				    [Base-PP](#abbr_Base-PP)), [FTP\_ITC.1](#FTP_ITC.1) (from
     [Base-PP](#abbr_Base-PP))								    [Base-PP](#abbr_Base-PP))
 
-4.2 Security Objectives for the Operational Environment {#SecurityObjectivesTOEorEnvi |	8 Security Objectives for the Operational Environment {#SecurityObjectivesTOEorEnviro
--------------------------------------------------------				      |	=====================================================
+4.2 Security Objectives for the Operational Environment {#SecurityObjectivesTOEorEnvi	4.2 Security Objectives for the Operational Environment {#SecurityObjectivesTOEorEnvi
+-------------------------------------------------------					-------------------------------------------------------
 
 The Operational Environment of the [TOE](#abbr_TOE) implements technical	      |	The [OE](#abbr_OE) of the [TOE](#abbr_TOE) implements technical and
 and procedural measures to assist the [TOE](#abbr_TOE) in correctly		      |	procedural measures to assist the [TOE](#abbr_TOE) in correctly
@@ -567,7 +587,7 @@ OE.PROPER\_ADMIN									OE.PROPER\_ADMIN
     [WIDS](#abbr_WIDS) within compliance of the applied enterprise			    [WIDS](#abbr_WIDS) within compliance of the applied enterprise
     security policy.									    security policy.
 
-4.3 Security Objectives Rationale {#SOR .indexable data-level="2"}		      |	8.1 Security Objectives Rationale {#SOR .indexable,h2 data-level="2"}
+4.3 Security Objectives Rationale {#SOR .indexable data-level="2"}		      |	4.3 Security Objectives Rationale {#SOR .indexable,h2 data-level="2"}
 ---------------------------------							---------------------------------
 
 This section describes how the assumptions, threats, and organization		      |	This section describes how the assumptions, threats, and organizational
@@ -684,7 +704,7 @@ The operational environment objective							The operational environment objectiv
 The organizational security policy [P.ANALYZE](#P.ANALYZE) is				The organizational security policy [P.ANALYZE](#P.ANALYZE) is
 facilitated through [O.WIDS\_ANALYZE](#O.WIDS_ANALYZE).					facilitated through [O.WIDS\_ANALYZE](#O.WIDS_ANALYZE).
 
-5 Security Requirements {#sfrs .indexable data-level="1"}			      |	9 Security Requirements {#sfrs .indexable data-level="1"}
+5 Security Requirements {#sfrs .indexable data-level="1"}			      |	5 Security Requirements {#security-requirements .indexable data-level="1"}
 =======================									=======================
 
 This chapter describes the security requirements which have to be			This chapter describes the security requirements which have to be
@@ -710,7 +730,7 @@ completion of operations:								completion of operations:
     [SFR](#abbr_SFR) name with a slash and unique identifier suggesting			    [SFR](#abbr_SFR) name with a slash and unique identifier suggesting
     the purpose of the operation, e.g. \"/EXAMPLE1.\"					    the purpose of the operation, e.g. \"/EXAMPLE1.\"
 
-### 5.0.0.1 Security Audit (FAU) {#fau .indexable data-level="4"}		      |	9.1 NDcPP Security Functional Requirements Direction {#secreq- .indexable data-level=
+### 5.0.0.1 Security Audit (FAU) {#fau .indexable data-level="4"}		      |	5.1 NDcPP Security Functional Requirements Direction {#secreq-b-nd .indexable data-le
 										      >	----------------------------------------------------
 										      >
 										      >	In a [PP-Configuration](#abbr_PP-Configuration) that includes NDcPP, the
@@ -718,13 +738,15 @@ completion of operations:								completion of operations:
 										      >	implemented by the Network Device as a whole and evaluated against the
 										      >	NDcPP. The following sections describe any modifications that the
 										      >	[ST](#abbr_ST) author must make to the [SFRs](#abbr_SFR) defined in the
-										      >	NDcPP in addition to what is mandated by [Section 9.2 TOE Security
+										      >	NDcPP in addition to what is mandated by [Section 5.2 TOE Security
 										      >	Functional Requirements](#man-sfrs){.dynref}.
 										      >
-										      >	### 9.1.1 Modified SFRs {#modsfr- .indexable data-level="3"}
+										      >	### 5.1.1 Modified SFRs {#modsfr-b-nd .indexable data-level="3"}
 										      >
 										      >	The [SFRs](#abbr_SFR) listed in this section are defined in the NDcPP
 										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
+										      >
+										      >	#### 5.1.1.1 Security Audit (FAU) {#ss-mod-fau .indexable data-level="4"}
 
 ::: {#FAU_GEN_EXT.1 .comp}								::: {#FAU_GEN_EXT.1 .comp}
 #### FAU\_GEN\_EXT.1 Security Audit Data Generation for Distributed TOE Components	#### FAU\_GEN\_EXT.1 Security Audit Data Generation for Distributed TOE Components
@@ -841,8 +863,8 @@ there is no change to how the [SFR](#abbr_SFR) is to be implemented.*		      <
 :::											:::
 :::											:::
 
-### 5.0.0.2 Communications (FCO) {#fco .indexable data-level="4"}		      <
-										      <
+### 5.0.0.2 Communications (FCO) {#fco .indexable data-level="4"}		      |	#### 5.1.1.2 Communications (FCO) {#ss-mod-fco .indexable data-level="4"}
+
 ::: {#FCO_CPC_EXT.1 .comp}								::: {#FCO_CPC_EXT.1 .comp}
 #### FCO\_CPC\_EXT.1 Communication Partner Control					#### FCO\_CPC\_EXT.1 Communication Partner Control
 
@@ -916,8 +938,8 @@ implemented.*									      <
 :::											:::
 :::											:::
 
-### 5.0.0.3 Protection of the TSF (FPT) {#fpt .indexable data-level="4"}	      <
-										      <
+### 5.0.0.3 Protection of the TSF (FPT) {#fpt .indexable data-level="4"}	      |	#### 5.1.1.3 Protection of the TSF (FPT) {#ss-mod-fpt .indexable data-level="4"}
+
 ::: {#FPT_ITT.1 .comp}									::: {#FPT_ITT.1 .comp}
 #### FPT\_ITT.1 Basic Internal TSF Data Transfer Protection				#### FPT\_ITT.1 Basic Internal TSF Data Transfer Protection
 
@@ -965,13 +987,13 @@ the NDcPP SD. The [PP-Module](#abbr_PP-Module) modifies this			      <
 [SFR](#abbr_SFR) to make its inclusion mandatory rather than optional,		      <
 but there is no change to how the [SFR](#abbr_SFR) is to be			      <
 implemented.*									      <
-:::											:::
-:::											:::
-:::											:::
 :::										      <
 :::										      <
-										      <
-### 5.0.0.4 Trusted Paths/Channels (FTP) {#ftp .indexable data-level="4"}	      <
+:::											:::
+:::											:::
+:::											:::
+
+### 5.0.0.4 Trusted Paths/Channels (FTP) {#ftp .indexable data-level="4"}	      |	#### 5.1.1.4 Trusted Paths/Channels (FTP) {#ss-mod-ftp .indexable data-level="4"}
 
 ::: {#FTP_ITC.1 .comp}									::: {#FTP_ITC.1 .comp}
 #### FTP\_ITC.1 Inter-TSF trusted channel						#### FTP\_ITC.1 Inter-TSF trusted channel
@@ -1051,15 +1073,16 @@ NDcPP SD, which is objective in NDcPP.						      <
 :::											:::
 :::											:::
 
-When this [PP-Module](#abbr_PP-Module) extends the Network Device cPP,		      |	9.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
+When this [PP-Module](#abbr_PP-Module) extends the Network Device cPP,		      |	5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
 the [TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still		      |	----------------------------------------
-[WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS) products.					      <
-
-### 5.0.1 Security Audit (FAU) {#fau .indexable data-level="3"}			      |	The following section describes the [SFRs](#abbr_SFR) that must be
+[WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS) products.					      |
+										      >	The following section describes the [SFRs](#abbr_SFR) that must be
 										      >	satisfied by any [TOE](#abbr_TOE) that claims conformance to this
 										      >	[PP-Module](#abbr_PP-Module). These [SFRs](#abbr_SFR) must be claimed
 										      >	regardless of which [PP-Configuration](#abbr_PP-Configuration) is used
 										      >	to define the [TOE](#abbr_TOE).
+
+### 5.0.1 Security Audit (FAU) {#fau .indexable data-level="3"}			      |	### 5.2.1 Security Audit (FAU) {#ss-man-fau .indexable data-level="3"}
 
 ::: {#FAU_ARP.1 .comp}									::: {#FAU_ARP.1 .comp}
 #### FAU\_ARP.1 Security Alarms								#### FAU\_ARP.1 Security Alarms
@@ -1139,15 +1162,15 @@ Tests										      <
     selected, verify that the packet capture was triggered and stored as	      <
     appropriate.								      <
 :::										      <
+:::											:::
+:::											:::
+:::											:::
 :::										      <
-:::											:::
-:::											:::
-:::											:::
-
+										      <
 This family defines requirements for suppression of audit events. It is		      <
 intended to complement the FAU\_ARP family already defined in			      <
 [CC](#abbr_CC) Part 2.								      <
-										      <
+
 ::: {#FAU_ARP_EXT.1 .comp}								::: {#FAU_ARP_EXT.1 .comp}
 #### FAU\_ARP\_EXT.1 Security Alarm Filtering						#### FAU\_ARP\_EXT.1 Security Alarm Filtering
 
@@ -1231,8 +1254,8 @@ following auditable events:								following auditable events:
 
 a.  Start-up and shutdown of the audit functions;					a.  Start-up and shutdown of the audit functions;
 b.  All auditable events for the \[not specified\] level of audit;			b.  All auditable events for the \[not specified\] level of audit;
-c.  \[*Auditable events listed in the Auditable Events table ([Table		      |	c.  \[*Auditable events listed in the Auditable Events table ();*
-    [1]{.counter}](#cc-auditWids){.cc-auditWids-ref});*				      <
+c.  \[*Auditable events listed in the Auditable Events table ([Table			c.  \[*Auditable events listed in the Auditable Events table ([Table
+    [1]{.counter}](#cc-auditWids){.cc-auditWids-ref});*				      |	    [2]{.counter}](#auditWids){.auditWids-ref});*
 d.  *Failure of wireless sensor communication*\].					d.  *Failure of wireless sensor communication*\].
 
 Requirement										Requirement
@@ -1400,17 +1423,18 @@ failed, and time of failure								failed, and time of failure
 data-myid="cc-auditWids" data-counter-type="ct-Table"}				      |	data-myid="auditWids" data-counter-type="ct-Table"}
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[ The auditable events defined in		      |	[Application Note: ]{.note-header}[ The auditable events defined in are
-[Table [1]{.counter}](#cc-auditWids){.cc-auditWids-ref} are for the SFRs	      |	for the [SFRs](#abbr_SFR) that are explicitly defined in this
-that are explicitly defined in this [PP-Module](#abbr_PP-Module) and are	      |	[PP-Module](#abbr_PP-Module) and are intended to extend FAU\_GEN.1 in
-intended to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP). The		      |	the [Base-PP](#abbr_Base-PP). The events in the Auditable Events table
-events in the Auditable Events table should be combined with those of		      |	should be combined with those of the NDcPP in the context of a
-the NDcPP in the context of a conforming Security Target.]{.note}		      |	conforming Security Target.]{.note}
-										      |
-The Auditable Events ([Table							      |	The Auditable Events () includes optional and objective
-[1]{.counter}](#cc-auditWids){.cc-auditWids-ref}) includes optional and		      |	[SFRs](#abbr_SFR). The auditing of optional and objective
-objective SFRs. The auditing of optional and objective SFRs is only		      |	[SFRs](#abbr_SFR) is only required if that [SFR](#abbr_SFR) is included
-required if that [SFR](#abbr_SFR) is included in the [ST](#abbr_ST).		      |	in the [ST](#abbr_ST).
+[Application Note: ]{.note-header}[ The auditable events defined in			[Application Note: ]{.note-header}[ The auditable events defined in
+[Table [1]{.counter}](#cc-auditWids){.cc-auditWids-ref} are for the SFRs	      |	[Table [2]{.counter}](#auditWids){.auditWids-ref} are for the
+that are explicitly defined in this [PP-Module](#abbr_PP-Module) and are	      |	[SFRs](#abbr_SFR) that are explicitly defined in this
+intended to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP). The		      |	[PP-Module](#abbr_PP-Module) and are intended to extend FAU\_GEN.1 in
+events in the Auditable Events table should be combined with those of		      |	the [Base-PP](#abbr_Base-PP). The events in the Auditable Events table
+the NDcPP in the context of a conforming Security Target.]{.note}		      |	should be combined with those of the NDcPP in the context of a
+										      |	conforming Security Target.]{.note}
+The Auditable Events ([Table							      |
+[1]{.counter}](#cc-auditWids){.cc-auditWids-ref}) includes optional and		      |	The Auditable Events ([Table [2]{.counter}](#auditWids){.auditWids-ref})
+objective SFRs. The auditing of optional and objective SFRs is only		      |	includes optional and objective [SFRs](#abbr_SFR). The auditing of
+required if that [SFR](#abbr_SFR) is included in the [ST](#abbr_ST).		      |	optional and objective [SFRs](#abbr_SFR) is only required if that
+										      >	[SFR](#abbr_SFR) is included in the [ST](#abbr_ST).
 
 Per [FAU\_STG\_EXT.1](#FAU_STG_EXT.1) in the [Base-PP](#abbr_Base-PP),			Per [FAU\_STG\_EXT.1](#FAU_STG_EXT.1) in the [Base-PP](#abbr_Base-PP),
 the [TOE](#abbr_TOE) must support transfer of the audit data to an			the [TOE](#abbr_TOE) must support transfer of the audit data to an
@@ -1431,8 +1455,8 @@ a.  Date and time of the event, type of event, and subject identity (if			a.  Da
 b.  For each audit event type, based on the auditable event definitions			b.  For each audit event type, based on the auditable event definitions
     of the functional components included in the					    of the functional components included in the
     [PP](#abbr_PP)/[ST](#abbr_ST), \[*auditable events listed in			    [PP](#abbr_PP)/[ST](#abbr_ST), \[*auditable events listed in
-    Auditable Events table ([Table						      |	    Auditable Events table ()*\].
-    [1]{.counter}](#cc-auditWids){.cc-auditWids-ref})*\].			      <
+    Auditable Events table ([Table							    Auditable Events table ([Table
+    [1]{.counter}](#cc-auditWids){.cc-auditWids-ref})*\].			      |	    [2]{.counter}](#auditWids){.auditWids-ref})*\].
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ The subject identity in this case is		[Application Note: ]{.note-header}[ The subject identity in this case is
@@ -1448,7 +1472,7 @@ the allowlisted inventory item. ]{.note}						the allowlisted inventory item. ]{
 										      <
 ::: {.eacategory}								      <
 [TSS](#abbr_TSS)								      <
-:::										      <
+:::											:::
 										      <
 There are no [TSS](#abbr_TSS) evaluation activities for this			      <
 [SFR](#abbr_SFR).								      <
@@ -1461,8 +1485,8 @@ There are no operational guidance activities for this [SFR](#abbr_SFR).		      <
 										      <
 ::: {.eacategory}								      <
 Tests										      <
-:::										      <
-										      <
+:::											:::
+
 The evaluator shall test the [TOE](#abbr_TOE)'s ability to correctly		      <
 generate audit records by having the [TOE](#abbr_TOE) generate audit		      <
 records in accordance with the evaluation activities associated with the	      <
@@ -1476,9 +1500,9 @@ Note that the testing here can be accomplished in conjunction with the		      <
 testing of the security mechanisms directly.					      <
 :::										      <
 :::										      <
-:::											:::
-:::											:::
-
+:::										      <
+:::										      <
+										      <
 This family defines requirements for supported methods of intrusion		      <
 detection.									      <
 										      <
@@ -1518,13 +1542,13 @@ If anomaly-based detection is selected, then						If anomaly-based detection is 
 ::: {.activity_pane .hide}							      <
 ::: {.activity_pane_header}							      <
 [[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      <
-:::										      <
+:::											:::
 										      <
 ::: {.activity_pane_body}							      <
 										      <
 ::: {.eacategory}								      <
 [TSS](#abbr_TSS)								      <
-:::										      <
+:::											:::
 										      <
 The evaluator shall verify that the [TSS](#abbr_TSS) includes which		      <
 intrusion detection method(s) the [TOE](#abbr_TOE) utilizes. If multiple	      <
@@ -1533,8 +1557,8 @@ methods are selected, the evaluator shall confirm that the			      <
 										      <
 ::: {.eacategory}								      <
 Guidance									      <
-:::										      <
-										      <
+:::											:::
+
 The evaluator shall verify that the operational guidance provides		      <
 instructions on how to configure the [TOE](#abbr_TOE) in order for it to	      <
 detect such intrusions.								      <
@@ -1548,10 +1572,10 @@ evaluator shall confirm and note the existence of the capability and		      <
 test for the appropriate selection-based requirements.				      <
 :::										      <
 :::										      <
-:::											:::
-:::											:::
-:::											:::
-
+:::										      <
+:::										      <
+:::										      <
+										      <
 This family defines requirements for detection and inventorying of		      <
 network assets in the [TOE](#abbr_TOE)'s operational environment.		      <
 										      <
@@ -1921,13 +1945,13 @@ Tests										      <
         part of the information presented on the [WIDS](#abbr_WIDS) user	      <
         interface about the APs and EUDs.					      <
 :::										      <
+:::											:::
+:::											:::
+:::											:::
 :::										      <
-:::											:::
-:::											:::
-:::											:::
-
-This family defines requirements for the format of generated reports.		      <
 										      <
+This family defines requirements for the format of generated reports.		      <
+
 ::: {#FAU_RPT_EXT.1 .comp}								::: {#FAU_RPT_EXT.1 .comp}
 #### FAU\_RPT\_EXT.1 Intrusion Detection System - Reporting Methods			#### FAU\_RPT\_EXT.1 Intrusion Detection System - Reporting Methods
 
@@ -2523,15 +2547,15 @@ Tests										      <
         [AP](#abbr_AP)\'s WPS connection threshold has been exceeded.		      <
 										      <
     \										      <
-:::											:::
-:::											:::
-:::											:::
 :::										      <
 :::										      <
-										      <
+:::											:::
+:::											:::
+:::											:::
+
 This family defines requirements for data collection of potentially		      <
 malicious wireless network activity.						      <
-
+										      <
 ::: {#FAU_WID_EXT.1 .comp}								::: {#FAU_WID_EXT.1 .comp}
 #### FAU\_WID\_EXT.1 Wireless Intrusion Detection - Malicious Environmental Objects	#### FAU\_WID\_EXT.1 Wireless Intrusion Detection - Malicious Environmental Objects
 
@@ -2905,8 +2929,8 @@ Repeat the two tests below, for both the 2.4GHz and the 5 GHz band.\		      <
 :::											:::
 :::											:::
 
-### 5.0.2 User Data Protection (FDP) {#fdp .indexable data-level="3"}		      <
-										      <
+### 5.0.2 User Data Protection (FDP) {#fdp .indexable data-level="3"}		      |	### 5.2.2 User Data Protection (FDP) {#ss-man-fdp .indexable data-level="3"}
+
 ::: {#FDP_IFC.1 .comp}									::: {#FDP_IFC.1 .comp}
 #### FDP\_IFC.1 Subset Information Flow Control						#### FDP\_IFC.1 Subset Information Flow Control
 
@@ -2942,27 +2966,28 @@ through [FAU\_WID\_EXT.1](#FAU_WID_EXT.1),					      |	[FDP\_IFC.1](#FDP_IFC.1) 
 [FAU\_WID\_EXT.3](#FAU_WID_EXT.3) and [FAU\_WID\_EXT.4](#FAU_WID_EXT.4).	      |	addition to optional [SFRs](#abbr_SFR) [FAU\_WID\_EXT.3](#FAU_WID_EXT.3)
 A vendor does not have to formally define this policy, it only needs to		      |	and [FAU\_WID\_EXT.4](#FAU_WID_EXT.4). A vendor does not have to
 comply with the SFRs.								      |	formally define this policy, it only needs to comply with the
-:::										      |	[SFRs](#abbr_SFR).
+										      >	[SFRs](#abbr_SFR).
+:::											:::
 										      <
 ::: {.activity_pane .hide}							      <
 ::: {.activity_pane_header}							      <
 [[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      <
-:::										      <
+:::											:::
 										      <
 ::: {.activity_pane_body}							      <
 										      <
 ::: {.eacategory}								      <
 [TSS](#abbr_TSS)								      <
-:::										      <
+:::											:::
 										      <
 There are no [TSS](#abbr_TSS) evaluation activities for this			      <
 [SFR](#abbr_SFR).								      <
 										      <
 ::: {.eacategory}								      <
 Guidance									      <
-:::										      <
-										      <
-If this functionality is configurable, the evaluator shall verify that		      <
+:::											:::
+
+If this functionality is configurable, the evaluator shall verify that		      |	### 5.2.3 Security Management (FMT) {#ss-man-fmt .indexable data-level="3"}
 the operational guidance provides instructions on how to configure the		      <
 [TOE](#abbr_TOE) to monitor different types of IEEE 802.11 frame types		      <
 and subtypes.									      <
@@ -2983,13 +3008,13 @@ Tests										      <
     -   Verify that there are frames from all the types and subtypes in		      <
         the capture.								      <
 :::										      <
-:::											:::
-:::											:::
-:::											:::
-:::											:::
-
-### 5.0.3 Security Management (FMT) {#fmt .indexable data-level="3"}		      <
+:::										      <
+:::										      <
+:::										      <
+:::										      <
 										      <
+### 5.0.3 Security Management (FMT) {#fmt .indexable data-level="3"}		      <
+
 ::: {#FMT_SMF.1/WIDS .comp}								::: {#FMT_SMF.1/WIDS .comp}
 #### FMT\_SMF.1/WIDS Specification of Management Functions (WIDS)			#### FMT\_SMF.1/WIDS Specification of Management Functions (WIDS)
 
@@ -3062,7 +3087,7 @@ ability to adjust the amount of time it passively monitors and captures			abilit
 [[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      <
 :::											:::
 
-::: {.activity_pane_body}							      |	9.3 TOE Security Functional Requirements Rationale {#obj-req-map .indexable data-leve
+::: {.activity_pane_body}							      |	5.3 TOE Security Functional Requirements Rationale {#obj-req-map .indexable data-leve
 										      >	--------------------------------------------------
 
 ::: {.eacategory}								      |	The following rationale provides justification for each security
@@ -3266,7 +3291,7 @@ ability to adjust the amount of time it passively monitors and captures			abilit
 										      >	  : [Table [3]{.counter}]{#t-obj_map .ctr data-myid="t-obj_map"
 										      >	  data-counter-type="ct-Table"}: [SFR](#abbr_SFR) Rationale
 										      >
-										      >	9.4 TOE Security Assurance Requirements {#mod-sars .indexable data-level="2"}
+										      >	5.4 TOE Security Assurance Requirements {#mod-sars .indexable data-level="2"}
 										      >	---------------------------------------
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not define any [SARs](#abbr_SAR)
@@ -3282,21 +3307,25 @@ ability to adjust the amount of time it passively monitors and captures			abilit
 										      >	[TOE](#abbr_TOE) against the chosen [Base-PP](#abbr_Base-PP) and
 										      >	supplement that evaluation with the necessary [SFRs](#abbr_SFR) that are
 										      >	taken from this [PP-Module](#abbr_PP-Module).
-										      >
-										      >	10 Consistency Rationale {#mod-conrat .indexable data-level="1"}
-										      >	========================
-										      >
-										      >	10.1 Collaborative Protection Profile for Network Device {#conrat- .indexable data-le
-										      >	--------------------------------------------------------
-										      >
-										      >	### 10.1.1 Consistency of TOE Type {#contoe- .indexable data-level="3"}
-										      >
-										      >	When this [PP-Module](#abbr_PP-Module) extends the Network Device
-										      >	[cPP](#abbr_cPP), the [TOE](#abbr_TOE) type for the overall
-										      >	[TOE](#abbr_TOE) is still [WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS)
+
+The evaluator shall review the [TSS](#abbr_TSS) to verify that it		      |	6 Consistency Rationale {#mod-conrat .indexable data-level="1"}
+includes information the ability of the [TOE](#abbr_TOE) to define		      |	=======================
+inventory of authorized APs and EUDs.						      <
+
+The evaluator shall verify that the [TSS](#abbr_TSS) describes the		      |	6.1 Collaborative Protection Profile for Network Device {#conrat-b-nd .indexable data
+ability of the [TOE](#abbr_TOE) to allow authorized administrators to		      |	-------------------------------------------------------
+define authorized [WLAN](#abbr_WLAN) authentication schemes.			      <
+
+::: {.eacategory}								      |	### 6.1.1 Consistency of TOE Type {#contoe-b-nd .indexable data-level="3"}
+Guidance									      <
+:::										      <
+
+The evaluator shall review the operational guidance for instructions on		      |	When this [PP-Module](#abbr_PP-Module) extends the Network Device
+how to configure and change clasification of APs and EUDs to indicate		      |	[cPP](#abbr_cPP), the [TOE](#abbr_TOE) type for the overall
+that they are part of the allowlist.						      |	[TOE](#abbr_TOE) is still [WIDS](#abbr_WIDS)/[WIPS](#abbr_WIPS)
 										      >	products.
 										      >
-										      >	### 10.1.2 Consistency of Security Problem Definition {#consecprob- .indexable data-l
+										      >	### 6.1.2 Consistency of Security Problem Definition {#consecprob-b-nd .indexable dat
 										      >
 										      >	  [PP-Module](#abbr_PP-Module) Threat, Assumption, OSP                               
 										      >	  -----------------------------------------------------------------------------------
@@ -3307,7 +3336,7 @@ ability to adjust the amount of time it passively monitors and captures			abilit
 										      >	  [A.PROPER\_ADMIN](#A.PROPER_ADMIN)                                                 
 										      >	  [P.ANALYZE](#P.ANALYZE)                                                            
 										      >
-										      >	### 10.1.3 Consistency of Objectives {#conobj- .indexable data-level="3"}
+										      >	### 6.1.3 Consistency of Objectives {#conobj-b-nd .indexable data-level="3"}
 										      >
 										      >	The objectives for the [TOEs](#abbr_TOE) are consistent with the NDcPP
 										      >	based on the following rationale:
@@ -3328,7 +3357,7 @@ ability to adjust the amount of time it passively monitors and captures			abilit
 										      >	  [OE.CONNECTIONS](#OE.CONNECTIONS)                       This objective expects the 
 										      >	  [OE.PROPER\_ADMIN](#OE.PROPER_ADMIN)                    This objective is comparabl
 										      >
-										      >	### 10.1.4 Consistency of Requirements {#conreq- .indexable data-level="3"}
+										      >	### 6.1.4 Consistency of Requirements {#conreq-b-nd .indexable data-level="3"}
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) identifies several [SFRs](#abbr_SFR)
 										      >	from the NDcPP that are needed to support Wireless Intrusion
@@ -3342,35 +3371,17 @@ ability to adjust the amount of time it passively monitors and captures			abilit
 										      >	this does not conflict with the claims defined by the NDcPP are as
 										      >	follows:
 
-The evaluator shall review the [TSS](#abbr_TSS) to verify that it		      |	[PP-Module](#abbr_PP-Module) Requirement
-includes information the ability of the [TOE](#abbr_TOE) to define		      <
-inventory of authorized APs and EUDs.						      <
+The evaluator shall review the operation guidance to determine how to		      |	[PP-Module](#abbr_PP-Module) Requirement
+configure which SSIDs are permitted on the network.				      <
 
-The evaluator shall verify that the [TSS](#abbr_TSS) describes the		      |	Consistency Rationale
-ability of the [TOE](#abbr_TOE) to allow authorized administrators to		      <
-define authorized [WLAN](#abbr_WLAN) authentication schemes.			      <
-
-::: {.eacategory}								      |	Modified [SFRs](#abbr_SFR)
-Guidance									      <
-:::										      <
-
-The evaluator shall review the operational guidance for instructions on		      |	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1)
-how to configure and change clasification of APs and EUDs to indicate		      <
-that they are part of the allowlist.						      <
-
-The evaluator shall review the operation guidance to determine how to		      |	This [PP-Module](#abbr_PP-Module) mandates the inclusion of this
-configure which SSIDs are permitted on the network.				      |	selection-based [SFR](#abbr_SFR) because a [TOE](#abbr_TOE) that
-										      >	conforms to this [PP-Module](#abbr_PP-Module) will always be deployed in
-										      >	a configuration that requires this [SFR](#abbr_SFR) to be claimed.
-
-The evaluator shall examine the operational guidance to verify that it		      |	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1)
+The evaluator shall examine the operational guidance to verify that it		      |	Consistency Rationale
 provides instructions on how to define a [WLAN](#abbr_WLAN)			      <
 authentication scheme as authorized or unauthorized for the purposes of		      <
 detection.									      <
 
-The evaluator shall examine the operational guidance to verify that it		      |	This [PP-Module](#abbr_PP-Module) modifies the [Base-PP](#abbr_Base-PP)
-provides instructions on how to define a [WLAN](#abbr_WLAN) encryption		      |	[SFR](#abbr_SFR) to remove a selection that is not permitted by the
-scheme as authorized or unauthorized for the purposes of detection.		      |	[TOE](#abbr_TOE) architecture that it specifies.
+The evaluator shall examine the operational guidance to verify that it		      |	Modified [SFRs](#abbr_SFR)
+provides instructions on how to define a [WLAN](#abbr_WLAN) encryption		      <
+scheme as authorized or unauthorized for the purposes of detection.		      <
 										      <
 ::: {.eacategory}								      <
 Tests										      <
@@ -3404,10 +3415,23 @@ Tests										      <
 :::										      <
 :::										      <
 
-### 5.0.4 Security Audit (FAU) {#fau .indexable data-level="3"}			      |	[FCO\_CPC\_EXT.1](#FCO_CPC_EXT.1)
+### 5.0.4 Security Audit (FAU) {#fau .indexable data-level="3"}			      |	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1)
 
 ::: {#FAU_WID_EXT.3 .comp}							      |	This [PP-Module](#abbr_PP-Module) mandates the inclusion of this
-#### FAU\_WID\_EXT.3 Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring  |	optional [SFR](#abbr_SFR) because it is required to implement
+#### FAU\_WID\_EXT.3 Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring  |	selection-based [SFR](#abbr_SFR) because a [TOE](#abbr_TOE) that
+										      >	conforms to this [PP-Module](#abbr_PP-Module) will always be deployed in
+										      >	a configuration that requires this [SFR](#abbr_SFR) to be claimed.
+										      >
+										      >	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1)
+										      >
+										      >	This [PP-Module](#abbr_PP-Module) modifies the [Base-PP](#abbr_Base-PP)
+										      >	[SFR](#abbr_SFR) to remove a selection that is not permitted by the
+										      >	[TOE](#abbr_TOE) architecture that it specifies.
+										      >
+										      >	[FCO\_CPC\_EXT.1](#FCO_CPC_EXT.1)
+										      >
+										      >	This [PP-Module](#abbr_PP-Module) mandates the inclusion of this
+										      >	optional [SFR](#abbr_SFR) because it is required to implement
 										      >	functionality required by this [PP-Module](#abbr_PP-Module).
 										      >
 										      >	[FPT\_ITT.1](#FPT_ITT.1)
@@ -3596,8 +3620,8 @@ Security Audit Data Generation is included in the				      <
 										      >	defines.
 										      >
 										      >	[FAU\_MAC\_EXT.1](#FAU_MAC_EXT.1)
-
-No dependencies.								      |	This [SFR](#abbr_SFR) defines operations to be performed on assets in
+										      >
+										      >	This [SFR](#abbr_SFR) defines operations to be performed on assets in
 										      >	the [TOE](#abbr_TOE)'s operational environment, which is behavior
 										      >	defined in this [PP-Module](#abbr_PP-Module) that extends the logical
 										      >	scope of the [TOE](#abbr_TOE) beyond what the [Base-PP](#abbr_Base-PP)
@@ -3630,6 +3654,8 @@ No dependencies.								      |	This [SFR](#abbr_SFR) defines operations to be p
 										      >
 										      >	A.1 Strictly Optional Requirements {#opt-sfrs .indexable data-level="2"}
 										      >	----------------------------------
+
+No dependencies.								      |	### A.1.1 Security Audit (FAU) {#ss-opt-fau .indexable data-level="3"}
 										      >
 										      >	::: {#FAU_WID_EXT.3 .comp}
 										      >	#### FAU\_WID\_EXT.3 Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring
@@ -3682,84 +3708,84 @@ to enable and configure detection of the technologies included in the		      |	-
 [ST](#abbr_ST) as well as the hardware that is needed to perform this		      <
 function.									      <
 
-::: {.eacategory}								      |	::: {#FAU_INV_EXT.4 .comp}
-Tests										      |	#### FAU\_INV\_EXT.4 Detection of Unauthorized Connections
-										      >
-										      >	::: {.element}
-										      >	::: {#FAU_INV_EXT.4.1 .reqid}
+::: {.eacategory}								      |	### A.2.1 Security Audit (FAU) {#ss-obj-fau .indexable data-level="3"}
+Tests										      <
+:::										      <
+
+The evaluator shall enable and configure detection of the selected		      |	::: {#FAU_INV_EXT.4 .comp}
+technologies.									      |	#### FAU\_INV\_EXT.4 Detection of Unauthorized Connections
+
+-   **Test 1:** Deploy a device within the given technology and verify		      |	::: {.element}
+    that the [TSF](#abbr_TSF) detects the device.				      |	::: {#FAU_INV_EXT.4.1 .reqid}
 										      >	[FAU\_INV\_EXT.4.1](#FAU_INV_EXT.4.1){.abbr}
 :::											:::
-
-The evaluator shall enable and configure detection of the selected		      |	::: {.reqdesc}
-technologies.									      |	The [TSF](#abbr_TSF) shall detect when non-allowlisted APs have a wired
+										      >
+										      >	::: {.reqdesc}
+										      >	The [TSF](#abbr_TSF) shall detect when non-allowlisted APs have a wired
 										      >	connection to the internal corporate network.
-										      >	:::
-										      >	:::
-										      >	:::
-
--   **Test 1:** Deploy a device within the given technology and verify		      |	::: {#FAU_INV_EXT.5 .comp}
-    that the [TSF](#abbr_TSF) detects the device.				      |	#### FAU\_INV\_EXT.5 Signal Library
+:::											:::
+:::											:::
+:::											:::
+										      >
+										      >	::: {#FAU_INV_EXT.5 .comp}
+										      >	#### FAU\_INV\_EXT.5 Signal Library
 										      >
 										      >	::: {.element}
 										      >	::: {#FAU_INV_EXT.5.1 .reqid}
 										      >	[FAU\_INV\_EXT.5.1](#FAU_INV_EXT.5.1){.abbr}
 :::											:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall include a signal library.
-										      >
-										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[The [TSF](#abbr_TSF) will need to
-										      >	have the ability to import, export, or update the exisiting signal
-										      >	library.]{.note}
-:::											:::
-:::											:::
-:::											:::
-:::											:::
 
-::: {#FAU_WID_EXT.4 .comp}							      |	::: {#FAU_MAC_EXT.1 .comp}
-#### FAU\_WID\_EXT.4 Wireless Intrusion Detection - Wireless Spectrum Analysis	      |	#### FAU\_MAC\_EXT.1 Device Impersonation
+::: {#FAU_WID_EXT.4 .comp}							      |	::: {.reqdesc}
+#### FAU\_WID\_EXT.4 Wireless Intrusion Detection - Wireless Spectrum Analysis	      |	The [TSF](#abbr_TSF) shall include a signal library.
 
-This [SFR](#abbr_SFR) defines an optional capability for a distributed		      |	::: {.element}
-component to be dedicated to one particular function. This function		      |	::: {#FAU_MAC_EXT.1.1 .reqid}
-(wireless spectrum analysis) is defined in this					      |	[FAU\_MAC\_EXT.1.1](#FAU_MAC_EXT.1.1){.abbr}
-[PP-Module](#abbr_PP-Module) that extends the logical scope of the		      |	:::
-[TOE](#abbr_TOE) beyond what the [Base-PP](#abbr_Base-PP) defines.		      <
-requires the [TSF](#abbr_TSF) to implement wireless spectrum analysis in	      <
-a dedicated physical component. No specific management functions are		      <
-identified. There are no auditable events foreseen.				      <
+This [SFR](#abbr_SFR) defines an optional capability for a distributed		      |	::: {.appnote}
+component to be dedicated to one particular function. This function		      |	[Application Note: ]{.note-header}[The [TSF](#abbr_TSF) will need to
+(wireless spectrum analysis) is defined in this					      |	have the ability to import, export, or update the exisiting signal
+[PP-Module](#abbr_PP-Module) that extends the logical scope of the		      |	library.]{.note}
+[TOE](#abbr_TOE) beyond what the [Base-PP](#abbr_Base-PP) defines.		      |	:::
+requires the [TSF](#abbr_TSF) to implement wireless spectrum analysis in	      |	:::
+a dedicated physical component. No specific management functions are		      |	:::
+identified. There are no auditable events foreseen.				      |	:::
 \[[FAU\_WID\_EXT.2](#FAU_WID_EXT.2) Wireless Intrusion Detection -		      <
 Passive Information Flow Monitoring, or						      <
 
-[FAU\_WID\_EXT.3](#FAU_WID_EXT.3) Wireless Intrusion Detection -		      |	::: {.reqdesc}
-Non-Wireless Spectrum Monitoring\]						      |	The [TSF](#abbr_TSF) shall detect when two sensors in non-overlapping
-										      >	locations receive traffic from the same [MAC](#abbr_MAC) address
+[FAU\_WID\_EXT.3](#FAU_WID_EXT.3) Wireless Intrusion Detection -		      |	::: {#FAU_MAC_EXT.1 .comp}
+Non-Wireless Spectrum Monitoring\]						      |	#### FAU\_MAC\_EXT.1 Device Impersonation
+
+::: {.element}										::: {.element}
+::: {#FAU_WID_EXT.4.1 .reqid}							      |	::: {#FAU_MAC_EXT.1.1 .reqid}
+[FAU\_WID\_EXT.4.1](#FAU_WID_EXT.4.1){.abbr}					      |	[FAU\_MAC\_EXT.1.1](#FAU_MAC_EXT.1.1){.abbr}
+:::											:::
+
+::: {.reqdesc}										::: {.reqdesc}
+The [TSF](#abbr_TSF) shall provide a dedicated sensor for wireless		      |	The [TSF](#abbr_TSF) shall detect when two sensors in non-overlapping
+spectrum analysis.								      |	locations receive traffic from the same [MAC](#abbr_MAC) address
 										      >	simultaneously.
-										      >
-										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ The intent of this [SFR](#abbr_SFR)
-										      >	is to detect [MAC](#abbr_MAC) spoofing where an attacker is able to
+
+::: {.activity_pane .hide}							      |	::: {.appnote}
+::: {.activity_pane_header}							      |	[Application Note: ]{.note-header}[ The intent of this [SFR](#abbr_SFR)
+[[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      |	is to detect [MAC](#abbr_MAC) spoofing where an attacker is able to
 										      >	cause the allowlisted [EUD](#abbr_EUD) to disconnect and promptly
 										      >	connects a non-allowlisted device using the [MAC](#abbr_MAC) address of
 										      >	the allowlisted [EUD](#abbr_EUD).]{.note}
 										      >	:::
 										      >	:::
-										      >	:::
-
-::: {.element}										::: {.element}
-::: {#FAU_WID_EXT.4.1 .reqid}							      |	::: {#FAU_MAC_EXT.1.2 .reqid}
-[FAU\_WID\_EXT.4.1](#FAU_WID_EXT.4.1){.abbr}					      |	[FAU\_MAC\_EXT.1.2](#FAU_MAC_EXT.1.2){.abbr}
 :::											:::
 
-::: {.reqdesc}										::: {.reqdesc}
-The [TSF](#abbr_TSF) shall provide a dedicated sensor for wireless		      |	The [TSF](#abbr_TSF) shall detect when two sensors in non-overlapping
-spectrum analysis.								      |	locations receive traffic from the [MAC](#abbr_MAC) addresses of
+::: {.activity_pane_body}							      |	::: {.element}
+										      >	::: {#FAU_MAC_EXT.1.2 .reqid}
+										      >	[FAU\_MAC\_EXT.1.2](#FAU_MAC_EXT.1.2){.abbr}
+										      >	:::
+										      >
+										      >	::: {.reqdesc}
+										      >	The [TSF](#abbr_TSF) shall detect when two sensors in non-overlapping
+										      >	locations receive traffic from the [MAC](#abbr_MAC) addresses of
 										      >	non-allowlisted EUDs within an Authorized administrator-configurable
 										      >	timeframe based on distance between sensors.
 
-::: {.activity_pane .hide}							      |	::: {.appnote}
-::: {.activity_pane_header}							      |	[Application Note: ]{.note-header}[The intent of this [SFR](#abbr_SFR)
-[[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      |	is to allow the administrator to determine the time that should be
+::: {.eacategory}								      |	::: {.appnote}
+[TSS](#abbr_TSS)								      |	[Application Note: ]{.note-header}[The intent of this [SFR](#abbr_SFR)
+										      >	is to allow the administrator to determine the time that should be
 										      >	allowed between an allowlisted [EUD](#abbr_EUD) connecting in two
 										      >	distant locations.]{.note}
 										      >	:::
@@ -3767,17 +3793,18 @@ spectrum analysis.								      |	locations receive traffic from the [MAC](#abbr
 										      >	:::
 :::											:::
 
-::: {.activity_pane_body}							      |	::: {#FAU_WIP_EXT.1 .comp}
-										      >	#### FAU\_WIP\_EXT.1 Wireless Intrusion Prevention
+The evaluator shall verify that the [TSS](#abbr_TSS) to verify that the		      |	::: {#FAU_WIP_EXT.1 .comp}
+[TOE](#abbr_TOE) provides a dedicated sensor for wireless spectrum		      |	#### FAU\_WIP\_EXT.1 Wireless Intrusion Prevention
+analysis.									      <
 
 ::: {.eacategory}								      |	::: {.element}
-[TSS](#abbr_TSS)								      |	::: {#FAU_WIP_EXT.1.1 .reqid}
+Guidance									      |	::: {#FAU_WIP_EXT.1.1 .reqid}
 										      >	[FAU\_WIP\_EXT.1.1](#FAU_WIP_EXT.1.1){.abbr}
 :::											:::
 
-The evaluator shall verify that the [TSS](#abbr_TSS) to verify that the		      |	::: {.reqdesc}
-[TOE](#abbr_TOE) provides a dedicated sensor for wireless spectrum		      |	The [TSF](#abbr_TSF) shall allow an Authorized Administrator to isolate
-analysis.									      |	a wireless [AP](#abbr_AP) or [EUD](#abbr_EUD) from the network monitored
+The evaluator shall verify that the operational guidance describes how		      |	::: {.reqdesc}
+to enable and configure dedicated spectrum analysis as well as the		      |	The [TSF](#abbr_TSF) shall allow an Authorized Administrator to isolate
+hardware that is needed to perform this function.				      |	a wireless [AP](#abbr_AP) or [EUD](#abbr_EUD) from the network monitored
 										      >	by the [TSF](#abbr_TSF) using the following methods: \[**selection**:
 										      >	*wireless containment*, *wire-side containment of an unauthorized
 										      >	[AP](#abbr_AP) connected to the internal corporate wired network*\].
@@ -3789,26 +3816,27 @@ analysis.									      |	a wireless [AP](#abbr_AP) or [EUD](#abbr_EUD) from the
 										      >	initiate wireless containment. ]{.note}
 
 ::: {.eacategory}								      |	In this [SFR](#abbr_SFR) the containment of an an unauthorized
-Guidance									      |	[AP](#abbr_AP) connected to the internal corporate wired network refers
+Tests										      |	[AP](#abbr_AP) connected to the internal corporate wired network refers
 										      >	to an unauthorized [AP](#abbr_AP) that is physically connected (via
 										      >	wire) to the protected internal wired infrastructure.
 										      >	:::
 										      >	:::
-										      >	:::
 :::											:::
+										      >	:::
+										      >
+										      >	### A.2.2 Protection of the TSF (FPT) {#ss-obj-fpt .indexable data-level="3"}
 
-The evaluator shall verify that the operational guidance describes how		      |	::: {#FPT_FLS.1 .comp}
-to enable and configure dedicated spectrum analysis as well as the		      |	#### FPT\_FLS.1 Basic Internal TSF Data Transfer Protection
-hardware that is needed to perform this function.				      <
-
-::: {.eacategory}								      |	::: {.element}
-Tests										      |	::: {#FPT_FLS.1.1 .reqid}
+The evaluator shall enable and configure dedicated spectrum analysis and	      |	::: {#FPT_FLS.1 .comp}
+test the capabilities listed in the [TSS](#abbr_TSS).				      |	#### FPT\_FLS.1 Basic Internal TSF Data Transfer Protection
+										      >
+										      >	::: {.element}
+										      >	::: {#FPT_FLS.1.1 .reqid}
 										      >	[FPT\_FLS.1.1](#FPT_FLS.1.1){.abbr}
 :::											:::
-
-The evaluator shall enable and configure dedicated spectrum analysis and	      |	::: {.reqdesc}
-test the capabilities listed in the [TSS](#abbr_TSS).				      |	The [TSF](#abbr_TSF) shall preserve a secure state when the following
-:::										      |	types of failures occur: \[*sensor functionality failure, potential
+										      >
+										      >	::: {.reqdesc}
+										      >	The [TSF](#abbr_TSF) shall preserve a secure state when the following
+										      >	types of failures occur: \[*sensor functionality failure, potential
 										      >	compromise of the [TSF](#abbr_TSF)*\].
 										      >
 										      >	::: {.appnote}
@@ -3820,30 +3848,32 @@ test the capabilities listed in the [TSS](#abbr_TSS).				      |	The [TSF](#abbr
 :::											:::
 :::											:::
 
-### 5.0.5 Security Audit (FAU) {#fau .indexable data-level="3"}			      |	Appendix B - Selection-based Requirements {#sel-sfrs .indexable data-level="1"}
-										      |	=========================================
-This family defines requirements for detection of malicious network		      <
-activity based on anomalous behavior.						      <
+### 5.0.5 Security Audit (FAU) {#fau .indexable data-level="3"}			      |	A.3 Implementation-dependent Requirements {#impl-dep-sfrs .indexable data-level="2"}
+										      >	-----------------------------------------
 
-::: {#FAU_ANO_EXT.1 .comp}								::: {#FAU_ANO_EXT.1 .comp}
-#### FAU\_ANO\_EXT.1 Anomaly-Based Intrusion Detection					#### FAU\_ANO\_EXT.1 Anomaly-Based Intrusion Detection
+This family defines requirements for detection of malicious network		      |	This [PP-Module](#abbr_PP-Module) does not define any
+activity based on anomalous behavior.						      |	Implementation-dependent [SFRs](#abbr_SFR).
 
-This [SFR](#abbr_SFR) defines operations to be performed on collected		      |	::: {.statustag}
-[WIDS](#abbr_WIDS) data, which is collected using an external interface		      |	:::
+::: {#FAU_ANO_EXT.1 .comp}							      |	Appendix B - Selection-based Requirements {#sel-sfrs .indexable data-level="1"}
+#### FAU\_ANO\_EXT.1 Anomaly-Based Intrusion Detection				      |	=========================================
+
+This [SFR](#abbr_SFR) defines operations to be performed on collected		      |	B.1 Security Audit (FAU) {#ss-sel-fau .indexable data-level="2"}
+[WIDS](#abbr_WIDS) data, which is collected using an external interface		      |	------------------------
 defined in this [PP-Module](#abbr_PP-Module) that extends the logical		      <
 scope of the [TOE](#abbr_TOE) beyond what the [Base-PP](#abbr_Base-PP)		      <
 defines. requires the [TSF](#abbr_TSF) to define how it determines		      <
 anomalous network traffic that may be indicative of malicious activity.		      <
 The following actions could be considered for the management functions		      <
 in FMT:										      <
-										      <
--   Specification of periods of network activity that constitute		      <
-    baselines of expected behavior						      <
+
+-   Specification of periods of network activity that constitute		      |	::: {#FAU_ANO_EXT.1 .comp}
+    baselines of expected behavior						      |	#### FAU\_ANO\_EXT.1 Anomaly-Based Intrusion Detection
 -   Definition of anomaly activity						      <
-										      <
-There are no auditable events foreseen.						      <
-[FAU\_IDS\_EXT.1](#FAU_IDS_EXT.1) Intrusion Detection System - Intrusion	      <
-Detection Methods								      <
+
+There are no auditable events foreseen.						      |	::: {.statustag}
+[FAU\_IDS\_EXT.1](#FAU_IDS_EXT.1) Intrusion Detection System - Intrusion	      |	***The inclusion of this selection-based component depends upon
+Detection Methods								      |	selection in [FAU\_IDS\_EXT.1.1](#FAU_IDS_EXT.1.1).***
+										      >	:::
 
 ::: {.element}										::: {.element}
 ::: {#FAU_ANO_EXT.1.1 .reqid}								::: {#FAU_ANO_EXT.1.1 .reqid}
@@ -3943,9 +3973,9 @@ activity based on traffic signatures.						      <
 #### FAU\_SIG\_EXT.1 Signature-Based Intrusion Detection				#### FAU\_SIG\_EXT.1 Signature-Based Intrusion Detection
 
 This [SFR](#abbr_SFR) defines operations to be performed on collected		      |	::: {.statustag}
-[WIDS](#abbr_WIDS) data, which is collected using an external interface		      |	:::
-defined in this [PP-Module](#abbr_PP-Module) that extends the logical		      <
-scope of the [TOE](#abbr_TOE) beyond what the [Base-PP](#abbr_Base-PP)		      <
+[WIDS](#abbr_WIDS) data, which is collected using an external interface		      |	***The inclusion of this selection-based component depends upon
+defined in this [PP-Module](#abbr_PP-Module) that extends the logical		      |	selection in [FAU\_IDS\_EXT.1.1](#FAU_IDS_EXT.1.1).***
+scope of the [TOE](#abbr_TOE) beyond what the [Base-PP](#abbr_Base-PP)		      |	:::
 defines. requires the [TSF](#abbr_TSF) to support the definition of		      <
 traffic signatures that can be compared to observed network traffic for		      <
 the purpose of identifying potential malicious activity. The following		      <
@@ -4011,8 +4041,9 @@ Tests										      <
 #### FAU\_STG\_EXT.1/PCAP Protected Audit Event Storage (Packet Captures)		#### FAU\_STG\_EXT.1/PCAP Protected Audit Event Storage (Packet Captures)
 
 This [SFR](#abbr_SFR) iterates the [FAU\_STG\_EXT.1](#FAU_STG_EXT.1)		      |	::: {.statustag}
-[SFR](#abbr_SFR) defined in the [Base-PP](#abbr_Base-PP) for storage of		      |	:::
-audit data and applies it to storage of packet captures.			      <
+[SFR](#abbr_SFR) defined in the [Base-PP](#abbr_Base-PP) for storage of		      |	***The inclusion of this selection-based component depends upon
+audit data and applies it to storage of packet captures.			      |	selection in [FAU\_ARP.1.1](#FAU_ARP.1.1).***
+										      >	:::
 
 ::: {.element}										::: {.element}
 ::: {#FAU_STG_EXT.1.1/PCAP .reqid}							::: {#FAU_STG_EXT.1.1/PCAP .reqid}
@@ -4056,9 +4087,9 @@ captures** on the [TOE](#abbr_TOE) itself. In addition \[**selection**:			captur
 -   *The [TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) with			-   *The [TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) with
     storage of **packet capture** data provided externally for the			    storage of **packet capture** data provided externally for the
     following [TOE](#abbr_TOE) components: \[**assignment**: [list of			    following [TOE](#abbr_TOE) components: \[**assignment**: [list of
-    [TOE](#abbr_TOE) components that do not store **packet capture**			    [TOE](#abbr_TOE) components that do not store **packet capture**
-    data locally and the other [TOE](#abbr_TOE) components to which they		    data locally and the other [TOE](#abbr_TOE) components to which they
-    transmit their generated **packet capture**						    transmit their generated **packet capture**
+    [TOE](#abbr_TOE) components that do not store **packet capture**		      |	    [TOE](#abbr_TOE) components that do not store packet capture data
+    data locally and the other [TOE](#abbr_TOE) components to which they	      |	    locally and the other [TOE](#abbr_TOE) components to which they
+    transmit their generated **packet capture**					      |	    transmit their generated packet capture
     data]{.assignable-content}\]*							    data]{.assignable-content}\]*
 
 \]										      |	\].
@@ -4073,8 +4104,8 @@ captures** on the [TOE](#abbr_TOE) itself. In addition \[**selection**:			captur
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall \[**selection**: *drop new **packet capture**		The [TSF](#abbr_TSF) shall \[**selection**: *drop new **packet capture**
 data*, *overwrite previous **packet captures** according to the				data*, *overwrite previous **packet captures** according to the
-following rule: \[**assignment**: [rule for overwriting previous			following rule: \[**assignment**: [rule for overwriting previous
-**packet captures**]{.assignable-content}\]*, *\[**assignment**: [other			**packet captures**]{.assignable-content}\]*, *\[**assignment**: [other
+following rule: \[**assignment**: [rule for overwriting previous		      |	following rule: \[**assignment**: [rule for overwriting previous packet
+**packet captures**]{.assignable-content}\]*, *\[**assignment**: [other		      |	captures]{.assignable-content}\]*, *\[**assignment**: [other
 action]{.assignable-content}\]*\] when the local storage space for			action]{.assignable-content}\]*\] when the local storage space for
 **packet capture** data is full.							**packet capture** data is full.
 										      |	:::
@@ -4397,11 +4428,11 @@ distant locations.]{.note}							      <
 
 ::: {.activity_pane_body}							      |	The following actions could be considered for the management functions
 										      >	in FMT:
-										      >
-										      >	-   Definition of classification rules to detect rogue APs
 
-::: {.eacategory}								      |	#### Audit: FAU\_INV\_EXT.2
+::: {.eacategory}								      |	-   Definition of classification rules to detect rogue APs
 [TSS](#abbr_TSS)								      |
+										      >	#### Audit: FAU\_INV\_EXT.2
+										      >
 										      >	There are no auditable events foreseen.
 										      >
 										      >	#### FAU\_INV\_EXT.2 Characteristics of Environmental Objects
@@ -4451,12 +4482,11 @@ distant locations.]{.note}							      <
 The evaluator shall verify that the [TSS](#abbr_TSS) describes the		      |	#### Management: FAU\_INV\_EXT.3
 behavior of the [TOE](#abbr_TOE) when two sensors in non-overlapping		      |
 locations receive traffic from the same [MAC](#abbr_MAC) address		      |	No specific management functions are identified.
-simultaneously.									      <
+simultaneously.									      |
+										      >	#### Audit: FAU\_INV\_EXT.3
 
-::: {.eacategory}								      |	#### Audit: FAU\_INV\_EXT.3
-Guidance									      |
-										      >	The following actions should be auditable if FAU\_GEN Security Audit
-										      >	Data Generation is included in the [PP](#abbr_PP)/[ST](#abbr_ST):
+::: {.eacategory}								      |	The following actions should be auditable if FAU\_GEN Security Audit
+Guidance									      |	Data Generation is included in the [PP](#abbr_PP)/[ST](#abbr_ST):
 										      >
 										      >	-   Physical location and identification of [AP](#abbr_AP) or
 										      >	    [EUD](#abbr_EUD)
@@ -4699,38 +4729,39 @@ initiate wireless containment. ]{.note}						      <
 In this [SFR](#abbr_SFR) the containment of an an unauthorized			      |	The [TSF](#abbr_TSF) shall distinguish between benign and malicious APs
 [AP](#abbr_AP) connected to the internal corporate wired network refers		      |	and EUDs based on if the APs and EUDs are authorized and
 to an unauthorized [AP](#abbr_AP) that is physically connected (via		      |	\[**selection**: *automatic detection metrics*, *no other method*\].
-wire) to the protected internal wired infrastructure.				      |
-:::										      |	#### FAU\_WID\_EXT.1.2 {#ext-comp-FAU_WID_EXT.1.2}
+wire) to the protected internal wired infrastructure.				      <
+:::										      <
 
-::: {.activity_pane .hide}							      |	The [TSF](#abbr_TSF) shall provide the ability to determine if a given
-::: {.activity_pane_header}							      |	[SSID](#abbr_SSID) is authorized.
-[[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      <
+::: {.activity_pane .hide}							      |	#### FAU\_WID\_EXT.1.2 {#ext-comp-FAU_WID_EXT.1.2}
+::: {.activity_pane_header}							      |
+[[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      |	The [TSF](#abbr_TSF) shall provide the ability to determine if a given
+										      >	[SSID](#abbr_SSID) is authorized.
 :::											:::
 
 ::: {.activity_pane_body}							      |	#### Management: FAU\_WID\_EXT.2
 
 ::: {.eacategory}								      |	The following actions could be considered for the management functions
 [TSS](#abbr_TSS)								      |	in FMT:
-:::										      <
-
-The evaluator shall verify that the [TSS](#abbr_TSS) includes a list of		      |	-   Definition of authorized and unauthorized TCP/IP and UDP traffic
-available containment methods on the [TSF](#abbr_TSF) and how to		      |	-   Definition of known malicious activity ports
-configure them.									      |	-   Definition of the amount of time that a sensor monitors a specific
+:::										      |
+										      >	-   Definition of authorized and unauthorized TCP/IP and UDP traffic
+										      >	-   Definition of known malicious activity ports
+										      >	-   Definition of the amount of time that a sensor monitors a specific
 										      >	    frequency or channel
 
-::: {.eacategory}								      |	#### Audit: FAU\_WID\_EXT.2
-Guidance									      <
+The evaluator shall verify that the [TSS](#abbr_TSS) includes a list of		      |	#### Audit: FAU\_WID\_EXT.2
+available containment methods on the [TSF](#abbr_TSF) and how to		      <
+configure them.									      <
+
+::: {.eacategory}								      |	The following actions should be auditable if FAU\_GEN Security Audit
+Guidance									      |	Data Generation is included in the [PP](#abbr_PP)/[ST](#abbr_ST):
 :::										      <
 
-There are no operational guidance activities for this [SFR](#abbr_SFR).		      |	The following actions should be auditable if FAU\_GEN Security Audit
-										      >	Data Generation is included in the [PP](#abbr_PP)/[ST](#abbr_ST):
-										      >
-										      >	-   Sensor wireless transmission capabilities
-										      >
-										      >	#### FAU\_WID\_EXT.2 Wireless Intrusion Detection - Passive Information Flow Monitori
+There are no operational guidance activities for this [SFR](#abbr_SFR).		      |	-   Sensor wireless transmission capabilities
 
-::: {.eacategory}								      |	::: {style="margin-left: 1em;"}
-Tests										      |	Hierarchical to: No other components.
+::: {.eacategory}								      |	#### FAU\_WID\_EXT.2 Wireless Intrusion Detection - Passive Information Flow Monitori
+Tests										      |
+										      >	::: {style="margin-left: 1em;"}
+										      >	Hierarchical to: No other components.
 										      >
 										      >	Dependencies to: No dependencies.
 										      >
@@ -4781,16 +4812,14 @@ perform the following test for each method.					      |
 										      >
 										      >	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
-										      >
-										      >	Dependencies to: No dependencies.
 
--   **Test 1:**									      |	#### FAU\_WID\_EXT.3.1 {#ext-comp-FAU_WID_EXT.3.1}
+-   **Test 1:**									      |	Dependencies to: No dependencies.
     -   **Step 1:** Deploy a non-allowlisted [AP](#abbr_AP) and connect		      |
-        to the protected wired infrastructure via wire (make sure it		      |	The [TSF](#abbr_TSF) shall detect the presence of network devices that
-        gets classified as rogue, or manually classify as such).		      |	operate in the following RF bands: \[**selection**: *3.6 GHz*, *60 GHz*,
-    -   **Step 2:** Connect an allowlisted [EUD](#abbr_EUD) to the		      |	*sub-GHz (0-900 MHz)*, *all cellular bands*\].
-        [AP](#abbr_AP).								      <
-    -   **Step 3:** Verify that [TSF](#abbr_TSF) generates an alert,		      <
+        to the protected wired infrastructure via wire (make sure it		      |	#### FAU\_WID\_EXT.3.1 {#ext-comp-FAU_WID_EXT.3.1}
+        gets classified as rogue, or manually classify as such).		      |
+    -   **Step 2:** Connect an allowlisted [EUD](#abbr_EUD) to the		      |	The [TSF](#abbr_TSF) shall detect the presence of network devices that
+        [AP](#abbr_AP).								      |	operate in the following RF bands: \[**selection**: *3.6 GHz*, *60 GHz*,
+    -   **Step 3:** Verify that [TSF](#abbr_TSF) generates an alert,		      |	*sub-GHz (0-900 MHz)*, *all cellular bands*\].
         breaks the connection of the allowlisted [EUD](#abbr_EUD) from		      <
         the rogue [AP](#abbr_AP), and contains the rogue [AP](#abbr_AP).	      <
 :::											:::
@@ -5011,7 +5040,7 @@ Tests										      |
 										      >	locations receive traffic from the [MAC](#abbr_MAC) addresses of
 										      >	non-allowlisted EUDs within an Authorized administrator-configurable
 										      >	timeframe based on distance between sensors.
-										      >	:::
+:::											:::
 :::											:::
 										      >
 										      >	### C.2.1.9 FAU\_WIP\_EXT Wireless Intrusion Prevention {#ext-comp-FAU_WIP_EXT .index
@@ -5063,29 +5092,29 @@ Tests										      |
 										      >	by the [TSF](#abbr_TSF) using the following methods: \[**selection**:
 										      >	*wireless containment*, *wire-side containment of an unauthorized
 										      >	[AP](#abbr_AP) connected to the internal corporate wired network*\].
-:::											:::
+										      >	:::
 :::											:::
 
 Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level= |	Appendix D - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level=
 ==============================================						==============================================
 
-This appendix lists requirements that should be considered satisfied by		      |	  ------------------------------------------------- ---------------------------------
-products successfully evaluated against this Protection Profile.		      |	  Requirement                                       Rationale for Satisfaction
-However, these requirements are not featured explicitly as SFRs and		      |	  FDP\_IFF.1 - Information Flow Control Functions   [CC](#abbr_CC) Part 2 specifies F
-should not be included in the ST. They are not included as standalone		      |	  ------------------------------------------------- ---------------------------------
-SFRs because it would increase the time, cost, and complexity of		      <
-evaluation. This approach is permitted by [\[CC\]](#bibCC) Part 1, **8.2	      <
-Dependencies between components**.						      <
-										      <
-This information benefits systems engineering activities which call for		      <
-inclusion of particular security controls. Evaluation against the		      <
-Protection Profile provides evidence that these controls are present and	      <
-have been evaluated.								      <
-										      <
-  ------------------------------------------------------------ ---------------------- <
-  Requirement                                                  Rationale for Satisfac <
-  [FDP\_IFC.1](#FDP_IFC.1) - Subset Information Flow Control   [CC](#abbr_CC) Part 2  <
-  ------------------------------------------------------------ ---------------------- <
+This appendix lists requirements that should be considered satisfied by			This appendix lists requirements that should be considered satisfied by
+products successfully evaluated against this Protection Profile.		      |	products successfully evaluated against this Module. These requirements
+However, these requirements are not featured explicitly as SFRs and		      |	are not featured explicitly as [SFRs](#abbr_SFR) and should not be
+should not be included in the ST. They are not included as standalone		      |	included in the [ST](#abbr_ST). They are not included as standalone
+SFRs because it would increase the time, cost, and complexity of		      |	[SFRs](#abbr_SFR) because it would increase the time, cost, and
+evaluation. This approach is permitted by [\[CC\]](#bibCC) Part 1, **8.2	      |	complexity of evaluation. This approach is permitted by [\[CC\]](#bibCC)
+Dependencies between components**.						      |	Part 1, 8.2 Dependencies between components.
+
+This information benefits systems engineering activities which call for			This information benefits systems engineering activities which call for
+inclusion of particular security controls. Evaluation against the			inclusion of particular security controls. Evaluation against the
+Protection Profile provides evidence that these controls are present and	      |	[PP](#abbr_PP) provides evidence that these controls are present and
+have been evaluated.									have been evaluated.
+
+  ------------------------------------------------------------ ---------------------- |	  ------------------------------------------------- ---------------------------------
+  Requirement                                                  Rationale for Satisfac |	  Requirement                                       Rationale for Satisfaction
+  [FDP\_IFC.1](#FDP_IFC.1) - Subset Information Flow Control   [CC](#abbr_CC) Part 2  |	  FDP\_IFF.1 - Information Flow Control Functions   [CC](#abbr_CC) Part 2 specifies F
+  ------------------------------------------------------------ ---------------------- |	  ------------------------------------------------- ---------------------------------
 
 Appendix B - Allocation of Requirements in Distributed TOEs {#allocation .indexable d |	Appendix E - Allocation of Requirements in Distributed TOEs {#allocation .indexable d
 ===========================================================				===========================================================
