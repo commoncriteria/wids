@@ -61,9 +61,11 @@ implied certain tests were mandatory despite the functions being in selections
 -->
 
 
-<Module boilerplate="yes" target-products="Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS)" xmlns="https://niap-ccevs.org/cc/v1"
-  name="802.11 Wireless Intrusion Detection/Prevention Systems"
-  xmlns:h="http://www.w3.org/1999/xhtml">
+<Module boilerplate="yes" target-products="Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS)"
+	name="802.11 Wireless Intrusion Detection/Prevention Systems"
+	xmlns="https://niap-ccevs.org/cc/v1"
+	xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:sec="https://niap-ccevs.org/cc/v1/section">
   <PPReference>
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
@@ -80,8 +82,8 @@ implied certain tests were mandatory despite the functions being in selections
       <subject>Initial Release - PP-Module for NDcPP</subject>
     </entry>
   </RevisionHistory> 
-  <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview"> This Protection Profile Module (PP-Module) describes
+  <sec:Introduction>
+    <sec:Overview> This Protection Profile Module (PP-Module) describes
       security requirements for a 802.11 Wireless Intrusion Detection System (WIDS) defined to be an
       IEEE 802.11 network intrusion detection product located at the edge of a private network that
       can collect, inspect, and analyze real-time network traffic and alert the administrator of
@@ -100,7 +102,7 @@ implied certain tests were mandatory despite the functions being in selections
       A TOE that conforms to a PP-Configuration containing this PP-Module must be a 'Distributed TOE' as defined in the NDcPP. 
       The expectation for this PP-Module is that a WIDS must include distributed sensor nodes to ensure that the full physical range of a wireless network
       to ensure that user interactions with the network cannot evade detection.
-    </section>
+    </sec:Overview>
     <tech-terms>
       <term abbr="AES" full="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point"> A device that provides the network interface that enables
@@ -131,7 +133,7 @@ implied certain tests were mandatory despite the functions being in selections
       <term abbr="WPA" full="WLAN Protected Access"/>
     </tech-terms>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      <subsection title="TOE Boundary" id="TOEboundary"> 
+      <section title="TOE Boundary" id="TOEboundary"> 
         
         This PP-Module specifically addresses
         WIDS/WIPS. A conformant WIDS is a product that can monitor, collect, inspect, and analyze
@@ -144,7 +146,7 @@ implied certain tests were mandatory despite the functions being in selections
         Conformant TOEs must use a secure communication path(s) between WIDS/WIPS components.
         <h:p/> A WIDS/WIPS can be Integrated (be part of the WLAN infrastructure) or
         Standalone (independent from WLAN) architecture depending on vendor implementation. The two
-        different architectures are illustrated in <figref ref-id="toe"/> below. The TOE
+        different architectures are illustrated in <xref to="toe"/> below. The TOE
         boundary is indicated by the yellow box.
         <h:p/> A WIDS/WIPS is expected to inspect layers 1 and 2 network traffic, per the
         OSI network model, and monitor wireless frames in the RF spectrum utilized by IEEE 802.11 a,
@@ -159,7 +161,7 @@ implied certain tests were mandatory despite the functions being in selections
         provided with (or learns/creates) a definition of expected/typical traffic patterns, such
         that it’s able to detect and react to anomalous (unexpected/atypical) traffic patterns.<h:p/>
         <figure entity="images/TOE.jpg" title="General TOE" id="toe"/>
-      </subsection>
+      </section>
     </section>
     <!-- NIAP: Do we have to have a use case? Todo: Need to either add a use case or delete this section -->
      
@@ -175,30 +177,30 @@ implied certain tests were mandatory despite the functions being in selections
         </usecase>
       </usecases>  
       </section>   
-  </chapter>
+  </sec:Introduction>
 
-  <chapter title="Conformance Claims" id="ConformanceClaims">
-    <cclaims>
-      <cclaim title="Conformance Statement">
-        <description> This PP-Module inherits exact conformance as required from the specified
-          Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based
-          SFRs, and Optional SFRs (dated May 2017).<h:p/>
-          The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module: <h:ul>
-            <h:li>PP-Module for Virtual Private Network (VPN) Gateways,  Version 1.1</h:li>
-          </h:ul>
+  <sec:Conformance_Claims/>
+  <!--   <cclaims> -->
+  <!--     <cclaim title="Conformance Statement"> -->
+  <!--       <description> This PP-Module inherits exact conformance as required from the specified -->
+  <!--         Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based -->
+  <!--         SFRs, and Optional SFRs (dated May 2017).<h:p/> -->
+  <!--         The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module: <h:ul> -->
+  <!--           <h:li>PP-Module for Virtual Private Network (VPN) Gateways,  Version 1.1</h:li> -->
+  <!--         </h:ul> -->
           
-        </description>
-      </cclaim>
-      <cclaim title="CC Conformance Claims">
-        <description>This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common
-          Criteria Version 3.1, Release 5 [CC]. </description>
-      </cclaim>
-      <cclaim title="Package Claims">
-        <description> This PP-Module does not claim conformance to any packages.</description>
-      </cclaim>
-    </cclaims>
-  </chapter>
-  <chapter title="Security Problem Description" id="spd"> WIDS address a range of security threats
+  <!--       </description> -->
+  <!--     </cclaim> -->
+  <!--     <cclaim title="CC Conformance Claims"> -->
+  <!--       <description>This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common -->
+  <!--         Criteria Version 3.1, Release 5 [CC]. </description> -->
+  <!--     </cclaim> -->
+  <!--     <cclaim title="Package Claims"> -->
+  <!--       <description> This PP-Module does not claim conformance to any packages.</description> -->
+  <!--     </cclaim> -->
+  <!--   </cclaims> -->
+  <!-- </chapter> -->
+  <sec:Security_Problem_Description> WIDS address a range of security threats
     related to detection of and reaction to potentially malicious WLAN traffic. The malicious
     traffic may pose a threat to one or more endpoints on the monitored networks, to the network
     infrastructure, or to the TOE itself. Attacks against a WLAN could compromise the
@@ -319,9 +321,8 @@ implied certain tests were mandatory despite the functions being in selections
         </assumption>
       </assumptions>
     </section>
-    <section title="Organizational Security Policies" id="osp"> An organization deploying the TOE is
-      expected to satisfy the organizational security policy listed below in addition to all
-      organizational security policies defined by the claimed Base-PP. <OSPs>
+    <section title="Organizational Security Policies" id="osp"> 
+      <OSPs>
         <OSP name="P.ANALYZE">
           <description>Analytical processes and information to derive conclusions about potential
             intrusions must be applied to WIDS data and appropriate response actions
@@ -335,8 +336,8 @@ implied certain tests were mandatory despite the functions being in selections
         </OSP>
       </OSPs>
     </section>
-  </chapter>
-  <chapter title="Security Objectives" id="obj">
+  </sec:Security_Problem_Description>
+  <sec:Security_Objectives>
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <!-- NIAP: Make sure new SFRs are mapped to SOs -->
       <SOs>
@@ -488,13 +489,14 @@ implied certain tests were mandatory despite the functions being in selections
     <section title="Security Objectives Rationale" id="SOR">
       <!-- NOTE: This section should remain empty and is populated from the rationale tags in the previous sections.  -->
     </section>
-  </chapter>
-  <chapter title="Security Requirements" id="sfrs">
-    <base-pp version="2.2e" name="Network Device" product="Network Device" short="ND"
-      url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=447&amp;id=447" xmlurl="test"><cPP/>
+  </sec:Security_Objectives>
+  <sec:Security_Requirements>
+    <base-pp version="2.2e" name="Network Device" product="Network Device" short="ND" id="b-nd">
+      <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=447&amp;id=447"></url>
+      <cPP/>
       <modified-sfrs>
                 
-        <subsection title="Security Audit (FAU)" id="ss-mod-fau">
+        <section title="Security Audit (FAU)" id="ss-mod-fau">
           
           <f-component cc-id="fau_gen_ext.1" name="Security Audit Data Generation for Distributed TOE Components"> 
             <consistency-rationale>This PP-Module mandates the inclusion of this selection-based SFR because a TOE that conforms to this PP-Module will always be deployed in a configuration that requires this SFR to be claimed.</consistency-rationale>
@@ -535,8 +537,8 @@ implied certain tests were mandatory despite the functions being in selections
             </f-element>  
           </f-component>
           
-        </subsection>
-        <subsection title="Communications (FCO)" id="ss-mod-fco">
+        </section>
+        <section title="Communications (FCO)" id="ss-mod-fco">
           <f-component cc-id="fco_cpc_ext.1" name="Communication Partner Control"> 
             <consistency-rationale>This PP-Module mandates the inclusion of this optional SFR because it is required to implement functionality required by this PP-Module.</consistency-rationale>
             <f-element id="fel-admin-pair-enable">
@@ -567,8 +569,8 @@ implied certain tests were mandatory despite the functions being in selections
               </aactivity>
               </f-element>  
           </f-component>
-        </subsection>
-        <subsection title="Protection of the TSF (FPT)" id="ss-mod-fpt">
+        </section>
+        <section title="Protection of the TSF (FPT)" id="ss-mod-fpt">
           <f-component cc-id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection"> <!-- NIAP: So now that we have added DTLS back it, this is no longer modified from how it is in ND. It is optional in ND, but needs to be mandatory for WIDS. -->
             <consistency-rationale>This PP-Module mandates the inclusion of this optional SFR because it is required to implement functionality required by this PP-Module.</consistency-rationale>
             <f-element id="fel-protect-tsf-dit">
@@ -596,8 +598,8 @@ implied certain tests were mandatory despite the functions being in selections
               </aactivity>
             </f-element>
           </f-component>
-        </subsection>
-        <subsection title="Trusted Paths/Channels (FTP)" id="ss-mod-ftp">
+        </section>
+        <section title="Trusted Paths/Channels (FTP)" id="ss-mod-ftp">
           <f-component cc-id="ftp_itc.1" name="Inter-TSF trusted channel"> <!-- DONE -->
             <consistency-rationale>This PP-Module refines the Base-PP SFR to add a selection for a specific external entity that may be applicable to a TOE that conforms to this PP-Module.</consistency-rationale>
             <f-element id="fel-sec-chan-how">
@@ -663,7 +665,7 @@ implied certain tests were mandatory despite the functions being in selections
               </aactivity>
             </f-element>
           </f-component>
-        </subsection>
+        </section>
       </modified-sfrs>
       <additional-sfrs/>
       <con-toe> 
@@ -674,7 +676,7 @@ implied certain tests were mandatory despite the functions being in selections
       <con-op-en/>
     </base-pp>
     <man-sfrs>
-      <subsection title="Security Audit (FAU)" id="ss-man-fau">
+      <section title="Security Audit (FAU)" id="ss-man-fau">
         <f-component cc-id="fau_arp.1" name="Security Alarms"> <!-- DONE -->
           <consistency-rationale>This SFR defines operations to be performed on collected WIDS data, which is collected using an external interface defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <f-element id="fel-arp">
@@ -758,7 +760,7 @@ implied certain tests were mandatory despite the functions being in selections
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [not specified] level of audit;</h:li>
-                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<ctr-ref ref-id="auditWids"/>);</h:i></h:li>
+                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<xref to="auditWids"/>);</h:i></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i>].</h:li>
               </h:ol>
               <h:table>
@@ -810,11 +812,11 @@ implied certain tests were mandatory despite the functions being in selections
               </h:table>
               <ctr ctr-type="Table" id="auditWids">: Auditable Events</ctr>
             </title>
-            <note role="application"> The auditable events defined in <ctr-ref ref-id="auditWids"/>
+            <note role="application"> The auditable events defined in <xref to="auditWids"/>
               are for the SFRs that are explicitly defined in this PP-Module and are intended to
               extend FAU_GEN.1 in the Base-PP. The events in the Auditable Events table should
               be combined with those of the NDcPP in the context of a conforming Security
-              Target.<h:p/> The Auditable Events (<ctr-ref ref-id="auditWids"/>) includes
+              Target.<h:p/> The Auditable Events (<xref to="auditWids"/>) includes
               optional and objective SFRs. The auditing of optional and objective SFRs is only
               required if that SFR is included in the ST. <h:p/> Per FAU_STG_EXT.1 in the
               Base-PP, the TOE must support transfer of the audit data to an external IT entity
@@ -827,7 +829,7 @@ implied certain tests were mandatory despite the functions being in selections
                   applicable);</h:li>
                 <h:li>For each audit event type, based on the auditable event definitions of the
                   functional components included in the PP/ST, [<h:i>auditable events listed in
-                    Auditable Events table (<ctr-ref ref-id="auditWids"/>)</h:i>]. </h:li>
+                    Auditable Events table (<xref to="auditWids"/>)</h:i>]. </h:li>
               </h:ol>
             </title>
             <note role="application"> The subject identity in this case is the allowlisted inventory
@@ -1815,9 +1817,9 @@ implied certain tests were mandatory despite the functions being in selections
             </aactivity>
           </f-element>
         </f-component>        
-      </subsection>
+      </section>
 
-      <subsection title="User Data Protection (FDP)" id="ss-man-fdp">
+      <section title="User Data Protection (FDP)" id="ss-man-fdp">
         <f-component cc-id="fdp_ifc.1" name="Subset Information Flow Control">
           <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <f-element id="fel-detect-frame-types">
@@ -1863,9 +1865,9 @@ implied certain tests were mandatory despite the functions being in selections
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </section>
 
-      <subsection title="Security Management (FMT)" id="ss-man-fmt">
+      <section title="Security Management (FMT)" id="ss-man-fmt">
         <f-component cc-id="fmt_smf.1" name="Specification of Management Functions (WIDS)"
           iteration="WIDS">
           <consistency-rationale>This SFR iterates the FMT_SMF.1 SFR defined in the Base-PP to define management functions for the functionality that is specific to this PP-Module.</consistency-rationale>
@@ -1975,10 +1977,10 @@ The evaluator shall examine the operational guidance to verify that it
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </section>
     </man-sfrs>
     <opt-sfrs>
-      <subsection title="Security Audit (FAU)" id="ss-opt-fau">
+      <section title="Security Audit (FAU)" id="ss-opt-fau">
 <!--         <ext-comp-def title="Wireless Spectrum Monitoring" fam-id="FAU_WID_EXT">
           <fam-behavior/>
         </ext-comp-def>  -->
@@ -2051,15 +2053,15 @@ The evaluator shall examine the operational guidance to verify that it
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </section>
     </opt-sfrs>
     <sel-sfrs>
-      <subsection title="Security Audit (FAU)" id="ss-sel-fau">
+      <section title="Security Audit (FAU)" id="ss-sel-fau">
         <ext-comp-def title="Anomaly-Based Intrusion Detection" fam-id="FAU_ANO_EXT">
           <fam-behavior>This family defines requirements for detection of malicious network activity based on anomalous behavior.</fam-behavior>
         </ext-comp-def>
         <f-component cc-id="fau_ano_ext.1" name="Anomaly-Based Intrusion Detection">
-          <selection-depends req="fel-ids-meth" ids="anoBased"/>
+          <depends on="anoBased"/>
           <consistency-rationale>This SFR defines operations to be performed on collected WIDS data, which is collected using an external interface defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <comp-lev>requires the TSF to define how it determines anomalous network traffic that may be indicative of malicious activity.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul>
@@ -2121,7 +2123,7 @@ The evaluator shall examine the operational guidance to verify that it
           <fam-behavior>This family defines requirements for detection of malicious network activity based on traffic signatures.</fam-behavior>
         </ext-comp-def>
         <f-component cc-id="fau_sig_ext.1" name="Signature-Based Intrusion Detection">
-          <selection-depends req="fel-ids-meth" ids="sigBased"/>
+          <depends on="sigBased"/>
           <consistency-rationale>This SFR defines operations to be performed on collected WIDS data, which is collected using an external interface defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <comp-lev>requires the TSF to support the definition of traffic signatures that can be compared to observed network traffic for the purpose of identifying potential malicious activity.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul>
@@ -2164,7 +2166,7 @@ The evaluator shall examine the operational guidance to verify that it
           name="Protected Audit Event Storage (Packet Captures)">
           <!-- Later_TODO: Look at 1.2 in ND -->
           <!-- This component is copied from NDcPP and iterated to make a distintion between audit records and PCAPs -->
-          <selection-depends req="fel-arp" ids="pcap"/>
+          <depends on="pcap"/>
           <!-- fau_arp.1.1 -->
           <consistency-rationale>This SFR iterates the FAU_STG_EXT.1 SFR defined in the Base-PP for storage of audit data and applies it to storage of packet captures.</consistency-rationale>
           <comp-lev/>
@@ -2187,7 +2189,7 @@ The evaluator shall examine the operational guidance to verify that it
             <title>The TSF shall be able to store generated <h:b>packet captures</h:b> on the TOE itself. In addition <selectables linebreak="yes"> 
               <selectable>The TOE shall be a distributed TOE that stores <h:b>packet capture</h:b> data on the following TOE components: <assignable>identification of TOE components</assignable></selectable> 
               <selectable>The TOE shall be a distributed TOE with storage of <h:b>packet capture</h:b> data provided externally for the following TOE components: 
-                <assignable>list of TOE components that do not store <h:b>packet capture</h:b> data locally and the other TOE components to which they transmit their generated <h:b>packet capture</h:b> data</assignable></selectable>
+                <assignable>list of TOE components that do not store packet capture data locally and the other TOE components to which they transmit their generated packet capture data</assignable></selectable>
             </selectables>.
             </title>
           </f-element>
@@ -2195,7 +2197,7 @@ The evaluator shall examine the operational guidance to verify that it
             <title> The TSF shall <selectables>
               <selectable>drop new <h:b>packet capture</h:b> data</selectable>
               <selectable>overwrite previous <h:b>packet captures</h:b> according to the following rule:
-                <assignable>rule for overwriting previous <h:b>packet captures</h:b></assignable></selectable>
+                <assignable>rule for overwriting previous packet captures</assignable></selectable>
                 <selectable><assignable>other action</assignable></selectable>
             </selectables> when the local storage space for <h:b>packet capture</h:b> data is full. </title>
             <aactivity>
@@ -2232,11 +2234,11 @@ The evaluator shall examine the operational guidance to verify that it
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </section>
     </sel-sfrs>
     <obj-sfrs>
 
-      <subsection title="Security Audit (FAU)" id="ss-obj-fau">
+      <section title="Security Audit (FAU)" id="ss-obj-fau">
         <!-- Originally I thought we needed to add this SFR, most likely do not need it, b/c ND cPP covers it.  -->
         <!-- <f-component id="fau_gen.1" name="Device Configuration - Exporting Event Data">         
           <consistency-rationale/>
@@ -2537,9 +2539,9 @@ The evaluator shall examine the operational guidance to verify that it
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </section>
 
-      <subsection title="Protection of the TSF (FPT)" id="ss-obj-fpt">
+      <section title="Protection of the TSF (FPT)" id="ss-obj-fpt">
         <f-component cc-id="fpt_fls.1" name="Basic Internal TSF Data Transfer Protection">
           <consistency-rationale>This SFR defines preservation of a secure state in the event that a failure condition is detected. 
             The Base-PP does not define an SFR for this behavior but this SFR mitigates the T.SECURITY_FUNCTIONALITY_FAILURE threat defined in the Base-PP, 
@@ -2569,9 +2571,10 @@ The evaluator shall examine the operational guidance to verify that it
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </section>
     </obj-sfrs>
-  </chapter>
+    <impl-dep-sfrs/>
+  </sec:Security_Requirements>
 
   <appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
     <h:table>
@@ -2752,7 +2755,6 @@ The evaluator shall examine the operational guidance to verify that it
     </entry>
     
   </bibliography>
-  <acronyms/>
 </Module>
 <!-- 
  20190930     
