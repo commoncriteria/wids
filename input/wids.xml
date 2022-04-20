@@ -916,11 +916,15 @@ The TOE must be able to react, as configured by the administrators, to
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies.</dependencies>
           <f-element id="fel-ids-meth">
-            <title> The TSF shall provide the following methods of intrusion detection <selectables>
+            <title> The TSF shall detect instrusions using<selectables>
                 <selectable id="anoBased">anomaly-based</selectable>
                 <selectable id="sigBased">signature-based</selectable>
                 <selectable><assignable>other detection method</assignable></selectable>
-              </selectables>. </title>
+              </selectables> methods. </title>
+	      <ext-comp-def-title>            
+		<title> The TSF shall detect instrusions using
+		<assignable>detection strategies</assignable>
+              methods. </title></ext-comp-def-title>
             <note role="application">
 	      <h:p>
 		At least one detection method must be selected. If multiple
@@ -2070,6 +2074,11 @@ The evaluator shall examine the operational guidance to verify that it
                 <selectable id="cell">all cellular bands</selectable>
               </selectables>.
             </title>
+	    <ext-comp-def-title>
+              <title> The TSF shall detect the presence of network devices that operate in the
+              following RF bands: <assignable>list of RF bands</assignable>.
+              </title>
+	    </ext-comp-def-title>
             <note role="application"> This SFR refers to Non-WLAN (IEEE 802.11 a, b, g, n, and ac)
               network devices that operate in the specified frequencies. There is an understanding that this 
               capability requires a TOE to use specialized, licensed radio systems. This SFR will allow for the introduction of an
