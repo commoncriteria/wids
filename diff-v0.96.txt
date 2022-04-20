@@ -1479,14 +1479,14 @@ the allowlisted inventory item. ]{.note}						the allowlisted inventory item. ]{
 ::: {.activity_pane .hide}							      <
 ::: {.activity_pane_header}							      <
 [[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      <
-:::											:::
+:::										      <
 										      <
 ::: {.activity_pane_body}							      <
 										      <
 ::: {.eacategory}								      <
 [TSS](#abbr_TSS)								      <
-:::											:::
-
+:::										      <
+										      <
 There are no [TSS](#abbr_TSS) evaluation activities for this			      <
 [SFR](#abbr_SFR).								      <
 										      <
@@ -1513,9 +1513,9 @@ Note that the testing here can be accomplished in conjunction with the		      <
 testing of the security mechanisms directly.					      <
 :::										      <
 :::										      <
-:::										      <
-:::										      <
-										      <
+:::											:::
+:::											:::
+
 This family defines requirements for supported methods of intrusion		      <
 detection.									      <
 										      <
@@ -1536,9 +1536,9 @@ are identified. There are no auditable events foreseen. No dependencies.	      <
 :::											:::
 
 ::: {.reqdesc}										::: {.reqdesc}
-The [TSF](#abbr_TSF) shall provide the following methods of intrusion			The [TSF](#abbr_TSF) shall provide the following methods of intrusion
-detection \[**selection**: *anomaly-based*, *signature-based*,				detection \[**selection**: *anomaly-based*, *signature-based*,
-*\[**assignment**: [other detection method]{.assignable-content}\]*\].			*\[**assignment**: [other detection method]{.assignable-content}\]*\].
+The [TSF](#abbr_TSF) shall provide the following methods of intrusion		      |	The [TSF](#abbr_TSF) shall detect instrusions using\[**selection**:
+detection \[**selection**: *anomaly-based*, *signature-based*,			      |	*anomaly-based*, *signature-based*, *\[**assignment**: [other detection
+*\[**assignment**: [other detection method]{.assignable-content}\]*\].		      |	method]{.assignable-content}\]*\] methods.
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ At least one detection method must		      |	[Application Note: ]{.note-header}[ ]{.note}
@@ -1556,13 +1556,13 @@ If anomaly-based detection is selected, then						If anomaly-based detection is 
 ::: {.activity_pane .hide}							      <
 ::: {.activity_pane_header}							      <
 [[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      <
-:::											:::
+:::										      <
 										      <
 ::: {.activity_pane_body}							      <
 										      <
 ::: {.eacategory}								      <
 [TSS](#abbr_TSS)								      <
-:::											:::
+:::										      <
 										      <
 The evaluator shall verify that the [TSS](#abbr_TSS) includes which		      <
 intrusion detection method(s) the [TOE](#abbr_TOE) utilizes. If multiple	      <
@@ -1579,20 +1579,20 @@ detect such intrusions.								      <
 										      <
 ::: {.eacategory}								      <
 Tests										      <
-:::											:::
-
+:::										      <
+										      <
 Depending on the detection technique used by the [TOE](#abbr_TOE), the		      <
 evaluator shall confirm and note the existence of the capability and		      <
 test for the appropriate selection-based requirements.				      <
 :::										      <
-:::										      <
-:::										      <
-:::										      <
+:::											:::
+:::											:::
+:::											:::
 :::										      <
 										      <
 This family defines requirements for detection and inventorying of		      <
 network assets in the [TOE](#abbr_TOE)'s operational environment.		      <
-										      <
+
 ::: {#FAU_INV_EXT.1 .comp}								::: {#FAU_INV_EXT.1 .comp}
 #### FAU\_INV\_EXT.1 Environmental Inventory						#### FAU\_INV\_EXT.1 Environmental Inventory
 
@@ -1960,13 +1960,13 @@ Tests										      <
         part of the information presented on the [WIDS](#abbr_WIDS) user	      <
         interface about the APs and EUDs.					      <
 :::										      <
+:::											:::
+:::											:::
+:::											:::
 :::										      <
-:::											:::
-:::											:::
-:::											:::
-
-This family defines requirements for the format of generated reports.		      <
 										      <
+This family defines requirements for the format of generated reports.		      <
+
 ::: {#FAU_RPT_EXT.1 .comp}								::: {#FAU_RPT_EXT.1 .comp}
 #### FAU\_RPT\_EXT.1 Intrusion Detection System - Reporting Methods			#### FAU\_RPT\_EXT.1 Intrusion Detection System - Reporting Methods
 
@@ -2563,10 +2563,10 @@ Tests										      <
         [AP](#abbr_AP)\'s WPS connection threshold has been exceeded.		      <
 										      <
     \										      <
+:::											:::
+:::											:::
+:::											:::
 :::										      <
-:::											:::
-:::											:::
-:::											:::
 :::										      <
 										      <
 This family defines requirements for data collection of potentially		      <
@@ -2990,34 +2990,35 @@ comply with the SFRs.								      <
 ::: {.activity_pane_header}							      <
 [[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      <
 :::										      <
-										      <
-::: {.activity_pane_body}							      <
 
-::: {.eacategory}								      |	\"Authorized\" EUDs/APs are those that are assigned to the allowlist as
-[TSS](#abbr_TSS)								      |	defined by [FMT\_SMF.1/WIDS](#FMT_SMF.1/WIDS).
-:::										      <
-										      <
-There are no [TSS](#abbr_TSS) evaluation activities for this			      <
-[SFR](#abbr_SFR).								      <
-										      <
-::: {.eacategory}								      <
-Guidance									      <
+::: {.activity_pane_body}							      |	\"Authorized\" EUDs/APs are those that are assigned to the allowlist as
+										      >	defined by [FMT\_SMF.1/WIDS](#FMT_SMF.1/WIDS).
+
+::: {.eacategory}								      |	The \"802.11 monitoring SFP\" is a security function policy and the
+[TSS](#abbr_TSS)								      |	[SFRs](#abbr_SFR) that reference this policy describe what the policy
+:::										      |	does. The \"802.11 monitoring SFP\" is established in
+										      |	[FDP\_IFC.1](#FDP_IFC.1) and defined through
+There are no [TSS](#abbr_TSS) evaluation activities for this			      |	[FAU\_WID\_EXT.1](#FAU_WID_EXT.1), [FAU\_WID\_EXT.2](#FAU_WID_EXT.2), in
+[SFR](#abbr_SFR).								      |	addition to optional [SFRs](#abbr_SFR) [FAU\_WID\_EXT.3](#FAU_WID_EXT.3)
+										      |	and [FAU\_WID\_EXT.4](#FAU_WID_EXT.4). A vendor does not have to
+::: {.eacategory}								      |	formally define this policy, it only needs to comply with the
+Guidance									      |	[SFRs](#abbr_SFR).
 :::										      <
 										      <
 If this functionality is configurable, the evaluator shall verify that		      <
 the operational guidance provides instructions on how to configure the		      <
 [TOE](#abbr_TOE) to monitor different types of IEEE 802.11 frame types		      <
 and subtypes.									      <
-
-::: {.eacategory}								      |	The \"802.11 monitoring SFP\" is a security function policy and the
-Tests										      |	[SFRs](#abbr_SFR) that reference this policy describe what the policy
-:::										      |	does. The \"802.11 monitoring SFP\" is established in
-										      |	[FDP\_IFC.1](#FDP_IFC.1) and defined through
--   **Test 1:**									      |	[FAU\_WID\_EXT.1](#FAU_WID_EXT.1), [FAU\_WID\_EXT.2](#FAU_WID_EXT.2), in
-    -   Deploy a whitelisted [AP](#abbr_AP)/[WIDS](#abbr_WIDS)			      |	addition to optional [SFRs](#abbr_SFR) [FAU\_WID\_EXT.3](#FAU_WID_EXT.3)
-    -   Start a traffic capture from the					      |	and [FAU\_WID\_EXT.4](#FAU_WID_EXT.4). A vendor does not have to
-        [AP](#abbr_AP)/[WIDS](#abbr_WIDS) sensor				      |	formally define this policy, it only needs to comply with the
-    -   Send a set number of frames to the sensor for all IEEE 802.11 a,	      |	[SFRs](#abbr_SFR).
+										      <
+::: {.eacategory}								      <
+Tests										      <
+:::										      <
+										      <
+-   **Test 1:**									      <
+    -   Deploy a whitelisted [AP](#abbr_AP)/[WIDS](#abbr_WIDS)			      <
+    -   Start a traffic capture from the					      <
+        [AP](#abbr_AP)/[WIDS](#abbr_WIDS) sensor				      <
+    -   Send a set number of frames to the sensor for all IEEE 802.11 a,	      <
         b, g, n, ac frame types and subtypes from/to the following:		      <
         -   *authorized APs and authorized EUDs*				      <
         -   *authorized APs and unauthorized EUDs*				      <
@@ -3568,10 +3569,10 @@ Security Audit Data Generation is included in the				      <
 										      >	functionality that is specific to this [PP-Module](#abbr_PP-Module).
 										      >
 										      >	Optional [SFRs](#abbr_SFR)
-										      >
-										      >	[FAU\_WID\_EXT.3](#FAU_WID_EXT.3)
 
-No dependencies.								      |	This [SFR](#abbr_SFR) defines operations to be performed on assets in
+No dependencies.								      |	[FAU\_WID\_EXT.3](#FAU_WID_EXT.3)
+										      >
+										      >	This [SFR](#abbr_SFR) defines operations to be performed on assets in
 										      >	the [TOE](#abbr_TOE)'s operational environment, which is behavior
 										      >	defined in this [PP-Module](#abbr_PP-Module) that extends the logical
 										      >	scope of the [TOE](#abbr_TOE) beyond what the [Base-PP](#abbr_Base-PP)
@@ -3819,24 +3820,24 @@ hardware that is needed to perform this function.				      |	a wireless [AP](#ab
 										      >
 										      >	::: {.appnote}
 										      >	[Application Note: ]{.note-header}[ ]{.note}
-										      >
-										      >	It is expected that an Authorized Administrator will be responsible for
-										      >	confirming the [AP](#abbr_AP) or [EUD](#abbr_EUD) as a rogue
-										      >	[AP](#abbr_AP) or [EUD](#abbr_EUD) to initiate wireless containment.
 
-::: {.eacategory}								      |	In this [SFR](#abbr_SFR) the containment of an an unauthorized
-Tests										      |	[AP](#abbr_AP) connected to the internal corporate wired network refers
+::: {.eacategory}								      |	It is expected that an Authorized Administrator will be responsible for
+Tests										      |	confirming the [AP](#abbr_AP) or [EUD](#abbr_EUD) as a rogue
+										      >	[AP](#abbr_AP) or [EUD](#abbr_EUD) to initiate wireless containment.
+										      >
+										      >	In this [SFR](#abbr_SFR) the containment of an an unauthorized
+										      >	[AP](#abbr_AP) connected to the internal corporate wired network refers
 										      >	to an unauthorized [AP](#abbr_AP) that is physically connected (via
 										      >	wire) to the protected internal wired infrastructure.
 										      >	:::
 										      >	:::
-:::											:::
 										      >	:::
-										      >
-										      >	### A.2.2 Protection of the TSF (FPT) {#ss-obj-fpt .indexable data-level="3"}
+:::											:::
 
-The evaluator shall enable and configure dedicated spectrum analysis and	      |	::: {#FPT_FLS.1 .comp}
-test the capabilities listed in the [TSS](#abbr_TSS).				      |	#### FPT\_FLS.1 Basic Internal TSF Data Transfer Protection
+The evaluator shall enable and configure dedicated spectrum analysis and	      |	### A.2.2 Protection of the TSF (FPT) {#ss-obj-fpt .indexable data-level="3"}
+test the capabilities listed in the [TSS](#abbr_TSS).				      |
+										      >	::: {#FPT_FLS.1 .comp}
+										      >	#### FPT\_FLS.1 Basic Internal TSF Data Transfer Protection
 										      >
 										      >	::: {.element}
 										      >	::: {#FPT_FLS.1.1 .reqid}
@@ -4321,9 +4322,9 @@ library.									      <
         existing signal library.						      |
     -   **Step 3:** If existence is confirmed, verify that the			      |	#### FAU\_IDS\_EXT.1.1 {#ext-comp-FAU_IDS_EXT.1.1}
         [TSF](#abbr_TSF) can import, export, and update the existing		      |
-        signal library.								      |	The [TSF](#abbr_TSF) shall provide the following methods of intrusion
-:::										      |	detection \[**selection**: *anomaly-based*, *signature-based*,
-:::										      |	*\[**assignment**: [other detection method]{.assignable-content}\]*\].
+        signal library.								      |	The [TSF](#abbr_TSF) shall detect instrusions using \[**assignment**:
+:::										      |	[detection strategies]{.assignable-content}\] methods.
+:::										      <
 :::										      <
 :::											:::
 :::											:::
@@ -4440,8 +4441,8 @@ distant locations.]{.note}							      <
 										      >	#### Audit: FAU\_INV\_EXT.2
 										      >
 										      >	There are no auditable events foreseen.
-
-::: {.activity_pane_body}							      |	#### FAU\_INV\_EXT.2 Characteristics of Environmental Objects
+										      >
+										      >	#### FAU\_INV\_EXT.2 Characteristics of Environmental Objects
 										      >
 										      >	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
@@ -4451,23 +4452,23 @@ distant locations.]{.note}							      <
 										      >	#### FAU\_INV\_EXT.2.1 {#ext-comp-FAU_INV_EXT.2.1}
 										      >
 										      >	The [TSF](#abbr_TSF) shall detect the
-
-::: {.eacategory}								      |	-   Current RF band
-[TSS](#abbr_TSS)								      |	-   Current channel
+										      >
+										      >	-   Current RF band
+										      >	-   Current channel
 										      >	-   [MAC](#abbr_MAC) Address
 										      >	-   Received signal strength
 										      >	-   Device detection timestamps
 										      >	-   Classification of APs and EUDs
 										      >	-   \[**selection**: *\[**assignment**: [other
 										      >	    details]{.assignable-content}\]*, *no other details*\]
-										      >
-										      >	of all APs and EUDs within range of the [TOE](#abbr_TOE)\'s wireless
+
+::: {.activity_pane_body}							      |	of all APs and EUDs within range of the [TOE](#abbr_TOE)\'s wireless
 										      >	sensors.
 										      >
 										      >	#### FAU\_INV\_EXT.2.2 {#ext-comp-FAU_INV_EXT.2.2}
-										      >
-										      >	The [TSF](#abbr_TSF) shall detect the following additional details for
-										      >	all APs within range of the [TOE](#abbr_TOE)\'s wireless sensors:
+
+::: {.eacategory}								      |	The [TSF](#abbr_TSF) shall detect the following additional details for
+[TSS](#abbr_TSS)								      |	all APs within range of the [TOE](#abbr_TOE)\'s wireless sensors:
 										      >
 										      >	-   encryption
 										      >	-   number of connected EUDs.
@@ -4498,17 +4499,17 @@ simultaneously.									      |
 										      >	    [EUD](#abbr_EUD)
 										      >
 										      >	#### FAU\_INV\_EXT.3 Location of Environmental Objects
-
-::: {.eacategory}								      |	::: {style="margin-left: 1em;"}
-Guidance									      |	Hierarchical to: No other components.
+										      >
+										      >	::: {style="margin-left: 1em;"}
+										      >	Hierarchical to: No other components.
 										      >
 										      >	Dependencies to: [FAU\_INV\_EXT.2](#FAU_INV_EXT.2) Characteristics of
 										      >	Environmental Objects
 										      >
 										      >	#### FAU\_INV\_EXT.3.1 {#ext-comp-FAU_INV_EXT.3.1}
-										      >
-										      >	The [TSF](#abbr_TSF) shall detect the physical location of APs and EUDs
-										      >	to within \[**assignment**: [value equal or less than
+
+::: {.eacategory}								      |	The [TSF](#abbr_TSF) shall detect the physical location of APs and EUDs
+Guidance									      |	to within \[**assignment**: [value equal or less than
 										      >	25]{.assignable-content}\] feet of their actual location.
 										      >
 										      >	#### FAU\_INV\_EXT.3.2 {#ext-comp-FAU_INV_EXT.3.2}
@@ -4735,13 +4736,12 @@ initiate wireless containment. ]{.note}						      <
 In this [SFR](#abbr_SFR) the containment of an an unauthorized			      |	The [TSF](#abbr_TSF) shall distinguish between benign and malicious APs
 [AP](#abbr_AP) connected to the internal corporate wired network refers		      |	and EUDs based on if the APs and EUDs are authorized and
 to an unauthorized [AP](#abbr_AP) that is physically connected (via		      |	\[**selection**: *automatic detection metrics*, *no other method*\].
-wire) to the protected internal wired infrastructure.				      <
-:::										      <
+wire) to the protected internal wired infrastructure.				      |
+:::										      |	#### FAU\_WID\_EXT.1.2 {#ext-comp-FAU_WID_EXT.1.2}
 
-::: {.activity_pane .hide}							      |	#### FAU\_WID\_EXT.1.2 {#ext-comp-FAU_WID_EXT.1.2}
-::: {.activity_pane_header}							      |
-[[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      |	The [TSF](#abbr_TSF) shall provide the ability to determine if a given
-										      >	[SSID](#abbr_SSID) is authorized.
+::: {.activity_pane .hide}							      |	The [TSF](#abbr_TSF) shall provide the ability to determine if a given
+::: {.activity_pane_header}							      |	[SSID](#abbr_SSID) is authorized.
+[[ Evaluation Activity ]{.activity_pane_label}[]{.toggler}](#)			      <
 :::											:::
 
 ::: {.activity_pane_body}							      |	#### Management: FAU\_WID\_EXT.2
@@ -4764,14 +4764,14 @@ Guidance									      |	Data Generation is included in the [PP](#abbr_PP)/[ST](
 										      >	-   Sensor wireless transmission capabilities
 										      >
 										      >	#### FAU\_WID\_EXT.2 Wireless Intrusion Detection - Passive Information Flow Monitori
-										      >
-										      >	::: {style="margin-left: 1em;"}
+
+There are no operational guidance activities for this [SFR](#abbr_SFR).		      |	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
 
-There are no operational guidance activities for this [SFR](#abbr_SFR).		      |	Dependencies to: No dependencies.
-
-::: {.eacategory}								      |	#### FAU\_WID\_EXT.2.1 {#ext-comp-FAU_WID_EXT.2.1}
+::: {.eacategory}								      |	Dependencies to: No dependencies.
 Tests										      |
+										      >	#### FAU\_WID\_EXT.2.1 {#ext-comp-FAU_WID_EXT.2.1}
+										      >
 										      >	The [TSF](#abbr_TSF) shall \[**selection**: *simultaneously*,
 										      >	*nonsimultaneously*\] monitor and analyze network traffic matching the
 										      >	802.11 monitoring SFP for all channels in the following RF frequencies:
@@ -4817,16 +4817,14 @@ perform the following test for each method.					      |
 										      >
 										      >	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
-										      >
-										      >	Dependencies to: No dependencies.
 
--   **Test 1:**									      |	#### FAU\_WID\_EXT.3.1 {#ext-comp-FAU_WID_EXT.3.1}
+-   **Test 1:**									      |	Dependencies to: No dependencies.
     -   **Step 1:** Deploy a non-allowlisted [AP](#abbr_AP) and connect		      |
-        to the protected wired infrastructure via wire (make sure it		      |	The [TSF](#abbr_TSF) shall detect the presence of network devices that
-        gets classified as rogue, or manually classify as such).		      |	operate in the following RF bands: \[**selection**: *3.6 GHz*, *60 GHz*,
-    -   **Step 2:** Connect an allowlisted [EUD](#abbr_EUD) to the		      |	*sub-GHz (0-900 MHz)*, *all cellular bands*\].
-        [AP](#abbr_AP).								      <
-    -   **Step 3:** Verify that [TSF](#abbr_TSF) generates an alert,		      <
+        to the protected wired infrastructure via wire (make sure it		      |	#### FAU\_WID\_EXT.3.1 {#ext-comp-FAU_WID_EXT.3.1}
+        gets classified as rogue, or manually classify as such).		      |
+    -   **Step 2:** Connect an allowlisted [EUD](#abbr_EUD) to the		      |	The [TSF](#abbr_TSF) shall detect the presence of network devices that
+        [AP](#abbr_AP).								      |	operate in the following RF bands: \[**assignment**: [list of RF
+    -   **Step 3:** Verify that [TSF](#abbr_TSF) generates an alert,		      |	bands]{.assignable-content}\].
         breaks the connection of the allowlisted [EUD](#abbr_EUD) from		      <
         the rogue [AP](#abbr_AP), and contains the rogue [AP](#abbr_AP).	      <
 :::											:::
@@ -4965,41 +4963,40 @@ failure conditions occur. ]{.note}						      <
 										      >	purpose of identifying potential malicious activity.
 
 ::: {.eacategory}								      |	#### Management: FAU\_SIG\_EXT.1
-[TSS](#abbr_TSS)								      |
-:::										      |	The following actions could be considered for the management functions
-										      >	in FMT:
+[TSS](#abbr_TSS)								      <
+:::										      <
 
-The evaluator shall review the [TSS](#abbr_TSS) section to determine		      |	-   Definition of attack signatures
-that the [TOE](#abbr_TOE)'s implementation of the fail secure			      <
+The evaluator shall review the [TSS](#abbr_TSS) section to determine		      |	The following actions could be considered for the management functions
+that the [TOE](#abbr_TOE)'s implementation of the fail secure			      |	in FMT:
 functionality is documented. The evaluator shall examine the			      <
 [TSS](#abbr_TSS) section to ensure that all failure modes specified in		      <
 the [ST](#abbr_ST) are described.						      <
 
-::: {.eacategory}								      |	#### Audit: FAU\_SIG\_EXT.1
+::: {.eacategory}								      |	-   Definition of attack signatures
 Guidance									      <
 :::										      <
 
-The evaluator shall review the operational guidance to verify that it		      |	There are no auditable events foreseen.
+The evaluator shall review the operational guidance to verify that it		      |	#### Audit: FAU\_SIG\_EXT.1
 identifies the potential [TOE](#abbr_TOE) failures, how the			      <
 [TSF](#abbr_TSF) preserves a secure state following these failures, and		      <
 any actions that are required to restore the [TOE](#abbr_TOE) to normal		      <
 operation following the transition to a failure state.				      <
 
-::: {.eacategory}								      |	#### FAU\_SIG\_EXT.1 Signature-Based Intrusion Detection
-Tests										      <
-:::										      <
-
--   **Test 1:** For each failure mode specified in the [ST](#abbr_ST),		      |	::: {style="margin-left: 1em;"}
-    the evaluator shall ensure that the [TOE](#abbr_TOE) attains a		      |	Hierarchical to: No other components.
-    secure state after initiating each failure mode type.			      |
-										      >	Dependencies to: [FAU\_IDS\_EXT.1](#FAU_IDS_EXT.1) Intrusion Detection
-										      >	System - Intrusion Detection Methods
+::: {.eacategory}								      |	There are no auditable events foreseen.
+Tests										      |
+:::										      |	#### FAU\_SIG\_EXT.1 Signature-Based Intrusion Detection
 										      >
+										      >	::: {style="margin-left: 1em;"}
+										      >	Hierarchical to: No other components.
+
+-   **Test 1:** For each failure mode specified in the [ST](#abbr_ST),		      |	Dependencies to: [FAU\_IDS\_EXT.1](#FAU_IDS_EXT.1) Intrusion Detection
+    the evaluator shall ensure that the [TOE](#abbr_TOE) attains a		      |	System - Intrusion Detection Methods
+    secure state after initiating each failure mode type.			      |
 										      >	#### FAU\_SIG\_EXT.1.1 {#ext-comp-FAU_SIG_EXT.1.1}
 										      >
 										      >	The [TSF](#abbr_TSF) shall support user-defined and customizable attack
 										      >	signatures.
-:::											:::
+										      >	:::
 :::											:::
 										      >
 										      >	### C.2.1.8 FAU\_MAC\_EXT Device Impersonation {#ext-comp-FAU_MAC_EXT .indexable data
@@ -5102,7 +5099,7 @@ Tests										      <
 										      >	by the [TSF](#abbr_TSF) using the following methods: \[**selection**:
 										      >	*wireless containment*, *wire-side containment of an unauthorized
 										      >	[AP](#abbr_AP) connected to the internal corporate wired network*\].
-										      >	:::
+:::											:::
 :::											:::
 
 Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level= |	Appendix D - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level=

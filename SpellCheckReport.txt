@@ -50,6 +50,7 @@ output/wids-release-linkable.html: eminations
 output/wids-release-linkable.html: exisiting
 output/wids-release-linkable.html: geo
 output/wids-release-linkable.html: inadvertant
+output/wids-release-linkable.html: instrusions
 output/wids-release-linkable.html: integrations
 output/wids-release-linkable.html: jammer
 output/wids-release-linkable.html: nonallowlisted
@@ -94,6 +95,7 @@ output/wids-release.html: doesn
 output/wids-release.html: exisiting
 output/wids-release.html: geo
 output/wids-release.html: inadvertant
+output/wids-release.html: instrusions
 output/wids-release.html: integrations
 output/wids-release.html: jammer
 output/wids-release.html: nonallowlisted
@@ -191,6 +193,7 @@ output/wids.html: eminations
 output/wids.html: exisiting
 output/wids.html: geo
 output/wids.html: inadvertant
+output/wids.html: instrusions
 output/wids.html: integrations
 output/wids.html: jammer
 output/wids.html: nonallowlisted
