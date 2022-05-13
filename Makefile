@@ -3,5 +3,5 @@
 
 TRANS?=transforms
 
-DIFF_TAGS="v0.96"
+DIFF_TAGS="v1.0"
 include $(TRANS)/module/Module.make
