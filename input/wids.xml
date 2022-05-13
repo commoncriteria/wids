@@ -20,9 +20,6 @@
   - Distributed TOE - what do we need to do for ND?
   - Optional objectives
   - Do all new SFRs map to SOs
-
-  Kevin
-  - ND cPP is not in XML/github - how do I reference it?
  
 
 -->
@@ -68,14 +65,19 @@ implied certain tests were mandatory despite the functions being in selections
 	xmlns:sec="https://niap-ccevs.org/cc/v1/section">
   <PPReference>
     <ReferenceTable>
-      <PPVersion>1.0</PPVersion>
+      <PPVersion>2.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-09-30</PPPubDate>
+      <PPPubDate>2022-09-30</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
     </ReferenceTable>
   </PPReference>
   
   <RevisionHistory>
+    <entry>
+      <version>2.0</version>
+      <date>2022-09-30</date>
+      <subject>Added 6 GHz spectrum slice</subject>
+    </entry>
     <entry>
       <version>1.0</version>
       <date>2020-09-30</date>
