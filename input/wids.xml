@@ -94,7 +94,7 @@ implied certain tests were mandatory despite the functions being in selections
       policy violations. This PP-Module is intended to provide a minimal baseline set of
       requirements that are targeted at mitigating well defined and described threats.
     </h:p><h:p> 
-      This PP-Module contains optional requirements for a Wireless Intrustion
+      This PP-Module contains optional requirements for a Wireless Intrusion
       Protection System (WIPS), a security product that in addition to the 802.11 WIDS capability,
       provides network security administrators with the additional ability to react in real-time to
       potentially malicious wireless (IEEE 802.11) network traffic. 
@@ -110,12 +110,15 @@ implied certain tests were mandatory despite the functions being in selections
     </sec:Overview>
     <tech-terms>
       <term abbr="AES" full="Advanced Encryption Standard"/>
-      <term abbr="AP" full="Access Point"> A device that provides the network interface that enables
+      <term abbr="AP" full="Access Point" plural="APs">
+	A device that provides the network interface that enables
         802.11 wireless client hosts to access a wired network. </term>
       <term abbr="BSSID" full="Basic Service Set Identifier"/>
       <term abbr="DoS" full="Denial of Service"/>
-      <term abbr="EUD" full="End User Device"> An 802.11 enabled device that has the ability to
-        process, transmit, and/or store information. </term>
+      <term abbr="EUD" full="End User Device" plural="EUDs">
+	An 802.11 enabled device that has the ability to
+        process, transmit, and/or store information.
+      </term>
       <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
       <term abbr="IPsec" full="Internet Protocol Security"/>
       <term abbr="MAC" full="Media Access Control"/>
@@ -179,10 +182,10 @@ implied certain tests were mandatory despite the functions being in selections
           <description>
             <h:p>
 	    A WIDS consists of sensors (preferably dedicated) and a central controller working together to provide 24/7 monitoring, primarily to the 
-          802.11 Wireless Local Area Network (WLAN) spectrum and protocol, to detect, identify, and geo-locate WLAN devices within a controlled space.
+          802.11 Wireless Local Area Network (WLAN) spectrum and protocol, to detect, identify, and geolocate WLAN devices within a controlled space.
             </h:p><h:p> The WIDS may be capable of detecting or monitoring traffic other than 802.11 WLAN, such as
           802.15.4 based protocols, which enhances the security of the controlled space. However, a WIDS is not required to monitor additional protocols outside of 802.11. 
-          A WIDS monitors all 802.11 WLAN traffic emanating from and traversing the controlled space, thus inadvertant collection of any 802.11
+          A WIDS monitors all 802.11 WLAN traffic emanating from and traversing the controlled space, thus inadvertent collection of any 802.11
           signals is possible when operating a WIDS.</h:p>
 	  </description> 
         </usecase>
@@ -295,7 +298,7 @@ implied certain tests were mandatory despite the functions being in selections
             (DoS) attacks within a protected WLAN. A wireless DoS may occur in two ways: at the
             physical layer through RF Jamming, or at the data link layer through packet injection. </description>
           <consistency-rationale>This threat is for a denial-of-service attack against an asset on the network monitored by the TOE. 
-            The Base-PP does not define any threats for availability but there is no consistency issue here because the threat applies to an interface that doesn’t exist in the Base-PP.</consistency-rationale>
+            The Base-PP does not define any threats for availability but there is no consistency issue here because the threat applies to an interface that does not exist in the Base-PP.</consistency-rationale>
           <objective-refer ref="O.SYSTEM_MONITORING">
             <rationale>The threat T.DISRUPTION is countered by O.SYSTEM_MONITORING as this provides
               for visibility into the network which enables detection of DoS attacks.</rationale>
@@ -832,7 +835,7 @@ The TOE must be able to react, as configured by the administrators, to
                 <h:tr><h:td>FAU_ARP_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_GEN.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_IDS_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_INV_EXT.1</h:td><h:td>Presence of allowedlisted
+                <h:tr><h:td>FAU_INV_EXT.1</h:td><h:td>Presence of allowlisted
                     device</h:td><h:td>Type of device (AP or EUD), MAC Address</h:td></h:tr>
                 <h:tr><h:td>FAU_INV_EXT.2</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>                
                 <h:tr><h:td>FAU_INV_EXT.3</h:td><h:td>Location of AP or EUD</h:td><h:td>MAC Address,
@@ -928,13 +931,13 @@ The TOE must be able to react, as configured by the administrators, to
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies.</dependencies>
           <f-element id="fel-ids-meth">
-            <title> The TSF shall detect instrusions using<selectables>
+            <title> The TSF shall detect intrusions using<selectables>
                 <selectable id="anoBased">anomaly-based</selectable>
                 <selectable id="sigBased">signature-based</selectable>
                 <selectable><assignable>other detection method</assignable></selectable>
               </selectables> methods. </title>
 	      <ext-comp-def-title>            
-		<title> The TSF shall detect instrusions using
+		<title> The TSF shall detect intrusions using
 		<assignable>detection strategies</assignable>
               methods. </title></ext-comp-def-title>
             <note role="application">
@@ -1012,7 +1015,7 @@ The TOE must be able to react, as configured by the administrators, to
                 displayed.
               </TSS>
               <Guidance> The evaluator shall verify that the operational guidance provides
-                instructions on how to view authorized and unathorized APs and EUDs that are within
+                instructions on how to view authorized and unauthorized APs and EUDs that are within
                 range of the TOE sensors.
               </Guidance>
               <Tests>
@@ -1341,17 +1344,17 @@ The TOE must be able to react, as configured by the administrators, to
                   <test><h:b>Detection of authorized EUD establishing peer-to-peer connection with any other EUD</h:b>:
                     <testlist>
                       <test> Create the following connections between two allowlisted EUDs. <h:ul>
-                        <h:li>Windows Ad Hoc Connection</h:li>
-                        <h:li>Mac OS Ad Hoc</h:li>
-                        <h:li>Linux Ad Hoc</h:li>
+                        <h:li>Windows ad hoc</h:li>
+                        <h:li>Mac OS ad hoc</h:li>
+                        <h:li>Linux ad hoc</h:li>
                         <h:li>Wi-Fi Direct</h:li>
                       </h:ul>
                       </test>
                       <test> Create the following connections between one allowlisted EUD and a
                         non-allowlisted EUD <h:ul>
-                          <h:li>Windows Ad Hoc Connection</h:li>
-                          <h:li>Mac OS Ad Hoc</h:li>
-                          <h:li>Linux Ad Hoc</h:li>
+                          <h:li>Windows ad hoc</h:li>
+                          <h:li>Mac OS ad hoc</h:li>
+                          <h:li>Linux ad hoc</h:li>
                           <h:li>Wi-Fi Direct</h:li>
                         </h:ul>
                       </test>
@@ -1390,13 +1393,13 @@ The TOE must be able to react, as configured by the administrators, to
                   <test><h:b>Detection of traffic with excessive transmit power level</h:b>:                
                        <steplist>
                          <step>Configure a source of network traffic that can exceed the maximum transmit
-                             power levels of 100mW on 2.4 GHz, 200mW on 5 GHz, and 250mW on 6 GHz.</step>
+                             power levels of 100 mW on 2.4 GHz, 200 mW on 5 GHz, and 250 mW on 6 GHz.</step>
                          <step>Configure a user defined signature to detects traffic with transmit power levels
                              that exceed the maximum.</step>
                          <step>Commence with the transmission of network traffic at excessive power levels.</step>
                          <step>Collect wireless traffic with range of the TSF.</step>
                          <step>Verify that the TSF detects wireless traffic that exceeds
-                          100mW on 2.4 GHz, 200mW on 5 GHz, and 250mW on 6 GHz.</step>
+                          100 mW on 2.4 GHz, 200 mW on 5 GHz, and 250 mW on 6 GHz.</step>
                        </steplist>
                     <h:br/>
                   </test>              
@@ -1404,7 +1407,7 @@ The TOE must be able to react, as configured by the administrators, to
                     <testlist>
                       <test>
                         <steplist>
-                          <step>Spoof mac address of allowliste EUD connected to an allowlisted AP on a
+                          <step>Spoof mac address of an allowlisted EUD connected to an allowlisted AP on a
                             second EUD. </step>
                           <step>Connect EUD with spoofed MAC address to another allowlisted AP while the
                             valid EUD it is spoofing is connected to the first AP. </step>
@@ -1413,7 +1416,7 @@ The TOE must be able to react, as configured by the administrators, to
                       </test>
                       <test>
                         <steplist>
-                          <step>Spoof mac address of allowliste AP on a second AP. </step>
+                          <step>Spoof mac address of an allowlisted AP on a second AP. </step>
                           <step>Verify that the TSF detected the MAC spoofing.</step>
                         </steplist>
                       </test>
@@ -1429,7 +1432,7 @@ The TOE must be able to react, as configured by the administrators, to
                     </steplist>
                     <h:br/>
                   </test>                 
-                  <test><h:b>Detection of authorized AP broadcasating an unathorized SSID</h:b>:
+                  <test><h:b>Detection of authorized AP broadcasting an unauthorized SSID</h:b>:
                     <steplist>
                       <step>Configure an allowlisted AP to operate on a set channel on the 2.4 GHz band broadcasting an unauthorized SSID.</step>
                       <step>Verify that the TSF detects the non-allowlisted AP broadcasting an authorized SSID.</step>
@@ -1605,7 +1608,7 @@ The TOE must be able to react, as configured by the administrators, to
                           <step>Deploy an allowlisted AP.</step>
                           <step>Configure a threshold amount of connection attempts that can occur in a particular timeframe.</step>
                           <step>Attempt to authenticate to the AP with enough client devices to purposely exceed the defined threshold.</step>
-                          <step>Verify that the TSF detects when the connection attempts within the specic timeframe exceeds the threshold.</step>
+                          <step>Verify that the TSF detects when the connection attempts within the specific timeframe exceeds the threshold.</step>
                     </steplist>
                     <h:br/>
                   </test>
@@ -1712,7 +1715,7 @@ The TOE must be able to react, as configured by the administrators, to
                       <test>
                         <steplist>
                           <step>Deploy a non-allowlisted EUD in the area of the WIDS sensor, but take no action against the network. Verify that the EUD is classified as non-authorized.</step>
-                          <step>Launch an RF Flooding, DoD/DDoS, masqueraded or spoofing attack against authorized AP with an unauthorized EUD.</step> 
+                          <step>Launch an RF Flooding, DoS/DDoS, masqueraded or spoofing attack against authorized AP with an unauthorized EUD.</step> 
                           <step>Verify that the EUD is classified as malicious.</step>                        
                         </steplist>
                       </test>
@@ -1823,12 +1826,12 @@ The TOE must be able to react, as configured by the administrators, to
               <Tests>
                 <h:b>Channels Monitored</h:b>
                 <testlist>
-                  <test> Channels on On 5GHz band <steplist>
+                  <test> Channels on On 5 GHz band <steplist>
                       <step>Configure the TSF to monitor the channels as selected in the SFR.</step>
                       <step>Deploy an AP on at least 2 different channels within the regulatory
-                        domain on 5GHz band.</step>
+                        domain on 5 GHz band.</step>
                       <step>Deploy an AP on at least 2 different channels outside the regulatory
-                        domain on 5GHz band.</step>
+                        domain on 5 GHz band.</step>
                       <step>Verify that the AP gets detected on each channel tested.</step>
                     </steplist>
                   </test>
@@ -1868,7 +1871,7 @@ The TOE must be able to react, as configured by the administrators, to
                   <test>
                     <steplist>
                       <step>Boot a sensor and using the signal analyzer observe to check if any
-                        eminations are coming from the sensor.</step>
+                        emanations are coming from the sensor.</step>
                       <step>Verify that the signal analyzer does not pick up emanations from the
                         sensor.</step>
                     </steplist>
@@ -1876,7 +1879,7 @@ The TOE must be able to react, as configured by the administrators, to
                   <test>
                     <steplist>
                       <step>During normal sensor operations, observe the analyzer for about 10
-                        minutes to check if any eminations are coming from the sensor.</step>
+                        minutes to check if any emanations are coming from the sensor.</step>
                       <step>Verify that the signal analyzer does not pick up emanations from the
                         sensor.</step>
                     </steplist>
@@ -2023,7 +2026,7 @@ The TOE must be able to react, as configured by the administrators, to
 	     <Guidance> 
 	       <h:p>
                 The evaluator shall review the operational guidance for instructions on how
-                to configure and change clasification of APs and EUDs to indicate that they are part
+                to configure and change classification of APs and EUDs to indicate that they are part
                 of the allowlist.</h:p><h:p> 
 The evaluator shall review the operational guidance to determine how to configure which SSIDs are permitted on the network.</h:p><h:p>
 
@@ -2037,7 +2040,7 @@ The evaluator shall examine the operational guidance to verify that it
 
               <Tests> 
                 <testlist>
-                  <test> The evaluator shall define an inventory of authorized APs and EUDSs. The ability to detect allowlisted and non-allowlisted APs and EUDs will be tested in FAU_INV_EXT.1 and FAU_SAA.1.
+                  <test> The evaluator shall define an inventory of authorized APs and EUDs. The ability to detect allowlisted and non-allowlisted APs and EUDs will be tested in FAU_INV_EXT.1 and FAU_SAA.1.
                   </test>
                   <test>The evaluator shall define authorized SSIDs. The ability to detect authorized and unauthorized SSIDs will be tested in FAU_WID_EXT.2.3 and FAU_SAA.1.</test>
                 
@@ -2411,7 +2414,7 @@ The evaluator shall examine the operational guidance to verify that it
           <f-element id="fel-signal-library">
             <title> The TSF shall include a signal library.</title>
             <note role="application">The TSF will need to have the ability to import, export, or
-              update the exisiting signal library.</note>
+              update the existing signal library.</note>
             <aactivity>
               <TSS> There are no TSS evaluation activities for this SFR.</TSS>
               <Guidance> The evaluator shall review the operational guidance for instructions on how
@@ -2480,7 +2483,7 @@ The evaluator shall examine the operational guidance to verify that it
                       <step>Connect an allowlisted EUD to AP.</step>
                       <step>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
                         non-overlapping location where the WIDS also has sensors. Or simulate the
-                        distant non-verlapping locations by deploying the second AP in a shielded
+                        distant non-overlapping locations by deploying the second AP in a shielded
                         environment connected to the valid network (Location 2).</step>
                       <step>Spoof the MAC address of the EUD in location 1 with the EUD in location
                         2 and connect it to the allowlisted AP in location 2. Make sure both EUDs
@@ -2496,7 +2499,7 @@ The evaluator shall examine the operational guidance to verify that it
                       <step>Connect an allowlisted EUD to AP.</step>
                       <step>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
                         non-overlapping location where the WIDS also has sensors. Or simulate the
-                        distant non-verlapping locations by deploying the second AP in a shielded
+                        distant non-overlapping locations by deploying the second AP in a shielded
                         environment connected to the valid network (Location 2).</step>
                       <step>Spoof the MAC address of the EUD in location 1 with the EUD in location
                         2 and connect it to the allowlisted AP in location 2. Make sure that the
