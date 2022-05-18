@@ -128,10 +128,10 @@ implied certain tests were mandatory despite the functions being in selections
       <term abbr="TLS" full="Transport Layer Security"/>
       <term abbr="TKIP" full="Temporal Key Integrity Protocol"/>
       <term abbr="WEP" full="Wired Equivalent Protocol"/>
-      <term abbr="WIDS" full="Wireless Intrustion Detection System"> A security product that
+      <term abbr="WIDS" full="Wireless Intrusion Detection System"> A security product that
         provides network security administrators with the ability to monitor, collect, and log
         real-time to potentially malicious wireless (IEEE 802.11) network traffic. </term>
-      <term abbr="WIPS" full="Wireless Intrustion Prevention System"> A security product that
+      <term abbr="WIPS" full="Wireless Intrusion Prevention System"> A security product that
         provides network security administrators with the ability to monitor, collect, log, and
         react in real-time to potentially malicious wireless (IEEE 802.11) network traffic. </term>
       <term abbr="WLAN" full="Wireless Local Area Network"> An 802.11 wireless computer network that
