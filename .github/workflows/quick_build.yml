@@ -17,7 +17,8 @@ jobs:
         submodules: true
 
     - name: Install Build Packages
-      run: "sudo apt-get update && sudo apt-get install -y xsltproc hunspell pandoc"
+#      run: "sudo apt-get update && sudo apt-get install -y xsltproc hunspell pandoc"
+      run: "sudo apt-get update && sudo apt-get install -y xsltproc hunspell"
 
     - name: Install Jing
       run: wget -O - https://github.com/relaxng/jing-trang/releases/download/V20181222/jing-20181222.zip | jar -x
@@ -30,7 +31,7 @@ jobs:
 
     - name: Quick Build
       run: |
-        WARN_PATH="output/SanityChecksOutput.md" make
+        WARN_PATH="output/SanityChecksOutput.md" make release 
 
     - name: PDFify
       if: ${{ github.ref_name != 'master' }}
@@ -53,16 +54,18 @@ jobs:
 
     - id: tdate
       run: |
-        echo "##[set-output name=TDATE;]$(cd transforms && git log -1 --format=%cs; cd -)"
-
-        
-
-    - name: diff
-      run: make diff || true; 
-    # Little diff depends on having a git history. 
-    # The current checkout has  depth=1 and has no history
-    #- name: little diff
-    #  run: make little-diff || true
+        echo "##[set-output name=TDATE;]$(cd transforms && git log -1 --format=%cs)"
+      
+    - name: Setup Java JDK
+      uses: actions/setup-java@v1.4.3
+      with:
+        java-version: 1.8
+    - name: Get DaisyDiff
+      run: wget -O- https://github.com/AndroidKitKat/ExecuteDaisy/archive/master.zip | jar -x
+    - name: Make tmp dir
+      run: mkdir tmp
+    - name: Diff against specified versions
+      run: DAISY_DIR=ExecuteDaisy-master make diff
 
     - name: Make a directory listing
       run: >
@@ -111,11 +114,6 @@ jobs:
       env:
         BADGE_PATH: ${{ steps.coverage.outputs.path }}
       run: mkdir -p "${BADGE_PATH%/*}"
-
-    - name: debug
-      run: |
-        pwd
-        ls
       
      # Use the output from the `coverage` step
     - name: Generate the spelling badge SVG image
@@ -151,6 +149,7 @@ jobs:
         color: ${{ steps.status.outputs.COLOR }}
         path: warnings.svg
 
+        
     - name: Generate the transforms badge
       uses: emibcn/badge-action@v1
       with:
@@ -158,7 +157,6 @@ jobs:
         status: ${{ steps.tdate.outputs.TDATE }}
         color: gray
         path: transforms.svg
-        
         
      # Use the output from the `coverage` step
     - name: Generate the validation badge SVG image
@@ -176,7 +174,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add warnings.svg validation.svg build-branch-badge.svg spell-badge.svg transforms.svg
+        git add transforms.svg warnings.svg validation.svg build-branch-badge.svg spell-badge.svg
         git commit -m "Add/Update badges"
         
         # - name: Upload badge as artifact
