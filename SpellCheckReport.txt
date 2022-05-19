@@ -1,12 +1,6 @@
-output/wids-esr.html: 60GHz
-output/wids-esr.html: IPS
-output/wids-esr.html: WLANs
-output/wids-esr.html: wireside
 output/wids-release-linkable.html: Auths
 output/wids-release-linkable.html: CEM
 output/wids-release-linkable.html: CSV
-output/wids-release-linkable.html: CTS
-output/wids-release-linkable.html: DDoS
 output/wids-release-linkable.html: DHCP
 output/wids-release-linkable.html: ICS
 output/wids-release-linkable.html: IFF
@@ -15,7 +9,6 @@ output/wids-release-linkable.html: PCAPs
 output/wids-release-linkable.html: SFP
 output/wids-release-linkable.html: SNMP
 output/wids-release-linkable.html: SSIDs
-output/wids-release-linkable.html: Syslog
 output/wids-release-linkable.html: TRP
 output/wids-release-linkable.html: allowlist
 output/wids-release-linkable.html: allowlisted
@@ -23,10 +16,7 @@ output/wids-release-linkable.html: deauthentication
 output/wids-release-linkable.html: integrations
 output/wids-release-linkable.html: nonallowlisted
 output/wids-release-linkable.html: nonsimultaneously
-output/wids-release-linkable.html: subnet
-output/wids-release-linkable.html: subtypes
 output/wids-release-linkable.html: timeframe
-output/wids-release-linkable.html: wirelessly
 output/wids-release.html: Auths
 output/wids-release.html: CEM
 output/wids-release.html: CSV
@@ -38,7 +28,6 @@ output/wids-release.html: PCAPs
 output/wids-release.html: SFP
 output/wids-release.html: SNMP
 output/wids-release.html: SSIDs
-output/wids-release.html: Syslog
 output/wids-release.html: TRP
 output/wids-release.html: allowlist
 output/wids-release.html: allowlisted
@@ -46,7 +35,6 @@ output/wids-release.html: deauthentication
 output/wids-release.html: integrations
 output/wids-release.html: nonallowlisted
 output/wids-release.html: nonsimultaneously
-output/wids-release.html: subtypes
 output/wids-release.html: timeframe
 output/wids-sd.html: AGD
 output/wids-sd.html: CEM
@@ -59,8 +47,6 @@ output/wids-sd.html: allowlist
 output/wids-sd.html: allowlisted
 output/wids-sd.html: deauthentication
 output/wids-sd.html: nonsimultaneously
-output/wids-sd.html: subnet
-output/wids-sd.html: subtypes
 output/wids-sd.html: timeframe
 output/wids-sd.html: wirelessly
 output/wids.html: Auths
@@ -76,7 +62,6 @@ output/wids.html: PCAPs
 output/wids.html: SFP
 output/wids.html: SNMP
 output/wids.html: SSIDs
-output/wids.html: Syslog
 output/wids.html: TRP
 output/wids.html: allowlist
 output/wids.html: allowlisted
@@ -84,7 +69,5 @@ output/wids.html: deauthentication
 output/wids.html: integrations
 output/wids.html: nonallowlisted
 output/wids.html: nonsimultaneously
-output/wids.html: subnet
-output/wids.html: subtypes
 output/wids.html: timeframe
 output/wids.html: wirelessly
