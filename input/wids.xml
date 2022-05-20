@@ -108,6 +108,13 @@ implied certain tests were mandatory despite the functions being in selections
       to ensure that user interactions with the network cannot evade detection.
 </h:p>
     </sec:Overview>
+    <cc-terms>
+      <term abbr="SF" full="Security Function">
+	A part or parts of the TOE that have to be relied upon for enforcing a
+	closely related subset of the rules from the TSP.
+      </term>
+      <term abbr="SFP" full="Security Function Policy">The security policy enforced by an SF.</term>
+    </cc-terms>
     <tech-terms>
       <term abbr="AES" full="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point" plural="APs">
@@ -115,15 +122,18 @@ implied certain tests were mandatory despite the functions being in selections
         802.11 wireless client hosts to access a wired network. </term>
       <term abbr="BSSID" full="Basic Service Set Identifier"/>
       <term abbr="DoS" full="Denial of Service"/>
+      <term abbr="DDoS" full="Distributed Denial of Service"/>
       <term abbr="EUD" full="End User Device" plural="EUDs">
 	An 802.11 enabled device that has the ability to
         process, transmit, and/or store information.
       </term>
       <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
       <term abbr="IPsec" full="Internet Protocol Security"/>
+      <term abbr="ICS" full="Internet Connection Sharing"/>
       <term abbr="MAC" full="Media Access Control"/>
+      <term abbr="OSI" full="Open Systems Interconnection"/>
       <term abbr="SSH" full="Secure Shell"/>
-      <term abbr="SSID" full="Service Set Identifier"> The primary name associated with an 802.11
+      <term abbr="SSID" full="Service Set Identifier" plural="SSIDs"> The primary name associated with an 802.11
         wireless local area network (WLAN). </term>
       <term abbr="TLS" full="Transport Layer Security"/>
       <term abbr="TKIP" full="Temporal Key Integrity Protocol"/>
@@ -134,7 +144,7 @@ implied certain tests were mandatory despite the functions being in selections
       <term abbr="WIPS" full="Wireless Intrusion Prevention System"> A security product that
         provides network security administrators with the ability to monitor, collect, log, and
         react in real-time to potentially malicious wireless (IEEE 802.11) network traffic. </term>
-      <term abbr="WLAN" full="Wireless Local Area Network"> An 802.11 wireless computer network that
+      <term abbr="WLAN" full="Wireless Local Area Network" plural="WLANs"> An 802.11 wireless computer network that
         links two or more devices using wireless communication to form a local area network (LAN)
         within a limited area such as a home, school, computer laboratory, campus, office building
         etc. </term>
@@ -1231,7 +1241,7 @@ The TOE must be able to react, as configured by the administrators, to
               <selectable>custom API</selectable>
               <selectable>Syslog</selectable>
               <selectable>common log format</selectable>
-              <selectable>CSV</selectable>
+              <selectable>comma separated values (CSV)</selectable>
               <selectable><assignable>vendor detection method</assignable></selectable>
             </selectables>.
             </title>
@@ -1753,7 +1763,7 @@ The TOE must be able to react, as configured by the administrators, to
           <f-element id="fel-monitor-freq">
             <title> The TSF shall <selectables>
                 <selectable>simultaneously</selectable>
-                <selectable>nonsimultaneously</selectable>
+                <selectable id="s-nonsimult">nonsimultaneously</selectable>
               </selectables> monitor and analyze network traffic matching the 802.11 monitoring SFP
               for all channels in the following RF frequencies: <h:ul>
                 <h:li>2.4 GHz</h:li>
@@ -1768,10 +1778,9 @@ The TOE must be able to react, as configured by the administrators, to
               </selectables>. </title>
             <note role="Application"> 
 	    <h:p>
-
-              If "nonsimultaneously" is selected, then "Define the amount of
-              time sensor monitors a specific channel" must be selected in FMT_SMF.1/WIDS.
-              </h:p><h:p> The "802.11 monitoring SFP" is a security function policy and the SFRs
+              If <xref to="s-nonsimult"/> is selected, then <xref to="s-mon-spec-chan"/> must be selected in FMT_SMF.1/WIDS.
+            </h:p>
+	    <h:p> The "802.11 monitoring SFP" is a security function policy and the SFRs
               that reference this policy describe what the policy does. The "802.11 monitoring SFP"
               is established in FDP_IFC.1 and defined through FAU_WID_EXT.1, FAU_WID_EXT.2,
               in addition to optional SFRs
@@ -1986,10 +1995,8 @@ The TOE must be able to react, as configured by the administrators, to
                       </selectables> transmission of data by wireless sensor</selectable><!-- FAU_WID_EXT.2.2 -->
                     <selectable>Define attack signatures</selectable><!-- FAU_SIG_EXT.1.1 -->
                     <selectable>Define rules for overwriting previous packet captures</selectable><!-- FAU_STG_EXT.1.3/PCAP -->
-                    <selectable>Define the amount of time sensor monitors a specific <selectables>
-                        <selectable>frequency</selectable>
-                        <selectable>channel</selectable>
-                      </selectables></selectable>
+                    <selectable id="s-mon-spec-freq">Define the amount of time sensor monitors a specific frequency </selectable>
+                    <selectable id="s-mon-spec-chan">Define the amount of time sensor monitors a specific channel </selectable>
                     <selectable>Define authorized and unauthorized TCP/IP and UDP traffic</selectable>
                     <selectable>Define known malicious activity ports</selectable>
                     <selectable>No other capabilities</selectable>
@@ -2098,7 +2105,7 @@ The evaluator shall examine the operational guidance to verify that it
               network devices that operate in the specified frequencies. There is an understanding that this 
               capability requires a TOE to use specialized, licensed radio systems. This SFR will allow for the introduction of an
               open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party
-              integrations.</note>
+              integration.</note>
             <aactivity>
               <TSS> The evaluator shall verify that the TSS includes the set of RF bands and
                 technologies that the TSF can detect the use of. The TSS should also include
@@ -2265,9 +2272,9 @@ The evaluator shall examine the operational guidance to verify that it
               entity <h:b>hosting a protocol analyzer</h:b> using a trusted channel according to FTP_ITC.1. </title>
             <note role="application"> Per FAU_STG_EXT.1 in the Base-PP, the TOE must support
               transfer of the audit data to an external IT entity using a trusted channel per
-              FTP_ITC.1. Note that this PP-Module modifies FTP_ITC.1 from the Base-PP. If "capture
-              raw frame traffic that triggers the violation" is selected in FAU_ARP.1, then this SFR
-              must be included in the ST, and this iteration is for the PCAPs generated as a
+              FTP_ITC.1. Note that this PP-Module modifies FTP_ITC.1 from the Base-PP.
+	      If <xref to="pcap"/> is selected in <xref to="fel-arp"/>, then this SFR
+              must be included in the ST, and this iteration is for the packet captures generated as a
               selectable action completed upon detection of a potential security violation in
               FAU_ARP.1. </note>
           </f-element>

@@ -34,3 +34,20 @@ wardriving
 subnet
 subtypes
 Syslog
+deauthentication
+integrations
+allowlist
+allowlisted
+interoperability
+wirelessly
+Auths
+nonsimultaneously
+CEM
+CSV
+CTS
+# Clear to Send
+
+
+# SFR identifiers
+IFF
+AGD
