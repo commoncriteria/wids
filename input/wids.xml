@@ -120,7 +120,8 @@ implied certain tests were mandatory despite the functions being in selections
       <term abbr="AP" full="Access Point" plural="APs">
 	A device that provides the network interface that enables
         802.11 wireless client hosts to access a wired network. </term>
-      <term abbr="BSSID" full="Basic Service Set Identifier"/>
+	<term abbr="BSSID" full="Basic Service Set Identifier"/>
+	<term abbr="DHCP" full="Dynamic Host Configuration Protocol"/>
       <term abbr="DoS" full="Denial of Service"/>
       <term abbr="DDoS" full="Distributed Denial of Service"/>
       <term abbr="EUD" full="End User Device" plural="EUDs">
@@ -132,6 +133,7 @@ implied certain tests were mandatory despite the functions being in selections
       <term abbr="ICS" full="Internet Connection Sharing"/>
       <term abbr="MAC" full="Media Access Control"/>
       <term abbr="OSI" full="Open Systems Interconnection"/>
+      <term abbr="SNMP" full="Simple Network Management Protocol"/>
       <term abbr="SSH" full="Secure Shell"/>
       <term abbr="SSID" full="Service Set Identifier" plural="SSIDs"> The primary name associated with an 802.11
         wireless local area network (WLAN). </term>
@@ -1694,7 +1696,7 @@ The TOE must be able to react, as configured by the administrators, to
             <note role="Application"> 
               FAU_INV_EXT.1 defines that an AP or EUD is authorized based on if the AP/EUD is allowlisted as configured in FMT_SMF.1. 
               A non-allowlisted device does not always have to be conducting malicious activity. 
-              However, it is acceptable to equate an allowlisted AP/EUD as both authorized/benign and a nonallowlisted AP/EUD as both not authorized and thus malicious. 
+              However, it is acceptable to equate an allowlisted AP/EUD as both authorized/benign and a non-allowlisted AP/EUD as both not authorized and thus malicious. 
               If the TOE supports automatic malicious device detection, based on in-depth network traffic analysis, "automatic detection metrics" must be selected. 
               This can be used to further distinguish if the AP/EUD is benign or malicious. If the TOE does not support automatic detection metrics, "no other method" must be selected.
             </note>

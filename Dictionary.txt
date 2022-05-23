@@ -30,7 +30,7 @@ AP's
 surveil
 queryable
 wardriving
-
+timeframe
 subnet
 subtypes
 Syslog
@@ -51,3 +51,4 @@ CTS
 # SFR identifiers
 IFF
 AGD
+TRP
