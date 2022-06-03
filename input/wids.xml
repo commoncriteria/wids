@@ -116,6 +116,7 @@ implied certain tests were mandatory despite the functions being in selections
       <term abbr="SFP" full="Security Function Policy">The security policy enforced by an SF.</term>
     </cc-terms>
     <tech-terms>
+      <suppress> ,Extended Package, </suppress>
       <term abbr="AES" full="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point" plural="APs">
 	A device that provides the network interface that enables
@@ -1777,7 +1778,16 @@ The TOE must be able to react, as configured by the administrators, to
                 <selectable>channels outside regulatory domain</selectable>
                 <selectable>non-standard channel frequencies</selectable>
                 <selectable>no other domains</selectable>
-              </selectables>. </title>
+            </selectables>. </title>
+	    <ext-comp-def-title>
+            <title> The TSF shall <selectables>
+                <selectable>simultaneously</selectable>
+                <selectable>nonsimultaneously</selectable>
+              </selectables> monitor and analyze network traffic matching the 802.11 monitoring SFP
+              for all channels in the following RF frequencies:
+	      <assignable>a list of frequency ranges</assignable>
+	    . </title>
+	    </ext-comp-def-title>
             <note role="Application"> 
 	    <h:p>
               If <xref to="s-nonsimult"/> is selected, then <xref to="s-mon-spec-chan"/> must be selected in FMT_SMF.1/WIDS.
