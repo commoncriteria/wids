@@ -576,8 +576,8 @@ implied certain tests were mandatory despite the functions being in selections
                   modification when it is transmitted between separate parts of the TOE
                   through the use of <selectables>
                     <selectable>IPsec</selectable>
-                    <selectable>SSH</selectable>
-                    <selectable>TLS</selectable>
+                    <selectable>SSH [v2]</selectable>
+                    <selectable>TLS [1.2 or 1.3]</selectable>
                     <selectable>DTLS</selectable>
                     <selectable>HTTPS</selectable>                   
                   </selectables>. </title>
@@ -603,8 +603,8 @@ implied certain tests were mandatory despite the functions being in selections
             <f-element id="fel-sec-chan-how">
               <title> The TSF shall be capable of using <selectables>
                 <selectable>IPsec</selectable>
-                <selectable>SSH</selectable>
-                <selectable>TLS</selectable>
+                <selectable>SSH [v2]</selectable>
+                <selectable>TLS [1.2 or 1.3]</selectable>
                 <selectable>DTLS</selectable>
                 <selectable>HTTPS</selectable>                
                   </selectables> to provide a trusted communication channel between itself and
