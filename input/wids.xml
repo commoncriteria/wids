@@ -837,7 +837,8 @@ The TOE must be able to react, as configured by the administrators, to
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [not specified] level of audit;</h:li>
                 <h:li>[<h:i>Auditable events listed in the Auditable Events table (<xref to="auditWids"/>);</h:i></h:li>
-                <h:li><h:i>Failure of wireless sensor communication</h:i>].</h:li>
+                <h:li><h:i>Failure of wireless sensor communication</h:i>;</h:li>
+                <h:li><h:i>Any authentication event listed in the Auditable Events table (<xref to="auditWids"/>)].</h:i></h:li>
               </h:ol>
               <h:table>
                 <h:tr class="header"><h:td>Requirement</h:td><h:td>Auditable
