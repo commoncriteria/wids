@@ -1,6 +1,7 @@
-TRANS?=transforms
-
+-include ~/commoncriteria/User.make
 -include User.make
 
-DIFF_TAGS="v0.96"
+TRANS?=transforms
+
+DIFF_TAGS="v1.0"
 include $(TRANS)/module/Module.make

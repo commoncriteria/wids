@@ -1,0 +1,54 @@
+#802.11g
+11g
+#802.1x
+1x
+# Version 2.2e
+2e
+# WiFi
+Wi
+Fi
+customizable
+'expected
+# milliWatt
+mW
+#ad hoc
+hoc
+approved'
+'unexpected'
+'unknown'
+'known'
+stateful
+Stateful
+'Distributed
+geolocate
+jammer
+Jammer
+'
+analytical
+Analytical
+AP's
+surveil
+queryable
+wardriving
+timeframe
+subnet
+subtypes
+Syslog
+deauthentication
+integrations
+allowlist
+allowlisted
+interoperability
+wirelessly
+Auths
+nonsimultaneously
+CEM
+CSV
+CTS
+# Clear to Send
+
+
+# SFR identifiers
+IFF
+AGD
+TRP
