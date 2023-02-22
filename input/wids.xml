@@ -847,7 +847,10 @@ The TOE must be able to react, as configured by the administrators, to
                 <h:tr><h:td>FAU_ARP.1</h:td><h:td>Actions taken due to potential security
                     violations</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_ARP_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
-                <h:tr><h:td>FAU_GEN.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
+                <h:tr><h:td>FAU_GEN.1/WIDS</h:td><h:td>Any authentication event</h:td><h:td>Falied login attempts,
+                    successful login attempts, administrator logins, changes to the WIDS native authentication 
+                    system (creation of an account, deletion of an account, mofification of user accounts, 
+                    changes to groups or group membership, attempts for privilege escalation)</h:td></h:tr>
                 <h:tr><h:td>FAU_IDS_EXT.1</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FAU_INV_EXT.1</h:td><h:td>Presence of allowlisted
                     device</h:td><h:td>Type of device (AP or EUD), MAC Address</h:td></h:tr>
