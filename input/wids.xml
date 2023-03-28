@@ -888,7 +888,7 @@ The TOE must be able to react, as configured by the administrators, to
                 <h:tr><h:td>FMT_SMF.1/WIDS</h:td><h:td>None</h:td><h:td>None</h:td></h:tr>
                 <h:tr><h:td>FPT_FLS.1 (objective)</h:td><h:td>Information about
                     failure</h:td><h:td>Indication that there was a failure, type of failure,
-                    device that failed, and time of failure</h:td></h:tr>
+                    device that failed, sensor connectivity and operating status, and time of failure</h:td></h:tr>
               </h:table>
               <ctr ctr-type="Table" id="auditWids">: Auditable Events</ctr>
             </title>
