@@ -1,5 +1,5 @@
-name: QuickBuild
-# 20230210 version
+name: QuickBuild v4.4
+
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ jobs:
     name: Quick Build
     steps:
     - name: Checkout project and transforms
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         submodules: true
 
@@ -31,20 +31,34 @@ jobs:
 
     - name: Set branch name
       run: echo "action_branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
+
+    - name: Set base URL
+      run: echo "action_projname=${PWD##*/}" >> $GITHUB_ENV
       
     - name: Quick Build
       run: WARN_PATH="output/SanityChecksOutput.md" make
 
+      
+    - name: Branch Test
+      run: |
+        branchname=$(echo ${GITHUB_REF#refs/heads/})
+        if [[ $branchname =~ [0-9] ]]; then
+          echo "action_is_release=YES" >> $GITHUB_ENV
+        else
+          echo "action_is_release=NO"  >> $GITHUB_ENV
+        fi
+        
       # PDFify
     - name: PDFify
-      if: ${{ github.event_name == 'workflow_dispatch' }}
+      if: ${{ env.action_is_release == 'YES' }}
       run: |
         sudo apt-get install -y wkhtmltopdf xvfb
-        xvfb-run --auto-servernum --server-args='-screen 0, 1024x768x16' /usr/bin/wkhtmltopdf \
-          --enable-local-file-access --javascript-delay 15000 --footer-right '[page]' \
-          file://${PWD}/output/${PWD##*/}.html?expand=on \
-        output/${PWD##*/}-paged.pdf
-
+        cd output
+        for aa in *.html; do
+          xvfb-run --auto-servernum --server-args='-screen 0, 1024x768x16' /usr/bin/wkhtmltopdf \
+            --enable-local-file-access --javascript-delay 15000 --footer-right '[page]' \
+            file://${PWD}/${aa}?expand=on ${aa}.pdf
+        done
 
     - id: validate
       run: |
@@ -63,12 +77,7 @@ jobs:
     - name: Get Transforms Date
 #      run: echo "action_tdate=2002222" >> $GITHUB_ENV
       run: echo "action_tdate=$(cd transforms && git log -1 --format=%cs; cd ->/dev/null)" >> $GITHUB_ENV
-
-    - name: Setup Java JDK
-      uses: actions/setup-java@v1.4.3
-      with:
-        java-version: 1.8
-        
+       
     - name: Get DaisyDiff
       run: |
         wget -O- https://github.com/AndroidKitKat/ExecuteDaisy/archive/master.zip | jar -x
@@ -87,7 +96,6 @@ jobs:
     #- name: little diff
     #  run: make little-diff || true
 
-
     - name: Outstanding TDs
       id: tds
       run: |
@@ -97,23 +105,28 @@ jobs:
            ls input/tds/*.xml ; then
           echo "Master branch should not have TDs" >> output/TDValidationReport.txt
         fi
-        if ls input/tds/*.xml; then
-           PP_XML=output/effective.xml PP_RELEASE_HTML=output/AppliedTDs.html make release
-           java -jar ExecuteDaisy-master/*.jar output/*-release.html output/AppliedTDs.html --file=output/AppliedTDs-Diff.html
-        fi
+        PP_XML=output/effective.xml PP_RELEASE_HTML=output/AppliedTDs.html make release
+        java -jar ExecuteDaisy-master/*.jar output/*-release.html output/AppliedTDs.html --file=output/AppliedTDs-Diff.html
 
 
     - name: Set TD badge attributes
       run: |
-        echo "action_tdcolor=$(if [ -s output/TDValidationReport.txt ]; then echo orange; else echo green; fi)" >> $GITHUB_ENV
-        echo "action_tdwarns=$(wc -l output/TDValidationReport.txt | { read first rest ; echo $first;} )" >> $GITHUB_ENV
-        
-        
+        NUM=$(ls input/tds/*.xml | wc -l)
+        if [ $NUM == 0 ]; then
+            echo "action_tdcolor=gray" >> $GITHUB_ENV
+            echo "action_tdwarns=N/A"  >> $GITHUB_ENV
+            echo "GOING THROUGH HERE $NUM"
+        else
+            echo "action_tdcolor=$(if [ -s output/TDValidationReport.txt ]; then echo orange; else echo green; fi)" >> $GITHUB_ENV
+            echo "action_tdwarns=$NUM:$(wc -l output/TDValidationReport.txt | { read first rest ; echo $first;})" >> $GITHUB_ENV
+            echo "THERE ARE TDs $NUM"
+            
+        fi
+      # Not sure what the point of this is
     - name: Validate Effective
       run: |
-        echo "action_tdcolor=$(if [ -s output/TDValidationReport.txt ]; then echo orange; else echo green; fi)" >> $GITHUB_ENV
-        echo "action_tdwarns=$(wc -l output/TDValidationReport.txt | { read first rest ; echo $first;} )"       >> $GITHUB_ENV
-
+        echo "action_effvalcolor=$(if [ -s output/TDValidationReport.txt ]; then echo orange; else echo green; fi)" >> $GITHUB_ENV
+        echo "action_effvalwarns=$(wc -l output/TDValidationReport.txt | { read first rest ; echo $first;} )"       >> $GITHUB_ENV
 
 
     - name: Prepare environment
@@ -126,18 +139,18 @@ jobs:
           
 
 
-     # Use the output from the `coverage` step
     - name: Generate the spelling badge SVG image
-      uses: emibcn/badge-action@v1
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'Misspellings'
         status: ${{ env.action_spellerrors }}
         color: ${{ env.action_spellcolor }}
         path: output/spell-badge.svg
 
-     # Use the output from the `coverage` step
+
+
     - name: Generate the validation badge SVG image
-      uses: emibcn/badge-action@v1
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'Validation'
         status: ${{ env.action_valerrors }}
@@ -145,9 +158,8 @@ jobs:
         path: output/validation.svg
 
 
-   # Use the output from the `coverage` step
-    - name: Generate the badge SVG image
-      uses: emibcn/badge-action@v1
+    - name: Generate the warnings badge
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'Warnings'
         status: ${{ env.action_sanitystatus }}
@@ -156,7 +168,7 @@ jobs:
 
 
     - name: Generate the transforms badge
-      uses: emibcn/badge-action@v1
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'Transforms'
         status: ${{ env.action_tdate }}
@@ -164,13 +176,78 @@ jobs:
         path: output/transforms.svg
 
     - name: TD Badge
-      uses: emibcn/badge-action@v1
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'TDs'
         status: ${{ env.action_tdwarns }}
         color:  ${{ env.action_tdcolor }}
         path: output/tds.svg
 
+    - name:  Make Dashboard Snippet
+      run: |
+        rurl="https://raw.githubusercontent.com/commoncriteria/${{env.action_projname}}/gh-pages/${{env.action_branch}}"
+        surl="https://commoncriteria.github.io/${{env.action_projname}}/${{env.action_branch}}"
+        gurl="https://github.com/commoncriteria/${{env.action_projname}}/blob/gh-pages/${{env.action_branch}}"
+        (
+        echo '[cols="1,1,1,1,1,1,1,1"]'
+        echo '|==='
+        echo "8+|${{ env.action_projname }} "
+        echo "| https://github.com/commoncriteria/${{env.action_projname}}/tree/${{env.action_branch}}[${{ env.action_branch }}] "
+        echo "a| $surl/${{env.action_projname}}-release.html[📄]"
+        echo "a|[link=$gurl/ValidationReport.txt]"
+        echo "image::$rurl/validation.svg[Validation]"
+        echo "a|[link=$gurl/SanityChecksOutput.md]"
+        echo "image::$rurl/warnings.svg[SanityChecks]"
+        echo "a|[link=$gurl/SpellCheckReport.txt]"
+        echo "image::$rurl/spell-badge.svg[SpellCheck]"
+        echo "a|[link=$gurl/TDValidationReport.txt]"
+        echo "image::$rurl/tds.svg[TDs]"
+        echo "a|image::$rurl/transforms.svg[transforms,150]"
+        echo "a| [link=$gurl/HTMLs.adoc]"
+        echo "image::$rurl/html_count.svg[HTML Count]"
+        echo "[link=$gurl/PDFs.adoc]"
+        echo "image::$rurl/pdf_count.svg[PDF Count]"
+        echo '|==='
+        ) > output/Minidash.adoc
+
+
+    - name: HTML List
+      run: |
+        surl="https://commoncriteria.github.io/${{env.action_projname}}/${{env.action_branch}}"
+        ( for aa in output/*.html ; do
+           echo "* $surl/${aa#*/}[${aa#*/}]"
+        done ) > output/HTMLs.adoc
+        HTML_COUNT=$(wc -l < output/HTMLs.adoc)
+        echo "action_html_count=$HTML_COUNT" >> $GITHUB_ENV
+
+    - name: PDF List
+      run: |
+        surl="https://commoncriteria.github.io/${{env.action_projname}}/${{env.action_branch}}"
+        cd output
+        (for aa in $(find . -name '*.pdf') ; do
+           echo "* $surl/${aa#*/}[${aa#*/}]"
+        done ) > PDFs.adoc
+        PDF_COUNT=$(wc -l < PDFs.adoc)
+        echo "action_pdf_count=$PDF_COUNT" >> $GITHUB_ENV
+
+
+    - name: HTML Badge
+      uses: emibcn/badge-action@v2.0.2
+      with:
+        label: 'HTMLs'
+        status: ${{ env.action_html_count }}
+        color:  gray
+        path: output/html_count.svg
+
+    - name: PDF Badge
+      uses: emibcn/badge-action@v2.0.2
+      with:
+        label: 'PDFs'
+        status: ${{ env.action_pdf_count }}
+        color:  gray
+        path: output/pdf_count.svg
+
+        
     - name:  Prepare checkout
       run: |
         mkdir gh-pages
@@ -180,6 +257,7 @@ jobs:
         ref: gh-pages
         path: gh-pages
 
+        
     - name:  Move output to branch
       run: |
         rm -rf gh-pages/${{ env.action_branch }}
@@ -197,7 +275,7 @@ jobs:
          echo "</ol></body></html>") > index.html
         
     - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.0.0
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages # The branch the action should deploy to.
         folder: gh-pages # The folder the action should deploy.
