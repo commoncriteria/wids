@@ -1,6 +1,26 @@
 == Wireless Intrusion Detection/Prevention Systems Protection Profile Module
 
-https://commoncriteria.github.io/wids[image:https://github.com/commoncriteria/wids/actions/workflows/quick_build.yml/badge.svg[QuickBuild]]
+[cols="1,1,1,1,1,1,1,1"]
+|===
+8+|wids 
+| https://github.com/commoncriteria/wids/tree/master[master] 
+a| https://commoncriteria.github.io/wids/master/wids-release.html[📄]
+a|[link=https://github.com/commoncriteria/wids/blob/gh-pages/master/ValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/master/validation.svg[Validation]
+a|[link=https://github.com/commoncriteria/wids/blob/gh-pages/master/SanityChecksOutput.md]
+image::https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/master/warnings.svg[SanityChecks]
+a|[link=https://github.com/commoncriteria/wids/blob/gh-pages/master/SpellCheckReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/master/spell-badge.svg[SpellCheck]
+a|[link=https://github.com/commoncriteria/wids/blob/gh-pages/master/TDValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/master/tds.svg[TDs]
+a|image::https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/master/transforms.svg[transforms,150]
+a| [link=https://github.com/commoncriteria/wids/blob/gh-pages/master/HTMLs.adoc]
+image::https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/master/html_count.svg[HTML Count]
+[link=https://github.com/commoncriteria/wids/blob/gh-pages/master/PDFs.adoc]
+image::https://raw.githubusercontent.com/commoncriteria/wids/gh-pages/master/pdf_count.svg[PDF Count]
+|===
+
+
 
 This repository hosts the draft version of the Network Devices PP-Module
 for Wireless Intrusion Detection/Prevention Systems (WIDS/WIPS) based on
