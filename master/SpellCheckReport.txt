@@ -1,0 +1,14 @@
+output/wids-release-linkable.html: Falied
+output/wids-release-linkable.html: mofification
+output/wids-release-linkable.html: v2
+output/wids-release.html: Falied
+output/wids-release.html: mofification
+output/wids-release.html: v2
+output/wids-sd.html: evaluator’s
+output/wids-sd.html: fail’
+output/wids-sd.html: pass’
+output/wids-sd.html: server’
+output/wids.html: Falied
+output/wids.html: mofification
+output/wids.html: server’
+output/wids.html: v2
