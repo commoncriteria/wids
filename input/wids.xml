@@ -2176,9 +2176,23 @@ The evaluator shall examine the operational guidance to verify that it
           </audit>
           <dependencies>No dependencies.</dependencies>
           <f-element id="fel-detect-devices-in-bands">
-            <title> The TSF shall detect the presence of bluetooth devices that operate in the
-              following RF bands: <selectables>
-                <selectable>2.4 GHz</selectable>
+            <title> The TSF shall detect the presence of cellular devices that operate within the
+              following ways, frequency ranges, and parameters: <selectables>
+                <selectable>Detect and log the presence of 2.4 GHz Bluetooth BR/EDR devices operating within a controlled space</selectable>
+                <selectable>Detect and log the presence of Bluetooth Low Energy (BLE) devices operating within a controlled space</selectable>
+                <selectable>Detect and log the the Bluetooth BR/EDR devices LAP and half the Bluetooth MAC address within a controlled space</selectable>
+                <selectable>Detect and log the BLE device's Bluetooth MAC address within a controlled space</selectable>
+                <selectable>Geo-locate Bluetooth BR/EDR devices within 25 feet of their actual location</selectable>
+                <selectable>Geo-locate BLE devices within 25 feet of their actual location</selectable>
+                <selectable>Detect and log Bluetooth BR/EDR devices conducting the Inquiry Procedure within a controlled space</selectable>
+                <selectable>Detect and log Bluetooth BR/EDR devices responding to the Inquiry Procedure within the controlled space</selectable>
+                <selectable>Capture and log any device information transmitted during the Bluetooth BR/EDR Inquiry Procedure when occurring within a controlled space</selectable>
+                <selectable>Detect and log BLE devices advertisements on the Advertisement channels</selectable>
+                <selectable>Detect and log BLE devices exchanging information or data on the Advertisement channels</selectable>
+                <selectable>Detect and log Bluetooth BR/EDR devices using the SDP procedure</selectable>
+                <selectable>Capture and log any device information exchanged during the Bluetooth BR/EDR SDP procedure</selectable>
+                <selectable>Detect and log any Bluetooth BR/EDR devices performing the Paging Procedure</selectable>
+                <selectable>Detect and log any BLE device performing the Paging Procedure</selectable>
               </selectables>.
             </title>
 	    <ext-comp-def-title>
