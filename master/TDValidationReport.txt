@@ -1,0 +1,1 @@
+/home/runner/work/wids/wids/output/effective.xml:2114:29: error: element "selectables" incomplete; missing required element "selectable"

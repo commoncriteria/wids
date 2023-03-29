@@ -726,7 +726,7 @@
                             <td><a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a></td><td>None</td><td>None</td>
                         </tr>
                         <tr>
-                            <td><a href="#FPT_FLS.1">FPT_FLS.1</a> (objective)</td><td>Information about failure</td><td>Indication that there was a failure, type of failure, device that failed, and time of failure</td>
+                            <td><a href="#FPT_FLS.1">FPT_FLS.1</a> (objective)</td><td>Information about failure</td><td>Indication that there was a failure, type of failure, device that failed, sensor connectivity and operating status, and time of failure</td>
                         </tr>
                     </table>
                      <span class="ctr" data-myid="auditWids" data-counter-type="ct-Table" id="auditWids">Table <span class="counter">2</span>: Auditable Events</span> 
@@ -964,10 +964,10 @@
                             <i>Detection of non-allowlisted <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr></i>,
                         </li>
                         <li>
-                            <i>Detection of authorized <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> establishing peer-to-peer connection with any other <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr></i>,
+                            <i>Detection of authorized <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> establishing peer-to-peer (P2P) connection with any other <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr></i>,
                         </li>
                         <li>
-                            <i>Detection of <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> bridging two network interfaces</i>,
+                            <i>Detection of a single <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr>, or multiple <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, bridging two network interfaces</i>,
                         </li>
                         <li>
                             <i>Detection of unauthorized point-to-point wireless bridges by allowlisted <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr></i>,
@@ -1548,6 +1548,9 @@
                 <td><a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines an optional capability for a distributed component to be dedicated to one particular function. This function (wireless spectrum analysis) is defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that extends the logical scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines.</td>
             </tr>
             <tr>
+                <td><a href="#FAU_WID_EXT.5">FAU_WID_EXT.5</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines operations to be performed on assets in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s operational environment, which is behavior defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that extends the logical scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines.</td>
+            </tr>
+            <tr>
                 <th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
             </tr>
             <tr>
@@ -1596,7 +1599,7 @@
                 <div class="reqdesc">
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of network devices that operate in the following RF bands: [<b>selection</b>: <span class="selectable-content" id="_s_75">3.6 GHz</span>, <span class="selectable-content" id="_s_76">60 GHz</span>, <span class="selectable-content" id="_s_77">sub-GHz (0-900 MHz)</span>, <span class="selectable-content" id="cell">all cellular bands</span> ]. 
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Non-WLAN (IEEE 802.11 a, b, g, n, and ac) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
+                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Non-WLAN (IEEE 802.11 a, b, g, n, y, ac, ad and ay) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
                     </div>
                 </div>
             </div>
@@ -1609,6 +1612,20 @@
                 </div>
                 <div class="reqdesc">
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a dedicated sensor for wireless spectrum analysis. 
+                </div>
+            </div>
+        </div>
+        <div class="comp" id="FAU_WID_EXT.5">
+            <h4>FAU_WID_EXT.5 Wireless Intrusion Detection - Bluetooth Spectrum Monitoring</h4>
+            <div class="element">
+                <div class="reqid" id="FAU_WID_EXT.5.1">
+                    <a href="#FAU_WID_EXT.5.1" class="abbr">FAU_WID_EXT.5.1</a>
+                </div>
+                <div class="reqdesc">
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of bluetooth devices that operate in the following RF bands: [<b>selection</b>: <span class="selectable-content" id="_s_79">2.4 GHz</span> ]. 
+                    <div class="appnote">
+                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Bluetooth and Bluetooth Low-Energy (BLE) (IEEE 802.15) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1671,7 +1688,7 @@
                     <a href="#FAU_WIP_EXT.1.1" class="abbr">FAU_WIP_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_93">wireless containment</span>, <span class="selectable-content" id="_s_94">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span> ]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_94">wireless containment</span>, <span class="selectable-content" id="_s_95">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span> ]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -1716,22 +1733,22 @@
                     <a href="#FAU_ANO_EXT.1.1" class="abbr">FAU_ANO_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_79">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_80">anomaly ('unexpected') traffic patterns</span> ] including the specification of [<b>selection</b>: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_80">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_81">anomaly ('unexpected') traffic patterns</span> ] including the specification of [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_81">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
+                            <span class="selectable-content" id="_s_82">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_82">time of day</span>
+                            <span class="selectable-content" id="_s_83">time of day</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_83">frequency</span>
+                            <span class="selectable-content" id="_s_84">frequency</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_84">thresholds</span>
+                            <span class="selectable-content" id="_s_85">thresholds</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_85">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
+                            <span class="selectable-content" id="_s_86">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
                         </li>
                     </ul>
                     ] and the following network protocol fields: 
@@ -1745,7 +1762,7 @@
                     <a href="#FAU_ANO_EXT.1.2" class="abbr">FAU_ANO_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_86">manual configuration by administrators</span>, <span class="selectable-content" id="_s_87">automated configuration</span> ]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_87">manual configuration by administrators</span>, <span class="selectable-content" id="_s_88">automated configuration</span> ]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The "baseline" and "anomaly" can be something manually defined/configured by a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrator (or importing definitions), or something that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to automatically define/create by inspecting network traffic over a period of time (a.k.a. "profiling"). </span>
                     </div>
@@ -1790,10 +1807,10 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to store generated <b>packet captures</b> on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself. In addition [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_88">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that stores <b>packet capture</b> data on the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">identification of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components</span>]</span>
+                            <span class="selectable-content" id="_s_89">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that stores <b>packet capture</b> data on the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">identification of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components</span>]</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_89">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with storage of <b>packet capture</b> data provided externally for the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">list of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components that do not store packet capture data locally and the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components to which they transmit their generated packet capture data</span>]</span>
+                            <span class="selectable-content" id="_s_90">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with storage of <b>packet capture</b> data provided externally for the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">list of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components that do not store packet capture data locally and the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components to which they transmit their generated packet capture data</span>]</span>
                         </li>
                     </ul>
                     ]. 
@@ -1804,7 +1821,7 @@
                     <a href="#FAU_STG_EXT.1.3/PCAP" class="abbr">FAU_STG_EXT.1.3/PCAP</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_90">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_91">overwrite previous <b>packet captures</b> according to the following rule: [<b>assignment</b>: <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_92">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span> ] when the local storage space for <b>packet capture</b> data is full. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_91">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_92">overwrite previous <b>packet captures</b> according to the following rule: [<b>assignment</b>: <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_93">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span> ] when the local storage space for <b>packet capture</b> data is full. 
                 </div>
             </div>
         </div>
@@ -2123,7 +2140,7 @@
                     <h4>Family Behavior</h4>
                     <div>This family defines requirements for data collection of potentially malicious wireless network activity.</div>
                     <h4>Component Leveling</h4>
-                    <svg style="max-height: 90px;">
+                    <svg style="max-height: 110px;">
                         <text x="4" fill="black" font-size="15" y="64">FAU_WID_EXT</text>
                         <rect x="2" y="51" width="150" height="16" fill="none" stroke="black"></rect>
                         <text x="234" fill="black" font-size="15" y="24">1</text>
@@ -2138,6 +2155,9 @@
                         <text x="234" fill="black" font-size="15" y="84">4</text>
                         <rect x="232" y="71" width="12" height="16" fill="none" stroke="black"></rect>
                         <line x1="152" y1="57" x2="231" y2="77" stroke="black"></line>
+                        <text x="234" fill="black" font-size="15" y="104">5</text>
+                        <rect x="232" y="91" width="12" height="16" fill="none" stroke="black"></rect>
+                        <line x1="152" y1="57" x2="231" y2="97" stroke="black"></line>
                     </svg>
                     <p>
                         <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a>, Wireless Intrusion Detection - Malicious Environmental Objects, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a mechanism to distinguish between authorized and unauthorized network assets.
@@ -2150,6 +2170,9 @@
                     </p>
                     <p>
                         <a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a>, Wireless Intrusion Detection - Wireless Spectrum Analysis, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement wireless spectrum analysis in a dedicated physical component.
+                    </p>
+                    <p>
+                        <a href="#FAU_WID_EXT.5">FAU_WID_EXT.5</a>, Wireless Intrusion Detection - Bluetooth Spectrum Monitoring, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to surveil certain radio frequency bands that fall outside the typical wireless spectrum used by consumer-grade electronics.
                     </p>
                     <h4>Management: FAU_WID_EXT.1</h4>
                     <p>
@@ -2253,6 +2276,22 @@
                         <h4 id="ext-comp-FAU_WID_EXT.4.1">FAU_WID_EXT.4.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a dedicated sensor for wireless spectrum analysis. 
                     </div>
+                    <h4>Management: FAU_WID_EXT.5</h4>
+                    <p>No specific management functions are identified.</p>
+                    <h4>Audit: FAU_WID_EXT.5</h4>
+                    <p>
+                        The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: 
+                        <ul>
+                            <li>Detection of network devices operating in selected RF bands</li>
+                        </ul>
+                    </p>
+                    <h4>FAU_WID_EXT.5 Wireless Intrusion Detection - Bluetooth Spectrum Monitoring</h4>
+                    <div style="margin-left: 1em;">
+                        <p>Hierarchical to: No other components.</p>
+                        <p>Dependencies to: No dependencies.</p>
+                        <h4 id="ext-comp-FAU_WID_EXT.5.1">FAU_WID_EXT.5.1</h4>
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of network devices that operate in the following RF bands: [<b>assignment</b>: <span class="assignable-content">list of RF bands</span>]. 
+                    </div>
                 </div>
                 <h3 id="ext-comp-FAU_ANO_EXT" class="indexable" data-level="4">C.2.1.6 FAU_ANO_EXT Anomaly-Based Intrusion Detection</h3>
                 <div style="margin-left: 1em;">
@@ -2286,22 +2325,22 @@
                             Dependencies to: <a href="#FAU_IDS_EXT.1">FAU_IDS_EXT.1</a> Intrusion Detection System - Intrusion Detection Methods
                         </p>
                         <h4 id="ext-comp-FAU_ANO_EXT.1.1">FAU_ANO_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_79">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_80">anomaly ('unexpected') traffic patterns</span> ] including the specification of [<b>selection</b>: 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_80">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_81">anomaly ('unexpected') traffic patterns</span> ] including the specification of [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_81">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
+                                <span class="selectable-content" id="_s_82">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_82">time of day</span>
+                                <span class="selectable-content" id="_s_83">time of day</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_83">frequency</span>
+                                <span class="selectable-content" id="_s_84">frequency</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_84">thresholds</span>
+                                <span class="selectable-content" id="_s_85">thresholds</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_85">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
+                                <span class="selectable-content" id="_s_86">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
                             </li>
                         </ul>
                         ] and the following network protocol fields: 
@@ -2309,7 +2348,7 @@
                             <li>all management and control frame header elements.</li>
                         </ul>
                         <h4 id="ext-comp-FAU_ANO_EXT.1.2">FAU_ANO_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_86">manual configuration by administrators</span>, <span class="selectable-content" id="_s_87">automated configuration</span> ]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_87">manual configuration by administrators</span>, <span class="selectable-content" id="_s_88">automated configuration</span> ]. 
                     </div>
                 </div>
                 <h3 id="ext-comp-FAU_SIG_EXT" class="indexable" data-level="4">C.2.1.7 FAU_SIG_EXT Signature-Based Intrusion Detection</h3>
@@ -2417,7 +2456,7 @@
                             Dependencies to: <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a> Wireless Intrusion Detection - Malicious Environmental Objects
                         </p>
                         <h4 id="ext-comp-FAU_WIP_EXT.1.1">FAU_WIP_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_93">wireless containment</span>, <span class="selectable-content" id="_s_94">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span> ]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_94">wireless containment</span>, <span class="selectable-content" id="_s_95">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span> ]. 
                     </div>
                 </div>
             </span></span>

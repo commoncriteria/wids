@@ -1,0 +1,1 @@
+/home/runner/work/wids/wids/input/wids.xml:2181:29: error: element "selectables" incomplete; missing required element "selectable"
