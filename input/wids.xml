@@ -2208,6 +2208,59 @@ The evaluator shall examine the operational guidance to verify that it
             </aactivity>
           </f-element>
         </f-component>
+
+        <f-component cc-id="fau_wid_ext.5" name="Wireless Intrusion Detection - Cellular Spectrum Monitoring">
+          <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
+          <comp-lev>requires the TSF to surveil certain radio frequency bands that fall outside the typical wireless spectrum used by consumer-grade electronics.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the PP/ST: <h:ul>
+          <h:li>Detection of network devices operating in selected RF bands</h:li>
+          </h:ul>
+          </audit>
+          <dependencies>No dependencies.</dependencies>
+          <f-element id="fel-detect-devices-in-bands">
+            <title> The TSF shall detect the presence of cellular devices that operate within the
+              following ways, ranges, and parameters: <selectables>
+                <selectable>Detect and log the presence of cellular 3G devices operating within a controlled space</selectable>
+                <selectable>Detect and log the presence of cellular 4G/LTE devices operating within a controlled space</selectable>
+                <selectable>Detect and log the presence of cellular 5G low and mid-band devices operating within a controlled space</selectable>
+                <selectable>Detect and identify base stations which had clients within the area monitored by the WIDS</selectable>
+                <selectable>Capture temporary identifiers (e.g. TMSI) of cellular devices within a controlled space</selectable>
+                <selectable>Detect and identify which cellular technology (such as 3G, LTE, UTMS, 5G, etc.) the cellular device is using within a controlled space</selectable>
+                <selectable>Detect and identify which cellular carrier a cellular device is using within a controlled space</selectable>
+                <selectable>Detect identify which base station a cellular device is connnected to while operating within a controlled space</selectable>
+                <selectable>Detect identify whether a cellular device is using a cellular uplink or downlink operating within a controlled space</selectable>
+                <selectable>Geo-locate cellular devices  operating within the operation area of the WIDS</selectable>
+              </selectables>.
+            </title>
+	    <ext-comp-def-title>
+              <title> The TSF shall detect the presence of network devices that operate in the
+              following RF bands: <assignable>list of RF bands</assignable>.
+              </title>
+	    </ext-comp-def-title>
+            <note role="application"> This SFR refers to Bluetooth and Bluetooth Low-Energy (BLE) (IEEE 802.15)
+              network devices that operate in the specified frequencies. There is an understanding that this 
+              capability requires a TOE to use specialized, licensed radio systems. This SFR will allow for the introduction of an
+              open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party
+              integration.</note>
+            <aactivity>
+              <TSS> The evaluator shall verify that the TSS includes the set of RF bands and
+                technologies that the TSF can detect the use of. The TSS should also include
+                instructions on how to enable and the hardware that is necessary for the additional
+                band detection. </TSS>
+              <Guidance> The evaluator shall verify that the operational guidance describes how to
+                enable and configure detection of the technologies included in the ST as well as the
+                hardware that is needed to perform this function.</Guidance>
+              <Tests> The evaluator shall enable and configure detection of the selected
+                technologies. <testlist>
+                  <test>Deploy a device within the given technology and verify that the TSF detects
+                    the device.</test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+
       </section>
     </opt-sfrs>
     <sel-sfrs>
