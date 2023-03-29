@@ -2107,6 +2107,7 @@ The evaluator shall examine the operational guidance to verify that it
             <title> The TSF shall detect the presence of network devices that operate in the
               following RF bands: <selectables>
                 <selectable>3.6 GHz</selectable>
+                <selectable>6 GHz</selectable>
                 <selectable>60 GHz</selectable>
                 <selectable>sub-GHz (0-900 MHz)</selectable>
                 <selectable id="cell">all cellular bands</selectable>
