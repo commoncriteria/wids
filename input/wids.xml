@@ -1160,9 +1160,13 @@ The TOE must be able to react, as configured by the administrators, to
           </audit>
           <dependencies>FAU_INV_EXT.2 Characteristics of Environmental Objects</dependencies>
           <f-element id="fel-detect-location">
-            <title> The TSF shall detect the physical location of rogue or allowlisted APs and EUDs to within
-                <assignable>value equal or less than 25</assignable> feet of their actual
-              location.</title>
+            <title> The TSF shall detect the physical location of rogue APs and EUDs, and <selectables>
+                <selectable>allow-listed APs</selectable>
+                <selectable>allow-listed EUDs</selectable>
+                <selectable>neighboring APs and EUDs</selectable>
+                <selectable>no other devices</selectable>
+                </selectables> to within <assignable>value equal or less than 25</assignable> feet of their actual location.
+            </title>
           </f-element>
           <f-element id="fel-detect-signal">
             <title> The TSF shall detect received signal strength and <selectables>
