@@ -1234,8 +1234,9 @@ The TOE must be able to react, as configured by the administrators, to
           <f-element id="fel-enforce-mon-rules">
             <title>The TSF shall enforce the following rules for monitoring <h:b>wireless traffic:</h:b>
               <h:ol type="a">
-                <h:li>Accumulation or combination of <assignable>subset of defined auditable
-                    events</assignable> known to indicate a potential security violation, </h:li>
+                <h:li><h:i>Accumulation or combination of <selectables>
+                    <selectable><assignable>subset of defined auditable events</assignable></selectable>
+                    <selectable>no defined auditable events</selectable></selectables>known to indicate a potential security violation</h:i>,</h:li>
                 <h:li><h:i>Detection of non-allowlisted AP</h:i>,</h:li>
                 <h:li><h:i>Detection of non-allowlisted EUD</h:i>,</h:li>               
                 <h:li><h:i>Detection of authorized EUD establishing peer-to-peer (P2P) connection with any other EUD</h:i>,</h:li>
