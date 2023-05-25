@@ -170,6 +170,21 @@
        background-color:#F4F4F4;
    }
 
+   table.ecd_heir_dep{
+       width: 100%;
+   }
+   table.ecd_heir_dep tr{
+       background-color: inherit;
+   }
+       
+   table.ecd_heir_dep tr :first-child{
+       white-space: nowrap;
+   }
+   table.ecd_heir_dep tr :last-child{
+       width: 100%;
+   }
+
+       
    .dependent{
        border: 1px solid gray;
        border-radius: 1px
@@ -1247,6 +1262,21 @@ The evaluator shall examine the operational guidance to verify that it
       Deploy a device within the given technology and verify that the TSF detects
                     the device.</li>
                 </ul></span>
+              </div></span></div><div class="comp" id=""><h4>FAU_WID_EXT.5 Wireless Intrusion Detection - Cellular Spectrum Monitoring</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_WID_EXT.5</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"> The evaluator shall verify that the TSS includes the set of RF bands and
+                technologies that the TSF can detect the use of. The TSS should also include
+                instructions on how to enable and the hardware that is necessary for the additional
+                band detection. </div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall verify that the operational guidance describes how to
+                enable and configure detection of the technologies included in the ST as well as the
+                hardware that is needed to perform this function.</div><div class="eacategory">Tests</div><div class="ea"> The evaluator shall enable and configure detection of the selected
+                technologies. <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FAU_WID_EXT.5:1</a>:
+      Deploy a device within the given technology and verify that the TSF detects
+                    the device.</li>
+                </ul></span>
               </div></span></div><h2 class="indexable" data-level="1" id="sel-sfrs">2.4 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="ss-sel-fau">2.4.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_ANO_EXT.1 Anomaly-Based Intrusion Detection</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_ANO_EXT.1</div>
               
               
@@ -1277,7 +1307,7 @@ The evaluator shall examine the operational guidance to verify that it
                 including a description of the customization options that are
                 available.</div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FAU_SIG_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_71" class="defined" href="#_t_71">Test FAU_SIG_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Craft a signature with the available fields indicated in the TSS.</li>
@@ -1305,17 +1335,17 @@ The evaluator shall examine the operational guidance to verify that it
                 evaluator shall verify that the operational guidance provides information on what
                 the configurable behaviors are and how they can be set.</div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_71" class="defined" href="#_t_71">Test FAU_STG_EXT.1/PCAP:1</a>:
+                  <li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FAU_STG_EXT.1/PCAP:1</a>:
       The evaluator shall configure packet captures according to the guidance
                     specified. The evaluator shall then trigger an event that starts a capture and
                     verify through the tests in FTP_ITC.1 that the captured traffic being sent to
                     the external device is being sent through a trusted channel.</li>
-                  <li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FAU_STG_EXT.1/PCAP:2</a>:
+                  <li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FAU_STG_EXT.1/PCAP:2</a>:
       The evaluator shall configure packet captures to be stored on the TSF
                     according to the guidance specified. The evaluator shall then trigger an event
                     that starts a capture and verify that the packet capture was stored on the
                     TSF.</li>
-                  <li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FAU_STG_EXT.1/PCAP:3</a>:
+                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FAU_STG_EXT.1/PCAP:3</a>:
       The evaluator shall define packet data retention and deletion rules on the
                     TSF according to the guidance specified and test the functionality of the
                     specified rules.</li>
@@ -1331,7 +1361,7 @@ The evaluator shall examine the operational guidance to verify that it
                 to configure the WIDS to detect unauthorized APs connected to the protected wired
                 infrastructure.</div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FAU_INV_EXT.4:1</a>:
+                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_INV_EXT.4:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP.</li>
@@ -1354,7 +1384,7 @@ The evaluator shall examine the operational guidance to verify that it
 		Depending on operation guidance provided for the TOE, the evaluator shall
                 confirm and note the existence of the signal library, and test for the ability to
                 import, export, and update the signal library. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_INV_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_INV_EXT.5:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy an allowlisted AP and connect it to the protected wired
@@ -1381,7 +1411,7 @@ The evaluator shall examine the operational guidance to verify that it
                 should be allowed between two subsequent attempts for an EUD to connect from two
                 separate locations.</p></div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_MAC_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_MAC_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Setup an allowlisted AP (Location 1).</li>
@@ -1396,7 +1426,7 @@ The evaluator shall examine the operational guidance to verify that it
                       <li><b>Step 5: </b>Verify that the TSF detected and generated an alert.</li>
                     </ul>
                   </li>
-                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_MAC_EXT.1:2</a>:
+                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_MAC_EXT.1:2</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Configure the timeframe allowed between connection of two EUDs in two
@@ -1422,7 +1452,7 @@ The evaluator shall examine the operational guidance to verify that it
             <div class="eacategory">TSS</div><div class="ea"> The evaluator shall verify that the TSS includes a list of available containment
                 methods on the TSF and how to configure them.</div><div class="eacategory">Guidance</div><div class="ea"> There are no operational guidance activities for this SFR.</div><div class="eacategory">Tests</div><div class="ea"> Configure the containment methods available on the TSF and perform the
                 following test for each method. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_WIP_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FAU_WIP_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP and connect to the protected wired
@@ -1446,7 +1476,7 @@ The evaluator shall examine the operational guidance to verify that it
                 following these failures, and any actions that are required to restore the TOE to
                 normal operation following the transition to a failure state. </div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FPT_FLS.1:1</a>:
+                  <li class="test-"><a id="_t_80" class="defined" href="#_t_80">Test FPT_FLS.1:1</a>:
       For each failure mode specified in the ST, the evaluator shall ensure that
                     the TOE attains a secure state after initiating each failure mode type.</li>
                 </ul></span>
