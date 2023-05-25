@@ -2193,10 +2193,8 @@ The evaluator shall examine the operational guidance to verify that it
                 <selectable>Capture and log any device information exchanged during the Bluetooth BR/EDR SDP procedure</selectable>
                 <selectable>Detect and log any Bluetooth BR/EDR devices performing the Paging Procedure</selectable>
                 <selectable>Detect and log any BLE device performing the Paging Procedure</selectable>
-                <selectable>Detect and log the piconet membership of any Bluetooth BR/EDR device. This includes role in the piconet (Central or Peripheral),
-                piconet ID, device ID, and number of piconets which they are members of</selectables>
-                <selectable>Detect and log the piconet membership of any Low Energy (LE) device. This includes role in the piconet (Central or Peripheral),
-                piconet ID, device ID, and number of piconets which they are members of</selectables>
+                <selectable>Detect and log the piconet membership of any Bluetooth BR/EDR device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</selectable>
+                <selectable>Detect and log the piconet membership of any Low Energy (LE) device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</selectable>
                 <selectable>Use Bluetooth BR/EDR Inquiry Procedure to detect Bluetooth BR/EDR devices in discoverable mode within a controlled area</selectable>
                 <selectable>Use Bluetooth BR/EDR SDP procedure to gether information about Bluetooth BR/EDR devices within a controlled area</selectable>
                 <selectable>Use BLE SDP procedure to gather information about BLE devices within a controlled area</selectable>
