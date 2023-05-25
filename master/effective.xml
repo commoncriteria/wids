@@ -1574,7 +1574,7 @@ The TOE must be able to react, as configured by the administrators, to
                   <test><h:b>Detection of the physical location of an identified WLAN threat by using triangulation</h:b>:
                     <steplist>
                           <step>Deploy a non-allowlisted AP or EUD within range of the TSF.</step>
-                          <step>Verify that the TSF can track and locate the AP or EUD to within 5 meters.</step>
+                          <step>Verify that the TSF can track and locate the AP or EUD to within 25 feet.</step>
                     </steplist>
                     <h:br/>
                   </test>
