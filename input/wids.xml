@@ -2177,7 +2177,8 @@ The evaluator shall examine the operational guidance to verify that it
           <dependencies>No dependencies.</dependencies>
           <f-element id="fel-detect-devices-in-bands">
             <title> The TSF shall detect the presence of cellular devices that operate within the
-              following ways, frequency ranges, and parameters: <selectables>
+              following ways, frequency ranges, and parameters: 
+              <selectables>
                 <selectable>Detect and log the presence of 2.4 GHz Bluetooth BR/EDR devices operating within a controlled space</selectable>
                 <selectable>Detect and log the presence of Bluetooth Low Energy (BLE) devices operating within a controlled space</selectable>
                 <selectable>Detect and log the the Bluetooth BR/EDR devices LAP and half the Bluetooth MAC address within a controlled space</selectable>
@@ -2198,6 +2199,7 @@ The evaluator shall examine the operational guidance to verify that it
                 <selectable>Use Bluetooth BR/EDR Inquiry Procedure to detect Bluetooth BR/EDR devices in discoverable mode within a controlled area</selectable>
                 <selectable>Use Bluetooth BR/EDR SDP procedure to gether information about Bluetooth BR/EDR devices within a controlled area</selectable>
                 <selectable>Use BLE SDP procedure to gather information about BLE devices within a controlled area</selectable>
+              </selectables>
             </title>
 	    <ext-comp-def-title>
               <title> The TSF shall detect the presence of network devices that operate in the
