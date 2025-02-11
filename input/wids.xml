@@ -116,7 +116,7 @@ implied certain tests were mandatory despite the functions being in selections
       <term abbr="SFP" full="Security Function Policy">The security policy enforced by an SF.</term>
     </cc-terms>
     <tech-terms>
-      <suppress> ,Extended Package, </suppress>
+      <suppress>Extended Package</suppress>
       <term abbr="AES" full="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point" plural="APs">
 	A device that provides the network interface that enables
@@ -206,7 +206,18 @@ implied certain tests were mandatory despite the functions being in selections
       </section>   
   </sec:Introduction>
 
-  <sec:Conformance_Claims/>
+  <sec:Conformance_Claims>
+  <CClaimsInfo cc-version="cc-31r5">
+  <cc-st-conf>exact</cc-st-conf>
+  <cc-pt2-conf>extended</cc-pt2-conf>
+  <cc-pt3-conf>conformant</cc-pt3-conf>
+  <cc-pp-conf/>
+  <cc-pp-config-with>
+  <PP-cc-ref>collaborative Protection Profile for Network Device, version 2.2e</PP-cc-ref>
+  </cc-pp-config-with>
+  <cc-pkg-claim/>
+  </CClaimsInfo>
+  </sec:Conformance_Claims>
   <!--   <cclaims> -->
   <!--     <cclaim title="Conformance Statement"> -->
   <!--       <description> This PP-Module inherits exact conformance as required from the specified -->
@@ -227,7 +238,7 @@ implied certain tests were mandatory despite the functions being in selections
   <!--     </cclaim> -->
   <!--   </cclaims> -->
   <!-- </chapter> -->
-  <sec:Security_Problem_Description>
+  <sec:Security_Problem_Definition>
     <h:p>
       WIDS address a range of security threats
     related to detection of and reaction to potentially malicious WLAN traffic. The malicious
@@ -367,7 +378,7 @@ implied certain tests were mandatory despite the functions being in selections
         </OSP>
       </OSPs>
     </section>
-  </sec:Security_Problem_Description>
+  </sec:Security_Problem_Definition>
   <sec:Security_Objectives>
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <!-- NIAP: Make sure new SFRs are mapped to SOs -->
