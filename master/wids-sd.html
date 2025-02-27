@@ -274,7 +274,7 @@
    </style></head><body><div style="text-align: center; margin-left: auto; margin-right: auto;"><h1 class="title" style="page-break-before:auto;">Supporting Document<br/>
         Mandatory Technical Document</h1><img src="images/niaplogo.png" alt="NIAP"></img><hr width="50%"></hr><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><br/>
     PP-Module for Wireless Intrusion Detection/Prevention System<br/>
-      Version: 2.0<br/>2022-09-30<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
+      Version: 2.1<br/>2025-02-28<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
       and the associated Common Evaluation Methodology for
       Information Technology Security Evaluation.</p><p>SDs may be “Guidance Documents”, that highlight specific approaches 
       and application of the standard to areas where no mutual recognition of
@@ -284,7 +284,7 @@
       The usage of the latter class is not only mandatory, but certificates
       issued as a result of their application are recognized under the CCRA.</p><p><b>Technical Editor:</b><br/>
       National Information Assurance Partnership (NIAP)
-      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>2.0</td><td>2022-09-30</td><td>Added 6 GHz spectrum slice</td></tr><tr><td>1.0</td><td>2020-09-30</td><td>Initial Release - PP-Module for NDcPP</td></tr></table></p><p><b>General Purpose:</b><br/>
+      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>2.1</td><td>2025-02-28</td><td>Incorporate NIAP Technical Decisions, Update to CC:2022</td></tr><tr><td>2.0</td><td>2022-09-30</td><td>Added 6 GHz spectrum slice</td></tr><tr><td>1.0</td><td>2020-09-30</td><td>Initial Release - PP-Module for NDcPP</td></tr></table></p><p><b>General Purpose:</b><br/>
       The purpose of this SD is to define evaluation methods for the functional behavior of
       Wireless Intrusion Detection/Prevention System      
       products.
@@ -294,7 +294,7 @@
       Technical Community members, with representatives from industry, government 
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-b-nd" style="text-indent:10px">2.1<span>Network Device</span></a><a href="#qq-sfrs-b-nd-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
-        </span></a><a href="#ss-mod-fau" style="text-indent:30px">2.1.1.1<span>Security Audit (FAU)</span></a><a href="#ss-mod-fco" style="text-indent:30px">2.1.1.2<span>Communications (FCO)</span></a><a href="#ss-mod-fpt" style="text-indent:30px">2.1.1.3<span>Protection of the TSF (FPT)</span></a><a href="#ss-mod-ftp" style="text-indent:30px">2.1.1.4<span>Trusted Paths/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#ss-man-fau" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#ss-man-fdp" style="text-indent:20px">2.2.2<span>User Data Protection (FDP)</span></a><a href="#ss-man-fmt" style="text-indent:20px">2.2.3<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#ss-opt-fau" style="text-indent:20px">2.3.1<span>Security Audit (FAU)</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#ss-sel-fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#ss-obj-fau" style="text-indent:20px">2.5.1<span>Security Audit (FAU)</span></a><a href="#ss-obj-fpt" style="text-indent:20px">2.5.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
+        </span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#ss-man-fau" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#ss-man-fdp" style="text-indent:20px">2.2.2<span>User Data Protection (FDP)</span></a><a href="#ss-man-fmt" style="text-indent:20px">2.2.3<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#ss-opt-fau" style="text-indent:20px">2.3.1<span>Security Audit (FAU)</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#ss-sel-fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#ss-obj-fau" style="text-indent:20px">2.5.1<span>Security Audit (FAU)</span></a><a href="#ss-obj-fpt" style="text-indent:20px">2.5.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for Wireless Intrusion Detection/Prevention System is
     to describe the security functionality of 
     Wireless Intrusion Detection/Prevention System
@@ -303,9 +303,9 @@
 
     
     The PP-Module is intended for use with the following Base-PP:
-        <ul><li>Network Device, version 2.2e.</li></ul><br/>
+        <ul><li>Network Device, version 3.0e.</li></ul><br/>
     This SD is mandatory for evaluations of TOEs that claim conformance to a PP-Configuration that includes the PP-Module for :
-    <ul><li>Wireless Intrusion Detection/Prevention System, Version 2.0</li></ul>
+    <ul><li>Wireless Intrusion Detection/Prevention System, Version 2.1</li></ul>
     As such it defines Evaluation Activities for the functionality described in the PP-Module as well as any impacts to the Evaluation Activities to the Base-PP(s) it modifies.
     </p><p> 
 Although Evaluation Activities are defined mainly for the evaluators to follow, in general they also help developers to prepare for evaluation by identifying specific requirements for their TOE.
@@ -406,29 +406,9 @@ The following sections list Common Criteria and technology terms used in this do
       to a PP-Configuration that includes the NDcPP.
      <h3 class="indexable" data-level="2" id="qq-sfrs-b-nd-Modified">2.1.1 Modified SFRs
         </h3>
-                
-        <h3 class="indexable" data-level="3" id="ss-mod-fau">2.1.1.1 Security Audit (FAU)</h3><div class="comp" id=""><h4>FAU_GEN_EXT.1 Security Audit Data Generation for Distributed TOE Components</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN_EXT.1</div>
-                
-                  There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                The PP-Module modifies this SFR to make its inclusion mandatory rather than selection-based, but there is no change to how the SFR must be implemented.
-                  <br/><br/>
-              </span></div><div class="comp" id=""><h4>FAU_STG_EXT.1 Protected Audit Event Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG_EXT.1</div>There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                The PP-Module modifies this SFR to remove one of the possible selection items, but there is no change to how the SFR is to be implemented.<br/><br/>
-              </span></div>
-        <h3 class="indexable" data-level="3" id="ss-mod-fco">2.1.1.2 Communications (FCO)</h3><div class="comp" id=""><h4>FCO_CPC_EXT.1 Communication Partner Control</h4><span class="activity_pane_body"><div class="component-activity-header">FCO_CPC_EXT.1</div>There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                The PP-Module modifies this SFR to make its inclusion mandatory rather than optional, but there is no change to how the SFR is to be implemented.<br/><br/>
-              </span></div>
-        <h3 class="indexable" data-level="3" id="ss-mod-fpt">2.1.1.3 Protection of the TSF (FPT)</h3><div class="comp" id=""><h4>FPT_ITT.1 Basic Internal TSF Data Transfer Protection</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_ITT.1</div>There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                The PP-Module modifies this SFR to make its inclusion mandatory rather than optional, but there is no change to how the SFR is to be implemented. <br/><br/>
-              </span></div>
-        <h3 class="indexable" data-level="3" id="ss-mod-ftp">2.1.1.4 Trusted Paths/Channels (FTP)</h3><div class="comp" id=""><h4>FTP_ITC.1 Inter-TSF trusted channel</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div> 
-		<p>
-		There is no change to the EAs specified for this SFR in the NDcPP SD. 
-                If ‘database server’ is selected in FTP_ITC.1.1, the evaluator shall ensure that the required tests are performed on that external interface in addition to the other claimed interfaces.</p><p>
-                The evaluator shall also perform test 4 for this SFR in the NDcPP SD, which is objective in NDcPP.</p>
-	      <br/><br/>
-              </span></div>
-      <h2 class="indexable" data-level="1" id="man-sfrs">2.2 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="ss-man-fau">2.2.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_ARP.1 Security Alarms</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_ARP.1</div>
+	  The PP-Module does not modify any requirements when the 
+	  NDcPP is the base.
+	<h2 class="indexable" data-level="1" id="man-sfrs">2.2 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="ss-man-fau">2.2.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_ARP.1 Security Alarms</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_ARP.1</div>
               
               
               
@@ -603,10 +583,10 @@ The following sections list Common Criteria and technology terms used in this do
                   <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FAU_INV_EXT.3:1</a>:
       
                     <ul>
-                      <li><b>Step 1: </b>Deploy an AP within range of the sensors.</li>
+                      <li><b>Step 1: </b>Deploy an AP within 25 feet of the sensors.</li>
                       <li><b>Step 2: </b>Verify the TSF provides location tracking information about the
                         AP.</li>
-                      <li><b>Step 3: </b>Verify the AP location presented is within 25 feet actual
+                      <li><b>Step 3: </b>Verify the AP location presented is within 25 feet of the actual
                         location.</li>
                     </ul>
                   </li>
@@ -649,6 +629,7 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"> 
                 The evaluator shall verify that the TSS describes the ability of the TOE to detect the network behavior described by the SFR. The evaluator shall verify that the TSS describes the methods that the TOE uses to detect the presence of unauthorized connections and unauthorized network traffic. The evaluator shall examine the TSS to verify that it describes the denial of service attacks that can be detected by the TOE. The evaluator shall verify that the TSS describes the ability of the TOE to detect when unauthorized WLAN authentication schemes and encryption schemes are used. The evaluator shall verify that the TSS describes the ability of the TOE to detect when unauthorized APs and EUDs send or receive unencrypted data. </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">                 
                 If the ability of the TSF to detect the different potential security violations is configurable, the evaluator shall verify that the operational guidance provides instructions on how to configure the TOE.
+                The TSF should generate an alert or audit event for all potential violations contained within rule set forth in FAU_SAA.1.
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">  
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FAU_SAA.1:1</a>:
@@ -869,16 +850,20 @@ The following sections list Common Criteria and technology terms used in this do
       
                         <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP with open authentication.</li>
-                          <li><b>Step 2: </b>Connect an allowlisted EUD to AP.</li>
-                          <li><b>Step 3: </b>Verify that the TSF detects the AP and the EUD using unauthorized authentication schemes. </li>
+                          <li><b>Step 2: </b>Verify that the TSF detects the AP broadcasting an unauthorized authentication scheme. 
+                            If detected the test is satisfied. If not detected perform steps 3 and 4.</li>
+                          <li><b>Step 3: </b>Connect an allowlisted EUD to AP.</li>
+                          <li><b>Step 4: </b>Verify that the TSF detects the AP and the EUD using unauthorized authentication schemes. </li>
                         </ul>
                       </li>
                       <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FAU_SAA.1:19.2</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP that uses pre-shared key authentication.</li>
-                          <li><b>Step 2: </b>Connect an allowlisted EUD to AP.</li>
-                          <li><b>Step 3: </b>Verify that the TSF detects the AP and the EUD using unauthorized authentication schemes.</li>
+                          <li><b>Step 2: </b>Verify that the TSF detects the AP broadcasting an unauthorized authentication scheme.
+                            If detected the test is satisfied. If not detected perform steps 3 and 4.</li>
+                          <li><b>Step 3: </b>Connect an allowlisted EUD to AP.</li>
+                          <li><b>Step 4: </b>Verify that the TSF detects the AP and the EUD using unauthorized authentication schemes.</li>
                         </ul>
                       </li>
                     </ul></span>
@@ -917,8 +902,8 @@ The following sections list Common Criteria and technology terms used in this do
                           <li><b>Step 1: </b>Deploy an allowlisted AP with no encryption.</li>
                           <li><b>Step 2: </b>Connect an allowlisted EUD to AP and generate traffic.</li>
                           <li><b>Step 3: </b>Verify that the TOE detects unencrypted data frames being sent between the allowlisted AP and EUD.</li>
-                          <li><b>Step 4: </b>Connect a non-allowlisted EUD to AP and generate traffic.</li>
-                          <li><b>Step 5: </b>Verify that the TSF detects unencrypted data frames being sent between the allowlisted AP and non-allowlisted EUD.</li>
+                          <li><b>Step 4: </b>Attempt to connect a non-allowlisted EUD to AP.</li>
+                          <li><b>Step 5: </b>If the connection attempt succeeds, generate traffic from the non-allowlisted EUD and verify that the TSF detects unencrypted data frames being sent between the allowlisted AP and non-allowlisted EUD.</li>
                         </ul>
                       </li>
                       <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FAU_SAA.1:21.2</a>:
@@ -1061,9 +1046,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
                       <li><b>Step 2: </b>Deploy an AP on at least 2 different channels within the regulatory
                         domain on 5 GHz band.</li>
-                      <li><b>Step 3: </b>Deploy an AP on at least 2 different channels outside the regulatory
-                        domain on 5 GHz band.</li>
-                      <li><b>Step 4: </b>Verify that the AP gets detected on each channel tested.</li>
+                      <li><b>Step 3: </b>Verify that the AP gets detected on each channel tested.</li>
                     </ul>
                   </li>
                   <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FAU_WID_EXT.2:2</a>:
@@ -1071,9 +1054,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
                       <li><b>Step 2: </b>Deploy AP on at least 2 different channels within the regulatory domain
                         on 2.4 GHz band.</li>
-                      <li><b>Step 3: </b>Deploy AP on at least 2 different channels outside the regulatory domain
-                        on 2.4 GHz band.</li>
-                      <li><b>Step 4: </b>Verify that the AP gets detected on each channel tested.</li>
+                      <li><b>Step 3: </b>Verify that the AP gets detected on each channel tested.</li>
                     </ul>
                   </li>
                   <li class="test-"><a id="_t_56" class="defined" href="#_t_56">Test FAU_WID_EXT.2:3</a>:
@@ -1098,12 +1079,21 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 3: </b>Verify that the AP gets detected on each channel tested.</li>
                     </ul>
                   </li>
+                  <li class="test-"><a id="_t_59" class="defined" href="#_t_59">Test FAU_WID_EXT.2:6</a>:
+       Channels outside regulatory domain (if selected)
+                    <ul>
+                      <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
+                      <li><b>Step 2: </b>Deploy an AP on at least 2 different channels outside the regulatory domain on 5GHz band.</li>
+                      <li><b>Step 3: </b>Deploy AP on at least 2 different channels outside the regulatory domain on 2.4GHz band.</li>
+                      <li><b>Step 4: </b>Verify that the AP gets detected on each channel tested.</li>
+                    </ul>
+                  </li>
                 </ul></span>
 		<p><b>Wireless Sensor Transmission of Data</b></p><p> 
                 If the TOE provides the ability to disable wireless transmission, the evaluator shall follow the operational guidance to configure the sensor to not transmit wirelessly. The evaluator shall then deploy a signal analyzer in order to check for wireless emanations from the TOE. <br/> 
                 Repeat the two tests below, for both the 2.4 GHz, 5 GHz, and 6 GHz band.<br/> 
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_59" class="defined" href="#_t_59">Test FAU_WID_EXT.2:6</a>:
+                  <li class="test-"><a id="_t_60" class="defined" href="#_t_60">Test FAU_WID_EXT.2:7</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Boot a sensor and using the signal analyzer observe to check if any
@@ -1112,7 +1102,7 @@ The following sections list Common Criteria and technology terms used in this do
                         sensor.</li>
                     </ul>
                   </li>
-                  <li class="test-"><a id="_t_60" class="defined" href="#_t_60">Test FAU_WID_EXT.2:7</a>:
+                  <li class="test-"><a id="_t_61" class="defined" href="#_t_61">Test FAU_WID_EXT.2:8</a>:
       
                     <ul>
                       <li><b>Step 1: </b>During normal sensor operations, observe the analyzer for about 10
@@ -1124,7 +1114,7 @@ The following sections list Common Criteria and technology terms used in this do
                 </ul></span>              
                 <b>Stateful Frame Inspection</b>
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_61" class="defined" href="#_t_61">Test FAU_WID_EXT.2:8</a>:
+                  <li class="test-"><a id="_t_62" class="defined" href="#_t_62">Test FAU_WID_EXT.2:9</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy allowlisted AP.</li>
@@ -1143,7 +1133,7 @@ The following sections list Common Criteria and technology terms used in this do
                 operational guidance provides instructions on how to configure the TOE to monitor
                 different types of IEEE 802.11 frame types and subtypes.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_62" class="defined" href="#_t_62">Test FDP_IFC.1:1</a>:
+                  <li class="test-"><a id="_t_63" class="defined" href="#_t_63">Test FDP_IFC.1:1</a>:
       
                     <ul>
                       <li>Deploy an allowlisted AP/WIDS</li>
@@ -1185,16 +1175,16 @@ The evaluator shall examine the operational guidance to verify that it
   unauthorized for the purposes of detection.</p>
 	     </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> 
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_63" class="defined" href="#_t_63">Test FMT_SMF.1/WIDS:1</a>:
+                  <li class="test-"><a id="_t_64" class="defined" href="#_t_64">Test FMT_SMF.1/WIDS:1</a>:
        The evaluator shall define an inventory of authorized APs and EUDs. The ability to detect allowlisted and non-allowlisted APs and EUDs will be tested in FAU_INV_EXT.1 and FAU_SAA.1.
                   </li>
-                  <li class="test-"><a id="_t_64" class="defined" href="#_t_64">Test FMT_SMF.1/WIDS:2</a>:
+                  <li class="test-"><a id="_t_65" class="defined" href="#_t_65">Test FMT_SMF.1/WIDS:2</a>:
       The evaluator shall define authorized SSIDs. The ability to detect authorized and unauthorized SSIDs will be tested in FAU_WID_EXT.2.3 and FAU_SAA.1.</li>
                 
-                <li class="test-"><a id="_t_65" class="defined" href="#_t_65">Test FMT_SMF.1/WIDS:3</a>:
+                <li class="test-"><a id="_t_66" class="defined" href="#_t_66">Test FMT_SMF.1/WIDS:3</a>:
       The evaluator shall configure the TSF with a set of allowed authentication and encryption
                   schemes. The ability to detect violation of this policy will be tested in FAU_SAA.1. </li>
-                  <li class="test-"><a id="_t_66" class="defined" href="#_t_66">Test FMT_SMF.1/WIDS:4</a>:
+                  <li class="test-"><a id="_t_67" class="defined" href="#_t_67">Test FMT_SMF.1/WIDS:4</a>:
        (conditional): If "Define the amount of time sensor monitors a specific frequency or channel" is selected:
                     <ul>
                       <li><b>Step 1: </b>Deploy an allowlisted AP and connect it to the protected wired
@@ -1220,7 +1210,7 @@ The evaluator shall examine the operational guidance to verify that it
                 enable and configure detection of the technologies included in the ST as well as the
                 hardware that is needed to perform this function.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall enable and configure detection of the selected
                 technologies. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_67" class="defined" href="#_t_67">Test FAU_WID_EXT.3:1</a>:
+                  <li class="test-"><a id="_t_68" class="defined" href="#_t_68">Test FAU_WID_EXT.3:1</a>:
       Deploy a device within the given technology and verify that the TSF detects
                     the device.</li>
                 </ul></span>
@@ -1243,11 +1233,11 @@ The evaluator shall examine the operational guidance to verify that it
                 enable and configure detection of the technologies included in the ST as well as the
                 hardware that is needed to perform this function.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall enable and configure detection of the selected
                 technologies. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_68" class="defined" href="#_t_68">Test FAU_WID_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_69" class="defined" href="#_t_69">Test FAU_WID_EXT.5:1</a>:
       Deploy a device within the given technology and verify that the TSF detects
                     the device.</li>
                 </ul></span>
-              </div></div></span></div><div class="comp" id=""><h4>FAU_WID_EXT.5 Wireless Intrusion Detection - Cellular Spectrum Monitoring</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_WID_EXT.5</div>
+              </div></div></span></div><div class="comp" id=""><h4>FAU_WID_EXT.6 Wireless Intrusion Detection - Cellular Spectrum Monitoring</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_WID_EXT.6</div>
               
               
               
@@ -1258,7 +1248,7 @@ The evaluator shall examine the operational guidance to verify that it
                 enable and configure detection of the technologies included in the ST as well as the
                 hardware that is needed to perform this function.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall enable and configure detection of the selected
                 technologies. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_69" class="defined" href="#_t_69">Test FAU_WID_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FAU_WID_EXT.6:1</a>:
       Deploy a device within the given technology and verify that the TSF detects
                     the device.</li>
                 </ul></span>
@@ -1292,7 +1282,7 @@ The evaluator shall examine the operational guidance to verify that it
                 including a description of the customization options that are
                 available.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FAU_SIG_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_71" class="defined" href="#_t_71">Test FAU_SIG_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Craft a signature with the available fields indicated in the TSS.</li>
@@ -1320,17 +1310,17 @@ The evaluator shall examine the operational guidance to verify that it
                 evaluator shall verify that the operational guidance provides information on what
                 the configurable behaviors are and how they can be set.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_71" class="defined" href="#_t_71">Test FAU_STG_EXT.1/PCAP:1</a>:
+                  <li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FAU_STG_EXT.1/PCAP:1</a>:
       The evaluator shall configure packet captures according to the guidance
                     specified. The evaluator shall then trigger an event that starts a capture and
                     verify through the tests in FTP_ITC.1 that the captured traffic being sent to
                     the external device is being sent through a trusted channel.</li>
-                  <li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FAU_STG_EXT.1/PCAP:2</a>:
+                  <li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FAU_STG_EXT.1/PCAP:2</a>:
       The evaluator shall configure packet captures to be stored on the TSF
                     according to the guidance specified. The evaluator shall then trigger an event
                     that starts a capture and verify that the packet capture was stored on the
                     TSF.</li>
-                  <li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FAU_STG_EXT.1/PCAP:3</a>:
+                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FAU_STG_EXT.1/PCAP:3</a>:
       The evaluator shall define packet data retention and deletion rules on the
                     TSF according to the guidance specified and test the functionality of the
                     specified rules.</li>
@@ -1346,7 +1336,7 @@ The evaluator shall examine the operational guidance to verify that it
                 to configure the WIDS to detect unauthorized APs connected to the protected wired
                 infrastructure.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FAU_INV_EXT.4:1</a>:
+                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_INV_EXT.4:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP.</li>
@@ -1369,7 +1359,7 @@ The evaluator shall examine the operational guidance to verify that it
 		Depending on operation guidance provided for the TOE, the evaluator shall
                 confirm and note the existence of the signal library, and test for the ability to
                 import, export, and update the signal library. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_INV_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_INV_EXT.5:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy an allowlisted AP and connect it to the protected wired
@@ -1396,7 +1386,7 @@ The evaluator shall examine the operational guidance to verify that it
                 should be allowed between two subsequent attempts for an EUD to connect from two
                 separate locations.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_MAC_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_MAC_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Setup an allowlisted AP (Location 1).</li>
@@ -1411,7 +1401,7 @@ The evaluator shall examine the operational guidance to verify that it
                       <li><b>Step 5: </b>Verify that the TSF detected and generated an alert.</li>
                     </ul>
                   </li>
-                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_MAC_EXT.1:2</a>:
+                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_MAC_EXT.1:2</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Configure the timeframe allowed between connection of two EUDs in two
@@ -1437,7 +1427,7 @@ The evaluator shall examine the operational guidance to verify that it
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS includes a list of available containment
                 methods on the TSF and how to configure them.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> There are no operational guidance activities for this SFR.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> Configure the containment methods available on the TSF and perform the
                 following test for each method. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_WIP_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FAU_WIP_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP and connect to the protected wired
@@ -1461,7 +1451,7 @@ The evaluator shall examine the operational guidance to verify that it
                 following these failures, and any actions that are required to restore the TOE to
                 normal operation following the transition to a failure state. </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FPT_FLS.1:1</a>:
+                  <li class="test-"><a id="_t_80" class="defined" href="#_t_80">Test FPT_FLS.1:1</a>:
       For each failure mode specified in the ST, the evaluator shall ensure that
                     the TOE attains a secure state after initiating each failure mode type.</li>
                 </ul></span>
