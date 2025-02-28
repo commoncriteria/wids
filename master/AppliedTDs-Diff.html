@@ -49,7 +49,7 @@
         </h3>
         <h2>Contents</h2>
         <div class="toc" id="toc">
-            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#assumption" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#osp" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-b-nd" style="text-indent:10px">5.1<span>Collaborative Protection Profile for Network Device Security Functional Requirements Direction </span></a><a href="#modsfr-b-nd" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Security Audit (FAU)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Communications (FCO)</span></a><a href="#@id" style="text-indent:30px">5.1.1.3<span>Protection of the TSF (FPT)</span></a><a href="#@id" style="text-indent:30px">5.1.1.4<span>Trusted Paths/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-man-fau" style="text-indent:20px">5.2.1<span>Security Audit (FAU)</span></a><a href="#ss-man-fdp" style="text-indent:20px">5.2.2<span>User Data Protection (FDP)</span></a><a href="#ss-man-fmt" style="text-indent:20px">5.2.3<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-b-nd" style="text-indent:10px">6.1<span>Collaborative Protection Profile for Network Device</span></a><a href="#contoe-b-nd" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-b-nd" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-b-nd" style="text-indent:20px">6.1.3<span> Consistency of Objectives </span></a><a href="#conreq-b-nd" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#ss-opt-fau" style="text-indent:20px">A.1.1<span>Security Audit (FAU)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#ss-obj-fau" style="text-indent:20px">A.2.1<span>Security Audit (FAU)</span></a><a href="#ss-obj-fpt" style="text-indent:20px">A.2.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#ss-sel-fau" style="text-indent:10px">B.1<span>Security Audit (FAU)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.1<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ARP_EXT" style="text-indent:30px">C.2.1.1<span>FAU_ARP_EXT Security Alarm Filtering</span></a><a href="#ext-comp-FAU_IDS_EXT" style="text-indent:30px">C.2.1.2<span>FAU_IDS_EXT Intrusion Detection Methods</span></a><a href="#ext-comp-FAU_INV_EXT" style="text-indent:30px">C.2.1.3<span>FAU_INV_EXT Environmental Inventory</span></a><a href="#ext-comp-FAU_RPT_EXT" style="text-indent:30px">C.2.1.4<span>FAU_RPT_EXT Reporting Methods</span></a><a href="#ext-comp-FAU_WID_EXT" style="text-indent:30px">C.2.1.5<span>FAU_WID_EXT Wireless Intrusion Detection</span></a><a href="#ext-comp-FAU_ANO_EXT" style="text-indent:30px">C.2.1.6<span>FAU_ANO_EXT Anomaly-Based Intrusion Detection</span></a><a href="#ext-comp-FAU_SIG_EXT" style="text-indent:30px">C.2.1.7<span>FAU_SIG_EXT Signature-Based Intrusion Detection</span></a><a href="#ext-comp-FAU_MAC_EXT" style="text-indent:30px">C.2.1.8<span>FAU_MAC_EXT Device Impersonation</span></a><a href="#ext-comp-FAU_WIP_EXT" style="text-indent:30px">C.2.1.9<span>FAU_WIP_EXT Wireless Intrusion Prevention</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#allocation" style="text-indent:0px">Appendix E - <span>Allocation of Requirements in Distributed TOEs</span></a><a href="#EAR" style="text-indent:0px">Appendix F - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix G - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix H - <span>Bibliography</span></a>
+            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#assumption" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#osp" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-b-nd" style="text-indent:10px">5.1<span>Collaborative Protection Profile for Network Device Security Functional Requirements Direction </span></a><a href="#modsfr-b-nd" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Security Audit (FAU)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Communications (FCO)</span></a><a href="#@id" style="text-indent:30px">5.1.1.3<span>Protection of the TSF (FPT)</span></a><a href="#@id" style="text-indent:30px">5.1.1.4<span>Trusted Paths/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-man-fau" style="text-indent:20px">5.2.1<span>Security Audit (FAU)</span></a><a href="#ss-man-fdp" style="text-indent:20px">5.2.2<span>User Data Protection (FDP)</span></a><a href="#ss-man-fmt" style="text-indent:20px">5.2.3<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-b-nd" style="text-indent:10px">6.1<span>Collaborative Protection Profile for Network Device</span></a><a href="#contoe-b-nd" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-b-nd" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-b-nd" style="text-indent:20px">6.1.3<span> Consistency of OE Objectives </span></a><a href="#conreq-b-nd" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#ss-opt-fau" style="text-indent:20px">A.1.1<span>Security Audit (FAU)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#ss-obj-fau" style="text-indent:20px">A.2.1<span>Security Audit (FAU)</span></a><a href="#ss-obj-fpt" style="text-indent:20px">A.2.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#ss-sel-fau" style="text-indent:10px">B.1<span>Security Audit (FAU)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.1<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ARP_EXT" style="text-indent:30px">C.2.1.1<span>FAU_ARP_EXT Security Alarm Filtering</span></a><a href="#ext-comp-FAU_IDS_EXT" style="text-indent:30px">C.2.1.2<span>FAU_IDS_EXT Intrusion Detection Methods</span></a><a href="#ext-comp-FAU_INV_EXT" style="text-indent:30px">C.2.1.3<span>FAU_INV_EXT Environmental Inventory</span></a><a href="#ext-comp-FAU_RPT_EXT" style="text-indent:30px">C.2.1.4<span>FAU_RPT_EXT Reporting Methods</span></a><a href="#ext-comp-FAU_WID_EXT" style="text-indent:30px">C.2.1.5<span>FAU_WID_EXT Wireless Intrusion Detection</span></a><a href="#ext-comp-FAU_ANO_EXT" style="text-indent:30px">C.2.1.6<span>FAU_ANO_EXT Anomaly-Based Intrusion Detection</span></a><a href="#ext-comp-FAU_SIG_EXT" style="text-indent:30px">C.2.1.7<span>FAU_SIG_EXT Signature-Based Intrusion Detection</span></a><a href="#ext-comp-FAU_MAC_EXT" style="text-indent:30px">C.2.1.8<span>FAU_MAC_EXT Device Impersonation</span></a><a href="#ext-comp-FAU_WIP_EXT" style="text-indent:30px">C.2.1.9<span>FAU_WIP_EXT Wireless Intrusion Prevention</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#allocation" style="text-indent:0px">Appendix E - <span>Allocation of Requirements in Distributed TOEs</span></a><a href="#EAR" style="text-indent:0px">Appendix F - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix G - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix H - <span>Bibliography</span></a>
         </div>
         <h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
         <h2 class="indexable" data-level="2" id="Overview">1.1 Overview</h2>
@@ -264,7 +264,7 @@
             <dt>CC Conformance Claims</dt>
             <p></p>
             <dd>
-                This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is conformant to Part 2 (extended) and Part 3 (conformant) of Common Criteria Version 3.1, Revision 5. 
+                This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is conformant to Part 2 (extended) and Part 3 (conformant) of Common Criteria <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1. 
             </dd>
             <dt>PP Claim</dt>
             <p></p>
@@ -273,10 +273,7 @@
             </dd>
             <p></p>
             <dd>
-                The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>: 
-                <ul>
-                    <li>collaborative Protection Profile for Network Device, version 3.0e</li>
-                </ul>
+                There are no <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules that are allowed in a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
             </dd>
             <dt>Package Claim</dt>
             <p></p>
@@ -396,13 +393,13 @@
         </dl>
          
         <h2 id="SOR" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>
-         This section describes how the assumptions, threats, and organizational security policies map to the security objectives. 
+         This section describes how the assumptions and organizational security policies map to operational environment security objectives. 
         <table>
             <caption>
                 <span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale
             </caption>
             <tr class="header">
-                <td>Threat, Assumption, or OSP</td><td>Security Objectives</td><td>Rationale</td>
+                <td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td>
             </tr>
             <tr class="major-row">
                 <td rowspan="4"><a href="#T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">T.UNAUTHORIZED_​DISCLOSURE_​OF_​INFORMATION</a></td><td><a href="#O.SYSTEM_MONITORING">O.SYSTEM_​MONITORING</a></td><td>The threat <a href="#T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION</a> is countered by <a href="#O.SYSTEM_MONITORING">O.SYSTEM_MONITORING</a> as this provides for visibility into the network which enables detection of network violations.</td>
@@ -479,7 +476,7 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate audit records for each <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> component. The audit records generated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> of each <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> component shall include the subset of security relevant audit events which can occur on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> component. 
                 </p>
                 <p>
-                    <b>Application Note: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must claim a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> selection in FAU_STG_EXT.1.2.</b>
+                    <b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> but is mandated by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must claim a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> selection in FAU_STG_EXT.1.2.
                 </p>
             </span>
         </div>
@@ -506,7 +503,7 @@
                      ]. 
                 </p>
                 <p>
-                    <b>Application Note: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by removing the selection option for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to be standalone. A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is expected to be distributed.</b>
+                    <b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by removing the selection option for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to be standalone. A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is expected to be distributed.
                 </p>
             </span>
         </div>
@@ -525,7 +522,7 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement a registration process in which components establish and use a communications channel that uses [<b>selection: </b> 
                     <ul>
                         <li>
-                            <i>A channel that meets the secure channel requirements in [<b>selection: </b>FTP_ITC.1, FPT_ITT.1</i>
+                            <i>A channel that meets the secure channel requirements in [<b>selection: </b>FTP_ITC.1, FPT_ITT.1]</i>
                         </li>
                         <li>
                             <i>A channel that meets the secure registration channel requirements in FTP_TRP.1/Join</i>
@@ -585,11 +582,11 @@
                     <a href="#FAU_ARP.1.1" class="abbr">FAU_ARP.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <span class="refinement">display an alert to Authorized Administrator in sufficient detail to include identity of <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> involved, signal strength, accurate event timestamp, description of alert and severity level and [<b>selection</b>: <span class="selectable-content" id="pcap">capture raw frame traffic that triggered the violation</span>, <span class="selectable-content" id="_s_18">no other actions</span>]</span> upon detection of a potential security violation.
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<i>display an alert to Authorized Administrator in sufficient detail to include identity of <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> involved, signal strength, accurate event timestamp, description of alert and severity level and [<b>selection</b>: <span class="selectable-content" id="pcap">capture raw frame traffic that triggered the violation</span>, <span class="selectable-content" id="_s_18">no other actions</span>]</i>] upon detection of a potential security violation.
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
-                                 If "capture raw frame traffic that triggers the violation" is selected then <a href="#FAU_STG_EXT.1/PCAP">FAU_STG_EXT.1/PCAP</a> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. 
+                                 If "capture raw frame traffic that triggers the violation" is selected then FAU_STG_EXT.1/PCAP must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. 
                             </p>
                             <p>
                                  <a href="#FAU_SAA.1">FAU_SAA.1</a> defines the rules for monitoring the wireless traffic to detect for potential security violations. <a href="#FAU_INV_EXT.2">FAU_INV_EXT.2</a> defines the information the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> needs to collect for all <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> within range of the the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s sensors. Device attributes can then be individually filtered and/or selected in order to be displayed as part of the alert. 
@@ -617,10 +614,12 @@
                     <a href="#FAU_GEN.1.1/WIDS" class="abbr">FAU_GEN.1.1/WIDS</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate an audit record of the following auditable events: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate audit data of the following auditable events: 
                     <ol type="a">
                         <li>Start-up and shutdown of the audit functions;</li>
-                        <li>All auditable events for the [not specified] level of audit;</li>
+                        <li>
+                            All auditable events for the <i>not specified</i> level of audit;
+                        </li>
                         <li>
                             [<i>Auditable events listed in the Auditable Events table (<a href="#auditWids" class="auditWids-ref">Table <span class="counter">2</span></a>);</i>
                         </li>
@@ -678,7 +677,7 @@
                             <td><a href="#FAU_SIG_EXT.1">FAU_SIG_EXT.1</a> (selection-based)</td><td>None</td><td>None</td>
                         </tr>
                         <tr>
-                            <td><a href="#FAU_STG_EXT.1/PCAP">FAU_STG_EXT.1/PCAP</a> (selection-based)</td><td>None</td><td>None</td>
+                            <td>FAU_STG_EXT.1/PCAP (selection-based)</td><td>None</td><td>None</td>
                         </tr>
                         <tr>
                             <td rowspan="2"><a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a></td><td>Detection of rogue <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr></td><td>None</td>
@@ -690,7 +689,7 @@
                             <td><a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a></td><td>Sensor wireless transmission capabilities</td><td>Wireless transmission capabilities are turned on</td>
                         </tr>
                         <tr>
-                            <td><a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a> (optional)</td><td>Detection of network devices operating in selected RF bands</td><td>Frequency band, channel used within frequency band, identification information (<abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address if applicable or other similar unique ID), device technology (i.e., cellular), sensor(s) that detected devices</td>
+                            <td>FAU_WID_EXT.3 (optional)</td><td>Detection of network devices operating in selected RF bands</td><td>Frequency band, channel used within frequency band, identification information (<abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address if applicable or other similar unique ID), device technology (i.e., cellular), sensor(s) that detected devices</td>
                         </tr>
                         <tr>
                             <td><a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a> (optional)</td><td>None</td><td>None</td>
@@ -923,7 +922,7 @@
                     <a href="#FAU_SAA.1.1" class="abbr">FAU_SAA.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to apply a set of rules for monitoring <b>the wireless traffic</b> and based upon these rules indicate a potential <b>malicious action</b>.
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to apply a set of rules in monitoring <b>the wireless traffic</b> and based upon these rules indicate a potential <b>malicious action</b>.
                 </div>
             </div>
             <div class="element">
@@ -1097,7 +1096,7 @@
                                  If <a href="#s-nonsimult">nonsimultaneously</a> is selected, then <a href="#s-mon-spec-chan">Define the amount of time sensor monitors a specific channel </a> must be selected in <a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a>. 
                             </p>
                             <p>
-                                 The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is a security function policy and the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that reference this policy describe what the policy does. The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is established in <a href="#FDP_IFC.1">FDP_IFC.1</a> and defined through <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a>, <a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a>, in addition to optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> <a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a> and <a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a>. A vendor does not have to formally define this policy, it only needs to comply with the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
+                                 The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is a security function policy and the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that reference this policy describe what the policy does. The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is established in <a href="#FDP_IFC.1">FDP_IFC.1</a> and defined through <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a>, <a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a>, in addition to optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> FAU_WID_EXT.3 and <a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a>. A vendor does not have to formally define this policy, it only needs to comply with the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
                             </p>
                         </span>
                     </div>
@@ -1118,7 +1117,7 @@
                                  The intent of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is to employ <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr> sensors that can have all wireless transmission capabilities disabled for instances where a site wishes to implement a no wireless policy. 
                             </p>
                             <p>
-                                 The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is a security function policy and the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that reference this policy describe what the policy does. The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is established in <a href="#FDP_IFC.1">FDP_IFC.1</a> and defined through <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a>, <a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a>, in addition to optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> <a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a> and <a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a>. A vendor does not have to formally define this policy, it only needs to comply with the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>. 
+                                 The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is a security function policy and the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that reference this policy describe what the policy does. The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is established in <a href="#FDP_IFC.1">FDP_IFC.1</a> and defined through <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a>, <a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a>, in addition to optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> FAU_WID_EXT.3 and <a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a>. A vendor does not have to formally define this policy, it only needs to comply with the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>. 
                             </p>
                         </span>
                     </div>
@@ -1162,7 +1161,7 @@
                                  "Authorized" <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> are those that are assigned to the allowlist as defined by <a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a>. 
                             </p>
                             <p>
-                                 The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is a security function policy and the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that reference this policy describe what the policy does. The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is established in <a href="#FDP_IFC.1">FDP_IFC.1</a> and defined through <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a>, <a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a>, in addition to optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> <a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a> and <a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a>. A vendor does not have to formally define this policy, it only needs to comply with the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
+                                 The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is a security function policy and the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that reference this policy describe what the policy does. The "802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>" is established in <a href="#FDP_IFC.1">FDP_IFC.1</a> and defined through <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a>, <a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a>, in addition to optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> FAU_WID_EXT.3 and <a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a>. A vendor does not have to formally define this policy, it only needs to comply with the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
                             </p>
                         </span>
                     </div>
@@ -1257,123 +1256,14 @@
         </div>
         <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2>
         <p>
-            The following rationale provides justification for each security objective for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to meet and achieve the security objectives:
+            The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:
             <br>
             <table>
                 <caption>
                     <span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale
                 </caption>
                 <tr>
-                    <th>Objective</th><th>Addressed by</th><th>Rationale</th>
-                </tr>
-                <tr class="major-row">
-                    <td rowspan="6"><a href="#O.SYSTEM_MONITORING">O.SYSTEM_​MONITORING</a>
-                        <br>
-                    </td><td>FAU_GEN_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td> FAU_GEN_EXT.1 supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to identify the records of its own operation that its various components generate. </td>
-                </tr>
-                <tr>
-                    <td>FAU_STG_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td> FAU_STG_EXT.1 supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement an external storage method for the records it generates of its own operation. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_GEN.1/WIDS">FAU_GEN.1/WIDS</a></td><td> <a href="#FAU_GEN.1/WIDS">FAU_GEN.1/WIDS</a> supports the objective by defining the auditable events that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must implement in support of the behavior this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_RPT_EXT.1">FAU_RPT_EXT.1</a></td><td> <a href="#FAU_RPT_EXT.1">FAU_RPT_EXT.1</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement an external import and reporting mechanism for its monitoring data to integrate with third-party components. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_STG_EXT.1/PCAP">FAU_STG_EXT.1/PCAP</a></td><td> <a href="#FAU_STG_EXT.1/PCAP">FAU_STG_EXT.1/PCAP</a> supports the objective by defining an optional reporting mechanism for monitored data. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FPT_FLS.1">FPT_FLS.1</a> (objective)</td><td> <a href="#FPT_FLS.1">FPT_FLS.1</a> supports the objective by ensuring that a potential sensor failure triggers the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to fail into a secure state which prevents undetected wireless communications. </td>
-                </tr>
-                <tr class="major-row">
-                    <td rowspan="17"><a href="#O.WIDS_ANALYZE">O.WIDS_​ANALYZE</a>
-                        <br>
-                    </td><td><a href="#FAU_ARP.1">FAU_ARP.1</a></td><td><a href="#FAU_ARP.1">FAU_ARP.1</a> supports the objective by defining how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must react when data consistent with an IDS violation is collected.</td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a> supports the objective by defining a filtering method that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may implement to suppress certain reactions.</td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_IDS_EXT.1">FAU_IDS_EXT.1</a></td><td><a href="#FAU_IDS_EXT.1">FAU_IDS_EXT.1</a> supports the objective by defining the specific IDS methods that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may implement to detect potential malicious activity. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_INV_EXT.1">FAU_INV_EXT.1</a></td><td><a href="#FAU_INV_EXT.1">FAU_INV_EXT.1</a> supports the objective by defining how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> takes an inventory of allowed and disallowed devices in its operational environment. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_INV_EXT.2">FAU_INV_EXT.2</a></td><td><a href="#FAU_INV_EXT.2">FAU_INV_EXT.2</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to collect and report on specific properties of inventoried devices. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_INV_EXT.3">FAU_INV_EXT.3</a></td><td><a href="#FAU_INV_EXT.3">FAU_INV_EXT.3</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement measures that can be used to determine the physical location of inventoried devices. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td><a href="#FAU_SAA.1">FAU_SAA.1</a> supports the objective by defining the specific conditions that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must apply to determine if collected data is indicative of potential malicious activity. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a></td><td><a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a method to distinguish between benign and malicious devices in its operational environment. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a></td><td><a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement stateful monitoring of network traffic on various RF bands. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td><a href="#FDP_IFC.1">FDP_IFC.1</a> supports the objective by defining the specific network traffic that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must have the ability to monitor. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a> (optional)</td><td><a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to detect network devices operating on frequency bands beyond what is required by <a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a>. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a> (optional)</td><td><a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to implement wireless spectrum analysis functionality on a dedicated sensor. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_ANO_EXT.1">FAU_ANO_EXT.1</a> (selection-based)</td><td><a href="#FAU_ANO_EXT.1">FAU_ANO_EXT.1</a> supports the objective by defining the specific anomaly-based detection mechanisms that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is required to implement if it claims to support anomaly-based detection. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_SIG_EXT.1">FAU_SIG_EXT.1</a> (selection-based)</td><td><a href="#FAU_SIG_EXT.1">FAU_SIG_EXT.1</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to support user-defined and customizable attack signatures if it claims to support signature-based detection. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_INV_EXT.4">FAU_INV_EXT.4</a> (objective)</td><td><a href="#FAU_INV_EXT.4">FAU_INV_EXT.4</a> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to detect when unauthorized wireless devices connect to a protected network over a wired interface. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_INV_EXT.5">FAU_INV_EXT.5</a> (objective)</td><td><a href="#FAU_INV_EXT.5">FAU_INV_EXT.5</a> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to include a signal library. </td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_MAC_EXT.1">FAU_MAC_EXT.1</a> (objective)</td><td><a href="#FAU_MAC_EXT.1">FAU_MAC_EXT.1</a> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to detect potential device impersonation through <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> spoofing.</td>
-                </tr>
-                <tr class="major-row">
-                    <td rowspan="5"><a href="#O.WIDS_REACT">O.WIDS_​REACT</a>
-                        <br>
-                    </td><td><a href="#FAU_ARP.1">FAU_ARP.1</a></td><td><a href="#FAU_ARP.1">FAU_ARP.1</a> supports the objective by defining how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> reacts when anomalous or potentially malicious traffic is detected.</td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td><a href="#FAU_SAA.1">FAU_SAA.1</a> supports the objective by defining potentially malicious traffic patterns that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must detect.</td>
-                </tr>
-                <tr>
-                    <td><a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a></td><td><a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a> supports the objective by allowing administrators to define potentially malicious or anomalous behavior.</td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_ANO_EXT.1">FAU_ANO_EXT.1</a> (selection-based)</td><td><a href="#FAU_ANO_EXT.1">FAU_ANO_EXT.1</a> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to detect when traffic is detected that meets a condition for anomalous behavior.</td>
-                </tr>
-                <tr>
-                    <td><a href="#FAU_WIP_EXT.1">FAU_WIP_EXT.1</a> (objective)</td><td> <a href="#FAU_WIP_EXT.1">FAU_WIP_EXT.1</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement wireless containment as a method of enforcing wireless intrusion prevention. </td>
-                </tr>
-                <tr class="major-row">
-                    <td rowspan="2"><a href="#O.TOE_ADMINISTRATION">O.TOE_​ADMINISTRATION</a>
-                        <br>
-                    </td><td><a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a></td><td><a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement management functions that support its configuration.</td>
-                </tr>
-                <tr>
-                    <td><a href="#FPT_FLS.1">FPT_FLS.1</a> (objective)</td><td> <a href="#FPT_FLS.1">FPT_FLS.1</a> supports the objective by ensuring that a potential compromise of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> triggers the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to fail into a secure state, which prevents unauthorized administration. </td>
-                </tr>
-                <tr class="major-row">
-                    <td rowspan="3"><a href="#O.TRUSTED_COMMUNICATIONS">O.TRUSTED_​COMMUNICATIONS</a>
-                        <br>
-                    </td><td>FCO_CPC_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td> FCO_CPC_EXT.1 supports the objective by ensuring that distributed components are properly registered and authenticated. </td>
-                </tr>
-                <tr>
-                    <td>FPT_ITT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>FPT_ITT.1 supports the objective by defining the trusted communications protocol used to secure communications between <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components.</td>
-                </tr>
-                <tr>
-                    <td>FTP_ITC.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td> FTP_ITC.1 supports the objective by defining the trusted communications protocol used to secure communications between the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its operational environment. </td>
+                    <th>Threat</th><th>Addressed by</th><th>Rationale</th>
                 </tr>
             </table>
         </p>
@@ -1408,36 +1298,11 @@
                 <td><a href="#P.ANALYZE">P.ANALYZE</a></td><td>This organizational security policy expects the data produced by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> about the behavior of external entities to be used in an organization&rsquo;s analytical process. There is no conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any functionality for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to produce data about any entities other than itself.</td>
             </tr>
         </table>
-        <h3 id="conobj-b-nd" class="indexable" data-level="3">6.1.3 Consistency of Objectives </h3>
+        <h3 id="conobj-b-nd" class="indexable" data-level="3">6.1.3 Consistency of OE Objectives </h3>
         <p>
             <table>
                 <caption>
-                    <span class="ctr" data-myid="t-con-objs" data-counter-type="ct-Table" id="t-con-objs">Table <span class="counter">5</span></span>: Consistency of Objectives (NDcPP base) 
-                </caption>
-                <tr>
-                    <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Objective</th><th>Consistency Rationale</th>
-                </tr>
-                <tr>
-                    <td><a href="#O.SYSTEM_MONITORING">O.SYSTEM_MONITORING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives. However, it does define requirements for the collection and secure remote transmission of audit data. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds requirements for the similar handling of network traffic data.</td>
-                </tr>
-                <tr>
-                    <td><a href="#O.WIDS_ANALYZE">O.WIDS_ANALYZE</a></td><td>This objective refers to behavior on wireless interfaces that are beyond the original scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td>
-                </tr>
-                <tr>
-                    <td><a href="#O.WIDS_REACT">O.WIDS_REACT</a></td><td>This objective refers to behavior on wireless interfaces that are beyond the original scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td>
-                </tr>
-                <tr>
-                    <td><a href="#O.TOE_ADMINISTRATION">O.TOE_ADMINISTRATION</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives. However, it does define requirements for the execution of security-relevant management functions. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> expands upon this by adding requirements for the security-relevant management functions that are introduced by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td>
-                </tr>
-                <tr>
-                    <td><a href="#O.TRUSTED_COMMUNICATIONS">O.TRUSTED_COMMUNICATIONS</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives. However, it clearly intends to ensure that communications are trusted because the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> uses to demonstrate this objective is satisfied are derived from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td>
-                </tr>
-            </table>
-        </p>
-        <p>
-            <table>
-                <caption>
-                    <span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">6</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (NDcPP base) 
+                    <span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">5</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (NDcPP base) 
                 </caption>
                 <tr>
                     <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th>
@@ -1454,7 +1319,7 @@
          This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the NDcPP that are needed to support Wireless Intrusion Detection/Prevention System functionality. This is considered to be consistent because the functionality provided by the NDcPP is being used for its intended purpose. The rationale for why this does not conflict with the claims defined by the NDcPP are as follows: 
         <table>
             <caption>
-                <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">7</span></span>: Consistency of Requirements (NDcPP base) 
+                <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">6</span></span>: Consistency of Requirements (NDcPP base) 
             </caption>
             <tr>
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th>
@@ -1529,16 +1394,16 @@
                 <th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
             </tr>
             <tr>
-                <td><a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines operations to be performed on assets in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s operational environment, which is behavior defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that extends the logical scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines.</td>
+                <td><a href="#FAU_WID_EXT.3/RF">FAU_WID_EXT.3/RF</a></td><td></td>
+            </tr>
+            <tr>
+                <td><a href="#FAU_WID_EXT.3/BT">FAU_WID_EXT.3/BT</a></td><td></td>
+            </tr>
+            <tr>
+                <td><a href="#FAU_WID_EXT.3/CELL">FAU_WID_EXT.3/CELL</a></td><td></td>
             </tr>
             <tr>
                 <td><a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines an optional capability for a distributed component to be dedicated to one particular function. This function (wireless spectrum analysis) is defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that extends the logical scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines.</td>
-            </tr>
-            <tr>
-                <td><a href="#FAU_WID_EXT.5">FAU_WID_EXT.5</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines operations to be performed on assets in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s operational environment, which is behavior defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that extends the logical scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines.</td>
-            </tr>
-            <tr>
-                <td><a href="#FAU_WID_EXT.6">FAU_WID_EXT.6</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines operations to be performed on assets in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s operational environment, which is behavior defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that extends the logical scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines.</td>
             </tr>
             <tr>
                 <th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
@@ -1574,22 +1439,146 @@
                 <td><a href="#FAU_SIG_EXT.1">FAU_SIG_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines operations to be performed on collected <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr> data, which is collected using an external interface defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that extends the logical scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines.</td>
             </tr>
             <tr>
-                <td><a href="#FAU_STG_EXT.1/PCAP">FAU_STG_EXT.1/PCAP</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> iterates the FAU_STG_EXT.1 <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for storage of audit data and applies it to storage of packet captures.</td>
+                <td><a href="#FAU_STG.1/PCAP">FAU_STG.1/PCAP</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> iterates the FAU_STG.1 <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defined in <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 for storage of audit data and applies it to storage of packet captures.</td>
             </tr>
         </table>
         <h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A - Optional SFRs</h1>
         <h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements </h2>
         <h3 id="ss-opt-fau" class="indexable" data-level="3">A.1.1 Security Audit (FAU)</h3>
-        <div class="comp" id="FAU_WID_EXT.3">
-            <h4>FAU_WID_EXT.3 Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring</h4>
+        <div class="comp" id="FAU_WID_EXT.3/RF">
+            <h4>FAU_WID_EXT.3/RF Wireless Intrusion Detection - Non-Wireless RF Spectrum Monitoring</h4>
             <div class="element">
-                <div class="reqid" id="FAU_WID_EXT.3.1">
-                    <a href="#FAU_WID_EXT.3.1" class="abbr">FAU_WID_EXT.3.1</a>
+                <div class="reqid" id="FAU_WID_EXT.3.1/RF">
+                    <a href="#FAU_WID_EXT.3.1/RF" class="abbr">FAU_WID_EXT.3.1/RF</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of network devices that operate in the following RF bands: [<b>selection</b>: <span class="selectable-content" id="_s_76">3.6 GHz</span>, <span class="selectable-content" id="_s_77">6 GHz</span>, <span class="selectable-content" id="_s_78">60 GHz</span>, <span class="selectable-content" id="_s_79">sub-GHz (0-900 MHz)</span>, <span class="selectable-content" id="cell">all cellular bands</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices <i>that operate in the following RF bands:</i> [<i>[<b>selection</b>: <span class="selectable-content" id="_s_78">3.6 GHz</span>, <span class="selectable-content" id="_s_79">6 GHz</span>, <span class="selectable-content" id="_s_80">60 GHz</span>, <span class="selectable-content" id="_s_81">sub-GHz (0-900 MHz)</span>, <span class="selectable-content" id="cell">all cellular bands</span>]</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Non-WLAN (IEEE 802.11 a, b, g, n, y, ac, ad and ay) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comp" id="FAU_WID_EXT.3/BT">
+            <h4>FAU_WID_EXT.3/BT Wireless Intrusion Detection - Bluetooth Spectrum Monitoring</h4>
+            <div class="element">
+                <div class="reqid" id="FAU_WID_EXT.3.1/BT">
+                    <a href="#FAU_WID_EXT.3.1/BT" class="abbr">FAU_WID_EXT.3.1/BT</a>
+                </div>
+                <div class="reqdesc">
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices <i>that operate a specified protocol and take a specified action: </i>[<i> [<b>selection</b>: 
+                        <ul>
+                            <li style="">
+                                <span class="selectable-content" id="_s_83">Detect and log the presence of 2.4 GHz Bluetooth BR/EDR devices operating within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_84">Detect and log the presence of Bluetooth Low Energy (BLE) devices operating within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_85">Detect and log the the Bluetooth BR/EDR devices LAP and half the Bluetooth <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_86">Detect and log the BLE device's Bluetooth <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_87">Geo-locate Bluetooth BR/EDR devices within 25 feet of their actual location</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_88">Geo-locate BLE devices within 25 feet of their actual location</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_89">Detect and log Bluetooth BR/EDR devices conducting the Inquiry Procedure within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_90">Detect and log Bluetooth BR/EDR devices responding to the Inquiry Procedure within the controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_91">Capture and log any device information transmitted during the Bluetooth BR/EDR Inquiry Procedure when occurring within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_92">Detect and log BLE devices advertisements on the Advertisement channels</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_93">Detect and log BLE devices exchanging information or data on the Advertisement channels</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_94">Detect and log Bluetooth BR/EDR devices using the SDP procedure</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_95">Capture and log any device information exchanged during the Bluetooth BR/EDR SDP procedure</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_96">Detect and log any Bluetooth BR/EDR devices performing the Paging Procedure</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_97">Detect and log any BLE device performing the Paging Procedure</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_98">Detect and log the piconet membership of any Bluetooth BR/EDR device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_99">Detect and log the piconet membership of any Low Energy (LE) device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_100">Use Bluetooth BR/EDR Inquiry Procedure to detect Bluetooth BR/EDR devices in discoverable mode within a controlled area</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_101">Use Bluetooth BR/EDR SDP procedure to gether information about Bluetooth BR/EDR devices within a controlled area</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_102">Use BLE SDP procedure to gather information about BLE devices within a controlled area</span>
+                            </li>
+                        </ul>
+                        ]</i>]. 
+                    <div class="appnote">
+                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Bluetooth and Bluetooth Low-Energy (BLE) (IEEE 802.15) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comp" id="FAU_WID_EXT.3/CELL">
+            <h4>FAU_WID_EXT.3/CELL Wireless Intrusion Detection - Cellular Spectrum Monitoring</h4>
+            <div class="element">
+                <div class="reqid" id="FAU_WID_EXT.3.1/CELL">
+                    <a href="#FAU_WID_EXT.3.1/CELL" class="abbr">FAU_WID_EXT.3.1/CELL</a>
+                </div>
+                <div class="reqdesc">
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices <i>that operate a specified protocol and take a specified action: </i> [<i>[<b>selection</b>: 
+                        <ul>
+                            <li style="">
+                                <span class="selectable-content" id="_s_103">Detect and log the presence of cellular 3G devices operating within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_104">Detect and log the presence of cellular 4G/LTE devices operating within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_105">Detect and log the presence of cellular 5G low and mid-band devices operating within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_106">Detect and identify base stations which had clients within the area monitored by the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr></span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_107">Capture temporary identifiers (e.g. TMSI) of cellular devices within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_108">Detect and identify which cellular technology (such as 3G, LTE, UTMS, 5G, etc.) the cellular device is using within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_109">Detect and identify which cellular carrier a cellular device is using within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_110">Detect identify which base station a cellular device is connnected to while operating within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_111">Detect identify whether a cellular device is using a cellular uplink or downlink operating within a controlled space</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_112">Geo-locate cellular devices operating within the operation area of the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr></span>
+                            </li>
+                        </ul>
+                        ]</i>]. 
+                    <div class="appnote">
+                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Bluetooth and Bluetooth Low-Energy (BLE) (IEEE 802.15) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
                     </div>
                 </div>
             </div>
@@ -1602,34 +1591,6 @@
                 </div>
                 <div class="reqdesc">
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a dedicated sensor for wireless spectrum analysis. 
-                </div>
-            </div>
-        </div>
-        <div class="comp" id="FAU_WID_EXT.5">
-            <h4>FAU_WID_EXT.5 Wireless Intrusion Detection - Bluetooth Spectrum Monitoring</h4>
-            <div class="element">
-                <div class="reqid" id="FAU_WID_EXT.5.1">
-                    <a href="#FAU_WID_EXT.5.1" class="abbr">FAU_WID_EXT.5.1</a>
-                </div>
-                <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of cellular devices that operate within the following ways, frequency ranges, and parameters: [<b>selection</b>: <span class="selectable-content" id="_s_81">Detect and log the presence of 2.4 GHz Bluetooth BR/EDR devices operating within a controlled space</span>, <span class="selectable-content" id="_s_82">Detect and log the presence of Bluetooth Low Energy (BLE) devices operating within a controlled space</span>, <span class="selectable-content" id="_s_83">Detect and log the the Bluetooth BR/EDR devices LAP and half the Bluetooth <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address within a controlled space</span>, <span class="selectable-content" id="_s_84">Detect and log the BLE device's Bluetooth <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address within a controlled space</span>, <span class="selectable-content" id="_s_85">Geo-locate Bluetooth BR/EDR devices within 25 feet of their actual location</span>, <span class="selectable-content" id="_s_86">Geo-locate BLE devices within 25 feet of their actual location</span>, <span class="selectable-content" id="_s_87">Detect and log Bluetooth BR/EDR devices conducting the Inquiry Procedure within a controlled space</span>, <span class="selectable-content" id="_s_88">Detect and log Bluetooth BR/EDR devices responding to the Inquiry Procedure within the controlled space</span>, <span class="selectable-content" id="_s_89">Capture and log any device information transmitted during the Bluetooth BR/EDR Inquiry Procedure when occurring within a controlled space</span>, <span class="selectable-content" id="_s_90">Detect and log BLE devices advertisements on the Advertisement channels</span>, <span class="selectable-content" id="_s_91">Detect and log BLE devices exchanging information or data on the Advertisement channels</span>, <span class="selectable-content" id="_s_92">Detect and log Bluetooth BR/EDR devices using the SDP procedure</span>, <span class="selectable-content" id="_s_93">Capture and log any device information exchanged during the Bluetooth BR/EDR SDP procedure</span>, <span class="selectable-content" id="_s_94">Detect and log any Bluetooth BR/EDR devices performing the Paging Procedure</span>, <span class="selectable-content" id="_s_95">Detect and log any BLE device performing the Paging Procedure</span>, <span class="selectable-content" id="_s_96">Detect and log the piconet membership of any Bluetooth BR/EDR device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</span>, <span class="selectable-content" id="_s_97">Detect and log the piconet membership of any Low Energy (LE) device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</span>, <span class="selectable-content" id="_s_98">Use Bluetooth BR/EDR Inquiry Procedure to detect Bluetooth BR/EDR devices in discoverable mode within a controlled area</span>, <span class="selectable-content" id="_s_99">Use Bluetooth BR/EDR SDP procedure to gether information about Bluetooth BR/EDR devices within a controlled area</span>, <span class="selectable-content" id="_s_100">Use BLE SDP procedure to gather information about BLE devices within a controlled area</span>] 
-                    <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Bluetooth and Bluetooth Low-Energy (BLE) (IEEE 802.15) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="comp" id="FAU_WID_EXT.6">
-            <h4>FAU_WID_EXT.6 Wireless Intrusion Detection - Cellular Spectrum Monitoring</h4>
-            <div class="element">
-                <div class="reqid" id="FAU_WID_EXT.6.1">
-                    <a href="#FAU_WID_EXT.6.1" class="abbr">FAU_WID_EXT.6.1</a>
-                </div>
-                <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of cellular devices that operate within the following ways, ranges, and parameters: [<b>selection</b>: <span class="selectable-content" id="_s_101">Detect and log the presence of cellular 3G devices operating within a controlled space</span>, <span class="selectable-content" id="_s_102">Detect and log the presence of cellular 4G/LTE devices operating within a controlled space</span>, <span class="selectable-content" id="_s_103">Detect and log the presence of cellular 5G low and mid-band devices operating within a controlled space</span>, <span class="selectable-content" id="_s_104">Detect and identify base stations which had clients within the area monitored by the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr></span>, <span class="selectable-content" id="_s_105">Capture temporary identifiers (e.g. TMSI) of cellular devices within a controlled space</span>, <span class="selectable-content" id="_s_106">Detect and identify which cellular technology (such as 3G, LTE, UTMS, 5G, etc.) the cellular device is using within a controlled space</span>, <span class="selectable-content" id="_s_107">Detect and identify which cellular carrier a cellular device is using within a controlled space</span>, <span class="selectable-content" id="_s_108">Detect identify which base station a cellular device is connnected to while operating within a controlled space</span>, <span class="selectable-content" id="_s_109">Detect identify whether a cellular device is using a cellular uplink or downlink operating within a controlled space</span>, <span class="selectable-content" id="_s_110">Geo-locate cellular devices operating within the operation area of the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr></span>]. 
-                    <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Bluetooth and Bluetooth Low-Energy (BLE) (IEEE 802.15) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1692,7 +1653,7 @@
                     <a href="#FAU_WIP_EXT.1.1" class="abbr">FAU_WIP_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_125">wireless containment</span>, <span class="selectable-content" id="_s_126">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_127">wireless containment</span>, <span class="selectable-content" id="_s_128">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -1737,22 +1698,22 @@
                     <a href="#FAU_ANO_EXT.1.1" class="abbr">FAU_ANO_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_111">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_112">anomaly ('unexpected') traffic patterns</span>] including the specification of [<b>selection</b>: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_113">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_114">anomaly ('unexpected') traffic patterns</span>] including the specification of [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_113">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
+                            <span class="selectable-content" id="_s_115">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_114">time of day</span>
+                            <span class="selectable-content" id="_s_116">time of day</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_115">frequency</span>
+                            <span class="selectable-content" id="_s_117">frequency</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_116">thresholds</span>
+                            <span class="selectable-content" id="_s_118">thresholds</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_117">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
+                            <span class="selectable-content" id="_s_119">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
                         </li>
                     </ul>
                     ] and the following network protocol fields: 
@@ -1766,7 +1727,7 @@
                     <a href="#FAU_ANO_EXT.1.2" class="abbr">FAU_ANO_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_118">manual configuration by administrators</span>, <span class="selectable-content" id="_s_119">automated configuration</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_120">manual configuration by administrators</span>, <span class="selectable-content" id="_s_121">automated configuration</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The "baseline" and "anomaly" can be something manually defined/configured by a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrator (or importing definitions), or something that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to automatically define/create by inspecting network traffic over a period of time (a.k.a. "profiling"). </span>
                     </div>
@@ -1787,45 +1748,45 @@
                 </div>
             </div>
         </div>
-        <div class="comp" id="FAU_STG_EXT.1/PCAP">
-            <h4>FAU_STG_EXT.1/PCAP Protected Audit Event Storage (Packet Captures)</h4>
+        <div class="comp" id="FAU_STG.1/PCAP">
+            <h4>FAU_STG.1/PCAP Protected Audit Event Storage (Packet Captures)</h4>
             <div class="statustag">
                 <b><i>The inclusion of this selection-based component depends upon selection in <a href="#FAU_ARP.1.1">FAU_ARP.1.1</a>. </i></b>
             </div>
             <div class="element">
-                <div class="reqid" id="FAU_STG_EXT.1.1/PCAP">
-                    <a href="#FAU_STG_EXT.1.1/PCAP" class="abbr">FAU_STG_EXT.1.1/PCAP</a>
+                <div class="reqid" id="FAU_STG.1.1/PCAP">
+                    <a href="#FAU_STG.1.1/PCAP" class="abbr">FAU_STG.1.1/PCAP</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to transmit the generated <b>packet captures</b> to an external IT entity <b>hosting a protocol analyzer</b> using a trusted channel according to FTP_ITC.1. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to store generated <b>packet captures</b> on the <i>transmit the generated audit data to an external IT entity <b>hosting a protocol analyzer</b> using a trusted channel according to FTP_ITC</i>. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> Per FAU_STG_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must support transfer of the audit data to an external IT entity using a trusted channel per FTP_ITC.1. Note that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> modifies FTP_ITC.1 from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. If <a href="#pcap">capture raw frame traffic that triggered the violation</a> is selected in <a href="#FAU_ARP.1.1">FAU_ARP.1.1</a>, then this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, and this iteration is for the packet captures generated as a selectable action completed upon detection of a potential security violation in <a href="#FAU_ARP.1">FAU_ARP.1</a>. </span>
                     </div>
                 </div>
             </div>
             <div class="element">
-                <div class="reqid" id="FAU_STG_EXT.1.2/PCAP">
-                    <a href="#FAU_STG_EXT.1.2/PCAP" class="abbr">FAU_STG_EXT.1.2/PCAP</a>
+                <div class="reqid" id="FAU_STG.1.2/PCAP">
+                    <a href="#FAU_STG.1.2/PCAP" class="abbr">FAU_STG.1.2/PCAP</a>
                 </div>
                 <div class="reqdesc">
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to store generated <b>packet captures</b> on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself. In addition [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_120">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that stores <b>packet capture</b> data on the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">identification of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components</span>]</span>
+                            <span class="selectable-content" id="_s_122">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that stores <b>packet capture</b> data on the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">identification of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components</span>]</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_121">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with storage of <b>packet capture</b> data provided externally for the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">list of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components that do not store packet capture data locally and the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components to which they transmit their generated packet capture data</span>]</span>
+                            <span class="selectable-content" id="_s_123">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with storage of <b>packet capture</b> data provided externally for the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">list of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components that do not store packet capture data locally and the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components to which they transmit their generated packet capture data</span>]</span>
                         </li>
                     </ul>
                     ]. 
                 </div>
             </div>
             <div class="element">
-                <div class="reqid" id="FAU_STG_EXT.1.3/PCAP">
-                    <a href="#FAU_STG_EXT.1.3/PCAP" class="abbr">FAU_STG_EXT.1.3/PCAP</a>
+                <div class="reqid" id="FAU_STG.1.3/PCAP">
+                    <a href="#FAU_STG.1.3/PCAP" class="abbr">FAU_STG.1.3/PCAP</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_122">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_123">overwrite previous <b>packet captures</b> according to the following rule: [<b>assignment</b>: <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_124">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] when the local storage space for <b>packet capture</b> data is full. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_124">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_125">overwrite previous <b>packet captures</b> according to the following rule: [<b>assignment</b>: <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_126">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] when the local storage space for <b>packet capture</b> data is full. 
                 </div>
             </div>
         </div>
@@ -1835,7 +1796,7 @@
          All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table: 
         <table class="sort_kids_">
             <caption data-sortkey="#0">
-                <b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">8</span></span>: Extended Component Definitions</b>
+                <b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">7</span></span>: Extended Component Definitions</b>
             </caption>
             <tr data-sortkey="#1">
                 <th>Functional Class</th><th>Functional Components</th>
@@ -2184,27 +2145,21 @@
                     <h4>Family Behavior</h4>
                     <div>This family defines requirements for data collection of potentially malicious wireless network activity.</div>
                     <h4>Component Leveling</h4>
-                    <svg style="max-height: 130px;">
-                        <text x="4" fill="black" font-size="15" y="84">FAU_WID_EXT</text>
-                        <rect x="2" y="71" width="150" height="16" fill="none" stroke="black"></rect>
+                    <svg style="max-height: 90px;">
+                        <text x="4" fill="black" font-size="15" y="64">FAU_WID_EXT</text>
+                        <rect x="2" y="51" width="150" height="16" fill="none" stroke="black"></rect>
                         <text x="234" fill="black" font-size="15" y="24">1</text>
                         <rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="17" stroke="black"></line>
+                        <line x1="152" y1="57" x2="231" y2="17" stroke="black"></line>
                         <text x="234" fill="black" font-size="15" y="44">2</text>
                         <rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="37" stroke="black"></line>
+                        <line x1="152" y1="57" x2="231" y2="37" stroke="black"></line>
                         <text x="234" fill="black" font-size="15" y="64">3</text>
                         <rect x="232" y="51" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="57" stroke="black"></line>
+                        <line x1="152" y1="57" x2="231" y2="57" stroke="black"></line>
                         <text x="234" fill="black" font-size="15" y="84">4</text>
                         <rect x="232" y="71" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="77" stroke="black"></line>
-                        <text x="234" fill="black" font-size="15" y="104">5</text>
-                        <rect x="232" y="91" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="97" stroke="black"></line>
-                        <text x="234" fill="black" font-size="15" y="124">6</text>
-                        <rect x="232" y="111" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="117" stroke="black"></line>
+                        <line x1="152" y1="57" x2="231" y2="77" stroke="black"></line>
                     </svg>
                     <p>
                         <a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a>, Wireless Intrusion Detection - Malicious Environmental Objects, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement a mechanism to distinguish between authorized and unauthorized network assets.
@@ -2213,16 +2168,10 @@
                         <a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a>, Wireless Intrusion Detection - Passive Information Flow Monitoring, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to surveil certain wireless frequency bands and perform stateful inspection of traffic on them.
                     </p>
                     <p>
-                        <a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a>, Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to surveil certain radio frequency bands that fall outside the typical wireless spectrum used by consumer-grade electronics.
+                        FAU_WID_EXT.3, Wireless Intrusion Detection - Spectrum Monitoring, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to surveil specified radio frequency bands or protocols to detect potential unauthorized devices.
                     </p>
                     <p>
                         <a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a>, Wireless Intrusion Detection - Wireless Spectrum Analysis, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement wireless spectrum analysis in a dedicated physical component.
-                    </p>
-                    <p>
-                        <a href="#FAU_WID_EXT.5">FAU_WID_EXT.5</a>, Wireless Intrusion Detection - Bluetooth Spectrum Monitoring, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to surveil certain radio frequency bands that fall outside the typical wireless spectrum used by consumer-grade electronics.
-                    </p>
-                    <p>
-                        <a href="#FAU_WID_EXT.6">FAU_WID_EXT.6</a>, Wireless Intrusion Detection - Cellular Spectrum Monitoring, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to surveil certain radio frequency bands that fall outside the typical wireless spectrum used by consumer-grade electronics.
                     </p>
                     <h4>Management: FAU_WID_EXT.1</h4>
                     <p>
@@ -2308,10 +2257,10 @@
                     <p>
                         The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: 
                         <ul>
-                            <li>Detection of network devices operating in selected RF bands</li>
+                            <li>Detection of network devices operating in selected RF bands and/or protocols</li>
                         </ul>
                     </p>
-                    <h4>FAU_WID_EXT.3 Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring</h4>
+                    <h4>FAU_WID_EXT.3 Wireless Intrusion Detection - Spectrum Monitoring</h4>
                     <div style="margin-left: 1em;">
                         <table class="ecd_heir_dep" style="width: 100%">
                             <tr>
@@ -2322,7 +2271,16 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_WID_EXT.3.1">FAU_WID_EXT.3.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of network devices that operate in the following RF bands: [<b>assignment</b>: <span class="assignable-content">list of RF bands</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices [<b>selection</b>: 
+                        <ul>
+                            <li style="">
+                                <span class="selectable-content" id="_s_76">that operate in the following RF bands: [<b>assignment</b>: <span class="assignable-content">RF bands</span>]</span>
+                            </li>
+                            <li style="">
+                                <span class="selectable-content" id="_s_77">that operate a specified protocol and take a specified action: [<b>assignment</b>: <span class="assignable-content">specify protocol and action</span>]</span>
+                            </li>
+                        </ul>
+                        ]. 
                     </div>
                     <h4>Management: FAU_WID_EXT.4</h4>
                     <p>No specific management functions are identified.</p>
@@ -2339,58 +2297,12 @@
                                     <p>
                                         [<a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a> Wireless Intrusion Detection - Passive Information Flow Monitoring, or 
                                     </p>
-                                    <p>
-                                         <a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a> Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring]
-                                    </p>
+                                    <p> FAU_WID_EXT.3 Wireless Intrusion Detection - Spectrum Monitoring]</p>
                                 </td>
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_WID_EXT.4.1">FAU_WID_EXT.4.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a dedicated sensor for wireless spectrum analysis. 
-                    </div>
-                    <h4>Management: FAU_WID_EXT.5</h4>
-                    <p>No specific management functions are identified.</p>
-                    <h4>Audit: FAU_WID_EXT.5</h4>
-                    <p>
-                        The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: 
-                        <ul>
-                            <li>Detection of network devices operating in selected RF bands</li>
-                        </ul>
-                    </p>
-                    <h4>FAU_WID_EXT.5 Wireless Intrusion Detection - Bluetooth Spectrum Monitoring</h4>
-                    <div style="margin-left: 1em;">
-                        <table class="ecd_heir_dep" style="width: 100%">
-                            <tr>
-                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
-                            </tr>
-                            <tr style="background-color: inherit">
-                                <td>Dependencies to:</td><td>No dependencies.</td>
-                            </tr>
-                        </table>
-                        <h4 id="ext-comp-FAU_WID_EXT.5.1">FAU_WID_EXT.5.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of network devices that operate in the following RF bands: [<b>assignment</b>: <span class="assignable-content">list of RF bands</span>]. 
-                    </div>
-                    <h4>Management: FAU_WID_EXT.6</h4>
-                    <p>No specific management functions are identified.</p>
-                    <h4>Audit: FAU_WID_EXT.6</h4>
-                    <p>
-                        The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: 
-                        <ul>
-                            <li>Detection of network devices operating in selected RF bands</li>
-                        </ul>
-                    </p>
-                    <h4>FAU_WID_EXT.6 Wireless Intrusion Detection - Cellular Spectrum Monitoring</h4>
-                    <div style="margin-left: 1em;">
-                        <table class="ecd_heir_dep" style="width: 100%">
-                            <tr>
-                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
-                            </tr>
-                            <tr style="background-color: inherit">
-                                <td>Dependencies to:</td><td>No dependencies.</td>
-                            </tr>
-                        </table>
-                        <h4 id="ext-comp-FAU_WID_EXT.6.1">FAU_WID_EXT.6.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of network devices that operate in the following RF bands: [<b>assignment</b>: <span class="assignable-content">list of RF bands</span>]. 
                     </div>
                 </div>
                 <h3 id="ext-comp-FAU_ANO_EXT" class="indexable" data-level="4">C.2.1.6 FAU_ANO_EXT Anomaly-Based Intrusion Detection</h3>
@@ -2429,22 +2341,22 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_ANO_EXT.1.1">FAU_ANO_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_111">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_112">anomaly ('unexpected') traffic patterns</span>] including the specification of [<b>selection</b>: 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_113">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_114">anomaly ('unexpected') traffic patterns</span>] including the specification of [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_113">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
+                                <span class="selectable-content" id="_s_115">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_114">time of day</span>
+                                <span class="selectable-content" id="_s_116">time of day</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_115">frequency</span>
+                                <span class="selectable-content" id="_s_117">frequency</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_116">thresholds</span>
+                                <span class="selectable-content" id="_s_118">thresholds</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_117">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
+                                <span class="selectable-content" id="_s_119">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
                             </li>
                         </ul>
                         ] and the following network protocol fields: 
@@ -2452,7 +2364,7 @@
                             <li>all management and control frame header elements.</li>
                         </ul>
                         <h4 id="ext-comp-FAU_ANO_EXT.1.2">FAU_ANO_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_118">manual configuration by administrators</span>, <span class="selectable-content" id="_s_119">automated configuration</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_120">manual configuration by administrators</span>, <span class="selectable-content" id="_s_121">automated configuration</span>]. 
                     </div>
                 </div>
                 <h3 id="ext-comp-FAU_SIG_EXT" class="indexable" data-level="4">C.2.1.7 FAU_SIG_EXT Signature-Based Intrusion Detection</h3>
@@ -2572,13 +2484,13 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_WIP_EXT.1.1">FAU_WIP_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_125">wireless containment</span>, <span class="selectable-content" id="_s_126">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_127">wireless containment</span>, <span class="selectable-content" id="_s_128">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
                     </div>
                 </div>
             </span></span>
         <h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D - Implicitly Satisfied Requirements</h1>
         <p>
-            This appendix lists requirements that should be considered satisfied by products successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation. This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.2 Dependencies between components.
+            This appendix lists requirements that should be considered satisfied by products successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation. This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.3 Dependencies between components.
         </p>
         <p>
             This information benefits systems engineering activities which call for inclusion of particular security controls. Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present and have been evaluated.
@@ -2652,7 +2564,7 @@
                 <td><a href="#FAU_SIG_EXT.1">FAU_SIG_EXT.1</a></td><td>Signature-Based Intrusion Detection</td><td>Feature Dependent</td>
             </tr>
             <tr>
-                <td><a href="#FAU_STG_EXT.1/PCAP">FAU_STG_EXT.1/PCAP</a></td><td>Protected Audit Event Storage (Packet Captures)</td><td>Feature Dependent</td>
+                <td>FAU_STG_EXT.1/PCAP</td><td>Protected Audit Event Storage (Packet Captures)</td><td>Feature Dependent</td>
             </tr>
             <tr>
                 <td><a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a></td><td>Wireless Intrusion Detection - Malicious Environmental Objects</td><td>Feature Dependent</td>
@@ -2661,7 +2573,7 @@
                 <td><a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a></td><td>Wireless Intrusion Detection - Passive Information Flow Monitoring</td><td>Feature Dependent</td>
             </tr>
             <tr>
-                <td><a href="#FAU_WID_EXT.3">FAU_WID_EXT.3</a></td><td>Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring</td><td>Feature Dependent</td>
+                <td>FAU_WID_EXT.3</td><td>Wireless Intrusion Detection - Non-Wireless Spectrum Monitoring</td><td>Feature Dependent</td>
             </tr>
             <tr>
                 <td><a href="#FAU_WID_EXT.4">FAU_WID_EXT.4</a></td><td>Wireless Intrusion Detection - Wireless Spectrum Analysis</td><td>Feature Dependent</td>
@@ -2684,7 +2596,7 @@
         <h1 id="acronyms" class="indexable" data-level="A">Appendix G - Acronyms</h1>
         <table>
             <caption>
-                <span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">9</span></span>: Acronyms 
+                <span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">8</span></span>: Acronyms 
             </caption>
             <tr class="header">
                 <th>Acronym</th><th>Meaning</th>
@@ -2813,7 +2725,7 @@
         <h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix H - Bibliography</h1>
         <table>
             <caption>
-                <span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">10</span></span>: Bibliography
+                <span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">9</span></span>: Bibliography
             </caption>
             <tr class="header">
                 <th>Identifier</th><th>Title</th>
@@ -2822,22 +2734,37 @@
                 <td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - 
                         <ul>
                             <li>
-                                <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part 1: Introduction and General Model</a>, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.
+                                <a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.
                             </li>
                             <li>
-                                <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part 2: Security Functional Components</a>, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.
+                                <a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: Security functional requirements</a>, CCMB-2022-11-002, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.
                             </li>
                             <li>
-                                <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part 3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
+                                <a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART3R1.pdf">Part 3: Security assurance requirements</a>, CCMB-2022-11-003, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.
+                            </li>
+                            <li>
+                                <a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART4R1.pdf">Part 4: Framework for the specification of evaluation methods and activities</a>, CCMB-2022-11-004, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.
+                            </li>
+                            <li>
+                                <a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART5R1.pdf">Part 5: Pre-defined packages of security requirements</a>, CCMB-2022-11-005, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.
                             </li>
                         </ul>
                     </span></td>
             </tr>
             <tr>
-                <td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf">collaborative Protection Profile for Network Devices</a>, Version 2.2e, March 23, 2020 </span></td>
+                <td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">Common Methodology for Information Technology Security Evaluation - 
+                        <ul>
+                            <li>
+                                <a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf"> Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.
+                            </li>
+                        </ul>
+                    </span></td>
             </tr>
             <tr>
-                <td><span id="bibNDSD">[NDcPP SD]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf"> Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 2.2, December 2019 </span></td>
+                <td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/protectionprofiles/482">collaborative Protection Profile for Network Devices</a>, Version 3.0e, March 23, 2020 </span></td>
+            </tr>
+            <tr>
+                <td><span id="bibNDSD">[NDcPP SD]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/protectionprofiles/482"> Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 2.2, December 2019 </span></td>
             </tr>
         </table>
     </body>
