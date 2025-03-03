@@ -16,8 +16,11 @@ output/wids-release-linkable.html: TMSI
 output/wids-release-linkable.html: UTMS
 output/wids-release-linkable.html: ay
 output/wids-release-linkable.html: connnected
+output/wids-release-linkable.html: constitue
 output/wids-release-linkable.html: downlink
 output/wids-release-linkable.html: gether
+output/wids-release-linkable.html: havior
+output/wids-release-linkable.html: miniimum
 output/wids-release-linkable.html: piconet
 output/wids-release-linkable.html: piconets
 output/wids-release-linkable.html: uplink
@@ -38,8 +41,10 @@ output/wids-release.html: TMSI
 output/wids-release.html: UTMS
 output/wids-release.html: ay
 output/wids-release.html: connnected
+output/wids-release.html: constitue
 output/wids-release.html: downlink
 output/wids-release.html: gether
+output/wids-release.html: miniimum
 output/wids-release.html: piconet
 output/wids-release.html: piconets
 output/wids-release.html: uplink
@@ -68,8 +73,10 @@ output/wids.html: TMSI
 output/wids.html: UTMS
 output/wids.html: ay
 output/wids.html: connnected
+output/wids.html: constitue
 output/wids.html: downlink
 output/wids.html: gether
+output/wids.html: miniimum
 output/wids.html: piconet
 output/wids.html: piconets
 output/wids.html: uplink
