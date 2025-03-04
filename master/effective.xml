@@ -722,11 +722,12 @@
           <f-element id="fel-audit-what">
             <title> The TSF shall record within the audit data at least the following
               information: <h:ol type="a">
-                <h:li>Date and time of the auditable event, type of event, and subject identity (if
+                <h:li>Date and time of the auditable event, type of event, subject identity (if
                   applicable), and the outcome (success or failure) of the event;</h:li>
                 <h:li>For each auditable event type, based on the auditable event definitions of the
                   functional components included in the PP, PP-Module, functional package or ST, [<h:i> information
-                  specified in column three of the Auditable Events table (<xref to="at-mandatory"/>)</h:i>]. </h:li>
+                  specified in column three of the Auditable Events table in which the auditable event
+                  was defined</h:i>]. </h:li>
               </h:ol>
             </title>
             <note role="application"> The subject identity in this case is the allowlisted inventory
