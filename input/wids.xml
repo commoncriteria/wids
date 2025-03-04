@@ -309,7 +309,7 @@ implied certain tests were mandatory despite the functions being in selections
           <addressed-by>FAU_WID_EXT.1</addressed-by><rationale>Mitigates the threat by classifying wireless devices as benign or malicious based on device metrics.</rationale>
           <addressed-by>FAU_WID_EXT.2</addressed-by><rationale>Mitigates the threat by monitoring 802.11 wireless traffic in the vicinity.</rationale>
           <addressed-by>FCO_CPC_EXT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by securely registering components to the TOE.</rationale>
-          <addressed-by>FDP_IFC.1</addressed-by><rationale>Mitigates the threat by enforcing monitoring on all wireless 802.11 traffic types that involve an authorized device 
+          <addressed-by>FDP_IFC.1</addressed-by><rationale>Mitigates the threat by enforcing monitoring on all wireless 802.11 traffic that involves an authorized device 
           as at least one party.</rationale>
           <addressed-by>FMT_SMF.1/WIDS</addressed-by><rationale>Mitigates the threat by allowing configuration of rules, configuration, and other TOE operational settings.</rationale>
           <addressed-by>FPT_FLS.1/WIDS (objective)</addressed-by><rationale>Mitigates the threat by at miniimum generating an audit record when potential security failures of the TSF are detected, 
@@ -336,8 +336,6 @@ implied certain tests were mandatory despite the functions being in selections
             unauthorized disclosure of information. </description>
           <consistency-rationale>This threat is similar to the T.UNAUTHORIZED_ADMINISTRATOR_ACCESS threat in the Base-PP 
             but it applies to the attacker gaining unauthorized access to an asset on the network monitored by the TOE rather than against the TOE itself.</consistency-rationale>
-          <addressed-by>FAU_ARP.1</addressed-by><rationale>Mitigates the threat by generating alerts for potential violations of security policy.</rationale>
-          <addressed-by>FAU_ARP_EXT.1</addressed-by><rationale>Mitigates the threat by allowing for nuisance or undesirable alarms from generation, preventing alarm fatigue.</rationale>
           <addressed-by>FAU_IDS_EXT.1</addressed-by><rationale>Mitigates the threat by detecting intrusions or potential intrusions.</rationale>
           <addressed-by>FAU_INV_EXT.1</addressed-by><rationale>Mitigates the threat by defining an allowlist of authorized equipment for use in the network.</rationale>
           <addressed-by>FAU_INV_EXT.2</addressed-by><rationale>Mitigates the threat by detecting all wireless devices present in the vicinity, to use against the allowlist 
@@ -347,6 +345,8 @@ implied certain tests were mandatory despite the functions being in selections
           <addressed-by>FAU_SAA.1</addressed-by><rationale>Mitigates the threat by defining rules that indicate a potential malicious action.</rationale>
           <addressed-by>FAU_WID_EXT.1</addressed-by><rationale>Mitigates the threat by classifying wireless devices as benign or malicious based on device metrics.</rationale>
           <addressed-by>FAU_WID_EXT.2</addressed-by><rationale>Mitigates the threat by monitoring 802.11 wireless traffic in the vicinity for comparison against defined policies.</rationale>
+          <addressed-by>FDP_IFC.1</addressed-by><rationale>Mitigates the threat by enforcing monitoring on all wireless 802.11 traffic that involves an authorized device 
+          as at least one party.</rationale>
           <addressed-by>FMT_SMF.1/WIDS</addressed-by><rationale>Mitigates the threat by allowing configuration of rules, configuration, and other TOE operational settings.</rationale>
           <addressed-by>FAU_WID_EXT.3/RF (optional)</addressed-by><rationale>Mitigates the threat by monitoring non-802.11 wireless traffic in the vicinity for potential violations of policy.</rationale>
           <addressed-by>FAU_WID_EXT.3/BT (optional)</addressed-by><rationale>Mitigates the threat by monitoring Bluetooth wireless traffic in the vicinity for potential violations of policy.</rationale>
@@ -365,8 +365,6 @@ implied certain tests were mandatory despite the functions being in selections
             physical layer through RF Jamming, or at the data link layer through packet injection. </description>
           <consistency-rationale>This threat is for a denial-of-service attack against an asset on the network monitored by the TOE. 
             The Base-PP does not define any threats for availability but there is no consistency issue here because the threat applies to an interface that does not exist in the Base-PP.</consistency-rationale>
-          <addressed-by>FAU_ARP.1</addressed-by><rationale>Mitigates the threat by generating alerts for potential violations of security policy.</rationale>
-          <addressed-by>FAU_ARP_EXT.1</addressed-by><rationale>Mitigates the threat by allowing for nuisance or undesirable alarms from generation, preventing alarm fatigue.</rationale>
           <addressed-by>FAU_IDS_EXT.1</addressed-by><rationale>Mitigates the threat by detecting intrusions or potential intrusions.</rationale>
           <addressed-by>FAU_INV_EXT.1</addressed-by><rationale>Mitigates the threat by defining an allowlist of authorized equipment for use in the network.</rationale>
           <addressed-by>FAU_INV_EXT.2</addressed-by><rationale>Mitigates the threat by detecting all wireless devices present in the vicinity, to use against the allowlist 
@@ -378,6 +376,8 @@ implied certain tests were mandatory despite the functions being in selections
           (which may indicate a DoS threat).</rationale>
           <addressed-by>FAU_WID_EXT.2</addressed-by><rationale>Mitigates the threat by monitoring 802.11 wireless traffic in the vicinity for comparison against defined policies.</rationale>
           <addressed-by>FAU_WIP_EXT.1</addressed-by><rationale>Mitigates the threat by isolating confirmed threats to the internal network, either wired (unauthorized AP) or wireless.</rationale>
+          <addressed-by>FDP_IFC.1</addressed-by><rationale>Mitigates the threat by enforcing monitoring on all wireless 802.11 traffic types that involve an authorized device 
+          as at least one party.</rationale>
           <addressed-by>FMT_SMF.1/WIDS</addressed-by><rationale>Mitigates the threat by allowing configuration of rules, configuration, and other TOE operational settings.</rationale>
           <addressed-by>FAU_WID_EXT.3/BT (optional)</addressed-by><rationale>Mitigates the threat by monitoring Bluetooth wireless traffic in the vicinity for potential violations of policy.</rationale>
           <addressed-by>FAU_WID_EXT.3/CELL (optional)</addressed-by><rationale>Mitigates the threat by monitoring cellular wireless traffic in the vicinity for potential violations of policy.</rationale>
@@ -780,11 +780,11 @@ implied certain tests were mandatory despite the functions being in selections
 	    </note>
           </f-element>
           <f-element id="fel-audit-what">
-            <title> The TSF shall record within each audit record at least the following
+            <title> The TSF shall record within the audit data at least the following
               information: <h:ol type="a">
                 <h:li>Date and time of the event, type of event, and subject identity (if
                   applicable), and the outcome (success or failure) of the event;</h:li>
-                <h:li>For each audit event type, based on the auditable event definitions of the
+                <h:li>For each auditable event type, based on the auditable event definitions of the
                   functional components included in the PP, PP-Module, functional package or ST, [<h:i> information
                   specified in column three of the Auditable Events table (<xref to="at-mandatory"/>)</h:i>]. </h:li>
               </h:ol>
