@@ -696,12 +696,12 @@
                 <h:li>All auditable events for the <h:i>not specified</h:i> level of audit;</h:li>
                 <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref to="at-mandatory"/>);</h:i></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i>;</h:li>
-                <h:li><h:i><selectables>
+                <h:li><h:i><selectables linebreak="yes">
                   <selectable>Auditable events listed in the Auditable Events for Optional SFRs table (<xref to="at-optional"/>) for SFRs that are present in the ST</selectable>
                   <selectable>Auditable events listed in the Auditable Events for Objective SFRs table (<xref to="at-objective"/>) for SFRs that are present in the ST</selectable>
                   <selectable>no other events</selectable>
                 </selectables></h:i></h:li>
-              </h:ol>
+              </h:ol>].
             </title>
             <note role="application">
 	            <h:p>
