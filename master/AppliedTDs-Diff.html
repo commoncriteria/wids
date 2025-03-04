@@ -375,7 +375,7 @@
                 <td rowspan="1"><a href="#A.PROPER_ADMIN">A.PROPER_​ADMIN</a></td><td><a href="#OE.PROPER_ADMIN">OE.PROPER_​ADMIN</a></td><td> The operational environment objective <a href="#OE.PROPER_ADMIN">OE.PROPER_ADMIN</a> is realized through <a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a>.</td>
             </tr>
             <tr class="major-row">
-                <td rowspan="1"><a href="#P.ANALYZE">P.ANALYZE</a></td><td>O.WIDS_​ANALYZE</td><td>The organizational security policy <a href="#P.ANALYZE">P.ANALYZE</a> is facilitated through O.WIDS_ANALYZE. </td>
+                <td rowspan="1"><a href="#P.ANALYZE">P.ANALYZE</a></td><td><a href="#OE.CONNECTIONS">OE.CONNECTIONS</a></td><td>The proper placement of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> within a network allows the <a href="#P.ANALYZE">P.ANALYZE</a> policy to be enforced.</td>
             </tr>
         </table>
         <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
@@ -707,13 +707,13 @@
                             All auditable events for the <i>not specified</i> level of audit;
                         </li>
                         <li>
-                            [<i>Auditable events listed in the Auditable Events table (<a href="#at-mandatory" class="at-mandatory-ref">Table <span class="counter">2</span></a>);</i>
+                            [<i>Auditable events listed in the Auditable Events for Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#at-mandatory" class="at-mandatory-ref">Table <span class="counter">2</span></a>);</i>
                         </li>
                         <li>
                             <i>Failure of wireless sensor communication</i>;
                         </li>
                         <li>
-                            <i>Any authentication event listed in the Auditable Events table (<a href="#at-mandatory" class="at-mandatory-ref">Table <span class="counter">2</span></a>)].</i>
+                            <i>[<b>selection</b>: <span class="selectable-content" id="_s_19">Auditable events listed in the Auditable Events for Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#at-optional" class="at-optional-ref">Table <span class="counter">7</span></a>) for <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are present in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr></span>, <span class="selectable-content" id="_s_20">Auditable events listed in the Auditable Events for Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#at-objective" class="at-objective-ref">Table <span class="counter">8</span></a>) for <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are present in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr></span>, <span class="selectable-content" id="_s_21">no other events</span>]</i>
                         </li>
                     </ol>
                     <div class="appnote">
@@ -722,7 +722,7 @@
                                  The auditable events defined in <a href="#at-mandatory" class="at-mandatory-ref">Table <span class="counter">2</span></a> are for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are explicitly defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and are intended to extend FAU_GEN.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The events in the Auditable Events table should be combined with those of the NDcPP in the context of a conforming Security Target.
                             </p>
                             <p>
-                                 The Auditable Events tables for Optional, (<a href="#at-optional" class="at-optional-ref">Table <span class="counter">7</span></a>), Objective (<a href="#at-objective" class="at-objective-ref">Table <span class="counter">8</span></a>), and Selection-Based (<a href="#at-sel-based" class="at-sel-based-ref">Table <span class="counter">9</span></a>) <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> includes optional, objective and selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, respectively. The auditing of optional, objective, and selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> is only required if that <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. 
+                                 If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> includes any optional or objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, the selection for the respective "Auditable events listed in the Auditable Events..." must be included. If no optional or objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, "no other events" should be selected. The auditing of the specific optional and objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> is only required if that <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. 
                             </p>
                             <p>
                                  Per FAU_STG_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must support transfer of the audit data to an external IT entity using a trusted channel. 
@@ -738,7 +738,7 @@
                 <div class="reqdesc">
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within the audit data at least the following information: 
                     <ol type="a">
-                        <li>Date and time of the event, type of event, and subject identity (if applicable), and the outcome (success or failure) of the event;</li>
+                        <li>Date and time of the auditable event, type of event, and subject identity (if applicable), and the outcome (success or failure) of the event;</li>
                         <li>
                             For each auditable event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i> information specified in column three of the Auditable Events table (<a href="#at-mandatory" class="at-mandatory-ref">Table <span class="counter">2</span></a>)</i>]. 
                         </li>
@@ -756,7 +756,7 @@
                     <a href="#FAU_IDS_EXT.1.1" class="abbr">FAU_IDS_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect intrusions using[<b>selection</b>: <span class="selectable-content" id="anoBased">anomaly-based</span>, <span class="selectable-content" id="sigBased">signature-based</span>, <span class="selectable-content" id="_s_21">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>] methods. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect intrusions using[<b>selection</b>: <span class="selectable-content" id="anoBased">anomaly-based</span>, <span class="selectable-content" id="sigBased">signature-based</span>, <span class="selectable-content" id="_s_24">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>] methods. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p> At least one detection method must be selected. If multiple detection methods are supported, each supported method must be selected. </p>
@@ -775,7 +775,7 @@
                     <a href="#FAU_INV_EXT.1.1" class="abbr">FAU_INV_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall determine if a given <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> is authorized based on [<b>selection</b>: <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_23">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>] 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall determine if a given <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> is authorized based on [<b>selection</b>: <span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_26">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>] 
                 </div>
             </div>
             <div class="element">
@@ -783,7 +783,7 @@
                     <a href="#FAU_INV_EXT.1.2" class="abbr">FAU_INV_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall determine if a given <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> is authorized based on [<b>selection</b>: <span class="selectable-content" id="_s_24"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_25">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>] 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall determine if a given <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> is authorized based on [<b>selection</b>: <span class="selectable-content" id="_s_27"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_28">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>] 
                 </div>
             </div>
             <div class="element">
@@ -825,7 +825,7 @@
                             Classification of <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>
                         </li>
                         <li>
-                            [<b>selection</b>: <span class="selectable-content" id="_s_26">[<b>assignment</b>: <span class="assignable-content">other details</span>]</span>, <span class="selectable-content" id="_s_27">no other details</span>]
+                            [<b>selection</b>: <span class="selectable-content" id="_s_29">[<b>assignment</b>: <span class="assignable-content">other details</span>]</span>, <span class="selectable-content" id="_s_30">no other details</span>]
                         </li>
                     </ul>
                     of all <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> within range of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s wireless sensors.
@@ -877,7 +877,7 @@
                     <a href="#FAU_INV_EXT.3.1" class="abbr">FAU_INV_EXT.3.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the physical location of rogue <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, and [<b>selection</b>: <span class="selectable-content" id="_s_28">allow-listed <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr></span>, <span class="selectable-content" id="_s_29">allow-listed <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr></span>, <span class="selectable-content" id="_s_30">neighboring <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr></span>, <span class="selectable-content" id="_s_31">no other devices</span>] to within [<b>assignment</b>: <span class="assignable-content">value equal or less than 25</span>] feet of their actual location. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the physical location of rogue <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, and [<b>selection</b>: <span class="selectable-content" id="_s_31">allow-listed <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr></span>, <span class="selectable-content" id="_s_32">allow-listed <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr></span>, <span class="selectable-content" id="_s_33">neighboring <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr></span>, <span class="selectable-content" id="_s_34">no other devices</span>] to within [<b>assignment</b>: <span class="assignable-content">value equal or less than 25</span>] feet of their actual location. 
                 </div>
             </div>
             <div class="element">
@@ -885,7 +885,7 @@
                     <a href="#FAU_INV_EXT.3.2" class="abbr">FAU_INV_EXT.3.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect received signal strength and [<b>selection</b>: <span class="selectable-content" id="_s_32">RF power levels above a predetermined threshold</span>, <span class="selectable-content" id="_s_33">no other characteristics</span>] of hardware operating within range of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s wireless sensors. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect received signal strength and [<b>selection</b>: <span class="selectable-content" id="_s_35">RF power levels above a predetermined threshold</span>, <span class="selectable-content" id="_s_36">no other characteristics</span>] of hardware operating within range of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s wireless sensors. 
                 </div>
             </div>
         </div>
@@ -899,10 +899,10 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_34">Syslog using [<b>selection</b>: <span class="selectable-content" id="_s_35">defined API</span>, <span class="selectable-content" id="_s_36">Syslog</span>, <span class="selectable-content" id="_s_37">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>]</span>
+                            <span class="selectable-content" id="_s_37">Syslog using [<b>selection</b>: <span class="selectable-content" id="_s_38">defined API</span>, <span class="selectable-content" id="_s_39">Syslog</span>, <span class="selectable-content" id="_s_40">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>]</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_38"><abbr class="dyn-abbr"><a href="#abbr_SNMP">SNMP</a></abbr> trap reporting using [<b>selection</b>: <span class="selectable-content" id="_s_39">defined API</span>, <span class="selectable-content" id="_s_40">Simple Network Management Protocol (<abbr class="dyn-abbr"><a href="#abbr_SNMP">SNMP</a></abbr>)</span>, <span class="selectable-content" id="_s_41">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>]</span>
+                            <span class="selectable-content" id="_s_41"><abbr class="dyn-abbr"><a href="#abbr_SNMP">SNMP</a></abbr> trap reporting using [<b>selection</b>: <span class="selectable-content" id="_s_42">defined API</span>, <span class="selectable-content" id="_s_43">Simple Network Management Protocol (<abbr class="dyn-abbr"><a href="#abbr_SNMP">SNMP</a></abbr>)</span>, <span class="selectable-content" id="_s_44">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>]</span>
                         </li>
                     </ul>
                     ] for reporting of collected data. 
@@ -916,7 +916,7 @@
                     <a href="#FAU_RPT_EXT.1.2" class="abbr">FAU_RPT_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to import data, such as an allowlist of <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, and <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_WIPS">WIPS</a></abbr> configuration files from the system using [<b>selection</b>: <span class="selectable-content" id="_s_42">custom API</span>, <span class="selectable-content" id="_s_43">Syslog</span>, <span class="selectable-content" id="_s_44">common log format</span>, <span class="selectable-content" id="_s_45">comma separated values (CSV)</span>, <span class="selectable-content" id="_s_46">[<b>assignment</b>: <span class="assignable-content">vendor detection method</span>]</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to import data, such as an allowlist of <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, and <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_WIPS">WIPS</a></abbr> configuration files from the system using [<b>selection</b>: <span class="selectable-content" id="_s_45">custom API</span>, <span class="selectable-content" id="_s_46">Syslog</span>, <span class="selectable-content" id="_s_47">common log format</span>, <span class="selectable-content" id="_s_48">comma separated values (CSV)</span>, <span class="selectable-content" id="_s_49">[<b>assignment</b>: <span class="assignable-content">vendor detection method</span>]</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The system must provide the ability to interact with an extensible interface to a third party wireless monitoring system for the purposes of importing data from the wireless system.</span>
                     </div>
@@ -941,7 +941,7 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall enforce the following rules for monitoring <b>wireless traffic:</b> 
                     <ol type="a">
                         <li>
-                            <i>Accumulation or combination of [<b>selection</b>: <span class="selectable-content" id="_s_47">[<b>assignment</b>: <span class="assignable-content">subset of defined auditable events</span>]</span>, <span class="selectable-content" id="_s_48">no defined auditable events</span>]known to indicate a potential security violation</i>,
+                            <i>Accumulation or combination of [<b>selection</b>: <span class="selectable-content" id="_s_50">[<b>assignment</b>: <span class="assignable-content">subset of defined auditable events</span>]</span>, <span class="selectable-content" id="_s_51">no defined auditable events</span>]known to indicate a potential security violation</i>,
                         </li>
                         <li>
                             [<i>Detection of non-allowlisted <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr></i>,
@@ -1052,7 +1052,7 @@
                     <a href="#FAU_WID_EXT.1.1" class="abbr">FAU_WID_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distinguish between benign and malicious <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> based on if the <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> are authorized and [<b>selection</b>: <span class="selectable-content" id="_s_49">automatic detection metrics</span>, <span class="selectable-content" id="_s_50">no other method</span>].
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distinguish between benign and malicious <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> based on if the <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> are authorized and [<b>selection</b>: <span class="selectable-content" id="_s_52">automatic detection metrics</span>, <span class="selectable-content" id="_s_53">no other method</span>].
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> <a href="#FAU_INV_EXT.1">FAU_INV_EXT.1</a> defines that an <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> is authorized based on if the <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> is allowlisted as configured in FMT_SMF.1. A non-allowlisted device does not always have to be conducting malicious activity. However, it is acceptable to equate an allowlisted <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> as both authorized/benign and a non-allowlisted <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> as both not authorized and thus malicious. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports automatic malicious device detection, based on in-depth network traffic analysis, "automatic detection metrics" must be selected. This can be used to further distinguish if the <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> is benign or malicious. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not support automatic detection metrics, "no other method" must be selected. </span>
                     </div>
@@ -1077,7 +1077,7 @@
                     <a href="#FAU_WID_EXT.2.1" class="abbr">FAU_WID_EXT.2.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_51">simultaneously</span>, <span class="selectable-content" id="s-nonsimult">nonsimultaneously</span>] monitor and analyze network traffic matching the 802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> for all channels in the following RF frequencies: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_54">simultaneously</span>, <span class="selectable-content" id="s-nonsimult">nonsimultaneously</span>] monitor and analyze network traffic matching the 802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> for all channels in the following RF frequencies: 
                     <ul>
                         <li>2.4 GHz</li>
                         <li>5.0 GHz</li>
@@ -1086,16 +1086,16 @@
                      and [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_53">[<b>assignment</b>: <span class="assignable-content">specified Wi-Fi channels</span>] in the 4.9 GHz regulatory domain</span>
+                            <span class="selectable-content" id="_s_56">[<b>assignment</b>: <span class="assignable-content">specified Wi-Fi channels</span>] in the 4.9 GHz regulatory domain</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_54">channels outside regulatory domain</span>
+                            <span class="selectable-content" id="_s_57">channels outside regulatory domain</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_55">non-standard channel frequencies</span>
+                            <span class="selectable-content" id="_s_58">non-standard channel frequencies</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_56">no other domains</span>
+                            <span class="selectable-content" id="_s_59">no other domains</span>
                         </li>
                     </ul>
                     ]. 
@@ -1116,7 +1116,7 @@
                     <a href="#FAU_WID_EXT.2.2" class="abbr">FAU_WID_EXT.2.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide wireless sensors to detect network traffic matching the 802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> that [<b>selection</b>: <span class="selectable-content" id="_s_59">can be configured to prevent transmission of data</span>, <span class="selectable-content" id="_s_60">does not transmit data</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide wireless sensors to detect network traffic matching the 802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> that [<b>selection</b>: <span class="selectable-content" id="_s_62">can be configured to prevent transmission of data</span>, <span class="selectable-content" id="_s_63">does not transmit data</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -1188,7 +1188,7 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions <b>for <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr> functionality</b> [: <i>
                         <ul>
                             <li>
-                                Define an inventory of authorized <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> based on [<b>selection</b>: <span class="selectable-content" id="_s_61"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_62">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>],
+                                Define an inventory of authorized <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> based on [<b>selection</b>: <span class="selectable-content" id="_s_64"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_65">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>],
                             </li>
                             <li>
                                 Define an inventory of authorized <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> based on <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses,
@@ -1207,22 +1207,22 @@
                                 [<b>selection</b>: 
                                 <ul>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_63">Specify periods of network activity that constitute baseline of expected behavior</span>
+                                        <span class="selectable-content" id="_s_66">Specify periods of network activity that constitute baseline of expected behavior</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_64">Define anomaly activity</span>
+                                        <span class="selectable-content" id="_s_67">Define anomaly activity</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_65">Define classification rules to detect rogue <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr></span>
+                                        <span class="selectable-content" id="_s_68">Define classification rules to detect rogue <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr></span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_66">[<b>selection</b>: <span class="selectable-content" id="_s_67">enable</span>, <span class="selectable-content" id="_s_68">disable</span>] transmission of data by wireless sensor</span>
+                                        <span class="selectable-content" id="_s_69">[<b>selection</b>: <span class="selectable-content" id="_s_70">enable</span>, <span class="selectable-content" id="_s_71">disable</span>] transmission of data by wireless sensor</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_69">Define attack signatures</span>
+                                        <span class="selectable-content" id="_s_72">Define attack signatures</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_70">Define rules for overwriting previous packet captures</span>
+                                        <span class="selectable-content" id="_s_73">Define rules for overwriting previous packet captures</span>
                                     </li>
                                     <li style="">
                                         <span class="selectable-content" id="s-mon-spec-freq">Define the amount of time sensor monitors a specific frequency </span>
@@ -1231,13 +1231,13 @@
                                         <span class="selectable-content" id="s-mon-spec-chan">Define the amount of time sensor monitors a specific channel </span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_73">Define authorized and unauthorized TCP/IP and UDP traffic</span>
+                                        <span class="selectable-content" id="_s_76">Define authorized and unauthorized TCP/IP and UDP traffic</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_74">Define known malicious activity ports</span>
+                                        <span class="selectable-content" id="_s_77">Define known malicious activity ports</span>
                                     </li>
                                     <li style="">
-                                        <span class="selectable-content" id="_s_75">No other capabilities</span>
+                                        <span class="selectable-content" id="_s_78">No other capabilities</span>
                                     </li>
                                 </ul>
                                 ]
@@ -1325,7 +1325,7 @@
                     <td><a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a></td><td>Mitigates the threat by allowing configuration of rules, configuration, and other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> operational settings.</td>
                 </tr>
                 <tr>
-                    <td><a href="#FPT_FLS.1/WIDS">FPT_FLS.1/WIDS</a> (objective)</td><td>Mitigates the threat by at miniimum generating an audit record when potential security failures of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> are detected, which could include failures to properly monitor or alert to potential threats.</td>
+                    <td><a href="#FPT_FLS.1/WIDS">FPT_FLS.1/WIDS</a> (objective)</td><td>Mitigates the threat by at minimum generating an audit record when potential security failures of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> are detected, which could include failures to properly monitor or alert to potential threats.</td>
                 </tr>
                 <tr>
                     <td>FTP_ITC.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by securely transmitting data from the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to other trusted entities.</td>
@@ -1678,7 +1678,7 @@
                 <td></td>
             </tr>
             <tr data-sortkey="FAU_WID_EXT.3/BT.2">
-                <td>Detection of Bluetooth devices (for each selection made that includes an action of "log")</td><td>Information contained within each selection that contains a requirement to log information. <span style="" class="comment " id="Comment-2-">It is unclear what information needs to be logged to constitue the logging of a particular Bluetooth device. This applies to selections that include logging the presence of a Bluetooth device, as well as selections that include logging a device that carries out a particular action, such as performing a particular procedure.</span> </td>
+                <td>Detection of Bluetooth devices (for each selection made that includes an action of "log")</td><td>Information contained within each selection that contains a requirement to log information. <span style="" class="comment " id="Comment-2-">It is unclear what information needs to be logged to constitute the logging of a particular Bluetooth device. This applies to selections that include logging the presence of a Bluetooth device, as well as selections that include logging a device that carries out a particular action, such as performing a particular procedure.</span> </td>
             </tr>
             <tr data-sortkey="FAU_WID_EXT.3/CELL">
                 <td rowspan="2"><a href="#FAU_WID_EXT.3/CELL">FAU_WID_EXT.3/CELL</a></td><td style="display:none"></td>
@@ -1729,64 +1729,64 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices <i>that operate a specified protocol and take a specified action: </i>[<i> [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_78">Detect and log the presence of 2.4 GHz Bluetooth BR/EDR devices operating within a controlled space</span>
+                                <span class="selectable-content" id="_s_81">Detect and log the presence of 2.4 GHz Bluetooth BR/EDR devices operating within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_79">Detect and log the presence of Bluetooth Low Energy (BLE) devices operating within a controlled space</span>
+                                <span class="selectable-content" id="_s_82">Detect and log the presence of Bluetooth Low Energy (BLE) devices operating within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_80">Detect and log the the Bluetooth BR/EDR devices LAP and half the Bluetooth <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address within a controlled space</span>
+                                <span class="selectable-content" id="_s_83">Detect and log the the Bluetooth BR/EDR devices LAP and half the Bluetooth <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_81">Detect and log the BLE device's Bluetooth <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address within a controlled space</span>
+                                <span class="selectable-content" id="_s_84">Detect and log the BLE device's Bluetooth <abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> address within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_82">Geo-locate Bluetooth BR/EDR devices within 25 feet of their actual location</span>
+                                <span class="selectable-content" id="_s_85">Geo-locate Bluetooth BR/EDR devices within 25 feet of their actual location</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_83">Geo-locate BLE devices within 25 feet of their actual location</span>
+                                <span class="selectable-content" id="_s_86">Geo-locate BLE devices within 25 feet of their actual location</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_84">Detect and log Bluetooth BR/EDR devices conducting the Inquiry Procedure within a controlled space</span>
+                                <span class="selectable-content" id="_s_87">Detect and log Bluetooth BR/EDR devices conducting the Inquiry Procedure within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_85">Detect and log Bluetooth BR/EDR devices responding to the Inquiry Procedure within the controlled space</span>
+                                <span class="selectable-content" id="_s_88">Detect and log Bluetooth BR/EDR devices responding to the Inquiry Procedure within the controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_86">Capture and log any device information transmitted during the Bluetooth BR/EDR Inquiry Procedure when occurring within a controlled space</span>
+                                <span class="selectable-content" id="_s_89">Capture and log any device information transmitted during the Bluetooth BR/EDR Inquiry Procedure when occurring within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_87">Detect and log BLE devices advertisements on the Advertisement channels</span>
+                                <span class="selectable-content" id="_s_90">Detect and log BLE devices advertisements on the Advertisement channels</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_88">Detect and log BLE devices exchanging information or data on the Advertisement channels</span>
+                                <span class="selectable-content" id="_s_91">Detect and log BLE devices exchanging information or data on the Advertisement channels</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_89">Detect and log Bluetooth BR/EDR devices using the SDP procedure</span>
+                                <span class="selectable-content" id="_s_92">Detect and log Bluetooth BR/EDR devices using the SDP procedure</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_90">Capture and log any device information exchanged during the Bluetooth BR/EDR SDP procedure</span>
+                                <span class="selectable-content" id="_s_93">Capture and log any device information exchanged during the Bluetooth BR/EDR SDP procedure</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_91">Detect and log any Bluetooth BR/EDR devices performing the Paging Procedure</span>
+                                <span class="selectable-content" id="_s_94">Detect and log any Bluetooth BR/EDR devices performing the Paging Procedure</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_92">Detect and log any BLE device performing the Paging Procedure</span>
+                                <span class="selectable-content" id="_s_95">Detect and log any BLE device performing the Paging Procedure</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_93">Detect and log the piconet membership of any Bluetooth BR/EDR device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</span>
+                                <span class="selectable-content" id="_s_96">Detect and log the piconet membership of any Bluetooth BR/EDR device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_94">Detect and log the piconet membership of any Low Energy (LE) device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</span>
+                                <span class="selectable-content" id="_s_97">Detect and log the piconet membership of any Low Energy (LE) device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_95">Use Bluetooth BR/EDR Inquiry Procedure to detect Bluetooth BR/EDR devices in discoverable mode within a controlled area</span>
+                                <span class="selectable-content" id="_s_98">Use Bluetooth BR/EDR Inquiry Procedure to detect Bluetooth BR/EDR devices in discoverable mode within a controlled area</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_96">Use Bluetooth BR/EDR SDP procedure to gether information about Bluetooth BR/EDR devices within a controlled area</span>
+                                <span class="selectable-content" id="_s_99">Use Bluetooth BR/EDR SDP procedure to gather information about Bluetooth BR/EDR devices within a controlled area</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_97">Use BLE SDP procedure to gather information about BLE devices within a controlled area</span>
+                                <span class="selectable-content" id="_s_100">Use BLE SDP procedure to gather information about BLE devices within a controlled area</span>
                             </li>
                         </ul>
                         ]</i>]. 
@@ -1806,34 +1806,34 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices <i>that operate a specified protocol and take a specified action: </i> [<i>[<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_98">Detect and log the presence of cellular 3G devices operating within a controlled space</span>
+                                <span class="selectable-content" id="_s_101">Detect and log the presence of cellular 3G devices operating within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_99">Detect and log the presence of cellular 4G/LTE devices operating within a controlled space</span>
+                                <span class="selectable-content" id="_s_102">Detect and log the presence of cellular 4G/LTE devices operating within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_100">Detect and log the presence of cellular 5G low and mid-band devices operating within a controlled space</span>
+                                <span class="selectable-content" id="_s_103">Detect and log the presence of cellular 5G low and mid-band devices operating within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_101">Detect and identify base stations which had clients within the area monitored by the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr></span>
+                                <span class="selectable-content" id="_s_104">Detect and identify base stations which had clients within the area monitored by the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr></span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_102">Capture temporary identifiers (e.g. TMSI) of cellular devices within a controlled space</span>
+                                <span class="selectable-content" id="_s_105">Capture temporary identifiers (e.g. TMSI) of cellular devices within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_103">Detect and identify which cellular technology (such as 3G, LTE, UTMS, 5G, etc.) the cellular device is using within a controlled space</span>
+                                <span class="selectable-content" id="_s_106">Detect and identify which cellular technology (such as 3G, LTE, UTMS, 5G, etc.) the cellular device is using within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_104">Detect and identify which cellular carrier a cellular device is using within a controlled space</span>
+                                <span class="selectable-content" id="_s_107">Detect and identify which cellular carrier a cellular device is using within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_105">Detect and identify which base station a cellular device is connnected to while operating within a controlled space</span>
+                                <span class="selectable-content" id="_s_108">Detect and identify which base station a cellular device is connected to while operating within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_106">Detect and identify whether a cellular device is using a cellular uplink or downlink operating within a controlled space</span>
+                                <span class="selectable-content" id="_s_109">Detect and identify whether a cellular device is using a cellular uplink or downlink operating within a controlled space</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_107">Geo-locate cellular devices operating within the operation area of the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr></span>
+                                <span class="selectable-content" id="_s_110">Geo-locate cellular devices operating within the operation area of the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr></span>
                             </li>
                         </ul>
                         ]</i>]. 
@@ -1850,7 +1850,7 @@
                     <a href="#FAU_WID_EXT.3.1/RF" class="abbr">FAU_WID_EXT.3.1/RF</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices <i>that operate in the following RF bands:</i> [<i>[<b>selection</b>: <span class="selectable-content" id="_s_108">3.6 GHz</span>, <span class="selectable-content" id="_s_109">6 GHz</span>, <span class="selectable-content" id="_s_110">60 GHz</span>, <span class="selectable-content" id="_s_111">sub-GHz (0-900 MHz)</span>, <span class="selectable-content" id="cell">all cellular bands</span>]</i>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices <i>that operate in the following RF bands:</i> [<i>[<b>selection</b>: <span class="selectable-content" id="_s_111">3.6 GHz</span>, <span class="selectable-content" id="_s_112">6 GHz</span>, <span class="selectable-content" id="_s_113">60 GHz</span>, <span class="selectable-content" id="_s_114">sub-GHz (0-900 MHz)</span>, <span class="selectable-content" id="cell">all cellular bands</span>]</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to Non-WLAN (IEEE 802.11 a, b, g, n, y, ac, ad and ay) network devices that operate in the specified frequencies. There is an understanding that this capability requires a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use specialized, licensed radio systems. This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will allow for the introduction of an open API, set of defined interoperability standards, or other proprietary solution(s), to allow for third-party integration.</span>
                     </div>
@@ -1999,7 +1999,7 @@
                     <a href="#FAU_WIP_EXT.1.1" class="abbr">FAU_WIP_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_127">wireless containment</span>, <span class="selectable-content" id="_s_128">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_130">wireless containment</span>, <span class="selectable-content" id="_s_131">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -2080,22 +2080,22 @@
                     <a href="#FAU_ANO_EXT.1.1" class="abbr">FAU_ANO_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_113">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_114">anomaly ('unexpected') traffic patterns</span>] including the specification of [<b>selection</b>: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_116">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_117">anomaly ('unexpected') traffic patterns</span>] including the specification of [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_115">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
+                            <span class="selectable-content" id="_s_118">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_116">time of day</span>
+                            <span class="selectable-content" id="_s_119">time of day</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_117">frequency</span>
+                            <span class="selectable-content" id="_s_120">frequency</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_118">thresholds</span>
+                            <span class="selectable-content" id="_s_121">thresholds</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_119">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
+                            <span class="selectable-content" id="_s_122">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
                         </li>
                     </ul>
                     ] and the following network protocol fields: 
@@ -2109,7 +2109,7 @@
                     <a href="#FAU_ANO_EXT.1.2" class="abbr">FAU_ANO_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_120">manual configuration by administrators</span>, <span class="selectable-content" id="_s_121">automated configuration</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_123">manual configuration by administrators</span>, <span class="selectable-content" id="_s_124">automated configuration</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The "baseline" and "anomaly" can be something manually defined/configured by a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrator (or importing definitions), or something that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to automatically define/create by inspecting network traffic over a period of time (a.k.a. "profiling"). </span>
                     </div>
@@ -2154,10 +2154,10 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to store generated <b>packet captures</b> on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself. In addition [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_122">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that stores <b>packet capture</b> data on the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">identification of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components</span>]</span>
+                            <span class="selectable-content" id="_s_125">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that stores <b>packet capture</b> data on the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">identification of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components</span>]</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_123">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with storage of <b>packet capture</b> data provided externally for the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">list of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components that do not store packet capture data locally and the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components to which they transmit their generated packet capture data</span>]</span>
+                            <span class="selectable-content" id="_s_126">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with storage of <b>packet capture</b> data provided externally for the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">list of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components that do not store packet capture data locally and the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components to which they transmit their generated packet capture data</span>]</span>
                         </li>
                     </ul>
                     ]. 
@@ -2168,7 +2168,7 @@
                     <a href="#FAU_STG.1.3/PCAP" class="abbr">FAU_STG.1.3/PCAP</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_124">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_125">overwrite previous <b>packet captures</b> according to the following rule: [<b>assignment</b>: <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_126">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] when the local storage space for <b>packet capture</b> data is full. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_127">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_128">overwrite previous <b>packet captures</b> according to the following rule: [<b>assignment</b>: <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_129">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] when the local storage space for <b>packet capture</b> data is full. 
                 </div>
             </div>
         </div>
@@ -2348,9 +2348,9 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_INV_EXT.1.1">FAU_INV_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall determine if a given <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> is authorized based on [<b>selection</b>: <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_23">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>] 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall determine if a given <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> is authorized based on [<b>selection</b>: <span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_26">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>] 
                         <h4 id="ext-comp-FAU_INV_EXT.1.2">FAU_INV_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall determine if a given <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> is authorized based on [<b>selection</b>: <span class="selectable-content" id="_s_24"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_25">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>] 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall determine if a given <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> is authorized based on [<b>selection</b>: <span class="selectable-content" id="_s_27"><abbr class="dyn-abbr"><a href="#abbr_MAC">MAC</a></abbr> addresses</span>, <span class="selectable-content" id="_s_28">[<b>assignment</b>: <span class="assignable-content">other unique device identifier</span>]</span>] 
                         <h4 id="ext-comp-FAU_INV_EXT.1.3">FAU_INV_EXT.1.3</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of non-allowlisted <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> in the Operational Environment. 
                     </div>
@@ -2389,7 +2389,7 @@
                                 Classification of <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>
                             </li>
                             <li>
-                                [<b>selection</b>: <span class="selectable-content" id="_s_26">[<b>assignment</b>: <span class="assignable-content">other details</span>]</span>, <span class="selectable-content" id="_s_27">no other details</span>]
+                                [<b>selection</b>: <span class="selectable-content" id="_s_29">[<b>assignment</b>: <span class="assignable-content">other details</span>]</span>, <span class="selectable-content" id="_s_30">no other details</span>]
                             </li>
                         </ul>
                         of all <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> within range of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s wireless sensors.
@@ -2439,9 +2439,9 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_INV_EXT.3.1">FAU_INV_EXT.3.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the physical location of rogue <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, and [<b>selection</b>: <span class="selectable-content" id="_s_28">allow-listed <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr></span>, <span class="selectable-content" id="_s_29">allow-listed <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr></span>, <span class="selectable-content" id="_s_30">neighboring <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr></span>, <span class="selectable-content" id="_s_31">no other devices</span>] to within [<b>assignment</b>: <span class="assignable-content">value equal or less than 25</span>] feet of their actual location. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the physical location of rogue <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, and [<b>selection</b>: <span class="selectable-content" id="_s_31">allow-listed <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr></span>, <span class="selectable-content" id="_s_32">allow-listed <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr></span>, <span class="selectable-content" id="_s_33">neighboring <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr></span>, <span class="selectable-content" id="_s_34">no other devices</span>] to within [<b>assignment</b>: <span class="assignable-content">value equal or less than 25</span>] feet of their actual location. 
                         <h4 id="ext-comp-FAU_INV_EXT.3.2">FAU_INV_EXT.3.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect received signal strength and [<b>selection</b>: <span class="selectable-content" id="_s_32">RF power levels above a predetermined threshold</span>, <span class="selectable-content" id="_s_33">no other characteristics</span>] of hardware operating within range of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s wireless sensors. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect received signal strength and [<b>selection</b>: <span class="selectable-content" id="_s_35">RF power levels above a predetermined threshold</span>, <span class="selectable-content" id="_s_36">no other characteristics</span>] of hardware operating within range of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s wireless sensors. 
                     </div>
                     <h4>Management: FAU_INV_EXT.4</h4>
                     <p>No specific management functions are identified.</p>
@@ -2511,15 +2511,15 @@
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_34">Syslog using [<b>selection</b>: <span class="selectable-content" id="_s_35">defined API</span>, <span class="selectable-content" id="_s_36">Syslog</span>, <span class="selectable-content" id="_s_37">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>]</span>
+                                <span class="selectable-content" id="_s_37">Syslog using [<b>selection</b>: <span class="selectable-content" id="_s_38">defined API</span>, <span class="selectable-content" id="_s_39">Syslog</span>, <span class="selectable-content" id="_s_40">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>]</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_38"><abbr class="dyn-abbr"><a href="#abbr_SNMP">SNMP</a></abbr> trap reporting using [<b>selection</b>: <span class="selectable-content" id="_s_39">defined API</span>, <span class="selectable-content" id="_s_40">Simple Network Management Protocol (<abbr class="dyn-abbr"><a href="#abbr_SNMP">SNMP</a></abbr>)</span>, <span class="selectable-content" id="_s_41">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>]</span>
+                                <span class="selectable-content" id="_s_41"><abbr class="dyn-abbr"><a href="#abbr_SNMP">SNMP</a></abbr> trap reporting using [<b>selection</b>: <span class="selectable-content" id="_s_42">defined API</span>, <span class="selectable-content" id="_s_43">Simple Network Management Protocol (<abbr class="dyn-abbr"><a href="#abbr_SNMP">SNMP</a></abbr>)</span>, <span class="selectable-content" id="_s_44">[<b>assignment</b>: <span class="assignable-content">other detection method</span>]</span>]</span>
                             </li>
                         </ul>
                         ] for reporting of collected data. 
                         <h4 id="ext-comp-FAU_RPT_EXT.1.2">FAU_RPT_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to import data, such as an allowlist of <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, and <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_WIPS">WIPS</a></abbr> configuration files from the system using [<b>selection</b>: <span class="selectable-content" id="_s_42">custom API</span>, <span class="selectable-content" id="_s_43">Syslog</span>, <span class="selectable-content" id="_s_44">common log format</span>, <span class="selectable-content" id="_s_45">comma separated values (CSV)</span>, <span class="selectable-content" id="_s_46">[<b>assignment</b>: <span class="assignable-content">vendor detection method</span>]</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to import data, such as an allowlist of <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr>, and <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_WIPS">WIPS</a></abbr> configuration files from the system using [<b>selection</b>: <span class="selectable-content" id="_s_45">custom API</span>, <span class="selectable-content" id="_s_46">Syslog</span>, <span class="selectable-content" id="_s_47">common log format</span>, <span class="selectable-content" id="_s_48">comma separated values (CSV)</span>, <span class="selectable-content" id="_s_49">[<b>assignment</b>: <span class="assignable-content">vendor detection method</span>]</span>]. 
                     </div>
                 </div>
                 <h3 id="ext-comp-FAU_WID_EXT" class="indexable" data-level="4">C.2.1.5 FAU_WID_EXT Wireless Intrusion Detection</h3>
@@ -2596,7 +2596,7 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_WID_EXT.1.1">FAU_WID_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distinguish between benign and malicious <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> based on if the <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> are authorized and [<b>selection</b>: <span class="selectable-content" id="_s_49">automatic detection metrics</span>, <span class="selectable-content" id="_s_50">no other method</span>].
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distinguish between benign and malicious <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> based on if the <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> are authorized and [<b>selection</b>: <span class="selectable-content" id="_s_52">automatic detection metrics</span>, <span class="selectable-content" id="_s_53">no other method</span>].
                         <h4 id="ext-comp-FAU_WID_EXT.1.2">FAU_WID_EXT.1.2</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to determine if a given <abbr class="dyn-abbr"><a href="#abbr_SSID">SSID</a></abbr> is authorized. 
                     </div>
@@ -2627,9 +2627,9 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_WID_EXT.2.1">FAU_WID_EXT.2.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_57">simultaneously</span>, <span class="selectable-content" id="_s_58">nonsimultaneously</span>] monitor and analyze network traffic matching the 802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> for all channels in the following RF frequencies: [<b>assignment</b>: <span class="assignable-content">a list of frequency ranges</span>].
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_60">simultaneously</span>, <span class="selectable-content" id="_s_61">nonsimultaneously</span>] monitor and analyze network traffic matching the 802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> for all channels in the following RF frequencies: [<b>assignment</b>: <span class="assignable-content">a list of frequency ranges</span>].
                         <h4 id="ext-comp-FAU_WID_EXT.2.2">FAU_WID_EXT.2.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide wireless sensors to detect network traffic matching the 802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> that [<b>selection</b>: <span class="selectable-content" id="_s_59">can be configured to prevent transmission of data</span>, <span class="selectable-content" id="_s_60">does not transmit data</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide wireless sensors to detect network traffic matching the 802.11 monitoring <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> that [<b>selection</b>: <span class="selectable-content" id="_s_62">can be configured to prevent transmission of data</span>, <span class="selectable-content" id="_s_63">does not transmit data</span>]. 
                         <h4 id="ext-comp-FAU_WID_EXT.2.3">FAU_WID_EXT.2.3</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform stateful frame inspection and log attacks spanning multiple frames. 
                     </div>
@@ -2656,10 +2656,10 @@
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect the presence of devices [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_76">that operate in the following RF bands: [<b>assignment</b>: <span class="assignable-content">RF bands</span>]</span>
+                                <span class="selectable-content" id="_s_79">that operate in the following RF bands: [<b>assignment</b>: <span class="assignable-content">RF bands</span>]</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_77">that operate a specified protocol and take a specified action: [<b>assignment</b>: <span class="assignable-content">specify protocol and action</span>]</span>
+                                <span class="selectable-content" id="_s_80">that operate a specified protocol and take a specified action: [<b>assignment</b>: <span class="assignable-content">specify protocol and action</span>]</span>
                             </li>
                         </ul>
                         ]. 
@@ -2723,22 +2723,22 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_ANO_EXT.1.1">FAU_ANO_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_113">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_114">anomaly ('unexpected') traffic patterns</span>] including the specification of [<b>selection</b>: 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of [<b>selection</b>: <span class="selectable-content" id="_s_116">baselines ('expected and approved')</span>, <span class="selectable-content" id="_s_117">anomaly ('unexpected') traffic patterns</span>] including the specification of [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_115">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
+                                <span class="selectable-content" id="_s_118">throughput (data elements (e.g. bytes, packets, etc.) per time period (e.g. minutes, hours, days))</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_116">time of day</span>
+                                <span class="selectable-content" id="_s_119">time of day</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_117">frequency</span>
+                                <span class="selectable-content" id="_s_120">frequency</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_118">thresholds</span>
+                                <span class="selectable-content" id="_s_121">thresholds</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_119">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
+                                <span class="selectable-content" id="_s_122">[<b>assignment</b>: <span class="assignable-content">other methods</span>]</span>
                             </li>
                         </ul>
                         ] and the following network protocol fields: 
@@ -2746,7 +2746,7 @@
                             <li>all management and control frame header elements.</li>
                         </ul>
                         <h4 id="ext-comp-FAU_ANO_EXT.1.2">FAU_ANO_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_120">manual configuration by administrators</span>, <span class="selectable-content" id="_s_121">automated configuration</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support the definition of anomaly activity through [<b>selection</b>: <span class="selectable-content" id="_s_123">manual configuration by administrators</span>, <span class="selectable-content" id="_s_124">automated configuration</span>]. 
                     </div>
                 </div>
                 <h3 id="ext-comp-FAU_SIG_EXT" class="indexable" data-level="4">C.2.1.7 FAU_SIG_EXT Signature-Based Intrusion Detection</h3>
@@ -2866,7 +2866,7 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_WIP_EXT.1.1">FAU_WIP_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_127">wireless containment</span>, <span class="selectable-content" id="_s_128">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_130">wireless containment</span>, <span class="selectable-content" id="_s_131">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
                     </div>
                 </div>
             </span></span>
