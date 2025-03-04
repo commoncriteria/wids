@@ -312,7 +312,7 @@ implied certain tests were mandatory despite the functions being in selections
           <addressed-by>FDP_IFC.1</addressed-by><rationale>Mitigates the threat by enforcing monitoring on all wireless 802.11 traffic that involves an authorized device 
           as at least one party.</rationale>
           <addressed-by>FMT_SMF.1/WIDS</addressed-by><rationale>Mitigates the threat by allowing configuration of rules, configuration, and other TOE operational settings.</rationale>
-          <addressed-by>FPT_FLS.1/WIDS (objective)</addressed-by><rationale>Mitigates the threat by at miniimum generating an audit record when potential security failures of the TSF are detected, 
+          <addressed-by>FPT_FLS.1/WIDS (objective)</addressed-by><rationale>Mitigates the threat by at minimum generating an audit record when potential security failures of the TSF are detected, 
           which could include failures to properly monitor or alert to potential threats.</rationale>
           <addressed-by>FTP_ITC.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by securely transmitting data from the TOE to other trusted entities.</rationale>
           <addressed-by>FPT_ITT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by securely transmitting data between TOE components.</rationale>
@@ -425,9 +425,8 @@ implied certain tests were mandatory despite the functions being in selections
             taken.</description>
           <consistency-rationale>This organizational security policy expects the data produced by the TSF about the behavior of external entities to be used in an organization’s analytical process. 
             There is no conflict with the Base-PP because the Base-PP does not define any functionality for the TOE to produce data about any entities other than itself.</consistency-rationale>
-          <objective-refer ref="O.WIDS_ANALYZE">
-            <rationale>The organizational security policy P.ANALYZE is facilitated through
-              O.WIDS_ANALYZE. </rationale>
+          <objective-refer ref="OE.CONNECTIONS">
+            <rationale>The proper placement of the TOE within a network allows the P.ANALYZE policy to be enforced.</rationale>
           </objective-refer>
         </OSP>
       </OSPs>
@@ -759,9 +758,13 @@ implied certain tests were mandatory despite the functions being in selections
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the <h:i>not specified</h:i> level of audit;</h:li>
-                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<xref to="at-mandatory"/>);</h:i></h:li>
+                <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref to="at-mandatory"/>);</h:i></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i>;</h:li>
-                <h:li><h:i>Any authentication event listed in the Auditable Events table (<xref to="at-mandatory"/>)].</h:i></h:li>
+                <h:li><h:i><selectables>
+                  <selectable>Auditable events listed in the Auditable Events for Optional SFRs table (<xref to="at-optional"/>) for SFRs that are present in the ST</selectable>
+                  <selectable>Auditable events listed in the Auditable Events for Objective SFRs table (<xref to="at-objective"/>) for SFRs that are present in the ST</selectable>
+                  <selectable>no other events</selectable>
+                </selectables></h:i></h:li>
               </h:ol>
             </title>
             <note role="application">
@@ -770,10 +773,11 @@ implied certain tests were mandatory despite the functions being in selections
                 are for the SFRs that are explicitly defined in this PP-Module and are intended to
                 extend FAU_GEN.1 in the Base-PP. The events in the Auditable Events table should
                 be combined with those of the NDcPP in the context of a conforming Security
-                Target.</h:p><h:p> The Auditable Events tables for Optional, (<xref to="at-optional"/>), 
-                Objective (<xref to="at-objective"/>), and Selection-Based (<xref to="at-sel-based"/>)
-                 SFRs includes optional, objective and selection-based SFRs, respectively. 
-                The auditing of optional, objective, and selection-based SFRs is only required if that 
+                Target.</h:p><h:p>
+                If the ST includes any optional or objective SFRs, the selection for the respective 
+                "Auditable events listed in the Auditable Events..." must be included. If no optional
+                or objective SFRs are included in the ST, "no other events" should be selected.
+                The auditing of the specific optional and objective SFRs is only required if that 
                 SFR is included in the ST. </h:p><h:p> Per FAU_STG_EXT.1 in the Base-PP, the TOE must 
                 support transfer of the audit data to an external IT entity using a trusted channel. 
               </h:p>
@@ -782,7 +786,7 @@ implied certain tests were mandatory despite the functions being in selections
           <f-element id="fel-audit-what">
             <title> The TSF shall record within the audit data at least the following
               information: <h:ol type="a">
-                <h:li>Date and time of the event, type of event, and subject identity (if
+                <h:li>Date and time of the auditable event, type of event, and subject identity (if
                   applicable), and the outcome (success or failure) of the event;</h:li>
                 <h:li>For each auditable event type, based on the auditable event definitions of the
                   functional components included in the PP, PP-Module, functional package or ST, [<h:i> information
@@ -2079,7 +2083,7 @@ implied certain tests were mandatory despite the functions being in selections
                 <selectable>Detect and log the piconet membership of any Bluetooth BR/EDR device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</selectable>
                 <selectable>Detect and log the piconet membership of any Low Energy (LE) device. This includes role in the piconet (Central or Peripheral), piconet ID, device ID, and number of piconets which they are members of</selectable>
                 <selectable>Use Bluetooth BR/EDR Inquiry Procedure to detect Bluetooth BR/EDR devices in discoverable mode within a controlled area</selectable>
-                <selectable>Use Bluetooth BR/EDR SDP procedure to gether information about Bluetooth BR/EDR devices within a controlled area</selectable>
+                <selectable>Use Bluetooth BR/EDR SDP procedure to gather information about Bluetooth BR/EDR devices within a controlled area</selectable>
                 <selectable>Use BLE SDP procedure to gather information about BLE devices within a controlled area</selectable>
               </selectables></h:i>].
             </title>
@@ -2107,7 +2111,7 @@ implied certain tests were mandatory despite the functions being in selections
           <audit-event>
             <audit-event-descr>Detection of Bluetooth devices (for each selection made that includes an action of "log")</audit-event-descr>
             <audit-event-info>Information contained within each selection that contains a requirement to log information.
-            <comment>It is unclear what information needs to be logged to constitue the logging of a particular Bluetooth device. This applies to
+            <comment>It is unclear what information needs to be logged to constitute the logging of a particular Bluetooth device. This applies to
             selections that include logging the presence of a Bluetooth device, as well as selections that include logging a device
             that carries out a particular action, such as performing a particular procedure.</comment>
             </audit-event-info>
@@ -2126,7 +2130,7 @@ implied certain tests were mandatory despite the functions being in selections
                 <selectable>Capture temporary identifiers (e.g. TMSI) of cellular devices within a controlled space</selectable>
                 <selectable>Detect and identify which cellular technology (such as 3G, LTE, UTMS, 5G, etc.) the cellular device is using within a controlled space</selectable>
                 <selectable>Detect and identify which cellular carrier a cellular device is using within a controlled space</selectable>
-                <selectable>Detect and identify which base station a cellular device is connnected to while operating within a controlled space</selectable>
+                <selectable>Detect and identify which base station a cellular device is connected to while operating within a controlled space</selectable>
                 <selectable>Detect and identify whether a cellular device is using a cellular uplink or downlink operating within a controlled space</selectable>
                 <selectable>Geo-locate cellular devices operating within the operation area of the WIDS</selectable>
               </selectables></h:i>].
