@@ -699,7 +699,7 @@
                 <h:li><h:i><selectables linebreak="yes">
                   <selectable>Auditable events listed in the Auditable Events for Optional SFRs table (<xref to="at-optional"/>) for SFRs that are present in the ST</selectable>
                   <selectable>Auditable events listed in the Auditable Events for Objective SFRs table (<xref to="at-objective"/>) for SFRs that are present in the ST</selectable>
-                  <selectable>no other events</selectable>
+                  <selectable exclusive="yes">no other events</selectable>
                 </selectables></h:i></h:li>
               </h:ol>].
             </title>
