@@ -2352,6 +2352,7 @@
     </sel-sfrs>
     <obj-sfrs>
       <section title="Auditable Events for Objective SFRs">
+        <comment>All objective SFRs need a review to determine if they should change status with the new release of this module.</comment>
         <audit-table id="at-objective" table="objective"/>
       </section>
 
