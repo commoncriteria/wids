@@ -1300,17 +1300,9 @@ The following sections list Common Criteria and technology terms used in this do
               
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS includes the list of trusted channels
-                (as specified in FTP_ITC.1) available in the TSF to transmit packet captures to an
-                external entity. The evaluator shall verify that the TSS describes the ability of
-                the TOE to store packet capture data within itself, how much storage space is
-                available for packet capture data and where that data is stored. The evaluator shall
-                verify that the TSS describes the behavior of the TOE when local storage space for
-                packet capture data is exhausted and whether this behavior is
-                configurable.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall verify that the operational guidance provides
-                instructions on how to configure the trusted channel. If the behavior of the TOE
-                when local storage space for packet capture data is exhausted is configurable, the
-                evaluator shall verify that the operational guidance provides information on what
-                the configurable behaviors are and how they can be set.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                (as specified in FTP_ITC.1) available to the TSF to transmit packet captures to an
+                external entity. The evaluator shall also verify that the TSS describes which TOE components are responsible for the storage of packet capture data and any internal transmission between TOE components that is done in support of placing this data into storage.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall verify that the operational guidance provides
+                instructions on how to configure the trusted channel for remote storage of packet capture data.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FAU_STG.1/PCAP:1</a>:
       The evaluator shall configure packet captures according to the guidance
@@ -1320,12 +1312,28 @@ The following sections list Common Criteria and technology terms used in this do
                   <li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FAU_STG.1/PCAP:2</a>:
       The evaluator shall configure packet captures to be stored on the TSF
                     according to the guidance specified. The evaluator shall then trigger an event
+                    that starts a capture and verify that the packet capture was stored by the
+                    TOE component specified in the TSS.</li>
+                </ul></span>
+              </div></div></span></div><div class="comp" id=""><h4>FAU_STG.5/PCAP Prevention of Audit Data Loss (Packet Captures)</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG.5/PCAP</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall
+                verify that the TSS describes the behavior of the TOE when local storage space for
+                packet capture data is exhausted and whether this behavior is
+                configurable.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If the TOE's behavior is configurable 
+                when local storage space for packet capture data is exhausted, the
+                evaluator shall verify that the operational guidance provides information on what
+                the configurable behaviors are and how they can be set.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FAU_STG.5/PCAP:1</a>:
+      The evaluator shall configure packet captures to be stored on the TSF
+                    according to the guidance specified (if necessary). Once configured, or if no such configuration is necessary, the evaluator shall then trigger an event
                     that starts a capture and verify that the packet capture was stored on the
                     TSF.</li>
-                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FAU_STG.1/PCAP:3</a>:
-      The evaluator shall define packet data retention and deletion rules on the
-                    TSF according to the guidance specified and test the functionality of the
-                    specified rules.</li>
+                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_STG.5/PCAP:2</a>:
+      If the TOE's behavior is configurable when local storage space for packet capture is exhausted, the evaluator shall use this functionality to configure different behavior to verify that the configuration has the intended effect.</li>
                 </ul></span>
               </div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="ss-obj-fau">2.5.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_INV_EXT.4 Detection of Unauthorized Connections</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_INV_EXT.4</div>
               
@@ -1338,7 +1346,7 @@ The following sections list Common Criteria and technology terms used in this do
                 to configure the WIDS to detect unauthorized APs connected to the protected wired
                 infrastructure.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_INV_EXT.4:1</a>:
+                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_INV_EXT.4:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP.</li>
@@ -1361,7 +1369,7 @@ The following sections list Common Criteria and technology terms used in this do
 		Depending on operation guidance provided for the TOE, the evaluator shall
                 confirm and note the existence of the signal library, and test for the ability to
                 import, export, and update the signal library. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_INV_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_INV_EXT.5:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy an allowlisted AP and connect it to the protected wired
@@ -1388,7 +1396,7 @@ The following sections list Common Criteria and technology terms used in this do
                 should be allowed between two subsequent attempts for an EUD to connect from two
                 separate locations.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_MAC_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_MAC_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Setup an allowlisted AP (Location 1).</li>
@@ -1403,7 +1411,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 5: </b>Verify that the TSF detected and generated an alert.</li>
                     </ul>
                   </li>
-                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_MAC_EXT.1:2</a>:
+                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FAU_MAC_EXT.1:2</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Configure the timeframe allowed between connection of two EUDs in two
@@ -1429,7 +1437,7 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS includes a list of available containment
                 methods on the TSF and how to configure them.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> There are no operational guidance activities for this SFR.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> Configure the containment methods available on the TSF and perform the
                 following test for each method. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FAU_WIP_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_80" class="defined" href="#_t_80">Test FAU_WIP_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP and connect to the protected wired
@@ -1453,7 +1461,7 @@ The following sections list Common Criteria and technology terms used in this do
                 following these failures, and any actions that are required to restore the TOE to
                 normal operation following the transition to a failure state. </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_80" class="defined" href="#_t_80">Test FPT_FLS.1/WIDS:1</a>:
+                  <li class="test-"><a id="_t_81" class="defined" href="#_t_81">Test FPT_FLS.1/WIDS:1</a>:
       For each failure mode specified in the ST, the evaluator shall ensure that
                     the TOE attains a secure state after initiating each failure mode type.</li>
                 </ul></span>

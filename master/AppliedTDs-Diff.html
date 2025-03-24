@@ -26,6 +26,8 @@
             <br>
             <a href="#Comment-4-">Comment: Comment-4-</a>
             <br>
+            <a href="#Comment-5-">Comment: Comment-5-</a>
+            <br>
         </div>
         <h1 class="title" style="page-break-before:auto;">PP-Module for Wireless Intrusion Detection/Prevention System</h1>
         <h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1>
@@ -546,7 +548,7 @@
                 <td></td>
             </tr>
             <tr data-sortkey="FAU_GEN.1/WIDS.3">
-                <td>Any authentication event</td><td>Failed login attempts, successful login attempts, administrator logins, changes to the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr> native authentication system (creation of an account, deletion of an account, modification of user accounts, changes to groups or group membership, attempts for privilege escalation) <span style="" class="comment " id="Comment-1-">This appears to be a list of events that should be logged and not "additional audit record contents". If this is the case, these should be defined as separate auditable events. If not, suggest making it more clear as to how each of these details relate to the overarching "authentication event", e.x. for the first three, "Type of authentication attempt and its result (i.e., administrator vs user, success or failure)".</span></td>
+                <td>Any authentication event</td><td>Failed login attempts, successful login attempts, administrator logins, changes to the <abbr class="dyn-abbr"><a href="#abbr_WIDS">WIDS</a></abbr> native authentication system (creation of an account, deletion of an account, modification of user accounts, changes to groups or group membership, attempts for privilege escalation) <span style="" class="comment " id="Comment-2-">This appears to be a list of events that should be logged and not "additional audit record contents". If this is the case, these should be defined as separate auditable events. If not, suggest making it more clear as to how each of these details relate to the overarching "authentication event", e.x. for the first three, "Type of authentication attempt and its result (i.e., administrator vs user, success or failure)".</span></td>
             </tr>
             <tr data-sortkey="FAU_IDS_EXT.1">
                 <td rowspan="2"><a href="#FAU_IDS_EXT.1">FAU_IDS_EXT.1</a></td><td style="display:none"></td>
@@ -674,7 +676,7 @@
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
-                                 If "capture raw frame traffic that triggers the violation" is selected then <a href="#FAU_STG.1/PCAP">FAU_STG.1/PCAP</a> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. 
+                                 If "capture raw frame traffic that triggers the violation" is selected then <a href="#FAU_STG.1/PCAP">FAU_STG.1/PCAP</a> and <a href="#FAU_STG.5/PCAP">FAU_STG.5/PCAP</a> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. 
                             </p>
                             <p>
                                  <a href="#FAU_SAA.1">FAU_SAA.1</a> defines the rules for monitoring the wireless traffic to detect for potential security violations. <a href="#FAU_INV_EXT.2">FAU_INV_EXT.2</a> defines the information the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> needs to collect for all <abbr class="dyn-abbr"><a href="#abbr_AP">APs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_EUD">EUDs</a></abbr> within range of the the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s sensors. Device attributes can then be individually filtered and/or selected in order to be displayed as part of the alert. 
@@ -1290,7 +1292,7 @@
                     <th>Threat</th><th>Addressed by</th><th>Rationale</th>
                 </tr>
                 <tr class="major-row">
-                    <td rowspan="30"><a href="#T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">T.UNAUTHORIZED_​DISCLOSURE_​OF_​INFORMATION</a>
+                    <td rowspan="31"><a href="#T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">T.UNAUTHORIZED_​DISCLOSURE_​OF_​INFORMATION</a>
                         <br>
                     </td><td><a href="#FAU_ARP.1">FAU_ARP.1</a></td><td>Mitigates the threat by generating alerts for potential violations of security policy.</td>
                 </tr>
@@ -1322,7 +1324,7 @@
                     <td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td>Mitigates the threat by defining rules that indicate a potential malicious action.</td>
                 </tr>
                 <tr>
-                    <td>FAU_STG_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by storing audit data in specified locations and optionally forwarding this data to a central point.</td>
+                    <td>FAU_STG_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by storing audit data in specified locations and optionally forwarding this data to a central point. <span style="" class="comment " id="Comment-1-">Note that any FAU_STG_EXT.1 references will likely need to change before publication because the unpublished <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 version of NDcPP is expected to convert this to FAU_STG.1. It has been included throughout this module as if that will not change because that is the only reference that currently exists to be used.</span></td>
                 </tr>
                 <tr>
                     <td><a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a></td><td>Mitigates the threat by classifying wireless devices as benign or malicious based on device metrics.</td>
@@ -1380,6 +1382,9 @@
                 </tr>
                 <tr>
                     <td><a href="#FAU_STG.1/PCAP">FAU_STG.1/PCAP</a> (selection-based)</td><td>Mitigates the threat by storing packet captures generated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, and optionally forwarding this data to a central point.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_STG.5/PCAP">FAU_STG.5/PCAP</a> (selection-based)</td><td>Mitigates the threat by defining how storage of packet capture data is prioritized in the case of limited storage space.</td>
                 </tr>
                 <tr class="major-row">
                     <td rowspan="19"><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_​ACCESS</a>
@@ -1675,6 +1680,9 @@
             <tr>
                 <td><a href="#FAU_STG.1/PCAP">FAU_STG.1/PCAP</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> iterates the FAU_STG.1 <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defined in <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 for storage of audit data and applies it to storage of packet captures.</td>
             </tr>
+            <tr>
+                <td><a href="#FAU_STG.5/PCAP">FAU_STG.5/PCAP</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> iterates the FAU_STG.5 <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defined in <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 for storage of audit data and applies it to storage of packet captures.</td>
+            </tr>
         </table>
         <h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A - Optional SFRs</h1>
         <h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements </h2>
@@ -1693,7 +1701,7 @@
                 <td></td>
             </tr>
             <tr data-sortkey="FAU_WID_EXT.3/BT.2">
-                <td>Detection of Bluetooth devices (for each selection made that includes an action of "log")</td><td>Information contained within each selection that contains a requirement to log information. <span style="" class="comment " id="Comment-2-">It is unclear what information needs to be logged to constitute the logging of a particular Bluetooth device. This applies to selections that include logging the presence of a Bluetooth device, as well as selections that include logging a device that carries out a particular action, such as performing a particular procedure.</span> </td>
+                <td>Detection of Bluetooth devices (for each selection made that includes an action of "log")</td><td>Information contained within each selection that contains a requirement to log information. <span style="" class="comment " id="Comment-3-">It is unclear what information needs to be logged to constitute the logging of a particular Bluetooth device. This applies to selections that include logging the presence of a Bluetooth device, as well as selections that include logging a device that carries out a particular action, such as performing a particular procedure.</span> </td>
             </tr>
             <tr data-sortkey="FAU_WID_EXT.3/CELL">
                 <td rowspan="2"><a href="#FAU_WID_EXT.3/CELL">FAU_WID_EXT.3/CELL</a></td><td style="display:none"></td>
@@ -1702,7 +1710,7 @@
                 <td></td>
             </tr>
             <tr data-sortkey="FAU_WID_EXT.3/CELL.2">
-                <td>Detection of cellular devices (for each selection made that includes an action of "log")</td><td>Information contained within each selection that contains a requirement to log information. <span style="" class="comment " id="Comment-3-">It is unclear what information needs to be logged to constitute logging the "presence" of a cellular device.</span></td>
+                <td>Detection of cellular devices (for each selection made that includes an action of "log")</td><td>Information contained within each selection that contains a requirement to log information. <span style="" class="comment " id="Comment-4-">It is unclear what information needs to be logged to constitute logging the "presence" of a cellular device.</span></td>
             </tr>
             <tr data-sortkey="FAU_WID_EXT.3/RF">
                 <td rowspan="2"><a href="#FAU_WID_EXT.3/RF">FAU_WID_EXT.3/RF</a></td><td style="display:none"></td>
@@ -1885,7 +1893,7 @@
         </div>
         <h2 id="obj-sfrs" class="indexable" data-level="2">A.2 Objective Requirements </h2>
         <h3 class="indexable" data-level="3" id="_sec_20">A.2.1 Auditable Events for Objective SFRs</h3>
-         <span style="" class="comment " id="Comment-4-">All objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> need a review to determine if they should change status with the new release of this module.</span> 
+         <span style="" class="comment " id="Comment-5-">All objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> need a review to determine if they should change status with the new release of this module.</span> 
         <table class="sort_kids_" border="1">
             <caption data-sortkey="#0">
                 <span class="ctr" data-myid="at-objective" data-counter-type="ct-Table" id="at-objective">Table <span class="counter">8</span></span>: Auditable Events for Objective Requirements
@@ -2015,7 +2023,7 @@
                     <a href="#FAU_WIP_EXT.1.1" class="abbr">FAU_WIP_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_130">wireless containment</span>, <span class="selectable-content" id="_s_131">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_128">wireless containment</span>, <span class="selectable-content" id="_s_129">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -2083,6 +2091,15 @@
             </tr>
             <tr data-sortkey="FAU_STG.1/PCAP.1">
                 <td>No events specified</td><td>N/A</td>
+            </tr>
+            <tr data-sortkey="FAU_STG.5/PCAP">
+                <td rowspan="2"><a href="#FAU_STG.5/PCAP">FAU_STG.5/PCAP</a></td><td style="display:none"></td>
+            </tr>
+            <tr style="display:none;" data-sortkey="FAU_STG.5/PCAP#">
+                <td></td>
+            </tr>
+            <tr data-sortkey="FAU_STG.5/PCAP.7">
+                <td>Configuration of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> audit storage behavior (if configurable)</td><td>No additional information</td>
             </tr>
         </table>
         <h2 id="ss-sel-fau" class="indexable" data-level="2">B.2 Security Audit (FAU)</h2>
@@ -2156,35 +2173,27 @@
                     <a href="#FAU_STG.1.1/PCAP" class="abbr">FAU_STG.1.1/PCAP</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to store generated <b>packet captures</b> on the <i>transmit the generated audit data to an external IT entity <b>hosting a protocol analyzer</b> using a trusted channel according to FTP_ITC</i>. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to store generated <b>packet captures</b> on the [<i> <b>[<b>assignment</b>: <span class="assignable-content">list of distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components on which packet capture data is stored</span>] components of the</b> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself, transmit the generated audit data to an external IT entity <b>hosting a protocol analyzer</b> using a trusted channel according to FTP_ITC</i>].
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> Per FAU_STG_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must support transfer of the audit data to an external IT entity using a trusted channel per FTP_ITC.1. Note that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> modifies FTP_ITC.1 from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. If <a href="#pcap">capture raw frame traffic that triggered the violation</a> is selected in <a href="#FAU_ARP.1.1">FAU_ARP.1.1</a>, then this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, and this iteration is for the packet captures generated as a selectable action completed upon detection of a potential security violation in <a href="#FAU_ARP.1">FAU_ARP.1</a>. </span>
+                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 to define storage for packet capture data. Specifically, it is required that this data be stored both on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself and that it be transmitted securely to an external entity. Since the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is distributed, the first item has been refined to require the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to identify the specific <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components on which the data is stored, since not all components will necessarily store them. If <a href="#pcap">capture raw frame traffic that triggered the violation</a> is selected in <a href="#FAU_ARP.1.1">FAU_ARP.1.1</a>, then this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, and this iteration is for the packet captures generated as a selectable action completed upon detection of a potential security violation in <a href="#FAU_ARP.1">FAU_ARP.1</a>. </span>
                     </div>
                 </div>
             </div>
-            <div class="element">
-                <div class="reqid" id="FAU_STG.1.2/PCAP">
-                    <a href="#FAU_STG.1.2/PCAP" class="abbr">FAU_STG.1.2/PCAP</a>
-                </div>
-                <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to store generated <b>packet captures</b> on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself. In addition [<b>selection</b>: 
-                    <ul>
-                        <li style="">
-                            <span class="selectable-content" id="_s_125">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that stores <b>packet capture</b> data on the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">identification of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components</span>]</span>
-                        </li>
-                        <li style="">
-                            <span class="selectable-content" id="_s_126">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with storage of <b>packet capture</b> data provided externally for the following <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components: [<b>assignment</b>: <span class="assignable-content">list of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components that do not store packet capture data locally and the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components to which they transmit their generated packet capture data</span>]</span>
-                        </li>
-                    </ul>
-                    ]. 
-                </div>
+        </div>
+        <div class="comp" id="FAU_STG.5/PCAP">
+            <h4>FAU_STG.5/PCAP Prevention of Audit Data Loss (Packet Captures)</h4>
+            <div class="statustag">
+                <b><i>The inclusion of this selection-based component depends upon selection in <a href="#FAU_ARP.1.1">FAU_ARP.1.1</a>. </i></b>
             </div>
             <div class="element">
-                <div class="reqid" id="FAU_STG.1.3/PCAP">
-                    <a href="#FAU_STG.1.3/PCAP" class="abbr">FAU_STG.1.3/PCAP</a>
+                <div class="reqid" id="FAU_STG.5.1/PCAP">
+                    <a href="#FAU_STG.5.1/PCAP" class="abbr">FAU_STG.5.1/PCAP</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_127">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_128">overwrite previous <b>packet captures</b> according to the following rule: [<b>assignment</b>: <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_129">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] when the local storage space for <b>packet capture</b> data is full. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_125">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_126">overwrite previous <b>packet captures</b> according to the following rule: [<b>assignment</b>: <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_127">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] when the local storage space for <b>packet capture</b> data is full. 
+                    <div class="appnote">
+                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 to define storage for packet capture data. If <a href="#pcap">capture raw frame traffic that triggered the violation</a> is selected in <a href="#FAU_ARP.1.1">FAU_ARP.1.1</a>, then this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, and this iteration is for the packet captures generated as a selectable action completed upon detection of a potential security violation in <a href="#FAU_ARP.1">FAU_ARP.1</a>. </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2882,7 +2891,7 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FAU_WIP_EXT.1.1">FAU_WIP_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_130">wireless containment</span>, <span class="selectable-content" id="_s_131">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow an Authorized Administrator to isolate a wireless <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_EUD">EUD</a></abbr> from the network monitored by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using the following methods: [<b>selection</b>: <span class="selectable-content" id="_s_128">wireless containment</span>, <span class="selectable-content" id="_s_129">wire-side containment of an unauthorized <abbr class="dyn-abbr"><a href="#abbr_AP">AP</a></abbr> connected to the internal corporate wired network</span>]. 
                     </div>
                 </div>
             </span></span>
@@ -2963,6 +2972,9 @@
             </tr>
             <tr>
                 <td><a href="#FAU_STG.1/PCAP">FAU_STG.1/PCAP</a></td><td>Protected Audit Event Storage (Packet Captures)</td><td>Feature Dependent</td>
+            </tr>
+            <tr>
+                <td><a href="#FAU_STG.5/PCAP">FAU_STG.5/PCAP</a></td><td>Prevention of Audit Data Loss (Packet Captures)</td><td>Feature Dependent</td>
             </tr>
             <tr>
                 <td><a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a></td><td>Wireless Intrusion Detection - Malicious Environmental Objects</td><td>Feature Dependent</td>
