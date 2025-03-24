@@ -2782,10 +2782,9 @@ Network Device
           
           
           
-          <div class="element"><div class="reqid" id="FAU_STG.5.1/PCAP"><a href="#FAU_STG.5.1/PCAP" class="abbr">FAU_STG.5.1/PCAP</a></div><div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_125">drop new <b>packet capture</b> data</span>, <span class="selectable-content" id="_s_126">overwrite previous <b>packet captures</b> according to the following rule:
-                [<b>assignment</b>: 
-     <span class="assignable-content">rule for overwriting previous packet captures</span>]</span>, <span class="selectable-content" id="_s_127">[<b>assignment</b>: 
-     <span class="assignable-content">other action</span>]</span>] when the local storage space for <b>packet capture</b> data is full. <div class="appnote"><span class="note-header">Application
+          <div class="element"><div class="reqid" id="FAU_STG.5.1/PCAP"><a href="#FAU_STG.5.1/PCAP" class="abbr">FAU_STG.5.1/PCAP</a></div><div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_125">ignore <b>packet captures</b></span>, <span class="selectable-content" id="_s_126">overwrite the oldest stored <b>packet captures</b></span>, <span class="selectable-content" id="_s_127">[<b>assignment</b>: 
+     <span class="assignable-content">other actions to be taken in case of <b>packet capture</b> storage failure and conditions for the
+                actions</span>]</span>] if the <b>packet capture</b> storage is full. <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 to define storage for packet capture data.
               If <a href="#pcap">capture raw frame traffic that triggered the violation</a> is selected in <a href="#FAU_ARP.1.1">FAU_ARP.1.1</a>, then this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
