@@ -2290,8 +2290,7 @@
           <audit/>
           <dependencies/>
           <f-element id="fel-capture-dit">
-            <title>The TSF shall be able to store generated <h:b>packet captures</h:b> on the [<h:i>
-              <h:b><assignable>list of distributed TOE components on which packet capture data is stored</assignable> components of the</h:b> TOE itself, transmit the generated audit data to an external IT entity <h:b>hosting a protocol analyzer</h:b> using a trusted channel according to FTP_ITC</h:i>].</title>
+            <title>The TSF shall be able to store generated <h:b>packet captures</h:b> on the [<h:i><h:b><assignable>list of distributed TOE components on which packet capture data is stored</assignable> components of the</h:b> TOE itself, transmit the generated audit data to an external IT entity <h:b>hosting a protocol analyzer</h:b> using a trusted channel according to FTP_ITC</h:i>].</title>
               
             <note role="application"> This SFR is modified from its definition in CC Part 2 to define storage for packet capture data. Specifically, it is required that this data be stored both on the TOE itself and that it be transmitted securely to an external entity. Since the TOE is distributed, the first item has been refined to require the ST author to identify the specific TOE components on which the data is stored, since not all components will necessarily store them.
 	      If <xref to="pcap"/> is selected in <xref to="fel-arp"/>, then this SFR
