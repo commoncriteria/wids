@@ -2401,11 +2401,11 @@ implied certain tests were mandatory despite the functions being in selections
           <dependencies/>
           <f-element id="fel-full-capture">
             <title> The TSF shall <selectables>
-              <selectable>drop new <h:b>packet capture</h:b> data</selectable>
-              <selectable>overwrite previous <h:b>packet captures</h:b> according to the following rule:
-                <assignable>rule for overwriting previous packet captures</assignable></selectable>
-              <selectable><assignable>other action</assignable></selectable>
-            </selectables> when the local storage space for <h:b>packet capture</h:b> data is full. </title>
+              <selectable>ignore <h:b>packet captures</h:b></selectable>
+              <selectable>overwrite the oldest stored <h:b>packet captures</h:b></selectable>
+              <selectable><assignable>other actions to be taken in case of <h:b>packet capture</h:b> storage failure and conditions for the
+                actions</assignable></selectable>
+            </selectables> if the <h:b>packet capture</h:b> storage is full. </title>
             <note role="application"> This SFR is modified from its definition in CC Part 2 to define storage for packet capture data.
               If <xref to="pcap"/> is selected in <xref to="fel-arp"/>, then this SFR
               must be included in the ST, and this iteration is for the packet captures generated as a
