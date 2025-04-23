@@ -890,7 +890,8 @@ implied certain tests were mandatory despite the functions being in selections
               <h:li>Presence of allowlisted device</h:li>
             </h:ul>
           </audit>
-          <dependencies>FAU_INV_EXT.2 Characteristics of Environmental Objects</dependencies>
+          <dependencies><h:p>FAU_INV_EXT.2 Characteristics of Environmental Objects</h:p>
+                        <h:p>FMT_SMF.1 Specification of Management Functions</h:p></dependencies>
           <f-element id="fel-ap-auth">
             <title> The TSF shall determine if a given AP is authorized based on <selectables>
               <selectable>MAC addresses</selectable>
@@ -1136,7 +1137,7 @@ implied certain tests were mandatory despite the functions being in selections
           <comp-lev>requires the TSF to implement a specified reporting mechanism for collected data for compatibility with third parties that may consume this data.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>There are no auditable events foreseen.</audit>
-          <dependencies>FAU_GEN.1 Audit Data Generation</dependencies>
+          <dependencies>No dependencies.</dependencies>
           <f-element id="fel-report-what">
             <title> The TSF shall provide <selectables linebreak="yes">
               <selectable>Syslog using <selectables>
@@ -2944,7 +2945,7 @@ implied certain tests were mandatory despite the functions being in selections
           <h:td>Feature Dependent</h:td>
         </h:tr>
         <h:tr>
-          <h:td>FPT_FLS.1</h:td>
+          <h:td>FPT_FLS.1/WIDS</h:td>
           <h:td>Basic Internal TSF Data Transfer Protection</h:td>
           <h:td>Feature Dependent</h:td>
         </h:tr>
