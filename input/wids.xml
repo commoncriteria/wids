@@ -65,7 +65,7 @@ implied certain tests were mandatory despite the functions being in selections
 	xmlns:sec="https://niap-ccevs.org/cc/v1/section">
   <PPReference>
     <ReferenceTable>
-      <PPVersion>3.0</PPVersion>
+      <PPVersion>2.1</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2025-02-28</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
@@ -74,7 +74,7 @@ implied certain tests were mandatory despite the functions being in selections
   
   <RevisionHistory>
     <entry>
-    <version>3.0</version>
+    <version>2.1</version>
     <date>2025-02-28</date>
     <subject>Incorporate NIAP Technical Decisions, Update to CC:2022</subject>
     </entry>
@@ -758,7 +758,7 @@ implied certain tests were mandatory despite the functions being in selections
             <title> The TSF shall be able to generate audit data of the following auditable
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
-                <h:li>All auditable events for the <h:i>not specified</h:i> level of audit;</h:li>
+                <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
                 <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref to="at-mandatory"/>);</h:i></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i>;</h:li>
                 <h:li><h:i><selectables linebreak="yes">
@@ -844,7 +844,7 @@ implied certain tests were mandatory despite the functions being in selections
                 <selectable><assignable>other detection method</assignable></selectable>
               </selectables> methods. </title>
             <ext-comp-def-title>            
-              <title> The TSF shall detect intrusions using
+              <title> The TSF shall detect intrusions using 
                 <assignable>detection strategies</assignable>
                 methods. </title>
             </ext-comp-def-title>
@@ -1063,7 +1063,7 @@ implied certain tests were mandatory despite the functions being in selections
                 <selectable>allow-listed EUDs</selectable>
                 <selectable>neighboring APs and EUDs</selectable>
                 <selectable>no other devices</selectable>
-                </selectables> to within <assignable>value equal or less than 25</assignable> feet of their actual location.
+                </selectables> to within <assignable>value equal or less than 25 feet</assignable>.
             </title>
           </f-element>
           <f-element id="fel-detect-signal">
@@ -1210,7 +1210,7 @@ implied certain tests were mandatory despite the functions being in selections
               <h:ol type="a">
                 <h:li><h:i>Accumulation or combination of <selectables>
                     <selectable><assignable>subset of defined auditable events</assignable></selectable>
-                    <selectable>no defined auditable events</selectable></selectables> known to indicate a potential security violation</h:i>,</h:li>
+                    <selectable>no defined auditable events</selectable></selectables> known to indicate a potential security violation</h:i>];</h:li>
                 <h:li>[<h:i>Detection of non-allowlisted AP</h:i>,</h:li>
                 <h:li><h:i>Detection of non-allowlisted EUD</h:i>,</h:li>               
                 <h:li><h:i>Detection of authorized EUD establishing peer-to-peer (P2P) connection with any other EUD</h:i>,</h:li>
@@ -1704,17 +1704,18 @@ implied certain tests were mandatory despite the functions being in selections
                 <selectable>simultaneously</selectable>
                 <selectable id="s-nonsimult">nonsimultaneously</selectable>
               </selectables> monitor and analyze network traffic matching the 802.11 monitoring SFP
-              for all channels in the following RF frequencies: <h:ul>
+              for all channels in the following RF frequencies: [<h:i><h:ul>
                 <h:li>2.4 GHz</h:li>
                 <h:li>5.0 GHz</h:li>
-                <h:li>6.0 GHz</h:li>
+                
               </h:ul> and
               <selectables linebreak="yes">
+                <selectable>6.0 GHz</selectable>
                 <selectable><assignable>specified Wi-Fi channels</assignable> in the 4.9 GHz regulatory domain</selectable>
                 <selectable>channels outside regulatory domain</selectable>
                 <selectable>non-standard channel frequencies</selectable>
                 <selectable>no other domains</selectable>
-            </selectables>. </title>
+            </selectables></h:i>]. </title>
 	          <ext-comp-def-title>
               <title> The TSF shall <selectables>
                   <selectable>simultaneously</selectable>
@@ -1924,7 +1925,7 @@ implied certain tests were mandatory despite the functions being in selections
           iteration="WIDS">
           <consistency-rationale>This SFR iterates the FMT_SMF.1 SFR defined in the Base-PP to define management functions for the functionality that is specific to this PP-Module.</consistency-rationale>
           <f-element id="fel-management-functions">
-            <title> The TSF shall be capable of performing the following management functions <h:b>for WIDS functionality</h:b> :[
+            <title> The TSF shall be capable of performing the following management functions <h:b>for WIDS functionality</h:b>: [
             <h:i>
               <h:ul>
                 <h:li>Define an inventory of authorized APs based on <selectables>
@@ -2064,8 +2065,8 @@ implied certain tests were mandatory despite the functions being in selections
         <f-component cc-id="fau_wid_ext.3" iteration="BT" name="Wireless Intrusion Detection - Spectrum Monitoring (Bluetooth)">
         <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <f-element id="fel-detect-devices-in-bands">
-            <title> The TSF shall detect the presence of devices <h:i>that operate a specified
-            protocol and take a specified action: </h:i>[<h:i>
+            <title> The TSF shall detect the presence of devices [<h:i>that operate a specified
+            protocol and take a specified action:
               <selectables linebreak="yes">
                 <selectable>Detect and log the presence of 2.4 GHz Bluetooth BR/EDR devices operating within a controlled space</selectable>
                 <selectable>Detect and log the presence of Bluetooth Low Energy (BLE) devices operating within a controlled space</selectable>
@@ -2123,8 +2124,8 @@ implied certain tests were mandatory despite the functions being in selections
         <f-component cc-id="fau_wid_ext.3" iteration="CELL" name="Wireless Intrusion Detection - Spectrum Monitoring (Cellular)">
           <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <f-element id="fel-detect-devices-in-bands">
-            <title> The TSF shall detect the presence of devices <h:i>that operate a specified protocol
-            and take a specified action: </h:i> [<h:i><selectables linebreak="yes">
+            <title> The TSF shall detect the presence of devices [<h:i>that operate a specified protocol
+            and take a specified action: <selectables linebreak="yes">
                 <selectable>Detect and log the presence of cellular 3G devices operating within a controlled space</selectable>
                 <selectable>Detect and log the presence of cellular 4G/LTE devices operating within a controlled space</selectable>
                 <selectable>Detect and log the presence of cellular 5G low and mid-band devices operating within a controlled space</selectable>
@@ -2169,8 +2170,8 @@ implied certain tests were mandatory despite the functions being in selections
         <f-component cc-id="fau_wid_ext.3" iteration="RF" name="Wireless Intrusion Detection - Spectrum Monitoring (Non-Wireless RF)">
         <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>  
           <f-element id="fel-detect-devices-in-bands">
-            <title> The TSF shall detect the presence of devices <h:i>that operate in the
-              following RF bands:</h:i> [<h:i><selectables>
+            <title> The TSF shall detect the presence of devices [<h:i>that operate in the
+              following RF bands:<selectables>
                 <selectable>3.6 GHz</selectable>
                 <selectable>6 GHz</selectable>
                 <selectable>60 GHz</selectable>
