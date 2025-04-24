@@ -838,7 +838,7 @@ implied certain tests were mandatory despite the functions being in selections
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies.</dependencies>
           <f-element id="fel-ids-meth">
-            <title> The TSF shall detect intrusions using<selectables>
+            <title> The TSF shall detect intrusions using <selectables>
                 <selectable id="anoBased">anomaly-based</selectable>
                 <selectable id="sigBased">signature-based</selectable>
                 <selectable><assignable>other detection method</assignable></selectable>
