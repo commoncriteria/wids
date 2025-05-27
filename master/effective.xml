@@ -62,7 +62,7 @@
       potentially malicious wireless (IEEE 802.11) network traffic. 
       </h:p><h:p> 
       This PP-Module is intended for use with the following Base-PP: <h:ul>
-        <h:li>collaborative Protection Profile for Network Devices (NDcPP), Version 3.0e</h:li>
+        <h:li>Network Device collaborative Protection Profile Version 4.0 <comment> Please update reference in bio</comment></h:li>
       </h:ul>
       </h:p><h:p>
       A TOE that conforms to a PP-Configuration containing this PP-Module must be a 'Distributed TOE' as defined in the NDcPP. 
@@ -174,7 +174,7 @@
   <cc-pt2-conf>extended</cc-pt2-conf>
   <cc-pt3-conf>conformant</cc-pt3-conf>
   <cc-pp-conf/>
-  <cc-pp-config-with/>
+  <cc-pp-config-with><PP-cc-ref>Network Device collaborative Protection Profile Version 4.0</PP-cc-ref></cc-pp-config-with>
   <cc-pkg-claim/>
   </CClaimsInfo>
   </sec:Conformance_Claims>
@@ -397,7 +397,7 @@
     </section>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <base-pp version="3.0e" name="Network Device" product="Network Device" short="ND" id="b-nd">
+    <base-pp version="4.0" name="Network Device" product="Network Device" short="ND" id="b-nd">
       <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
       <cPP/>
       <modified-sfrs>
@@ -2895,7 +2895,7 @@
       <tag>NDcPP</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">collaborative Protection Profile for
-          Network Devices</h:a>, Version 3.0e, March 23, 2020
+          Network Devices</h:a>, Version 4.0, March 23, 2020
       </description>
     </entry>
     <entry id="bibNDSD">

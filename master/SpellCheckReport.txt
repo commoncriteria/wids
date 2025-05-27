@@ -1,4 +1,3 @@
-output/wids-release-linkable.html: 0e
 output/wids-release-linkable.html: 3G
 output/wids-release-linkable.html: 4G
 output/wids-release-linkable.html: 4GHz
@@ -21,7 +20,6 @@ output/wids-release-linkable.html: piconet
 output/wids-release-linkable.html: piconets
 output/wids-release-linkable.html: uplink
 output/wids-release-linkable.html: v2
-output/wids-release.html: 0e
 output/wids-release.html: 3G
 output/wids-release.html: 4G
 output/wids-release.html: 5G
@@ -41,13 +39,11 @@ output/wids-release.html: piconet
 output/wids-release.html: piconets
 output/wids-release.html: uplink
 output/wids-release.html: v2
-output/wids-sd.html: 0e
 output/wids-sd.html: 4GHz
 output/wids-sd.html: 5GHz
 output/wids-sd.html: evaluator’s
 output/wids-sd.html: fail’
 output/wids-sd.html: pass’
-output/wids.html: 0e
 output/wids.html: 3G
 output/wids.html: 4G
 output/wids.html: 4GHz
