@@ -618,7 +618,7 @@
                 If "capture raw frame traffic that triggers the violation" is
                 selected then FAU_STG.1/PCAP and FAU_STG.5/PCAP must be included in the ST. </h:p><h:p>
                 FAU_SAA.1 defines the rules for monitoring the wireless traffic to detect for potential security violations. 
-                FAU_INV_EXT.2 defines the information the TOE needs to collect for all APs and EUDs within range of the the TOE's sensors. Device attributes can then be individually filtered
+                FAU_INV_EXT.2 defines the information the TOE needs to collect for all APs and EUDs within range of the TOE's sensors. Device attributes can then be individually filtered
                 and/or selected in order to be displayed as part of the alert.
               </h:p>
             </note>
@@ -1579,7 +1579,7 @@
                 provides instructions on how to configure SSIDs as authorized.</Guidance>
               <Tests>
                                
-                  For test 1 and 2 below the evaluator shall verify that the TOE detects and appropriately classifies the APs and EUDs. It is acceptable if the TOE uses different but equivalent descriptors for the classification. If the TOE does not support automatic detection metrics and equates a non-allowlisted AP/EUD as malicious, than it is sufficient that the the classification given to the AP/EUD in step 1 is the same as in step 2. If the TOE supports automatic detection metrics and distinguishes between a non-allowlisted AP/EUD and a malicious AP/EUD, then the classification for the AP/EUD should differ between step 1 and step 2.
+                  For test 1 and 2 below the evaluator shall verify that the TOE detects and appropriately classifies the APs and EUDs. It is acceptable if the TOE uses different but equivalent descriptors for the classification. If the TOE does not support automatic detection metrics and equates a non-allowlisted AP/EUD as malicious, than it is sufficient that the classification given to the AP/EUD in step 1 is the same as in step 2. If the TOE supports automatic detection metrics and distinguishes between a non-allowlisted AP/EUD and a malicious AP/EUD, then the classification for the AP/EUD should differ between step 1 and step 2.
                     <testlist>                    
                       <test>
                         <steplist>
@@ -1876,7 +1876,7 @@
                                 that are used, or detecting the use of SSH tunneling techniques could be an appropriate mitigation strategy. 
                                 This would of course also be accomplished at the network's boundary, and should not fall solely on the WIDS to
                                 detect, but having some form of network traffic scheme-of-detection seems appropriate. Update: Having the WIDS track, manage, define
-                                WLAN traffic schemes has been removed. This function should not reside on the WIDS, an an overlay solution has no visibility into 
+                                WLAN traffic schemes has been removed. This function should not reside on the WIDS, an overlay solution has no visibility into 
                                 WLAN traffic due to encryption. -->
                 
                 <h:li><selectables>
@@ -2004,7 +2004,7 @@
               <selectables linebreak="yes">
                 <selectable>Detect and log the presence of 2.4 GHz Bluetooth BR/EDR devices operating within a controlled space</selectable>
                 <selectable>Detect and log the presence of Bluetooth Low Energy (BLE) devices operating within a controlled space</selectable>
-                <selectable>Detect and log the the Bluetooth BR/EDR devices LAP and half the Bluetooth MAC address within a controlled space</selectable>
+                <selectable>Detect and log the Bluetooth BR/EDR devices LAP and half the Bluetooth MAC address within a controlled space</selectable>
                 <selectable>Detect and log the BLE device's Bluetooth MAC address within a controlled space</selectable>
                 <selectable>Geo-locate Bluetooth BR/EDR devices within 25 feet of their actual location</selectable>
                 <selectable>Geo-locate BLE devices within 25 feet of their actual location</selectable>
@@ -2648,7 +2648,7 @@
             <note role="application">
 	      <h:p>It is expected that an Authorized Administrator will be
               responsible for confirming the AP or EUD as a rogue AP or EUD to initiate wireless
-              containment. </h:p><h:p> In this SFR the containment of an an unauthorized AP
+              containment. </h:p><h:p> In this SFR the containment of an unauthorized AP
               connected to the internal corporate wired network refers to an unauthorized AP that is
               physically connected (via wire) to the protected internal wired infrastructure.</h:p> </note>
             <aactivity>
