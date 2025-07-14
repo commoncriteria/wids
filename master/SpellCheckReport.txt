@@ -15,7 +15,6 @@ output/wids-release-linkable.html: TMSI
 output/wids-release-linkable.html: UTMS
 output/wids-release-linkable.html: ay
 output/wids-release-linkable.html: downlink
-output/wids-release-linkable.html: havior
 output/wids-release-linkable.html: piconet
 output/wids-release-linkable.html: piconets
 output/wids-release-linkable.html: uplink

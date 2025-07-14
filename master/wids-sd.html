@@ -603,13 +603,63 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                   </li>
                 </ul></span>
+              </div></div></span></div><div class="comp" id=""><h4>FAU_MAC_EXT.1 Device Impersonation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_MAC_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS describes the behavior of the TOE when
+                two sensors in non-overlapping locations receive traffic from the same MAC address
+                simultaneously.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                <p>The evaluator shall verify that the operational guidance provides
+                  instructions on how to deploy the TOE in a manner that allows the TSF to detect when
+                  two sensors in non-overlapping locations receive traffic from the same MAC address
+                  simultaneously (i.e. information about the range and placement of sensors to ensure
+                  non-overlapping coverage).</p><p> The evaluator shall verify that the
+                    operational guidance provides instructions on how to configure the timeframe that
+                    should be allowed between two subsequent attempts for an EUD to connect from two
+                    separate locations.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FAU_MAC_EXT.1:1</a>:
+      
+                    <ul>
+                      <li><b>Step 1: </b>Setup an allowlisted AP (Location 1).</li>
+                      <li><b>Step 2: </b>Connect an allowlisted EUD to AP.</li>
+                      <li><b>Step 3: </b>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
+                        non-overlapping location where the WIDS also has sensors. Or simulate the
+                        distant non-overlapping locations by deploying the second AP in a shielded
+                        environment connected to the valid network (Location 2).</li>
+                      <li><b>Step 4: </b>Spoof the MAC address of the EUD in location 1 with the EUD in location
+                        2 and connect it to the allowlisted AP in location 2. Make sure both EUDs
+                        are connected at the same time.</li>
+                      <li><b>Step 5: </b>Verify that the TSF detected and generated an alert.</li>
+                    </ul>
+                  </li>
+                  <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FAU_MAC_EXT.1:2</a>:
+      
+                    <ul>
+                      <li><b>Step 1: </b>Configure the timeframe allowed between connection of two EUDs in two
+                        separate locations (Location 1, Location 2).</li>
+                      <li><b>Step 2: </b>Setup an allowlisted AP (Location 1). </li>
+                      <li><b>Step 3: </b>Connect an allowlisted EUD to AP.</li>
+                      <li><b>Step 4: </b>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
+                        non-overlapping location where the WIDS also has sensors. Or simulate the
+                        distant non-overlapping locations by deploying the second AP in a shielded
+                        environment connected to the valid network (Location 2).</li>
+                      <li><b>Step 5: </b>Spoof the MAC address of the EUD in location 1 with the EUD in location
+                        2 and connect it to the allowlisted AP in location 2. Make sure that the
+                        time between connections is shorter than the time timeframe
+                        allowed/configured. </li>
+                      <li><b>Step 6: </b>Verify that the TSF detected and generated an alert.</li>
+                    </ul>
+                  </li>
+                </ul></span>
               </div></div></span></div><div class="comp" id=""><h4>FAU_RPT_EXT.1 Intrusion Detection System - Reporting Methods</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_RPT_EXT.1</div>
               
               
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS includes which method the TOE utilizes.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> There are no operational guidance activities for this SFR.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> Depending on the detection technique used by the TOE, the evaluator shall
                 confirm and note the existence of the capability. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FAU_RPT_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FAU_RPT_EXT.1:1</a>:
       
                     <ul> 
                       <li><b>Step 1: </b>Deploy an allowlisted AP and connect it to the protected wired
@@ -633,7 +683,7 @@ The following sections list Common Criteria and technology terms used in this do
                 The TSF should generate an alert or audit event for all potential violations contained within rule set forth in FAU_SAA.1.
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">  
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FAU_SAA.1:1</a>:
+                  <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FAU_SAA.1:1</a>:
       <b>Detection of non-allowlisted AP</b>: 
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP.</li>
@@ -641,7 +691,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FAU_SAA.1:2</a>:
+                  <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FAU_SAA.1:2</a>:
       <b>Detection of non-allowlisted EUD</b>:
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted EUD.</li> 
@@ -649,10 +699,10 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>               
-                  <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FAU_SAA.1:3</a>:
+                  <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FAU_SAA.1:3</a>:
       <b>Detection of authorized EUD establishing peer-to-peer connection with any other EUD</b>:
                     <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FAU_SAA.1:3.1</a>:
+                      <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FAU_SAA.1:3.1</a>:
        Create the following connections between two allowlisted EUDs. <ul>
                         <li>Windows ad hoc</li>
                         <li>Mac OS ad hoc</li>
@@ -660,7 +710,7 @@ The following sections list Common Criteria and technology terms used in this do
                         <li>Wi-Fi Direct</li>
                       </ul>
                       </li>
-                      <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FAU_SAA.1:3.2</a>:
+                      <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FAU_SAA.1:3.2</a>:
        Create the following connections between one allowlisted EUD and a
                         non-allowlisted EUD <ul>
                           <li>Windows ad hoc</li>
@@ -671,7 +721,7 @@ The following sections list Common Criteria and technology terms used in this do
                       </li>
                     </ul></span> Verify that alerts were generated by each of the connections in each test. 
                   </li>
-                  <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FAU_SAA.1:4</a>:
+                  <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FAU_SAA.1:4</a>:
       <b>Detection of EUD bridging two network interfaces</b>:<br/>
                      Bridge two network interfaces on an allowlisted EUD (one must be the wireless card listed as allowlisted).                  
                     <ul>
@@ -680,7 +730,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     Verify that alerts were generated by each of the connections in each test.
                   </li>
-                  <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FAU_SAA.1:5</a>:
+                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FAU_SAA.1:5</a>:
       <b>Detection of unauthorized point to point wireless bridges by allowlisted APs</b>:
                       <ul>
                         <li><b>Step 1: </b>Setup a point-to-point wireless bridge using allowlisted APs in the
@@ -689,7 +739,7 @@ The following sections list Common Criteria and technology terms used in this do
                       </ul>
                     <br/>
                   </li>             
-                  <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FAU_SAA.1:6</a>:
+                  <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FAU_SAA.1:6</a>:
       <b>Alert generated by violation of user defined signature</b>:
                       <ul>
                         <li><b>Step 1: </b>Setup a user defined detection signature.</li>
@@ -697,7 +747,7 @@ The following sections list Common Criteria and technology terms used in this do
                       </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FAU_SAA.1:7</a>:
+                  <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FAU_SAA.1:7</a>:
       <b>Detection of ICS connection</b>:                 
                        <ul>
                          <li><b>Step 1: </b>Setup an Internet Connection Sharing (ICS) connection.</li>
@@ -706,10 +756,10 @@ The following sections list Common Criteria and technology terms used in this do
                     <br/>
                   </li>
                                 
-                  <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FAU_SAA.1:8</a>:
+                  <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FAU_SAA.1:8</a>:
       <b>Detection of MAC spoofing</b>:                
                     <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FAU_SAA.1:8.1</a>:
+                      <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FAU_SAA.1:8.1</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Spoof mac address of an allowlisted EUD connected to an allowlisted AP on a
@@ -719,7 +769,7 @@ The following sections list Common Criteria and technology terms used in this do
                           <li><b>Step 3: </b>Verify that the TSF detected the MAC spoofing.</li>
                         </ul>
                       </li>
-                      <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FAU_SAA.1:8.2</a>:
+                      <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FAU_SAA.1:8.2</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Spoof mac address of an allowlisted AP on a second AP. </li>
@@ -729,7 +779,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul></span>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FAU_SAA.1:9</a>:
+                  <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FAU_SAA.1:9</a>:
       <b>Detection of unauthorized AP broadcasting authorized SSIDs</b>:
                     <ul>
                       <li><b>Step 1: </b>Configure a non-allowlisted AP to operate on a set channel on the 2.4 GHz band broadcasting an authorized SSID.</li>
@@ -739,7 +789,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>                 
-                  <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FAU_SAA.1:10</a>:
+                  <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FAU_SAA.1:10</a>:
       <b>Detection of authorized AP broadcasting an unauthorized SSID</b>:
                     <ul>
                       <li><b>Step 1: </b>Configure an allowlisted AP to operate on a set channel on the 2.4 GHz band broadcasting an unauthorized SSID.</li>
@@ -749,7 +799,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FAU_SAA.1:11</a>:
+                  <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FAU_SAA.1:11</a>:
       <b>Detection of allowlisted EUD connected to unauthorized SSID</b>: 
                     <ul>                    
                       <li><b>Step 1: </b>Configure an allowlisted AP to operate on a set channel on the 2.4 GHz band with an unauthorized SSID.</li>
@@ -760,7 +810,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FAU_SAA.1:12</a>:
+                  <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FAU_SAA.1:12</a>:
       <b>Detection of NULL SSID associations</b>:
                       <ul>
                         <li><b>Step 1: </b>Deploy allowlisted AP.</li>
@@ -771,7 +821,7 @@ The following sections list Common Criteria and technology terms used in this do
                       </ul>
                     <br/>
                   </li>              
-                  <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FAU_SAA.1:13</a>:
+                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FAU_SAA.1:13</a>:
       <b>Detection of active probing</b>:
                     <ul>
                       <li><b>Step 1: </b>Perform an active scan on the subnet of the WLAN.</li>
@@ -780,7 +830,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                 </li>
-                  <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FAU_SAA.1:14</a>:
+                  <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FAU_SAA.1:14</a>:
       <b>Detection of packet flooding/DoS/DDoS</b>:
                     <ul>
                       <li><b>Step 1: </b>Generate a large amount of TCP and UDP traffic from a single EUD.</li>
@@ -790,7 +840,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FAU_SAA.1:15</a>:
+                  <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FAU_SAA.1:15</a>:
       <b>Detection of RF-based denial of service</b>:                  
                     <ul>
                       <li><b>Step 1: </b>Deploy an allowlisted AP and configure to stay in a particular channel.</li>
@@ -800,10 +850,10 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FAU_SAA.1:16</a>:
+                  <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FAU_SAA.1:16</a>:
       <b>Detection of deauthentication flooding</b>:
                     <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FAU_SAA.1:16.1</a>:
+                      <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FAU_SAA.1:16.1</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy allowlisted AP and configure to a set channel.</li>
@@ -812,7 +862,7 @@ The following sections list Common Criteria and technology terms used in this do
                           <li><b>Step 4: </b>Verify that the TSF detects the deauthentication flood.</li>
                         </ul>
                       </li>
-                      <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FAU_SAA.1:16.2</a>:
+                      <li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FAU_SAA.1:16.2</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy allowlisted AP and configure to a set channel.</li>
@@ -824,7 +874,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul></span>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FAU_SAA.1:17</a>:
+                  <li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FAU_SAA.1:17</a>:
       <b>Detection of disassociation flooding</b>:
                         <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP and connect authorized EUDs.</li>
@@ -833,7 +883,7 @@ The following sections list Common Criteria and technology terms used in this do
                         </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FAU_SAA.1:18</a>:
+                  <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FAU_SAA.1:18</a>:
       <b>Detection of request-to-send/clear-to-send abuse</b>:
                     <ul>
                       <li><b>Step 1: </b>Deploy allowlisted AP and configure to a set channel.</li>
@@ -843,11 +893,11 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FAU_SAA.1:19</a>:
+                  <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FAU_SAA.1:19</a>:
       <b>Detection of unauthorized authentication scheme use</b>:<br/>
                     The evaluator shall configure the TOE, per FMT_SMF.1/WIDS, with 802.1x authentication as the only mode of authorized WLAN authentication scheme. 
                     <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FAU_SAA.1:19.1</a>:
+                      <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FAU_SAA.1:19.1</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP with open authentication.</li>
@@ -857,7 +907,7 @@ The following sections list Common Criteria and technology terms used in this do
                           <li><b>Step 4: </b>Verify that the TSF detects the AP and the EUD using unauthorized authentication schemes. </li>
                         </ul>
                       </li>
-                      <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FAU_SAA.1:19.2</a>:
+                      <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FAU_SAA.1:19.2</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP that uses pre-shared key authentication.</li>
@@ -870,10 +920,10 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul></span>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FAU_SAA.1:20</a>:
+                  <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FAU_SAA.1:20</a>:
       <b>Detection of unauthorized encryption scheme use</b>:
                     <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FAU_SAA.1:20.1</a>:
+                      <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FAU_SAA.1:20.1</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Configure the TOE with 128 bit AES encryption type as the only allowed encryption scheme.</li>
@@ -882,7 +932,7 @@ The following sections list Common Criteria and technology terms used in this do
                           <li><b>Step 4: </b>Verify that the TOE detects the AP and the EUD using unauthorized encryption schemes.</li>
                         </ul>
                       </li>
-                      <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FAU_SAA.1:20.2</a>:
+                      <li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FAU_SAA.1:20.2</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Configure the TOE with 128 bit AES encryption type as the only allowed encryption scheme.</li>
@@ -894,10 +944,10 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul></span> 
                     <br/>
                   </li>            
-                  <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FAU_SAA.1:21</a>:
+                  <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FAU_SAA.1:21</a>:
       <b>Detection of unencrypted traffic</b>:
                     <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FAU_SAA.1:21.1</a>:
+                      <li class="test-"><a id="_t_44" class="defined" href="#_t_44">Test FAU_SAA.1:21.1</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP with no encryption.</li>
@@ -907,7 +957,7 @@ The following sections list Common Criteria and technology terms used in this do
                           <li><b>Step 5: </b>If the connection attempt succeeds, generate traffic from the non-allowlisted EUD and verify that the TSF detects unencrypted data frames being sent between the allowlisted AP and non-allowlisted EUD.</li>
                         </ul>
                       </li>
-                      <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FAU_SAA.1:21.2</a>:
+                      <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FAU_SAA.1:21.2</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy a non-allowlisted AP with no encryption.</li>
@@ -918,7 +968,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul></span>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_44" class="defined" href="#_t_44">Test FAU_SAA.1:22</a>:
+                  <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FAU_SAA.1:22</a>:
       <b>Detection of allowlisted EUD or AP that is using weak/outdated WLAN protocols and protocol implementations</b>:
                     <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP that utilizes the 802.11g or older WLAN protocol.</li>
@@ -926,7 +976,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FAU_SAA.1:23</a>:
+                  <li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FAU_SAA.1:23</a>:
       <b>Detection of extremely high numbers of client devices using a particular allowlisted AP</b>:                   
                     <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP.</li>
@@ -936,7 +986,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FAU_SAA.1:24</a>:
+                  <li class="test-"><a id="_t_48" class="defined" href="#_t_48">Test FAU_SAA.1:24</a>:
       <b>Detection of a high number of failed attempts to join the WLAN in a short period of time</b>:
                     <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP.</li>
@@ -946,7 +996,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FAU_SAA.1:25</a>:
+                  <li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FAU_SAA.1:25</a>:
       <b>Detection of the use of active WLAN scanners (e.g. wardriving tools) to generate WLAN traffic</b>:
                     <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP.</li>
@@ -954,7 +1004,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_48" class="defined" href="#_t_48">Test FAU_SAA.1:26</a>:
+                  <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FAU_SAA.1:26</a>:
       <b>Detection of the physical location of an identified WLAN threat by using triangulation</b>:
                     <ul>
                           <li><b>Step 1: </b>Deploy a non-allowlisted AP or EUD within range of the TSF.</li>
@@ -962,7 +1012,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FAU_SAA.1:27</a>:
+                  <li class="test-"><a id="_t_51" class="defined" href="#_t_51">Test FAU_SAA.1:27</a>:
       <b>Detection of an SSID using weak/unsupported/disallowed encryption options</b>:
                     <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP and configure its encryption options.</li>
@@ -971,7 +1021,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ul>
                     <br/>
                   </li>
-                  <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FAU_SAA.1:28</a>:
+                  <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FAU_SAA.1:28</a>:
       <b>Detection of AP SSID larger than 32 bytes</b>:
                     <ul>
                           <li><b>Step 1: </b>Deploy an allowlisted AP and configure its SSID to be larger than 32 bytes.</li>
@@ -997,7 +1047,7 @@ The following sections list Common Criteria and technology terms used in this do
                                
                   For test 1 and 2 below the evaluator shall verify that the TOE detects and appropriately classifies the APs and EUDs. It is acceptable if the TOE uses different but equivalent descriptors for the classification. If the TOE does not support automatic detection metrics and equates a non-allowlisted AP/EUD as malicious, than it is sufficient that the classification given to the AP/EUD in step 1 is the same as in step 2. If the TOE supports automatic detection metrics and distinguishes between a non-allowlisted AP/EUD and a malicious AP/EUD, then the classification for the AP/EUD should differ between step 1 and step 2.
                     <span class="testlist-"><ul>                    
-                      <li class="test-"><a id="_t_51" class="defined" href="#_t_51">Test FAU_WID_EXT.1:1</a>:
+                      <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FAU_WID_EXT.1:1</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy a non-allowlisted AP in the area of the WIDS sensor, but take no action against the network. Verify that the AP is classified as non-authorized.</li>
@@ -1005,7 +1055,7 @@ The following sections list Common Criteria and technology terms used in this do
                           <li><b>Step 3: </b>Verify that the AP is classified as malicious.</li>
                         </ul>
                       </li>
-                      <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FAU_WID_EXT.1:2</a>:
+                      <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FAU_WID_EXT.1:2</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy a non-allowlisted EUD in the area of the WIDS sensor, but take no action against the network. Verify that the EUD is classified as non-authorized.</li>
@@ -1013,7 +1063,7 @@ The following sections list Common Criteria and technology terms used in this do
                           <li><b>Step 3: </b>Verify that the EUD is classified as malicious.</li>                        
                         </ul>
                       </li>
-                      <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FAU_WID_EXT.1:3</a>:
+                      <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FAU_WID_EXT.1:3</a>:
       
                         <ul>
                           <li><b>Step 1: </b>Deploy an AP with an unauthorized SSID in the area of the WIDS sensor.</li>
@@ -1042,7 +1092,7 @@ The following sections list Common Criteria and technology terms used in this do
                 inspection is being performed.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <b>Channels Monitored</b>
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FAU_WID_EXT.2:1</a>:
+                  <li class="test-"><a id="_t_56" class="defined" href="#_t_56">Test FAU_WID_EXT.2:1</a>:
        Channels on On 5 GHz band <ul>
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
                       <li><b>Step 2: </b>Deploy an AP on at least 2 different channels within the regulatory
@@ -1050,7 +1100,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 3: </b>Verify that the AP gets detected on each channel tested.</li>
                     </ul>
                   </li>
-                  <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FAU_WID_EXT.2:2</a>:
+                  <li class="test-"><a id="_t_57" class="defined" href="#_t_57">Test FAU_WID_EXT.2:2</a>:
        Channels on 2.4 GHz band <ul>
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
                       <li><b>Step 2: </b>Deploy AP on at least 2 different channels within the regulatory domain
@@ -1058,21 +1108,21 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 3: </b>Verify that the AP gets detected on each channel tested.</li>
                     </ul>
                   </li>
-                  <li class="test-"><a id="_t_56" class="defined" href="#_t_56">Test FAU_WID_EXT.2:3</a>:
+                  <li class="test-"><a id="_t_58" class="defined" href="#_t_58">Test FAU_WID_EXT.2:3</a>:
        Channels on 4.9 GHz band (if selected)<ul>
                     <li><b>Step 1: </b>Configure the TSF to monitor the channels specified in the SFR.</li>
                     <li><b>Step 2: </b>Deploy AP and set to channels within the 4.9 GHz band outlined in the TSS.</li>
                     <li><b>Step 3: </b>Verify that the AP gets detected on each channel tested.</li>
                   </ul>
                   </li>
-                  <li class="test-"><a id="_t_57" class="defined" href="#_t_57">Test FAU_WID_EXT.2:4</a>:
+                  <li class="test-"><a id="_t_59" class="defined" href="#_t_59">Test FAU_WID_EXT.2:4</a>:
        Channels on 6 GHz band (if selected)<ul>
                     <li><b>Step 1: </b>Configure the TSF to monitor the channels specified in the SFR.</li>
                     <li><b>Step 2: </b>Deploy AP and set to channels within the 6 GHz band outlined in the TSS.</li>
                     <li><b>Step 3: </b>Verify that the AP gets detected on each channel tested.</li>
                   </ul>
                   </li>
-                  <li class="test-"><a id="_t_58" class="defined" href="#_t_58">Test FAU_WID_EXT.2:5</a>:
+                  <li class="test-"><a id="_t_60" class="defined" href="#_t_60">Test FAU_WID_EXT.2:5</a>:
        Non-standard channel frequencies (if selected)<ul>
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
                       <li><b>Step 2: </b>Deploy AP on at least 2 different channels on non-standard channel
@@ -1080,7 +1130,7 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 3: </b>Verify that the AP gets detected on each channel tested.</li>
                     </ul>
                   </li>
-                  <li class="test-"><a id="_t_59" class="defined" href="#_t_59">Test FAU_WID_EXT.2:6</a>:
+                  <li class="test-"><a id="_t_61" class="defined" href="#_t_61">Test FAU_WID_EXT.2:6</a>:
        Channels outside regulatory domain (if selected)
                     <ul>
                       <li><b>Step 1: </b>Configure the TSF to monitor the channels as selected in the SFR.</li>
@@ -1094,7 +1144,7 @@ The following sections list Common Criteria and technology terms used in this do
                 If the TOE provides the ability to disable wireless transmission, the evaluator shall follow the operational guidance to configure the sensor to not transmit wirelessly. The evaluator shall then deploy a signal analyzer in order to check for wireless emanations from the TOE. <br/> 
                 Repeat the two tests below, for both the 2.4 GHz, 5 GHz, and 6 GHz band.<br/> 
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_60" class="defined" href="#_t_60">Test FAU_WID_EXT.2:7</a>:
+                  <li class="test-"><a id="_t_62" class="defined" href="#_t_62">Test FAU_WID_EXT.2:7</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Boot a sensor and using the signal analyzer observe to check if any
@@ -1103,7 +1153,7 @@ The following sections list Common Criteria and technology terms used in this do
                         sensor.</li>
                     </ul>
                   </li>
-                  <li class="test-"><a id="_t_61" class="defined" href="#_t_61">Test FAU_WID_EXT.2:8</a>:
+                  <li class="test-"><a id="_t_63" class="defined" href="#_t_63">Test FAU_WID_EXT.2:8</a>:
       
                     <ul>
                       <li><b>Step 1: </b>During normal sensor operations, observe the analyzer for about 10
@@ -1115,7 +1165,7 @@ The following sections list Common Criteria and technology terms used in this do
                 </ul></span>              
                 <b>Stateful Frame Inspection</b>
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_62" class="defined" href="#_t_62">Test FAU_WID_EXT.2:9</a>:
+                  <li class="test-"><a id="_t_64" class="defined" href="#_t_64">Test FAU_WID_EXT.2:9</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy allowlisted AP.</li>
@@ -1134,7 +1184,7 @@ The following sections list Common Criteria and technology terms used in this do
                 operational guidance provides instructions on how to configure the TOE to monitor
                 different types of IEEE 802.11 frame types and subtypes.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_63" class="defined" href="#_t_63">Test FDP_IFC.1:1</a>:
+                  <li class="test-"><a id="_t_65" class="defined" href="#_t_65">Test FDP_IFC.1:1</a>:
       
                     <ul>
                       <li>Deploy an allowlisted AP/WIDS</li>
@@ -1177,16 +1227,16 @@ The following sections list Common Criteria and technology terms used in this do
                 unauthorized for the purposes of detection.</p>
 	          </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> 
               <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_64" class="defined" href="#_t_64">Test FMT_SMF.1/WIDS:1</a>:
+                <li class="test-"><a id="_t_66" class="defined" href="#_t_66">Test FMT_SMF.1/WIDS:1</a>:
        The evaluator shall define an inventory of authorized APs and EUDs. The ability to detect allowlisted and non-allowlisted APs and EUDs will be tested in FAU_INV_EXT.1 and FAU_SAA.1.
                 </li>
-                <li class="test-"><a id="_t_65" class="defined" href="#_t_65">Test FMT_SMF.1/WIDS:2</a>:
+                <li class="test-"><a id="_t_67" class="defined" href="#_t_67">Test FMT_SMF.1/WIDS:2</a>:
       The evaluator shall define authorized SSIDs. The ability to detect authorized and unauthorized SSIDs will be tested in FAU_WID_EXT.2.3 and FAU_SAA.1.</li>
               
-                <li class="test-"><a id="_t_66" class="defined" href="#_t_66">Test FMT_SMF.1/WIDS:3</a>:
+                <li class="test-"><a id="_t_68" class="defined" href="#_t_68">Test FMT_SMF.1/WIDS:3</a>:
       The evaluator shall configure the TSF with a set of allowed authentication and encryption
                   schemes. The ability to detect violation of this policy will be tested in FAU_SAA.1. </li>
-                  <li class="test-"><a id="_t_67" class="defined" href="#_t_67">Test FMT_SMF.1/WIDS:4</a>:
+                  <li class="test-"><a id="_t_69" class="defined" href="#_t_69">Test FMT_SMF.1/WIDS:4</a>:
        (conditional): If "Define the amount of time sensor monitors a specific frequency or channel" is selected:
                     <ul>
                       <li><b>Step 1: </b>Deploy an allowlisted AP and connect it to the protected wired
@@ -1211,7 +1261,7 @@ The following sections list Common Criteria and technology terms used in this do
                 enable and configure detection of the technologies included in the ST as well as the
                 hardware that is needed to perform this function.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall enable and configure detection of the selected
                 technologies. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_68" class="defined" href="#_t_68">Test FAU_WID_EXT.3/BT:1</a>:
+                  <li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FAU_WID_EXT.3/BT:1</a>:
       Deploy a device within the given technology and verify that the TSF detects
                     the device.</li>
                 </ul></span>
@@ -1226,7 +1276,7 @@ The following sections list Common Criteria and technology terms used in this do
                 enable and configure detection of the technologies included in the ST as well as the
                 hardware that is needed to perform this function.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall enable and configure detection of the selected
                 technologies. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_69" class="defined" href="#_t_69">Test FAU_WID_EXT.3/CELL:1</a>:
+                  <li class="test-"><a id="_t_71" class="defined" href="#_t_71">Test FAU_WID_EXT.3/CELL:1</a>:
       Deploy a device within the given technology and verify that the TSF detects
                     the device.</li>
                 </ul></span>
@@ -1241,7 +1291,7 @@ The following sections list Common Criteria and technology terms used in this do
                 enable and configure detection of the technologies included in the ST as well as the
                 hardware that is needed to perform this function.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall enable and configure detection of the selected
                 technologies. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FAU_WID_EXT.3/RF:1</a>:
+                  <li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FAU_WID_EXT.3/RF:1</a>:
       Deploy a device within the given technology and verify that the TSF detects
                     the device.</li>
                 </ul></span>
@@ -1283,7 +1333,7 @@ The following sections list Common Criteria and technology terms used in this do
                 including a description of the customization options that are
                 available.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_71" class="defined" href="#_t_71">Test FAU_SIG_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FAU_SIG_EXT.1:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Craft a signature with the available fields indicated in the TSS.</li>
@@ -1303,12 +1353,12 @@ The following sections list Common Criteria and technology terms used in this do
                 external entity. The evaluator shall also verify that the TSS describes which TOE components are responsible for the storage of packet capture data and any internal transmission between TOE components that is done in support of placing this data into storage.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall verify that the operational guidance provides
                 instructions on how to configure the trusted channel for remote storage of packet capture data.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FAU_STG.1/PCAP:1</a>:
+                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FAU_STG.1/PCAP:1</a>:
       The evaluator shall configure packet captures according to the guidance
                     specified. The evaluator shall then trigger an event that starts a capture and
                     verify through the tests in FTP_ITC.1 that the captured traffic being sent to
                     the external device is being sent through a trusted channel.</li>
-                  <li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FAU_STG.1/PCAP:2</a>:
+                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_STG.1/PCAP:2</a>:
       The evaluator shall configure packet captures to be stored on the TSF
                     according to the guidance specified. The evaluator shall then trigger an event
                     that starts a capture and verify that the packet capture was stored by the
@@ -1326,12 +1376,12 @@ The following sections list Common Criteria and technology terms used in this do
                 evaluator shall verify that the operational guidance provides information on what
                 the configurable behaviors are and how they can be set.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FAU_STG.5/PCAP:1</a>:
+                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_STG.5/PCAP:1</a>:
       The evaluator shall configure packet captures to be stored on the TSF
                     according to the guidance specified (if necessary). Once configured, or if no such configuration is necessary, the evaluator shall then trigger an event
                     that starts a capture and verify that the packet capture was stored on the
                     TSF.</li>
-                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_STG.5/PCAP:2</a>:
+                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_STG.5/PCAP:2</a>:
       If the TOE's behavior is configurable when local storage space for packet capture is exhausted, the evaluator shall use this functionality to configure different behavior to verify that the configuration has the intended effect.</li>
                 </ul></span>
               </div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="ss-obj-fau">2.5.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_INV_EXT.4 Detection of Unauthorized Connections</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_INV_EXT.4</div>
@@ -1345,7 +1395,7 @@ The following sections list Common Criteria and technology terms used in this do
                 to configure the WIDS to detect unauthorized APs connected to the protected wired
                 infrastructure.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_INV_EXT.4:1</a>:
+                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_INV_EXT.4:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP.</li>
@@ -1368,7 +1418,7 @@ The following sections list Common Criteria and technology terms used in this do
 		Depending on operation guidance provided for the TOE, the evaluator shall
                 confirm and note the existence of the signal library, and test for the ability to
                 import, export, and update the signal library. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_INV_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FAU_INV_EXT.5:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy an allowlisted AP and connect it to the protected wired
@@ -1376,56 +1426,6 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 2: </b>Confirm and note whether the TSF has an existing signal library.</li>
                       <li><b>Step 3: </b>If existence is confirmed, verify that the TSF can import, export, and
                         update the existing signal library.</li>
-                    </ul>
-                  </li>
-                </ul></span>
-              </div></div></span></div><div class="comp" id=""><h4>FAU_MAC_EXT.1 Device Impersonation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_MAC_EXT.1</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS describes the behavior of the TOE when
-                two sensors in non-overlapping locations receive traffic from the same MAC address
-                simultaneously.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-		<p>The evaluator shall verify that the operational guidance provides
-                instructions on how to deploy the TOE in a manner that allows the TSF to detect when
-                two sensors in non-overlapping locations receive traffic from the same MAC address
-                simultaneously (i.e. information about the range and placement of sensors to ensure
-                non-overlapping coverage).</p><p> The evaluator shall verify that the
-                operational guidance provides instructions on how to configure the timeframe that
-                should be allowed between two subsequent attempts for an EUD to connect from two
-                separate locations.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_MAC_EXT.1:1</a>:
-      
-                    <ul>
-                      <li><b>Step 1: </b>Setup an allowlisted AP (Location 1).</li>
-                      <li><b>Step 2: </b>Connect an allowlisted EUD to AP.</li>
-                      <li><b>Step 3: </b>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
-                        non-overlapping location where the WIDS also has sensors. Or simulate the
-                        distant non-overlapping locations by deploying the second AP in a shielded
-                        environment connected to the valid network (Location 2).</li>
-                      <li><b>Step 4: </b>Spoof the MAC address of the EUD in location 1 with the EUD in location
-                        2 and connect it to the allowlisted AP in location 2. Make sure both EUDs
-                        are connected at the same time.</li>
-                      <li><b>Step 5: </b>Verify that the TSF detected and generated an alert.</li>
-                    </ul>
-                  </li>
-                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FAU_MAC_EXT.1:2</a>:
-      
-                    <ul>
-                      <li><b>Step 1: </b>Configure the timeframe allowed between connection of two EUDs in two
-                        separate locations (Location 1, Location 2).</li>
-                      <li><b>Step 2: </b>Setup an allowlisted AP (Location 1). </li>
-                      <li><b>Step 3: </b>Connect an allowlisted EUD to AP.</li>
-                      <li><b>Step 4: </b>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
-                        non-overlapping location where the WIDS also has sensors. Or simulate the
-                        distant non-overlapping locations by deploying the second AP in a shielded
-                        environment connected to the valid network (Location 2).</li>
-                      <li><b>Step 5: </b>Spoof the MAC address of the EUD in location 1 with the EUD in location
-                        2 and connect it to the allowlisted AP in location 2. Make sure that the
-                        time between connections is shorter than the time timeframe
-                        allowed/configured. </li>
-                      <li><b>Step 6: </b>Verify that the TSF detected and generated an alert.</li>
                     </ul>
                   </li>
                 </ul></span>
