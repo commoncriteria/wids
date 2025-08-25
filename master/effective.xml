@@ -10,26 +10,28 @@
   
   <RevisionHistory>
     <entry>
-    <version>3.0</version>
-    <date>2025-07-15</date>
-    <subject>Incorporate NIAP Technical Decisions, Update to CC:2022</subject>
+      <version>1.0</version>
+      <date>2020-09-30</date>
+      <subject>Initial Release - PP-Module for NDcPP</subject>
     </entry>
+    
     <entry>
       <version>2.0</version>
       <date>2022-09-30</date>
       <subject>Added 6 GHz spectrum slice</subject>
     </entry>
+    
     <entry>
-      <version>1.0</version>
-      <date>2020-09-30</date>
-      <subject>Initial Release - PP-Module for NDcPP</subject>
+    <version>3.0</version>
+    <date>2025-07-15</date>
+    <subject>Incorporate NIAP Technical Decisions, Update to CC:2022</subject>
     </entry>
   </RevisionHistory>
 
   <release-notes><h:h3>TDs Applied</h:h3></release-notes><include-pkg id="pkgTLS">
     <git>
       <url>https://github.com/commoncriteria/tls/</url>
-      <branch>release-2.0</branch>
+      <branch>release-2.1</branch>
     </git>
     <url>https://www.niap-ccevs.org/protectionprofiles/465</url>
   </include-pkg>
@@ -62,7 +64,7 @@
       potentially malicious wireless (IEEE 802.11) network traffic. 
       </h:p><h:p> 
       This PP-Module is intended for use with the following Base-PP: <h:ul>
-        <h:li>Network Device collaborative Protection Profile Version 4.0 <comment> Please update reference in bib</comment></h:li>
+        <h:li>Network Device collaborative Protection Profile Version 4.0 </h:li>
       </h:ul>
       </h:p><h:p>
       A TOE that conforms to a PP-Configuration containing this PP-Module must be a 'Distributed TOE' as defined in the NDcPP. 
@@ -2900,14 +2902,15 @@
       <tag>NDcPP</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">collaborative Protection Profile for
-          Network Devices</h:a>, Version 4.0, March 23, 2020
+          Network Devices</h:a>, Version 4.0, March 23, 2020 <comment>Adjust date when published</comment>
       </description>
     </entry>
     <entry id="bibNDSD">
       <tag>NDcPP SD</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">
-          Supporting Document - Evaluation Activities for Network Device cPP</h:a>, Version 2.2, December 2019
+          Supporting Document - Evaluation Activities for Network Device cPP</h:a>, Version 4.0,
+        December 2019 <comment>Adjust date when published</comment>
       </description>
     </entry>
     
