@@ -1,5 +1,3 @@
-* https://commoncriteria.github.io/wids/master/AppliedTDs-Diff.html[AppliedTDs-Diff.html]
-* https://commoncriteria.github.io/wids/master/AppliedTDs.html[AppliedTDs.html]
 * https://commoncriteria.github.io/wids/master/diff-v1.0.html[diff-v1.0.html]
 * https://commoncriteria.github.io/wids/master/wids-release-linkable.html[wids-release-linkable.html]
 * https://commoncriteria.github.io/wids/master/wids-release.html[wids-release.html]
