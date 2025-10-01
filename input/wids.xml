@@ -821,13 +821,8 @@ implied certain tests were mandatory despite the functions being in selections
           </f-element>
           <audit-event>
             <audit-event-descr>Any authentication event</audit-event-descr>
-            <audit-event-info>Failed login attempts, successful login attempts, administrator logins, 
-            changes to the WIDS native authentication system (creation of an account, deletion of an account, 
-            modification of user accounts, changes to groups or group membership, attempts for privilege escalation)
-            <comment>This appears to be a list of events that should be logged and not "additional audit record contents". If this 
-            is the case, these should be defined as separate auditable events. If not, suggest making it more clear as to 
-            how each of these details relate to the overarching "authentication event", e.x. for the first three, "Type of authentication attempt and its result (i.e.,
-            administrator vs user, success or failure)".</comment></audit-event-info>
+            <audit-event-info>User login attempts and outcome</audit-event-info>
+            <audit-event-info>Changes to WIDS native authentication system</audit-event-info>
           </audit-event>
         </f-component>
 
@@ -2193,11 +2188,7 @@ implied certain tests were mandatory despite the functions being in selections
           </f-element>
           <audit-event>
             <audit-event-descr>Detection of Bluetooth devices (for each selection made that includes an action of "log")</audit-event-descr>
-            <audit-event-info>Information contained within each selection that contains a requirement to log information.
-            <comment>It is unclear what information needs to be logged to constitute the logging of a particular Bluetooth device. This applies to
-            selections that include logging the presence of a Bluetooth device, as well as selections that include logging a device
-            that carries out a particular action, such as performing a particular procedure.</comment>
-            </audit-event-info>
+            <audit-event-info>MAC address or other unique device identifier. Information contained within each selection that contains a requirement to log information.</audit-event-info>
           </audit-event>
         </f-component>
 
