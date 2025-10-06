@@ -2232,9 +2232,8 @@ implied certain tests were mandatory despite the functions being in selections
           </f-element>
           <audit-event>
             <audit-event-descr>Detection of cellular devices (for each selection made that includes an action of "log")</audit-event-descr>
-            <audit-event-info>Unique device identifier</audit-event-info>
-            <audit-event-info>Information contained within each selection that contains a requirement to log information.
-            <comment>It is unclear what information needs to be logged to constitute logging the "presence" of a cellular device.</comment></audit-event-info>
+            <audit-event-info>MAC address or other unique device identifier</audit-event-info>
+            <audit-event-info>Information contained within each selection that contains a requirement to log information.</audit-event-info>
             
           </audit-event>
         </f-component>
