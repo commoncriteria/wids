@@ -323,9 +323,10 @@ implied certain tests were mandatory despite the functions being in selections
           <addressed-by>FAU_WID_EXT.3/CELL (optional)</addressed-by><rationale>Mitigates the threat by monitoring cellular wireless traffic in the vicinity for potential violations of policy.</rationale>
           <addressed-by>FAU_WID_EXT.3/RF (optional)</addressed-by><rationale>Mitigates the threat by monitoring non-802.11 wireless traffic in the vicinity for potential violations of policy.</rationale>
           <addressed-by>FAU_WID_EXT.4 (optional)</addressed-by><rationale>Mitigates the threat by using a dedicated sensor for analysis of wireless traffic.</rationale>
-          <addressed-by>FAU_MAC_EXT.1 (objective)</addressed-by><rationale>Mitigates the threat by detecting when a device is attempting to spoof a trusted device's MAC address.</rationale>
+          
           <addressed-by>FAU_INV_EXT.4 (objective)</addressed-by><rationale>Mitigates the threat by detecting non-authorized wireless equipment being attached to an internal wired network.</rationale>
           <addressed-by>FAU_INV_EXT.5 (objective)</addressed-by><rationale>Mitigates the threat by including a signal library.</rationale>
+          <addressed-by>FAU_MAC_EXT.1 (objective)</addressed-by><rationale>Mitigates the threat by detecting when a device is attempting to spoof a trusted device's MAC address.</rationale>
           <addressed-by>FAU_WIP_EXT.1 (objective)</addressed-by><rationale>Mitigates the threat by isolating confirmed threats to the internal network, either wired (unauthorized AP) or wireless.</rationale>
           <addressed-by>FAU_ANO_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by defining thresholds of baseline and anomalous traffic for analysis and action.</rationale>
           <addressed-by>FAU_SIG_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by defining signatures for an attack.</rationale>
@@ -357,10 +358,10 @@ implied certain tests were mandatory despite the functions being in selections
           <addressed-by>FAU_WID_EXT.3/BT (optional)</addressed-by><rationale>Mitigates the threat by monitoring Bluetooth wireless traffic in the vicinity for potential violations of policy.</rationale>
           <addressed-by>FAU_WID_EXT.3/CELL (optional)</addressed-by><rationale>Mitigates the threat by monitoring cellular wireless traffic in the vicinity for potential violations of policy.</rationale>
           <addressed-by>FAU_WID_EXT.4 (optional)</addressed-by><rationale>Mitigates the threat by using a dedicated sensor for analysis of wireless traffic.</rationale>
-          <addressed-by>FAU_MAC_EXT.1 (objective)</addressed-by><rationale>Mitigates the threat by detecting when a device is attempting to spoof a trusted device's MAC address.</rationale>
+          
           <addressed-by>FAU_INV_EXT.4 (objective)</addressed-by><rationale>Mitigates the threat by detecting non-authorized wireless equipment being attached to an internal wired network.</rationale>
           <addressed-by>FAU_INV_EXT.5 (objective)</addressed-by><rationale>Mitigates the threat by including a signal library.</rationale>
-          
+          <addressed-by>FAU_MAC_EXT.1 (objective)</addressed-by><rationale>Mitigates the threat by detecting when a device is attempting to spoof a trusted device's MAC address.</rationale>
           <addressed-by>FAU_WIP_EXT.1 (objective)</addressed-by><rationale>Mitigates the threat by isolating confirmed threats to the internal network, either wired (unauthorized AP) or wireless.</rationale>
           <addressed-by>FAU_ANO_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by defining thresholds of baseline and anomalous traffic for analysis and action.</rationale>
           <addressed-by>FAU_SIG_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by defining signatures for an attack.</rationale>
@@ -390,10 +391,10 @@ implied certain tests were mandatory despite the functions being in selections
           <addressed-by>FAU_WID_EXT.3/CELL (optional)</addressed-by><rationale>Mitigates the threat by monitoring cellular wireless traffic in the vicinity for potential violations of policy.</rationale>
           <addressed-by>FAU_WID_EXT.3/RF (optional)</addressed-by><rationale>Mitigates the threat by monitoring non-802.11 wireless traffic in the vicinity for potential violations of policy.</rationale>
           <addressed-by>FAU_WID_EXT.4 (optional)</addressed-by><rationale>Mitigates the threat by using a dedicated sensor for analysis of wireless traffic.</rationale>
-          <addressed-by>FAU_MAC_EXT.1 (objective)</addressed-by><rationale>Mitigates the threat by detecting when a device is attempting to spoof a trusted device's MAC address.</rationale>
+          
           <addressed-by>FAU_INV_EXT.4 (objective)</addressed-by><rationale>Mitigates the threat by detecting non-authorized wireless equipment being attached to an internal wired network.</rationale>
           <addressed-by>FAU_INV_EXT.5 (objective)</addressed-by><rationale>Mitigates the threat by including a signal library.</rationale>
-          
+          <addressed-by>FAU_MAC_EXT.1 (objective)</addressed-by><rationale>Mitigates the threat by detecting when a device is attempting to spoof a trusted device's MAC address.</rationale>
           <addressed-by>FAU_ANO_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by defining thresholds of baseline and anomalous traffic for analysis and action.</rationale>
           <addressed-by>FAU_SIG_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by defining signatures for an attack.</rationale>
           
@@ -2447,82 +2448,6 @@ implied certain tests were mandatory despite the functions being in selections
 
       <section title="Security Audit (FAU)" id="ss-obj-fau">
    
-        <ext-comp-def title="Device Impersonation" fam-id="FAU_MAC_EXT">
-          <fam-behavior>This family defines requirements for detection of potential device impersonation on the basis of MAC address spoofing.</fam-behavior>
-        </ext-comp-def>
-        <f-component cc-id="fau_mac_ext.1" name="Device Impersonation">
-          <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
-          <comp-lev>requires the TSF to detect possible MAC address spoofing using various methods.</comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>There are no auditable events foreseen.</audit>
-          <dependencies>FAU_INV_EXT.2 Characteristics of Environmental Objects</dependencies>
-          <f-element id="fel-detect-same-mac">
-            <title> The TSF shall detect when two sensors in non-overlapping locations receive
-              traffic from the same MAC address simultaneously.</title>
-            <note role="application"> The intent of this SFR is to detect MAC spoofing where an
-              attacker is able to cause the allowlisted EUD to disconnect and promptly connects a
-              non-allowlisted device using the MAC address of the allowlisted EUD.</note>
-          </f-element>
-          <f-element id="fel-detect-bad-mac">
-            <title> The TSF shall detect when two sensors in non-overlapping locations receive
-              traffic from the MAC addresses of non-allowlisted EUDs within an Authorized
-              administrator-configurable timeframe based on distance between sensors.</title>
-            <note role="application">The intent of this SFR is to allow the administrator to
-              determine the time that should be allowed between an allowlisted EUD connecting in two
-              distant locations.</note>
-            <aactivity>
-              <TSS> The evaluator shall verify that the TSS describes the behavior of the TOE when
-                two sensors in non-overlapping locations receive traffic from the same MAC address
-                simultaneously.</TSS>
-              <Guidance>
-                <h:p>The evaluator shall verify that the operational guidance provides
-                  instructions on how to deploy the TOE in a manner that allows the TSF to detect when
-                  two sensors in non-overlapping locations receive traffic from the same MAC address
-                  simultaneously (i.e. information about the range and placement of sensors to ensure
-                  non-overlapping coverage).</h:p><h:p> The evaluator shall verify that the
-                    operational guidance provides instructions on how to configure the timeframe that
-                    should be allowed between two subsequent attempts for an EUD to connect from two
-                    separate locations.</h:p></Guidance>
-              <Tests>
-                <testlist>
-                  <test>
-                    <steplist>
-                      <step>Setup an allowlisted AP (Location 1).</step>
-                      <step>Connect an allowlisted EUD to AP.</step>
-                      <step>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
-                        non-overlapping location where the WIDS also has sensors. Or simulate the
-                        distant non-overlapping locations by deploying the second AP in a shielded
-                        environment connected to the valid network (Location 2).</step>
-                      <step>Spoof the MAC address of the EUD in location 1 with the EUD in location
-                        2 and connect it to the allowlisted AP in location 2. Make sure both EUDs
-                        are connected at the same time.</step>
-                      <step>Verify that the TSF detected and generated an alert.</step>
-                    </steplist>
-                  </test>
-                  <test>
-                    <steplist>
-                      <step>Configure the timeframe allowed between connection of two EUDs in two
-                        separate locations (Location 1, Location 2).</step>
-                      <step>Setup an allowlisted AP (Location 1). </step>
-                      <step>Connect an allowlisted EUD to AP.</step>
-                      <step>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
-                        non-overlapping location where the WIDS also has sensors. Or simulate the
-                        distant non-overlapping locations by deploying the second AP in a shielded
-                        environment connected to the valid network (Location 2).</step>
-                      <step>Spoof the MAC address of the EUD in location 1 with the EUD in location
-                        2 and connect it to the allowlisted AP in location 2. Make sure that the
-                        time between connections is shorter than the time timeframe
-                        allowed/configured. </step>
-                      <step>Verify that the TSF detected and generated an alert.</step>
-                    </steplist>
-                  </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
-   
    
         <f-component cc-id="fau_inv_ext.4" name="Detection of Unauthorized Connections">
           <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
@@ -2599,58 +2524,84 @@ implied certain tests were mandatory despite the functions being in selections
           <audit-event/>
         </f-component>
  
-        <!-- Removed-->
-        <!-- <ext-comp-def title="Proprietary Traffic Monitoring" fam-id="FAU_WID_EXT">
-          <fam-behavior/>
+ 
+        <ext-comp-def title="Device Impersonation" fam-id="FAU_MAC_EXT">
+          <fam-behavior>This family defines requirements for detection of potential device impersonation on the basis of MAC address spoofing.</fam-behavior>
         </ext-comp-def>
-        <f-component id="fau_wid_ext.8" name="Wireless Intrusion Detection - Proprietary Traffic Monitoring">
-          <consistency-rationale/>
-          <comp-lev/>
-          <management/>
-          <audit/>
-          <dependencies/>
-          <f-element>
-            <title> The TSF shall detect the presence of all vendor proprietary network traffic
-              matching the 802.11 monitoring SFP for all IEEE 802.11 a, b, g, n, ac frame types and subtypes between:
-              <h:ul>
-                <h:li>authorized APs and authorized EUDs</h:li>
-                <h:li>authorized APs and unauthorized EUDs</h:li>
-                <h:li>unauthorized APs and authorized EUDs.</h:li>
-              </h:ul></title>
-            <note role="Application">
-              The "802.11 monitoring SFP" is a security function policy and
-              the SFRs that reference this policy describe what the policy does. The "802.11
-              monitoring SFP" is established in FDP_IFC.1 and defined through FAU_WID_EXT.1, FAU_WID_EXT.2, in addition to optional SFRs FAU_WID_EXT.3 and FAU_WID_EXT.4. A vendor does not have to formally define
-              this policy, it only needs to comply with the SFRs.</note>
+        <f-component cc-id="fau_mac_ext.1" name="Device Impersonation">
+          <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
+          <comp-lev>requires the TSF to detect possible MAC address spoofing using various methods.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>FAU_INV_EXT.2 Characteristics of Environmental Objects</dependencies>
+          <f-element id="fel-detect-same-mac">
+            <title> The TSF shall detect when two sensors in non-overlapping locations receive
+              traffic from the same MAC address simultaneously.</title>
+            <note role="application"> The intent of this SFR is to detect MAC spoofing where an
+              attacker is able to cause the allowlisted EUD to disconnect and promptly connects a
+              non-allowlisted device using the MAC address of the allowlisted EUD.</note>
+          </f-element>
+          <f-element id="fel-detect-bad-mac">
+            <title> The TSF shall detect when two sensors in non-overlapping locations receive
+              traffic from the MAC addresses of non-allowlisted EUDs within an Authorized
+              administrator-configurable timeframe based on distance between sensors.</title>
+            <note role="application">The intent of this SFR is to allow the administrator to
+              determine the time that should be allowed between an allowlisted EUD connecting in two
+              distant locations.</note>
             <aactivity>
-              <TSS> 
-                There are no TSS evaluation activities for this SFR.</TSS>
-              <Guidance> 
-                There are no operational guidance activities for this SFR.</Guidance>
+              <TSS> The evaluator shall verify that the TSS describes the behavior of the TOE when
+                two sensors in non-overlapping locations receive traffic from the same MAC address
+                simultaneously.</TSS>
+              <Guidance>
+                <h:p>The evaluator shall verify that the operational guidance provides
+                  instructions on how to deploy the TOE in a manner that allows the TSF to detect when
+                  two sensors in non-overlapping locations receive traffic from the same MAC address
+                  simultaneously (i.e. information about the range and placement of sensors to ensure
+                  non-overlapping coverage).</h:p><h:p> The evaluator shall verify that the
+                    operational guidance provides instructions on how to configure the timeframe that
+                    should be allowed between two subsequent attempts for an EUD to connect from two
+                    separate locations.</h:p></Guidance>
               <Tests>
                 <testlist>
                   <test>
                     <steplist>
-                      <step>Set the WIDS sensor for a set channel.</step>
-                      <step>Start a traffic capture from the WIDS sensor.</step>
-                      <step>Send a set number of frames on the sensor's operating channel for all
-                        IEEE 802.11 a, b, g, n, ac vendor propietary frame types and subtypes
-                        from/to the following: <h:ol>
-                          <h:li><h:i>authorized APs and authorized EUDs.</h:i></h:li>
-                          <h:li><h:i>authorized APs and unauthorized EUDs.</h:i></h:li>
-                          <h:li><h:i>unauthorized APs and authorized EUDs.</h:i></h:li>
-                        </h:ol>
-                      </step>
-                      <step>Provide a list of the frames types and subtypos that were used for
-                        testing and verify that they were all detected.</step>
+                      <step>Setup an allowlisted AP (Location 1).</step>
+                      <step>Connect an allowlisted EUD to AP.</step>
+                      <step>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
+                        non-overlapping location where the WIDS also has sensors. Or simulate the
+                        distant non-overlapping locations by deploying the second AP in a shielded
+                        environment connected to the valid network (Location 2).</step>
+                      <step>Spoof the MAC address of the EUD in location 1 with the EUD in location
+                        2 and connect it to the allowlisted AP in location 2. Make sure both EUDs
+                        are connected at the same time.</step>
+                      <step>Verify that the TSF detected and generated an alert.</step>
+                    </steplist>
+                  </test>
+                  <test>
+                    <steplist>
+                      <step>Configure the timeframe allowed between connection of two EUDs in two
+                        separate locations (Location 1, Location 2).</step>
+                      <step>Setup an allowlisted AP (Location 1). </step>
+                      <step>Connect an allowlisted EUD to AP.</step>
+                      <step>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
+                        non-overlapping location where the WIDS also has sensors. Or simulate the
+                        distant non-overlapping locations by deploying the second AP in a shielded
+                        environment connected to the valid network (Location 2).</step>
+                      <step>Spoof the MAC address of the EUD in location 1 with the EUD in location
+                        2 and connect it to the allowlisted AP in location 2. Make sure that the
+                        time between connections is shorter than the time timeframe
+                        allowed/configured. </step>
+                      <step>Verify that the TSF detected and generated an alert.</step>
                     </steplist>
                   </test>
                 </testlist>
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
-        -->
+        
+ 
         <ext-comp-def title="Wireless Intrusion Prevention" fam-id="FAU_WIP_EXT">
           <fam-behavior>This family defines requirements for wireless intrusion prevention.</fam-behavior>
         </ext-comp-def>
