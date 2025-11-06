@@ -1334,57 +1334,7 @@ The following sections list Common Criteria and technology terms used in this do
                   <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FAU_STG.5/PCAP:2</a>:
       If the TOE's behavior is configurable when local storage space for packet capture is exhausted, the evaluator shall use this functionality to configure different behavior to verify that the configuration has the intended effect.</li>
                 </ul></span>
-              </div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="ss-obj-fau">2.5.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_MAC_EXT.1 Device Impersonation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_MAC_EXT.1</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS describes the behavior of the TOE when
-                two sensors in non-overlapping locations receive traffic from the same MAC address
-                simultaneously.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-                <p>The evaluator shall verify that the operational guidance provides
-                  instructions on how to deploy the TOE in a manner that allows the TSF to detect when
-                  two sensors in non-overlapping locations receive traffic from the same MAC address
-                  simultaneously (i.e. information about the range and placement of sensors to ensure
-                  non-overlapping coverage).</p><p> The evaluator shall verify that the
-                    operational guidance provides instructions on how to configure the timeframe that
-                    should be allowed between two subsequent attempts for an EUD to connect from two
-                    separate locations.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_MAC_EXT.1:1</a>:
-      
-                    <ul>
-                      <li><b>Step 1: </b>Setup an allowlisted AP (Location 1).</li>
-                      <li><b>Step 2: </b>Connect an allowlisted EUD to AP.</li>
-                      <li><b>Step 3: </b>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
-                        non-overlapping location where the WIDS also has sensors. Or simulate the
-                        distant non-overlapping locations by deploying the second AP in a shielded
-                        environment connected to the valid network (Location 2).</li>
-                      <li><b>Step 4: </b>Spoof the MAC address of the EUD in location 1 with the EUD in location
-                        2 and connect it to the allowlisted AP in location 2. Make sure both EUDs
-                        are connected at the same time.</li>
-                      <li><b>Step 5: </b>Verify that the TSF detected and generated an alert.</li>
-                    </ul>
-                  </li>
-                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_MAC_EXT.1:2</a>:
-      
-                    <ul>
-                      <li><b>Step 1: </b>Configure the timeframe allowed between connection of two EUDs in two
-                        separate locations (Location 1, Location 2).</li>
-                      <li><b>Step 2: </b>Setup an allowlisted AP (Location 1). </li>
-                      <li><b>Step 3: </b>Connect an allowlisted EUD to AP.</li>
-                      <li><b>Step 4: </b>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
-                        non-overlapping location where the WIDS also has sensors. Or simulate the
-                        distant non-overlapping locations by deploying the second AP in a shielded
-                        environment connected to the valid network (Location 2).</li>
-                      <li><b>Step 5: </b>Spoof the MAC address of the EUD in location 1 with the EUD in location
-                        2 and connect it to the allowlisted AP in location 2. Make sure that the
-                        time between connections is shorter than the time timeframe
-                        allowed/configured. </li>
-                      <li><b>Step 6: </b>Verify that the TSF detected and generated an alert.</li>
-                    </ul>
-                  </li>
-                </ul></span>
-              </div></div></span></div><div class="comp" id=""><h4>FAU_INV_EXT.4 Detection of Unauthorized Connections</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_INV_EXT.4</div>
+              </div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="ss-obj-fau">2.5.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_INV_EXT.4 Detection of Unauthorized Connections</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_INV_EXT.4</div>
               
               
               
@@ -1395,7 +1345,7 @@ The following sections list Common Criteria and technology terms used in this do
                 to configure the WIDS to detect unauthorized APs connected to the protected wired
                 infrastructure.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_INV_EXT.4:1</a>:
+                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_INV_EXT.4:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy a non-allowlisted AP.</li>
@@ -1418,7 +1368,7 @@ The following sections list Common Criteria and technology terms used in this do
 		Depending on operation guidance provided for the TOE, the evaluator shall
                 confirm and note the existence of the signal library, and test for the ability to
                 import, export, and update the signal library. <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FAU_INV_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_INV_EXT.5:1</a>:
       
                     <ul>
                       <li><b>Step 1: </b>Deploy an allowlisted AP and connect it to the protected wired
@@ -1426,6 +1376,56 @@ The following sections list Common Criteria and technology terms used in this do
                       <li><b>Step 2: </b>Confirm and note whether the TSF has an existing signal library.</li>
                       <li><b>Step 3: </b>If existence is confirmed, verify that the TSF can import, export, and
                         update the existing signal library.</li>
+                    </ul>
+                  </li>
+                </ul></span>
+              </div></div></span></div><div class="comp" id=""><h4>FAU_MAC_EXT.1 Device Impersonation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_MAC_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS describes the behavior of the TOE when
+                two sensors in non-overlapping locations receive traffic from the same MAC address
+                simultaneously.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                <p>The evaluator shall verify that the operational guidance provides
+                  instructions on how to deploy the TOE in a manner that allows the TSF to detect when
+                  two sensors in non-overlapping locations receive traffic from the same MAC address
+                  simultaneously (i.e. information about the range and placement of sensors to ensure
+                  non-overlapping coverage).</p><p> The evaluator shall verify that the
+                    operational guidance provides instructions on how to configure the timeframe that
+                    should be allowed between two subsequent attempts for an EUD to connect from two
+                    separate locations.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FAU_MAC_EXT.1:1</a>:
+      
+                    <ul>
+                      <li><b>Step 1: </b>Setup an allowlisted AP (Location 1).</li>
+                      <li><b>Step 2: </b>Connect an allowlisted EUD to AP.</li>
+                      <li><b>Step 3: </b>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
+                        non-overlapping location where the WIDS also has sensors. Or simulate the
+                        distant non-overlapping locations by deploying the second AP in a shielded
+                        environment connected to the valid network (Location 2).</li>
+                      <li><b>Step 4: </b>Spoof the MAC address of the EUD in location 1 with the EUD in location
+                        2 and connect it to the allowlisted AP in location 2. Make sure both EUDs
+                        are connected at the same time.</li>
+                      <li><b>Step 5: </b>Verify that the TSF detected and generated an alert.</li>
+                    </ul>
+                  </li>
+                  <li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FAU_MAC_EXT.1:2</a>:
+      
+                    <ul>
+                      <li><b>Step 1: </b>Configure the timeframe allowed between connection of two EUDs in two
+                        separate locations (Location 1, Location 2).</li>
+                      <li><b>Step 2: </b>Setup an allowlisted AP (Location 1). </li>
+                      <li><b>Step 3: </b>Connect an allowlisted EUD to AP.</li>
+                      <li><b>Step 4: </b>Setup a second allowlisted AP and a non-allowlisted EUD in a separate
+                        non-overlapping location where the WIDS also has sensors. Or simulate the
+                        distant non-overlapping locations by deploying the second AP in a shielded
+                        environment connected to the valid network (Location 2).</li>
+                      <li><b>Step 5: </b>Spoof the MAC address of the EUD in location 1 with the EUD in location
+                        2 and connect it to the allowlisted AP in location 2. Make sure that the
+                        time between connections is shorter than the time timeframe
+                        allowed/configured. </li>
+                      <li><b>Step 6: </b>Verify that the TSF detected and generated an alert.</li>
                     </ul>
                   </li>
                 </ul></span>
