@@ -2870,25 +2870,8 @@ implied certain tests were mandatory despite the functions being in selections
     The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP.  
   </appendix>
 
-  <bibliography>
-    <cc-entry/>
-    <entry id="bibNDcPP">
-      <tag>NDcPP</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">collaborative Protection Profile for
-          Network Devices</h:a>, Version 4.0, March 23, 2020 <comment>Adjust date when published</comment>
-      </description>
-    </entry>
-    <entry id="bibNDSD">
-      <tag>NDcPP SD</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">
-          Supporting Document - Evaluation Activities for Network Device cPP</h:a>, Version 4.0,
-        December 2019 <comment>Adjust date when published</comment>
-      </description>
-    </entry>
+  <bibliography/>
     
-  </bibliography>
 </Module>
 <!-- 
  20190930     
