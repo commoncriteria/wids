@@ -629,7 +629,7 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Wireless Intrusion Detection/Prevention System</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for Wireless Intrusion Detection/Prevention System</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 3.0<br/>2025-07-15<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2020-09-30</td><td>Initial Release - <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for NDcPP</td></tr>
 <tr><td>2.0</td><td>2022-09-30</td><td>Added 6 GHz spectrum slice</td></tr>
 <tr><td>3.0</td><td>2025-07-15</td><td>Incorporate NIAP Technical Decisions, Update to <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022</td></tr>
@@ -1384,20 +1384,20 @@ Network Device
         </div>
       
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="31"><a href="#T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">T.UNAUTHORIZED_​DISCLOSURE_​OF_​INFORMATION</a><br/></td><td><a href="#FAU_ARP.1">FAU_ARP.1</a></td><td>Mitigates the threat by generating alerts for potential violations of security policy.</td></tr>
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="31"><a href="#T.UNAUTHORIZED_DISCLOSURE_OF_INFORMATION">T.UNAUTHORIZED_​DISCLOSURE_​OF_​INFORMATION</a><br/></td><td>FAU_GEN_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by generating audit data on each component of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr>
+<tr><td>FAU_STG_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by storing audit data in specified locations and optionally forwarding this data to a central point. </td></tr>
+<tr><td>FCO_CPC_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by securely registering components to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr>
+<tr><td><a href="#FAU_ARP.1">FAU_ARP.1</a></td><td>Mitigates the threat by generating alerts for potential violations of security policy.</td></tr>
 <tr><td><a href="#FAU_ARP_EXT.1">FAU_ARP_EXT.1</a></td><td>Mitigates the threat by allowing for nuisance or undesirable alarms from generation, preventing alarm fatigue.</td></tr>
 <tr><td><a href="#FAU_GEN.1/WIDS">FAU_GEN.1/WIDS</a></td><td>Mitigates the threat by generating audit data related to operation, including abnormal conditions and potential threat detections.</td></tr>
-<tr><td>FAU_GEN_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by generating audit data on each component of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr>
 <tr><td><a href="#FAU_IDS_EXT.1">FAU_IDS_EXT.1</a></td><td>Mitigates the threat by detecting intrusions or potential intrusions.</td></tr>
 <tr><td><a href="#FAU_INV_EXT.1">FAU_INV_EXT.1</a></td><td>Mitigates the threat by defining an allowlist of authorized equipment for use in the network.</td></tr>
 <tr><td><a href="#FAU_INV_EXT.2">FAU_INV_EXT.2</a></td><td>Mitigates the threat by detecting all wireless devices present in the vicinity.</td></tr>
 <tr><td><a href="#FAU_INV_EXT.3">FAU_INV_EXT.3</a></td><td>Mitigates the threat by determining the physical location of wireless devices in the vicinity.</td></tr>
 <tr><td><a href="#FAU_RPT_EXT.1">FAU_RPT_EXT.1</a></td><td>Mitigates the threat by transmitting audit data to a central location.</td></tr>
 <tr><td><a href="#FAU_SAA.1">FAU_SAA.1</a></td><td>Mitigates the threat by defining rules that indicate a potential malicious action.</td></tr>
-<tr><td>FAU_STG_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by storing audit data in specified locations and optionally forwarding this data to a central point. <span style="" class="comment " id="Comment-1-">Note that any FAU_STG_EXT.1 references will likely need to change before publication because the unpublished <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 version of NDcPP is expected to convert this to FAU_STG.1. It has been included throughout this module as if that will not change because that is the only reference that currently exists to be used.</span></td></tr>
 <tr><td><a href="#FAU_WID_EXT.1">FAU_WID_EXT.1</a></td><td>Mitigates the threat by classifying wireless devices as benign or malicious based on device metrics.</td></tr>
 <tr><td><a href="#FAU_WID_EXT.2">FAU_WID_EXT.2</a></td><td>Mitigates the threat by monitoring 802.11 wireless traffic in the vicinity.</td></tr>
-<tr><td>FCO_CPC_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by securely registering components to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr>
 <tr><td><a href="#FDP_IFC.1">FDP_IFC.1</a></td><td>Mitigates the threat by enforcing monitoring on all wireless 802.11 traffic that involves an authorized device 
           as at least one party.</td></tr>
 <tr><td><a href="#FMT_SMF.1/WIDS">FMT_SMF.1/WIDS</a></td><td>Mitigates the threat by allowing configuration of rules, configuration, and other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> operational settings.</td></tr>
@@ -2121,4 +2121,7 @@ Network Device
           </ul></span></td></tr><tr><td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">Common Methodology for Information Technology Security Evaluation - <ul>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">
                  Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
-          </ul></span></td></tr></table></body></html>
+          </ul></span></td></tr><tr><td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description">
+        <a href="https://www.niap-ccevs.org/protectionprofiles/524">
+          collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</a>
+      </span></td></tr></table></body></html>

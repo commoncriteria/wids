@@ -1,4 +1,3 @@
-* Warning: This document still has at least one comment.
 * Error: Detected multiple elements with an id of 'fel-detect-devices-in-bands'.
 * Error: Detected multiple elements with an id of 'fel-detect-devices-in-bands'.
 * Error: Detected multiple elements with an id of 'fel-detect-devices-in-bands'.
