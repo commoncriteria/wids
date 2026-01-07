@@ -297,10 +297,13 @@ implied certain tests were mandatory despite the functions being in selections
             distributed components of a WIDS to impede or gain visibility into its data collection capabilities.</description>
           <consistency-rationale>This threat is similar to the T.UNDETECTED_ACTIVITY threat in the Base-PP 
             but it applies to the attacker performing malicious actions on the network monitored by the TOE rather than against the TOE itself.</consistency-rationale>
+          <addressed-by>FAU_GEN_EXT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by generating audit data on each component of the TOE.</rationale>
+          <addressed-by>FAU_STG_EXT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by storing audit data in specified locations and optionally forwarding this data to a central point. </rationale>
+          <addressed-by>FCO_CPC_EXT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by securely registering components to the TOE.</rationale>
           <addressed-by>FAU_ARP.1</addressed-by><rationale>Mitigates the threat by generating alerts for potential violations of security policy.</rationale>
           <addressed-by>FAU_ARP_EXT.1</addressed-by><rationale>Mitigates the threat by allowing for nuisance or undesirable alarms from generation, preventing alarm fatigue.</rationale>
           <addressed-by>FAU_GEN.1/WIDS</addressed-by><rationale>Mitigates the threat by generating audit data related to operation, including abnormal conditions and potential threat detections.</rationale>
-          <addressed-by>FAU_GEN_EXT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by generating audit data on each component of the TOE.</rationale>
+          
           <addressed-by>FAU_IDS_EXT.1</addressed-by><rationale>Mitigates the threat by detecting intrusions or potential intrusions.</rationale>
           <addressed-by>FAU_INV_EXT.1</addressed-by><rationale>Mitigates the threat by defining an allowlist of authorized equipment for use in the network.</rationale>
           <addressed-by>FAU_INV_EXT.2</addressed-by><rationale>Mitigates the threat by detecting all wireless devices present in the vicinity.</rationale>
@@ -308,10 +311,10 @@ implied certain tests were mandatory despite the functions being in selections
           
           <addressed-by>FAU_RPT_EXT.1</addressed-by><rationale>Mitigates the threat by transmitting audit data to a central location.</rationale>
           <addressed-by>FAU_SAA.1</addressed-by><rationale>Mitigates the threat by defining rules that indicate a potential malicious action.</rationale>         
-          <addressed-by>FAU_STG_EXT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by storing audit data in specified locations and optionally forwarding this data to a central point. <comment>Note that any FAU_STG_EXT.1 references will likely need to change before publication because the unpublished CC:2022 version of NDcPP is expected to convert this to FAU_STG.1. It has been included throughout this module as if that will not change because that is the only reference that currently exists to be used.</comment></rationale>
+          
           <addressed-by>FAU_WID_EXT.1</addressed-by><rationale>Mitigates the threat by classifying wireless devices as benign or malicious based on device metrics.</rationale>
           <addressed-by>FAU_WID_EXT.2</addressed-by><rationale>Mitigates the threat by monitoring 802.11 wireless traffic in the vicinity.</rationale>
-          <addressed-by>FCO_CPC_EXT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by securely registering components to the TOE.</rationale>
+          
           <addressed-by>FDP_IFC.1</addressed-by><rationale>Mitigates the threat by enforcing monitoring on all wireless 802.11 traffic that involves an authorized device 
           as at least one party.</rationale>
           <addressed-by>FMT_SMF.1/WIDS</addressed-by><rationale>Mitigates the threat by allowing configuration of rules, configuration, and other TOE operational settings.</rationale>
@@ -2870,7 +2873,16 @@ implied certain tests were mandatory despite the functions being in selections
     The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP.  
   </appendix>
 
-  <bibliography/>
+  <bibliography>
+    <cc-entry/>
+    <entry id="bibNDcPP">
+      <tag>NDcPP</tag>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/524">
+          collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</h:a>
+      </description>
+    </entry>
+  </bibliography>
     
 </Module>
 <!-- 
