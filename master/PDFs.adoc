@@ -1,0 +1,4 @@
+* https://commoncriteria.github.io/wids/master/wids-release.html.pdf[wids-release.html.pdf]
+* https://commoncriteria.github.io/wids/master/wids.html.pdf[wids.html.pdf]
+* https://commoncriteria.github.io/wids/master/wids-sd.html.pdf[wids-sd.html.pdf]
+* https://commoncriteria.github.io/wids/master/wids-release-linkable.html.pdf[wids-release-linkable.html.pdf]
