@@ -67,7 +67,7 @@ implied certain tests were mandatory despite the functions being in selections
     <ReferenceTable>
       <PPVersion>3.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2025-07-15</PPPubDate>
+      <PPPubDate>2026-01-21</PPPubDate>
       <Keywords>WIDS/WIPS, Wireless Intrusion Detection/Prevention System</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -87,7 +87,7 @@ implied certain tests were mandatory despite the functions being in selections
     
     <entry>
     <version>3.0</version>
-    <date>2025-07-15</date>
+    <date>2026-01-21</date>
     <subject>Incorporate NIAP Technical Decisions, Update to CC:2022</subject>
     </entry>
   </RevisionHistory>
