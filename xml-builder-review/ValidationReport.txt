@@ -1,1 +1,1 @@
-/home/runner/work/wids/wids/input/wids.xml:3:193: error: element "PP" not allowed here; expected element "Module"
+/home/runner/work/wids/wids/input/wids.xml:284:45: error: value of attribute "boilerplate" is invalid; must be equal to "no"
