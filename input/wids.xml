@@ -477,7 +477,7 @@ implied certain tests were mandatory despite the functions being in selections
       <cPP/>
       <modified-sfrs>
                 
-        <section title="Security Audit (FAU)" id="ss-mod-fau">
+        <section title="Class FAU: Security Audit" id="ss-mod-fau">
 
           <base-sfr-spec cc-id="fau_gen_ext.1" title="Security Audit Data Generation for Distributed TOE Components" id="mod-nd-fau-gen-ext-1">
           <consistency-rationale>This PP-Module mandates the inclusion of this selection-based SFR because a TOE that conforms to this PP-Module will always be deployed in a configuration that requires this SFR to be claimed.</consistency-rationale>
@@ -541,7 +541,7 @@ implied certain tests were mandatory despite the functions being in selections
           </base-sfr-spec>
           
         </section>
-        <section title="Communications (FCO)" id="ss-mod-fco">
+        <section title="Class FCO: Communications" id="ss-mod-fco">
           
           <base-sfr-spec cc-id="fco_cpc_ext.1" id="nd-mod-fco-cpc-ext-1" title="Communication Partner Control">
             <consistency-rationale>This PP-Module mandates the inclusion of this optional SFR because it is required to implement functionality required by this PP-Module.</consistency-rationale>
@@ -576,7 +576,7 @@ implied certain tests were mandatory despite the functions being in selections
             </replace>
           </base-sfr-spec>
         </section>
-        <section title="Protection of the TSF (FPT)" id="ss-mod-fpt">
+        <section title="Class FPT: Protection of the TSF" id="ss-mod-fpt">
           <base-sfr-spec cc-id="fpt_itt.1" title="Basic Internal TSF Data Transfer Protection" id="nd-mod-fpt-itt-1">
             <consistency-rationale>This PP-Module mandates the inclusion of this optional SFR because it is required to implement functionality required by this PP-Module.</consistency-rationale>
             <description>
@@ -594,7 +594,7 @@ implied certain tests were mandatory despite the functions being in selections
             <no-change/>
           </base-sfr-spec>
         </section>
-        <section title="Trusted Paths/Channels (FTP)" id="ss-mod-ftp">
+        <section title="Class FTP: Trusted Paths/Channels" id="ss-mod-ftp">
           <base-sfr-spec cc-id="ftp_itc.1" title="Inter-TSF Trusted Channel" id="nd-mod-ftp-itc-1">
             <consistency-rationale>This PP-Module refines the Base-PP SFR to add a selection for a specific external entity that may be applicable to a TOE that conforms to this PP-Module.</consistency-rationale>
             <description>
@@ -677,7 +677,7 @@ implied certain tests were mandatory despite the functions being in selections
       <section id="sec-audit-table" title="Auditable Events for Mandatory SFRs">
         <audit-table id="at-mandatory" table="mandatory"/>
       </section>
-      <section title="Security Audit (FAU)" id="ss-man-fau">
+      <section title="Class FAU: Security Audit" id="ss-man-fau">
         <f-component cc-id="fau_arp.1" name="Security Alarms"> <!-- DONE -->
           <consistency-rationale>This SFR defines operations to be performed on collected WIDS data, which is collected using an external interface defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <f-element id="fel-arp">
@@ -1874,7 +1874,7 @@ implied certain tests were mandatory despite the functions being in selections
         </f-component>        
       </section>
 
-      <section title="User Data Protection (FDP)" id="ss-man-fdp">
+      <section title="Class FDP: User Data Protection" id="ss-man-fdp">
         <f-component cc-id="fdp_ifc.1" name="Subset Information Flow Control">
           <consistency-rationale>This SFR defines operations to be performed on assets in the TOE’s operational environment, which is behavior defined in this PP-Module that extends the logical scope of the TOE beyond what the Base-PP defines.</consistency-rationale>
           <f-element id="fel-detect-frame-types">
@@ -1926,7 +1926,7 @@ implied certain tests were mandatory despite the functions being in selections
         </f-component>
       </section>
 
-      <section title="Security Management (FMT)" id="ss-man-fmt">
+      <section title="Class FMT: Security Management" id="ss-man-fmt">
         <f-component cc-id="fmt_smf.1" name="Specification of Management Functions (WIDS)"
           iteration="WIDS">
           <consistency-rationale>This SFR iterates the FMT_SMF.1 SFR defined in the Base-PP to define management functions for the functionality that is specific to this PP-Module.</consistency-rationale>
@@ -2046,7 +2046,7 @@ implied certain tests were mandatory despite the functions being in selections
       <section id="sec-opt-audit-table" title="Auditable Events for Optional SFRs">
         <audit-table id="at-optional" table="optional"/>
       </section>
-      <section title="Security Audit (FAU)" id="ss-opt-fau">
+      <section title="Class FAU: Security Audit" id="ss-opt-fau">
 
         <!-- invisible un-iterated SFR for the ECD -->
         <f-component status="invisible" cc-id="fau_wid_ext.3" name="Wireless Intrusion Detection - Spectrum Monitoring">
@@ -2244,7 +2244,7 @@ implied certain tests were mandatory despite the functions being in selections
       <section title="Audit Events for Selection-Based SFRs">
         <audit-table id="at-sel-based" table="sel-based"/>
       </section>
-      <section title="Security Audit (FAU)" id="ss-sel-fau">
+      <section title="Class FAU: Security Audit" id="ss-sel-fau">
         <ext-comp-def title="Anomaly-Based Intrusion Detection" fam-id="FAU_ANO_EXT">
           <fam-behavior>This family defines requirements for detection of malicious network activity based on anomalous behavior.</fam-behavior>
         </ext-comp-def>
@@ -2447,7 +2447,7 @@ implied certain tests were mandatory despite the functions being in selections
         <audit-table id="at-objective" table="objective"/>
       </section>
 
-      <section title="Security Audit (FAU)" id="ss-obj-fau">
+      <section title="Class FAU: Security Audit" id="ss-obj-fau">
    
    
         <f-component cc-id="fau_inv_ext.4" name="Detection of Unauthorized Connections">
@@ -2664,7 +2664,7 @@ implied certain tests were mandatory despite the functions being in selections
         </f-component>
       </section>
 
-      <section title="Protection of the TSF (FPT)" id="ss-obj-fpt">
+      <section title="Class FPT: Protection of the TSF" id="ss-obj-fpt">
         <f-component cc-id="fpt_fls.1" iteration="WIDS" name="Basic Internal TSF Data Transfer Protection (WIDS)">
           <consistency-rationale>This SFR defines preservation of a secure state in the event that a failure condition is detected. 
             The Base-PP does not define an SFR for this behavior but this SFR mitigates the T.SECURITY_FUNCTIONALITY_FAILURE threat defined in the Base-PP, 
