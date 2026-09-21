@@ -65,6 +65,7 @@ implied certain tests were mandatory despite the functions being in selections
 	xmlns:sec="https://niap-ccevs.org/cc/v1/section">
   <PPReference>
     <ReferenceTable>
+	  <PPTitle>PP-Module for 802.11 Wireless Intrusion Detection/Prevention Systems</PPTitle>
       <PPVersion>3.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2026-01-21</PPPubDate>
