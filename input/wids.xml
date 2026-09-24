@@ -93,21 +93,6 @@ implied certain tests were mandatory despite the functions being in selections
     </entry>
   </RevisionHistory>
 
-  <include-pkg id="pkgTLS">
-    <git>
-      <url>https://github.com/commoncriteria/tls/</url>
-      <branch>release-2.1</branch>
-    </git>
-    <url>https://www.niap-ccevs.org/protectionprofiles/465</url>
-  </include-pkg>
-
-  <include-pkg id="pkgSSH">
-    <git>
-      <url>https://github.com/commoncriteria/ssh/</url>
-      <branch>release-2.0</branch>
-    </git>
-    <url>https://www.niap-ccevs.org/protectionprofiles/515</url>
-  </include-pkg> 
 
   <pp-preferences>
     <audit-events-in-sfrs/>
@@ -241,8 +226,43 @@ implied certain tests were mandatory despite the functions being in selections
   <cc-pt2-conf>extended</cc-pt2-conf>
   <cc-pt3-conf>conformant</cc-pt3-conf>
   <cc-pp-conf/>
-  <cc-pp-config-with><PP-cc-ref>Network Device collaborative Protection Profile Version 4.0</PP-cc-ref></cc-pp-config-with>
-  <cc-pkg-claim/>
+  <cc-pp-config-with>
+          <PP-cc-ref>
+			<!-- Network Device collaborative Protection Profile Version 4.0 -->
+			<cc-doc-ref id="ndcpp" 
+				name="Network Device collaborative Protection Profile"      
+				version="4.0"                            
+				short="ND"                             
+				product="network device"     
+				plural="network devices"
+                doctype="cPP">     
+				<url>https://www.niap-ccevs.org/protectionprofiles/524</url>
+			</cc-doc-ref>
+		</PP-cc-ref>
+  </cc-pp-config-with>
+  <cc-pkg-claim>
+          <FP-cc-ref conf="conformant">
+			<!-- Functional Package for Secure Shell Version 2.0 -->
+			<cc-doc-ref id="ssh">
+				<git>
+					<url>https://github.com/commoncriteria/ssh</url>
+					<branch>release-2.0</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/515</url>
+			</cc-doc-ref>
+		</FP-cc-ref>
+        <FP-cc-ref conf="conformant">
+			<!-- Functional Package for Transport Layer Security Version 2.1 -->
+			<cc-doc-ref id="tls">
+				<git>
+					<url>https://github.com/commoncriteria/tls</url>
+					<branch>release-2.1</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/519</url>
+			</cc-doc-ref>
+		</FP-cc-ref>
+  </cc-pkg-claim>
+
   </CClaimsInfo>
   </sec:Conformance_Claims>
   <!--   <cclaims> -->
@@ -473,8 +493,7 @@ implied certain tests were mandatory despite the functions being in selections
     </section>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <base-pp version="4.0" name="Network Device" product="Network Device" short="ND" id="b-nd">
-      <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
+    <base-pp ref="ndcpp">
       <cPP/>
       <modified-sfrs>
                 
@@ -660,7 +679,7 @@ implied certain tests were mandatory despite the functions being in selections
                 protect those connections). The ST author selects the mechanism or mechanisms
                 supported by the TOE, and then ensures that the detailed protocol requirements in
                 Appendix B of NDcPP corresponding to their selection are included in the ST.</h:p>
-                <h:p>TLS and DTLS are defined in the <xref to="pkgTLS"/>. SSH is defined in the <xref to="pkgSSH"/>.</h:p>
+                <h:p>TLS and DTLS are defined in the <xref to="tls"/>. SSH is defined in the <xref to="ssh"/>.</h:p>
 	      </note>
             </xpath-specified></replace>
           </base-sfr-spec>
